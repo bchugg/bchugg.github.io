@@ -1,0 +1,62 @@
+/* The css file is generated automatically from the 
+sass file */
+
+$min_desktop_width: 768px;
+$max_mobile_width: 767px; 
+
+
+.header {
+	.name {
+		h2 {
+			font-family: 'Lobster';
+			font-style: italic;
+			font-weight: bold;
+			@media (min-width: $min_desktop_width) {
+				text-align: left;
+			}
+			@media(max-width: $max_mobile_width) {
+				text-align: center;
+			}
+		}
+	}
+	.social {
+		img {
+			@media (min-width: $min_desktop_width) {
+				float: right;
+			}
+			margin: 15px 15px 15px 0;
+			height: 30px;
+			width: auto;
+			-webkit-transition: opacity .3s;
+        	transition: opacity .3s;
+			&:hover {
+				opacity: 0.4;
+			}	
+
+		}
+	}
+}
+
+.main-body {
+	background-color: #F6F1EB;
+	font-family: times;
+	text-align: justify;
+	padding-bottom: 50px;
+	padding-top: 50px;
+	h4 {
+		margin-top: 30px;
+	}
+	 a {
+		color: darkblue;
+	}
+	.photo #top-img {
+		@media (min-width: $min_desktop_width) {
+			height: 300px;
+		}
+		@media(max-width: $max_mobile_width) {
+			height: 150px;
+		}
+	 	width: auto;
+	 	border-radius: 10px;
+	 }
+}
