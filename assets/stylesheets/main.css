@@ -25,13 +25,16 @@ sass file */
 .main-body {
   background-color: #F6F1EB;
   font-family: times;
-  text-align: justify;
   padding-bottom: 50px;
   padding-top: 50px; }
   .main-body h4 {
+    text-align: justify; }
+  .main-body h2, .main-body h3 {
+    color: gray; }
+  .main-body .info h4 {
     margin-top: 30px; }
   .main-body a {
-    color: darkblue; }
+    color: #0099cc; }
   .main-body .photo #top-img {
     width: auto;
     border-radius: 10px; }

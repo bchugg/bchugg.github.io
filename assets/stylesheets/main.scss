@@ -3,6 +3,8 @@ sass file */
 
 $min_desktop_width: 768px;
 $max_mobile_width: 767px; 
+$tan: #F6F1EB;
+$lightgray: #d9d9d9;
 
 
 .header {
@@ -38,16 +40,23 @@ $max_mobile_width: 767px;
 }
 
 .main-body {
-	background-color: #F6F1EB;
+	background-color: $tan;
 	font-family: times;
-	text-align: justify;
 	padding-bottom: 50px;
 	padding-top: 50px;
 	h4 {
-		margin-top: 30px;
+		text-align: justify;	
 	}
-	 a {
-		color: darkblue;
+	h2,h3 {
+		color: gray;
+	}
+	.info {
+		h4 {
+			margin-top: 30px;
+		}	
+	}	
+	a {
+		color: #0099cc;
 	}
 	.photo #top-img {
 		@media (min-width: $min_desktop_width) {
