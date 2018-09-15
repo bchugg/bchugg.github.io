@@ -9,15 +9,15 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <img id='top-img' src="./assets/images/me.JPG" alt='A silly picture of me'>     
+      <img src="assets/images/me.JPG" alt="Los Angeles" style="width:100%;">
     </div>
 
     <div class="item">
-      <img src="chicago.jpg" alt="Chicago">
+      <img src="assets/images/me.JPG" alt="Los Angeles" style="width:100%;">
     </div>
 
     <div class="item">
-      <img src="ny.jpg" alt="New York">
+      <img src="assets/images/me.JPG" alt="Los Angeles" style="width:100%;">
     </div>
   </div>
 
