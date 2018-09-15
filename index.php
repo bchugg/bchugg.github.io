@@ -5,28 +5,56 @@
 	<!-- Bootstrap -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+	</script>
 </head>
 <body>
-	<div class='container-fluid header'>
-		<div class='col-sm-6 name'>
-			<h2>Ben Chugg</h2>
-		</div>
-		<div class='col-sm-6 social text-center'>
-			<a href="https://github.com/bchugg"><img src="./assets/images/github.png"></a>
-			<a href="https://www.linkedin.com/in/ben-chugg-3a4616aa/"><img src="./assets/images/linkedin.png"></a>
-		</div>
-	</div>
+	<?php include 'shared/header.php'; ?>
 	<div class='container-fluid main-body'>
 		<div class='container photo text-center'>
-			<img id='top-img' src="./assets/images/me.JPG" alt='A silly picture of me'>			
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="la.jpg" alt="Los Angeles" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="chicago.jpg" alt="Chicago" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="ny.jpg" alt="New york" style="width:100%;">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+			<?php # include 'shared/carousel.php'; ?>
+			<!-- <img id='top-img' src="./assets/images/me.JPG" alt='A silly picture of me'>			 -->
 		</div>
 		<div class='col-sm-6 col-sm-offset-3 info'>
 			<h4>
-				Hello! I have big ears and I'm addicted to podcasts. I'm also a fan of the Oxford comma. 
+				Hello! I have big ears and I'm addicted to podcasts. 
 			</h4>
 
 			<h4>
-				I'm currently an M.Sc. student at the <a href="https://www.maths.ox.ac.uk/">Mathematical Institute</a> at <a href="http://www.ox.ac.uk/">Oxford</a>. This is where one would typically list their current research interests. I'm still looking for mine.  
+				I'm currently an M.Sc. student at the <a href="https://www.maths.ox.ac.uk/">Mathematical Institute</a> at <a href="http://www.ox.ac.uk/">Oxford</a>. I spend most of my time here proselytizing the Oxford comma. 
 			</h4>
 
 			<h4>
@@ -59,15 +87,26 @@
 			
 		</div>
 
+		<div class='col-sm-6 col-sm-offset-3 theses'>
+			<h3>Theses</h3>
+			<h4>
+				<ul>
+					<li>A Model for Computing in Dynamic, Resource Limited Environments. <a href="files/thesis.pdf">[pdf]</a><br>
+					B.Sc. Thesis. 
+					</li>
+				</ul>
+			</h4>
+		</div>
+
 		<div class='col-sm-6 col-sm-offset-3 teaching'>
 			<h3>Some teaching</h3>
 			<h4>At UBC, I've been a teaching assistant for CPSC 221: Basic algorithms and data structures, CPSC 320: Intermediate Algorithm Design and Analysis, and CPSC 420: Advanced algorithm design and analysis.</h4>
 			<h4>Random course materials:  
 				<ul>
-					<li>221: <a href="./files/function_runtime.pdf">Notes on analyzing function runtimes</a></li>
+					<li>221: <a href="./files/function_runtime.pdf">Introductory notes on analyzing function runtimes</a></li>
 					<li>420 Practice Problems: <a href="./files/linprog.pdf">Linear Programming</a>,
 						<a href="./files/npcomplete.pdf">NP-Completeness</a>,
-						<a href="./files/extra.pdf">Auxiliary problems</a>
+						<a href="./files/flow.pdf">Network Flow</a>.
 					</li>
 				</ul></h4>
 		</div>
@@ -77,25 +116,28 @@
 			<h4>
 				Here is a list of 
 				<ul>
-					<li><a href="podcasts.html">podcasts</a> I find enjoyable;</li>
-					<li><a href="books.html">books and essays</a> which have something interesting to say;</li>
-					<li>free, online <a href="lectures.html">courses and lectures</a> that have taught me something worthwile.</li>
+					<li><a href="podcasts.php">podcasts</a> I find enjoyable;</li>
+					<li><a href="books.php">books and essays</a> which have something interesting to say;</li>
+					<li>free, online <a href="lectures.php">courses and lectures</a> that have taught me something worthwile.</li>
 				</ul>
 			</h4>
-			
+
 			<h4>Here is a flood of miscellany to help ensure that you are less productive over the next few minutes than you would be otherwise: 
 				<a href="https://xkcd.com/287/">https://xkcd.com/287/</a>, 
 				<a href="https://xkcd.com/399/">https://xkcd.com/399/</a>,
-				<a href="https://www.youtube.com/watch?v=OV5J6BfToSw">Stephen Pinker on Linguistics and Style</a>. 
+				<a href="https://www.youtube.com/watch?v=OV5J6BfToSw">Steven Pinker on Linguistics and Style</a>. 
 			</h4>
 
 			<h4>Sometimes I try and do this when I'm alone: <a href=" https://www.youtube.com/watch?v=5ueJ4-lTa1s
 			"> https://www.youtube.com/watch?v=5ueJ4-lTa1s</a>. It doesn't go as well.</h4>
 		</div>
 
+
 		<div class='col-sm-6 col-sm-offset-3 footnotes'>
 		</div>
 	</div>
+
+	
 
 </body>
 </html>

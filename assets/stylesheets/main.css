@@ -1,26 +1,33 @@
 /* The css file is generated automatically from the 
 sass file */
-.header .name h2 {
-  font-family: 'Lobster';
-  font-style: italic;
-  font-weight: bold; }
-  @media (min-width: 768px) {
-    .header .name h2 {
-      text-align: left; } }
-  @media (max-width: 767px) {
-    .header .name h2 {
-      text-align: center; } }
-.header .social img {
-  margin: 15px 15px 15px 0;
-  height: 30px;
-  width: auto;
-  -webkit-transition: opacity .3s;
-  transition: opacity .3s; }
-  @media (min-width: 768px) {
-    .header .social img {
-      float: right; } }
-  .header .social img:hover {
-    opacity: 0.4; }
+.header {
+  border-style: line;
+  border-bottom-color: gray;
+  border-bottom-width: 10px; }
+  .header .name h2 {
+    font-family: 'Lobster';
+    font-weight: bold;
+    font-variant: small-caps; }
+    @media (min-width: 768px) {
+      .header .name h2 {
+        text-align: left; } }
+    @media (max-width: 767px) {
+      .header .name h2 {
+        text-align: center; } }
+    .header .name h2 a:hover {
+      color: #0099cc;
+      text-decoration: none; }
+  .header .social img {
+    margin: 15px 15px 15px 0;
+    height: 30px;
+    width: auto;
+    -webkit-transition: opacity .3s;
+    transition: opacity .3s; }
+    @media (min-width: 768px) {
+      .header .social img {
+        float: right; } }
+    .header .social img:hover {
+      opacity: 0.4; }
 
 .main-body {
   background-color: #F6F1EB;
@@ -44,5 +51,11 @@ sass file */
     @media (max-width: 767px) {
       .main-body .photo #top-img {
         height: 150px; } }
+  .main-body .podcasts h3 {
+    padding-bottom: 20px; }
+  .main-body .podcasts h4 li, .main-body .podcasts ul li {
+    padding-bottom: 10px; }
+  .main-body .lectures h4 li, .main-body .lectures ul li {
+    padding-bottom: 8px; }
 
 /*# sourceMappingURL=main.css.map */

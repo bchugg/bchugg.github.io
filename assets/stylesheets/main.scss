@@ -5,19 +5,30 @@ $min_desktop_width: 768px;
 $max_mobile_width: 767px; 
 $tan: #F6F1EB;
 $lightgray: #d9d9d9;
+$linkcolor: #0099cc;
 
 
 .header {
+	border-style: line;
+	border-bottom-color: gray;
+	border-bottom-width: 10px;
 	.name {
 		h2 {
 			font-family: 'Lobster';
-			font-style: italic;
 			font-weight: bold;
+			font-variant: small-caps;
+			
 			@media (min-width: $min_desktop_width) {
 				text-align: left;
 			}
 			@media(max-width: $max_mobile_width) {
 				text-align: center;
+			}
+			a { 
+				&:hover {
+					color: $linkcolor;
+					text-decoration: none;
+				}
 			}
 		}
 	}
@@ -56,7 +67,7 @@ $lightgray: #d9d9d9;
 		}	
 	}	
 	a {
-		color: #0099cc;
+		color: $linkcolor;
 	}
 	.photo #top-img {
 		@media (min-width: $min_desktop_width) {
@@ -68,4 +79,24 @@ $lightgray: #d9d9d9;
 	 	width: auto;
 	 	border-radius: 10px;
 	 }
+
+	 .podcasts {
+	 	h3 {
+	 		padding-bottom: 20px;
+	 	}
+	 	h4, ul {
+	 		li {
+	 			padding-bottom: 10px;
+	 		}
+	 	}
+	 }
+
+	 .lectures {
+	 	h4, ul {
+	 		li {
+	 			padding-bottom: 8px;
+	 		}
+	 	}
+	 }
 }
+
