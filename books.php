@@ -11,7 +11,7 @@
 			<h3 class='text-center'>Books</h3>
 
 			<h4>
-				<p class='text-center'>Here are some of my favourite books in a variety of vaguely defined categories.</p>
+				<p class='text-center'>Here are some of my favourite books in a variety of vaguely defined categories. I take obscene liberty in omitting the post-colon parts of some titles. It's my website.</p>
 
 				<!-- ROW ONE -->
 				<div class='container'>
@@ -136,6 +136,9 @@
 								<em>Complexity,</em> by Melanie Mitchell.
 							</li>
 							<li>
+								<em>Genome,</em> by Matt Ridley. 
+							</li>
+							<li>
 								<em>Godel, Escher, Bach</em>, by Douglas Hofstadter.
 							</li>
 
@@ -222,11 +225,18 @@
 							<a href="https://www.utilitarian.net/singer/by/1972----.htm">Famine, Affluence, and Morality</a>, by Peter Singer.
 						</li>
 						<li>
+							<a href="http://www.tnellen.com/cybereng/harrison.html">Harrison Bergeron</a>, by Kurt Vonnegut, Jr.
+						</li>
+						<li>
 							<a href="http://www.paulgraham.com/disagree.html">How to Disagree</a>, by Paul Graham. 
+						</li>
+						<li>
+							<a href="https://www.gutenberg.org/files/1080/1080-h/1080-h.htm">A Modest Proposal</a>, by Jonathan Swift.
 						</li>
 						<li>
 							<a href="http://rintintin.colorado.edu/~vancecd/phil1100/Nagel1.pdf">Moral Luck</a>, by Thomas Nagel.
 						</li>
+						<li><a href="http://www2.csudh.edu/ccauthen/576f12/frankfurt__harry_-_on_bullshit.pdf">On Bullshit</a>, by Harry Frankfurt.</li>
 						<li>
 							<a href="https://library.ias.edu/files/UsefulnessHarpers.pdf">The usefulness of useless knowledge</a>, by Abraham Flexner.
 						</li>

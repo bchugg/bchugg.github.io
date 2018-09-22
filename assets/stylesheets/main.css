@@ -42,14 +42,14 @@ sass file */
     margin-top: 30px; }
   .main-body a {
     color: #0099cc; }
-  .main-body .photo #top-img {
-    width: auto;
-    border-radius: 10px; }
+  .main-body .carousel-inner .item img {
+    border-radius: 10px;
+    display: inline; }
     @media (min-width: 768px) {
-      .main-body .photo #top-img {
+      .main-body .carousel-inner .item img {
         height: 300px; } }
     @media (max-width: 767px) {
-      .main-body .photo #top-img {
+      .main-body .carousel-inner .item img {
         height: 150px; } }
   .main-body .podcasts h3 {
     padding-bottom: 20px; }

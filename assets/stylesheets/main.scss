@@ -69,18 +69,21 @@ $linkcolor: #0099cc;
 	a {
 		color: $linkcolor;
 	}
-	.photo #top-img {
-		@media (min-width: $min_desktop_width) {
-			height: 300px;
-		}
-		@media(max-width: $max_mobile_width) {
-			height: 150px;
-		}
-	 	width: auto;
-	 	border-radius: 10px;
-	 }
 
-	 .podcasts {
+	.carousel-inner .item {
+		img {
+			border-radius: 10px;
+			display: inline;
+			@media (min-width: $min_desktop_width) {
+				height: 300px;
+			}
+			@media(max-width: $max_mobile_width) {
+				height: 150px;
+			}
+		}
+	}
+
+	.podcasts {
 	 	h3 {
 	 		padding-bottom: 20px;
 	 	}
@@ -89,7 +92,7 @@ $linkcolor: #0099cc;
 	 			padding-bottom: 10px;
 	 		}
 	 	}
-	 }
+	}
 
 	 .lectures {
 	 	h4, ul {

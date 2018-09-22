@@ -3,13 +3,13 @@
 <body>
 	<?php include 'shared/header.php'; ?>
 	<div class='container-fluid main-body'>
-		<div class='container photo text-center'>
+		<div class='col-sm-4 col-sm-offset-4 photos text-center'>
 			<?php  include 'shared/carousel.php'; ?>
 			<!-- <img id='top-img' src="./assets/images/me.JPG" alt='A silly picture of me'>			 -->
 		</div>
 		<div class='col-sm-6 col-sm-offset-3 info'>
 			<h4>
-				Hello! I have big ears and I'm addicted to podcasts. 
+				Hello! I have big ears and I'm addicted to podcasts. I was much cuter as a child. 
 			</h4>
 
 			<h4>
