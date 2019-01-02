@@ -1,7 +1,9 @@
 /* The css file is generated automatically from the 
 sass file */
 .header {
+  background-color: #F6F1EB;
   border-style: line;
+  padding-bottom: 10px;
   border-bottom-color: gray;
   border-bottom-width: 10px; }
   .header .name h2 {
@@ -30,7 +32,7 @@ sass file */
       opacity: 0.4; }
 
 .main-body {
-  background-color: #F6F1EB;
+  /* background-color: $tan; */
   font-family: times;
   padding-bottom: 50px;
   padding-top: 50px; }
@@ -57,5 +59,17 @@ sass file */
     padding-bottom: 10px; }
   .main-body .lectures h4 li, .main-body .lectures ul li {
     padding-bottom: 8px; }
+  .main-body .books ul li {
+    padding-top: 4px;
+    padding-bottom: 4px; }
+  .main-body .books h4 .pre-books {
+    padding-bottom: 30px; }
+  .main-body .books h4 .line {
+    border-bottom: inset lightgray 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px; }
+    .main-body .books h4 .line ul {
+      padding-top: 8px; }
 
 /*# sourceMappingURL=main.css.map */

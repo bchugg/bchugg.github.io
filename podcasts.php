@@ -13,6 +13,11 @@
 						"A show about the world's most pressing problems and how you can use your career to solve them", all in a sexy Australian accent. 
 					</li>
 					<li>
+						<em>Conversations with Tyler</em>, hosted by Tyler Cowen. <br> 
+						One of the most unique thinkers I've ever come across.  
+
+					</li>
+					<li>
 						<em>The Ezra Klein Show</em>, hosted by Ezra Klein. 
 						<br>
 						Whatever your politics, Ezra Klein is a ruthlessly insightful and talented interviewer. He also does a hell of a job advertising razors. 
@@ -20,7 +25,7 @@
 					<li>
 						<em>The Glenn Show</em>, hosted by Glenn Loury. 
 						<br> 
-						If everyone interviewed like Glenn Loury, the world would be a better place. I've never heard someone steelman their opponent's arguments so regularly and effectively. Plus, I'm pretty sure his speaking vocabulary is a strict superset of my reading vocabulary. 
+						I'm confident his speaking vocabulary is a strict superset of my reading vocabulary. 
 					</li>
 					<li>
 						<em>Hardcore History</em>, hosted by Dan Carlin. 
@@ -30,7 +35,7 @@
 					<li>
 						<em>EconTalk</em>, hosted by Russ Roberts. 
 						<br> 
-
+						Forms an unhealthy percentage of my knowledge of economics.  
 					</li>
 					<li>
 						<em>History on Fire</em>, hosted by Daniele Bolelli. 
@@ -40,27 +45,36 @@
 					<li>
 						<em>Ideas by CBC Radio</em>, hosted by Paul Kennedy. 
 						<br> 
-
+						Plug for Canada. 
 					</li>
 					<li>
 						<em>Philosophize This!</em>, hosted by Stephen West. 
 						<br> 
-						Stephen West manages to convey every philosophical idea with clarity, without losing the rigour. Sometimes I fantasize about meeting him at a party and  
+						Sometimes I fantasize about meeting him at a party and  
 					</li>
-					<li>
+					<!-- <li>
 						<em>Planet Money</em>, hosted by a whole host of people, including Robert Smith, Stacey Vanek Smith (they're not married), Bryan Urstadt, Jacob Goldstein, and Ailsa Chang.
 					</li>
 					<li>
 						<em>Radiolab</em>, hosted by Jad Abumrad and Robert Krulwich (and sometimes Molly Webster?)
-					</li>
+					</li> -->
 					<li>
 						<em>More Perfect</em>, hosted by Jad Abumrad. 
+						<br>
+						I now know much more about the American Supreme Court than that of my native country.  
 					</li>
 					<li>
-						<em>Mindscape</em>, hosted by Sean Carroll. 
+						<em>Mindscape</em>, hosted by Sean Carroll. <br> 
+						So ... let's go!
+					</li>
+					<li>
+						<em>The Ted Interview</em>, hosted by Chris Anderson. 
+						<br>
 					</li>
 					<li>
 						<em>Very Bad Wizards</em>, hosted by David Pizarro and Tamler Somers. 
+						<br> 
+						I don't often laugh aloud to podcasts, but when I do it's thanks to VBW. 
 					</li>
 					<li>
 						<em>Waking Up</em>, hosted by Sam Harris.
@@ -70,7 +84,7 @@
 					<li>
 						<em>You are not so smart</em>, hosted by David McRaney. 
 						<br>
-						I always knew, but now it's enforced on a biweekly (fornightly for you Brits) basis. 
+						I always knew, but now it's enforced on a biweekly basis. 
 					</li>
 				</ul>
 			</h4>

@@ -12,14 +12,18 @@
 						Thanks to <a href="https://vmasrani.github.io/">Vaden Masrani</a> for this suggestion. 
 					</li>
 					<li>
-						<a href="https://www.youtube.com/watch?v=NNnIGh9g6fA&list=PL848F2368C90DDC3D">Introduction to Human Behavioural Biology</a>, by Robert Sapolsky. <br> 
-						I think Sapolsky's lecture on <a href="https://www.youtube.com/watch?v=NOAgplgTxfc">depression</a> (also suggested by Vaden) and the <a href="https://www.youtube.com/watch?v=4WwAQqWUkpI">the biological underpinnings of religiosity</a> deserve to be mentioned in tandem to this course. 
+						Michael Sandel's <a href="https://www.youtube.com/playlist?list=PL30C13C91CFFEFEA6">course on Justice</a> is mesmorizing.
 					</li>
 					<li>
-						<a href="https://www.youtube.com/watch?v=twUpQx87CgE&list=PLzWd5Ny3vW3TmAbJH3fYMRjNUptY0uPW8">Introduction to Philosophy</a>, by Daniel Bonevac. 
+						<a href="https://www.youtube.com/watch?v=NNnIGh9g6fA&list=PL848F2368C90DDC3D">Introduction to Human Behavioural Biology</a>, by Robert Sapolsky. 
+						His lectures on 
+						<a href="https://www.youtube.com/watch?v=NOAgplgTxfc">depression</a> and the <a href="https://www.youtube.com/watch?v=4WwAQqWUkpI">the biological 
+						underpinnings of religiosity</a> deserve to be mentioned in tandem to this course. 
 					</li>
 					<li>
-						<a href="https://www.youtube.com/watch?v=Q-B_ONJIEcE">Linguistics as a window to understanding the brain</a>, by Steven Pinker. (Single lecture.)
+						<a href="https://www.youtube.com/playlist?list=PL8FB14A2200B87185">Financial Markets</a> with Robert Shiller. 
+						I swear it's more interesting than it sounds. Also, if you were to describe his lecture style as "adorable" 
+						you wouldn't be wrong. 
 					</li>
 				</ul>
 			</h4>

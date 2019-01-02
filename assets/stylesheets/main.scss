@@ -9,7 +9,9 @@ $linkcolor: #0099cc;
 
 
 .header {
+	background-color: $tan;
 	border-style: line;
+	padding-bottom: 10px;
 	border-bottom-color: gray;
 	border-bottom-width: 10px;
 	.name {
@@ -51,7 +53,7 @@ $linkcolor: #0099cc;
 }
 
 .main-body {
-	background-color: $tan;
+	/* background-color: $tan; */
 	font-family: times;
 	padding-bottom: 50px;
 	padding-top: 50px;
@@ -99,6 +101,28 @@ $linkcolor: #0099cc;
 	 		li {
 	 			padding-bottom: 8px;
 	 		}
+	 	}
+	 }
+
+	 .books {
+	 	ul li {
+			padding-top: 4px;
+			padding-bottom: 4px;
+	 	}
+	 	h4 {
+	 		.pre-books {
+	 			padding-bottom: 30px;
+	 		}
+	 		.line {
+	 			border-bottom: inset lightgray 1px;
+	 			padding-top: 10px;
+	 			padding-bottom: 10px; 
+	 			margin-bottom: 10px;
+			 	ul {
+			 		padding-top: 8px;
+			 	}
+	 			
+	 		}	
 	 	}
 	 }
 }
