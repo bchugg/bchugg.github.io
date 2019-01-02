@@ -85,6 +85,23 @@ $linkcolor: #0099cc;
 		}
 	}
 
+	.papers, .theses {
+		li {
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+	}
+
+	.links {
+		ul {
+			padding-top: 5px;
+			li {
+				padding-top: 4px;
+				padding-bottom: 4px;
+			}
+		}
+	}
+
 	.podcasts {
 	 	h3 {
 	 		padding-bottom: 20px;
@@ -98,6 +115,7 @@ $linkcolor: #0099cc;
 
 	 .lectures {
 	 	h4, ul {
+	 		padding-top: 10px;
 	 		li {
 	 			padding-bottom: 8px;
 	 		}

@@ -53,12 +53,22 @@ sass file */
     @media (max-width: 767px) {
       .main-body .carousel-inner .item img {
         height: 150px; } }
+  .main-body .papers li, .main-body .theses li {
+    padding-top: 5px;
+    padding-bottom: 5px; }
+  .main-body .links ul {
+    padding-top: 5px; }
+    .main-body .links ul li {
+      padding-top: 4px;
+      padding-bottom: 4px; }
   .main-body .podcasts h3 {
     padding-bottom: 20px; }
   .main-body .podcasts h4 li, .main-body .podcasts ul li {
     padding-bottom: 10px; }
-  .main-body .lectures h4 li, .main-body .lectures ul li {
-    padding-bottom: 8px; }
+  .main-body .lectures h4, .main-body .lectures ul {
+    padding-top: 10px; }
+    .main-body .lectures h4 li, .main-body .lectures ul li {
+      padding-bottom: 8px; }
   .main-body .books ul li {
     padding-top: 4px;
     padding-bottom: 4px; }
