@@ -6,6 +6,7 @@ $max_mobile_width: 767px;
 $tan: #F6F1EB;
 $lightgray: #d9d9d9;
 $linkcolor: #0099cc;
+$global_font_size: 12pt;
 
 
 .header {
@@ -52,19 +53,26 @@ $linkcolor: #0099cc;
 	}
 }
 
+
 .main-body {
 	/* background-color: $tan; */
 	font-family: times;
 	padding-bottom: 50px;
 	padding-top: 50px;
-	h4 {
+	h4, p  {
 		text-align: justify;	
+		font-size: $global_font_size;
+	}
+	ul {
+		li {
+			font-size: $global_font_size;
+		}
 	}
 	h2,h3 {
 		color: gray;
 	}
 	.info {
-		h4 {
+		h4, p  {
 			margin-top: 30px;
 		}	
 	}	
@@ -94,7 +102,6 @@ $linkcolor: #0099cc;
 
 	.links {
 		ul {
-			padding-top: 5px;
 			li {
 				padding-top: 4px;
 				padding-bottom: 4px;
@@ -123,25 +130,24 @@ $linkcolor: #0099cc;
 	 }
 
 	 .books {
+	 	font-size: $global_font_size;
 	 	ul li {
 			padding-top: 4px;
 			padding-bottom: 4px;
 	 	}
-	 	h4 {
-	 		.pre-books {
-	 			padding-bottom: 30px;
-	 		}
-	 		.line {
-	 			border-bottom: inset lightgray 1px;
-	 			padding-top: 10px;
-	 			padding-bottom: 10px; 
-	 			margin-bottom: 10px;
-			 	ul {
-			 		padding-top: 8px;
-			 	}
-	 			
-	 		}	
-	 	}
+	 	.pre-books {
+ 			padding-bottom: 30px;
+ 		}
+ 		.line {
+ 			border-bottom: inset lightgray 1px;
+ 			padding-top: 10px;
+ 			padding-bottom: 10px; 
+ 			margin-bottom: 10px;
+		 	ul {
+		 		padding-top: 8px;
+		 	}
+ 			
+ 		}	
 	 }
 }
 
