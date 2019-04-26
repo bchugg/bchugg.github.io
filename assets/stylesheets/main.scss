@@ -131,9 +131,14 @@ $global_font_size: 12pt;
 
 	 .books {
 	 	font-size: $global_font_size;
+	 	#non-fiction, #fiction {
+	 		color: gray;
+	 		text-align: center;
+	 		text-decoration: underline;
+	 	}
 	 	ul li {
-			padding-top: 4px;
-			padding-bottom: 4px;
+			padding-top: 3px;
+			padding-bottom: 3px;
 	 	}
 	 	.pre-books {
  			padding-bottom: 30px;

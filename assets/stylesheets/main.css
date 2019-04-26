@@ -72,9 +72,13 @@ sass file */
       padding-bottom: 8px; }
   .main-body .books {
     font-size: 12pt; }
+    .main-body .books #non-fiction, .main-body .books #fiction {
+      color: gray;
+      text-align: center;
+      text-decoration: underline; }
     .main-body .books ul li {
-      padding-top: 4px;
-      padding-bottom: 4px; }
+      padding-top: 3px;
+      padding-bottom: 3px; }
     .main-body .books .pre-books {
       padding-bottom: 30px; }
     .main-body .books .line {
