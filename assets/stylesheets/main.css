@@ -51,48 +51,6 @@ sass file */
 #header .navbar-default .navbar-nav > .open > a:hover {
   background-color: white; }
 
-/*header {
-	border-bottom: solid;
-	padding-bottom: 10px;
-	border-bottom-color: gray;
-	border-bottom-width: 2px;
-	.name {
-		h2 {
-			font-family: 'Lobster';
-			font-weight: bold;
-			font-variant: small-caps;
-			
-			@media (min-width: $min_desktop_width) {
-				text-align: left;
-			}
-			@media(max-width: $max_mobile_width) {
-				text-align: center;
-			}
-			a { 
-				&:hover {
-					color: $linkcolor;
-					text-decoration: none;
-				}
-			}
-		}
-	}
-	.social {
-		img {
-			@media (min-width: $min_desktop_width) {
-				float: right;
-			}
-			margin: 15px 15px 15px 0;
-			height: 30px;
-			width: auto;
-			-webkit-transition: opacity .3s;
-        	transition: opacity .3s;
-			&:hover {
-				opacity: 0.4;
-			}	
-
-		}
-	}
-}*/
 .main-body {
   color: gray;
   font-family: times;
@@ -105,8 +63,18 @@ sass file */
     font-size: 12pt; }
   .main-body h2, .main-body h3 {
     color: gray; }
+  .main-body .col-sm-8 .border {
+    padding-top: 50px;
+    border-bottom: solid lightgray 1px; }
+  .main-body .col-sm-8 .top-info {
+    padding-top: 10px; }
+  .main-body .col-sm-8 ul li {
+    padding-top: 4px;
+    padding-bottom: 4px; }
   .main-body .info h4, .main-body .info p {
-    margin-top: 30px; }
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px; }
   .main-body a {
     color: #0099cc; }
   .main-body .carousel-inner .item img {
@@ -114,16 +82,14 @@ sass file */
     display: inline; }
     @media (min-width: 768px) {
       .main-body .carousel-inner .item img {
-        height: 300px; } }
+        height: 240px; } }
     @media (max-width: 767px) {
       .main-body .carousel-inner .item img {
-        height: 150px; } }
+        height: 150px;
+        padding-top: 30px; } }
   .main-body .papers li, .main-body .theses li {
     padding-top: 5px;
     padding-bottom: 5px; }
-  .main-body .links ul li {
-    padding-top: 4px;
-    padding-bottom: 4px; }
   .main-body .podcasts h3 {
     padding-bottom: 20px; }
   .main-body .podcasts h4 li, .main-body .podcasts ul li {
