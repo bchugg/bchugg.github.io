@@ -9,12 +9,86 @@ $linkcolor: #0099cc;
 $global_font_size: 12pt;
 
 
-.header {
-	background-color: $tan;
-	border-style: line;
+#header {
+	 nav {
+	 	li {
+	 		padding-top: 5px;
+	 		padding-right: 5px;
+	 	}
+		background-color: white;
+		border-color: white;
+		font-family: 'Lobster';
+		font-variant: small-caps;
+		.navbar-header {
+			padding-top: 5px;
+			font-weight: bold;
+			.navbar-toggle {
+				background-color: white;
+				border-color: white;
+			}
+			a {
+				color: $linkcolor;
+			}
+		}
+		.navbar-right {
+			.dropdown {
+				.dropdown-menu {
+					border-color: white;
+					li {
+						&:hover {
+							background-color: white;
+						}
+					}
+				}
+
+				/*.dropdown-toggle {
+					.open>a:focus {
+						background-color: white;
+					}
+					.open>a:hover {
+						background-color: white;
+					}
+				}*/
+			}
+			a {
+				font-size: 12pt;
+				color: gray;
+				&:hover {
+					color: $linkcolor;
+					text-decoration: none;
+				}
+			}
+			img {
+				@media (min-width: $min_desktop_width) {
+					float: right;
+				}
+				/*margin: 10px 10px 10px 0;*/
+				height: 25px;
+				width: auto;
+				-webkit-transition: opacity .3s;
+	        	transition: opacity .3s;
+				&:hover {
+					opacity: 0.4;
+				}	
+
+			}
+		}
+	}
+	.navbar-default .navbar-nav>.open>a, 
+	.navbar-default .navbar-nav>.open>a:focus, 
+	.navbar-default .navbar-nav>.open>a:hover {
+    	background-color: white;
+}	
+	
+}
+
+
+
+/*header {
+	border-bottom: solid;
 	padding-bottom: 10px;
 	border-bottom-color: gray;
-	border-bottom-width: 10px;
+	border-bottom-width: 2px;
 	.name {
 		h2 {
 			font-family: 'Lobster';
@@ -51,11 +125,10 @@ $global_font_size: 12pt;
 
 		}
 	}
-}
-
+}*/
 
 .main-body {
-	/* background-color: $tan; */
+	color: gray;
 	font-family: times;
 	padding-bottom: 50px;
 	padding-top: 50px;

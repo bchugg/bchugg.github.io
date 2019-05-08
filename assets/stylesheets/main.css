@@ -1,38 +1,100 @@
 /* The css file is generated automatically from the 
 sass file */
-.header {
-  background-color: #F6F1EB;
-  border-style: line;
-  padding-bottom: 10px;
-  border-bottom-color: gray;
-  border-bottom-width: 10px; }
-  .header .name h2 {
-    font-family: 'Lobster';
-    font-weight: bold;
-    font-variant: small-caps; }
-    @media (min-width: 768px) {
-      .header .name h2 {
-        text-align: left; } }
-    @media (max-width: 767px) {
-      .header .name h2 {
-        text-align: center; } }
-    .header .name h2 a:hover {
+#header nav {
+  background-color: white;
+  border-color: white;
+  font-family: 'Lobster';
+  font-variant: small-caps; }
+  #header nav li {
+    padding-top: 5px;
+    padding-right: 5px; }
+  #header nav .navbar-header {
+    padding-top: 5px;
+    font-weight: bold; }
+    #header nav .navbar-header .navbar-toggle {
+      background-color: white;
+      border-color: white; }
+    #header nav .navbar-header a {
+      color: #0099cc; }
+  #header nav .navbar-right .dropdown {
+    /*.dropdown-toggle {
+    	.open>a:focus {
+    		background-color: white;
+    	}
+    	.open>a:hover {
+    		background-color: white;
+    	}
+    }*/ }
+    #header nav .navbar-right .dropdown .dropdown-menu {
+      border-color: white; }
+      #header nav .navbar-right .dropdown .dropdown-menu li:hover {
+        background-color: white; }
+  #header nav .navbar-right a {
+    font-size: 12pt;
+    color: gray; }
+    #header nav .navbar-right a:hover {
       color: #0099cc;
       text-decoration: none; }
-  .header .social img {
-    margin: 15px 15px 15px 0;
-    height: 30px;
+  #header nav .navbar-right img {
+    /*margin: 10px 10px 10px 0;*/
+    height: 25px;
     width: auto;
     -webkit-transition: opacity .3s;
     transition: opacity .3s; }
     @media (min-width: 768px) {
-      .header .social img {
+      #header nav .navbar-right img {
         float: right; } }
-    .header .social img:hover {
+    #header nav .navbar-right img:hover {
       opacity: 0.4; }
+#header .navbar-default .navbar-nav > .open > a,
+#header .navbar-default .navbar-nav > .open > a:focus,
+#header .navbar-default .navbar-nav > .open > a:hover {
+  background-color: white; }
 
+/*header {
+	border-bottom: solid;
+	padding-bottom: 10px;
+	border-bottom-color: gray;
+	border-bottom-width: 2px;
+	.name {
+		h2 {
+			font-family: 'Lobster';
+			font-weight: bold;
+			font-variant: small-caps;
+			
+			@media (min-width: $min_desktop_width) {
+				text-align: left;
+			}
+			@media(max-width: $max_mobile_width) {
+				text-align: center;
+			}
+			a { 
+				&:hover {
+					color: $linkcolor;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	.social {
+		img {
+			@media (min-width: $min_desktop_width) {
+				float: right;
+			}
+			margin: 15px 15px 15px 0;
+			height: 30px;
+			width: auto;
+			-webkit-transition: opacity .3s;
+        	transition: opacity .3s;
+			&:hover {
+				opacity: 0.4;
+			}	
+
+		}
+	}
+}*/
 .main-body {
-  /* background-color: $tan; */
+  color: gray;
   font-family: times;
   padding-bottom: 50px;
   padding-top: 50px; }
