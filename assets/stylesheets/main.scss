@@ -84,7 +84,6 @@ $global_font_size: 12pt;
 
 
 .main-body {
-	color: gray;
 	font-family: times;
 	padding-bottom: 50px;
 	padding-top: 50px;
@@ -101,6 +100,7 @@ $global_font_size: 12pt;
 		color: gray;
 	}
 	.col-sm-8 {
+		color: gray;
 		.border {
 			padding-top: 50px;
 			border-bottom: solid lightgray 1px;
@@ -108,21 +108,25 @@ $global_font_size: 12pt;
 		.top-info {
 		padding-top: 10px;
 		}
-		ul {
+		/*ul {
 			li {
 				padding-top: 4px;
 				padding-bottom: 4px;
 			}
-		}
+		}*/
 		
 	}
 	
 	.info {
-		h4, p  {
+		h4, p {
 			margin-top: 30px;
-			margin-left: 10px;
-			margin-right: 10px;
+			/*margin-left: 10px;*/
+			margin-right: 20px;
+			padding-right: 10px;
 		}	
+		li {
+			padding-right: 20px;
+		}
 	}	
 	a {
 		color: $linkcolor;

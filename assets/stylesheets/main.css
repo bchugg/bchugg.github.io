@@ -52,7 +52,6 @@ sass file */
   background-color: white; }
 
 .main-body {
-  color: gray;
   font-family: times;
   padding-bottom: 50px;
   padding-top: 50px; }
@@ -63,18 +62,26 @@ sass file */
     font-size: 12pt; }
   .main-body h2, .main-body h3 {
     color: gray; }
-  .main-body .col-sm-8 .border {
-    padding-top: 50px;
-    border-bottom: solid lightgray 1px; }
-  .main-body .col-sm-8 .top-info {
-    padding-top: 10px; }
-  .main-body .col-sm-8 ul li {
-    padding-top: 4px;
-    padding-bottom: 4px; }
+  .main-body .col-sm-8 {
+    color: gray;
+    /*ul {
+    	li {
+    		padding-top: 4px;
+    		padding-bottom: 4px;
+    	}
+    }*/ }
+    .main-body .col-sm-8 .border {
+      padding-top: 50px;
+      border-bottom: solid lightgray 1px; }
+    .main-body .col-sm-8 .top-info {
+      padding-top: 10px; }
   .main-body .info h4, .main-body .info p {
     margin-top: 30px;
-    margin-left: 10px;
-    margin-right: 10px; }
+    /*margin-left: 10px;*/
+    margin-right: 20px;
+    padding-right: 10px; }
+  .main-body .info li {
+    padding-right: 20px; }
   .main-body a {
     color: #0099cc; }
   .main-body .carousel-inner .item img {
