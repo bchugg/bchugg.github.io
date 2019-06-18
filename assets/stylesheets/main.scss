@@ -108,12 +108,6 @@ $global_font_size: 12pt;
 		.top-info {
 		padding-top: 10px;
 		}
-		/*ul {
-			li {
-				padding-top: 4px;
-				padding-bottom: 4px;
-			}
-		}*/
 		
 	}
 	
@@ -123,9 +117,11 @@ $global_font_size: 12pt;
 			/*margin-left: 10px;*/
 			margin-right: 20px;
 			padding-right: 10px;
-		}	
-		li {
-			padding-right: 20px;
+		}
+		ul {
+			padding-left: 10px;
+			margin-left: 10px;
+			
 		}
 	}	
 	a {
@@ -199,4 +195,3 @@ $global_font_size: 12pt;
  		}	
 	 }
 }
-

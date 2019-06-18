@@ -63,13 +63,7 @@ sass file */
   .main-body h2, .main-body h3 {
     color: gray; }
   .main-body .col-sm-8 {
-    color: gray;
-    /*ul {
-    	li {
-    		padding-top: 4px;
-    		padding-bottom: 4px;
-    	}
-    }*/ }
+    color: gray; }
     .main-body .col-sm-8 .border {
       padding-top: 50px;
       border-bottom: solid lightgray 1px; }
@@ -80,8 +74,9 @@ sass file */
     /*margin-left: 10px;*/
     margin-right: 20px;
     padding-right: 10px; }
-  .main-body .info li {
-    padding-right: 20px; }
+  .main-body .info ul {
+    padding-left: 10px;
+    margin-left: 10px; }
   .main-body a {
     color: #0099cc; }
   .main-body .carousel-inner .item img {
