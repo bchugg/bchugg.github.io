@@ -71,12 +71,12 @@ sass file */
       padding-top: 10px; }
   .main-body .info h4, .main-body .info p {
     margin-top: 30px;
-    /*margin-left: 10px;*/
     margin-right: 20px;
     padding-right: 10px; }
   .main-body .info ul {
     padding-left: 10px;
-    margin-left: 10px; }
+    margin-right: 20px;
+    padding-right: 10px; }
   .main-body a {
     color: #0099cc; }
   .main-body .carousel-inner .item img {
