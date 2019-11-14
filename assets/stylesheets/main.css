@@ -92,10 +92,20 @@ sass file */
   .main-body .papers li, .main-body .theses li {
     padding-top: 5px;
     padding-bottom: 5px; }
-  .main-body .podcasts h3 {
-    padding-bottom: 20px; }
-  .main-body .podcasts h4 li, .main-body .podcasts ul li {
-    padding-bottom: 10px; }
+  .main-body .podcasts {
+    font-size: 12pt; }
+    .main-body .podcasts .col-sm-9 {
+      padding-top: 15px; }
+    .main-body .podcasts h3 {
+      padding-bottom: 20px; }
+    .main-body .podcasts h4 {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      font-style: italic; }
+    .main-body .podcasts img {
+      padding-bottom: 10px;
+      width: 120px;
+      height: auto; }
   .main-body .lectures h4, .main-body .lectures ul {
     padding-top: 10px; }
     .main-body .lectures h4 li, .main-body .lectures ul li {
