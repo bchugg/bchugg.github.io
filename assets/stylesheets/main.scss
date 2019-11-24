@@ -127,6 +127,15 @@ $global_font_size: 12pt;
 	a {
 		color: $linkcolor;
 	}
+	img {
+		@media (min-width: $min_desktop_width) {
+				height: 240px;
+		}
+		@media(max-width: $max_mobile_width) {
+			height: 150px;
+			padding-top: 30px;
+		}
+	}
 
 	.carousel-inner .item {
 		img {

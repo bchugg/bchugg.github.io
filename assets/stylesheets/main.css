@@ -79,6 +79,13 @@ sass file */
     padding-right: 10px; }
   .main-body a {
     color: #0099cc; }
+  @media (min-width: 768px) {
+    .main-body img {
+      height: 240px; } }
+  @media (max-width: 767px) {
+    .main-body img {
+      height: 150px;
+      padding-top: 30px; } }
   .main-body .carousel-inner .item img {
     border-radius: 10px;
     display: inline; }
