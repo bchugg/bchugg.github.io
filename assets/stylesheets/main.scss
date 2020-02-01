@@ -1,8 +1,8 @@
-/* The css file is generated automatically from the 
+/* The css file is generated automatically from the
 sass file */
 
 $min_desktop_width: 768px;
-$max_mobile_width: 767px; 
+$max_mobile_width: 767px;
 $tan: #F6F1EB;
 $lightgray: #d9d9d9;
 $linkcolor: #0099cc;
@@ -69,17 +69,17 @@ $global_font_size: 12pt;
 	        	transition: opacity .3s;
 				&:hover {
 					opacity: 0.4;
-				}	
+				}
 
 			}
 		}
 	}
-	.navbar-default .navbar-nav>.open>a, 
-	.navbar-default .navbar-nav>.open>a:focus, 
+	.navbar-default .navbar-nav>.open>a,
+	.navbar-default .navbar-nav>.open>a:focus,
 	.navbar-default .navbar-nav>.open>a:hover {
     	background-color: white;
-}	
-	
+}
+
 }
 
 
@@ -88,7 +88,7 @@ $global_font_size: 12pt;
 	padding-bottom: 50px;
 	padding-top: 50px;
 	h4, p  {
-		text-align: justify;	
+		text-align: justify;
 		font-size: $global_font_size;
 	}
 	ul {
@@ -107,10 +107,19 @@ $global_font_size: 12pt;
 		}
 		.top-info {
 		padding-top: 10px;
+		.links {
+			padding-top: 10px;
+			img {
+				height: 25px;
+				width: auto;
+				padding-left: 10px;
+				padding-right: 10px;
+			}
 		}
-		
+		}
+
 	}
-	
+
 	.info {
 		h4, p {
 			margin-top: 30px;
@@ -121,9 +130,9 @@ $global_font_size: 12pt;
 			padding-left: 10px;
 			margin-right: 20px;
 			padding-right: 10px;
-			
+
 		}
-	}	
+	}
 	a {
 		color: $linkcolor;
 	}
@@ -204,12 +213,12 @@ $global_font_size: 12pt;
  		.line {
  			border-bottom: inset lightgray 1px;
  			padding-top: 10px;
- 			padding-bottom: 10px; 
+ 			padding-bottom: 10px;
  			margin-bottom: 10px;
 		 	ul {
 		 		padding-top: 8px;
 		 	}
- 			
- 		}	
+
+ 		}
 	 }
 }
