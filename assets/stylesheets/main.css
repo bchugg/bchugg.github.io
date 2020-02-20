@@ -1,5 +1,8 @@
 /* The css file is generated automatically from the
 sass file */
+html {
+  scroll-behavior: smooth; }
+
 #header nav {
   background-color: white;
   border-color: white;
@@ -130,17 +133,43 @@ sass file */
       color: gray;
       text-align: center;
       text-decoration: underline; }
+    .main-body .books .links {
+      padding-bottom: 20px; }
+    .main-body .books h3 {
+      padding-bottom: 30px;
+      padding-top: 30px; }
+    .main-body .books h4 {
+      text-decoration: underline;
+      text-align: center;
+      color: gray;
+      padding-bottom: 20px; }
+    .main-body .books .topics {
+      border-bottom: inset lightgray 1px; }
+    .main-body .books .favourite-books {
+      border-bottom: inset lightgray 1px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-bottom: 10px; }
+    .main-body .books img {
+      border-radius: 3px;
+      padding-top: 0;
+      width: 80px;
+      height: 128px; }
+    .main-body .books .book-rec {
+      display: flex;
+      padding-bottom: 30px; }
+    .main-body .books span {
+      overflow: auto;
+      font-size: 10pt;
+      padding-left: 10px; }
+      .main-body .books span tit {
+        font-weight: bold; }
+      .main-body .books span auth {
+        font-style: italic; }
     .main-body .books ul li {
       padding-top: 3px;
       padding-bottom: 3px; }
     .main-body .books .pre-books {
       padding-bottom: 30px; }
-    .main-body .books .line {
-      border-bottom: inset lightgray 1px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      margin-bottom: 10px; }
-      .main-body .books .line ul {
-        padding-top: 8px; }
 
 /*# sourceMappingURL=main.css.map */

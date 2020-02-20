@@ -8,6 +8,9 @@ $lightgray: #d9d9d9;
 $linkcolor: #0099cc;
 $global_font_size: 12pt;
 
+html {
+	scroll-behavior: smooth;
+}
 
 #header {
 	 nav {
@@ -203,22 +206,57 @@ $global_font_size: 12pt;
 	 		text-align: center;
 	 		text-decoration: underline;
 	 	}
+		.links {
+			padding-bottom: 20px;
+		}
+		h3 {
+			padding-bottom: 30px;
+			padding-top: 30px;
+		}
+		h4 {
+			text-decoration: underline;
+			text-align: center;
+			color: gray;
+			padding-bottom: 20px;
+
+		}
+		.topics {
+			border-bottom: inset lightgray 1px;
+		}
+		.favourite-books {
+			border-bottom: inset lightgray 1px;
+ 			padding-top: 10px;
+ 			padding-bottom: 10px;
+ 			margin-bottom: 10px;
+		}
+		img {
+			border-radius: 3px;
+			padding-top: 0;
+			width: 80px;
+			height: 128px;
+		}
+		.book-rec {
+			display: flex;
+			padding-bottom: 30px;
+		}
+		span  {
+			overflow: auto;
+			font-size: 10pt;
+			padding-left: 10px;
+			tit {
+				font-weight: bold;
+			}
+			auth {
+				font-style: italic;
+			}
+
+		}
 	 	ul li {
 			padding-top: 3px;
 			padding-bottom: 3px;
 	 	}
 	 	.pre-books {
  			padding-bottom: 30px;
- 		}
- 		.line {
- 			border-bottom: inset lightgray 1px;
- 			padding-top: 10px;
- 			padding-bottom: 10px;
- 			margin-bottom: 10px;
-		 	ul {
-		 		padding-top: 8px;
-		 	}
-
  		}
 	 }
 }
