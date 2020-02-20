@@ -203,6 +203,25 @@ $global_font_size: 12pt;
 	 		text-align: center;
 	 		text-decoration: underline;
 	 	}
+		.favourite-books {
+			h3 {
+				padding-bottom: 30px;
+			}
+		}
+		.book-rec {
+			height: 150px;
+			padding-bottom: 10px;
+			padding-left: -50px;
+			img {
+				width: 80px;
+				height: auto;
+			}
+			.exp {
+				text-align: left;
+				font-size: 10pt;
+			}
+
+		}
 	 	ul li {
 			padding-top: 3px;
 			padding-bottom: 3px;

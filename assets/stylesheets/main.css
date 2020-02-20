@@ -130,6 +130,18 @@ sass file */
       color: gray;
       text-align: center;
       text-decoration: underline; }
+    .main-body .books .favourite-books h3 {
+      padding-bottom: 30px; }
+    .main-body .books .book-rec {
+      height: 150px;
+      padding-bottom: 10px;
+      padding-left: -50px; }
+      .main-body .books .book-rec img {
+        width: 80px;
+        height: auto; }
+      .main-body .books .book-rec .exp {
+        text-align: left;
+        font-size: 10pt; }
     .main-body .books ul li {
       padding-top: 3px;
       padding-bottom: 3px; }
