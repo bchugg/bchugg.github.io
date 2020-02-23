@@ -102,6 +102,11 @@ html {
 	h2,h3 {
 		color: gray;
 	}
+	.quote {
+		color: gray;
+		padding-bottom: 20px;
+		padding-top: 10px;
+	}
 	.col-sm-8 {
 		color: gray;
 		.border {
@@ -140,26 +145,13 @@ html {
 		color: $linkcolor;
 	}
 	img {
+		border-radius: 5px;
 		@media (min-width: $min_desktop_width) {
 				height: 240px;
 		}
 		@media(max-width: $max_mobile_width) {
 			height: 150px;
 			padding-top: 30px;
-		}
-	}
-
-	.carousel-inner .item {
-		img {
-			border-radius: 10px;
-			display: inline;
-			@media (min-width: $min_desktop_width) {
-				height: 240px;
-			}
-			@media(max-width: $max_mobile_width) {
-				height: 150px;
-				padding-top: 30px;
-			}
 		}
 	}
 
@@ -232,11 +224,12 @@ html {
 		img {
 			border-radius: 3px;
 			padding-top: 0;
-			width: 80px;
-			height: 128px;
+			width: 75px;
+			height: auto;
 		}
 		.book-rec {
 			display: flex;
+			height: 150px;
 			padding-bottom: 30px;
 		}
 		span  {

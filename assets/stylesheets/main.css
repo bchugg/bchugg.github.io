@@ -65,6 +65,10 @@ html {
     font-size: 12pt; }
   .main-body h2, .main-body h3 {
     color: gray; }
+  .main-body .quote {
+    color: gray;
+    padding-bottom: 20px;
+    padding-top: 10px; }
   .main-body .col-sm-8 {
     color: gray; }
     .main-body .col-sm-8 .border {
@@ -89,21 +93,13 @@ html {
     padding-right: 10px; }
   .main-body a {
     color: #0099cc; }
-  @media (min-width: 768px) {
-    .main-body img {
-      height: 240px; } }
-  @media (max-width: 767px) {
-    .main-body img {
-      height: 150px;
-      padding-top: 30px; } }
-  .main-body .carousel-inner .item img {
-    border-radius: 10px;
-    display: inline; }
+  .main-body img {
+    border-radius: 5px; }
     @media (min-width: 768px) {
-      .main-body .carousel-inner .item img {
+      .main-body img {
         height: 240px; } }
     @media (max-width: 767px) {
-      .main-body .carousel-inner .item img {
+      .main-body img {
         height: 150px;
         padding-top: 30px; } }
   .main-body .papers li, .main-body .theses li {
@@ -153,10 +149,11 @@ html {
     .main-body .books img {
       border-radius: 3px;
       padding-top: 0;
-      width: 80px;
-      height: 128px; }
+      width: 75px;
+      height: auto; }
     .main-body .books .book-rec {
       display: flex;
+      height: 150px;
       padding-bottom: 30px; }
     .main-body .books span {
       overflow: auto;
