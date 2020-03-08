@@ -43,15 +43,6 @@ html {
 						}
 					}
 				}
-
-				/*.dropdown-toggle {
-					.open>a:focus {
-						background-color: white;
-					}
-					.open>a:hover {
-						background-color: white;
-					}
-				}*/
 			}
 			a {
 				font-size: 12pt;
@@ -61,20 +52,7 @@ html {
 					text-decoration: none;
 				}
 			}
-			img {
-				@media (min-width: $min_desktop_width) {
-					float: right;
-				}
-				/*margin: 10px 10px 10px 0;*/
-				height: 25px;
-				width: auto;
-				-webkit-transition: opacity .3s;
-	        	transition: opacity .3s;
-				&:hover {
-					opacity: 0.4;
-				}
 
-			}
 		}
 	}
 	.navbar-default .navbar-nav>.open>a,
@@ -122,6 +100,12 @@ html {
 				width: auto;
 				padding-left: 10px;
 				padding-right: 10px;
+				-webkit-transition: opacity .3s;
+	        	transition: opacity .3s;
+				&:hover {
+					opacity: 0.4;
+				}
+
 			}
 		}
 		}
