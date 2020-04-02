@@ -9,33 +9,53 @@
 
 <url>
   <loc>https://benchugg.com/</loc>
-  <lastmod>2019-02-22T18:02:47+00:00</lastmod>
+  <lastmod>2020-03-24T16:55:53+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://benchugg.com/files/crn_poster.pdf</loc>
-  <lastmod>2019-02-22T18:02:47+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://benchugg.com/files/thesis.pdf</loc>
-  <lastmod>2019-02-22T18:02:47+00:00</lastmod>
+  <loc>https://benchugg.com/papers.html</loc>
+  <lastmod>2020-03-24T16:55:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://benchugg.com/podcasts.html</loc>
-  <lastmod>2019-02-22T18:02:47+00:00</lastmod>
+  <lastmod>2020-03-24T16:55:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://benchugg.com/books.html</loc>
-  <lastmod>2019-02-22T18:02:47+00:00</lastmod>
+  <lastmod>2020-03-24T16:55:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://benchugg.com/courses.html</loc>
-  <lastmod>2019-02-22T18:02:47+00:00</lastmod>
+  <lastmod>2020-03-24T16:55:53+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://benchugg.com/files/crn_poster.pdf</loc>
+  <lastmod>2020-03-24T16:55:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchugg.com/files/CRN_slides.pdf</loc>
+  <lastmod>2020-03-24T16:55:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchugg.com/files/SPP_Slides.pdf</loc>
+  <lastmod>2020-03-24T16:55:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchugg.com/files/ox_thesis.pdf</loc>
+  <lastmod>2020-03-24T16:55:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchugg.com/files/thesis.pdf</loc>
+  <lastmod>2020-03-24T16:55:53+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 
 
