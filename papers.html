@@ -19,6 +19,10 @@
 	<!-- Bootstrap -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+	<!-- Mathjax --> 
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 </head>
 <body>
 	<div id='header' class='container-fluid header'></div>
@@ -33,24 +37,78 @@
 					<li>
 						Composable Computation in Leaderless, Discrete Chemical Reaction Networks. <br>
 						With Hooman Hashemi and <a href="https://www.cs.ubc.ca/~condon/" rel='nofollow'>Anne Condon</a>. <br>
-						<em>International Conference on DNA Computing and Molecular Programming,</em> 2020.
+						<em>International Conference on DNA Computing and Molecular Programming,</em> 2020. 
+						<br> 
+						<button data-toggle="collapse" data-target="#abs4">+ Abstract</button>
+						<div id="abs4" class="collapse abs">
+							We classify the functions \(f:\mathbb{N}^d \rightarrow \mathbb{N}\)
+							that are stably computable by leaderless, output-oblivious discrete (stochastic)
+							Chemical Reaction Networks (CRNs). CRNs that compute such functions
+							are systems of reactions over species that include \(d\) designated
+							input species, whose initial counts represent an input \(x \in
+							\mathbb{N}^d\), and one output species whose eventual count represents
+							\(f(x)\). Chen et al. showed that the class of functions computable by CRNs is
+							precisely the semilinear functions.
+							In output-oblivious CRNs, the output species is never a reactant. Output-oblivious CRNs are easily composable since a downstream CRN can consume the output of an upstream CRN without affecting its correctness. Severson et al. showed that output-oblivious CRNs compute exactly the subclass of semilinear functions that are eventually the minimum of
+							quilt-affine functions, i.e., affine functions with different intercepts in each of finitely many congruence classes. They call such functions the output-oblivious functions. A leaderless CRN can compute only superadditive functions, and so a leaderless output-oblivious CRN can compute only superadditive, output-oblivious functions. In this work we show that a function
+							\(f:\mathbb{N}^d \rightarrow \mathbb{N}\) is stably computable by a leaderless, output-oblivious CRN if and only if it is superadditive and
+							output-oblivious.
+						</div>
 					</li>
 					<li>
 						Simultaneous Visibility Representations of Undirected Graphs. [<a href="https://arxiv.org/abs/2005.00937" rel='nofollow'>arXiv</a>]<br>
 						With <a href="http://www.cs.ubc.ca/~will/" rel='nofollow'>Will Evans</a> and Kelvin Wong. <br>
 						<em>Canadian Conference on Computational Geometry</em>, 2020.
+						<br> 
+						<button data-toggle="collapse" data-target="#abs3">+ Abstract</button>
+						<div id="abs3" class="collapse abs">
+							We consider the problem of determining if a pair of undirected graphs \(\langle G_V,G_H\rangle\), which share the same vertex set, has a representation using opaque geometric shapes for vertices, and vertical/horizontal visibility between shapes to determine the edges of \(G_V/G_H\). While such a simultaneous visibility representation of two graphs can be determined efficiently if the direction of the required visibility for each edge is provided (and the vertex shapes are sufficiently simple), it was unclear if edge direction is critical for efficiency. We show that the problem is NP-complete without that information, even for graphs that are only slightly more complex than paths. In addition, we characterize which pairs of paths have simultaneous visibility representations using fixed orientation L-shapes. This narrows the range of possible graph families for which determining simultaneous visibility representation is non-trivial yet not NP-hard.
+						</div>
 					</li>
 					<li>
 						Submodular Stochastic Probing with Prices. [<a href="https://arxiv.org/pdf/1810.01730.pdf" rel='nofollow'>arXiv</a>, <a href="files/SPP_Slides.pdf">slides</a>]
 						<br>
 						With <a href="http://www.prefield.com/index.html" rel='nofollow'>Takanori Maehara</a>. <br>
 						<em> International Conference on Control, Decision, and Information Technologies. 2019.</em>
+						<br> 
+						<button data-toggle="collapse" data-target="#abs2">+ Abstract</button>
+						<div id="abs2" class="collapse abs">
+							We introduce Stochastic Probing with Prices (SPP), a variant of the Stochastic
+							Probing (SP) model in which we must pay a price to probe an element. A SPP problem involves two set systems \((\mathcal{N} , \mathcal{I}_{in})\) and \((\mathcal{N} , \mathcal{I}_{out})\) where each \(e\in\mathcal{N}\) is active with
+							probability \(p_e\). To discover whether an element \(e\) is active, it must be probed by paying
+							the price \(\Delta_e\). If an element is probed and is active, then it is irrevocably added to the
+							solution. Moreover, at all times, the set of probed elements must lie in \(\mathcal{I}_{out}\), and the
+							solution (the set of probed and active elements) must lie in \(\mathcal{I}_{in}\). The goal is to maximize a submodular set function \(f\) minus the cost of the probes. We give a bi-criteria
+							approximation algorithm to the online version of this problem, in which the elements
+							are shown to the algorithm in a possibly adversarial order. Our results translate to
+							state-of-the-art approximations for the traditional (online) stochastic probing problem.
+						</div>
 					</li>
 					<li>
 						Output-Oblivious Stochastic Chemical Reaction Networks. [<a href="https://arxiv.org/pdf/1812.04401.pdf" rel='nofollow'>arXiv</a>, <a href="files/crn_poster.pdf">poster</a>, <a href="files/CRN_slides.pdf">OxCSC slides</a>]
 						<br>
 						With <a href="https://www.cs.ubc.ca/~condon/" rel='nofollow'>Anne Condon</a> and Hooman Hashemi. <br>
-						<em>International Conference on Principles of Distributed Systems</em>, 2018.
+						<em>International Conference on Principles of Distributed Systems</em>, 2018
+						.
+						<br> 
+						<button data-toggle="collapse" data-target="#abs1">+ Abstract</button>
+						<div id="abs1" class="collapse abs">
+							We classify the functions \(f: \mathbb{N}^2\to \mathbb{N}\)
+							which are stably computable by output-oblivious Stochastic
+							Chemical Reaction Networks (CRNs), i.e., systems of reactions in which output species are never
+							reactants. While it is known that precisely the semilinear functions are stably computable by
+							CRNs, such CRNs sometimes rely on initially producing too many output species, and then
+							consuming the excess in order to reach a correct stable state. These CRNs may be difficult to
+							integrate into larger systems: if the output of a CRN \(C\) becomes the input to a downstream CRN \(C'\), then \(C'\) 
+							could inadvertently consume too many outputs before \(C\) stabilizes. If, on the other
+							hand, \(C\) is output-oblivious then \(C'\)
+							may consume \(C\)'s output as soon as it is available. In this work
+							we prove that a semilinear function \(f : \mathbb{N}^2\to\mathbb{N}\)
+							is stably computable by an output-oblivious CRN
+							with a leader if and only if it is both increasing and either grid-affine (intuitively, its domains
+							are congruence classes), or the minimum of a finite set of fissure functions (intuitively, functions
+							behaving like the min function).
+						</div>
 					</li>
 				</ul>
 			</p>
@@ -63,7 +121,7 @@
 				<ul>
 					<li>
 						The Graph-Simplex Correspondence and its Algorithmic Foundations. [<a href="files/ox_thesis.pdf">pdf</a>]<br>
-						MFoCS M.Sc. Thesis.
+						M.Sc. Thesis.
 					</li>
 					<li>A Model for Computing in Dynamic, Resource-Limited Environments. [<a href="files/thesis.pdf">pdf</a>]<br>
 					B.Sc. Thesis.

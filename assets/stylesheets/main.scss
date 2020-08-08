@@ -10,24 +10,26 @@ $global_font_size: 12pt;
 
 html {
 	scroll-behavior: smooth;
+	background-color: $tan;
 }
 
 #header {
+	background-color: $tan;
 	 nav {
 	 	li {
 	 		padding-top: 5px;
 	 		padding-right: 5px;
 	 	}
-		background-color: white;
-		border-color: white;
+		background-color: $tan;
+		border-color: $tan;
 		font-family: 'Lobster';
 		font-variant: small-caps;
 		.navbar-header {
 			padding-top: 5px;
 			font-weight: bold;
 			.navbar-toggle {
-				background-color: white;
-				border-color: white;
+				background-color: $tan;
+				border-color: $tan;
 			}
 			a {
 				color: $linkcolor;
@@ -65,6 +67,8 @@ html {
 
 
 .main-body {
+	height: 110%;
+	background-color: $tan;
 	font-family: times;
 	padding-bottom: 50px;
 	padding-top: 50px;
@@ -143,27 +147,21 @@ html {
 			padding-top: 5px;
 			padding-bottom: 5px;
 		}
+		button {
+			background-color: transparent;
+			border-width: 0;
+			color: $linkcolor;
+			&:focus {
+				outline: none;
+				border-width: 0;
+			}
+		}
+		.abs {
+			text-align: justify;
+			color: gray;
+		}
 	}
 
-	.podcasts {
-		font-size: $global_font_size;
-		.col-sm-9 {
-			padding-top: 15px;
-		}
-	 	h3 {
-	 		padding-bottom: 20px;
-	 	}
-	 	h4 {
-	 		padding-top: 20px;
-	 		padding-bottom: 20px;
-	 		font-style: italic;
-	 	}
-	 	img {
-	 		padding-bottom: 10px;
-	 		width: 120px;
-	 		height: auto;
-	 	}
-	}
 
 	 .lectures {
 	 	h4, ul {
