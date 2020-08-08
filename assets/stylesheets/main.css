@@ -57,21 +57,24 @@ html {
   .main-body .col-sm-8 {
     color: gray; }
     .main-body .col-sm-8 .border {
-      padding-top: 50px;
-      border-bottom: solid lightgray 1px; }
+      margin-top: 20px;
+      border-bottom: solid lightgray 1px;
+      border-top: solid lightgray 1px; }
     .main-body .col-sm-8 .top-info {
       padding-top: 10px; }
-    .main-body .col-sm-8 .links {
-      margin-top: 25px; }
-      .main-body .col-sm-8 .links img {
-        height: 25px;
-        width: auto;
-        padding-left: 10px;
-        padding-right: 10px;
-        -webkit-transition: opacity .3s;
-        transition: opacity .3s; }
-        .main-body .col-sm-8 .links img:hover {
-          opacity: 0.4; }
+  .main-body .links {
+    padding-top: 20px;
+    margin-bottom: 50px;
+    border-radius: 0px; }
+    .main-body .links img {
+      height: 30px;
+      width: auto;
+      padding-left: 10px;
+      padding-right: 10px;
+      -webkit-transition: opacity .3s;
+      transition: opacity .3s; }
+      .main-body .links img:hover {
+        opacity: 0.4; }
   .main-body .info h4, .main-body .info p {
     margin-top: 30px;
     margin-right: 20px;
@@ -82,13 +85,14 @@ html {
     padding-right: 10px; }
   .main-body a {
     color: #0099cc; }
-  .main-body img {
+  .main-body #photos > img {
     border-radius: 5px; }
     @media (min-width: 768px) {
-      .main-body img {
-        height: 240px; } }
+      .main-body #photos > img {
+        height: 240px;
+        border-radius: 10px; } }
     @media (max-width: 767px) {
-      .main-body img {
+      .main-body #photos > img {
         height: 150px;
         padding-top: 30px; } }
   .main-body .papers li, .main-body .theses li {

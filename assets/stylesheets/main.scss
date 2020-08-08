@@ -92,25 +92,29 @@ html {
 	.col-sm-8 {
 		color: gray;
 		.border {
-			padding-top: 50px;
+			margin-top: 20px;
 			border-bottom: solid lightgray 1px;
+			border-top: solid lightgray 1px;
 		}
 		.top-info {
 		padding-top: 10px;
 
 		}
-		.links {
-			margin-top: 25px;
-			img {
-				height: 25px;
-				width: auto;
-				padding-left: 10px;
-				padding-right: 10px;
-				-webkit-transition: opacity .3s;
-	        	transition: opacity .3s;
-				&:hover {
-					opacity: 0.4;
-				}
+		
+	}
+	.links {
+		padding-top: 20px;
+		margin-bottom: 50px;
+		border-radius: 0px;
+		img {
+			height: 30px;
+			width: auto;
+			padding-left: 10px;
+			padding-right: 10px;
+			-webkit-transition: opacity .3s;
+        	transition: opacity .3s;
+			&:hover {
+				opacity: 0.4;
 			}
 		}
 	}
@@ -131,10 +135,11 @@ html {
 	a {
 		color: $linkcolor;
 	}
-	img {
+	#photos > img {
 		border-radius: 5px;
 		@media (min-width: $min_desktop_width) {
 				height: 240px;
+				border-radius: 10px;
 		}
 		@media(max-width: $max_mobile_width) {
 			height: 150px;
