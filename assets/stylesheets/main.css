@@ -119,19 +119,22 @@ html {
       text-align: center;
       text-decoration: underline; }
     .main-body .books .links {
-      padding-bottom: 20px; }
+      padding-top: 0;
+      margin-bottom: -10px; }
     .main-body .books h3 {
       padding-bottom: 30px;
       padding-top: 30px; }
     .main-body .books h4 {
+      font-size: 20;
       text-decoration: underline;
       text-align: center;
       color: gray;
       padding-bottom: 20px; }
     .main-body .books .topics {
-      border-bottom: inset lightgray 1px; }
+      border-bottom: inset lightgray 2px;
+      padding-bottom: 30px; }
       .main-body .books .topics .row {
-        padding-top: 20px; }
+        padding-top: 50px; }
       .main-body .books .topics .book-rec {
         position: relative;
         width: 20%;
@@ -184,7 +187,7 @@ html {
             font-style: italic;
             font-variant: small-caps; }
     .main-body .books .favourite-books {
-      border-bottom: inset lightgray 1px;
+      border-bottom: inset lightgray 2px;
       padding-top: 10px;
       padding-bottom: 10px;
       margin-bottom: 10px; }
