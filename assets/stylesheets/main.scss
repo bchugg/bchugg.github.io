@@ -10,26 +10,25 @@ $global_font_size: 12pt;
 
 html {
 	scroll-behavior: smooth;
-	background-color: $tan;
 }
 
 #header {
-	background-color: $tan;
 	 nav {
 	 	li {
 	 		padding-top: 5px;
 	 		padding-right: 5px;
 	 	}
-		background-color: $tan;
-		border-color: $tan;
-		font-family: 'Lobster';
-		font-variant: small-caps;
+		background-color: white;
+		border-color: white;
+
+		font-family: times;
+		//font-variant: small-caps;
 		.navbar-header {
 			padding-top: 5px;
 			font-weight: bold;
 			.navbar-toggle {
-				background-color: $tan;
-				border-color: $tan;
+				background-color: white;
+				border-color: white;
 			}
 			a {
 				color: $linkcolor;
@@ -68,7 +67,6 @@ html {
 
 .main-body {
 	height: 110%;
-	background-color: $tan;
 	font-family: times;
 	padding-bottom: 50px;
 	padding-top: 50px;
@@ -89,23 +87,28 @@ html {
 		padding-bottom: 20px;
 		padding-top: 10px;
 	}
-	.col-sm-8 {
+	.index-page {
 		color: gray;
-		.border {
-			margin-top: 20px;
-			border-bottom: solid lightgray 1px;
-			border-top: solid lightgray 1px;
-		}
-		.top-info {
-		padding-top: 10px;
-
-		}
-		
 	}
+
+	.lhs-info {
+		img {
+			margin-bottom: 30px;
+		}
+		p {
+			padding-bottom: 20px;
+		}
+	}
+
+	.rhs-info {
+		h3 {
+			padding-top: 25px;
+		}
+	}
+
 	.links {
 		padding-top: 20px;
 		margin-bottom: 50px;
-		border-radius: 0px;
 		img {
 			height: 30px;
 			width: auto;
@@ -119,33 +122,44 @@ html {
 		}
 	}
 
-	.info {
-		h4, p {
-			margin-top: 30px;
-			margin-right: 20px;
-			padding-right: 10px;
-		}
-		ul {
-			padding-left: 10px;
-			margin-right: 20px;
-			padding-right: 10px;
-
-		}
-	}
+	// .info {
+	// 	h4, p {
+	// 		margin-top: 30px;
+	// 		margin-right: 20px;
+	// 		padding-right: 10px;
+	// 	}
+	// 	ul {
+	// 		padding-left: 10px;
+	// 		margin-right: 20px;
+	// 		padding-right: 10px;
+	//
+	// 	}
+	// }
 	a {
 		color: $linkcolor;
 	}
-	#photos > img {
-		border-radius: 5px;
-		@media (min-width: $min_desktop_width) {
-				height: 240px;
-				border-radius: 10px;
+	#photos {
+
+		padding-left: 0;
+		padding-right: 0;
+
+		img {
+			//margin-top: 50px;
+			border-radius: 5px;
+
+			@media (min-width: $min_desktop_width) {
+					width: 100%;
+					border-radius: 10px;
+
+			}
+			@media(max-width: $max_mobile_width) {
+				width: 70%;
+				//padding-top: 30px;
+			}
 		}
-		@media(max-width: $max_mobile_width) {
-			height: 150px;
-			padding-top: 30px;
-		}
+
 	}
+
 
 	.papers, .theses {
 		li {
@@ -223,18 +237,18 @@ html {
 
 				@media (max-width: 400px) {
 					width: 33%;
-					height: 150px;	
+					height: 150px;
 				}
 
 				float: left;
 				&:hover {
 					img {
-						opacity: 0.1;	
+						opacity: 0.1;
 					}
 					.middle {
 						opacity: 1;
 					}
-					
+
 				}
 				img {
 				  opacity: 1;
@@ -255,7 +269,7 @@ html {
 					text-align: center;
 
 					.title {
-						color: black; 
+						color: black;
 						font-weight: bold;
 						padding-bottom: 10px;
 						border-bottom: solid darkgrey 5px;
@@ -266,53 +280,53 @@ html {
 						font-style: italic;
 						font-variant: small-caps;
 					}
-					
+
 					/*left: 25%;
 					text-align: center;
 					transform: translate(-10%, 0%);
 					ms-transform: translate(-50%, -50%);*/
 				}
-				
-			}
-		}
-		.favourite-books {
-			border-bottom: inset lightgray 2px;
- 			padding-top: 10px;
- 			padding-bottom: 10px;
- 			margin-bottom: 10px;
- 			
- 			.book-rec {
- 				display: flex;
- 				margin-bottom: 10px;
- 			}
 
- 			.col-sm-4 {
-				height: 140px;
-				@media (max-width: $max_mobile_width) {
-					height: 160px;
-					padding-top: 20px;
-				}
-				img {
-					/*position: absolute;*/
-					border-radius: 3px;
-					padding-top: 0;
-					height: auto;
-					width: 85px;
-				}
-				span {
-					overflow: auto;
-					padding-left: 10px;
-					font-size: 10pt;
-					tit {
-						font-weight: bold;
-					}
-					auth {
-						font-style: italic;
-					}
-				}
 			}
 		}
-			
+		// .favourite-books {
+		// 	border-bottom: inset lightgray 2px;
+ 		// 	padding-top: 10px;
+ 		// 	padding-bottom: 10px;
+ 		// 	margin-bottom: 10px;
+		//
+ 		// 	.book-rec {
+ 		// 		display: flex;
+ 		// 		margin-bottom: 10px;
+ 		// 	}
+		//
+ 		// 	.col-sm-4 {
+		// 		height: 140px;
+		// 		@media (max-width: $max_mobile_width) {
+		// 			height: 160px;
+		// 			padding-top: 20px;
+		// 		}
+		// 		img {
+		// 			/*position: absolute;*/
+		// 			border-radius: 3px;
+		// 			padding-top: 0;
+		// 			height: auto;
+		// 			width: 85px;
+		// 		}
+		// 		span {
+		// 			overflow: auto;
+		// 			padding-left: 10px;
+		// 			font-size: 10pt;
+		// 			tit {
+		// 				font-weight: bold;
+		// 			}
+		// 			auth {
+		// 				font-style: italic;
+		// 			}
+		// 		}
+		// 	}
+		// }
+
 	 	ul li {
 			padding-top: 3px;
 			padding-bottom: 3px;
