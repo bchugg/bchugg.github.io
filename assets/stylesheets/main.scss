@@ -12,7 +12,10 @@ html {
 	scroll-behavior: smooth;
 }
 
+*{font-family:optima;}
+
 #header {
+
 	 nav {
 	 	li {
 	 		padding-top: 5px;
@@ -21,7 +24,7 @@ html {
 		background-color: white;
 		border-color: white;
 
-		font-family: times;
+		//font-family: times;
 		//font-variant: small-caps;
 		.navbar-header {
 			padding-top: 5px;
@@ -66,12 +69,26 @@ html {
 
 
 .main-body {
+
+	width: 700px;
+
+	@media(max-width: 700px) {
+		width: 90%;
+		//padding-top: 30px;
+	}
+	margin-left: auto;
+	margin-right: auto;
+
+	display: block;
+
+
+
 	height: 110%;
-	font-family: times;
+	//font-family: times;
 	padding-bottom: 50px;
 	padding-top: 50px;
 	h4, p  {
-		text-align: justify;
+		// text-align: justify;
 		font-size: $global_font_size;
 	}
 	ul {
@@ -89,28 +106,35 @@ html {
 	}
 	.index-page {
 		color: gray;
+
+
+
+
+
+
+
 	}
 
-	.lhs-info {
-		img {
-			margin-bottom: 30px;
-		}
-		p {
-			padding-bottom: 20px;
-		}
-	}
-
-	.rhs-info {
-		h3 {
-			padding-top: 25px;
-		}
-	}
+	// .lhs-info {
+	// 	img {
+	// 		margin-bottom: 30px;
+	// 	}
+	// 	p {
+	// 		padding-bottom: 20px;
+	// 	}
+	// }
+	//
+	// .rhs-info {
+	// 	h3 {
+	// 		padding-top: 25px;
+	// 	}
+	// }
 
 	.links {
 		padding-top: 20px;
 		margin-bottom: 50px;
 		img {
-			height: 30px;
+			height: 20px;
 			width: auto;
 			padding-left: 10px;
 			padding-right: 10px;
@@ -140,22 +164,32 @@ html {
 	}
 	#photos {
 
-		padding-left: 0;
-		padding-right: 0;
+
+
+
+		// padding-left: 0;
+		// padding-right: 0;
 
 		img {
 			//margin-top: 50px;
+
+			// #padding-right: 10px;
+			margin-right: 10px;
 			border-radius: 5px;
+			width: 40%;
+			float: left;
 
-			@media (min-width: $min_desktop_width) {
-					width: 100%;
-					border-radius: 10px;
 
-			}
-			@media(max-width: $max_mobile_width) {
-				width: 70%;
-				//padding-top: 30px;
-			}
+
+			// @media (min-width: $min_desktop_width) {
+			// 		width: 100%;
+			// 		border-radius: 10px;
+			//
+			// }
+			// @media(max-width: $max_mobile_width) {
+			// 	width: 70%;
+			// 	//padding-top: 30px;
+			// }
 		}
 
 	}
@@ -223,22 +257,22 @@ html {
 			.book-rec {
 				position: relative;
 				width: 20%;
-				height: 225px;
+				height: 200px;
 
-				@media (max-width: 1000px) {
+				@media (max-width: 700px) {
 					width: 25%;
 					height: 200px;
 				}
-
-				@media (max-width: 540px) {
+				//
+				@media (max-width: 550px) {
 					width: 33%;
 					height: 200px;
 				}
-
-				@media (max-width: 400px) {
-					width: 33%;
-					height: 150px;
-				}
+				//
+				// @media (max-width: 400px) {
+				// 	width: 33%;
+				// 	height: 150px;
+				// }
 
 				float: left;
 				&:hover {
