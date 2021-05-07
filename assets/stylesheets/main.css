@@ -6,8 +6,19 @@ html {
 
 * {
   font-family: optima;
+  color: gray;
 }
 
+#header .container {
+  width: 670px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 670px) {
+  #header .container {
+    width: 90%;
+  }
+}
 #header nav {
   background-color: white;
   border-color: white;
@@ -51,7 +62,6 @@ html {
   width: 700px;
   margin-left: auto;
   margin-right: auto;
-  display: block;
   height: 110%;
   padding-bottom: 50px;
   padding-top: 50px;
@@ -75,12 +85,16 @@ html {
   padding-bottom: 20px;
   padding-top: 10px;
 }
-.main-body .index-page {
-  color: gray;
+.main-body #divider {
+  border-bottom: inset lightgray 2px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding-top: 10px;
 }
 .main-body .links {
   padding-top: 20px;
-  margin-bottom: 50px;
+  padding-bottom: 20px;
 }
 .main-body .links img {
   height: 20px;
@@ -96,7 +110,11 @@ html {
 .main-body a {
   color: #0099cc;
 }
+.main-body #photos {
+  margin-bottom: 0;
+}
 .main-body #photos img {
+  margin-top: 5px;
   margin-right: 10px;
   border-radius: 5px;
   width: 40%;
@@ -119,6 +137,9 @@ html {
   text-align: justify;
   color: gray;
 }
+.main-body .lectures h3 {
+  padding-bottom: 30px;
+}
 .main-body .lectures h4, .main-body .lectures ul {
   padding-top: 10px;
 }
@@ -139,7 +160,6 @@ html {
 }
 .main-body .books h3 {
   padding-bottom: 30px;
-  padding-top: 30px;
 }
 .main-body .books h4 {
   font-size: 20;
@@ -148,8 +168,12 @@ html {
   color: gray;
   padding-bottom: 20px;
 }
+.main-body .books .pre-books {
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-bottom: 30px;
+}
 .main-body .books .topics {
-  border-bottom: inset lightgray 2px;
   padding-bottom: 30px;
 }
 .main-body .books .topics .row {
@@ -196,10 +220,6 @@ html {
   left: 5%;
   width: 90%;
   text-align: center;
-  /*left: 25%;
-  text-align: center;
-  transform: translate(-10%, 0%);
-  ms-transform: translate(-50%, -50%);*/
 }
 .main-body .books .topics .book-rec .middle .title {
   color: black;
@@ -213,12 +233,12 @@ html {
   font-style: italic;
   font-variant: small-caps;
 }
-.main-body .books ul li {
+.main-body .essays h3 {
+  padding-bottom: 30px;
+}
+.main-body .essays ul li {
   padding-top: 3px;
   padding-bottom: 3px;
-}
-.main-body .books .pre-books {
-  padding-bottom: 30px;
 }
 
 /*# sourceMappingURL=main.css.map */

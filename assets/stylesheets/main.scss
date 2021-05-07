@@ -12,9 +12,21 @@ html {
 	scroll-behavior: smooth;
 }
 
-*{font-family:optima;}
+*{font-family:optima;
+color:gray;}
 
 #header {
+
+	.container {
+		width: 670px;
+
+		@media(max-width: 670px) {
+			width: 90%;
+		}
+		margin-left: auto;
+		margin-right: auto;
+
+	}
 
 	 nav {
 	 	li {
@@ -79,12 +91,7 @@ html {
 	margin-left: auto;
 	margin-right: auto;
 
-	display: block;
-
-
-
 	height: 110%;
-	//font-family: times;
 	padding-bottom: 50px;
 	padding-top: 50px;
 	h4, p  {
@@ -104,35 +111,26 @@ html {
 		padding-bottom: 20px;
 		padding-top: 10px;
 	}
-	.index-page {
-		color: gray;
+	// .index-page {
+	// 	color: gray;
+	// }
 
-
-
-
-
-
+	#top-info {
 
 	}
 
-	// .lhs-info {
-	// 	img {
-	// 		margin-bottom: 30px;
-	// 	}
-	// 	p {
-	// 		padding-bottom: 20px;
-	// 	}
-	// }
-	//
-	// .rhs-info {
-	// 	h3 {
-	// 		padding-top: 25px;
-	// 	}
-	// }
+	#divider {
+		border-bottom: inset lightgray 2px;
+		margin-left: 20px;
+		margin-right: 20px;
+		margin-bottom: 20px;
+		padding-top: 10px;
+	}
 
 	.links {
 		padding-top: 20px;
-		margin-bottom: 50px;
+		padding-bottom: 20px;
+
 		img {
 			height: 20px;
 			width: auto;
@@ -146,50 +144,18 @@ html {
 		}
 	}
 
-	// .info {
-	// 	h4, p {
-	// 		margin-top: 30px;
-	// 		margin-right: 20px;
-	// 		padding-right: 10px;
-	// 	}
-	// 	ul {
-	// 		padding-left: 10px;
-	// 		margin-right: 20px;
-	// 		padding-right: 10px;
-	//
-	// 	}
-	// }
 	a {
 		color: $linkcolor;
 	}
 	#photos {
-
-
-
-
-		// padding-left: 0;
-		// padding-right: 0;
+		margin-bottom: 0;
 
 		img {
-			//margin-top: 50px;
-
-			// #padding-right: 10px;
+			margin-top: 5px;
 			margin-right: 10px;
 			border-radius: 5px;
 			width: 40%;
 			float: left;
-
-
-
-			// @media (min-width: $min_desktop_width) {
-			// 		width: 100%;
-			// 		border-radius: 10px;
-			//
-			// }
-			// @media(max-width: $max_mobile_width) {
-			// 	width: 70%;
-			// 	//padding-top: 30px;
-			// }
 		}
 
 	}
@@ -217,6 +183,9 @@ html {
 
 
 	 .lectures {
+		 h3 {
+			 padding-bottom: 30px;
+		 }
 	 	h4, ul {
 	 		padding-top: 10px;
 	 		li {
@@ -238,7 +207,7 @@ html {
 		}
 		h3 {
 			padding-bottom: 30px;
-			padding-top: 30px;
+			//padding-top: 30px;
 		}
 		h4 {
 			font-size: 20;
@@ -248,8 +217,12 @@ html {
 			padding-bottom: 20px;
 
 		}
+		.pre-books {
+			padding-right: 30px;
+			padding-left: 30px;
+			padding-bottom: 30px;
+		}
 		.topics {
-			border-bottom: inset lightgray 2px;
 			padding-bottom: 30px;
 			.row {
 				padding-top: 50px;
@@ -268,12 +241,6 @@ html {
 					width: 33%;
 					height: 200px;
 				}
-				//
-				// @media (max-width: 400px) {
-				// 	width: 33%;
-				// 	height: 150px;
-				// }
-
 				float: left;
 				&:hover {
 					img {
@@ -315,58 +282,25 @@ html {
 						font-variant: small-caps;
 					}
 
-					/*left: 25%;
-					text-align: center;
-					transform: translate(-10%, 0%);
-					ms-transform: translate(-50%, -50%);*/
 				}
 
 			}
 		}
-		// .favourite-books {
-		// 	border-bottom: inset lightgray 2px;
- 		// 	padding-top: 10px;
- 		// 	padding-bottom: 10px;
- 		// 	margin-bottom: 10px;
-		//
- 		// 	.book-rec {
- 		// 		display: flex;
- 		// 		margin-bottom: 10px;
- 		// 	}
-		//
- 		// 	.col-sm-4 {
-		// 		height: 140px;
-		// 		@media (max-width: $max_mobile_width) {
-		// 			height: 160px;
-		// 			padding-top: 20px;
-		// 		}
-		// 		img {
-		// 			/*position: absolute;*/
-		// 			border-radius: 3px;
-		// 			padding-top: 0;
-		// 			height: auto;
-		// 			width: 85px;
-		// 		}
-		// 		span {
-		// 			overflow: auto;
-		// 			padding-left: 10px;
-		// 			font-size: 10pt;
-		// 			tit {
-		// 				font-weight: bold;
-		// 			}
-		// 			auth {
-		// 				font-style: italic;
-		// 			}
-		// 		}
-		// 	}
-		// }
+	}
 
-	 	ul li {
+	.essays {
+
+		h3 {
+			padding-bottom: 30px;
+		}
+
+		ul li {
 			padding-top: 3px;
 			padding-bottom: 3px;
 	 	}
-	 	.pre-books {
- 			padding-bottom: 30px;
- 		}
 	 }
+
+
+
+
 }
