@@ -8,24 +8,27 @@ $lightgray: #d9d9d9;
 $linkcolor: #0099cc;
 $global_font_size: 12pt;
 
+// --------------------------------
+// GLOBAL
+// --------------------------------
+
 html {
 	scroll-behavior: smooth;
 }
 
-*{font-family:optima;
-color:gray;}
+*{
+	font-family:optima;
+	color:gray;
+}
 
 #header {
-
 	.container {
 		width: 670px;
-
 		@media(max-width: 670px) {
 			width: 90%;
 		}
 		margin-left: auto;
 		margin-right: auto;
-
 	}
 
 	 nav {
@@ -36,8 +39,6 @@ color:gray;}
 		background-color: white;
 		border-color: white;
 
-		//font-family: times;
-		//font-variant: small-caps;
 		.navbar-header {
 			padding-top: 5px;
 			font-weight: bold;
@@ -75,27 +76,59 @@ color:gray;}
 	.navbar-default .navbar-nav>.open>a:focus,
 	.navbar-default .navbar-nav>.open>a:hover {
     	background-color: white;
+		}
 }
 
+#divider {
+	border-bottom: inset lightgray 2px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	padding-top: 10px;
 }
 
+#footer, #footer .container {
 
-.main-body {
+	text-align: center;
+	padding-bottom: 20px;
 
-	width: 700px;
+	width: 670px;
 
-	@media(max-width: 700px) {
+	@media(max-width: 670px) {
 		width: 90%;
-		//padding-top: 30px;
 	}
 	margin-left: auto;
 	margin-right: auto;
 
-	height: 110%;
+	img {
+		height: 20px;
+		width: auto;
+		padding-left: 10px;
+		padding-right: 10px;
+		margin-bottom: 10px;
+		-webkit-transition: opacity .3s;
+				transition: opacity .3s;
+		&:hover {
+			opacity: 0.4;
+		}
+	}
+
+}
+
+// --------------------------------------
+// MAIN PAGE BODIES
+// --------------------------------------
+
+.main-body {
+	width: 700px;
+	@media(max-width: 700px) {
+		width: 90%;
+	}
+	margin-left: auto;
+	margin-right: auto;
 	padding-bottom: 50px;
 	padding-top: 50px;
 	h4, p  {
-		// text-align: justify;
 		font-size: $global_font_size;
 	}
 	ul {
@@ -105,28 +138,15 @@ color:gray;}
 	}
 	h2,h3 {
 		color: gray;
+		padding-top: 15px;
 	}
 	.quote {
 		color: gray;
 		padding-bottom: 20px;
 		padding-top: 10px;
 	}
-	// .index-page {
-	// 	color: gray;
-	// }
 
-	#top-info {
-
-	}
-
-	#divider {
-		border-bottom: inset lightgray 2px;
-		margin-left: 20px;
-		margin-right: 20px;
-		margin-bottom: 20px;
-		padding-top: 10px;
-	}
-
+	// Links on index page
 	.links {
 		padding-top: 20px;
 		padding-bottom: 20px;
@@ -147,6 +167,8 @@ color:gray;}
 	a {
 		color: $linkcolor;
 	}
+
+	// Main photo on index page
 	#photos {
 		margin-bottom: 0;
 
@@ -159,6 +181,10 @@ color:gray;}
 		}
 
 	}
+
+// --------------------------------------------
+// INDIVIDUAL PAGES
+// --------------------------------------------
 
 
 	.papers, .theses {
@@ -181,10 +207,9 @@ color:gray;}
 		}
 	}
 
-
 	 .lectures {
-		 h3 {
-			 padding-bottom: 30px;
+		 p {
+			 padding-top: 25px;
 		 }
 	 	h4, ul {
 	 		padding-top: 10px;
@@ -207,7 +232,6 @@ color:gray;}
 		}
 		h3 {
 			padding-bottom: 30px;
-			//padding-top: 30px;
 		}
 		h4 {
 			font-size: 20;
@@ -236,7 +260,6 @@ color:gray;}
 					width: 25%;
 					height: 200px;
 				}
-				//
 				@media (max-width: 550px) {
 					width: 33%;
 					height: 200px;
@@ -249,14 +272,12 @@ color:gray;}
 					.middle {
 						opacity: 1;
 					}
-
 				}
 				img {
 				  opacity: 1;
 				  display: block;
 				  width: 100%;
 				  height: 100%;
-				  /*height: auto;*/
 				  transition: .5s ease;
 				  backface-visibility: hidden;
 				}
@@ -281,26 +302,18 @@ color:gray;}
 						font-style: italic;
 						font-variant: small-caps;
 					}
-
 				}
-
 			}
 		}
 	}
 
 	.essays {
-
 		h3 {
 			padding-bottom: 30px;
 		}
-
 		ul li {
 			padding-top: 3px;
 			padding-bottom: 3px;
 	 	}
 	 }
-
-
-
-
 }

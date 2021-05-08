@@ -123,7 +123,27 @@
 				<ul>
 					<li>
 						The Graph-Simplex Correspondence and its Algorithmic Foundations. [<a href="files/ox_thesis.pdf">pdf</a>]<br>
-						M.Sc. Thesis.
+						M.Sc. Thesis. <br>
+						<button data-toggle="collapse" data-target="#abs0">+ Abstract</button>
+						<div id="abs0" class="collapse abs">
+							We present and study the graph-simplex correspondence&mdash;a tool providing a series of relationships between weighted, undirected graphs on \(n\) vertices and simplices in \((n-1)\)-dimensional
+							Euclidean space. The core of the correspondence is a bijection between graphs and hyperacute simplices, first uncovered by Miroslav Fiedler. We consolidate Fiedler's work on the
+							subject and expand on it in several ways. <br>
+							The first relates purely to the mathematical properties of the correspondence. Among
+							other things, we extend the correspondence to the normalized Laplacian matrix \(\widehat{L}_G\) (whereas
+							previously only the combinatorial Laplacian, \(L_G\), had been used), develop new equations
+							and inequalities relating aspects of the simplex to those of the graph, and give an isometry
+							between a graph's "inverse combinatorial simplex" and an \(n\)-dimensional polytope arising
+							from the Laplacian's pseudoinverse. <br>
+							Secondly, we examine the algorithmic underpinnings and consequences of the correspondence. We begin by demonstrating that it can be used to draw conclusions about the computational complexity of various geometric problems. We then provide lower bounds on
+							the complexity of transitioning between graphs and simplices, and end by studying low dimensional representations of the simplices. This provides theoretical justification for recent
+							empirical work on Laplacian eigenmaps. <br>
+							Of possible independent interest, we provide a formula for the non-zero eigenvalues of
+							\(\widehat{L}_G\) in terms of the total weight of spanning trees in the graph \(G\), relate the volume of an
+							arbitrary simplex to the eigenvalues of the Gram matrix of its dual simplex (an object we
+							introduce), and give an equation for the adjugate of \(\widehat{L}_G\) in terms of the weights of the vertices
+							in \(G\).
+						</div>
 					</li>
 					<li>A Model for Computing in Dynamic, Resource-Limited Environments. <br>
 					B.Sc. Thesis.
@@ -133,6 +153,12 @@
 			</p>
 		</div>
 
+	</div>
+
+	<div id='footer'>
+		<script>
+				$("#footer").load("shared/footer.html");
+		</script>
 	</div>
 </body>
 </html>
