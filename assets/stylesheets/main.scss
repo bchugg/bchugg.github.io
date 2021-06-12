@@ -116,7 +116,7 @@ html {
 }
 
 // --------------------------------------
-// MAIN PAGE BODIES
+// MAIN PAGE
 // --------------------------------------
 
 .main-body {
@@ -131,10 +131,14 @@ html {
 	h4, p  {
 		font-size: $global_font_size;
 	}
-	ul {
+	li {
+		font-size: $global_font_size;
+	}
+	#writing {
 		li {
-			font-size: $global_font_size;
+			padding-top: 10px;
 		}
+
 	}
 	h2,h3 {
 		color: gray;

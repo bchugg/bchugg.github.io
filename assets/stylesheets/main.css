@@ -106,8 +106,11 @@ html {
 .main-body h4, .main-body p {
   font-size: 12pt;
 }
-.main-body ul li {
+.main-body li {
   font-size: 12pt;
+}
+.main-body #writing li {
+  padding-top: 10px;
 }
 .main-body h2, .main-body h3 {
   color: gray;
