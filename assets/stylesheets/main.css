@@ -149,6 +149,15 @@ html {
   width: 40%;
   float: left;
 }
+.main-body .writing {
+  font-size: 12pt;
+}
+.main-body .writing p {
+  padding-top: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid lightgray;
+  border-width: thin;
+}
 .main-body .papers li, .main-body .theses li {
   padding-top: 5px;
   padding-bottom: 5px;

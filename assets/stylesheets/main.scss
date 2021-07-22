@@ -190,6 +190,16 @@ html {
 // INDIVIDUAL PAGES
 // --------------------------------------------
 
+	.writing {
+		font-size: 12pt;
+		p {
+			padding-top: 12px;
+			padding-bottom: 10px;
+			border-bottom: 1px solid lightgray;
+			border-width: thin;
+		}
+	}
+
 
 	.papers, .theses {
 		li {
