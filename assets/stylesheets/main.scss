@@ -194,9 +194,14 @@ html {
 		font-size: 12pt;
 		p {
 			padding-top: 12px;
-			padding-bottom: 10px;
+		}
+		.sep {
+			text-align: center;
 			border-bottom: 1px solid lightgray;
-			border-width: thin;
+			padding-top: 10px;
+			margin-bottom: 25px;
+			margin-left: 50px;
+			margin-right: 50px;
 		}
 	}
 

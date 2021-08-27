@@ -154,9 +154,14 @@ html {
 }
 .main-body .writing p {
   padding-top: 12px;
-  padding-bottom: 10px;
+}
+.main-body .writing .sep {
+  text-align: center;
   border-bottom: 1px solid lightgray;
-  border-width: thin;
+  padding-top: 10px;
+  margin-bottom: 25px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 .main-body .papers li, .main-body .theses li {
   padding-top: 5px;
