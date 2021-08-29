@@ -163,6 +163,9 @@ html {
   margin-left: 50px;
   margin-right: 50px;
 }
+.main-body .papers h3, .main-body .theses h3 {
+  padding-bottom: 20px;
+}
 .main-body .papers li, .main-body .theses li {
   padding-top: 5px;
   padding-bottom: 5px;
