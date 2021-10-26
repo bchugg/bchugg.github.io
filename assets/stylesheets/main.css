@@ -92,6 +92,7 @@ html {
 }
 
 .main-body {
+  text-align: justify;
   width: 700px;
   margin-left: auto;
   margin-right: auto;
