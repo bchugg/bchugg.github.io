@@ -5,7 +5,7 @@ html {
 }
 
 * {
-  font-family: optima;
+  font-family: optima !important;
   color: gray;
 }
 
@@ -106,6 +106,9 @@ html {
 }
 .main-body h4, .main-body p {
   font-size: 12pt;
+}
+.main-body ul {
+  padding-left: 20px;
 }
 .main-body li {
   font-size: 12pt;

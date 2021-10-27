@@ -7,17 +7,18 @@ $tan: #F6F1EB;
 $lightgray: #d9d9d9;
 $linkcolor: #0099cc;
 $global_font_size: 12pt;
+$global_font_family: optima;
 
 // --------------------------------
 // GLOBAL
 // --------------------------------
 
 html {
-	scroll-behavior: smooth;
+	scroll-behavior: smooth;	
 }
 
 *{
-	font-family:optima;
+	font-family: $global_font_family !important;
 	color:gray;
 }
 
@@ -131,6 +132,9 @@ html {
 	padding-top: 50px;
 	h4, p  {
 		font-size: $global_font_size;
+	}
+	ul {
+		padding-left: 20px;
 	}
 	li {
 		font-size: $global_font_size;
