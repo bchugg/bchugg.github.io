@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>benny</title>
+ <link href="http://localhost:4000/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/"/>
+ <updated>2021-12-23T22:16:22-07:00</updated>
+ <id>http://localhost:4000</id>
+ <author>
+   <name>Ben Chugg</name>
+   <email>ben.ih.chugg@gmail.com</email>
+ </author>
+
+ 
+
+</feed>
