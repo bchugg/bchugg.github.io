@@ -1,0 +1,206 @@
+<html>
+<head>
+	<title>Papers &middot; Ben Chugg</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="assets/stylesheets/main.css">
+
+	<!-- JQuery -->
+	<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Bootstrap -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!-- Mathjax -->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+	<div id='header' class='container-fluid header'></div>
+	<script>
+    	$("#header").load("shared/header.html");
+	</script>
+	<div class='container-fluid main-body'>
+		<div class='papers'>
+			<!-- <p>
+				<em>I don't have any particular recipe [for developing new proofs] ... It is like being lost in a jungle and trying to use all the knowledge that you can gather to come up with some new tricks, and with some luck, you might find a way out.</em> - <a href="https://en.wikipedia.org/wiki/Maryam_Mirzakhani">Maryam Mirzakhani</a>
+			</p> -->
+			<p style="text-align: center; padding-bottom: 20px;">
+				<em>"Curiouser and curiouser!" Cried Alice.</em>
+			</p>
+
+			<p>
+				<ul>
+					<li>
+						Peter Henderson<sup>*</sup>, Ben Chugg<sup>*</sup>, Brandon Anderson, Daniel E. Ho. <b>Beyond Ads: Sequential Decision-Making Algorithms in Public Policy.</b> 
+						<em>Neural Information Processing Systems, Workshop on Causal Inference Challenges in Sequential Decision Making: Bridging Theory and Practice.</em> 2021. <br> 
+						<button data-toggle="collapse" data-target="#abs8">+ Abstract</button> | <a href="https://arxiv.org/pdf/2112.06833.pdf" rel='nofollow'>arXiv</a>
+						<div id="abs8" class="collapse abs">
+							We explore the promises and challenges of employing sequential decision-making algorithms &mdash; such as bandits, reinforcement learning, and active learning &mdash; in the public sector. While such algorithms have been heavily studied in settings that are suitable for the private sector (e.g., online advertising), the public sec- tor could greatly benefit from these approaches, but poses unique methodological challenges for machine learning. We highlight several applications of sequential decision-making algorithms in regulation and governance, and discuss areas for further research which would enable them to be more widely applicable, fair, and effective. In particular, ensuring that these systems learn rational, causal decision- making policies can be difficult and requires great care. We also note the potential risks of such deployments and urge caution when conducting work in this area. We hope our work inspires more investigation of public-sector sequential decision-making applications, which provide unique challenges for machine learning researchers and can be socially beneficial.
+						</div>
+					</li>
+					<li>
+						Ben Chugg, Daniel E. Ho. <b>Reconciling Risk Allocation and Prevalence Estimation in Public Health Using Batched Bandits. </b> <em>Neural Information Processing Systems, Workshop on Machine Learning in Public Health.</em> 2021. 
+						<br>
+						<button data-toggle="collapse" data-target="#abs7">+ Abstract</button> | <a href="https://arxiv.org/abs/2110.13306" rel='nofollow'>arXiv</a>
+						<div id="abs7" class="collapse abs">
+							In many public health settings, there is a perceived tension between
+							allocating resources to known vulnerable areas and learning about the overall
+							prevalence of the problem. Inspired by a door-to-door Covid-19 testing program
+							we helped design, we combine multi-armed bandit strategies and insights from
+							sampling theory to demonstrate how to recover accurate prevalence estimates
+							while continuing to allocate resources to at-risk areas. We use the outbreak of
+							an infectious disease as our running example. The public health setting has
+							several characteristics distinguishing it from typical bandit settings, such as
+							distribution shift (the true disease prevalence is changing with time) and
+							batched sampling (multiple decisions must be made simultaneously).
+							Nevertheless, we demonstrate that several bandit algorithms are capable
+							out-performing greedy resource allocation strategies, which often perform worse
+							than random allocation as they fail to notice outbreaks in new areas.
+						</div>
+
+					</li>
+					<li>
+						Ben Chugg<sup>*</sup>, Brandon Anderson<sup>*</sup>, Seiji Eicher, Sandy Lee, Daniel E. Ho. 
+						<b>Enhancing Environmental Enforcement with Near Real-Time Monitoring: Likelihood-Based Detection of Structural Expansion of Intensive Livestock Farms.</b> 
+						<em>Journal of Applied Earth Observation and Geoinformation.</em> 2021.
+						<br>
+						<button data-toggle="collapse" data-target="#abs6">+ Abstract</button> | <a href="https://www.sciencedirect.com/science/article/pii/S0303243421001707" rel='nofollow'>journal version</a> | 
+						<a href="https://arxiv.org/pdf/2105.14159.pdf" rel='nofollow'>arXiv</a> | 
+						<a href="https://github.com/reglab/building-expansion" rel='nofollow'>Code</a> 
+						<div id="abs6" class="collapse abs">
+							Environmental enforcement has historically relied on physical, resource-intensive, and infrequent inspections. Advances in remote sensing and computer vision have the potential to augment compliance monitoring, by providing early warning signals of permit violations. We demonstrate a process for rapid identification of significant structural expansion using satellite imagery and focusing on Concentrated Animal Feeding Operations (CAFOs) as a test case. Unpermitted expansion has been a particular challenge with CAFOs, which pose significant health and environmental risks. Using a new hand-labeled dataset of 175,736 images of 1,513 CAFOs, we combine state-of-the-art building segmentation with a likelihood-based change-point detection model to provide a robust signal of building expansion (AUC = 0.80). A major advantage of this approach is that it is able to work with high-cadence (daily to weekly), but lower resolution (3m/pixel), satellite imagery. It is also highly generalizable and thus provides a near real-time monitoring tool to prioritize enforcement resources to other settings where unpermitted construction poses environmental risk, e.g. zoning, habitat modification, or wetland protection.
+						</div>
+					</li>
+					<li>
+						Ben Chugg<sup>*</sup>, Lisa Lu<sup>*</sup>, Derek Ouyang<sup>*</sup>, Ben Anderson, Raymond Ha <em>et al.</em>
+						<b>Evaluation of Allocation Schemes of COVID-19 Testing Resources in a Community-Based Door-to-Door Testing Program.</b>
+						<em>Journals of the American Medical Assocation (JAMA), Health Forum.</em> 2021. <br> 
+						 <a href="https://jamanetwork.com/journals/jama-health-forum/fullarticle/2783658" rel='nofollow'>journal version</a>
+						<!-- More Info: <a href="https://www.dailymail.co.uk/health/article-9933081/Hispanics-three-times-likely-door-door-COVID-19-test.html" rel='nofollow'>Daily Mail</a>, <a href="https://infodig.site/using-data-science-to-allocate-covid-19-resources-address-demographic-disparities/" rel='nofollow'>Infodig</a>,
+						<a href="https://news.stanford.edu/2021/08/27/using-data-science-allocate-covid-19-resources-address-demographic-disparities/" rel='nofollow'>Stanford News</a>, <a href="https://www.labpulse.com/index.aspx?sec=ser&sub=def&pag=dis&ItemID=802267" rel='nofollow'>LabPulse summary.</a> -->
+						<br>
+					</li>
+					<li>
+						Hooman Hashemi, Ben Chugg, Anne Condon. 
+						<b>Composable Computation in Leaderless, Discrete Chemical Reaction Networks.</b> <em>International Conference on DNA Computing and Molecular Programming.</em> 2020.
+						<br>
+						<button data-toggle="collapse" data-target="#abs4">+ Abstract</button> | <a href="https://drops.dagstuhl.de/opus/volltexte/2020/12956/pdf/LIPIcs-DNA-2020-3.pdf">conference version</a>
+						<div id="abs4" class="collapse abs">
+							We classify the functions \(f:\mathbb{N}^d \rightarrow \mathbb{N}\)
+							that are stably computable by leaderless, output-oblivious discrete (stochastic)
+							Chemical Reaction Networks (CRNs). CRNs that compute such functions
+							are systems of reactions over species that include \(d\) designated
+							input species, whose initial counts represent an input \(x \in
+							\mathbb{N}^d\), and one output species whose eventual count represents
+							\(f(x)\). Chen et al. showed that the class of functions computable by CRNs is
+							precisely the semilinear functions.
+							In output-oblivious CRNs, the output species is never a reactant. Output-oblivious CRNs are easily composable since a downstream CRN can consume the output of an upstream CRN without affecting its correctness. Severson et al. showed that output-oblivious CRNs compute exactly the subclass of semilinear functions that are eventually the minimum of
+							quilt-affine functions, i.e., affine functions with different intercepts in each of finitely many congruence classes. They call such functions the output-oblivious functions. A leaderless CRN can compute only superadditive functions, and so a leaderless output-oblivious CRN can compute only superadditive, output-oblivious functions. In this work we show that a function
+							\(f:\mathbb{N}^d \rightarrow \mathbb{N}\) is stably computable by a leaderless, output-oblivious CRN if and only if it is superadditive and
+							output-oblivious.
+						</div>
+					</li>
+					<li>
+						Ben Chugg, Will Evans, Kelvin Wong. 
+						<b>Simultaneous Visibility Representations of Undirected Graphs.</b> <em>Canadian Conference on Computational Geometry. 2020.</em> <em>Journal of Computational Geometry</em>. 2021. 
+						<br>
+						<button data-toggle="collapse" data-target="#abs3">+ Abstract</button>  | <a href="https://www.sciencedirect.com/science/article/abs/pii/S0925772121000444" rel='nofollow'>journal version</a> | <a href="https://arxiv.org/pdf/2005.00937.pdf" rel='nofollow'>arXiv</a>
+						<div id="abs3" class="collapse abs">
+							We consider the problem of determining if a pair of undirected graphs \(\langle G_V,G_H\rangle\), which share the same vertex set, has a representation using opaque geometric shapes for vertices, and vertical/horizontal visibility between shapes to determine the edges of \(G_V/G_H\). While such a simultaneous visibility representation of two graphs can be determined efficiently if the direction of the required visibility for each edge is provided (and the vertex shapes are sufficiently simple), it was unclear if edge direction is critical for efficiency. We show that the problem is NP-complete without that information, even for graphs that are only slightly more complex than paths. In addition, we characterize which pairs of paths have simultaneous visibility representations using fixed orientation L-shapes. This narrows the range of possible graph families for which determining simultaneous visibility representation is non-trivial yet not NP-hard.
+						</div>
+					</li>
+					<li>
+						Ben Chugg. <b>The Graph-Simplex Correspondence and its Algorithmic Foundations.</b> 
+						M.Sc. Thesis, The University of Oxford. 2019. <br>
+						<button data-toggle="collapse" data-target="#abs0">+ Abstract</button> | <a href="files/ox_thesis.pdf">pdf</a>
+						<div id="abs0" class="collapse abs">
+							We present and study the graph-simplex correspondence&mdash;a tool providing a series of relationships between weighted, undirected graphs on \(n\) vertices and simplices in \((n-1)\)-dimensional
+							Euclidean space. The core of the correspondence is a bijection between graphs and hyperacute simplices, first uncovered by Miroslav Fiedler. We consolidate Fiedler's work on the
+							subject and expand on it in several ways. <br>
+							The first relates purely to the mathematical properties of the correspondence. Among
+							other things, we extend the correspondence to the normalized Laplacian matrix \(\widehat{L}_G\) (whereas
+							previously only the combinatorial Laplacian, \(L_G\), had been used), develop new equations
+							and inequalities relating aspects of the simplex to those of the graph, and give an isometry
+							between a graph's "inverse combinatorial simplex" and an \(n\)-dimensional polytope arising
+							from the Laplacian's pseudoinverse. <br>
+							Secondly, we examine the algorithmic underpinnings and consequences of the correspondence. We begin by demonstrating that it can be used to draw conclusions about the computational complexity of various geometric problems. We then provide lower bounds on
+							the complexity of transitioning between graphs and simplices, and end by studying low dimensional representations of the simplices. This provides theoretical justification for recent
+							empirical work on Laplacian eigenmaps. <br>
+							Of possible independent interest, we provide a formula for the non-zero eigenvalues of
+							\(\widehat{L}_G\) in terms of the total weight of spanning trees in the graph \(G\), relate the volume of an
+							arbitrary simplex to the eigenvalues of the Gram matrix of its dual simplex (an object we
+							introduce), and give an equation for the adjugate of \(\widehat{L}_G\) in terms of the weights of the vertices
+							in \(G\).
+						</div>
+					</li>
+					<li>
+						Ben Chugg, Takanori Maehara. 
+						<b>Submodular Stochastic Probing with Prices.</b> <em> International Conference on Control, Decision, and Information Technologies. </em> 2019. 
+						<br>
+						<button data-toggle="collapse" data-target="#abs2">+ Abstract</button>  | <a href="https://arxiv.org/pdf/1810.01730.pdf" rel='nofollow'>arXiv</a>
+						<div id="abs2" class="collapse abs">
+							We introduce Stochastic Probing with Prices (SPP), a variant of the Stochastic
+							Probing (SP) model in which we must pay a price to probe an element. A SPP problem involves two set systems \((\mathcal{N} , \mathcal{I}_{in})\) and \((\mathcal{N} , \mathcal{I}_{out})\) where each \(e\in\mathcal{N}\) is active with
+							probability \(p_e\). To discover whether an element \(e\) is active, it must be probed by paying
+							the price \(\Delta_e\). If an element is probed and is active, then it is irrevocably added to the
+							solution. Moreover, at all times, the set of probed elements must lie in \(\mathcal{I}_{out}\), and the
+							solution (the set of probed and active elements) must lie in \(\mathcal{I}_{in}\). The goal is to maximize a submodular set function \(f\) minus the cost of the probes. We give a bi-criteria
+							approximation algorithm to the online version of this problem, in which the elements
+							are shown to the algorithm in a possibly adversarial order. Our results translate to
+							state-of-the-art approximations for the traditional (online) stochastic probing problem.
+						</div>
+					</li>
+					<li>
+						Ben Chugg, Anne Condon, Hooman Hashemi. 
+						<b>Output-Oblivious Stochastic Chemical Reaction Networks.</b> <em>International Conference on Principles of Distributed Systems</em>. 2018. 
+						<br>
+						<button data-toggle="collapse" data-target="#abs1">+ Abstract</button>
+						| <a href="https://drops.dagstuhl.de/opus/volltexte/2018/10081/pdf/LIPIcs-OPODIS-2018-21.pdf" rel='nofollow'>conference version</a> | <a href="https://arxiv.org/abs/1812.04401" rel='nofollow'>arXiv</a>
+						<div id="abs1" class="collapse abs">
+							We classify the functions \(f: \mathbb{N}^2\to \mathbb{N}\)
+							which are stably computable by output-oblivious Stochastic
+							Chemical Reaction Networks (CRNs), i.e., systems of reactions in which output species are never
+							reactants. While it is known that precisely the semilinear functions are stably computable by
+							CRNs, such CRNs sometimes rely on initially producing too many output species, and then
+							consuming the excess in order to reach a correct stable state. These CRNs may be difficult to
+							integrate into larger systems: if the output of a CRN \(C\) becomes the input to a downstream CRN \(C'\), then \(C'\)
+							could inadvertently consume too many outputs before \(C\) stabilizes. If, on the other
+							hand, \(C\) is output-oblivious then \(C'\)
+							may consume \(C\)'s output as soon as it is available. In this work
+							we prove that a semilinear function \(f : \mathbb{N}^2\to\mathbb{N}\)
+							is stably computable by an output-oblivious CRN
+							with a leader if and only if it is both increasing and either grid-affine (intuitively, its domains
+							are congruence classes), or the minimum of a finite set of fissure functions (intuitively, functions
+							behaving like the min function).
+						</div>
+					</li>
+					<li>
+						Ben Chugg. <b>A Model for Computing in Dynamic, Resource-Limited Environments.</b> 
+						B.Sc Thesis, The University of British Columbia. 2018. 
+						</li>
+				</ul>
+
+
+			</p>
+
+		</div>
+
+	</div>
+
+	<div id='footer'>
+		<script>
+				$("#footer").load("shared/footer.html");
+		</script>
+	</div>
+</body>
+</html>

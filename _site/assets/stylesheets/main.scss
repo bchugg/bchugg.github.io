@@ -1,0 +1,350 @@
+/* The css file is generated automatically from the
+sass file */
+
+$min_desktop_width: 768px;
+$max_mobile_width: 767px;
+$tan: #F6F1EB;
+$lightgray: #d9d9d9;
+$linkcolor: #0099cc;
+$global_font_size: 12pt;
+$global_font_family: optima;
+
+// --------------------------------
+// GLOBAL
+// --------------------------------
+
+html {
+	scroll-behavior: smooth;	
+}
+
+*{
+	font-family: $global_font_family !important;
+	color:gray;
+}
+
+#header {
+	.container {
+		width: 670px;
+		@media(max-width: 670px) {
+			width: 90%;
+		}
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	 nav {
+	 	li {
+	 		padding-top: 5px;
+	 		padding-right: 5px;
+	 	}
+		background-color: white;
+		border-color: white;
+
+		.navbar-header {
+			padding-top: 5px;
+			font-weight: bold;
+			.navbar-toggle {
+				background-color: white;
+				border-color: white;
+			}
+			a {
+				color: $linkcolor;
+			}
+		}
+		.navbar-right {
+			.dropdown {
+				.dropdown-menu {
+					border-color: white;
+					li {
+						&:hover {
+							background-color: white;
+						}
+					}
+				}
+			}
+			a {
+				font-size: 12pt;
+				color: gray;
+				&:hover {
+					color: $linkcolor;
+					text-decoration: none;
+				}
+			}
+
+		}
+	}
+	.navbar-default .navbar-nav>.open>a,
+	.navbar-default .navbar-nav>.open>a:focus,
+	.navbar-default .navbar-nav>.open>a:hover {
+    	background-color: white;
+		}
+}
+
+#divider {
+	border-bottom: inset lightgray 2px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	padding-top: 10px;
+}
+
+#footer, #footer .container {
+
+	text-align: center;
+	padding-bottom: 20px;
+
+	width: 670px;
+
+	@media(max-width: 670px) {
+		width: 90%;
+	}
+	margin-left: auto;
+	margin-right: auto;
+
+	img {
+		height: 20px;
+		width: auto;
+		padding-left: 10px;
+		padding-right: 10px;
+		margin-bottom: 10px;
+		-webkit-transition: opacity .3s;
+				transition: opacity .3s;
+		&:hover {
+			opacity: 0.4;
+		}
+	}
+
+}
+
+// --------------------------------------
+// MAIN PAGE
+// --------------------------------------
+
+.main-body {
+	text-align: justify;
+	width: 700px;
+	@media(max-width: 700px) {
+		width: 90%;
+	}
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 50px;
+	padding-top: 50px;
+	h4, p  {
+		font-size: $global_font_size;
+	}
+	ul {
+		padding-left: 20px;
+	}
+	li {
+		font-size: $global_font_size;
+	}
+	#writing {
+		li {
+			padding-top: 10px;
+		}
+
+	}
+	h2,h3 {
+		color: gray;
+		padding-top: 15px;
+	}
+	.quote {
+		color: gray;
+		padding-bottom: 20px;
+		padding-top: 10px;
+	}
+
+	// Links on index page
+	.links {
+		padding-top: 20px;
+		padding-bottom: 20px;
+
+		img {
+			height: 20px;
+			width: auto;
+			padding-left: 10px;
+			padding-right: 10px;
+			-webkit-transition: opacity .3s;
+        	transition: opacity .3s;
+			&:hover {
+				opacity: 0.4;
+			}
+		}
+	}
+
+	a {
+		color: $linkcolor;
+	}
+
+	// Main photo on index page
+	#photos {
+		margin-bottom: 0;
+
+		img {
+			margin-top: 5px;
+			margin-right: 10px;
+			border-radius: 5px;
+			width: 40%;
+			float: left;
+		}
+
+	}
+
+	iframe {
+		margin-top: 15px;
+	}
+
+// --------------------------------------------
+// INDIVIDUAL PAGES
+// --------------------------------------------
+
+	.writing {
+		font-size: 12pt;
+		p {
+			padding-top: 12px;
+		}
+		.sep {
+			text-align: center;
+			border-bottom: 1px solid lightgray;
+			padding-top: 10px;
+			margin-bottom: 25px;
+			margin-left: 50px;
+			margin-right: 50px;
+		}
+	}
+
+
+	.papers, .theses {
+		h3 {
+			padding-bottom: 20px;
+		}
+		li {
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+		button {
+			background-color: transparent;
+			border-width: 0;
+			color: $linkcolor;
+			&:focus {
+				outline: none;
+				border-width: 0;
+			}
+		}
+		.abs {
+			text-align: justify;
+			color: gray;
+		}
+	}
+
+	 .lectures {
+		 p {
+			 padding-top: 25px;
+		 }
+	 	h4, ul {
+	 		padding-top: 10px;
+	 		li {
+	 			padding-bottom: 8px;
+	 		}
+	 	}
+	 }
+
+	 .books {
+	 	font-size: $global_font_size;
+	 	#non-fiction, #fiction {
+	 		color: gray;
+	 		text-align: center;
+	 		text-decoration: underline;
+	 	}
+		.links {
+			padding-top: 0;
+			margin-bottom: -10px;
+		}
+		h3 {
+			padding-bottom: 30px;
+		}
+		h4 {
+			font-size: 20;
+			text-decoration: underline;
+			text-align: center;
+			color: gray;
+			padding-bottom: 20px;
+
+		}
+		.pre-books {
+			padding-right: 30px;
+			padding-left: 30px;
+			padding-bottom: 30px;
+		}
+		.topics {
+			padding-bottom: 30px;
+			.row {
+				padding-top: 50px;
+			}
+			.book-rec {
+				position: relative;
+				width: 20%;
+				height: 200px;
+
+				@media (max-width: 700px) {
+					width: 25%;
+					height: 200px;
+				}
+				@media (max-width: 550px) {
+					width: 33%;
+					height: 200px;
+				}
+				float: left;
+				&:hover {
+					img {
+						opacity: 0.1;
+					}
+					.middle {
+						opacity: 1;
+					}
+				}
+				img {
+				  opacity: 1;
+				  display: block;
+				  width: 100%;
+				  height: 100%;
+				  transition: .5s ease;
+				  backface-visibility: hidden;
+				}
+				.middle {
+					transition: .5s ease;
+					opacity: 0;
+					position: absolute;
+					top: 25%;
+					left: 5%;
+					width: 90%;
+					text-align: center;
+
+					.title {
+						color: black;
+						font-weight: bold;
+						padding-bottom: 10px;
+						border-bottom: solid darkgrey 5px;
+					}
+					auth {
+						margin-top: 0px;
+						color: black;
+						font-style: italic;
+						font-variant: small-caps;
+					}
+				}
+			}
+		}
+	}
+
+	.essays {
+		h3 {
+			padding-bottom: 30px;
+		}
+		ul li {
+			padding-top: 3px;
+			padding-bottom: 3px;
+	 	}
+	 }
+}
