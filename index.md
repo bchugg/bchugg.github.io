@@ -3,15 +3,15 @@ layout: default
 title: "Ben Chugg"
 ---
 
-<img id='headerim' src="/assets/lawme.jpg">
+<img id='headerim' src="/assets/images/lawme.jpg">
 <!-- ![image](/assets/lawme.jpg) -->
 
 I'm lead research analyst at Stanford Law School's 
 Regulation, Evaluation, and Governance Lab (<a href="https://reglab.stanford.edu/" rel='nofollow'>RegLab</a>). I spend most of my time developing and analyzing algorithms, typically with applications to some problem in public policy. 
 
 
-On the side, I co-host the <a href="https://www.incrementspodcast.com/" ref='nofollow'>Increments</a> podcast, where <a href="https://vmasrani.github.io/">Vaden Masrani</a> and I confuse ourselves and others about philosophy and science.
-    Sometimes I [tweet](https://twitter.com/BennyChugg). Research can be confusing; here are some [books]({% link books.md %}) and [courses]({% link courses.md %}) which distract me from my own beffudlement. 
+On the side, I co-host the <a href="https://www.incrementspodcast.com/" ref='nofollow'>Increments</a> podcast, where <a href="https://vmasrani.github.io/">Vaden Masrani</a> and I yell at each other and others about philosophy and science.
+    Research can be confusing; here are some [books]({% link books.md %}) and [courses]({% link courses.md %}) which distract me from my own beffudlement. 
 
 
 You can contact me at benchugg [at] stanford.edu. 

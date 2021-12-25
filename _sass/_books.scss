@@ -1,5 +1,7 @@
 .books {
     font-size: 10pt;
+    overflow: hidden;
+    
     #non-fiction, #fiction {
         color: gray;
         text-align: center;

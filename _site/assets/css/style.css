@@ -263,7 +263,7 @@ tbody tr:nth-child(odd) th {
 
 @media (min-width: 30em) {
   .sidebar {
-    font-size: .75rem;
+    font-size: .9rem;
     /* 14px */ } }
 /* Sidebar content */
 .sidebar {
@@ -275,6 +275,22 @@ tbody tr:nth-child(odd) th {
 
 .sidebar-item {
   padding: 1rem; }
+
+.sidebar-links {
+  padding-top: 20px; }
+  .sidebar-links .container {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .sidebar-links .container img {
+      height: 20px;
+      width: auto;
+      padding-left: 5px;
+      padding-right: 5px;
+      -webkit-transition: opacity .3s;
+      transition: opacity .3s; }
+      .sidebar-links .container img:hover {
+        opacity: 0.4; }
 
 .sidebar-item p:last-child {
   margin-bottom: 0; }
@@ -991,7 +1007,8 @@ pre code {
   font-size: 80%; }
 
 .books {
-  font-size: 10pt; }
+  font-size: 10pt;
+  overflow: hidden; }
   .books #non-fiction, .books #fiction {
     color: gray;
     text-align: center;
@@ -1052,3 +1069,29 @@ pre code {
         color: black;
         font-style: italic;
         font-variant: small-caps; }
+
+#footer {
+  clear: both;
+  padding-bottom: 20px;
+  text-align: center; }
+  @media (max-width: 670px) {
+    #footer {
+      width: 90%; } }
+  #footer .links {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    #footer .links img {
+      height: 20px;
+      width: auto;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-bottom: 10px;
+      -webkit-transition: opacity .3s;
+      transition: opacity .3s; }
+      #footer .links img:hover {
+        opacity: 0.4; }
+  #footer .copyright {
+    padding-top: 10px;
+    text-align: center;
+    clear: both; }
