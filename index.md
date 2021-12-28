@@ -36,8 +36,7 @@ at Oxford, where I studied topics at the intersection of spectral graph theory a
 			
 In 2018, I spent some time at <a href="http://www.riken.jp/en/research/labs/aip/" rel='nofollow'>RIKEN AIP</a>
 in Tokyo, where I was  lucky to work with <a href="http://www.prefield.com/index.html" rel='nofollow'>Dr. Maehara</a>
-as part of the <a href="http://www.riken.jp/en/research/labs/aip/generic_tech/discr_optimize/" rel='nofollow'>Discrete
-Optimization Unit</a>.
+as part of the Discrete Optimization Unit.
 
 My undergraduate was spent at the
 <a href="https://www.ubc.ca/" rel='nofollow'>University of British Columbia</a> studying mathematics and computer science, where I was immensely fortunate to be

@@ -3,6 +3,10 @@ layout: page
 title: Papers
 ---
 
+<p style="text-align: center">
+  <em>"Curiouser and curiouser!" Cried Alice.</em>
+</p>
+
 {% assign publications = site.papers | sort: "date" | reverse %}
 {% for pub in publications %}
 <div class="pubitem">
