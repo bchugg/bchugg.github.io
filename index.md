@@ -21,7 +21,7 @@ You can contact me at benchugg [at] stanford.edu.
 
 # research interests
 My primary interests involve developing robust sequential decision-making algorithms, particularly in settings where traditional assumptions are violated. 
-I try and straddle the borderlands between theory and practice, but I've also spent some time doing purely applied work (typically with a policy focus). 
+I try and straddle the borderlands between theory and practice, but I've also spent some time doing purely applied work. 
 
 I'm also interested in algorithm design and analysis more broadly, having previously worked on problems in graph theory, combinatorial optimization, and stochastic reaction networks.
 
@@ -31,7 +31,7 @@ Papers are [here]({% link papers.md %}).
 
 # erratic bio
 
-Prior to Stanford, I was a grad student at the <a rel='nofollow' href="https://www.maths.ox.ac.uk/">Mathematical Institute</a>
+Prior to Stanford, I was a master's student at the <a rel='nofollow' href="https://www.maths.ox.ac.uk/">Mathematical Institute</a>
 at Oxford, where I studied topics at the intersection of spectral graph theory and geometry. <a href="files/ox_thesis.pdf">Here</a> is my thesis on the subject.
 			
 In 2018, I spent some time at <a href="http://www.riken.jp/en/research/labs/aip/" rel='nofollow'>RIKEN AIP</a>

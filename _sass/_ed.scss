@@ -55,6 +55,10 @@ body {
       -ms-text-size-adjust: 100%;
 }
 
+// .posts {
+//   color: black;
+// }
+
 .content {
   margin-bottom: 4rem;
 }
@@ -89,7 +93,9 @@ body {
 
 @media (min-width: 56em) {
   .container {
-    max-width: 38rem;
+    //max-width: 38rem;
+    max-width: 41rem;
+    //text-align: justify;
   }
 }
 
@@ -197,7 +203,7 @@ img {
 
 /* Header image */
 #headerim {
-  width: 50%;
+  width: 45%;
   //text-align: center;
   height: auto;
   float: left;

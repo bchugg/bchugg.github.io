@@ -5,7 +5,7 @@
   
   
   <!-- Canonical link to help search engines -->
-  <link rel="canonical" href="http://localhost:4000/404.html" />
+  <link rel="canonical" href="http://localhost:4000/research_notes/dual_lp/" />
 
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
@@ -20,22 +20,22 @@
 
   <title>
     
-      Ben &middot; 404: Page not found
+      Ben &middot; Intuition for LP Duality
     
   </title>
 
   <!-- Dublin Core metadata for Zotero -->
-  <meta property="dc:title" content="404: Page not found" />
+  <meta property="dc:title" content="Intuition for LP Duality" />
   <meta property="dc:creator" content="Ben Chugg" />
-  <meta property="dc:identifier" content="http://localhost:4000/404.html" />
+  <meta property="dc:identifier" content="http://localhost:4000/research_notes/dual_lp/" />
   
   
   
   <meta property="dc:source" content="benny" />
 
   <!-- Open Graph metadata -->
-  <meta property="og:title" content="404: Page not found" />
-  <meta property="og:url" content="http://localhost:4000/404.html" />
+  <meta property="og:title" content="Intuition for LP Duality" />
+  <meta property="og:url" content="http://localhost:4000/research_notes/dual_lp/" />
   <meta property="og:image" content="http://localhost:4000/assets/favicon.ico" />
   <meta property="og:image:width" content="200" />
   <meta property="og:image:height" content="200" />
@@ -162,7 +162,7 @@
       document.head.appendChild(hypothesis);"><a class="sidebar-nav-item">Annotate me</a></span> -->
 
   <!--
-    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://localhost:4000/404.html/" data-proofer-ignore>Annotate me</a>
+    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://localhost:4000/research_notes/dual_lp//" data-proofer-ignore>Annotate me</a>
     <script src="https://hypothes.is/embed.js" async></script>
   -->
 
@@ -194,16 +194,75 @@
           <h3 class="masthead-title">
             <a href="/" title="Home">benny</a>
             
-              <br><small>404: Page not found</small>
+              <br><small>Intuition for LP Duality</small>
             
           </h3>
         </div>
       </header>
 
       <main class="container content" id="main">
-        <article class="page">
-  <p>Oy! That URL doesn’t exist.</p>
+        <article class="note">
+  <small>
+    <a href="/research_notes/">Back to all notes</a>
+  </small>
+  <hr>
+  <h1 id="some-intuition-for-the-dual-of-a-linear-program">Some intuition for the dual of a linear program</h1>
+<p>\(\newcommand{R}{\mathbb{R}}\)</p>
 
+<p>Suppose we have the following basic linear program:</p>
+
+\[\begin{align*}
+\max_{x_1,x_2} \quad &amp;  3x_1+2x_2 \\
+ \text{s.t.} \quad &amp; x_1+x_2/2\leq 1, \\
+ &amp; 4x_1+5x_2\leq 5, \\ 
+ &amp; x_1,x_2\geq 0.
+\end{align*}\]
+
+<p>What’s an upper bound on the solution? Five is one, simply because the coefficients of the second constraint are larger than those in the objective. If \(4x_1+5x_2\leq 5\) then because \(3x_1\leq 4x_1\), \(2x_2\leq 5x_2\), we have \(3x_1+2x_2\leq 5\) as well. We could also divide the second constraint through by 3/4 and get that \(3x_1+15x_2/4\leq 15/4\), hence 15/4 is another (tighter) upper bound. If we divide the second constraint by anything smaller than 3/4 however, the coefficient of \(x_1\) will become smaller than 3 (the coefficient of \(x_1\) in the objective function), hence it will not be an upper bound. However, we can get an even tighter bound via linear combinations of the first and second constraints. Dividing the second constraint by 2, and then adding the first constraint yields \(3x_1+3x_2\leq 7/2\), so we get a third, even tigher, upper bound of \(7/2\).</p>
+
+<p>We could go on like this, but we can also formulate this process as an optimization problem. In the cases above, we multiply the two constraints by \(y_1\) and \(y_2\):</p>
+
+\[\begin{align*}
+&amp;y_1(x_1+x_2/2)\leq y_1,\\
+&amp;y_2(4x_1+5x_2)\leq 5y_2,
+\end{align*}\]
+
+<p>and sum the equations. (In the first two attempts, \(y_1=0\)). So that the inequalities don’t flip, we need \(y_1,y_2\geq 0\). We also need to ensure that \(y_1\) and \(y_2\) are large enough so that the coefficients of the result are larger than the coefficients of the objective function. That is, we need that \(y_1+4y_2\geq 3\) and \(y_1/2+5y_2\geq 2\). The bound is then \(y_1+5y_2\). We want the smallest such upper bound, so we want to minimize that sum. That is, we want to solve</p>
+
+\[\begin{align*}
+\min_{y_1,y_2} \quad &amp;y_1+5y_2 \\
+\text{s.t.}\quad &amp; y_1+4y_2\geq 3, \\ 
+&amp; y_1/2+5y_2\geq 2, \\
+&amp; y_1,y_2\geq 0.
+\end{align*}\]
+
+<p>That’s the dual linear program! If we started with the minimization version, we could repeat much the same process and obtain the maximization version. This can be generalized to arbitrary LPs. The LP</p>
+
+\[\begin{align*}
+\max_{\bf{x}\in\R^n} \quad &amp;\sum_{k=1}^n c_kx_k \\ 
+\text{ s.t. }\quad &amp; \forall j\in[m]: \sum_{k=1}^n a_{jk}x_k\leq b_j, \\
+&amp; \bf{x}\geq 0,
+\end{align*}\]
+
+<p>has dual</p>
+
+\[\begin{align*}
+\min_{\bf{y}\in\R^m} \quad &amp; \sum_{k=1}^m b_ky_k \\
+\text{ s.t. }\quad &amp; \forall j\in[n]: \sum_{k=1}^m a_{kj}y_k\geq c_j, \\
+&amp; \bf{y}\geq 0,
+\end{align*}\]
+
+<p>and vice versa. More concisely:</p>
+
+\[\max_{\bf{x}} \bf{c}^T\bf{x} \quad\text{s.t.}\quad A\bf{x}\leq \bf{b},\;\bf{x}\geq 0,\]
+
+<p>has dual</p>
+
+\[\min_{\bf{y}}\bf{b}^T\bf{y}\quad\text{s.t.}\quad A^T\bf{y}\geq \bf{c},\;\bf{y}\geq 0.\]
+
+  <small>
+    <a href="/research_notes/">Back to all notes</a>
+  </small>
 </article>
  <!-- "> -->
       </main>

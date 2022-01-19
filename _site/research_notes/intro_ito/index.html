@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head prefix="og: http://ogp.me/ns#; dc: http://purl.org/dc/terms/#">
+  
+  
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="http://localhost:4000/research_notes/intro_ito/" />
+
+  <!-- Basic meta elements -->
+  <meta charset="utf-8" />
+
+  <!-- Enable responsiveness on mobile devices -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+
+  <!-- Mathjax Support -->
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <title>
+    
+      Ben &middot; Introduction to Itô Integration
+    
+  </title>
+
+  <!-- Dublin Core metadata for Zotero -->
+  <meta property="dc:title" content="Introduction to Itô Integration" />
+  <meta property="dc:creator" content="Ben Chugg" />
+  <meta property="dc:identifier" content="http://localhost:4000/research_notes/intro_ito/" />
+  
+  
+  
+  <meta property="dc:source" content="benny" />
+
+  <!-- Open Graph metadata -->
+  <meta property="og:title" content="Introduction to Itô Integration" />
+  <meta property="og:url" content="http://localhost:4000/research_notes/intro_ito/" />
+  <meta property="og:image" content="http://localhost:4000/assets/favicon.ico" />
+  <meta property="og:image:width" content="200" />
+  <meta property="og:image:height" content="200" />
+  <meta property="fb:admins" content="elotroalex" />
+  <meta property="fb:app_id" content="589495744558280" />
+
+
+  <meta property="og:description" content="">
+  <meta property="og:type" content="article" />
+
+
+  <!-- CSS link -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/assets/favicon.ico" />
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="114×114" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="72×72" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” href="/assets/favicon.ico" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml" />
+</head>
+
+
+  <body class="theme-base-">
+
+    <!-- This if statement decides which sidebar to use -->
+    
+    <!--
+  Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for
+  behavior.
+-->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p></p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/papers/">Papers</a>
+        
+      
+    
+      
+        
+      
+    
+
+    <a class='sidebar-nav-item' href="http://incrementspodcast.com">Podcast</a>
+
+    <span class='sidebar-nav-item'>Recommendations</span>
+    <ul class="dropdown-menu">
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+            <li><a href="/books/">Books</a></li>
+          
+        
+      
+        
+          
+            <li><a href="/courses/">Courses</a></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </ul>
+
+
+    <!-- The code below is used for manually entered links  -->
+    <!-- <span style='cursor:pointer;' onclick="javascript:var hypothesis = document.createElement('script');
+      hypothesis.setAttribute('src','https://hypothes.is/embed.js');
+      document.head.appendChild(hypothesis);"><a class="sidebar-nav-item">Annotate me</a></span> -->
+
+  <!--
+    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://localhost:4000/research_notes/intro_ito//" data-proofer-ignore>Annotate me</a>
+    <script src="https://hypothes.is/embed.js" async></script>
+  -->
+
+    <!-- <a class="sidebar-nav-item" href="https://github.com/minicomp/ed" target="_blank">GitHub project</a> -->
+   </nav> 
+
+  <div class="sidebar-links">
+    <div class='container'>
+      <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github_white.png"></a>
+      <a href="https://www.linkedin.com/in/ben-chugg-3a4616aa/" rel='nofollow'><img src="/assets/images/linkedin_white.png"></a>
+      <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads_white.png"></a>
+      <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter_white.png"></a>
+    </div>
+     <!-- <p>
+      A modified version of <a href="https://minicomp.github.io/ed/">Ed.</a> 
+    </p>  -->
+  </div>
+</aside>
+
+    
+
+    <!--
+      Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS
+      collisions with our real content.
+    -->
+    <div class="wrap">
+      <header class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">benny</a>
+            
+              <br><small>Introduction to Itô Integration</small>
+            
+          </h3>
+        </div>
+      </header>
+
+      <main class="container content" id="main">
+        <article class="note">
+  <small>
+    <a href="/research_notes/">Back to all notes</a>
+  </small>
+  <hr>
+  <h1 id="introduction-to-itô-integration">Introduction to Itô Integration</h1>
+<p>\(\newcommand{\dif}{\;\text{d}}\newcommand{\ind}{\mathbf{1}}\newcommand{\R}{\mathbb{R}}\newcommand{\F}{\mathcal{F}}\renewcommand{P}{\mathbb{P}}\newcommand{\B}{\mathcal{B}}\newcommand{\E}{\mathbb{E}}\)</p>
+
+<p>Traditional calculus is nice, sure. But sometimes you have some nice stochastic processes that don’t obey the requirements needed for the usual differentiation or integration (in particular, they may be nowhere differentiable). This doesn’t stop us from wanting to try and do something similar with them. We’ll start with integration, because, unlike in calculus with nice smooth and deterministic functions, it’s easier.</p>
+
+<p>Our goal is to make sense of the object</p>
+
+\[\begin{equation*}
+    I_T(X) \equiv \int_0^T X\dif W = \int_0^T X_t(\omega)\dif W_t(\omega),
+\end{equation*}\]
+
+<p>where both \(X\) and \(W\) are stochastic processes (w.r.t. time, hence the bounds). 
+Note that \(X\) and \(W\) are both functions of time and some underlying probability space \((\Omega, \F, \P)\). They can be viewed as measurable maps on the product space of \(\Omega\) and the given time interval,</p>
+
+\[X:[0,T]\times \Omega \to\R,\]
+
+<p>with the underlying product measure \(\B_T\otimes\F\) where \(\B_T\) is the Borel \(\sigma\)-algebra on \([0,T]\). Such details will mostly be unimportant and, as usual, we’ll mostly forget the dependence on \(\omega\) and write \(X_t\) or \(X(t)\). But recalling the dependence on elements of \(\Omega\) can be helpful for making sense of certain statements. For instance, for fixed \(\omega\) the integral</p>
+
+\[\int_0^T X(t,\omega)\dif t,\]
+
+<p>is a normal (deterministic) Lebesgue integral whose value is a function of \(\omega\). The expectation over \(\Omega\) is thus also well-defined:</p>
+
+\[\E_\omega\bigg[\int_0^T X(t,\omega) \dif t\bigg]=\E\int_0^T X_t \dif t.\]
+
+<p>We’ll mostly use the notation on the right for conciseness, but keeping the left hand side in mind will help when shit gets a little hairy.</p>
+
+<p>Before we diving into the construction of a whole new object, we should probably ask ourselves whether this is necessary at all. Why don’t the usual notions of integration work here? \(W\) is not a measure, so it’s hard to see how to apply Lebesgue integration. Riemann-Stieltjes integration is an obvious candidate, but this doesn’t work if \(W\) isn’t sufficiently well-behaved. In particular, it should be of bounded variation. Recall that the <em>total variation</em> of a function \(f:[0,T]\to\R\) is defined as</p>
+
+\[V(f) = \sup_\Pi \sum_{t_i} |f(t_i) - f(t_{i-1})|,\]
+
+<p>where the supremum is taken over all partitions \(\Pi=\{t_0,\dots,t_n\}\) of \([0,T]\). The paths of Brownian motion have infinite variation almost surely. That is, \(\P(\omega:V(f(\omega))&lt;\infty)=0.\) Stronger still, Brownian motion is a.s. nowhere differentiable (which implies infinite variation), making typical statements from regular calculus such as \(\int X\dif W=\int X \frac{dW}{dt} dt\) impossible here, since the derivative of \(W\) doesn’t exist. Intuitively, this all stems from the fact that Brownian motion is fractal-like in its movement over time (illustrated below). It’s wiggling up and down an infinite amount in every finite time period.</p>
+
+<p><img src="/assets/images/brownian_motion.gif" alt="brownian-motion" style="text-align: center;" /></p>
+<p class="caption">
+    Example of a single realization of Brownian motion over time. Stolen from <a rel="nofollow noopener noreferrer" href="https://users.math.yale.edu/public_html/People/frame/Fractals/RandFrac/Brownian/BrGrphMovie.html">this beautiful website</a> dedicated to fractals at Yale. Here, the x-axis is time, and the y-axis is the value of the random variable. 
+</p>
+
+<p>So it looks like we do in fact need a new notion of integration to handle such stochastic processes. Before we get there, we need to introduce two assumptions on \(X\). First, we’ll assume it’s square integrable in expectation, i.e.,</p>
+
+\[\E\int_0^T X_t^2 \dif t &lt;\infty.\]
+
+<p>This assumption is used when constructing the integral in order to apply to the relevant convergence theorems. Second, we assume that \(X\) is adapted to the process \(W\). Let \((\F_t)_{t\in[0,T]}\) denote the <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Filtration_(probability_theory)">filtration</a> associated with \(W\), where formally</p>
+
+\[\F_t=\sigma(W_\tau|\tau\leq t)=\sigma(W_\tau^{-1}(S)|S\in\B_\tau,\tau\leq t).\]
+
+<p>Intuitively, \(\F_t\) contains all information about \(W\) up until time \(t\), but no more. \(X\) being adapted to \((\F_t)\) means that \(X_t\) can act on knowledge about the value \(W_\tau\) for \(\tau\leq t\), but not on future values of \(W\). In finance applications, this is equivalent to the assumption that there’s no insider trading: \(X_t\) cannot change depending on some future as-of-yet unrealized value of \(W\). Formally, \(X\) being adapted to \((\F_t)\) means that for every \(t\), \(X_t=X(t,\cdot):\Omega\to \R\) is \(\F_i\) measurable. If this all looks weird, don’t panic. The intuition that \(X\) “can’t see into the future” is good enough for most purposes.</p>
+
+<p>Alright, ‘tis time to construct this bad boy.</p>
+
+<h2 id="construction">Construction</h2>
+
+<p>Like every other integral you’ve ever seen in your life, the Itô integral is constructed by first defining the integral for simple expressions and then taking some complicated limits for general integrands. And even though we saw that the Riemann-Stieltjes integral won’t suffice here, it’s not a bad place to start.</p>
+
+<p>We start out assuming that our integrand is a <em>simple process</em>. That is,  assume that \(X\) changes value only at discrete times \(0=t_0&lt;t_1&lt;\dots&lt;t_n=T&lt;\infty\). Abusing notation somewhat, write \(X=X_i\) at time \(t_i\), etc. We’re only assume that \(X\) is simple; \(W\) can still be continuous. Following a similar approach to the Riemann-Stieltjes integral, define</p>
+
+\[\begin{equation}
+\label{eq:I_simple}
+    I_T(X) = \sum_{i=0}^{n-1} X_i(W_{i+1}-W_i). 
+\end{equation}\]
+
+<p>To see that this isn’t completely hopeless, we’ll note that this equation has a nice interpretation in finance land (which is where many of the applications of stochastic calculus lie, so get used to it).  Suppose \(W\) is the market price of some good you’ve bought, or some stock, and that \(X_i\) is the amount of stock you hold between during \([t_i,t_{i+1})\). At time \(t_i\), you pay \(X_iW_i\) to buy \(X_i\) units at price \(W_i\). At time \(t_{i+1}\), at the end of the trading day, the price has changed to \(W_{i+1}\), so you sell your shares and receive a profit of \(X_iW_{i+1}\). So your total gain (or loss, if \(W_{i+1}&lt;W_i\)) for the period \([t_i,t_{i+1})\) is \(X_i(W_{i+1}-W_i)\). Then, at \(t_{i+1}\) you buy \(X_{i+1}\) shares and the process repeats for the interval \([t_{i+1},t_{i+2})\). Over the interval \([t_0,t_n)\), your total wealth is then \(I(t)\). Note that this interpretation requires that you sell at the end of each trading period, however. If you only adjust your price from \(X_i\) to \(X_{i+1}\) when the price changes from \(W_i\) to \(W_{i+1}\), then your total wealth at time \(t_n\) would simply be the amount of stock you hold at that time times the price, minus whatever you paid at the beginning. That is, \(X_{n-1}W_n - X_0W_0\).</p>
+
+<p>Now we’d like to extend the definition of the integral to general integrands. The proofs are finnicky and not very illuminating unless you’re really keen on practicing your dominated and bounded convergence theorems. So suffice it to say that the usual tactic works out: Given a a general process \(X\) we construct a sequence of simple processes \(X_n\) which convergence pointwise to \(X\): \(X_n(t,\omega)\to X(t,\omega)\). Then we show that \((X_n(t,\omega)-X(t,\omega))^2\to 0\) and finally that</p>
+
+\[\lim_{n\to\infty}\E\int_0^T (X_n(t,\omega)-X(t,\omega))^2\dif t\to0.\]
+
+<p>From here, it’s natural to define</p>
+
+\[\int_0^T X \dif W \equiv \lim_{n\to\infty}\int_0^T X_n\dif W,\]
+
+<p>where we’re ensured that the limit exists because \(I_T(X_n)\) is a cauchy sequence. This gives us our Itô integral \(I_T(X)\).</p>
+
+<h2 id="properties">Properties</h2>
+
+<p>First, just like when we were integrating against \(\dif t\), note that \(I_t=I_t(X)\) is itself a stochastic process:</p>
+
+\[I_t(X): [0,T]\times \Omega \to \R: (t,\omega)\mapsto \int_0^t X(t,\omega)\dif W(t,\omega).\]
+
+<p>Right off the bat this lets us know that we’ve really entered distinct territory from regular calculus.</p>
+
+<h3 id="martingale">Martingale</h3>
+
+<h3 id="quadratic-variation">Quadratic Variation</h3>
+
+<h3 id="itô-isometry">Itô Isometry</h3>
+
+<h2 id="resources">Resources</h2>
+
+  <small>
+    <a href="/research_notes/">Back to all notes</a>
+  </small>
+</article>
+ <!-- "> -->
+      </main>
+
+      <!-- Footer  -->
+      <div class="container" id="footer">
+        <hr>
+        <div class='container links'>
+          <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github.png"></a>
+          <a href="https://www.linkedin.com/in/ben-chugg-3a4616aa/" rel='nofollow'><img src="/assets/images/linkedin.png"></a>
+          <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads.png"></a>
+          <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter.png"></a>
+        </div>
+      
+        <div class='copyright'>
+          <small>&#169; 2022 Ben Chugg</small>
+        </div>
+      
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+
+    // Highlight search Query
+    var url = window.location.href;
+      if (url.lastIndexOf("?q=") > 0) {
+        // get the index of the parameter, add three (to account for length)
+        var stringloc = url.lastIndexOf("?q=") + 3;
+        // get the substring (query) and decode
+        var searchquery = decodeURIComponent(url.substr(stringloc));
+        // regex matches at beginning of line, end of line or word boundary, useful for poetry
+        var regex = new RegExp("(?:^|\\b)(" + searchquery + ")(?:$|\\b)", "gim");
+        // get, add mark and then set content
+        var content = document.getElementById("main").innerHTML;
+        document.getElementById("main").innerHTML = content.replace(regex, "<mark>$1</mark>");
+      }
+
+      // Toggle sidebar
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             !sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+
+<!-- Facebook SDK for JavaScript -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '589495744558280',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+  </body>
+</html>

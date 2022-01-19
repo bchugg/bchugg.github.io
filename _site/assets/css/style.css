@@ -84,7 +84,7 @@ body {
 
 @media (min-width: 56em) {
   .container {
-    max-width: 38rem; } }
+    max-width: 41rem; } }
 /* Links */
 a, .text-title a {
   color: #121a84;
@@ -170,7 +170,7 @@ img {
 
 /* Header image */
 #headerim {
-  width: 50%;
+  width: 45%;
   height: auto;
   float: left;
   margin-right: 20px; }
@@ -995,6 +995,30 @@ pre code {
 .highlight pre {
   margin-bottom: 0; }
 
+.note {
+  color: black;
+  text-align: justify; }
+  .note h1 {
+    font-size: 20pt;
+    text-align: center; }
+  .note h2 {
+    font-size: 16pt;
+    font-weight: bold;
+    padding-top: 20px; }
+  .note h3 {
+    font-weight: bold; }
+  .note img {
+    padding-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%; }
+  .note .caption {
+    font-size: 10pt;
+    color: gray;
+    margin-left: 20px;
+    margin-right: 20px; }
+
 .pubitem {
   margin: 2em 0; }
 
@@ -1029,7 +1053,7 @@ pre code {
     position: relative;
     display: block;
     width: 20%;
-    height: 170px;
+    height: 180px;
     float: left; }
     @media (max-width: 700px) {
       .books .book-rec {
