@@ -27,6 +27,8 @@ encoding: utf-8
 collections:
   research_notes:
     output: true
+  writing: 
+    output: true
   papers: 
     output: false
   books: 

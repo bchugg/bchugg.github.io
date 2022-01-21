@@ -567,8 +567,7 @@ ins,
 
 del,
 .delete {
-  text-decoration: line-through;
-  color: #AA3232; }
+  text-decoration: line-through; }
 
 u,
 .underline {
@@ -1018,6 +1017,33 @@ pre code {
     color: gray;
     margin-left: 20px;
     margin-right: 20px; }
+
+.writing-list {
+  padding-left: 25px; }
+  .writing-list .writing-entry {
+    padding-bottom: 10px; }
+    .writing-list .writing-entry .title-date {
+      padding-bottom: 0;
+      margin-bottom: 0; }
+      .writing-list .writing-entry .title-date .title {
+        font-weight: bold; }
+      .writing-list .writing-entry .title-date .no-link {
+        font-weight: bold;
+        color: black;
+        text-decoration: none;
+        pointer-events: none; }
+    .writing-list .writing-entry .subtitle {
+      margin-bottom: 0;
+      font-style: italic;
+      font-size: 10pt; }
+    .writing-list .writing-entry .external-info {
+      margin-bottom: 0;
+      font-size: 10pt; }
+    .writing-list .writing-entry span {
+      padding-right: 30px;
+      padding-top: 5px;
+      font-size: 10pt;
+      float: right; }
 
 .pubitem {
   margin: 2em 0; }
