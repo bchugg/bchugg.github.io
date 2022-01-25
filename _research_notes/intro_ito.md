@@ -36,7 +36,7 @@ is a normal (deterministic) Lebesgue integral whose value is a function of $$\om
 
 $$\E_\omega\bigg[\int_0^T X(t,\omega) \dif t\bigg]=\E\int_0^T X_t \dif t.$$
 
-We'll mostly use the notation on the right for conciseness, but keeping the left hand side in mind will help when shit gets a little hairy. 
+We'll mostly use the notation on the right for conciseness, but keeping the left hand side in mind will help when things get a little hairy. 
 
 Before diving into the construction of a whole new object, we should ask ourselves if this is necessary at all. Why don't the usual notions of integration work here? For one, $$W$$ is not a measure, so it's hard to see how to apply Lebesgue integration. Riemann-Stieltjes integration is an obvious candidate, but this doesn't work if $$W$$ isn't sufficiently well-behaved. In particular, it should be of bounded variation. Recall that the _total variation_ of a function $$f:[0,T]\to\R$$ is defined as 
 
