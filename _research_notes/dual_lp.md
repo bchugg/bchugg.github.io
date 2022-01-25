@@ -1,7 +1,7 @@
 ---
 layout: note
 title: Intuition for LP Duality
-status: published
+published: True
 date: "2022-01-16"
 ---
 

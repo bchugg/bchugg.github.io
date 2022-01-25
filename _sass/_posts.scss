@@ -1,4 +1,21 @@
+.note-list {
+    padding-left: 25px;
+    span {
+        padding-right: 30px;
+        //padding-top: 5px;
+        //font-size: 10pt;
+        float: right;
+    }
+}
+
 .note {
+    .title {
+        font-size: 18pt;
+        font-weight: bold;
+        text-align: center;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
     color: black;
     text-align: justify;
     h1 {

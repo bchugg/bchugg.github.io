@@ -994,9 +994,21 @@ pre code {
 .highlight pre {
   margin-bottom: 0; }
 
+.note-list {
+  padding-left: 25px; }
+  .note-list span {
+    padding-right: 30px;
+    float: right; }
+
 .note {
   color: black;
   text-align: justify; }
+  .note .title {
+    font-size: 18pt;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 0;
+    margin-bottom: 0; }
   .note h1 {
     font-size: 20pt;
     text-align: center; }
