@@ -25,7 +25,7 @@ I try and straddle the borderlands between theory and practice, but I've also sp
 
 I'm also interested in algorithm design and analysis more broadly, having previously worked on problems in graph theory, combinatorial optimization, and stochastic reaction networks.
 
-Papers are [here]({% link papers.md %}).
+Papers are [here]({% link papers.md %}). I've recently begun keeping some [research notes]({% link research_notes.md %}) as well. 
 
 ---
 
