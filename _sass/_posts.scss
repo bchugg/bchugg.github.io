@@ -8,6 +8,13 @@
     }
 }
 
+.research-notes-quote {
+    text-align: justify;
+    font-size: 11pt;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
 .note {
     .title {
         font-size: 18pt;
@@ -85,5 +92,14 @@
         }
     }
 
+}
+
+#markdown-toc {
+    li {
+        ul {
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+    }
 }
 

@@ -6,5 +6,5 @@ date: "2020-12-30"
 external_only: True 
 external_source: Giving What We Can
 external_link: "https://www.givingwhatwecan.org/post/2020/12/when-unprecedented-times-meet-unprecedented-opportunities/"
-published: True 
+status: "published" 
 ---

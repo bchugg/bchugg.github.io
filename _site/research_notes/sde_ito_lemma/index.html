@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head prefix="og: http://ogp.me/ns#; dc: http://purl.org/dc/terms/#">
+  
+  
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="http://localhost:4000/research_notes/sde_ito_lemma/" />
+
+  <!-- Basic meta elements -->
+  <meta charset="utf-8" />
+
+  <!-- Enable responsiveness on mobile devices -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+
+  <!-- Mathjax Support -->
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <title>
+    
+      Ben &middot; Itô Processes and The Fundamental Theorem of Stochastic Calculus
+    
+  </title>
+
+  <!-- Dublin Core metadata for Zotero -->
+  <meta property="dc:title" content="Itô Processes and The Fundamental Theorem of Stochastic Calculus" />
+  <meta property="dc:creator" content="Ben Chugg" />
+  <meta property="dc:identifier" content="http://localhost:4000/research_notes/sde_ito_lemma/" />
+  
+  
+  
+  <meta property="dc:source" content="benny" />
+
+  <!-- Open Graph metadata -->
+  <meta property="og:title" content="Itô Processes and The Fundamental Theorem of Stochastic Calculus" />
+  <meta property="og:url" content="http://localhost:4000/research_notes/sde_ito_lemma/" />
+  <meta property="og:image" content="http://localhost:4000/assets/favicon.ico" />
+  <meta property="og:image:width" content="200" />
+  <meta property="og:image:height" content="200" />
+  <meta property="fb:admins" content="elotroalex" />
+  <meta property="fb:app_id" content="589495744558280" />
+
+
+  <meta property="og:description" content="">
+  <meta property="og:type" content="article" />
+
+
+  <!-- CSS link -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="167x167" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/assets/favicon.ico" />
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="114×114" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="72×72" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” href="/assets/favicon.ico" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml" />
+</head>
+
+
+  <body class="theme-base-">
+
+    <!-- This if statement decides which sidebar to use -->
+    
+    <!--
+  Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for
+  behavior.
+-->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p></p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/papers/">Papers</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/research_notes/">Research Notes</a>
+        
+      
+    
+      
+        
+      
+    
+
+    <a class='sidebar-nav-item' href="http://incrementspodcast.com">Podcast</a>
+
+    <span class='sidebar-nav-item'>Recommendations</span>
+    <ul class="dropdown-menu">
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+            <li><a href="/books/">Books</a></li>
+          
+        
+      
+        
+          
+            <li><a href="/courses/">Courses</a></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </ul>
+
+
+    <!-- The code below is used for manually entered links  -->
+    <!-- <span style='cursor:pointer;' onclick="javascript:var hypothesis = document.createElement('script');
+      hypothesis.setAttribute('src','https://hypothes.is/embed.js');
+      document.head.appendChild(hypothesis);"><a class="sidebar-nav-item">Annotate me</a></span> -->
+
+  <!--
+    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://localhost:4000/research_notes/sde_ito_lemma//" data-proofer-ignore>Annotate me</a>
+    <script src="https://hypothes.is/embed.js" async></script>
+  -->
+
+    <!-- <a class="sidebar-nav-item" href="https://github.com/minicomp/ed" target="_blank">GitHub project</a> -->
+   </nav> 
+
+  <div class="sidebar-links">
+    <div class='container'>
+      <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github_white.png"></a>
+      <a href="https://www.linkedin.com/in/ben-chugg-3a4616aa/" rel='nofollow'><img src="/assets/images/linkedin_white.png"></a>
+      <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads_white.png"></a>
+      <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter_white.png"></a>
+    </div>
+     <!-- <p>
+      A modified version of <a href="https://minicomp.github.io/ed/">Ed.</a> 
+    </p>  -->
+  </div>
+</aside>
+
+    
+
+    <!--
+      Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS
+      collisions with our real content.
+    -->
+    <div class="wrap">
+      <header class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">benny</a>
+            
+              <br><small>Itô Processes and The Fundamental Theorem of Stochastic Calculus</small>
+            
+          </h3>
+        </div>
+      </header>
+
+      <main class="container content" id="main">
+        <article class="note">
+  <small>
+    <a href="/research_notes/">Back to all notes</a>
+  </small>
+  <hr>
+  \[\newcommand{\dif}{\;\text{d}}
+\newcommand{\dd}{\text{d}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\mathbb{V}}\]
+
+<ul id="markdown-toc">
+  <li><a href="#itô-processes" id="markdown-toc-itô-processes">Itô Processes</a>    <ul>
+      <li><a href="#example-1-brownian-motion-with-drift" id="markdown-toc-example-1-brownian-motion-with-drift">Example 1: Brownian motion with drift</a></li>
+      <li><a href="#example-2-geometric-brownian-motion-gbm" id="markdown-toc-example-2-geometric-brownian-motion-gbm">Example 2: Geometric Brownian motion (GBM)</a></li>
+      <li><a href="#integrals-with-respect-to-an-itô-process" id="markdown-toc-integrals-with-respect-to-an-itô-process">Integrals with respect to an Itô Process</a></li>
+    </ul>
+  </li>
+  <li><a href="#aside-manipulating-infinitesimals" id="markdown-toc-aside-manipulating-infinitesimals">Aside: Manipulating Infinitesimals</a></li>
+  <li><a href="#itôs-lemma" id="markdown-toc-itôs-lemma">Itô’s Lemma</a>    <ul>
+      <li><a href="#proof-sketch" id="markdown-toc-proof-sketch">Proof Sketch</a></li>
+      <li><a href="#sde-form" id="markdown-toc-sde-form">SDE Form</a></li>
+      <li><a href="#fundamental-theorem-of-stochastic-calculus" id="markdown-toc-fundamental-theorem-of-stochastic-calculus">Fundamental Theorem of Stochastic Calculus</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Throughout, let \(W\) be a Wiener process starting at the origin, and let \(X\) be a stochastic process adapted to \(W\)’s filtration. \(I_t=I_t(X)\) is the <a href="/research_notes/intro_ito/">Itô integral</a> of \(X\) w.r.t. to \(W\).</p>
+
+<h2 id="itô-processes">Itô Processes</h2>
+<p>There are at least two motivations for the Itô process. The first comes from the identity</p>
+
+\[\bigg(\int_0^t \dif W\bigg)^2 = W_t^2 = 2\int_0^t W\dif W + t,\]
+
+<p>which we proved <a href="/research_notes/intro_ito/">previously</a>. Notice that \(t\) cannot be the result of any Itô integral, since \(\E[t]=t\neq 0\), whereas the Itô integral is a martingale and hence is zero in expectation. Thus, the family of Itô integrals <em>is not closed under smooth transformations</em>. In this case the transformation is \(x\mapsto x^2\).</p>
+
+<p>The second is simply that, viewed as a stochastic process, the integral \(I_t\) is less interesting – or, at least, contains fewer degrees of freedom – than we might have hoped. We might want processes to capture trends with tendencies to <em>drift</em>.</p>
+
+<p>We can remedy both of these issues at once by introducing the class of stochastic processes \(X_t\) which evolve as follows:</p>
+
+\[\begin{equation}
+\label{eq:ito_process_int}
+X_T-X_0 = \int_0^T \mu(X_t,t)\dif t + \int_0^T \sigma(X_t,t)\dif W_t. \tag{1}
+\end{equation}\]
+
+<p>The rightmost integral is an Itô integral, where \(\sigma(X_t,t)\) is some stochastic process adapted to the brownian motion \(W\). The leftmost integral is just a Lebesgue integral with respect to time, which will give a real number for each \(\omega\) in the sample space \(\Omega\) on which \(X_t\) is defined.</p>
+
+<p>We’re going to re-write this equation in the differential form</p>
+
+\[\begin{equation}
+\label{eq:sde}
+\dif X_t = \mu(X_t,t)\dif t + \sigma(X_t,t)\dif W_t. \tag{2}
+\end{equation}\]
+
+<p>This is considered a stochastic differential equation (SDE). It’s important to note that Equation \(\eqref{eq:sde}\) isn’t actually a precise mathematical statement. It’s simply shorthand for Equation \(\eqref{eq:ito_process_int}\). But it’s definitely easier to write, and also has a nicer intuitive interpretation. Namely, a small change \(\Delta\) in \(X_t\) is normally distributed with expectation \(\mu(X_t,t)\Delta\) and variance \(\sigma(X_t,t)^2\Delta\) (hence the choice of notation).</p>
+
+<p>While it may not seem so at first glance, almost all stochastic processes – except those with jumps – are Itô processes.</p>
+
+<h3 id="example-1-brownian-motion-with-drift">Example 1: Brownian motion with drift</h3>
+
+<p>Suppose  \(\mu\) and \(\sigma\) are constants. Then, if \(X_0=0\) (which we will henceforth assume), Equation \(\eqref{eq:ito_process_int}\) reads \(X_t = \mu t + \sigma W_t\), and as an SDE we have</p>
+
+\[\dif X_t = \alpha \dif t + \beta \dif W_t.\]
+
+<p>If \(X\) satisfies this equation, it’s called Brownian motion with drift \(\alpha\) and diffusion \(\beta\). It’s fairly clear why: \(\E[X_t] = \alpha t\) (since \(\E[W_t]=0\)) and</p>
+
+\[\Var[X_t] = \E[X_t^2] - \alpha^2 t^2 = \beta^2 \E[W_t^2] = \beta^2t,\]
+
+<p>due to the quadratic variation of the Wiener process.</p>
+
+<h3 id="example-2-geometric-brownian-motion-gbm">Example 2: Geometric Brownian motion (GBM)</h3>
+
+<p>Suppose \(\mu(X_t,t)=\alpha X_t\) and \(\sigma(X_t,t) = \beta X_t\) for constants \(\alpha\) and \(\beta\). Then,</p>
+
+\[X_t = X_0 + \alpha\int_0^t X_t\dif t  + \beta\int_0^t X_t\dif W_t,\]
+
+<p>or,</p>
+
+\[\dif X_t= \alpha X_t\dif t + \beta X_t\dif W_t.\]
+
+<p>GBM is so important it has its own <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Geometric_Brownian_motion">wikipedia page</a> (what else could possibly signal value?). It’s often used to model prices in mathematical finance. Itô’s lemma will give us a way to solve it.</p>
+
+<h3 id="integrals-with-respect-to-an-itô-process">Integrals with respect to an Itô Process</h3>
+
+<p>So far we’ve seen stochastic integrals with respect to Brownian motion. But now that we’ve introduced a new class of processes, we should discuss integrals with respect to those.</p>
+
+<p>Let \(X_t\) be an Itô process: \(\dif X = \mu(X,t)\dif t + \sigma(X,t)\dif W\). Let \(Y_t\) be a process adapted to \(X_t\). Then we define the integral of \(Y\) w.r.t \(X\) as</p>
+
+\[\int_0^t Y \dif X = \int_0^t Y \mu \dif s + \int_0^t Y \sigma \dif W,\]
+
+<p>which is what you might expect. As usual, the integral on the left is a Lebesgue integral w.r.t to the time component, and the integral on the right is an Itô integral.</p>
+
+<h2 id="aside-manipulating-infinitesimals">Aside: Manipulating Infinitesimals</h2>
+
+<p>Even though Equation \(\eqref{eq:sde}\) is informal, it’s intuitive enough that you’ll often see manipulations done to such equations directly, instead of reverting to the integral version. This isn’t completely out of the ordinary, something similar happens when we do change of variables in intro calculus. E.g., if we have \(\int f(u) f'(u) \dif u\), we might let \(v=f(u)\) and \(dv = f'(u)du\) to deal instead with the integral \(\int v \dif v\). The equation \(dv=f'(u)du\) isn’t meaningful in a precise, technical sense, but it’s still useful to get the final result.</p>
+
+<p>In SDE land, there are a few very common - and very useful - infinitesimal equations to keep in mind:</p>
+
+\[(\dd t)^2 = 0,\quad \dd W\dd t = 0,\quad (\dd W)^2 = \dd t.\]
+
+<p>Intuitively, something like \((\dd W)^2 = \dd t\) should hold because of the quadratic variation of Brownian motion. Rigorously, what this statement means is that for well-behaved (namely, bounded and continuous) functions \(\varphi\) acting on \(W\), that</p>
+
+\[\sum_{i=0}^{n-1} \varphi(W_i)(W_{i+1}-W_i)^2 \to \int_0^T \varphi(W)\dif t,\]
+
+<p>where the convergence is \(L^2\). That is, one shows that</p>
+
+\[\E\bigg\{\bigg(\sum_{i=0}^{n-1}\varphi(W_i)(\Delta W_i^2 - \Delta t_i)\bigg)^2\bigg\}\xrightarrow{n\to\infty}0.\]
+
+<p>Similarly for the other identities. This isn’t incredibly hard but it’s not incredibly insightful either, so we’re not giving the proof. <a rel="nofollow noopener noreferrer" href="https://pi.math.cornell.edu/~web6720/Wendy_slides.pdf">Here</a> are some details if you want them.</p>
+
+<h2 id="itôs-lemma">Itô’s Lemma</h2>
+
+<p>Our first concern with the family of Itô integrals was that they are not closed under the transformation \(x\mapsto x^2\), which motivated the construction of Itô processes. Itô’s lemma gives us a way to evaluate the transformation of Itô processes under sufficiently smooth transformations. To develop more intuition for the behavior of Brownian motion in the limit, it’s worth giving a sketch of the proof before the result is stated.</p>
+
+<h3 id="proof-sketch">Proof Sketch</h3>
+
+<p>Let \(X_t\) be an Itô process. For sufficiently smooth functions \(f(X,t)\) of two variables, Taylor’s Theorem gives</p>
+
+\[\begin{align}
+f(X+\Delta X,t+\Delta t) &amp;= f(X,t) + \frac{\partial f}{\partial X}\Delta X+ 
+\frac{\partial f}{\partial t}\Delta t + \frac{1}{2}\frac{\partial^2f}{\partial X^2}(\Delta X)^2\tag{3}\label{eq:taylor1} \\
+&amp;\quad + \frac{1}{2}\frac{\partial^2f}{\partial t^2}(\Delta t)^2 + 
+\frac{\partial^2f}{\partial X\partial t}\Delta X\Delta t + \text{err}, \tag{4}\label{eq:taylor2}
+\end{align}\]
+
+<p>where \(f\) is evaluated at \((W,t)\), and the error term is</p>
+
+\[\text{err} = o((\Delta W)^3 + (\Delta t)^3 + (\Delta t)^2\Delta X + (\Delta X)^2 \Delta t).\]
+
+<p>Now, as \(\Delta t\to 0\) and \(\Delta X \to 0\), we have (using our favorite infinitesimal calculus) \((\Delta t)^2 \to (\dd t)^2 = 0\), and</p>
+
+\[\begin{align*}
+(\Delta  X)^2 \to (\dd X)^2 &amp;= (\mu\dif t+ \sigma \dif W)^2 \\
+&amp;= \mu^2 \dd t^2 + 2 \mu \sigma \dif t\dif W + \sigma^2 \dd W^2 \\
+&amp;= \sigma^2 \dif t.
+\end{align*}\]
+
+<p>Similarly,</p>
+
+\[\Delta X\Delta t \to \dd X\dif t = \mu \dd t^2 + \sigma\dif W\dif t=0.\]
+
+<p>Therefore, the three terms in line \(\eqref{eq:taylor2}\) disappear in the limit, and only the terms in the top line remain.</p>
+
+<p>Partition the interval \([0,T]\) into \(n+1\) segments as \(t_0,t_1,\dots,t_{n}\). Let \(X_i=X_{t_i}\), \(\Delta X_i= X_{i+1} - X_i\) and \(\Delta t_i = t_{i+1}-t_i\). Now, write \(f(X_t,t) - f(X_0,0)\) as a telescoping sum of small increments, apply Taylor’s theorem to each term, and take the limit as the partition gets finer and finer (thus ignoring the terms which disappear):</p>
+
+\[\begin{align}
+f(X_T,T)-f(X_0,0) &amp;= \lim_{n\to\infty}\sum_{i=0}^{n-1} (f(X_{i+1},t_{i+1}) - f(X_i,t_i)) \\
+&amp;= \lim_{n\to\infty}\sum_{i=0}^{n-1} \bigg\{\frac{\partial f}{\partial X}\Delta X_i + \frac{\partial f}{\partial t}\Delta t_i + \frac{1}{2}\frac{\partial ^2 f}{\partial X^2}(\Delta X_i)^2\bigg\} \\
+&amp;= \lim_{n\to\infty}\sum_{i=0}^{n-1} \frac{\partial f}{\partial X}\Delta X_i + 
+\lim_{n\to\infty}\sum_{i=0}^{n-1} \frac{\partial f}{\partial t}\Delta t_i + \lim_{n\to\infty}\frac{1}{2}\sum_{i=0}^{n-1} \frac{\partial^2 f}{\partial X^2}\sigma^2 \Delta t_i. 
+\end{align}\]
+
+<p>In the final sum, we replaced \(\Delta X^2\) with \(\sigma ^2 \Delta t\) due to the arguments above. The first sum of the final line is precisely the integral of the Itô process \(X_t\) with integrand \(f_x\). Thus,</p>
+
+\[\begin{align}
+\lim_{n\to\infty}\sum_{i=0}^{n-1} \frac{\partial f}{\partial X}\Delta X_i &amp; = \int_0^T \frac{\partial f}{\partial X}\dif X 
+= \int_0^T \mu \frac{\partial f}{\partial X} \dif t + \int_0^T \sigma \frac{\partial f}{\partial X} \dif W.
+\end{align}\]
+
+<p>Meanwhile, the second and third sum are regular Riemann integrals with integrands \(f_t\) and \(f_x\sigma^2\) respectively. Putting this all together, we get</p>
+
+\[f(X_T,T) = f(X_0,0) + \int_0^T \mu \frac{\partial f}{\partial X} \dd t + \int_0^T \sigma \frac{\partial f}{\partial X} \dd W + \int_0^T \frac{\partial f}{\partial t}\dd t + \frac{1}{2}\int_0^T \sigma^2 \frac{\partial^2 f}{\partial X^2}\dd t,\]
+
+<p>which is called Itô’s lemma. Again, the partial derivaties and the functions \(\mu\) and \(\sigma\) are evaluated at \((X_t,t)\), we’ve just omitted this for brevity. Notice that for this statement to make sense we need that \(f\in C^2(\mathbb{R})\) (\(f\) is twice differentiable). More specifically, we need \(f(x,\cdot)\in C^1(\mathbb{R})\) as a function of \(t\) and \(f(\cdot,t)\in C^2(\mathbb{R})\) as a function of \(x\).</p>
+
+<p>Note that for standard Brownian motion \(W\), which is an Itô process with \(\mu\equiv 0\) and \(\sigma\equiv 1\), Itô’s lemma gives</p>
+
+\[f(W_T,T)=f(W_0,0) + \int_0^T \frac{\partial f}{\partial W} \dif W + \int_0^T \frac{\partial f}{\partial t}\dif t + \frac{1}{2}\int_0^T \frac{\partial^2 f}{\partial W^2}\dif t.\]
+
+<h3 id="sde-form">SDE Form</h3>
+
+<p>Itô’s lemma is more commonly stated as an SDE. In this case, we write</p>
+
+\[\begin{align}
+\dd f(X,t) &amp;= \mu(X,t)f_x(X,t)\dif t + \sigma(X,t) f_x(X,t) \dif W_t + f_t(X,t)\dif t \\
+&amp;\quad + \frac{1}{2}\sigma^2(X,t)f_{xx}(X,t)\dif t.
+\end{align}\]
+
+<p>Or, in the case of Brownian motion,</p>
+
+\[\dd f(W,t) = f_x(W,t)\dif W + f_t(X,t) \dif t + \frac{1}{2} f_{xx}(W,t)\dif t.\]
+
+<h3 id="fundamental-theorem-of-stochastic-calculus">Fundamental Theorem of Stochastic Calculus</h3>
+
+<p>Itô’s lemma is often considered the fundamental theorem of stochastic calculus. To see why, suppose that \(f\) is a function of standard brownian motion \(W\) only, so that \(f_t\equiv 0\). Then Itô’s lemma gives</p>
+
+\[f(W_T)-f(W_0) = \int_0^T \frac{d f}{d W}(W_t)\dif W_t + \frac{1}{2}\int_0^T \frac{d^2 f}{d W^2}(W_t)\dif t.\]
+
+<p>Contrast this with the fundamental theorem of (ordinary) calculus, where we don’t have the final term on the right hand side. Indeed, this term only exists in the stochastic case because of the quadratic variation of Brownian motion (\((\dd W)^2 = \dd t\)). The smooth functions dealth with ordinarily have quadratic variation 0.</p>
+
+<p>Equivalently, we can compare the (single variable) differential form</p>
+
+\[\dd f(W_t) = f_x(W_t)\dif W + \frac{1}{2} f_{xx}(W_t)\dif t,\]
+
+<p>with the chain rule from ordinary calculus:</p>
+
+\[\frac{df}{dt}(x(t)) = f'(x)x'(t),\]
+
+<p>or, in differential form,</p>
+
+\[\dif f(x(t)) = f'(x)\dd x.\]
+
+<p>Again, we see the difference is the non-zero quadratic variation of \(W\).</p>
+
+
+  <small>
+    <a href="/research_notes/">Back to all notes</a>
+  </small>
+</article>
+ <!-- "> -->
+      </main>
+
+      <!-- Footer  -->
+      <div class="container" id="footer">
+        <hr>
+        <div class='container links'>
+          <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github.png"></a>
+          <a href="https://www.linkedin.com/in/ben-chugg-3a4616aa/" rel='nofollow'><img src="/assets/images/linkedin.png"></a>
+          <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads.png"></a>
+          <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter.png"></a>
+        </div>
+      
+        <div class='copyright'>
+          <small>&#169; 2022 Ben Chugg</small>
+        </div>
+      
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+
+    // Highlight search Query
+    var url = window.location.href;
+      if (url.lastIndexOf("?q=") > 0) {
+        // get the index of the parameter, add three (to account for length)
+        var stringloc = url.lastIndexOf("?q=") + 3;
+        // get the substring (query) and decode
+        var searchquery = decodeURIComponent(url.substr(stringloc));
+        // regex matches at beginning of line, end of line or word boundary, useful for poetry
+        var regex = new RegExp("(?:^|\\b)(" + searchquery + ")(?:$|\\b)", "gim");
+        // get, add mark and then set content
+        var content = document.getElementById("main").innerHTML;
+        document.getElementById("main").innerHTML = content.replace(regex, "<mark>$1</mark>");
+      }
+
+      // Toggle sidebar
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             !sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+
+<!-- Facebook SDK for JavaScript -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '589495744558280',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+  </body>
+</html>

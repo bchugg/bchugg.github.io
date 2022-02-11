@@ -3,8 +3,20 @@ layout: page
 title: Research Notes
 ---
 
+<div class='research-notes-quote'> 
+<i>We have not succeeded in answering all our problems.
+The answers we have found only serve to raise a whole set
+of new questions. In some ways we feel we are as confused
+as ever, but we believe we are confused on a higher level
+and about more important things.</i>
+<p id='credit'>
+ - Posted outside the mathematics reading room at Tromsø University 
+</p>
+</div>
+
 Notes on various topics for my own edification. Making them public mostly just helps keep me accountable for their accuracy (no promises, though). Some wiser advice on why keeping such notes is useful comes from Ryan Giordano [here](https://rgiordan.github.io/meta/2019/07/26/why.html). 
-{% assign notes = site.research_notes | where_exp: "item","item.published" | sort: "date" | reverse %}
+
+{% assign notes = site.research_notes | where_exp: "item", "item.status == 'published'" | sort: "date" | reverse %}
 <ul class='note-list'>
 {% for note in notes %}
 <li>
@@ -13,4 +25,7 @@ Notes on various topics for my own edification. Making them public mostly just h
 </li>
 {% endfor %}
 </ul>
+
+
+
 

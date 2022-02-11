@@ -7,7 +7,7 @@ Thoughts on things. If a post is old I'm probably at least semi-embarrased by it
 
 <br/>
 
-{% assign texts = site.writing | where_exp: "item", "item.published" | sort: "date" | reverse %}
+{% assign texts = site.writing | where_exp: "item", "item.status == 'published'" | sort: "date" | reverse %}
 <ul class='writing-list'>
 {% for text in texts %}
 <li>

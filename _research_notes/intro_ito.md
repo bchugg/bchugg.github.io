@@ -1,7 +1,7 @@
 ---
 layout: note
 title: "Itô Integral: Construction and Basic Properties"
-published: True
+status: published
 date: "2022-01-16"
 ---
 
