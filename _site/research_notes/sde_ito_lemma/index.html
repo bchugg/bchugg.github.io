@@ -233,7 +233,13 @@
   <li><a href="#itôs-lemma" id="markdown-toc-itôs-lemma">Itô’s Lemma</a>    <ul>
       <li><a href="#proof-sketch" id="markdown-toc-proof-sketch">Proof Sketch</a></li>
       <li><a href="#sde-form" id="markdown-toc-sde-form">SDE Form</a></li>
-      <li><a href="#fundamental-theorem-of-stochastic-calculus" id="markdown-toc-fundamental-theorem-of-stochastic-calculus">Fundamental Theorem of Stochastic Calculus</a></li>
+      <li><a href="#the-fundamental-theorem-of-stochastic-calculus" id="markdown-toc-the-fundamental-theorem-of-stochastic-calculus">The Fundamental Theorem of Stochastic Calculus</a></li>
+    </ul>
+  </li>
+  <li><a href="#examples" id="markdown-toc-examples">Examples</a>    <ul>
+      <li><a href="#back-to-basics-int_0t-wdif-w" id="markdown-toc-back-to-basics-int_0t-wdif-w">Back to Basics: \(\int_0^t W\dif W\)</a></li>
+      <li><a href="#stochastic-integration-by-parts" id="markdown-toc-stochastic-integration-by-parts">Stochastic Integration by Parts</a></li>
+      <li><a href="#geometric-brownian-motion" id="markdown-toc-geometric-brownian-motion">Geometric Brownian Motion</a></li>
     </ul>
   </li>
 </ul>
@@ -265,7 +271,7 @@ X_T-X_0 = \int_0^T \mu(X_t,t)\dif t + \int_0^T \sigma(X_t,t)\dif W_t. \tag{1}
 \dif X_t = \mu(X_t,t)\dif t + \sigma(X_t,t)\dif W_t. \tag{2}
 \end{equation}\]
 
-<p>This is considered a stochastic differential equation (SDE). It’s important to note that Equation \(\eqref{eq:sde}\) isn’t actually a precise mathematical statement. It’s simply shorthand for Equation \(\eqref{eq:ito_process_int}\). But it’s definitely easier to write, and also has a nicer intuitive interpretation. Namely, a small change \(\Delta\) in \(X_t\) is normally distributed with expectation \(\mu(X_t,t)\Delta\) and variance \(\sigma(X_t,t)^2\Delta\) (hence the choice of notation).</p>
+<p>This, in all it’s glory, is what’s referred to as a stochastic differential equation (SDE). It’s important to note that Equation \(\eqref{eq:sde}\) isn’t actually a precise mathematical statement. It’s simply shorthand for Equation \(\eqref{eq:ito_process_int}\). But it’s definitely easier to write, and also has a nicer intuitive interpretation. Namely, a small change \(\Delta\) in \(X_t\) is normally distributed with expectation \(\mu(X_t,t)\Delta\) and variance \(\sigma(X_t,t)^2\Delta\) (hence the choice of notation). People often find it easier to work with the SDE form instead of the integral form, especially because you can basically operate differentials as you would expect (even though it’s informal) and everything works out.</p>
 
 <p>While it may not seem so at first glance, almost all stochastic processes – except those with jumps – are Itô processes.</p>
 
@@ -275,7 +281,7 @@ X_T-X_0 = \int_0^T \mu(X_t,t)\dif t + \int_0^T \sigma(X_t,t)\dif W_t. \tag{1}
 
 \[\dif X_t = \alpha \dif t + \beta \dif W_t.\]
 
-<p>If \(X\) satisfies this equation, it’s called Brownian motion with drift \(\alpha\) and diffusion \(\beta\). It’s fairly clear why: \(\E[X_t] = \alpha t\) (since \(\E[W_t]=0\)) and</p>
+<p>If \(X\) satisfies this equation, it’s called Brownian motion with drift \(\alpha\) and variance \(\beta^2\). It’s fairly clear why: \(\E[X_t] = \alpha t\) (since \(\E[W_t]=0\)) and</p>
 
 \[\Var[X_t] = \E[X_t^2] - \alpha^2 t^2 = \beta^2 \E[W_t^2] = \beta^2t,\]
 
@@ -336,7 +342,7 @@ f(X+\Delta X,t+\Delta t) &amp;= f(X,t) + \frac{\partial f}{\partial X}\Delta X+
 \frac{\partial^2f}{\partial X\partial t}\Delta X\Delta t + \text{err}, \tag{4}\label{eq:taylor2}
 \end{align}\]
 
-<p>where \(f\) is evaluated at \((W,t)\), and the error term is</p>
+<p>where \(f\) is evaluated at \((X,t)\), and the error term is</p>
 
 \[\text{err} = o((\Delta W)^3 + (\Delta t)^3 + (\Delta t)^2\Delta X + (\Delta X)^2 \Delta t).\]
 
@@ -374,9 +380,9 @@ f(X_T,T)-f(X_0,0) &amp;= \lim_{n\to\infty}\sum_{i=0}^{n-1} (f(X_{i+1},t_{i+1}) -
 
 \[f(X_T,T) = f(X_0,0) + \int_0^T \mu \frac{\partial f}{\partial X} \dd t + \int_0^T \sigma \frac{\partial f}{\partial X} \dd W + \int_0^T \frac{\partial f}{\partial t}\dd t + \frac{1}{2}\int_0^T \sigma^2 \frac{\partial^2 f}{\partial X^2}\dd t,\]
 
-<p>which is called Itô’s lemma. Again, the partial derivaties and the functions \(\mu\) and \(\sigma\) are evaluated at \((X_t,t)\), we’ve just omitted this for brevity. Notice that for this statement to make sense we need that \(f\in C^2(\mathbb{R})\) (\(f\) is twice differentiable). More specifically, we need \(f(x,\cdot)\in C^1(\mathbb{R})\) as a function of \(t\) and \(f(\cdot,t)\in C^2(\mathbb{R})\) as a function of \(x\).</p>
+<p>which is called Itô’s lemma. Again, the partial derivatives and the functions \(\mu\) and \(\sigma\) are evaluated at \((X_t,t)\), we’ve just omitted this for brevity. Notice that for this statement to make sense we need that \(f\in C^2(\mathbb{R})\) (\(f\) is twice differentiable). More specifically, we need \(f(x,\cdot)\in C^1(\mathbb{R})\) as a function of \(t\) and \(f(\cdot,t)\in C^2(\mathbb{R})\) as a function of \(x\).</p>
 
-<p>Note that for standard Brownian motion \(W\), which is an Itô process with \(\mu\equiv 0\) and \(\sigma\equiv 1\), Itô’s lemma gives</p>
+<p>For standard Brownian motion \(W\), which is an Itô process with \(\mu\equiv 0\) and \(\sigma\equiv 1\), Itô’s lemma gives</p>
 
 \[f(W_T,T)=f(W_0,0) + \int_0^T \frac{\partial f}{\partial W} \dif W + \int_0^T \frac{\partial f}{\partial t}\dif t + \frac{1}{2}\int_0^T \frac{\partial^2 f}{\partial W^2}\dif t.\]
 
@@ -389,17 +395,27 @@ f(X_T,T)-f(X_0,0) &amp;= \lim_{n\to\infty}\sum_{i=0}^{n-1} (f(X_{i+1},t_{i+1}) -
 &amp;\quad + \frac{1}{2}\sigma^2(X,t)f_{xx}(X,t)\dif t.
 \end{align}\]
 
-<p>Or, in the case of Brownian motion,</p>
+<p>Observe that we can gather the differential \(\dd t\) and rewrite this as</p>
+
+\[\dd f = \bigg(\mu f_x + f_t + \frac{1}{2}\sigma^2 f_{xx}\bigg)\dif t + \sigma f_x \dif W,\]
+
+<p>which implies that \(f(X_t,t)\) is itself an Itô process. This is good, as it was one of the primary motivators of defining the Itô process in the first place.</p>
+
+<p>In the case of Brownian motion this simplies to</p>
 
 \[\dd f(W,t) = f_x(W,t)\dif W + f_t(X,t) \dif t + \frac{1}{2} f_{xx}(W,t)\dif t.\]
 
-<h3 id="fundamental-theorem-of-stochastic-calculus">Fundamental Theorem of Stochastic Calculus</h3>
+<h3 id="the-fundamental-theorem-of-stochastic-calculus">The Fundamental Theorem of Stochastic Calculus</h3>
 
-<p>Itô’s lemma is often considered the fundamental theorem of stochastic calculus. To see why, suppose that \(f\) is a function of standard brownian motion \(W\) only, so that \(f_t\equiv 0\). Then Itô’s lemma gives</p>
+<p>Itô’s lemma is often considered the fundamental theorem of stochastic calculus. To see why, suppose that \(f\) is a function of standard brownian motion \(W_t\) only, \(f(W_t)\). Since \(W_t\) is still a function of \(t\), we apply the chain rule and write</p>
+
+\[\frac{df}{dt} = \frac{df}{dW}\dd W_t,\]
+
+<p>which isn’t <em>precisely</em> rigorous, but it’s also not wrong. Since \(\dd W_t \dd t = 0\), the integral in Itô’s lemma with integrand \(\frac{\partial f}{\partial t}\) disappears, and we’re left with</p>
 
 \[f(W_T)-f(W_0) = \int_0^T \frac{d f}{d W}(W_t)\dif W_t + \frac{1}{2}\int_0^T \frac{d^2 f}{d W^2}(W_t)\dif t.\]
 
-<p>Contrast this with the fundamental theorem of (ordinary) calculus, where we don’t have the final term on the right hand side. Indeed, this term only exists in the stochastic case because of the quadratic variation of Brownian motion (\((\dd W)^2 = \dd t\)). The smooth functions dealth with ordinarily have quadratic variation 0.</p>
+<p>Contrast this with the fundamental theorem of (ordinary) calculus, where we don’t have the final term on the right hand side. Indeed, this term only exists in the stochastic case because of the quadratic variation of Brownian motion (\((\dd W)^2 = \dd t\)). The smooth functions dealt with ordinarily have quadratic variation 0.</p>
 
 <p>Equivalently, we can compare the (single variable) differential form</p>
 
@@ -414,6 +430,59 @@ f(X_T,T)-f(X_0,0) &amp;= \lim_{n\to\infty}\sum_{i=0}^{n-1} (f(X_{i+1},t_{i+1}) -
 \[\dif f(x(t)) = f'(x)\dd x.\]
 
 <p>Again, we see the difference is the non-zero quadratic variation of \(W\).</p>
+
+<h2 id="examples">Examples</h2>
+
+<p>Often we’re less interested in evaluating \(f(X_t,t)\), but rather in evaluating some stochastic integral \(\int Y_t\dif X_t\). If we can choose a function \(f\) such that one of its partial derivatives equals \(Y_t\), then we’re in business.</p>
+
+<h3 id="back-to-basics-int_0t-wdif-w">Back to Basics: \(\int_0^t W\dif W\)</h3>
+
+<p>We can solve the integral \(\int W\dif W\) much more easily with Itô’s lemma. Consider \(f(W,t)=W^2\). The lemma gives</p>
+
+\[W_t^2 = 2\int_0^t W\dif W + t,\]
+
+<p>which was obtained with much less hassle than before.</p>
+
+<h3 id="stochastic-integration-by-parts">Stochastic Integration by Parts</h3>
+
+<p>Suppose \(g:\mathbb{R}\to\mathbb{R}\) is a deterministic function of time. We’d like to say something about \(\int g(t) \dif W_t\). To do this, we want a smooth function \(f\) which, using Itô’s lemma, yields this integral. Since the lemma involves the derivatives of \(f\), choosing \(f(x,t) = xg(t)\) works nicely. Then \(f_x(x,t) = g(t)\), \(f_{xx}(x,t)=0\) and \(f_t(x,t) = g(t)x'(t) + g'(t)x(t)\). Our favorite lemma gives:</p>
+
+\[\begin{align}
+ W_Tg(T) &amp;= \int_0^T g(t)\dif W_t + \int_0^T (W_tf'(t) + f(t)\dif W_t)\dif t \\ 
+ &amp;= \int_0^T g(t)\dif W_t + \int_0^T W_tf'(t)\dif t,
+\end{align}\]
+
+<p>since \(\dd W_t\dd t=0\). Rearranging and using the intuition that \(f'(t)\dif t = \dd f\) (which can be shown rigorously), we get</p>
+
+\[\int_0^T g(t) \dif W_t = W_Tg(T) - \int_0^T W_t\dd f(t).\]
+
+<p>This looks a lot like the usual integration by parts formula. The rightmost integral should be interpreted as a Riemann-Stieltjes integral.</p>
+
+<h3 id="geometric-brownian-motion">Geometric Brownian Motion</h3>
+
+<p>Recall that GBM satisfies</p>
+
+\[\dd S_t = \mu S_t\dif t + \sigma S_t \dif W_t,\]
+
+<p>for constants \(\mu\) and \(\sigma\). To solve this, we borrow some intuition from ODE theory and guess that logarithms will be involved. In particular, apply Itô’s lemma with \(f(x,t) = f(x) = \log x\). As we saw above, since \(S_t\) is also a function of \(t\), the chain rule applies and \(f_t(S_t) = (S_t)^{-1} \dif S_t\). Thus, Itô’s lemma gives</p>
+
+\[\begin{align}
+\dif \log(S_t) &amp;= \bigg(\frac{\dd S_t}{S_t} + \mu S_t \frac{df}{dS} + \sigma^2\frac{S_t^2}{2}\frac{d^2f}{dS^2}\bigg)\dif t + \sigma S_t \frac{df}{dS} \dif W_t \\
+&amp;= \frac{d S_t}{S_t}\dif t + \mu\dif t - \frac{\sigma^2}{2}\dif t + \sigma \dif W_t\\
+&amp;= \bigg(\mu - \frac{1}{2}\sigma^2\bigg)\dif t + \sigma\dif W_t.
+\end{align}\]
+
+<p>Retreating from SDE notation, this means</p>
+
+\[\begin{align}
+\log(S_T) - \log(S_0) &amp;= \int_0^T \bigg(\mu - \frac{1}{2}\sigma^2\bigg) \dif t + \int_0^T \sigma \dif W_t  = \bigg(\mu-\frac{1}{2}\sigma^2\bigg) T + \sigma W_T.
+\end{align}\]
+
+<p>Exponentiating and performing the relevant arithmetic yields</p>
+
+\[S_T = S_0\exp\bigg(\mu T - \frac{T\sigma^2}{2}\bigg)\exp(\sigma W_T),\]
+
+<p>which gives us a closed form solution for GBM.</p>
 
 
   <small>
