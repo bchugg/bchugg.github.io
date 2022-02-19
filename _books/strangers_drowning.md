@@ -2,6 +2,6 @@
 layout: default
 title: "Strangers Drowning"
 author: Larissa MacFarquhar
-genre: People
+genre: People & History
 im_path: assets/books/strangers_drowning.jpeg
 ---

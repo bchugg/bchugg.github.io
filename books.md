@@ -6,7 +6,7 @@ title: Books
 An eclectic collection of books I've enjoyed. Needless to say, I don't agree with everything in each book, but they've all been influential on my thinking in some way.  
 
 {% assign books = site.books %}
-{% assign genres = books | map: "genre" | uniq %}
+{% assign genres = books | map: "genre" | uniq | reverse %}
 
 <div class='books'>
 	{% for genre in genres %}

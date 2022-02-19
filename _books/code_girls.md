@@ -2,6 +2,6 @@
 layout: default
 title: "Code Girls"
 author: Liza Mundy
-genre: People
+genre: People & History
 im_path: assets/books/code_girls.jpg
 ---

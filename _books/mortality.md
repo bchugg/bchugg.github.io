@@ -2,6 +2,6 @@
 layout: default
 title: "Mortality"
 author: Christopher Hitchens
-genre: People
+genre: People & History
 im_path: assets/books/mortality.jpg
 ---

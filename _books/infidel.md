@@ -2,6 +2,6 @@
 layout: default
 title: "Infidel"
 author: Ayaan Hirsi Ali
-genre: People
+genre: People & History
 im_path: assets/books/infidel.jpg
 ---
