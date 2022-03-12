@@ -3,7 +3,7 @@ layout: recommendations
 title: Books
 ---
 
-An eclectic collection of books I've enjoyed. Needless to say, I don't agree with everything in each book, but they've all been influential on my thinking in some way.  
+An eclectic collection of books I've enjoyed. Needless to say, I don't agree with everything in each book, but they've all been influential on my thinking in some way.  For a full list of likes and dislikes, check [goodreads](https://www.goodreads.com/user/show/90945992-ben-chugg).
 
 {% assign books = site.books %}
 {% assign genres = books | map: "genre" | uniq | reverse %}

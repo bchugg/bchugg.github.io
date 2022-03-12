@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head prefix="og: http://ogp.me/ns#; dc: http://purl.org/dc/terms/#">
+  
+  
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="http://localhost:4000/research_notes/intro_game_theory_prob/" />
+
+  <!-- Basic meta elements -->
+  <meta charset="utf-8" />
+
+  <!-- Enable responsiveness on mobile devices -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+
+  <!-- Mathjax Support -->
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <title>
+    
+      Ben &middot; Introduction to Game-Theoretic Probability: Law of Large Numbers
+    
+  </title>
+
+  <!-- Dublin Core metadata for Zotero -->
+  <meta property="dc:title" content="Introduction to Game-Theoretic Probability: Law of Large Numbers" />
+  <meta property="dc:creator" content="Ben Chugg" />
+  <meta property="dc:identifier" content="http://localhost:4000/research_notes/intro_game_theory_prob/" />
+  
+  
+  
+  <meta property="dc:source" content="benny" />
+
+  <!-- Open Graph metadata -->
+  <meta property="og:title" content="Introduction to Game-Theoretic Probability: Law of Large Numbers" />
+  <meta property="og:url" content="http://localhost:4000/research_notes/intro_game_theory_prob/" />
+  <meta property="og:image" content="http://localhost:4000/assets/favicon.ico" />
+  <meta property="og:image:width" content="200" />
+  <meta property="og:image:height" content="200" />
+  <meta property="fb:admins" content="elotroalex" />
+  <meta property="fb:app_id" content="589495744558280" />
+
+
+  <meta property="og:description" content="">
+  <meta property="og:type" content="article" />
+
+
+  <!-- CSS link -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="167x167" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/assets/favicon.ico" />
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="114×114" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="72×72" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” href="/assets/favicon.ico" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml" />
+</head>
+
+
+  <body class="theme-base-">
+
+    <!-- This if statement decides which sidebar to use -->
+    
+    <!--
+  Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for
+  behavior.
+-->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p></p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/papers/">Papers</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/research_notes/">Research Notes</a>
+        
+      
+    
+      
+        
+      
+    
+
+    <a class='sidebar-nav-item' href="http://incrementspodcast.com">Podcast</a>
+
+    <span class='sidebar-nav-item'>Recommendations</span>
+    <ul class="dropdown-menu">
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+            <li><a href="/books/">Books</a></li>
+          
+        
+      
+        
+          
+            <li><a href="/courses/">Courses</a></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </ul>
+
+
+    <!-- The code below is used for manually entered links  -->
+    <!-- <span style='cursor:pointer;' onclick="javascript:var hypothesis = document.createElement('script');
+      hypothesis.setAttribute('src','https://hypothes.is/embed.js');
+      document.head.appendChild(hypothesis);"><a class="sidebar-nav-item">Annotate me</a></span> -->
+
+  <!--
+    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://localhost:4000/research_notes/intro_game_theory_prob//" data-proofer-ignore>Annotate me</a>
+    <script src="https://hypothes.is/embed.js" async></script>
+  -->
+
+    <!-- <a class="sidebar-nav-item" href="https://github.com/minicomp/ed" target="_blank">GitHub project</a> -->
+   </nav> 
+
+  <div class="sidebar-links">
+    <div class='container'>
+      <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github_white.png"></a>
+      <a href="https://www.linkedin.com/in/ben-chugg-3a4616aa/" rel='nofollow'><img src="/assets/images/linkedin_white.png"></a>
+      <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads_white.png"></a>
+      <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter_white.png"></a>
+    </div>
+     <!-- <p>
+      A modified version of <a href="https://minicomp.github.io/ed/">Ed.</a> 
+    </p>  -->
+  </div>
+</aside>
+
+    
+
+    <!--
+      Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS
+      collisions with our real content.
+    -->
+    <div class="wrap">
+      <header class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">benny</a>
+            
+              <br><small>Introduction to Game-Theoretic Probability: Law of Large Numbers</small>
+            
+          </h3>
+        </div>
+      </header>
+
+      <main class="container content" id="main">
+        <article class="note">
+  <small>
+    <a href="/research_notes/">Back to all notes</a>
+  </small>
+  <hr>
+  \[\newcommand{\R}{\mathbb{R}}
+\newcommand{\strat}{\varphi}
+\newcommand{\proc}{\mathcal{S}}
+\newcommand{\cp}{\mathcal{K}}\]
+
+<p>Consider a full information game between three players: Forecaster, Skeptic, and Reality. It proceeds as follows:</p>
+
+<ul>
+  <li>Skeptic has some initial capital, \(C_0\).</li>
+  <li>For rounds \(n=1,2,\dots\)
+    <ul>
+      <li>Forecaster announces a value \(v_n\)</li>
+      <li>Skeptic annonces a value \(M_n\)</li>
+      <li>Reality announces \(y_n\)</li>
+      <li>The new capital of \(S\) is \(C_n = C_{n-1} + M_n(y_n - v_n)\)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>It’s helpful to consider yourself as playing the skeptic. Either you want to become rich as play progresses, i.e.,</p>
+
+\[C_n \xrightarrow{n\to\infty} \infty,\]
+
+<p>or you want to constrain the behavior of Forecaster and Reality – that is, to constrain their behavior in some way. For example, you might force them with each other in the limit:</p>
+
+\[\begin{equation}
+\label{eq:lln}
+\lim_{n\to\infty} \frac{1}{n}\sum_{i=1}^n (y_i - v_i) = 0. \tag{1}
+\end{equation}\]
+
+<p>In the language of game-theoretic probability, \(M_n\) is the bet that skeptic is placing on the forecast \(v_n\). If \(M&gt;0\), he’s assuming \(y_n\) will be greater than \(v_n\). Likewise for \(M_n&lt;0\). If his bet is correct, he’ll add \(\vert M_n(y_n-v_n)\vert\) to his capital; otherwise he loses the same amount.</p>
+
+<h1 id="some-terminology-and-prelims">Some terminology and prelims</h1>
+
+<p>To begin rigorously analyzing such games, we need to introduce various concepts.</p>
+
+<h2 id="events-and-variables">Events and Variables</h2>
+
+<p>Like most areas of math, there’s a slew of new (ish?) terminology that goes along with it. Most of it is intuitive and often you can get by without paying too attention to the precise definitons. But we still need to introduce several precise meanings to start proving things.</p>
+
+<p>Together, we refer to the skeptic and reality as Skeptic’s opponents. An <em>event</em> is a condition on the opponents. E.g., Equation \(\eqref{eq:lln}\) is an event. A <em>situation</em> is a finite sequence of moves by the opponents, i.e., \(\{v_1,y_2,v_2,y_2,\dots,v_k,y_k\}\). An infinite sequence of moves played by reality is a <em>path</em>. Call \(\Omega\) the sample space of all paths. A function</p>
+
+\[X:\Omega\to\R\]
+
+<p>is called a <em>variable</em>.</p>
+
+<h2 id="processes-and-strategies">Processes and Strategies</h2>
+
+<p>Let \(\mathbb{S}\) be the set of all situations. A function</p>
+
+\[\proc:\mathbb{S}\to\R\]
+
+<p>is a <em>process</em>.</p>
+
+<h2 id="forcing-and-weak-forcing">Forcing and weak forcing</h2>
+
+<p>Clearly, there is a strong similarity between these language choices and conventions from Kolmogorov probability theory. This is on purpose, and allows you to start forming a mental map of the relationships, and to perhaps anticipate some of the results. For instance, a foundational concept is normal probability is an <em>almost sure</em> event. Here, as alluded to above, this means an event \(E\) such that \(C_n\geq 0\) and either</p>
+
+\[\lim_n C_n =\infty\quad\text{or}\quad E \text{ happens}.\]
+
+<p>That is, the skeptic does not risk bankruptcy and either the skeptic becomes infinitely rich or forces \(E\) to transpire. For this reason, we’ll also say that the skeptic <em>can force</em> \(E\).</p>
+
+<p>Note also that \(f:\Omega\to\R\) would be a random variable in measure-theoretic probability, but here we can drop the adjective “random” since our formalization involves no randomness.</p>
+
+<p>A strategy \(\strat\) for Skeptic <em>weakly forces</em> event \(E\) if \(\proc^\strat \geq 0\) and</p>
+
+\[\sup_n \proc^\strat_n(\omega) =\omega\]
+
+<p>for all \(\omega\not\in E\).</p>
+
+<p>Weak forcing is (surprise surprise) weaker than forcing, meaning that if we can weakly force \(E\) we can force \(E\).</p>
+
+<h1 id="proving-lln">Proving LLN</h1>
+
+<p>To give a sense of how arguments can proceed in this space, we’re going to prove the game-theoretic version of the LLN above.</p>
+
+<p>For simplicity, we’ll assume that the forecaster always bets \(v_n=0\). We’ll show later that this assumption is without loss of generality. In this case the capital process is</p>
+
+\[\proc^\strat = \proc^\strat + \strat_n y_n.\]
+
+<p>Our goal is to show that the skeptic can force event \(E\), where \(E\) is the event</p>
+
+\[\lim_{n\to\infty}\frac{1}{n}\sum_{i=1}^n y_i = 0.\]
+
+<p>Put \(\bar{y}_n = \frac{1}{n}\sum_{i=1}^n y_i\). By the arguments it suffices to show that skeptic can <em>weakly</em> force \(E\).</p>
+
+<h1 id="resources">Resources</h1>
+
+<ul>
+  <li><a rel="nofollow noopener noreferrer" href="https://www.wiley.com/en-us/Game+Theoretic+Foundations+for+Probability+and+Finance+-p-9780470903056">Game-Theoretic Foundations for Probability and Finance</a> by Glenn Shafer and Vladimiar Vovk. See also the <a rel="nofollow noopener noreferrer" href="http://www.probabilityandfinance.com/">Game-Theoretic Probability and Finance Project</a>.</li>
+  <li>The course <a rel="nofollow noopener noreferrer" href="https://www.stat.cmu.edu/~aramdas/betting/b21.html">Game-Theoretic Statistical Inference</a> by Shafer, Wang, and Ramdas.</li>
+</ul>
+
+  <small>
+    <a href="/research_notes/">Back to all notes</a>
+  </small>
+</article>
+ <!-- "> -->
+      </main>
+
+      <!-- Footer  -->
+      <div class="container" id="footer">
+        <hr>
+        <div class='container links'>
+          <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github.png"></a>
+          <a href="https://www.linkedin.com/in/ben-chugg-3a4616aa/" rel='nofollow'><img src="/assets/images/linkedin.png"></a>
+          <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads.png"></a>
+          <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter.png"></a>
+        </div>
+      
+        <div class='copyright'>
+          <small>&#169; 2022 Ben Chugg</small>
+        </div>
+      
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+
+    // Highlight search Query
+    var url = window.location.href;
+      if (url.lastIndexOf("?q=") > 0) {
+        // get the index of the parameter, add three (to account for length)
+        var stringloc = url.lastIndexOf("?q=") + 3;
+        // get the substring (query) and decode
+        var searchquery = decodeURIComponent(url.substr(stringloc));
+        // regex matches at beginning of line, end of line or word boundary, useful for poetry
+        var regex = new RegExp("(?:^|\\b)(" + searchquery + ")(?:$|\\b)", "gim");
+        // get, add mark and then set content
+        var content = document.getElementById("main").innerHTML;
+        document.getElementById("main").innerHTML = content.replace(regex, "<mark>$1</mark>");
+      }
+
+      // Toggle sidebar
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             !sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+
+<!-- Facebook SDK for JavaScript -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '589495744558280',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+  </body>
+</html>
