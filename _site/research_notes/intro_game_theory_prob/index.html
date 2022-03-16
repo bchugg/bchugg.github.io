@@ -20,12 +20,12 @@
 
   <title>
     
-      Ben &middot; Introduction to Game-Theoretic Probability: Law of Large Numbers
+      Ben &middot; Introduction to Game-Theoretic Probability
     
   </title>
 
   <!-- Dublin Core metadata for Zotero -->
-  <meta property="dc:title" content="Introduction to Game-Theoretic Probability: Law of Large Numbers" />
+  <meta property="dc:title" content="Introduction to Game-Theoretic Probability" />
   <meta property="dc:creator" content="Ben Chugg" />
   <meta property="dc:identifier" content="http://localhost:4000/research_notes/intro_game_theory_prob/" />
   
@@ -34,7 +34,7 @@
   <meta property="dc:source" content="benny" />
 
   <!-- Open Graph metadata -->
-  <meta property="og:title" content="Introduction to Game-Theoretic Probability: Law of Large Numbers" />
+  <meta property="og:title" content="Introduction to Game-Theoretic Probability" />
   <meta property="og:url" content="http://localhost:4000/research_notes/intro_game_theory_prob/" />
   <meta property="og:image" content="http://localhost:4000/assets/favicon.ico" />
   <meta property="og:image:width" content="200" />
@@ -205,7 +205,7 @@
           <h3 class="masthead-title">
             <a href="/" title="Home">benny</a>
             
-              <br><small>Introduction to Game-Theoretic Probability: Law of Large Numbers</small>
+              <br><small>Introduction to Game-Theoretic Probability</small>
             
           </h3>
         </div>
@@ -220,34 +220,39 @@
   \[\newcommand{\R}{\mathbb{R}}
 \newcommand{\strat}{\varphi}
 \newcommand{\proc}{\mathcal{S}}
-\newcommand{\cp}{\mathcal{K}}\]
+\newcommand{\cp}{\mathcal{K}}
+\newcommand{\cps}{\cp^\strat}
+\newcommand{\eps}{\epsilon}
+\renewcommand{\by}{\bar{y}}\]
 
-<p>Consider a full information game between three players: Forecaster, Skeptic, and Reality. It proceeds as follows:</p>
+<h1 id="intro">Intro</h1>
+
+<p>Consider a full information game between three players: Alice, Bob, and Reality. It proceeds as follows:</p>
 
 <ul>
-  <li>Skeptic has some initial capital, \(C_0\).</li>
+  <li>Bob has some initial capital, \(C_0\).</li>
   <li>For rounds \(n=1,2,\dots\)
     <ul>
-      <li>Forecaster announces a value \(v_n\)</li>
-      <li>Skeptic annonces a value \(M_n\)</li>
+      <li>Alice announces a value \(v_n\)</li>
+      <li>Bob annonces a value \(M_n\)</li>
       <li>Reality announces \(y_n\)</li>
       <li>The new capital of \(S\) is \(C_n = C_{n-1} + M_n(y_n - v_n)\)</li>
     </ul>
   </li>
 </ul>
 
-<p>It’s helpful to consider yourself as playing the skeptic. Either you want to become rich as play progresses, i.e.,</p>
+<p>It’s helpful to consider yourself as playing Bob, and against Alice and Reality (who we’ll henceforth call the <em>opponents</em>). Naturally, you want to become rich as play progresses, i.e.,</p>
 
 \[C_n \xrightarrow{n\to\infty} \infty,\]
 
-<p>or you want to constrain the behavior of Forecaster and Reality – that is, to constrain their behavior in some way. For example, you might force them with each other in the limit:</p>
+<p>or, barring that, you want to constrain the behavior of Alice and Reality – that is, to constrain their behavior in some way. Basically, if you can’t get your way and become infinitely wealth, let’s be sure to exact some vengeance. For example, we’ll show later that you can force them to agree with each other in the limit:</p>
 
 \[\begin{equation}
 \label{eq:lln}
 \lim_{n\to\infty} \frac{1}{n}\sum_{i=1}^n (y_i - v_i) = 0. \tag{1}
 \end{equation}\]
 
-<p>In the language of game-theoretic probability, \(M_n\) is the bet that skeptic is placing on the forecast \(v_n\). If \(M&gt;0\), he’s assuming \(y_n\) will be greater than \(v_n\). Likewise for \(M_n&lt;0\). If his bet is correct, he’ll add \(\vert M_n(y_n-v_n)\vert\) to his capital; otherwise he loses the same amount.</p>
+<p>In the language of game-theoretic probability, \(M_n\) is the bet that Bob is placing on the forecast \(v_n\). If \(M&gt;0\), he’s assuming \(y_n\) will be greater than \(v_n\). Likewise for \(M_n&lt;0\). If his bet is correct, he’ll add \(\vert M_n(y_n-v_n)\vert\) to his capital; otherwise he loses the same amount.</p>
 
 <h1 id="some-terminology-and-prelims">Some terminology and prelims</h1>
 
@@ -257,7 +262,7 @@
 
 <p>Like most areas of math, there’s a slew of new (ish?) terminology that goes along with it. Most of it is intuitive and often you can get by without paying too attention to the precise definitons. But we still need to introduce several precise meanings to start proving things.</p>
 
-<p>Together, we refer to the skeptic and reality as Skeptic’s opponents. An <em>event</em> is a condition on the opponents. E.g., Equation \(\eqref{eq:lln}\) is an event. A <em>situation</em> is a finite sequence of moves by the opponents, i.e., \(\{v_1,y_2,v_2,y_2,\dots,v_k,y_k\}\). An infinite sequence of moves played by reality is a <em>path</em>. Call \(\Omega\) the sample space of all paths. A function</p>
+<p>An <em>event</em> is a condition on the opponents. E.g., Equation \(\eqref{eq:lln}\) is an event. An infinite sequence of moves played by the opponents is a <em>path</em>. Call \(\Omega\) the sample space of all paths. A function</p>
 
 \[X:\Omega\to\R\]
 
@@ -277,36 +282,105 @@
 
 \[\lim_n C_n =\infty\quad\text{or}\quad E \text{ happens}.\]
 
-<p>That is, the skeptic does not risk bankruptcy and either the skeptic becomes infinitely rich or forces \(E\) to transpire. For this reason, we’ll also say that the skeptic <em>can force</em> \(E\).</p>
+<p>That is, the Bob does not risk bankruptcy and either the Bob becomes infinitely rich or forces \(E\) to transpire. For this reason, we’ll also say that the Bob <em>can force</em> \(E\).</p>
 
 <p>Note also that \(f:\Omega\to\R\) would be a random variable in measure-theoretic probability, but here we can drop the adjective “random” since our formalization involves no randomness.</p>
 
-<p>A strategy \(\strat\) for Skeptic <em>weakly forces</em> event \(E\) if \(\proc^\strat \geq 0\) and</p>
+<p>A strategy \(\strat\) for Bob <em>weakly forces</em> event \(E\) if \(\proc^\strat \geq 0\) and</p>
 
 \[\sup_n \proc^\strat_n(\omega) =\omega\]
 
 <p>for all \(\omega\not\in E\).</p>
 
-<p>Weak forcing is (surprise surprise) weaker than forcing, meaning that if we can weakly force \(E\) we can force \(E\).</p>
+<p>Weak forcing is (shockingly) a weaker condition than forcing, meaning that meaning that if we can weakly force \(E\) we can force \(E\).</p>
+
+<p>TODO: Show that.</p>
+
+<h1 id="averaging-strategies-the-infinite-casino">Averaging Strategies: The Infinite Casino</h1>
+
+<p>Thus far, we’ve conceived of Bob as playing a single game against his opponents. But, as we’ll see, a common technique to force events is to average various strategies. To this end, it’s helpful to consider the Bob as splitting his attention among many games. He walks into an infinite casino with two players, reality and Alice, sitting at each table. He can decide to play at any subset of the tables.</p>
+
+<p>Suppose he plays strategy \(\strat_1\) at table 1, and \(\strat_2\) at table 2. We can consider an overall strategy \(\alpha_1\strat_1 + \alpha_2\strat_2\) for any convex combination \(\alpha_1+\alpha_2=1\), and interpret it as Bob splitting his initial capital \(C_0\) between two accounts, putting \(\alpha_1 C_0\) on table 1, and \(\alpha_2 C_0\) on table 2. And there’s no reason he can’t split her capital among infinitely many strategies. In that case, we have the overall strategy</p>
+
+\[\strat = \sum_{i=1}^\infty \alpha_i \strat_i,\]
+
+<p>where \(\sum_{i=1}^\infty \alpha_i=1\). For this to be a legitimate strategy, however, we need that \(\sum_i \alpha_i \strat_i\) converges in \(\R\) <em>for each</em> \(n\) since Bob can only bet a finite amount at any time.</p>
+
+<p>Naturally, the capital process for a strategy \(\sum_i \alpha_i \strat_i\) is</p>
+
+\[\cp_n^{\sum_i \alpha_i \strat_i} = \sum_i \alpha_i \cp_n^{\strat_i}.\]
+
+<p>Averaging strategies is useful for the following reason: Suppose \(\strat_1\) forces \(E_1\) and \(\strat_2\) forces \(E_2\). Then \(\strat = \alpha_1\strat_1 + \alpha_2\strat_2\) forces \(E_1\cap E_2\). Seeing this is mostly a matter of unwinding definitions. If \(\omega\) is such that \(\lim_n \cps_n(\omega)&lt;\infty\), then the capital processes of both \(\alpha_1\strat_1\) and \(\alpha_2\strat_2\) are finite as well. But that means, by definition of forcing, that \(E_1\) and \(E_2\) both happen on this path.</p>
+
+<p>This argument can be extended to countably infinite stategies as well. Suppose \(\strat_i\) forces \(E_i\) for \(i=1,2,\dots\). Since \(\cp^{\strat_i}_n=\cp_{n-1}^{\strat_i} + \strat_{i,n}y_n\geq 0\) (by definition of forcing), we have</p>
+
+\[\vert \strat_{i,n} \vert \leq \frac{\cp_{n-1}^{\strat_i}}{B},\]
+
+<p>otherwise we could set \(y_n = B\) or \(y_n=-B\) to force bankruptcy. (Here \(\strat_{i,n}\) is the \(n\)-th move of the \(i\)-th strategy.) This, in turn, implies that \(\cp_{i,n}y_n \leq \cp_{n-1}^{\strat_i}\) (since \(y_n\leq B\)). Therefore,</p>
+
+\[\cp_n^{\strat_i}=\cp_{n-1}^{\strat_i} + \strat_{i,n}y_n \leq 2\cp_{n-1}^{\strat_i} = 2(\cp_{n-2}^{\strat_i}+\strat_{i,n-1}y_{n-1})\leq 4\cp_{n-2}^{\strat_i}\leq \dots\leq 2^n C_0.\]
+
+<p>Combining this with the inequality above gives</p>
+
+\[\vert \strat_{i,n}\vert \leq \frac{2^n C_0}{B}.\]
+
+<p>Consider the strategy</p>
+
+\[\strat = \sum_k 2^{-k} \strat_i,\]
+
+<p>which is a valid convex combination because \(\sum_k 2^{-k}=1\), and which converges for fixed \(n\) because</p>
+
+\[\sum_k \vert 2^{-k}\strat_{i,n}\vert \leq \frac{2^nC_0}{B}\sum_k \frac{1}{2^k}=\frac{2^nC_0}{B}&lt;\infty.\]
+
+<p>From here, the arguments proceeds the same as above. For a path \(\omega\) with \(\sup_n \cps_n(\omega)&lt;\infty\), it must be the case that \(\sup_n 2^{-k}\cp_n^{\strat_i}&lt;\infty\) as well. Therefore, on this path, \(E_k\) occurs, meaning that \(\cap_{k=1}^\infty E_k\) does too.</p>
 
 <h1 id="proving-lln">Proving LLN</h1>
 
 <p>To give a sense of how arguments can proceed in this space, we’re going to prove the game-theoretic version of the LLN above.</p>
 
-<p>For simplicity, we’ll assume that the forecaster always bets \(v_n=0\). We’ll show later that this assumption is without loss of generality. In this case the capital process is</p>
+<p>For simplicity, we’ll assume that the Alice always bets \(v_n=0\). We’ll show later that this assumption is without loss of generality. In this case the capital process is</p>
 
-\[\proc^\strat = \proc^\strat + \strat_n y_n.\]
+\[\cps_n = \cps_{n-1} + \strat_n y_n.\]
 
-<p>Our goal is to show that the skeptic can force event \(E\), where \(E\) is the event</p>
+<p>Our goal is to show that the Bob can force event \(E\), where \(E\) is the event</p>
 
 \[\lim_{n\to\infty}\frac{1}{n}\sum_{i=1}^n y_i = 0.\]
 
-<p>Put \(\bar{y}_n = \frac{1}{n}\sum_{i=1}^n y_i\). By the arguments it suffices to show that skeptic can <em>weakly</em> force \(E\).</p>
+<p>Put \(\bar{y}_n = \frac{1}{n}\sum_{i=1}^n y_i\). By the arguments above it suffices to show that Bob can <em>weakly</em> force \(E\). To do this, we’ll use a standard approach from analysis. Let \(\eps&gt;0\) and consider the events</p>
+
+\[E^+: \limsup_n \by_n \leq \eps,\quad\text{and}\quad E^-:\liminf_n \by_n\geq -\eps.\]
+
+<p>Focus first on \(E^+\). Consider the strategy \(\strat\) which begins with initial stake \(C_0&gt;0\) and then proceeds to bet \(\eps \cps_{n-1}\) (i.e., risks \(\eps\) times the current amount of capital) on round \(n\). Then, \(\cps_1 = \cps_0 + \strat_1y_1 = C_0(1 + \eps y_2)\), and</p>
+
+\[\cps_2 = \cps_1 + \strat_2 y_2 = \cps_1(1 + \eps y_2) = C_0(1 + \eps y_1)(1 + \eps y_2).\]
+
+<p>In general,</p>
+
+\[\cps_n = C_0\prod_{i=1}^{n} (1 + \eps y_i).\]
+
+<p>To show that Bob weakly forces \(E^+\) with this strategy, we need to show that for all \(\omega\) such that \(\sup_n \cps_n(\omega) &lt;\infty\), that \(E^+\) happens. Consider some path \(\omega\) such that \(\sup_n \cps_n(\omega) &lt;\infty\). Then there is some finite upper limit \(L_\omega\) with \(\sup_n \cps_n(\omega)\leq L_\omega\). Now we need some expression involving \(\by_n\). Taking the logarithm of the product above seems like a good start. Since \(\cps_n \leq L_\omega\) we have</p>
+
+\[\log L_\omega \geq \log \cps_n = \log C_0\prod_i^n (1+\eps y_i) = \log C_0 + \sum_{i=1}^n \log(1 + \eps y_i).\]
+
+<p>Set \(C_0=1\) in our strategy so that \(\log C_0\) disappears. Recall that \(x-x^2 \leq log(1+x)\) for \(x\geq -1/2\). Since \(y_i\geq -B\) and \(\eps\) is small (wlog take it to be \(\leq 1/2B\)) we have that \(\eps y_i\geq -1/2\). Hence,</p>
+
+\[\log L_\omega \geq \sum_i (1 + \eps y_i) \geq \eps\sum_i y_i -\eps^2\sum_i y_i^2 \geq \eps\sum_i y_i -B^2\eps^2n,\]
+
+<p>where the final inequality follows because \(y_i\in [-B,B]\). Rearranging gives</p>
+
+\[\by_n \leq \frac{\log L_\omega}{\eps n} + B^2\eps\xrightarrow{n\to\infty} B^2\eps.\]
+
+<p>We can’t say whether \(\lim \by_n\) exists, but this does let us bound the limit superior:</p>
+
+\[\limsup_n \by_n \leq B^2\eps.\]
+
+<p>Running through the same argument with \(-\eps\) gives the result for \(E^-\).</p>
 
 <h1 id="resources">Resources</h1>
 
 <ul>
-  <li><a rel="nofollow noopener noreferrer" href="https://www.wiley.com/en-us/Game+Theoretic+Foundations+for+Probability+and+Finance+-p-9780470903056">Game-Theoretic Foundations for Probability and Finance</a> by Glenn Shafer and Vladimiar Vovk. See also the <a rel="nofollow noopener noreferrer" href="http://www.probabilityandfinance.com/">Game-Theoretic Probability and Finance Project</a>.</li>
+  <li><a rel="nofollow noopener noreferrer" href="https://www.wiley.com/en-us/Game+Theoretic+Foundations+for+Probability+and+Finance+-p-9780470903056">Game-Theoretic Foundations for Probability and Finance</a> by Glenn Shafer and Vladimir Vovk.</li>
+  <li>The <a rel="nofollow noopener noreferrer" href="http://www.probabilityandfinance.com/">Game-Theoretic Probability and Finance Project</a>.</li>
   <li>The course <a rel="nofollow noopener noreferrer" href="https://www.stat.cmu.edu/~aramdas/betting/b21.html">Game-Theoretic Statistical Inference</a> by Shafer, Wang, and Ramdas.</li>
 </ul>
 
