@@ -13,60 +13,93 @@ $$
 \newcommand{\cps}{\cp^\strat}
 \newcommand{\eps}{\epsilon}
 \renewcommand{\by}{\bar{y}}
+\newcommand{\hstrat}{\hat{\strat}}
 $$
+
+# Prelude: A Brief History 
+Classical probability emerged largely from thinking about betting and games of chance (e.g., dice and coin tossing), and relied mostly on frequencies and combinatorics for its arguments. While modern probability theory is based on measure theory and Kolmogorov's axioms, it is still common to teach elementary probabilistic principles using discrete games. For instance, when learning about the law of larges numbers, I remember one teacher explaining it as follows: If you flip an unbiased coin and bet on an average outcome other than 1/2, then as the coin continues to be flipped, you will go broke. Betting has been used bolster probabilistic intuitions even for more sophisticated results.  
+
+The analogy runs deeper however. In his 1939 doctoral thesis _Étude Critique de la Notion de Collectif_, Jean Ville proved a result which formally ties modern probability to betting (although I don't believe he knew it yet). Informally it says that, if an event is very unlikely, then there exists a supermartingale which tends to infinity on that event. This is intimately tied to betting because supermartingales represent betting strategies. An "almost sure" event in modern probability thus becomes an event for which there exists a betting strategy which would make us infinitely rich, were it to pass. 
+
+Game-theoretic probability is the formal approach to probability based on games and betting instead of $$\sigma$$ algebras and measures. There has been development of these ideas from several perspectives, such as probability, statistical inference, and online learning (see the appendix of [this paper](https://arxiv.org/pdf/2010.09686.pdf) for an interesting history and a cool diagram), but has perhaps been most popularized by Glenn Shafer and Vladimir Vovk in their textbook [Game-Theoretic Foundations for Probability and Finance](https://www.wiley.com/en-us/Game+Theoretic+Foundations+for+Probability+and+Finance+-p-9780470903056). 
+
+When introducing an alternatice foundation for a subject, a natural question is whether it's more general. Is the reach of the game-theoretic perspective fundamentally greater than the Kolmogorov axioms; the results of the former a superset of the latter? The answer is ... sort of? Modern and game-theoretic probability are equivalent for some of the games we'll consider, but not for others. But then, as Vladimir and Vovk say in their book, "they  generalize this core example in different directions." But then they also go onto say that they can connect  them more systemically by means of martingales. So I'm not actually sure anyone knows precisely whether one formalization is strictly more powerful than the other. What is certain though, is that you can improve on measure-theoretic results  by using game-theoretic probability and translating the results into measure-theory by means of martingales. Again, see this [recent paper](https://arxiv.org/pdf/2010.09686.pdf) as an example. For that  reason alone, it seems like understanding game-theoretic probability is valuable. 
 
 # Intro
 
-Consider a full information game between three players: Alice, Bob, and Reality. It proceeds as follows: 
+Consider a full information game between three players: Alice, Bob, and World. It proceeds as follows: 
 
 - Bob has some initial capital, $$C_0$$. 
 - For rounds $$n=1,2,\dots$$ 
     - Alice announces a value $$v_n$$ 
     - Bob annonces a value $$M_n$$ 
-    - Reality announces $$y_n$$
+    - World announces $$y_n$$
     - The new capital of $$S$$ is $$C_n = C_{n-1} + M_n(y_n - v_n)$$
 
-It's helpful to consider yourself as playing Bob, and against Alice and Reality (who we'll henceforth call the _opponents_). Naturally, you want to become rich as play progresses, i.e., 
+It's helpful to consider yourself as playing Bob, and against Alice and World (who we'll henceforth call the _opponents_). Naturally, you want to become rich as play progresses, i.e., 
 
 $$C_n \xrightarrow{n\to\infty} \infty,$$
 
-or, barring that, you want to constrain the behavior of Alice and Reality -- that is, to constrain their behavior in some way. Basically, if you can't get your way and become infinitely wealth, let's be sure to exact some vengeance. For example, we'll show later that you can force them to agree with each other in the limit: 
+or, barring that, you want to constrain the behavior of Alice and World -- that is, to constrain their behavior in some way. Basically, if you can't get your way and become infinitely wealth, let's be sure to exact some vengeance. For example, in the game above one can show that you can force them to agree with each other in the limit: 
 
 $$
 \begin{equation}
-\label{eq:lln}
+\label{eq:lln_general}
 \lim_{n\to\infty} \frac{1}{n}\sum_{i=1}^n (y_i - v_i) = 0. \tag{1}
 \end{equation}
 $$
 
 In the language of game-theoretic probability, $$M_n$$ is the bet that Bob is placing on the forecast $$v_n$$. If $$M>0$$, he's assuming $$y_n$$ will be greater than $$v_n$$. Likewise for $$M_n<0$$. If his bet is correct, he'll add $$\vert M_n(y_n-v_n)\vert$$ to his capital; otherwise he loses the same amount. 
 
+Essentially, game-theoretic probability is the study of what can be achieved by Bob in various kinds of games. For insance, this simplified game in which Alice always announces the same value, 0, results in the game-theoretic law of large numbers: 
+
+- Bob has some initial capital, $$C_0$$. 
+- For rounds $$n=1,2,\dots$$ 
+    - Bob annonces a value $$M_n$$ 
+    - World announces $$y_n\in[-B,B]$$
+    - The new capital of $$S$$ is $$C_n = C_{n-1} + M_ny_n$$. 
+
+Here we can ensure that either Bob becomes infinitely rich, or 
+
+$$
+\begin{equation}
+\label{eq:lln}
+\frac{1}{n}\sum_{i=1}^n y_i =0. \tag{2}
+\end{equation}
+$$
+
+
+Stare at these games for a second. Notice that we haven't introduced an underlying probability space, any distributional assumptions on any of the players, or any notions of independence (except arguably for the Alice in the last game). There's not even any notion of _randomness_. This is kind of remarkable. Normally, you can't even begin to get off the ground without rigorously defining these things. Also, because the games are sequential in nature, results achieved in this space are inherently sequential as well. 
+
+The rest of the post will focus on the second game and proving Equation $$\eqref{eq:lln}$$.
+
 # Some terminology and prelims 
 
 To begin rigorously analyzing such games, we need to introduce various concepts. 
 
-## Events and Variables 
-
 Like most areas of math, there's a slew of new (ish?) terminology that goes along with it. Most of it is intuitive and often you can get by without paying too attention to the precise definitons. But we still need to introduce several precise meanings to start proving things.  
+
+## Events and Variables 
 
 An _event_ is a condition on the opponents. E.g., Equation $$\eqref{eq:lln}$$ is an event. An infinite sequence of moves played by the opponents is a _path_. Call $$\Omega$$ the sample space of all paths. A function 
 
 $$X:\Omega\to\R$$ 
 
-is called a _variable_. 
+is called a _variable_.  Clearly, there's some similarity to Kolmogorov probability in the symbolic and linguistic choices. This is on purpose, and allows you to start forming a mental map of the relationships, and to perhaps anticipate some of the results.In measure theory, we'd call $$X$$ a _random_ variable, but there's no need for the adjective random here. 
 
-## Processes and Strategies
+## Strategies and the Capital Process 
 
-Let $$\mathbb{S}$$ be the set of all situations. A function 
+Most the results in the space involve constructing strategies for Bob. Formally, a strategy is a pair $$(C_0, \strat)$$ where $$C_0$$ is the initial capital and $$\strat$$ is an _adapted process_, which is a function 
 
-$$\proc:\mathbb{S}\to\R$$ 
+$$\strat:\mathbb{S}\to\R,$$
 
-is a _process_. 
+where $$\mathbb{S}$$ be the set of all move sequences by the opponents, e.g., $$\{y_1,y_2}$$ or $${y_1,v_1,y_2,v_2,\dots}$$. To say that  $$\strat$$ is adapted means that $$S_n(\omega)$$
+
 
 
 ## Forcing and weak forcing 
 
-Clearly, there is a strong similarity between these language choices and conventions from Kolmogorov probability theory. This is on purpose, and allows you to start forming a mental map of the relationships, and to perhaps anticipate some of the results. For instance, a foundational concept is normal probability is an _almost sure_ event. Here, as alluded to above, this means an event $$E$$ such that $$C_n\geq 0$$ and either 
+A foundational concept is normal probability is an _almost sure_ event. Here, as alluded to above, this means an event $$E$$ such that $$C_n\geq 0$$ and either 
 
 $$\lim_n C_n =\infty\quad\text{or}\quad E \text{ happens}.$$ 
 
@@ -83,13 +116,18 @@ for all $$\omega\not\in E$$.
 
 Weak forcing is (shockingly) a weaker condition than forcing, meaning that meaning that if we can weakly force $$E$$ we can force $$E$$. 
 
-TODO: Show that. 
+To see that, suppose $$\strat$$ is a strategy that weakly forces $$E$$, and let $$\omega\notin E$$ so that $$\sup_n\cps(\omega)=\infty$$. We want to create a strategy $$\hstrat$$ such that $$\lim_n \cp^{\hstrat}(\omega)=\infty$$ or $$E$$ occurs. The idea is to let $$\hstrat$$ be a scaled down version of $$\strat$$ which sets aside some capital every time $$\cps$$ gets large. Since the latter is large infinitely often, we can set aside capital infinitely often, meaning that $$\cp_{\hstrat}\to\infty$$. 
+
+Let $$\{T_1<T_2<\dots}\subset\mathbb{N}$$, $$i\in\mathbb{N}$$ be an infinite increasing sequence of natural numbers. Fix $$0<\beta<1$$. Define $$\hstrat$$ as playing the same moves as $$\strat$$ until $$\cps_n>T_1$$. 
+Define the next move $$\hstrat(\omega)$$ to bet the amount $$\beta \strat_{n+1}(\omega)$$, i.e., a scaled down version of $$\strat$$'s next bet. Thus, if $$\strat$$ loses money, $$\hstrat$$ loses a little less, and if it wins, $$\hstrat$$ wins a little less. Since $$\cps_n\geq 0$$, $$\strat$$ can lose at most $$\cps_n$$, thus $$\hstrat $$ can lose at most $$\beta \cp^{\hstrat}_n$$, and $$(1-\beta) \cp^{\hstrat}_n$$ is safe. 
+
+Let $$\hstrat$$ continuing emaluating $$\strat$$ until $$\cps_{n}>T_2$$, and then repeat the process. Again, we are saving a positive amount of capital which is henceforth saved. This amount builds over time, and since $$\cps$$ eventually exceeds $$T_i$$ for all $$i$$ (otherwise it would be bounded by some finite number), the strategy $$\hstrat$$ saves an infinite amount, thus $$\cp^{\hstrat}_n\to\infty.$$
 
 # Averaging Strategies: The Infinite Casino
 
-Thus far, we've conceived of Bob as playing a single game against his opponents. But, as we'll see, a common technique to force events is to average various strategies. To this end, it's helpful to consider the Bob as splitting his attention among many games. He walks into an infinite casino with two players, reality and Alice, sitting at each table. He can decide to play at any subset of the tables. 
+Thus far, we've conceived of Bob as playing a single game against his opponents. But, as we'll see, a common technique to force events is to average various strategies. To this end, it's helpful to consider the Bob as splitting his attention among many games. He walks into an infinite casino with two players, World and Alice, sitting at each table. He can decide to play at any subset of the tables. 
 
-Suppose he plays strategy $$\strat_1$$ at table 1, and $$\strat_2$$ at table 2. We can consider an overall strategy $$\alpha_1\strat_1 + \alpha_2\strat_2$$ for any convex combination $$\alpha_1+\alpha_2=1$$, and interpret it as Bob splitting his initial capital $$C_0$$ between two accounts, putting $$\alpha_1 C_0$$ on table 1, and $$\alpha_2 C_0$$ on table 2. And there's no reason he can't split her capital among infinitely many strategies. In that case, we have the overall strategy 
+Suppose he plays strategy $$\strat_1$$ at table 1, and $$\strat_2$$ at table 2. We can consider an overall strategy $$\alpha_1\strat_1 + \alpha_2\strat_2$$ for any convex combination $$\alpha_1+\alpha_2=1$$, and interpret it as Bob splitting his initial capital $$C_0$$ between two accounts, putting $$\alpha_1 C_0$$ on table 1, and $$\alpha_2 C_0$$ on table 2. And there's no reason he can't split his capital among infinitely many strategies. In that case, we have the overall strategy 
 
 $$\strat = \sum_{i=1}^\infty \alpha_i \strat_i,$$
 
