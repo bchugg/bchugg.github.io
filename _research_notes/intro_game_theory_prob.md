@@ -1,31 +1,36 @@
 ---
 layout: note 
-date: "2022-02-19" 
+date: "2022-03-19" 
 title: "Introduction to Game-Theoretic Probability"
-status: unpublished
+status: published
 ---
 
+<p class='title'>Introduction to Game-Theoretic Probability</p>
 $$
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\strat}{\varphi}
-\newcommand{\proc}{\mathcal{S}}
 \newcommand{\cp}{\mathcal{K}}
 \newcommand{\cps}{\cp^\strat}
 \newcommand{\eps}{\epsilon}
 \renewcommand{\by}{\bar{y}}
 \newcommand{\hstrat}{\hat{\strat}}
+\newcommand{\inf}{\infty}
 $$
 
+- TOC 
+{:toc}
+
+
 # Prelude: A Brief History 
-Classical probability emerged largely from thinking about betting and games of chance (e.g., dice and coin tossing), and relied mostly on frequencies and combinatorics for its arguments. While modern probability theory is based on measure theory and Kolmogorov's axioms, it is still common to teach elementary probabilistic principles using discrete games. For instance, when learning about the law of larges numbers, I remember one teacher explaining it as follows: If you flip an unbiased coin and bet on an average outcome other than 1/2, then as the coin continues to be flipped, you will go broke. Betting has been used bolster probabilistic intuitions even for more sophisticated results.  
+Classical probability emerged largely from thinking about betting and games of chance (e.g., dice and coin tossing), and relied mostly on frequencies and combinatorics for its arguments. While modern probability theory is based on measure theory and Kolmogorov's axioms, it is still common to teach elementary probabilistic principles using discrete games. For instance, when learning about the law of large numbers, I remember one teacher explaining it as follows: If you flip an unbiased coin and bet on an average outcome other than 1/2, then you will go broke as the coin continues to be flipped. 
 
-The analogy runs deeper however. In his 1939 doctoral thesis _Étude Critique de la Notion de Collectif_, Jean Ville proved a result which formally ties modern probability to betting (although I don't believe he knew it yet). Informally it says that, if an event is very unlikely, then there exists a supermartingale which tends to infinity on that event. This is intimately tied to betting because supermartingales represent betting strategies. An "almost sure" event in modern probability thus becomes an event for which there exists a betting strategy which would make us infinitely rich, were it to pass. 
+The analogy runs deeper, however. In his 1939 doctoral thesis _Étude Critique de la Notion de Collectif_, Jean Ville proved a result which formally ties modern probability to betting (although I don't believe he knew it yet). Informally it says that, if an event is very unlikely, then there exists a supermartingale which tends to infinity on that event. This is intimately tied to betting because supermartingales represent betting strategies. An "almost sure" event in modern probability thus becomes, in game-theoretic probability, an event for which there exists a betting strategy which would make us infinitely rich, were it to pass. 
 
-Game-theoretic probability is the formal approach to probability based on games and betting instead of $$\sigma$$ algebras and measures. There has been development of these ideas from several perspectives, such as probability, statistical inference, and online learning (see the appendix of [this paper](https://arxiv.org/pdf/2010.09686.pdf) for an interesting history and a cool diagram), but has perhaps been most popularized by Glenn Shafer and Vladimir Vovk in their textbook [Game-Theoretic Foundations for Probability and Finance](https://www.wiley.com/en-us/Game+Theoretic+Foundations+for+Probability+and+Finance+-p-9780470903056). 
+More broadly, game-theoretic probability is the formal approach to probability based on games and betting instead of $$\sigma$$ algebras and measures. There has been development of these ideas from several perspectives, such as probability, statistical inference, and online learning (see the appendix of [this paper](https://arxiv.org/pdf/2010.09686.pdf) for an interesting history and a cool diagram), but has perhaps been most popularized by Glenn Shafer and Vladimir Vovk in their textbook [Game-Theoretic Foundations for Probability and Finance](https://www.wiley.com/en-us/Game+Theoretic+Foundations+for+Probability+and+Finance+-p-9780470903056). 
 
-When introducing an alternatice foundation for a subject, a natural question is whether it's more general. Is the reach of the game-theoretic perspective fundamentally greater than the Kolmogorov axioms; the results of the former a superset of the latter? The answer is ... sort of? Modern and game-theoretic probability are equivalent for some of the games we'll consider, but not for others. But then, as Vladimir and Vovk say in their book, "they  generalize this core example in different directions." But then they also go onto say that they can connect  them more systemically by means of martingales. So I'm not actually sure anyone knows precisely whether one formalization is strictly more powerful than the other. What is certain though, is that you can improve on measure-theoretic results  by using game-theoretic probability and translating the results into measure-theory by means of martingales. Again, see this [recent paper](https://arxiv.org/pdf/2010.09686.pdf) as an example. For that  reason alone, it seems like understanding game-theoretic probability is valuable. 
+When introducing an alternative foundation for a subject, a natural question is whether it's more general. Is the reach of the game-theoretic perspective fundamentally greater than the Kolmogorov axioms; the results of the former a superset of the latter? The answer is ... sort of? Modern and game-theoretic probability are equivalent for some games we'll consider. After that, as Vladimir and Vovk say in their book, they  generalize these core examples in different directions. But then they also go onto say that they can connect them more systemically by means of martingales. So I'm not actually sure anyone knows precisely whether one formalization is strictly more powerful than the other. What is certain though, is that you can improve on measure-theoretic results  by using game-theoretic probability and translating the results into measure-theory by means of martingales. Again, see this [recent paper](https://arxiv.org/pdf/2010.09686.pdf) as an example. For that  reason alone, understanding game-theoretic probability is valuable. 
 
-# Intro
+# The Setup
 
 Consider a full information game between three players: Alice, Bob, and World. It proceeds as follows: 
 
@@ -33,14 +38,14 @@ Consider a full information game between three players: Alice, Bob, and World. I
 - For rounds $$n=1,2,\dots$$ 
     - Alice announces a value $$v_n$$ 
     - Bob annonces a value $$M_n$$ 
-    - World announces $$y_n$$
-    - The new capital of $$S$$ is $$C_n = C_{n-1} + M_n(y_n - v_n)$$
+    - World announces $$y_n\in[-B,B]$$
+    - Bob's new capital is $$C_n = C_{n-1} + M_n(y_n - v_n)$$
 
 It's helpful to consider yourself as playing Bob, and against Alice and World (who we'll henceforth call the _opponents_). Naturally, you want to become rich as play progresses, i.e., 
 
 $$C_n \xrightarrow{n\to\infty} \infty,$$
 
-or, barring that, you want to constrain the behavior of Alice and World -- that is, to constrain their behavior in some way. Basically, if you can't get your way and become infinitely wealth, let's be sure to exact some vengeance. For example, in the game above one can show that you can force them to agree with each other in the limit: 
+or, barring that, you want to constrain the behavior of Alice and World -- that is, to force them to play particular values. Basically, if we can't get our way and become infinitely wealth, let's be sure to exact some vengeance. For example, in the game above one can show that you can force them to agree with each other in the limit: 
 
 $$
 \begin{equation}
@@ -51,20 +56,20 @@ $$
 
 In the language of game-theoretic probability, $$M_n$$ is the bet that Bob is placing on the forecast $$v_n$$. If $$M>0$$, he's assuming $$y_n$$ will be greater than $$v_n$$. Likewise for $$M_n<0$$. If his bet is correct, he'll add $$\vert M_n(y_n-v_n)\vert$$ to his capital; otherwise he loses the same amount. 
 
-Essentially, game-theoretic probability is the study of what can be achieved by Bob in various kinds of games. For insance, this simplified game in which Alice always announces the same value, 0, results in the game-theoretic law of large numbers: 
+Essentially, game-theoretic probability is the study of what can be achieved by Bob in various kinds of games. In the simplified game in which Alice always announces the same value, 0, results in the game-theoretic law of large numbers: 
 
 - Bob has some initial capital, $$C_0$$. 
 - For rounds $$n=1,2,\dots$$ 
     - Bob annonces a value $$M_n$$ 
     - World announces $$y_n\in[-B,B]$$
-    - The new capital of $$S$$ is $$C_n = C_{n-1} + M_ny_n$$. 
+    - Bob's new capital is $$S$$ is $$C_n = C_{n-1} + M_ny_n$$. 
 
 Here we can ensure that either Bob becomes infinitely rich, or 
 
 $$
 \begin{equation}
 \label{eq:lln}
-\frac{1}{n}\sum_{i=1}^n y_i =0. \tag{2}
+\frac{1}{n}\sum_{i=1}^n y_i \to 0. \tag{2}
 \end{equation}
 $$
 
@@ -73,44 +78,58 @@ Stare at these games for a second. Notice that we haven't introduced an underlyi
 
 The rest of the post will focus on the second game and proving Equation $$\eqref{eq:lln}$$.
 
-# Some terminology and prelims 
+## Some Terminology 
 
 To begin rigorously analyzing such games, we need to introduce various concepts. 
 
-Like most areas of math, there's a slew of new (ish?) terminology that goes along with it. Most of it is intuitive and often you can get by without paying too attention to the precise definitons. But we still need to introduce several precise meanings to start proving things.  
+Like most areas of math, there's a slew of new (ish?) terminology that goes along with it. Most of it is intuitive and often you can get by without paying too much attention to the precise definitons. But we still need to introduce several precise meanings to start proving things.  
 
-## Events and Variables 
+An _event_ is a condition on the opponents. E.g., Equations $$\eqref{eq:lln_general}$$ and $$\eqref{eq:lln}$$ are events. Let $$\Omega_\inf$$ be the set of all infinite move sequences by the opponents, and $$\Omega$$ the set of all finite move sequences. E.g., $$\{y_1,v_1,y_2,v_2,\dots\}\in \Omega_\inf$$ and $$\{y_1,v_1,\dots,y_n,v_n\}\in\Omega$$. Since we're analyzing the game in which Alice always plays 0, we'll omit $$v_i$$ from these sequences. Formally, we call $$\Omega_\inf$$ the sample space, and $$\Omega$$ the set of all situations. An event is a subset $$E\subset \Omega_\inf$$, and a path is an element $$\omega\in\Omega_\inf$$. Typically, it will be clear from context (or not matter) whether we're talking about finite or infinite sequences so we'll abuse notation and just write $$\Omega$$ for both $$\Omega_\inf\cup\Omega$$. 
 
-An _event_ is a condition on the opponents. E.g., Equation $$\eqref{eq:lln}$$ is an event. An infinite sequence of moves played by the opponents is a _path_. Call $$\Omega$$ the sample space of all paths. A function 
+Most the results in the space involve constructing strategies for Bob. Formally, a strategy is a pair $$(C_0, \strat)$$ where $$C_0$$ is the initial capital and $$\strat$$ is an _predictable process_, which is a function 
 
-$$X:\Omega\to\R$$ 
+$$\strat:\Omega\to\R,$$
 
-is called a _variable_.  Clearly, there's some similarity to Kolmogorov probability in the symbolic and linguistic choices. This is on purpose, and allows you to start forming a mental map of the relationships, and to perhaps anticipate some of the results.In measure theory, we'd call $$X$$ a _random_ variable, but there's no need for the adjective random here. 
+Given $$\omega\in\Omega_\inf\cup \Omega$$ write $$\omega^n$$ for the first $$n$$ elements of $$\omega$$, i.e., the first $$n$$ moves by world. To say that  $$\strat$$ is predictable just means that the functions 
 
-## Strategies and the Capital Process 
+$$\strat_n: \Omega_\inf\to\R:\omega \mapsto \strat(\omega^n),$$
 
-Most the results in the space involve constructing strategies for Bob. Formally, a strategy is a pair $$(C_0, \strat)$$ where $$C_0$$ is the initial capital and $$\strat$$ is an _adapted process_, which is a function 
+depend only on $$\omega^{n-1}$$. That is, the $$n$$-th move of Bob's strategy depends only on the first $$n-1$$ moves by World. 
 
-$$\strat:\mathbb{S}\to\R,$$
+If any of this is overly confusing, you can probably just ignore it. A path is a sequence of moves by World, and $$\strat$$ is a betting strategy for Bob which determines the amount to bet given what's already happened in the game. The rest is details. 
 
-where $$\mathbb{S}$$ be the set of all move sequences by the opponents, e.g., $$\{y_1,y_2}$$ or $${y_1,v_1,y_2,v_2,\dots}$$. To say that  $$\strat$$ is adapted means that $$S_n(\omega)$$
+## The Capital Process
+
+Bob's _capital process_ is a function $$\cps_n(\omega)$$ is a function of his strategy $$\omega$$, the moves made by World $$\omega$$, and tracks how his capital evolves over time. Its definition depends on the exact game being played. For the first game above it is defined recursively as 
+
+$$
+\begin{equation}
+\cps_n(\omega) = \cps_{n-1}(\omega) + \strat_{n-1}(\omega)( y_{n-1} - v_{n-1}), 
+\end{equation}
+$$
+
+with $$\cps_0=C_0$$, the initial capital. For the second game above, and the one we're analyzing, it is 
+
+$$
+\begin{equation}
+\label{eq:cp}
+\cps_n(\omega) = \cps_{n-1}(\omega) + \strat_{n-1}(\omega) y_{n-1}, \tag{3}
+\end{equation}$$
+
+since $$v_n=0$$. The dependence on $$\omega$$ is usually dropped. Results will involve developing a strategy $$\strat$$ such that $$\eqref{eq:cp}$$ can be analyzed.  
 
 
+# Forcing and Weak Forcing 
 
-## Forcing and weak forcing 
+A foundational concept is normal probability is an _almost sure_ event. Here, as alluded to above, this means an event $$E$$ such that $$\cps\geq 0$$ and either 
 
-A foundational concept is normal probability is an _almost sure_ event. Here, as alluded to above, this means an event $$E$$ such that $$C_n\geq 0$$ and either 
+$$\lim_n \cps =\infty\quad\text{or}\quad E \text{ happens}.$$ 
 
-$$\lim_n C_n =\infty\quad\text{or}\quad E \text{ happens}.$$ 
+That is, Bob does not risk bankruptcy and either becomes infinitely rich or forces $$E$$ to occur. For this reason, we'll also say that the Bob _can force_ $$E$$. An equivalent way to write this is that for all $$\omega\notin E$$, $$\lim_n \cps_n =\infty$$. 
 
-That is, the Bob does not risk bankruptcy and either the Bob becomes infinitely rich or forces $$E$$ to transpire. For this reason, we'll also say that the Bob _can force_ $$E$$. 
+A strategy $$\strat$$ for Bob _weakly forces_ event $$E$$ if $$\cp^\strat \geq 0$$ and 
 
-Note also that $$f:\Omega\to\R$$ would be a random variable in measure-theoretic probability, but here we can drop the adjective "random" since our formalization involves no randomness. 
-
-
-A strategy $$\strat$$ for Bob _weakly forces_ event $$E$$ if $$\proc^\strat \geq 0$$ and 
-
-$$\sup_n \proc^\strat_n(\omega) =\omega$$ 
+$$\sup_n \cp^\strat_n(\omega) =\omega$$ 
 
 for all $$\omega\not\in E$$. 
 
@@ -118,10 +137,15 @@ Weak forcing is (shockingly) a weaker condition than forcing, meaning that meani
 
 To see that, suppose $$\strat$$ is a strategy that weakly forces $$E$$, and let $$\omega\notin E$$ so that $$\sup_n\cps(\omega)=\infty$$. We want to create a strategy $$\hstrat$$ such that $$\lim_n \cp^{\hstrat}(\omega)=\infty$$ or $$E$$ occurs. The idea is to let $$\hstrat$$ be a scaled down version of $$\strat$$ which sets aside some capital every time $$\cps$$ gets large. Since the latter is large infinitely often, we can set aside capital infinitely often, meaning that $$\cp_{\hstrat}\to\infty$$. 
 
-Let $$\{T_1<T_2<\dots}\subset\mathbb{N}$$, $$i\in\mathbb{N}$$ be an infinite increasing sequence of natural numbers. Fix $$0<\beta<1$$. Define $$\hstrat$$ as playing the same moves as $$\strat$$ until $$\cps_n>T_1$$. 
+Let $$\{T_1<T_2<\dots\}\subset\mathbb{N}$$, $$i\in\mathbb{N}$$ be an infinite increasing sequence of natural numbers. Fix $$0<\beta<1$$. Define $$\hstrat$$ as playing the same moves as $$\strat$$ until $$\cps_n>T_1$$. 
 Define the next move $$\hstrat(\omega)$$ to bet the amount $$\beta \strat_{n+1}(\omega)$$, i.e., a scaled down version of $$\strat$$'s next bet. Thus, if $$\strat$$ loses money, $$\hstrat$$ loses a little less, and if it wins, $$\hstrat$$ wins a little less. Since $$\cps_n\geq 0$$, $$\strat$$ can lose at most $$\cps_n$$, thus $$\hstrat $$ can lose at most $$\beta \cp^{\hstrat}_n$$, and $$(1-\beta) \cp^{\hstrat}_n$$ is safe. 
 
-Let $$\hstrat$$ continuing emaluating $$\strat$$ until $$\cps_{n}>T_2$$, and then repeat the process. Again, we are saving a positive amount of capital which is henceforth saved. This amount builds over time, and since $$\cps$$ eventually exceeds $$T_i$$ for all $$i$$ (otherwise it would be bounded by some finite number), the strategy $$\hstrat$$ saves an infinite amount, thus $$\cp^{\hstrat}_n\to\infty.$$
+Let $$\hstrat$$ continuing emulating $$\strat$$ until $$\cps_{n}>T_2$$, and then repeat the process. Again, we are saving a positive amount of capital which is henceforth saved. This amount builds over time, and since $$\cps$$ eventually exceeds $$T_i$$ for all $$i$$ (otherwise it would be bounded by some finite number), the strategy $$\hstrat$$ saves an infinite amount, thus $$\cp^{\hstrat}_n\to\infty.$$
+
+![strategy-change](/assets/writing_images/intro_game_theory_prob.jpg){: style="text-align: center; width: 80%"}
+<p class='caption'>
+    Example of changing strategy \(\strat\) into \(\hstrat\). Here, the capital process of \(\strat\), \(\cps\), has progressively higher peaks, so \(\sup_n \cps_n=\infty\). But it always loses enough capital to return to some baseline value near 0, so that the limit is undefined and in particular, is not infinity. \(\hstrat\) on the other hand, saves capital at thresholds \(T_i\) so that its baseline progressively moves upwards, and is infinite in the limit. In this example, we've selectively chosen \(T_i\) such that they're always at the peaks of \(\cps\) (i.e., \(\strat\) loses the next bet) but this is not necessarily the case. If \(\strat\) wins the bet, \(\hstrat\) simply wins less.
+</p>
 
 # Averaging Strategies: The Infinite Casino
 
@@ -131,7 +155,7 @@ Suppose he plays strategy $$\strat_1$$ at table 1, and $$\strat_2$$ at table 2. 
 
 $$\strat = \sum_{i=1}^\infty \alpha_i \strat_i,$$
 
-where $$\sum_{i=1}^\infty \alpha_i=1$$. For this to be a legitimate strategy, however, we need that $$\sum_i \alpha_i \strat_i$$ converges in $$\R$$ _for each_ $$n$$ since Bob can only bet a finite amount at any time. 
+where $$\sum_{i=1}^\infty \alpha_i=1$$. For this to be a legitimate strategy, however, we need that $$\sum_i \alpha_i \strat_i$$ converges in $$\R$$ at each timestep since Bob can only bet a finite amount at any time. 
 
 Naturally, the capital process for a strategy $$\sum_i \alpha_i \strat_i$$ is 
 
@@ -162,15 +186,9 @@ $$\sum_k \vert 2^{-k}\strat_{i,n}\vert \leq \frac{2^nC_0}{B}\sum_k \frac{1}{2^k}
 From here, the arguments proceeds the same as above. For a path $$\omega$$ with $$\sup_n \cps_n(\omega)<\infty$$, it must be the case that $$\sup_n 2^{-k}\cp_n^{\strat_i}<\infty$$ as well. Therefore, on this path, $$E_k$$ occurs, meaning that $$\cap_{k=1}^\infty E_k$$ does too. 
 
 
-# Proving LLN 
+# Proving the Game-theoretic LLN
 
-To give a sense of how arguments can proceed in this space, we're going to prove the game-theoretic version of the LLN above. 
-
-For simplicity, we'll assume that the Alice always bets $$v_n=0$$. We'll show later that this assumption is without loss of generality. In this case the capital process is
-
-$$\cps_n = \cps_{n-1} + \strat_n y_n.$$
-
-Our goal is to show that the Bob can force event $$E$$, where $$E$$ is the event 
+Recall that our goal is to show that the Bob can force event $$E$$ in the second game, where $$E$$ is the event 
 
 $$\lim_{n\to\infty}\frac{1}{n}\sum_{i=1}^n y_i = 0.$$ 
 
@@ -202,7 +220,17 @@ We can't say whether $$\lim \by_n$$ exists, but this does let us bound the limit
 
 $$\limsup_n \by_n \leq B^2\eps.$$
 
-Running through the same argument with $$-\eps$$ gives the result for $$E^-$$. 
+Therefore, running the same argument through with $$\eps' = \eps/B^2$$, gives the first result. And running through the same argument with $$-\eps$$ gives the result for $$E^-$$. 
+
+Now, consider the sequence of $$\eps$$ defined by $$\eps_k = 1/k$$. Since we can force events $$E^+$$ and $$E^-$$ for each $$\eps_k$$, we can force the event 
+
+$$\bigg(\bigcap_{k=1}^\infty \limsup_n \by_n \leq \frac{1}{k} \bigg)\cap \bigg(\bigcap_{k=1}^\infty \liminf_n \by_n \geq -\frac{1}{k}\bigg),$$
+
+which is precisely the event $$\lim_n \by_n =0$$. 
+
+
+
+
 
 
 # Resources 

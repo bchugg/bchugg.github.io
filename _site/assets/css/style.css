@@ -1011,7 +1011,7 @@ pre code {
   text-align: justify; }
   .note .title {
     font-size: 18pt;
-    font-weight: bold;
+    text-decoration: underline;
     text-align: center;
     padding-bottom: 0;
     margin-bottom: 0; }
