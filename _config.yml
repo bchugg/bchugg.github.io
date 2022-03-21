@@ -13,9 +13,6 @@ author:
   url:               https://benchugg.com
   email:             ben.ih.chugg@gmail.com
 
-# Color scheme. Options: red, orange, magenta, cyan, blue, brown
-color-scheme: 
-
 # Permalinks
 permalink: /:title/
 
@@ -31,7 +28,7 @@ collections:
   papers: 
     output: false
   books: 
-    outout: false
+    output: false
 
 # Markdown specs
 markdown: kramdown
@@ -65,3 +62,6 @@ exclude:
 # (Used only for GitHub deployments)
 # See https://help.github.com/en/articles/adding-a-jekyll-theme-to-your-github-pages-site
 remote_theme: minicomp/ed
+
+plugins:
+  - jekyll-sitemap

@@ -1,37 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-  <loc>https://benchugg.com/</loc>
-  <lastmod>2021-12-24T05:22:02+00:00</lastmod>
-  <priority>1.00</priority>
+<loc>http://localhost:4000/research_notes/dual_lp/</loc>
+<lastmod>2022-01-16T00:00:00-08:00</lastmod>
 </url>
 <url>
-  <loc>https://benchugg.com/papers/</loc>
-  <lastmod>2021-12-24T05:22:02+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>http://localhost:4000/research_notes/intro_ito/</loc>
+<lastmod>2022-01-16T00:00:00-08:00</lastmod>
 </url>
 <url>
-  <loc>https://benchugg.com/books/</loc>
-  <lastmod>2021-12-24T05:22:02+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>http://localhost:4000/research_notes/sde_ito_lemma/</loc>
+<lastmod>2022-02-07T00:00:00-08:00</lastmod>
 </url>
 <url>
-  <loc>https://benchugg.com/courses/</loc>
-  <lastmod>2021-12-24T05:22:02+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>http://localhost:4000/research_notes/amms/</loc>
+<lastmod>2022-03-19T00:00:00-07:00</lastmod>
 </url>
 <url>
-  <loc>https://benchugg.com/assets/files/ox_thesis.pdf</loc>
-  <lastmod>2021-12-24T05:21:59+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/research_notes/intro_game_theory_prob/</loc>
+<lastmod>2022-03-19T00:00:00-07:00</lastmod>
 </url>
-
-
+<url>
+<loc>http://localhost:4000/writing/pascals_mugging/</loc>
+<lastmod>2020-12-18T00:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/writing/against_longtermism/</loc>
+<lastmod>2020-12-20T00:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/writing/unprecedented_times/</loc>
+<lastmod>2020-12-30T00:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/writing/cliodynamics/</loc>
+<lastmod>2021-01-04T00:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/writing/myth_of_ai/</loc>
+<lastmod>2021-06-09T00:00:00-07:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/books/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/courses/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/papers/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/research_notes/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/writing/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/assets/files/ox_thesis.pdf</loc>
+<lastmod>2022-01-09T08:33:31-08:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/google0157baebca92166a.html</loc>
+<lastmod>2020-10-15T10:23:58-07:00</lastmod>
+</url>
 </urlset>
