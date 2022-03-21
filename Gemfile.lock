@@ -58,7 +58,7 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.3.6)
-    nokogiri (1.12.5-x86_64-darwin)
+    nokogiri (1.13.3-x86_64-darwin)
       racc (~> 1.4)
     parallel (1.21.0)
     pathutil (0.16.2)
@@ -93,6 +93,7 @@ DEPENDENCIES
   html-proofer
   jekyll-sitemap
   kramdown-parser-gfm
+  nokogiri (>= 1.13.2)
   rake (>= 12.3.3)
   webrick
 
