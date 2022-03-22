@@ -1,5 +1,5 @@
 ---
-layout: default 
+layout: page
 title: Writing
 ---
 
@@ -7,7 +7,10 @@ Thoughts on things. If a post is old I'm probably at least semi-embarrased by it
 
 <br/>
 
-{% assign texts = site.writing | where_exp: "item", "item.status == 'published'" | sort: "date" | reverse %}
+{% assign internal_texts = site.writing | where_exp: "item", "item.status == 'published'" %}
+{% assign external_texts = site.external_writing | where_exp: "item", "item.status == 'published'" %}
+{% assign texts = internal_texts | concat: external_texts | sort: "date" | reverse %}
+
 <ul class='writing-list'>
 {% for text in texts %}
 <li>
@@ -16,7 +19,7 @@ Thoughts on things. If a post is old I'm probably at least semi-embarrased by it
             {% unless text.external_only != nil and text.external_only %}
             <a class="title" href="{{ text.url }}">{{ text.title }}</a>
             {% else %}
-            <a class='title no-link'>{{ text.title }}</a>
+            <a class='title' href="{{ text.external_link }}">{{ text.title }}</a>
             {% endunless %}
             <span>{{ text.date | date: "%b %Y"}}</span>
         </p>
@@ -27,7 +30,7 @@ Thoughts on things. If a post is old I'm probably at least semi-embarrased by it
         {% endif %}
         {% if text.external_link != nil and text.external_source != nil %}
         <p class='external-info'>
-        (<a href="{{ text.external_link }}">{{ text.external_source }}</a>)
+        ({{ text.external_source }})
         </p>
         {% endif %}
     </div>

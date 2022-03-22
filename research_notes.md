@@ -16,6 +16,7 @@ and about more important things.</i>
 </p>
 </div>
 
+<hr>
 
 {% assign notes = site.research_notes | where_exp: "item", "item.status == 'published'" | sort: "date" | reverse %}
 <ul class='note-list'>

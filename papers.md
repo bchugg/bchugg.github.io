@@ -7,7 +7,7 @@ title: Papers
   <em>"Curiouser and curiouser!" Cried Alice.</em>
 </p>
 
-{% assign publications = site.papers | sort: "date" | reverse %}
+{% assign publications = site.papers | sort: "date" | reverse | where_exp: "item", "item.type != 'thesis'" %}
 {% for pub in publications %}
 <div class="pubitem">
   <div class="pubtitle">{{ pub.title }}</div>
@@ -25,6 +25,21 @@ title: Papers
     {% endif %}
 
   </div>
-    
 </div>
 {% endfor %}
+
+# Theses
+{% assign theses = site.papers | where_exp: "item", "item.type == 'thesis'" | sort: "date" | reverse %}
+{% for pub in theses %}
+<div class="pubitem">
+  <div class="pubtitle">{{ pub.title }}</div>
+  <div class="pubauthors">{{ pub.authors }}</div>
+  <div class="pubinfo"><em>{{ pub.publication }}</em>, {{ pub.year}}</div>
+  <div class='publinks'>
+    {% unless pub.link == nil %}
+         <a href="{{ pub.link }}">pdf</a> 
+    {% endunless %} 
+    </div>
+</div>
+{% endfor %}
+

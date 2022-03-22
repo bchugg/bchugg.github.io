@@ -25,6 +25,8 @@ collections:
     output: true
   writing: 
     output: true
+  external_writing: 
+    output: false
   papers: 
     output: false
   books: 
