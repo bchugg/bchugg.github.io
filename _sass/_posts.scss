@@ -17,9 +17,10 @@
 
 .note {
     .title {
+        padding-top: 20px;
         font-size: 18pt;
         //font-weight: bold;
-        text-decoration: underline;
+        //text-decoration: underline;
         text-align: center;
         padding-bottom: 0;
         margin-bottom: 0;
@@ -98,6 +99,7 @@
 }
 
 #markdown-toc {
+    padding-bottom: 20px;
     li {
         ul {
             padding-bottom: 0;

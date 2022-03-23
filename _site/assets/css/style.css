@@ -1010,8 +1010,8 @@ pre code {
   color: black;
   text-align: justify; }
   .note .title {
+    padding-top: 20px;
     font-size: 18pt;
-    text-decoration: underline;
     text-align: center;
     padding-bottom: 0;
     margin-bottom: 0; }
@@ -1065,19 +1065,24 @@ pre code {
       font-size: 10pt;
       float: right; }
 
-#markdown-toc li ul {
-  padding-bottom: 0;
-  margin-bottom: 0; }
+#markdown-toc {
+  padding-bottom: 20px; }
+  #markdown-toc li ul {
+    padding-bottom: 0;
+    margin-bottom: 0; }
 
-.pubitem {
+.papers h1 {
+  font-weight: bold;
+  padding-top: 20px;
+  text-decoration: underline;
+  font-size: 16pt; }
+.papers .pubitem {
   margin: 2em 0; }
-
-.pubtitle {
+.papers .pubtitle {
   line-height: 1.2em;
   font-weight: bold; }
-
-.pubauthors,
-.pubinfo {
+.papers .pubauthors,
+.papers .pubinfo {
   font-size: 80%; }
 
 .books {

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head prefix="og: http://ogp.me/ns#; dc: http://purl.org/dc/terms/#">
+  
+  
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="http://localhost:4000/research_notes/amms/" />
+
+  <!-- Basic meta elements -->
+  <meta charset="utf-8" />
+
+  <!-- Enable responsiveness on mobile devices -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+
+  <!-- Mathjax Support -->
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <title>
+    
+      Ben &middot; Understanding Automated Market Makers (AMMs)
+    
+  </title>
+
+  <!-- Dublin Core metadata for Zotero -->
+  <meta property="dc:title" content="Understanding Automated Market Makers (AMMs)" />
+  <meta property="dc:creator" content="Ben Chugg" />
+  <meta property="dc:identifier" content="http://localhost:4000/research_notes/amms/" />
+  
+  
+  
+  <meta property="dc:source" content="benny" />
+
+  <!-- Open Graph metadata -->
+  <meta property="og:title" content="Understanding Automated Market Makers (AMMs)" />
+  <meta property="og:url" content="http://localhost:4000/research_notes/amms/" />
+  <meta property="og:image" content="http://localhost:4000/assets/favicon.ico" />
+  <meta property="og:image:width" content="200" />
+  <meta property="og:image:height" content="200" />
+  <meta property="fb:admins" content="elotroalex" />
+  <meta property="fb:app_id" content="589495744558280" />
+
+
+  <meta property="og:description" content="">
+  <meta property="og:type" content="article" />
+
+
+  <!-- CSS link -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="167x167" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/assets/favicon.ico" />
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="114×114" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="72×72" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” href="/assets/favicon.ico" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml" />
+</head>
+
+
+  <body class="theme-base-">
+
+    <!-- This if statement decides which sidebar to use -->
+    
+    <!--
+  Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for
+  behavior.
+-->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p></p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/papers/">Papers</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/research_notes/">Research Notes</a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/writing/">Writing</a>
+        
+      
+    
+
+    <a class='sidebar-nav-item' href="http://incrementspodcast.com">Podcast</a>
+
+    <span class='sidebar-nav-item'>Recommendations</span>
+    <ul class="dropdown-menu">
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+            <li><a href="/books/">Books</a></li>
+          
+        
+      
+        
+          
+            <li><a href="/courses/">Courses</a></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    </ul>
+
+
+    <!-- The code below is used for manually entered links  -->
+    <!-- <span style='cursor:pointer;' onclick="javascript:var hypothesis = document.createElement('script');
+      hypothesis.setAttribute('src','https://hypothes.is/embed.js');
+      document.head.appendChild(hypothesis);"><a class="sidebar-nav-item">Annotate me</a></span> -->
+
+  <!--
+    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://localhost:4000/research_notes/amms//" data-proofer-ignore>Annotate me</a>
+    <script src="https://hypothes.is/embed.js" async></script>
+  -->
+
+    <!-- <a class="sidebar-nav-item" href="https://github.com/minicomp/ed" target="_blank">GitHub project</a> -->
+   </nav> 
+
+  <div class="sidebar-links">
+    <div class='container'>
+      <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github_white.png"></a>
+      <a href="https://www.linkedin.com/in/ben-chugg-3a4616aa/" rel='nofollow'><img src="/assets/images/linkedin_white.png"></a>
+      <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads_white.png"></a>
+      <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter_white.png"></a>
+    </div>
+     <!-- <p>
+      A modified version of <a href="https://minicomp.github.io/ed/">Ed.</a> 
+    </p>  -->
+  </div>
+</aside>
+
+    
+
+    <!--
+      Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS
+      collisions with our real content.
+    -->
+    <div class="wrap">
+      <header class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">benny</a>
+            
+          </h3>
+        </div>
+      </header>
+
+      <main class="container content" id="main">
+        <article class="note">
+  <small>
+    <a href="/research_notes/">Back to all notes</a>
+  </small>
+  <!-- <hr> -->
+  <p class="title">Introduction to Automated Market Makers (AMMs)</p>
+
+\[\newcommand{\blambda}{\bar{\lambda}}
+\newcommand{\bp}{\bar{p}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\DX}{\Delta X}
+\newcommand{\DY}{\Delta Y}
+\newcommand{\ratio}{\Lambda}\]
+
+<p>Decentralized Exchanges (DEXs) are digital markets enabling cryptocurrency transactions which do not require third parties to oversee the process. Part of the process involves replacing human <a rel="nofollow noopener noreferrer" href="https://www.investopedia.com/terms/m/marketmaker.asp#:~:text=The%20term%20market%20maker%20refers,in%20the%20bid%2Dask%20spread.">market makers</a> with smart contracts known as <em>automated market makers</em> (AMMs). Roughly, AMMs are rules determining how much of good \(X\) can be traded for good \(Y\) (where “goods” here typically refer to various cryptocurrencies). Examples of DEXs include <a rel="nofollow noopener noreferrer" href="https://uniswap.org/">Uniswap</a> and <a rel="nofollow noopener noreferrer" href="https://balancer.fi/">Balancer</a>, each of which has their own AMM protocol.</p>
+
+<p>I’m basically agnostic as to the promise of DEXs, and there are certainly <a rel="nofollow noopener noreferrer" href="https://cointelegraph.com/explained/crypto-rug-pulls-what-is-a-rug-pull-in-crypto-and-6-ways-to-spot-it#:~:text=Rug%20pulls%20happen%20when%20fraudulent,decentralized%20finance%20(DeFi)%20exploit.">known problems</a> as they exist right now. But the math is interesting, so we’re going to explore them from that perspective. Going forward, we’ll focus on markets exchanging two goods.</p>
+
+<h1 id="wealth-and-price-processes">Wealth and Price Processes</h1>
+
+<p>A <em>numeraire</em> is any financial standard against which we compare the value of assets. Typically numeraires are stable, providing a reliable means against we can compare something more volatile. Technically speaking, however, they can be anything.</p>
+
+<p>For example, a numeraire might be the US dollar, and the asset lumber. In crypto land, they’re typically cryptocurrencies. But it’s helpful to keep the USD and lumber example in the back of your head.</p>
+
+<p>At time \(t\), let \(X_t\) be the amount of numeraire (USD), and \(Y_t\) the amount of asset (lumber). The price of the asset w.r.t. to the numeraire is controlled by stochastic market forces, captured mathematically by what we’ll call a <em>price process</em>. The price process is a sequence of random variables \(S_t\), which define the relationship between wealth, numeraire, and assets:</p>
+
+\[\begin{equation}
+    \label{eq:wealth}
+    W_t = X_t + Y_tS_t. \tag{1}
+\end{equation}\]
+
+<p>Here, \(W_t\) is total wealth <em>as measured by the numeraire</em>. Thus, \(S_t\) can be conceived as a mapping from the asset space to the numeraire space. E.g., suppose \(S_t=7\) USD per unit lumber. If we have 100 USD on hand, and 8 pieces of lumber, then our total wealth is 100 + 7*8 = 156 USD.</p>
+
+<p>The specific price process will be chosen as a function of the market being analyzed. Later on, we’ll consider a Brownian motion based price process. But the general takeaway is that the price process is external to the market under consideration. Neither the liquidity provider (person supplying initial supplies of \(X\) and \(Y\) to the market), nor the traders control \(S_t\).</p>
+
+<h1 id="amms">AMMs</h1>
+<p>In a perfectly balanced market, a trader should not care whether she holds \(X_t\) or \(Y_t\), because they convert to the same amount, i.e., \(X_t=Y_tS_t\), so that total wealth is \(2X_t=2Y_tS_t\). For example, if \(X_t=100\) USD, and there are 5 units of lumber \((Y_t)\), each unit costing 20 USD \((S_t)\) then it is immaterial whether one holds USD or lumber, and there is no gain to be made from swapping between the two. This is captured by the condition \(S_t=X_t/Y_t\). We call \(X_t/Y_t\) the <em>implicit price</em>.</p>
+
+<p>Roughly speaking, if \(S_t\) is higher than the implicit price, then trading \(X_t\) for \(Y_t\) becomes profitable (assuming there’s no cost for making the transaction). Likewise, if \(S_t\) is lower than the implicit price, then trading \(Y_t\) for \(X_t\) becomes profitable.</p>
+
+<p>The preceding paragraph is only approximately true, because the exact mechanics depend on how exchanging \(X_t\) for \(Y_t\) and vice versa is allowed. If there is a fee associated with the transaction which is higher than all the current value in the market, then clearly no trade is profitable.</p>
+
+<p>The rule determining which trades are permissible is the AMM. It takes the form of an invariant which must hold after the transaction is completed. One of the simplest AMMs is a <em>constant function</em> AMM, which takes the form:</p>
+
+\[\begin{equation*}
+\begin{cases}
+    (X_t + \DX_t)(Y_t-\DY_t) = c,&amp;\text{if trading }\DX_t\text{ for }\DY_t,\\
+    (X_t - \DX_t)(Y_t+\DY_t) = c,&amp;\text{if trading }\DY_t\text{ for }\DX_t.
+\end{cases}    
+\end{equation*}\]
+
+<p>where \(c&gt;0\) is some constant, \(\DX_t\) is the amount of \(X_t\) being traded, and \(\DY_t\) the amount of \(Y_t\). Note that if a trader is exchanging \(\DX_t\) for \(\DY_t\), then the market gains \(\DX_t\) and loses \(\DY_t\), hence the signs.</p>
+
+<p>We want to encourage these markets to exist; in particular, we want to encourage people to invest \(X\) and \(Y\) into them (so-called liquidity providers). To do this, we’ll add a fee to the transaction, so that the market is getting richer over time. 
+A common such AMM is the following:</p>
+
+\[\begin{equation}
+\label{eq:amm_fee}
+\begin{cases}
+    (X_t + \DX_t)^\gamma (Y_t-\DY_t) = X_t^\gamma Y_t,&amp;\text{if trading }\DX_t\text{ for }\DY_t,\\
+    (X_t - \DX_t) (Y_t+\DY_t)^\gamma = X_t Y_t^\gamma,&amp;\text{if trading }\DY_t\text{ for }\DX_t,
+\end{cases}  \tag{2}  
+\end{equation}\]
+
+<p>where \(\gamma\in[0,1)\). The quantity \(\rho = 1-\gamma\) acts as the fee. If \(\rho=0\), then we recover the constant AMM above, and as \(\rho\to1\), the trade becomes ever more expensive in the sense that we are given less \(Y_t\) for every unit of \(X_t\) traded (and vice versa).</p>
+
+<p>We’ll be using \eqref{eq:amm_fee} for the remainder of the post.</p>
+
+<h1 id="trading-dynamics">Trading dynamics</h1>
+
+<p>Our eventual goal is to understanding how the wealth of a liquidity provider increases or decreases over time as a function of the fee \(\gamma\). To do this, we need to understand how the quantities of \(X_t\) and \(Y_t\) change over time. The first step is to understand when it is in a trader’s interest to exchange goods – i.e., when there is an arbitrage opportunity.</p>
+
+<h2 id="no-arbitrage-conditions">No Arbitrage Conditions</h2>
+<p>At a fixed time \(t\) and with \(S_t\) known to a trader, we want to answer the question: what trade (if any) is the most profitable? First, consider trading \(X_t\) for \(Y_t\). For now, we’ll assume that however much \(Y_t\) the trader obtains, she’s able to cash it all (the lumber can all be converted to cash). That is, if she obtains \(\DY_t\) of \(Y_t\), then the value is \(S_t\DY_t\). The technical term for this is that the market is sufficiently liquid for any trade, or infinitely liquid. Thus, the trader is interested in maximizing \(S_t\DY_t - \DX_t\) (she gains \(\DY_t\) at unit price \(S_t\), and loses \(\DX_t\)). Of course, \(\DX_t\) and \(\DY_t\) must be constrained by the AMM, and must be positive. This yields the following optimization problem:</p>
+
+\[\begin{align}
+    \max_{\DX_t,\DY_t} \quad &amp; S_t\DY_t - \DX_t \notag\\ 
+    \text{s.t.} \quad &amp; (X_t + \DX_t)^\gamma (Y_t-\DY_t)=X_t^\gamma Y_t, \tag{3}\label{eq:opt1}\\
+    &amp;\DX_t,\DY_t\geq 0. \notag
+\end{align}\]
+
+<p>Using the AMM constraint, we can rewrite \(\DY_t\) in terms of \(\DX_t\) and obtain the single variable problem</p>
+
+\[\begin{align*}
+    \max_{\DX_t}\; f(\DX_t) = S_t Y_t(1 - X_t^\gamma(X_t+\DX_t)^{-\gamma}) - \DX_t,\quad \text{s.t.}\quad \DX_t \geq 0. 
+\end{align*}\]
+
+<p>Setting \(\frac{df}{d\DX_t}=0\) and performing the relevant arithmetic yields</p>
+
+\[\begin{equation}
+\label{eq:uncon_sol}
+\DX_t = X_t\bigg(\bigg(\frac{\gamma S_t Y_t}{X_t}\bigg)^{\frac{1}{\gamma+1}}-1\bigg),\quad \DY_t = Y_t\bigg(1 - \bigg(\frac{\gamma S_t Y_t}{X_t}\bigg)^{-\frac{\gamma}{\gamma + 1}}\bigg),    \tag{4}
+\end{equation}\]
+
+<p>where the second equation comes from substituting \(\DX_t\) into the AMM equation. 
+Note that</p>
+
+\[\frac{d^2 f}{d\DX_t^2}=-\frac{\gamma(\gamma+1) S_tY_tX_t^\gamma}{(X_t+\DX_t)^{\gamma+2}}&lt;0,\]
+
+<p>meaning \(f\) is concave so it has a single maximum. It follows that the maximum to the constrained problem is either at \(\DX_t\) of \eqref{eq:uncon_sol}, or at 0 (since if \(\DX_t&lt;0\) then it \emph{strictly} decreases away from this point). Thus, the solution to \eqref{eq:opt1} is \(\DX_t^*=\max\{\DX_t,0\}\), and \(\DY_t^*=\max\{\DY_t,0\}\), where \(\DY_t\) and \(\DX_t\) are as in Equation \eqref{eq:uncon_sol}.</p>
+
+<p>Notice that \(\DX_t^*&gt; 0\) iff \(S_t &gt; \gamma^{-1} X_t/Y_t\), implying the trade is not worth it for \(S_t\) less than that (and recall that the trader knows \(S_t\) – she can check the price of lumber). The same condition holds for \(\DY_t^*\). We’ve learned when it is profitable to trade \(X_t\) for \(Y_t\).</p>
+
+<p>Answering the opposite question, namely when it is profitable to trade \(Y_t\) for \(X_t\) is similar to above. In this case we solve the problem</p>
+
+\[\begin{align}
+\label{eq:opt2}
+    \max_{\DX_t,\DY_t} \quad &amp; \DX_t - S_t\DY_t \notag\\
+    \text{s.t.} \quad &amp; (X_t - \DX_t)  (Y_t+\DY_t)^\gamma=X_t Y_t^\gamma, \notag \\
+    &amp;\DX_t,\DY_t\geq 0. \notag
+\end{align}\]
+
+<p>Proceeding as before, this time we obtain the solutions</p>
+
+\[\begin{equation}
+\label{eq:sol2}
+\DX_t^* = \max\bigg\{X_t\bigg(1 - \bigg(\frac{S_tY_t}{\gamma X_t}\bigg)^{\frac{\gamma}{\gamma+1}}\bigg), 0\bigg\}, 
+\end{equation}\]
+
+\[\begin{equation}
+\label{eq:sol3}
+\DY_t^* =  \max\bigg\{Y_t\bigg(\bigg(\frac{\gamma X_t}{S_tY_t}\bigg)^{\frac{1}{\gamma+1}} -1 \bigg),0\bigg\}. 
+\end{equation}\]
+
+<p>In this case, we learn that it’s not profitable to trade unless \(S_t &lt; \gamma X_t/Y_t\).</p>
+
+<p>This gives us conditions on when no trade is profitable (so called ‘no-arbitrage’ conditions).</p>
+
+\[\begin{equation}
+\label{eq:no_arbitrage}
+  S_t\in\bigg[\gamma\ratio_t,\frac{1}{\gamma}\ratio_t\bigg],\quad\text{where}\quad \ratio_t\equiv \frac{X_t}{Y_t}. 
+ \end{equation}\]
+
+<p>Note that this is fairly intuitive: as \(\gamma\) increases (and the fee decreases), the interval gets smaller. Less costly trades imply that traders can be more sensitive to changes in price and leverage even small differences to their advantage.</p>
+
+<h2 id="the-trading-game">The trading game</h2>
+
+<p>Based on the no-arbitrage conditions derived above, we know understand when trades will and won’t occur. It’s now worth spelling out how the actual dynamics of this two good economy will play themselves out.</p>
+
+<p>We make the following assumption:</p>
+
+<p>(A1) <em>When there is an arbitrage opportunity, there exists a trader in the market who will make a trade to maximize her profits. Moreover, this trade freezes the market, i.e., no two traders try to trade at the same time. The subsequent change in the availability of \(X_t\) and \(Y_t\) are known to all traders in the market immediately after the transaction has occurred.</em></p>
+
+<p>Note that assumption A1 implies that only one trade happens per timestep.</p>
+
+<p>The game proceeds as follows. We start with some initial amount of numeraire and asset, \(X_0\), \(Y_0\), and an initial price \(S_0\). At each time \(t\):</p>
+
+<ul>
+  <li>If \(S_t&lt;\gamma \ratio_t\), then a trader exchanges \(\DY_t\) for \(\DX_t\) such that \(S_t\in [\gamma \ratio_{t+1},\gamma^{-1}\ratio_{t+1}]\). In particular, \(S_t = \gamma \Lambda_{t+1}\).</li>
+  <li>If \(S_t &gt; \gamma^{-1}\ratio_t\), then a trader exchanges \(\DX_t\) for \(\DY_t\) such that \(S_t\in [\gamma \ratio_{t+1},\gamma^{-1}\ratio_{t+1}]\). In particular, \(S_t = \gamma^{-1}\Lambda_t\).</li>
+  <li>If \(S_t\in [\gamma \ratio_{t},\gamma^{-1}\ratio_{t}]\) then no trade occurs.</li>
+</ul>
+
+<p>While this is somewhat abstract, it’s worth keeping this general process in mind. The upshot is that if the current price is in the no-arbitrage region then no trade occurs because it’s not in any traders’ interest. On the other hand, if \(X_t\) is sufficiently underpriced relative to \(Y_t\) such that \(S_t &lt; \gamma \Lambda_t\), then somebody will trades \(\DY_t\) for \(\DX_t\). In particular, they trade precisely the amount given by Equation \eqref{eq:uncon_sol}, which means that \(X\) and \(Y\) (which are now \(X_{t+1}\) and \(Y_{t+1}\)) now obey \(S_t = \gamma\Lambda_{t+1}\). Exchanging more \(\DY_t\) would not have been profitable for the trader.</p>
+
+<h2 id="evolution-of-x_ty_t">Evolution of \(X_t/Y_t\)</h2>
+
+<p>Finally, we investigate how the ratio \(X_t/Y_t\) behaves over time. Of course, in the constant AMM case, it remains constant: \(X_t Y_t=c\). But the fee complicates matters. For the AMM with fee, consider a numeraire based trade (trading \(\DX_t\) for \(\DY_t\)). Using Equation \eqref{eq:uncon_sol}</p>
+
+\[\begin{equation}
+\label{eq:XtYtnumeraire}
+    \frac{X_{t+1}}{Y_{t+1}} 
+    = \frac{X_t + \DX_t}{Y_t-\DY_t} 
+    = X_t\bigg(\frac{\gamma S_t Y_t}{X_t}\bigg)^{\frac{1}{\gamma+1}} \bigg/ Y_t \bigg(\frac{\gamma S_t Y_t}{X_t}\bigg)^{-\frac{\gamma}{\gamma+1}} = \gamma S_t. 
+\end{equation}\]
+
+<p>Similarly, in the case of trading \(\DY_t\) for \(\DX_t\) we obtain,</p>
+
+\[\begin{equation}
+\label{eq:XtYtasset}
+    \frac{X_{t+1}}{Y_{t+1}} = \frac{X_t-\DX_t}{Y_t+\DY_t} = \gamma^{-1}S_t.
+\end{equation}\]
+
+<p>The knowledge that the ratio of \(X_t/Y_t\) evolves according to a multiplicative factor of \(\gamma\) and price process will be valuable later on.</p>
+
+<h1 id="resources">Resources</h1>
+
+<ul>
+  <li><a rel="nofollow noopener noreferrer" href="https://research.paradigm.xyz/LP_Wealth.pdf">LP Wealth</a></li>
+  <li><a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/1911.03380.pdf">An analysis of Uniswap markets</a></li>
+</ul>
+
+  <small>
+    <a href="/research_notes/">Back to all notes</a>
+  </small>
+</article>
+ <!-- "> -->
+      </main>
+
+      <!-- Footer  -->
+      <div class="container" id="footer">
+        <hr>
+        <div class='container links'>
+          <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github.png"></a>
+          <a href="https://www.linkedin.com/in/ben-chugg-3a4616aa/" rel='nofollow'><img src="/assets/images/linkedin.png"></a>
+          <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads.png"></a>
+          <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter.png"></a>
+        </div>
+      
+        <div class='copyright'>
+          <small>&#169; 2022 Ben Chugg</small>
+        </div>
+      
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+
+    // Highlight search Query
+    var url = window.location.href;
+      if (url.lastIndexOf("?q=") > 0) {
+        // get the index of the parameter, add three (to account for length)
+        var stringloc = url.lastIndexOf("?q=") + 3;
+        // get the substring (query) and decode
+        var searchquery = decodeURIComponent(url.substr(stringloc));
+        // regex matches at beginning of line, end of line or word boundary, useful for poetry
+        var regex = new RegExp("(?:^|\\b)(" + searchquery + ")(?:$|\\b)", "gim");
+        // get, add mark and then set content
+        var content = document.getElementById("main").innerHTML;
+        document.getElementById("main").innerHTML = content.replace(regex, "<mark>$1</mark>");
+      }
+
+      // Toggle sidebar
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             !sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+
+<!-- Facebook SDK for JavaScript -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '589495744558280',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+  </body>
+</html>

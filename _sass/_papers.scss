@@ -1,4 +1,13 @@
-.pubitem {
+.papers {
+
+  h1 {
+    font-weight: bold;
+    padding-top: 20px;
+    text-decoration: underline;
+    font-size: 16pt;
+  }
+
+  .pubitem {
     margin: 2em 0;
   }
   
@@ -11,3 +20,7 @@
   .pubinfo {
     font-size: 80%;
   }
+
+
+}
+

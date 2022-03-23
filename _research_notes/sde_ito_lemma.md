@@ -5,6 +5,8 @@ title: "Itô Processes and The Fundamental Theorem of Stochastic Calculus"
 status: published
 ---
 
+<p class='title'>Itô Processes and The Fundamental Theorem of Stochastic Calculus</p>
+
 $$
 \newcommand{\dif}{\;\text{d}}
 \newcommand{\dd}{\text{d}}
