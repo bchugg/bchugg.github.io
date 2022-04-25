@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head prefix="og: http://ogp.me/ns#; dc: http://purl.org/dc/terms/#">
+  
+  
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="http://localhost:4000/research_notes/tassy_white_amms/" />
+
+  <!-- Basic meta elements -->
+  <meta charset="utf-8" />
+
+  <!-- Enable responsiveness on mobile devices -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+
+  <!-- Mathjax Support -->
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <title>
+    
+      Ben &middot; LP Wealth in Constant Product AMMs
+    
+  </title>
+
+  <!-- Dublin Core metadata for Zotero -->
+  <meta property="dc:title" content="LP Wealth in Constant Product AMMs" />
+  <meta property="dc:creator" content="Ben Chugg" />
+  <meta property="dc:identifier" content="http://localhost:4000/research_notes/tassy_white_amms/" />
+  
+  
+  
+  <meta property="dc:source" content="benny" />
+
+  <!-- Open Graph metadata -->
+  <meta property="og:title" content="LP Wealth in Constant Product AMMs" />
+  <meta property="og:url" content="http://localhost:4000/research_notes/tassy_white_amms/" />
+  <meta property="og:image" content="http://localhost:4000/assets/favicon.ico" />
+  <meta property="og:image:width" content="200" />
+  <meta property="og:image:height" content="200" />
+  <meta property="fb:admins" content="elotroalex" />
+  <meta property="fb:app_id" content="589495744558280" />
+
+
+  <meta property="og:description" content="">
+  <meta property="og:type" content="article" />
+
+
+  <!-- CSS link -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="167x167" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/assets/favicon.ico" />
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="114×114" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="72×72" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” href="/assets/favicon.ico" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml" />
+</head>
+
+
+  <body class="theme-base-">
+
+    <!-- This if statement decides which sidebar to use -->
+    
+    <!--
+  Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for
+  behavior.
+-->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p></p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/papers/">Papers</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/research_notes/">Research Notes</a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/writing/">Writing</a>
+        
+      
+    
+
+    <a class='sidebar-nav-item' href="http://incrementspodcast.com">Podcast</a>
+
+    <span class='sidebar-nav-item'>Recommendations</span>
+    <ul class="dropdown-menu">
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+            <li><a href="/books/">Books</a></li>
+          
+        
+      
+        
+          
+            <li><a href="/courses/">Courses</a></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    </ul>
+
+
+    <!-- The code below is used for manually entered links  -->
+    <!-- <span style='cursor:pointer;' onclick="javascript:var hypothesis = document.createElement('script');
+      hypothesis.setAttribute('src','https://hypothes.is/embed.js');
+      document.head.appendChild(hypothesis);"><a class="sidebar-nav-item">Annotate me</a></span> -->
+
+  <!--
+    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://localhost:4000/research_notes/tassy_white_amms//" data-proofer-ignore>Annotate me</a>
+    <script src="https://hypothes.is/embed.js" async></script>
+  -->
+
+    <!-- <a class="sidebar-nav-item" href="https://github.com/minicomp/ed" target="_blank">GitHub project</a> -->
+   </nav> 
+
+  <div class="sidebar-links">
+    <div class='container'>
+      <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github_white.png"></a>
+      <a href="https://www.linkedin.com/in/ben-chugg-3a4616aa/" rel='nofollow'><img src="/assets/images/linkedin_white.png"></a>
+      <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads_white.png"></a>
+      <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter_white.png"></a>
+    </div>
+     <!-- <p>
+      A modified version of <a href="https://minicomp.github.io/ed/">Ed.</a> 
+    </p>  -->
+  </div>
+</aside>
+
+    
+
+    <!--
+      Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS
+      collisions with our real content.
+    -->
+    <div class="wrap">
+      <header class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">benny</a>
+            
+          </h3>
+        </div>
+      </header>
+
+      <main class="container content" id="main">
+        <article class="note">
+  <small>
+    <a href="/research_notes/">Back to all notes</a>
+  </small>
+  <!-- <hr> -->
+  \[\newcommand{\N}{\mathbb{N}}
+\newcommand{\ratio}{\Lambda}
+\newcommand{\DX}{\Delta X}
+\newcommand{\DY}{\Delta Y}\]
+
+<p>We’ll move away from the abstract setting considered <a href="/research_notes/amms/">last time</a>, and consider an actual price process. We’ll adopt that used by Martin Tassy and David White in <a rel="nofollow noopener noreferrer" href="https://math.dartmouth.edu/~mtassy/articles/AMM_returns.pdf">this paper</a> which has the price process \(S_t\) follow (discrete) geometric Brownian motion.</p>
+
+\[\label{eq:price_process}
+    S_t = 
+    \begin{cases}
+    1, &amp; t=0, \\
+    S_{t-1}e^{\delta U_t},&amp; t&gt;0,
+    \end{cases}\]
+
+<p>where \(U_t\) are iid binomial random variables with success probability \(p\), and \(\delta&gt;0\) is some constant parameter. Wlog we may assume \(p\geq 1/2\), otherwise we flip the role of \(X_t\) and \(Y_t\).</p>
+
+<p>It’s more intutive to look at the price process in log space. Then we see that</p>
+
+\[\log(S_t)-\log(S_{t-1})\in\{-\delta,\delta\},\]
+
+<p>meaning prices can jump up or down by a factor of \(\delta\). \(\delta\) sort of acts as our “discretization factor.”</p>
+
+<p>Now, because products of exponentials play well together, we’re going to choose the fee \(\gamma\) to be \(\exp=(-k\delta)\) for some \(k\in\N\). This constrains the structure of \(S_t\) very nicely. In particular, if \(S_0=X_0/Y_0\), then at all times \(t\), \(S_t=\exp(m_t\delta)\ratio_t\) for some integer \(m_t\). We can see this by induction on \(t\). The base case is given by assumption. Assume it holds for some \(t\), so \(S_t=\exp(m_t\delta)\ratio_t\). Then by definition of the price process, \(S_{t+1}\in\{\exp(\delta)S_t,\exp(-\delta)S_t\}\) (the two cases come from \(U_{t+1}\)). Then, by Equations \eqref{eq:XtYtnumeraire} and \eqref{eq:XtYtasset}, \(S_t\) is a function of \(\gamma\) and \(\ratio_t\). Since \(\gamma=\exp(-k\delta)\), multiplying everything together gives the result.</p>
+
+<p>Ok, that’s all well and good – but why does this matter? Because now we can say precisely how much is traded at each timestep.</p>
+
+<p>The no arbitrage condition is now</p>
+
+\[S_t \in [\exp(-k\delta)\ratio_t, \exp(k\delta)\ratio_t].\]
+
+<p>As soon as the price is outside these bounds – and it will be outside by a factor of either \(e^\delta\) or \(e^{-\delta}\) by definition of the price process – then a trade is made.</p>
+
+<p>Thus, we can re-write the trading game (Section~\ref{sec:trading_game}) as follows.</p>
+
+<ul>
+  <li>
+    <p>If \(S_t&lt;\gamma\ratio_t\), then \(S_t=\exp(-\delta)\gamma\ratio_t=\exp(-\delta(k+1))\ratio_t\) and exchanging \(\DY_t\) for \(\DX_t\) is profitable. Using Equations~\eqref{eq:sol2} along with the definitions of \(\gamma, \ratio_t\) and the value of \(S_t\), we find that the amounts traded are:</p>
+
+\[\DY_t = Y_t(\exp(\frac{\delta}{\gamma+1})-1),\quad \DX_t = X_t(1 - \exp(-\frac{\delta \gamma}{\gamma +1})).\]
+  </li>
+  <li>
+    <p>If \(S_t&gt;\gamma^{-1}\ratio_t\), then \(S_t=\exp(\delta)\gamma^{-1}\ratio_t=\exp(\delta(k+1))\ratio_t\) and exchanging \(\DX_t\) for \(\DY_t\) is profitable. Using Equations~\eqref{eq:uncon_sol} along with definitions of \(\gamma,\ratio_t\) and the value \(S_t\), we find that the amounts traded are:</p>
+  </li>
+</ul>
+
+\[\DX_t = X_t(\exp(\frac{\delta}{\gamma+1}) -1),\quad \DY_t = Y_t(1 - \exp(-\frac{\delta\gamma}{\gamma+1})).\]
+
+<ul>
+  <li>If \(\exp(-k\delta)\ratio_t\leq S_t\leq \exp(k\delta) \ratio_t\) then no trade is made.</li>
+</ul>
+
+
+  <small>
+    <a href="/research_notes/">Back to all notes</a>
+  </small>
+</article>
+ <!-- "> -->
+      </main>
+
+      <!-- Footer  -->
+      <div class="container" id="footer">
+        <hr>
+        <div class='container links'>
+          <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github.png"></a>
+          <a href="https://www.linkedin.com/in/ben-chugg-3a4616aa/" rel='nofollow'><img src="/assets/images/linkedin.png"></a>
+          <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads.png"></a>
+          <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter.png"></a>
+        </div>
+      
+        <div class='copyright'>
+          <small>&#169; 2022 Ben Chugg</small>
+        </div>
+      
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+
+    // Highlight search Query
+    var url = window.location.href;
+      if (url.lastIndexOf("?q=") > 0) {
+        // get the index of the parameter, add three (to account for length)
+        var stringloc = url.lastIndexOf("?q=") + 3;
+        // get the substring (query) and decode
+        var searchquery = decodeURIComponent(url.substr(stringloc));
+        // regex matches at beginning of line, end of line or word boundary, useful for poetry
+        var regex = new RegExp("(?:^|\\b)(" + searchquery + ")(?:$|\\b)", "gim");
+        // get, add mark and then set content
+        var content = document.getElementById("main").innerHTML;
+        document.getElementById("main").innerHTML = content.replace(regex, "<mark>$1</mark>");
+      }
+
+      // Toggle sidebar
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             !sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+
+<!-- Facebook SDK for JavaScript -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '589495744558280',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+  </body>
+</html>
