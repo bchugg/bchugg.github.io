@@ -12,7 +12,7 @@ $$\newcommand{\dif}{\;\text{d}}\newcommand{\ind}{\mathbf{1}}\newcommand{\R}{\mat
 - TOC 
 {:toc}
 
-# Intro
+# 1. Intro
 Traditional calculus is fine, sure. But sometimes you have some juicy stochastic processes that don't obey the requirements for the usual differentiation or integration (in particular, they may be nowhere differentiable). This doesn't stop us from wanting to try doing something similar with them. [Itô calculus](https://en.wikipedia.org/wiki/It%C3%B4_calculus) is one way of extending the methods of deterministic calculus to the stochastic setting. But it isn't the only one: there is also [Stratonovich calculus](https://en.wikipedia.org/wiki/Stratonovich_integral). However, Itô calculus is (arguably) more common, and is also better suited to applications in finance, as we'll see below. I don't have much of an interest in mathematical finance, but hey, applications are always nice and they provide useful intuition checks. Stratonovich calculus is used more by physicists and I already have enough physics envy that I don't need to play into it. 
 
 The big payoff of Itô integration will be when dealing with stochastic differential equations, i.e., differential equations where at least one variable is a stochastic process. This post contains the construction and basic properties of the Itô integral, so we won't actually see the big payoffs yet. But we'll get there eventually. Vegetables before dessert, people. 
@@ -61,7 +61,7 @@ Intuitively, $$\F_t$$ contains all information about $$W$$ up until time $$t$$, 
 
 Alright, 'tis time to construct this bad boy. 
 
-# Construction
+# 2. Construction
 
 Like every other integral you've ever seen in your life, the Itô integral is constructed by first defining the integral for simple expressions and then taking some complicated limits for general integrands. And even though we saw that the Riemann-Stieltjes integral won't suffice here, it's not a bad place to start. 
 
@@ -86,7 +86,7 @@ $$\int_0^T X \dif W \equiv \lim_{n\to\infty}\int_0^T X_n\dif W,$$
 
 (the converence is [convergence in probability](https://en.wikipedia.org/wiki/Convergence_of_random_variables)) where, if you were worried, we're ensured that the limit exists because $$I_T(X_n)$$ is a cauchy sequence. This gives us our Itô integral $$I_T(X)$$. 
 
-# Properties
+# 3. Properties
 
 First, just like when we were integrating against $$\dif t$$, note that $$I_t=I_t(X)$$ is itself a stochastic process: 
 
@@ -111,7 +111,7 @@ To get a sense of what this looks like just scroll up and look at the example ab
 The first thing to note is that $$\E[B_t]=\E[B_t-B_0]=0$$, using that $$B_0=0$$ and that increments are normally distributed. Also, $$\E[(B_{t+\tau}-B_t)^2] = \Var((B_{t+\tau}-B_t)^2) = \tau^2$$ since $$\E[B_{t+\tau}-B_t]^2=0$$. We call this final property _linear variation_ of Brownian motion. 
 
 
-## $$I_T$$ is a Martingale
+## 3.1 $$I_T$$ is a Martingale
 
 If $$W$$ is a Wiener process, then it is also a martingale. A continuous time martingale $$Y_t$$ with respect to the filtration $$\F_t$$ obeys $$\E[\vert Y_t\vert]<\infty$$, and, for all $$t$$ and $$s\leq t$$, 
 
@@ -155,7 +155,7 @@ $$
 
 Note that this is only valid since $$\F_s\subset \F_{t_i}$$. This implies that the final sum of $$\eqref{eq:It_mart}$$ is zero, and we have our result. As you'd expect/hope this carries over into the limit and holds for general integrands of non-simple processes as well. 
 
-## The Itô Isometry
+## 3.2 The Itô Isometry
 
 Let's get a little hot and heavy with functional analysis for a second. Given metric spaces $$M_1$$ and $$M_2$$ with metrics $$d_1$$ and $$d_2$$, a map 
 
@@ -197,7 +197,7 @@ $$\E\bigg[\bigg(\int_0^T X_t\dif W_t\bigg)^2\bigg] = \E\int_0^T X_t^2\dif t = \i
 Notice that we can be a little fast and loose with the order of the expectation the integral from $$0$$ to $$T$$ because of our assumptions of square-integrability and [Fubini's theorem](https://en.wikipedia.org/wiki/Fubini%27s_theorem) (in the case of simple processes it's clear we can switch the order, but Fubini is required for continuous processes.)
 
 
-## Quadratic Variation 
+## 3.3 Quadratic Variation 
 
 The [quadratic variation](https://en.wikipedia.org/wiki/Quadratic_variation) of a stochastic process $$X$$ is 
 
@@ -225,7 +225,7 @@ $$[I,I](T) = \int_0^T X_t^2 \dif t.$$
 
 This might be a little confusing. After all, the quadratic variation of $$W$$ on $$[0,t]$$ is $$t$$, a number. But $$[I,I](t)$$ is a random variable? There's nothing in the definition of quadratic variation requiring that it converge to a number -- this just happens to be a particularly interesting property of Brownian motion. 
 
-# Examples
+# 4. Examples
 
 We can't get to the end of this thing and not actually calculate the value of any integrals. 
 

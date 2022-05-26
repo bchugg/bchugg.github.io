@@ -5,7 +5,8 @@ status: published
 date: "2022-01-16"
 ---
 
-# Some intuition for the dual of a linear program 
+<p class='title'>Some intuition for the dual of a linear program</p>
+
 $$\newcommand{R}{\mathbb{R}}$$
 
 Suppose we have the following basic linear program: 

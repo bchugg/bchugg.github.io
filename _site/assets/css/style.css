@@ -1017,11 +1017,13 @@ pre code {
     margin-bottom: 0; }
   .note h1 {
     font-weight: bold;
-    font-size: 18pt; }
+    font-size: 16pt;
+    padding-bottom: 15px;
+    padding-top: 20px; }
   .note h2 {
     font-size: 14pt;
     font-weight: bold;
-    padding-top: 20px; }
+    padding-top: 16px; }
   .note h3 {
     font-weight: bold; }
   .note img {
@@ -1074,13 +1076,11 @@ pre code {
 .papers h1 {
   font-weight: bold;
   padding-top: 20px;
-  text-decoration: underline;
-  font-size: 16pt; }
+  font-size: 14pt; }
 .papers .pubitem {
   margin: 2em 0; }
 .papers .pubtitle {
-  line-height: 1.2em;
-  font-weight: bold; }
+  line-height: 1.2em; }
 .papers .pubauthors,
 .papers .pubinfo {
   font-size: 80%; }

@@ -233,30 +233,30 @@
 \newcommand{\Var}{\mathbb{V}}\]
 
 <ul id="markdown-toc">
-  <li><a href="#itô-processes" id="markdown-toc-itô-processes">Itô Processes</a>    <ul>
-      <li><a href="#example-1-brownian-motion-with-drift" id="markdown-toc-example-1-brownian-motion-with-drift">Example 1: Brownian motion with drift</a></li>
-      <li><a href="#example-2-geometric-brownian-motion-gbm" id="markdown-toc-example-2-geometric-brownian-motion-gbm">Example 2: Geometric Brownian motion (GBM)</a></li>
-      <li><a href="#integrals-with-respect-to-an-itô-process" id="markdown-toc-integrals-with-respect-to-an-itô-process">Integrals with respect to an Itô Process</a></li>
+  <li><a href="#1-itô-processes" id="markdown-toc-1-itô-processes">1. Itô Processes</a>    <ul>
+      <li><a href="#11-example-1-brownian-motion-with-drift" id="markdown-toc-11-example-1-brownian-motion-with-drift">1.1 Example 1: Brownian motion with drift</a></li>
+      <li><a href="#12-example-2-geometric-brownian-motion-gbm" id="markdown-toc-12-example-2-geometric-brownian-motion-gbm">1.2 Example 2: Geometric Brownian motion (GBM)</a></li>
+      <li><a href="#13-integrals-with-respect-to-an-itô-process" id="markdown-toc-13-integrals-with-respect-to-an-itô-process">1.3 Integrals with respect to an Itô Process</a></li>
     </ul>
   </li>
-  <li><a href="#aside-manipulating-infinitesimals" id="markdown-toc-aside-manipulating-infinitesimals">Aside: Manipulating Infinitesimals</a></li>
-  <li><a href="#itôs-lemma" id="markdown-toc-itôs-lemma">Itô’s Lemma</a>    <ul>
-      <li><a href="#proof-sketch" id="markdown-toc-proof-sketch">Proof Sketch</a></li>
-      <li><a href="#sde-form" id="markdown-toc-sde-form">SDE Form</a></li>
-      <li><a href="#the-fundamental-theorem-of-stochastic-calculus" id="markdown-toc-the-fundamental-theorem-of-stochastic-calculus">The Fundamental Theorem of Stochastic Calculus</a></li>
+  <li><a href="#2-aside-manipulating-infinitesimals" id="markdown-toc-2-aside-manipulating-infinitesimals">2. Aside: Manipulating Infinitesimals</a></li>
+  <li><a href="#3-itôs-lemma" id="markdown-toc-3-itôs-lemma">3. Itô’s Lemma</a>    <ul>
+      <li><a href="#31-proof-sketch" id="markdown-toc-31-proof-sketch">3.1 Proof Sketch</a></li>
+      <li><a href="#32-sde-form" id="markdown-toc-32-sde-form">3.2 SDE Form</a></li>
+      <li><a href="#33-the-fundamental-theorem-of-stochastic-calculus" id="markdown-toc-33-the-fundamental-theorem-of-stochastic-calculus">3.3 The Fundamental Theorem of Stochastic Calculus</a></li>
     </ul>
   </li>
-  <li><a href="#examples" id="markdown-toc-examples">Examples</a>    <ul>
-      <li><a href="#back-to-basics-int_0t-wdif-w" id="markdown-toc-back-to-basics-int_0t-wdif-w">Back to Basics: \(\int_0^t W\dif W\)</a></li>
-      <li><a href="#stochastic-integration-by-parts" id="markdown-toc-stochastic-integration-by-parts">Stochastic Integration by Parts</a></li>
-      <li><a href="#geometric-brownian-motion" id="markdown-toc-geometric-brownian-motion">Geometric Brownian Motion</a></li>
+  <li><a href="#4-examples" id="markdown-toc-4-examples">4. Examples</a>    <ul>
+      <li><a href="#41-back-to-basics-int_0t-wdif-w" id="markdown-toc-41-back-to-basics-int_0t-wdif-w">4.1 Back to Basics: \(\int_0^t W\dif W\)</a></li>
+      <li><a href="#42-stochastic-integration-by-parts" id="markdown-toc-42-stochastic-integration-by-parts">4.2 Stochastic Integration by Parts</a></li>
+      <li><a href="#43-geometric-brownian-motion" id="markdown-toc-43-geometric-brownian-motion">4.3 Geometric Brownian Motion</a></li>
     </ul>
   </li>
 </ul>
 
 <p>Throughout, let \(W\) be a Wiener process starting at the origin, and let \(X\) be a stochastic process adapted to \(W\)’s filtration. \(I_t=I_t(X)\) is the <a href="/research_notes/intro_ito/">Itô integral</a> of \(X\) w.r.t. to \(W\).</p>
 
-<h2 id="itô-processes">Itô Processes</h2>
+<h1 id="1-itô-processes">1. Itô Processes</h1>
 <p>There are at least two motivations for the Itô process. The first comes from the identity</p>
 
 \[\bigg(\int_0^t \dif W\bigg)^2 = W_t^2 = 2\int_0^t W\dif W + t,\]
@@ -285,7 +285,7 @@ X_T-X_0 = \int_0^T \mu(X_t,t)\dif t + \int_0^T \sigma(X_t,t)\dif W_t. \tag{1}
 
 <p>While it may not seem so at first glance, almost all stochastic processes – except those with jumps – are Itô processes.</p>
 
-<h3 id="example-1-brownian-motion-with-drift">Example 1: Brownian motion with drift</h3>
+<h2 id="11-example-1-brownian-motion-with-drift">1.1 Example 1: Brownian motion with drift</h2>
 
 <p>Suppose  \(\mu\) and \(\sigma\) are constants. Then, if \(X_0=0\) (which we will henceforth assume), Equation \(\eqref{eq:ito_process_int}\) reads \(X_t = \mu t + \sigma W_t\), and as an SDE we have</p>
 
@@ -297,7 +297,7 @@ X_T-X_0 = \int_0^T \mu(X_t,t)\dif t + \int_0^T \sigma(X_t,t)\dif W_t. \tag{1}
 
 <p>due to the quadratic variation of the Wiener process.</p>
 
-<h3 id="example-2-geometric-brownian-motion-gbm">Example 2: Geometric Brownian motion (GBM)</h3>
+<h2 id="12-example-2-geometric-brownian-motion-gbm">1.2 Example 2: Geometric Brownian motion (GBM)</h2>
 
 <p>Suppose \(\mu(X_t,t)=\alpha X_t\) and \(\sigma(X_t,t) = \beta X_t\) for constants \(\alpha\) and \(\beta\). Then,</p>
 
@@ -309,7 +309,7 @@ X_T-X_0 = \int_0^T \mu(X_t,t)\dif t + \int_0^T \sigma(X_t,t)\dif W_t. \tag{1}
 
 <p>GBM is so important it has its own <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Geometric_Brownian_motion">wikipedia page</a> (what else could possibly signal value?). It’s often used to model prices in mathematical finance. Itô’s lemma will give us a way to solve it.</p>
 
-<h3 id="integrals-with-respect-to-an-itô-process">Integrals with respect to an Itô Process</h3>
+<h2 id="13-integrals-with-respect-to-an-itô-process">1.3 Integrals with respect to an Itô Process</h2>
 
 <p>So far we’ve seen stochastic integrals with respect to Brownian motion. But now that we’ve introduced a new class of processes, we should discuss integrals with respect to those.</p>
 
@@ -319,7 +319,7 @@ X_T-X_0 = \int_0^T \mu(X_t,t)\dif t + \int_0^T \sigma(X_t,t)\dif W_t. \tag{1}
 
 <p>which is what you might expect. As usual, the integral on the left is a Lebesgue integral w.r.t to the time component, and the integral on the right is an Itô integral.</p>
 
-<h2 id="aside-manipulating-infinitesimals">Aside: Manipulating Infinitesimals</h2>
+<h1 id="2-aside-manipulating-infinitesimals">2. Aside: Manipulating Infinitesimals</h1>
 
 <p>Even though Equation \(\eqref{eq:sde}\) is informal, it’s intuitive enough that you’ll often see manipulations done to such equations directly, instead of reverting to the integral version. This isn’t completely out of the ordinary, something similar happens when we do change of variables in intro calculus. E.g., if we have \(\int f(u) f'(u) \dif u\), we might let \(v=f(u)\) and \(dv = f'(u)du\) to deal instead with the integral \(\int v \dif v\). The equation \(dv=f'(u)du\) isn’t meaningful in a precise, technical sense, but it’s still useful to get the final result.</p>
 
@@ -337,11 +337,11 @@ X_T-X_0 = \int_0^T \mu(X_t,t)\dif t + \int_0^T \sigma(X_t,t)\dif W_t. \tag{1}
 
 <p>Similarly for the other identities. This isn’t incredibly hard but it’s not incredibly insightful either, so we’re not giving the proof. <a rel="nofollow noopener noreferrer" href="https://pi.math.cornell.edu/~web6720/Wendy_slides.pdf">Here</a> are some details if you want them.</p>
 
-<h2 id="itôs-lemma">Itô’s Lemma</h2>
+<h1 id="3-itôs-lemma">3. Itô’s Lemma</h1>
 
 <p>Our first concern with the family of Itô integrals was that they are not closed under the transformation \(x\mapsto x^2\), which motivated the construction of Itô processes. Itô’s lemma gives us a way to evaluate the transformation of Itô processes under sufficiently smooth transformations. To develop more intuition for the behavior of Brownian motion in the limit, it’s worth giving a sketch of the proof before the result is stated.</p>
 
-<h3 id="proof-sketch">Proof Sketch</h3>
+<h2 id="31-proof-sketch">3.1 Proof Sketch</h2>
 
 <p>Let \(X_t\) be an Itô process. For sufficiently smooth functions \(f(X,t)\) of two variables, Taylor’s Theorem gives</p>
 
@@ -396,7 +396,7 @@ f(X_T,T)-f(X_0,0) &amp;= \lim_{n\to\infty}\sum_{i=0}^{n-1} (f(X_{i+1},t_{i+1}) -
 
 \[f(W_T,T)=f(W_0,0) + \int_0^T \frac{\partial f}{\partial W} \dif W + \int_0^T \frac{\partial f}{\partial t}\dif t + \frac{1}{2}\int_0^T \frac{\partial^2 f}{\partial W^2}\dif t.\]
 
-<h3 id="sde-form">SDE Form</h3>
+<h2 id="32-sde-form">3.2 SDE Form</h2>
 
 <p>Itô’s lemma is more commonly stated as an SDE. In this case, we write</p>
 
@@ -415,7 +415,7 @@ f(X_T,T)-f(X_0,0) &amp;= \lim_{n\to\infty}\sum_{i=0}^{n-1} (f(X_{i+1},t_{i+1}) -
 
 \[\dd f(W,t) = f_x(W,t)\dif W + f_t(X,t) \dif t + \frac{1}{2} f_{xx}(W,t)\dif t.\]
 
-<h3 id="the-fundamental-theorem-of-stochastic-calculus">The Fundamental Theorem of Stochastic Calculus</h3>
+<h2 id="33-the-fundamental-theorem-of-stochastic-calculus">3.3 The Fundamental Theorem of Stochastic Calculus</h2>
 
 <p>Itô’s lemma is often considered the fundamental theorem of stochastic calculus. To see why, suppose that \(f\) is a function of standard brownian motion \(W_t\) only, \(f(W_t)\). Since \(W_t\) is still a function of \(t\), we apply the chain rule and write</p>
 
@@ -441,11 +441,11 @@ f(X_T,T)-f(X_0,0) &amp;= \lim_{n\to\infty}\sum_{i=0}^{n-1} (f(X_{i+1},t_{i+1}) -
 
 <p>Again, we see the difference is the non-zero quadratic variation of \(W\).</p>
 
-<h2 id="examples">Examples</h2>
+<h1 id="4-examples">4. Examples</h1>
 
 <p>Often we’re less interested in evaluating \(f(X_t,t)\), but rather in evaluating some stochastic integral \(\int Y_t\dif X_t\). If we can choose a function \(f\) such that one of its partial derivatives equals \(Y_t\), then we’re in business.</p>
 
-<h3 id="back-to-basics-int_0t-wdif-w">Back to Basics: \(\int_0^t W\dif W\)</h3>
+<h2 id="41-back-to-basics-int_0t-wdif-w">4.1 Back to Basics: \(\int_0^t W\dif W\)</h2>
 
 <p>We can solve the integral \(\int W\dif W\) much more easily with Itô’s lemma. Consider \(f(W,t)=W^2\). The lemma gives</p>
 
@@ -453,7 +453,7 @@ f(X_T,T)-f(X_0,0) &amp;= \lim_{n\to\infty}\sum_{i=0}^{n-1} (f(X_{i+1},t_{i+1}) -
 
 <p>which was obtained with much less hassle than before.</p>
 
-<h3 id="stochastic-integration-by-parts">Stochastic Integration by Parts</h3>
+<h2 id="42-stochastic-integration-by-parts">4.2 Stochastic Integration by Parts</h2>
 
 <p>Suppose \(g:\mathbb{R}\to\mathbb{R}\) is a deterministic function of time. We’d like to say something about \(\int g(t) \dif W_t\). To do this, we want a smooth function \(f\) which, using Itô’s lemma, yields this integral. Since the lemma involves the derivatives of \(f\), choosing \(f(x,t) = xg(t)\) works nicely. Then \(f_x(x,t) = g(t)\), \(f_{xx}(x,t)=0\) and \(f_t(x,t) = g(t)x'(t) + g'(t)x(t)\). Our favorite lemma gives:</p>
 
@@ -468,7 +468,7 @@ f(X_T,T)-f(X_0,0) &amp;= \lim_{n\to\infty}\sum_{i=0}^{n-1} (f(X_{i+1},t_{i+1}) -
 
 <p>This looks a lot like the usual integration by parts formula. The rightmost integral should be interpreted as a Riemann-Stieltjes integral.</p>
 
-<h3 id="geometric-brownian-motion">Geometric Brownian Motion</h3>
+<h2 id="43-geometric-brownian-motion">4.3 Geometric Brownian Motion</h2>
 
 <p>Recall that GBM satisfies</p>
 

@@ -236,19 +236,19 @@
 \newcommand{\inf}{\infty}\)</p>
 
 <ul id="markdown-toc">
-  <li><a href="#prelude-a-brief-history" id="markdown-toc-prelude-a-brief-history">Prelude: A Brief History</a></li>
-  <li><a href="#the-setup" id="markdown-toc-the-setup">The Setup</a>    <ul>
-      <li><a href="#some-terminology" id="markdown-toc-some-terminology">Some Terminology</a></li>
-      <li><a href="#the-capital-process" id="markdown-toc-the-capital-process">The Capital Process</a></li>
+  <li><a href="#1-prelude-a-brief-history" id="markdown-toc-1-prelude-a-brief-history">1. Prelude: A Brief History</a></li>
+  <li><a href="#2-the-setup" id="markdown-toc-2-the-setup">2. The Setup</a>    <ul>
+      <li><a href="#21-some-terminology" id="markdown-toc-21-some-terminology">2.1 Some Terminology</a></li>
+      <li><a href="#22-the-capital-process" id="markdown-toc-22-the-capital-process">2.2 The Capital Process</a></li>
     </ul>
   </li>
-  <li><a href="#forcing-and-weak-forcing" id="markdown-toc-forcing-and-weak-forcing">Forcing and Weak Forcing</a></li>
-  <li><a href="#averaging-strategies-the-infinite-casino" id="markdown-toc-averaging-strategies-the-infinite-casino">Averaging Strategies: The Infinite Casino</a></li>
-  <li><a href="#proving-the-game-theoretic-lln" id="markdown-toc-proving-the-game-theoretic-lln">Proving the Game-theoretic LLN</a></li>
-  <li><a href="#resources" id="markdown-toc-resources">Resources</a></li>
+  <li><a href="#3-forcing-and-weak-forcing" id="markdown-toc-3-forcing-and-weak-forcing">3. Forcing and Weak Forcing</a></li>
+  <li><a href="#4-averaging-strategies-the-infinite-casino" id="markdown-toc-4-averaging-strategies-the-infinite-casino">4. Averaging Strategies: The Infinite Casino</a></li>
+  <li><a href="#5-proving-the-game-theoretic-lln" id="markdown-toc-5-proving-the-game-theoretic-lln">5. Proving the Game-theoretic LLN</a></li>
+  <li><a href="#6-resources" id="markdown-toc-6-resources">6. Resources</a></li>
 </ul>
 
-<h1 id="prelude-a-brief-history">Prelude: A Brief History</h1>
+<h1 id="1-prelude-a-brief-history">1. Prelude: A Brief History</h1>
 <p>Classical probability emerged largely from thinking about betting and games of chance (e.g., dice and coin tossing), and relied mostly on frequencies and combinatorics for its arguments. While modern probability theory is based on measure theory and Kolmogorov’s axioms, it is still common to teach elementary probabilistic principles using discrete games. For instance, when learning about the law of large numbers, I remember one teacher explaining it as follows: If you flip an unbiased coin and bet on an average outcome other than 1/2, then you will go broke as the coin continues to be flipped.</p>
 
 <p>The analogy runs deeper, however. In his 1939 doctoral thesis <em>Étude Critique de la Notion de Collectif</em>, Jean Ville proved a result which formally ties modern probability to betting (although I don’t believe he knew it yet). Informally it says that, if an event is very unlikely, then there exists a supermartingale which tends to infinity on that event. This is intimately tied to betting because supermartingales represent betting strategies. An “almost sure” event in modern probability thus becomes, in game-theoretic probability, an event for which there exists a betting strategy which would make us infinitely rich, were it to pass.</p>
@@ -257,7 +257,7 @@
 
 <p>When introducing an alternative foundation for a subject, a natural question is whether it’s more general. Is the reach of the game-theoretic perspective fundamentally greater than the Kolmogorov axioms; the results of the former a superset of the latter? The answer is … sort of? Modern and game-theoretic probability are equivalent for some games we’ll consider. After that, as Vladimir and Vovk say in their book, they  generalize these core examples in different directions. But then they also go onto say that they can connect them more systemically by means of martingales. So I’m not actually sure anyone knows precisely whether one formalization is strictly more powerful than the other. What is certain though, is that you can improve on measure-theoretic results  by using game-theoretic probability and translating the results into measure-theory by means of martingales. Again, see this <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2010.09686.pdf">recent paper</a> as an example. For that  reason alone, understanding game-theoretic probability is valuable.</p>
 
-<h1 id="the-setup">The Setup</h1>
+<h1 id="2-the-setup">2. The Setup</h1>
 
 <p>Consider a full information game between three players: Alice, Bob, and World. It proceeds as follows:</p>
 
@@ -310,7 +310,7 @@
 
 <p>The rest of the post will focus on the second game and proving Equation \(\eqref{eq:lln}\).</p>
 
-<h2 id="some-terminology">Some Terminology</h2>
+<h2 id="21-some-terminology">2.1 Some Terminology</h2>
 
 <p>To begin rigorously analyzing such games, we need to introduce various concepts.</p>
 
@@ -330,7 +330,7 @@
 
 <p>If any of this is overly confusing, you can probably just ignore it. A path is a sequence of moves by World, and \(\strat\) is a betting strategy for Bob which determines the amount to bet given what’s already happened in the game. The rest is details.</p>
 
-<h2 id="the-capital-process">The Capital Process</h2>
+<h2 id="22-the-capital-process">2.2 The Capital Process</h2>
 
 <p>Bob’s <em>capital process</em> is a function \(\cps_n(\omega)\) is a function of his strategy \(\omega\), the moves made by World \(\omega\), and tracks how his capital evolves over time. Its definition depends on the exact game being played. For the first game above it is defined recursively as</p>
 
@@ -347,7 +347,7 @@
 
 <p>since \(v_n=0\). The dependence on \(\omega\) is usually dropped. Results will involve developing a strategy \(\strat\) such that \(\eqref{eq:cp}\) can be analyzed.</p>
 
-<h1 id="forcing-and-weak-forcing">Forcing and Weak Forcing</h1>
+<h1 id="3-forcing-and-weak-forcing">3. Forcing and Weak Forcing</h1>
 
 <p>A foundational concept is normal probability is an <em>almost sure</em> event. Here, as alluded to above, this means an event \(E\) such that \(\cps\geq 0\) and either</p>
 
@@ -375,7 +375,7 @@ Define the next move \(\hstrat(\omega)\) to bet the amount \(\beta \strat_{n+1}(
     Example of changing strategy \(\strat\) into \(\hstrat\). Here, the capital process of \(\strat\), \(\cps\), has progressively higher peaks, so \(\sup_n \cps_n=\infty\). But it always loses enough capital to return to some baseline value near 0, so that the limit is undefined and in particular, is not infinity. \(\hstrat\) on the other hand, saves capital at thresholds \(T_i\) so that its baseline progressively moves upwards, and is infinite in the limit. In this example, we've selectively chosen \(T_i\) such that they're always at the peaks of \(\cps\) (i.e., \(\strat\) loses the next bet) but this is not necessarily the case. If \(\strat\) wins the bet, \(\hstrat\) simply wins less.
 </p>
 
-<h1 id="averaging-strategies-the-infinite-casino">Averaging Strategies: The Infinite Casino</h1>
+<h1 id="4-averaging-strategies-the-infinite-casino">4. Averaging Strategies: The Infinite Casino</h1>
 
 <p>Thus far, we’ve conceived of Bob as playing a single game against his opponents. But, as we’ll see, a common technique to force events is to average various strategies. To this end, it’s helpful to consider the Bob as splitting his attention among many games. He walks into an infinite casino with two players, World and Alice, sitting at each table. He can decide to play at any subset of the tables.</p>
 
@@ -413,7 +413,7 @@ Define the next move \(\hstrat(\omega)\) to bet the amount \(\beta \strat_{n+1}(
 
 <p>From here, the arguments proceeds the same as above. For a path \(\omega\) with \(\sup_n \cps_n(\omega)&lt;\infty\), it must be the case that \(\sup_n 2^{-k}\cp_n^{\strat_i}&lt;\infty\) as well. Therefore, on this path, \(E_k\) occurs, meaning that \(\cap_{k=1}^\infty E_k\) does too.</p>
 
-<h1 id="proving-the-game-theoretic-lln">Proving the Game-theoretic LLN</h1>
+<h1 id="5-proving-the-game-theoretic-lln">5. Proving the Game-theoretic LLN</h1>
 
 <p>Recall that our goal is to show that the Bob can force event \(E\) in the second game, where \(E\) is the event</p>
 
@@ -455,7 +455,7 @@ Define the next move \(\hstrat(\omega)\) to bet the amount \(\beta \strat_{n+1}(
 
 <p>which is precisely the event \(\lim_n \by_n =0\).</p>
 
-<h1 id="resources">Resources</h1>
+<h1 id="6-resources">6. Resources</h1>
 
 <ul>
   <li><a rel="nofollow noopener noreferrer" href="https://www.wiley.com/en-us/Game+Theoretic+Foundations+for+Probability+and+Finance+-p-9780470903056">Game-Theoretic Foundations for Probability and Finance</a> by Glenn Shafer and Vladimir Vovk.</li>

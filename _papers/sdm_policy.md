@@ -1,6 +1,6 @@
 ---
 layout: default 
-title: "Beyond Ads: Sequential Decision-Making Algorithms in Public Policy"
+title: "Beyond Ads: Sequential Decision-Making Algorithms in Law and Public Policy"
 authors: Peter Henderson*, Ben Chugg*, Brandon Anderson, Daniel E. Ho
 publication: "Neural Information Processing Systems, Workshop on Causal Inference Challenges in Sequential Decision Making: Bridging Theory and Practice"
 year: 2021

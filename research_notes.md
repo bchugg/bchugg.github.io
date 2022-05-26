@@ -3,8 +3,6 @@ layout: page
 title: Research Notes
 ---
 
-Notes on various topics for my own edification. The vast majority of material is not original and is simply a restatement of previous results in language that makes the most intuitive sense to me. Making the notes public just helps keep me accountable for their accuracy (no promises). Maybe they can also help others in the eternal quest to reduce confusion. Some wiser advice on why keeping such notes is useful comes from Ryan Giordano [here](https://rgiordan.github.io/meta/2019/07/26/why.html). 
-
 <div class='research-notes-quote'> 
 <i>We have not succeeded in answering all our problems.
 The answers we have found only serve to raise a whole set
@@ -15,6 +13,10 @@ and about more important things.</i>
  - Posted outside the mathematics reading room at Tromsø University 
 </p>
 </div>
+
+Notes on various topics for my own edification. The vast majority of material is not original and is simply a restatement of previous results in language that makes the most intuitive sense to me. Making the notes public just helps keep me accountable for their accuracy (no promises). Maybe they can also help others in the eternal quest to reduce confusion. Some wiser advice on why keeping such notes is useful comes from Ryan Giordano [here](https://rgiordan.github.io/meta/2019/07/26/why.html). 
+
+
 
 <hr>
 

@@ -229,18 +229,18 @@
 <p>\(\newcommand{\dif}{\;\text{d}}\newcommand{\ind}{\mathbf{1}}\newcommand{\R}{\mathbb{R}}\newcommand{\F}{\mathcal{F}}\renewcommand{P}{\mathbb{P}}\newcommand{\B}{\mathcal{B}}\newcommand{\E}{\mathbb{E}}\newcommand{\Var}{\mathbb{V}}\)</p>
 
 <ul id="markdown-toc">
-  <li><a href="#intro" id="markdown-toc-intro">Intro</a></li>
-  <li><a href="#construction" id="markdown-toc-construction">Construction</a></li>
-  <li><a href="#properties" id="markdown-toc-properties">Properties</a>    <ul>
-      <li><a href="#i_t-is-a-martingale" id="markdown-toc-i_t-is-a-martingale">\(I_T\) is a Martingale</a></li>
-      <li><a href="#the-itô-isometry" id="markdown-toc-the-itô-isometry">The Itô Isometry</a></li>
-      <li><a href="#quadratic-variation" id="markdown-toc-quadratic-variation">Quadratic Variation</a></li>
+  <li><a href="#1-intro" id="markdown-toc-1-intro">1. Intro</a></li>
+  <li><a href="#2-construction" id="markdown-toc-2-construction">2. Construction</a></li>
+  <li><a href="#3-properties" id="markdown-toc-3-properties">3. Properties</a>    <ul>
+      <li><a href="#31-i_t-is-a-martingale" id="markdown-toc-31-i_t-is-a-martingale">3.1 \(I_T\) is a Martingale</a></li>
+      <li><a href="#32-the-itô-isometry" id="markdown-toc-32-the-itô-isometry">3.2 The Itô Isometry</a></li>
+      <li><a href="#33-quadratic-variation" id="markdown-toc-33-quadratic-variation">3.3 Quadratic Variation</a></li>
     </ul>
   </li>
-  <li><a href="#examples" id="markdown-toc-examples">Examples</a></li>
+  <li><a href="#4-examples" id="markdown-toc-4-examples">4. Examples</a></li>
 </ul>
 
-<h1 id="intro">Intro</h1>
+<h1 id="1-intro">1. Intro</h1>
 <p>Traditional calculus is fine, sure. But sometimes you have some juicy stochastic processes that don’t obey the requirements for the usual differentiation or integration (in particular, they may be nowhere differentiable). This doesn’t stop us from wanting to try doing something similar with them. <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/It%C3%B4_calculus">Itô calculus</a> is one way of extending the methods of deterministic calculus to the stochastic setting. But it isn’t the only one: there is also <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Stratonovich_integral">Stratonovich calculus</a>. However, Itô calculus is (arguably) more common, and is also better suited to applications in finance, as we’ll see below. I don’t have much of an interest in mathematical finance, but hey, applications are always nice and they provide useful intuition checks. Stratonovich calculus is used more by physicists and I already have enough physics envy that I don’t need to play into it.</p>
 
 <p>The big payoff of Itô integration will be when dealing with stochastic differential equations, i.e., differential equations where at least one variable is a stochastic process. This post contains the construction and basic properties of the Itô integral, so we won’t actually see the big payoffs yet. But we’ll get there eventually. Vegetables before dessert, people.</p>
@@ -288,7 +288,7 @@
 
 <p>Alright, ‘tis time to construct this bad boy.</p>
 
-<h1 id="construction">Construction</h1>
+<h1 id="2-construction">2. Construction</h1>
 
 <p>Like every other integral you’ve ever seen in your life, the Itô integral is constructed by first defining the integral for simple expressions and then taking some complicated limits for general integrands. And even though we saw that the Riemann-Stieltjes integral won’t suffice here, it’s not a bad place to start.</p>
 
@@ -313,7 +313,7 @@
 
 <p>(the converence is <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Convergence_of_random_variables">convergence in probability</a>) where, if you were worried, we’re ensured that the limit exists because \(I_T(X_n)\) is a cauchy sequence. This gives us our Itô integral \(I_T(X)\).</p>
 
-<h1 id="properties">Properties</h1>
+<h1 id="3-properties">3. Properties</h1>
 
 <p>First, just like when we were integrating against \(\dif t\), note that \(I_t=I_t(X)\) is itself a stochastic process:</p>
 
@@ -337,7 +337,7 @@ I_t(X): [0,T]\times \Omega \to \R: (t,\omega)\mapsto \int_0^t X(t,\omega)\dif W(
 
 <p>The first thing to note is that \(\E[B_t]=\E[B_t-B_0]=0\), using that \(B_0=0\) and that increments are normally distributed. Also, \(\E[(B_{t+\tau}-B_t)^2] = \Var((B_{t+\tau}-B_t)^2) = \tau^2\) since \(\E[B_{t+\tau}-B_t]^2=0\). We call this final property <em>linear variation</em> of Brownian motion.</p>
 
-<h2 id="i_t-is-a-martingale">\(I_T\) is a Martingale</h2>
+<h2 id="31-i_t-is-a-martingale">3.1 \(I_T\) is a Martingale</h2>
 
 <p>If \(W\) is a Wiener process, then it is also a martingale. A continuous time martingale \(Y_t\) with respect to the filtration \(\F_t\) obeys \(\E[\vert Y_t\vert]&lt;\infty\), and, for all \(t\) and \(s\leq t\),</p>
 
@@ -378,7 +378,7 @@ I_t = \sum_{i=0}^{t_{k-1}} X_i(W_{i+1}-W_i) + X_k(W_{k+1}-W_k) + \sum_{i=k+1}^{n
 
 <p>Note that this is only valid since \(\F_s\subset \F_{t_i}\). This implies that the final sum of \(\eqref{eq:It_mart}\) is zero, and we have our result. As you’d expect/hope this carries over into the limit and holds for general integrands of non-simple processes as well.</p>
 
-<h2 id="the-itô-isometry">The Itô Isometry</h2>
+<h2 id="32-the-itô-isometry">3.2 The Itô Isometry</h2>
 
 <p>Let’s get a little hot and heavy with functional analysis for a second. Given metric spaces \(M_1\) and \(M_2\) with metrics \(d_1\) and \(d_2\), a map</p>
 
@@ -419,7 +419,7 @@ Given a process in the space \(X\), \(I_T(X)\) is then a square integrable stoch
 
 <p>Notice that we can be a little fast and loose with the order of the expectation the integral from \(0\) to \(T\) because of our assumptions of square-integrability and <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Fubini%27s_theorem">Fubini’s theorem</a> (in the case of simple processes it’s clear we can switch the order, but Fubini is required for continuous processes.)</p>
 
-<h2 id="quadratic-variation">Quadratic Variation</h2>
+<h2 id="33-quadratic-variation">3.3 Quadratic Variation</h2>
 
 <p>The <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Quadratic_variation">quadratic variation</a> of a stochastic process \(X\) is</p>
 
@@ -445,7 +445,7 @@ Given a process in the space \(X\), \(I_T(X)\) is then a square integrable stoch
 
 <p>This might be a little confusing. After all, the quadratic variation of \(W\) on \([0,t]\) is \(t\), a number. But \([I,I](t)\) is a random variable? There’s nothing in the definition of quadratic variation requiring that it converge to a number – this just happens to be a particularly interesting property of Brownian motion.</p>
 
-<h1 id="examples">Examples</h1>
+<h1 id="4-examples">4. Examples</h1>
 
 <p>We can’t get to the end of this thing and not actually calculate the value of any integrals.</p>
 

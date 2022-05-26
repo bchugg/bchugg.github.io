@@ -20,7 +20,7 @@ $$
 
 Throughout, let $$W$$ be a Wiener process starting at the origin, and let $$X$$ be a stochastic process adapted to $$W$$'s filtration. $$I_t=I_t(X)$$ is the [Itô integral](/research_notes/intro_ito/) of $$X$$ w.r.t. to $$W$$. 
 
-## Itô Processes
+# 1. Itô Processes
 There are at least two motivations for the Itô process. The first comes from the identity 
 
 $$\bigg(\int_0^t \dif W\bigg)^2 = W_t^2 = 2\int_0^t W\dif W + t,$$ 
@@ -52,7 +52,7 @@ This, in all it's glory, is what's referred to as a stochastic differential equa
 
 While it may not seem so at first glance, almost all stochastic processes -- except those with jumps -- are Itô processes. 
 
-### Example 1: Brownian motion with drift
+## 1.1 Example 1: Brownian motion with drift
 
 Suppose  $$\mu$$ and $$\sigma$$ are constants. Then, if $$X_0=0$$ (which we will henceforth assume), Equation $$\eqref{eq:ito_process_int}$$ reads $$X_t = \mu t + \sigma W_t$$, and as an SDE we have 
 
@@ -64,7 +64,7 @@ $$\Var[X_t] = \E[X_t^2] - \alpha^2 t^2 = \beta^2 \E[W_t^2] = \beta^2t,$$
 
 due to the quadratic variation of the Wiener process. 
 
-### Example 2: Geometric Brownian motion (GBM)
+## 1.2 Example 2: Geometric Brownian motion (GBM)
 
 Suppose $$\mu(X_t,t)=\alpha X_t$$ and $$\sigma(X_t,t) = \beta X_t$$ for constants $$\alpha$$ and $$\beta$$. Then, 
 
@@ -78,7 +78,7 @@ GBM is so important it has its own [wikipedia page](https://en.wikipedia.org/wik
 
 
 
-### Integrals with respect to an Itô Process
+## 1.3 Integrals with respect to an Itô Process
 
 So far we've seen stochastic integrals with respect to Brownian motion. But now that we've introduced a new class of processes, we should discuss integrals with respect to those. 
 
@@ -88,7 +88,7 @@ $$\int_0^t Y \dif X = \int_0^t Y \mu \dif s + \int_0^t Y \sigma \dif W,$$
 
 which is what you might expect. As usual, the integral on the left is a Lebesgue integral w.r.t to the time component, and the integral on the right is an Itô integral. 
 
-## Aside: Manipulating Infinitesimals
+# 2. Aside: Manipulating Infinitesimals
 
 Even though Equation $$\eqref{eq:sde}$$ is informal, it's intuitive enough that you'll often see manipulations done to such equations directly, instead of reverting to the integral version. This isn't completely out of the ordinary, something similar happens when we do change of variables in intro calculus. E.g., if we have $$\int f(u) f'(u) \dif u$$, we might let $$v=f(u)$$ and $$dv = f'(u)du$$ to deal instead with the integral $$\int v \dif v$$. The equation $$dv=f'(u)du$$ isn't meaningful in a precise, technical sense, but it's still useful to get the final result. 
 
@@ -108,11 +108,11 @@ Similarly for the other identities. This isn't incredibly hard but it's not incr
 
 
 
-## Itô's Lemma 
+# 3. Itô's Lemma 
 
 Our first concern with the family of Itô integrals was that they are not closed under the transformation $$x\mapsto x^2$$, which motivated the construction of Itô processes. Itô's lemma gives us a way to evaluate the transformation of Itô processes under sufficiently smooth transformations. To develop more intuition for the behavior of Brownian motion in the limit, it's worth giving a sketch of the proof before the result is stated. 
 
-### Proof Sketch 
+## 3.1 Proof Sketch 
 
 Let $$X_t$$ be an Itô process. For sufficiently smooth functions $$f(X,t)$$ of two variables, Taylor's Theorem gives 
 
@@ -174,7 +174,7 @@ For standard Brownian motion $$W$$, which is an Itô process with $$\mu\equiv 0$
 
 $$f(W_T,T)=f(W_0,0) + \int_0^T \frac{\partial f}{\partial W} \dif W + \int_0^T \frac{\partial f}{\partial t}\dif t + \frac{1}{2}\int_0^T \frac{\partial^2 f}{\partial W^2}\dif t.$$
 
-### SDE Form 
+## 3.2 SDE Form 
 
 Itô's lemma is more commonly stated as an SDE. In this case, we write 
 
@@ -195,7 +195,7 @@ In the case of Brownian motion this simplies to
 
 $$\dd f(W,t) = f_x(W,t)\dif W + f_t(X,t) \dif t + \frac{1}{2} f_{xx}(W,t)\dif t.$$
 
-### The Fundamental Theorem of Stochastic Calculus
+## 3.3 The Fundamental Theorem of Stochastic Calculus
 
 Itô's lemma is often considered the fundamental theorem of stochastic calculus. To see why, suppose that $$f$$ is a function of standard brownian motion $$W_t$$ only, $$f(W_t)$$. Since $$W_t$$ is still a function of $$t$$, we apply the chain rule and write
 
@@ -221,11 +221,11 @@ $$\dif f(x(t)) = f'(x)\dd x.$$
 
 Again, we see the difference is the non-zero quadratic variation of $$W$$. 
 
-## Examples 
+# 4. Examples 
 
 Often we're less interested in evaluating $$f(X_t,t)$$, but rather in evaluating some stochastic integral $$\int Y_t\dif X_t$$. If we can choose a function $$f$$ such that one of its partial derivatives equals $$Y_t$$, then we're in business. 
 
-### Back to Basics: $$\int_0^t W\dif W$$
+## 4.1 Back to Basics: $$\int_0^t W\dif W$$
 
 We can solve the integral $$\int W\dif W$$ much more easily with Itô's lemma. Consider $$f(W,t)=W^2$$. The lemma gives 
 
@@ -233,7 +233,7 @@ $$W_t^2 = 2\int_0^t W\dif W + t,$$
 
 which was obtained with much less hassle than before.  
 
-### Stochastic Integration by Parts 
+## 4.2 Stochastic Integration by Parts 
 
 Suppose $$g:\mathbb{R}\to\mathbb{R}$$ is a deterministic function of time. We'd like to say something about $$\int g(t) \dif W_t$$. To do this, we want a smooth function $$f$$ which, using Itô's lemma, yields this integral. Since the lemma involves the derivatives of $$f$$, choosing $$f(x,t) = xg(t)$$ works nicely. Then $$f_x(x,t) = g(t)$$, $$f_{xx}(x,t)=0$$ and $$f_t(x,t) = g(t)x'(t) + g'(t)x(t)$$. Our favorite lemma gives: 
 
@@ -250,7 +250,7 @@ $$\int_0^T g(t) \dif W_t = W_Tg(T) - \int_0^T W_t\dd f(t).$$
 
 This looks a lot like the usual integration by parts formula. The rightmost integral should be interpreted as a Riemann-Stieltjes integral. 
 
-### Geometric Brownian Motion
+## 4.3 Geometric Brownian Motion
 
 Recall that GBM satisfies 
 

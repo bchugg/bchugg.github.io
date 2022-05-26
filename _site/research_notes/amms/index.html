@@ -235,11 +235,23 @@
 \newcommand{\DY}{\Delta Y}
 \newcommand{\ratio}{\Lambda}\]
 
-<p>Decentralized Exchanges (DEXs) are digital markets enabling cryptocurrency transactions which do not require third parties to oversee the process. Part of the process involves replacing human <a rel="nofollow noopener noreferrer" href="https://www.investopedia.com/terms/m/marketmaker.asp#:~:text=The%20term%20market%20maker%20refers,in%20the%20bid%2Dask%20spread.">market makers</a> with smart contracts known as <em>automated market makers</em> (AMMs). Roughly, AMMs are rules determining how much of good \(X\) can be traded for good \(Y\) (where “goods” here typically refer to various cryptocurrencies). Examples of DEXs include <a rel="nofollow noopener noreferrer" href="https://uniswap.org/">Uniswap</a> and <a rel="nofollow noopener noreferrer" href="https://balancer.fi/">Balancer</a>, each of which has their own AMM protocol.</p>
+<ul id="markdown-toc">
+  <li><a href="#1-wealth-and-price-processes" id="markdown-toc-1-wealth-and-price-processes">1. Wealth and Price Processes</a></li>
+  <li><a href="#2-amms" id="markdown-toc-2-amms">2. AMMs</a></li>
+  <li><a href="#3-trading-dynamics" id="markdown-toc-3-trading-dynamics">3. Trading dynamics</a>    <ul>
+      <li><a href="#31-no-arbitrage-conditions" id="markdown-toc-31-no-arbitrage-conditions">3.1 No Arbitrage Conditions</a></li>
+      <li><a href="#32-the-trading-game" id="markdown-toc-32-the-trading-game">3.2 The trading game</a></li>
+      <li><a href="#33-evolution-of-x_ty_t" id="markdown-toc-33-evolution-of-x_ty_t">3.3 Evolution of \(X_t/Y_t\)</a></li>
+    </ul>
+  </li>
+  <li><a href="#4-resources" id="markdown-toc-4-resources">4. Resources</a></li>
+</ul>
+
+<p>Decentralized Exchanges (DEXs) are digital markets enabling cryptocurrency transactions which do not require third parties to oversee the process. Part of this involves replacing human <a rel="nofollow noopener noreferrer" href="https://www.investopedia.com/terms/m/marketmaker.asp#:~:text=The%20term%20market%20maker%20refers,in%20the%20bid%2Dask%20spread.">market makers</a> with smart contracts known as <em>automated market makers</em> (AMMs). Roughly, AMMs are rules determining how much of good \(X\) can be traded for good \(Y\) (where “goods” here typically refer to various cryptocurrencies). Examples of DEXs include <a rel="nofollow noopener noreferrer" href="https://uniswap.org/">Uniswap</a> and <a rel="nofollow noopener noreferrer" href="https://balancer.fi/">Balancer</a>, each of which has their own AMM protocol.</p>
 
 <p>I’m basically agnostic as to the promise of DEXs, and there are certainly <a rel="nofollow noopener noreferrer" href="https://cointelegraph.com/explained/crypto-rug-pulls-what-is-a-rug-pull-in-crypto-and-6-ways-to-spot-it#:~:text=Rug%20pulls%20happen%20when%20fraudulent,decentralized%20finance%20(DeFi)%20exploit.">known problems</a> as they exist right now. But the math is interesting, so we’re going to explore them from that perspective. Going forward, we’ll focus on markets exchanging two goods.</p>
 
-<h1 id="wealth-and-price-processes">Wealth and Price Processes</h1>
+<h1 id="1-wealth-and-price-processes">1. Wealth and Price Processes</h1>
 
 <p>A <em>numeraire</em> is any financial standard against which we compare the value of assets. Typically numeraires are stable, providing a reliable means against we can compare something more volatile. Technically speaking, however, they can be anything.</p>
 
@@ -256,7 +268,7 @@
 
 <p>The specific price process will be chosen as a function of the market being analyzed. Later on, we’ll consider a Brownian motion based price process. But the general takeaway is that the price process is external to the market under consideration. Neither the liquidity provider (person supplying initial supplies of \(X\) and \(Y\) to the market), nor the traders control \(S_t\).</p>
 
-<h1 id="amms">AMMs</h1>
+<h1 id="2-amms">2. AMMs</h1>
 <p>In a perfectly balanced market, a trader should not care whether she holds \(X_t\) or \(Y_t\), because they convert to the same amount, i.e., \(X_t=Y_tS_t\), so that total wealth is \(2X_t=2Y_tS_t\). For example, if \(X_t=100\) USD, and there are 5 units of lumber \((Y_t)\), each unit costing 20 USD \((S_t)\) then it is immaterial whether one holds USD or lumber, and there is no gain to be made from swapping between the two. This is captured by the condition \(S_t=X_t/Y_t\). We call \(X_t/Y_t\) the <em>implicit price</em>.</p>
 
 <p>Roughly speaking, if \(S_t\) is higher than the implicit price, then trading \(X_t\) for \(Y_t\) becomes profitable (assuming there’s no cost for making the transaction). Likewise, if \(S_t\) is lower than the implicit price, then trading \(Y_t\) for \(X_t\) becomes profitable.</p>
@@ -289,11 +301,11 @@ A common such AMM is the following:</p>
 
 <p>We’ll be using \eqref{eq:amm_fee} for the remainder of the post.</p>
 
-<h1 id="trading-dynamics">Trading dynamics</h1>
+<h1 id="3-trading-dynamics">3. Trading dynamics</h1>
 
 <p>Our eventual goal is to understanding how the wealth of a liquidity provider increases or decreases over time as a function of the fee \(\gamma\). To do this, we need to understand how the quantities of \(X_t\) and \(Y_t\) change over time. The first step is to understand when it is in a trader’s interest to exchange goods – i.e., when there is an arbitrage opportunity.</p>
 
-<h2 id="no-arbitrage-conditions">No Arbitrage Conditions</h2>
+<h2 id="31-no-arbitrage-conditions">3.1 No Arbitrage Conditions</h2>
 <p>At a fixed time \(t\) and with \(S_t\) known to a trader, we want to answer the question: what trade (if any) is the most profitable? First, consider trading \(X_t\) for \(Y_t\). For now, we’ll assume that however much \(Y_t\) the trader obtains, she’s able to cash it all (the lumber can all be converted to cash). That is, if she obtains \(\DY_t\) of \(Y_t\), then the value is \(S_t\DY_t\). The technical term for this is that the market is sufficiently liquid for any trade, or infinitely liquid. Thus, the trader is interested in maximizing \(S_t\DY_t - \DX_t\) (she gains \(\DY_t\) at unit price \(S_t\), and loses \(\DX_t\)). Of course, \(\DX_t\) and \(\DY_t\) must be constrained by the AMM, and must be positive. This yields the following optimization problem:</p>
 
 \[\begin{align}
@@ -356,7 +368,7 @@ Note that</p>
 
 <p>Note that this is fairly intuitive: as \(\gamma\) increases (and the fee decreases), the interval gets smaller. Less costly trades imply that traders can be more sensitive to changes in price and leverage even small differences to their advantage.</p>
 
-<h2 id="the-trading-game">The trading game</h2>
+<h2 id="32-the-trading-game">3.2 The trading game</h2>
 
 <p>Based on the no-arbitrage conditions derived above, we know understand when trades will and won’t occur. It’s now worth spelling out how the actual dynamics of this two good economy will play themselves out.</p>
 
@@ -376,7 +388,7 @@ Note that</p>
 
 <p>While this is somewhat abstract, it’s worth keeping this general process in mind. The upshot is that if the current price is in the no-arbitrage region then no trade occurs because it’s not in any traders’ interest. On the other hand, if \(X_t\) is sufficiently underpriced relative to \(Y_t\) such that \(S_t &lt; \gamma \Lambda_t\), then somebody will trades \(\DY_t\) for \(\DX_t\). In particular, they trade precisely the amount given by Equation \eqref{eq:uncon_sol}, which means that \(X\) and \(Y\) (which are now \(X_{t+1}\) and \(Y_{t+1}\)) now obey \(S_t = \gamma\Lambda_{t+1}\). Exchanging more \(\DY_t\) would not have been profitable for the trader.</p>
 
-<h2 id="evolution-of-x_ty_t">Evolution of \(X_t/Y_t\)</h2>
+<h2 id="33-evolution-of-x_ty_t">3.3 Evolution of \(X_t/Y_t\)</h2>
 
 <p>Finally, we investigate how the ratio \(X_t/Y_t\) behaves over time. Of course, in the constant AMM case, it remains constant: \(X_t Y_t=c\). But the fee complicates matters. For the AMM with fee, consider a numeraire based trade (trading \(\DX_t\) for \(\DY_t\)). Using Equation \eqref{eq:uncon_sol}</p>
 
@@ -396,7 +408,7 @@ Note that</p>
 
 <p>The knowledge that the ratio of \(X_t/Y_t\) evolves according to a multiplicative factor of \(\gamma\) and price process will be valuable later on.</p>
 
-<h1 id="resources">Resources</h1>
+<h1 id="4-resources">4. Resources</h1>
 
 <ul>
   <li><a rel="nofollow noopener noreferrer" href="https://research.paradigm.xyz/LP_Wealth.pdf">LP Wealth</a></li>

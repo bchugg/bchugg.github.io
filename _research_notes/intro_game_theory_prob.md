@@ -21,7 +21,7 @@ $$
 {:toc}
 
 
-# Prelude: A Brief History 
+# 1. Prelude: A Brief History 
 Classical probability emerged largely from thinking about betting and games of chance (e.g., dice and coin tossing), and relied mostly on frequencies and combinatorics for its arguments. While modern probability theory is based on measure theory and Kolmogorov's axioms, it is still common to teach elementary probabilistic principles using discrete games. For instance, when learning about the law of large numbers, I remember one teacher explaining it as follows: If you flip an unbiased coin and bet on an average outcome other than 1/2, then you will go broke as the coin continues to be flipped. 
 
 The analogy runs deeper, however. In his 1939 doctoral thesis _Étude Critique de la Notion de Collectif_, Jean Ville proved a result which formally ties modern probability to betting (although I don't believe he knew it yet). Informally it says that, if an event is very unlikely, then there exists a supermartingale which tends to infinity on that event. This is intimately tied to betting because supermartingales represent betting strategies. An "almost sure" event in modern probability thus becomes, in game-theoretic probability, an event for which there exists a betting strategy which would make us infinitely rich, were it to pass. 
@@ -30,7 +30,7 @@ More broadly, game-theoretic probability is the formal approach to probability b
 
 When introducing an alternative foundation for a subject, a natural question is whether it's more general. Is the reach of the game-theoretic perspective fundamentally greater than the Kolmogorov axioms; the results of the former a superset of the latter? The answer is ... sort of? Modern and game-theoretic probability are equivalent for some games we'll consider. After that, as Vladimir and Vovk say in their book, they  generalize these core examples in different directions. But then they also go onto say that they can connect them more systemically by means of martingales. So I'm not actually sure anyone knows precisely whether one formalization is strictly more powerful than the other. What is certain though, is that you can improve on measure-theoretic results  by using game-theoretic probability and translating the results into measure-theory by means of martingales. Again, see this [recent paper](https://arxiv.org/pdf/2010.09686.pdf) as an example. For that  reason alone, understanding game-theoretic probability is valuable. 
 
-# The Setup
+# 2. The Setup
 
 Consider a full information game between three players: Alice, Bob, and World. It proceeds as follows: 
 
@@ -78,7 +78,7 @@ Stare at these games for a second. Notice that we haven't introduced an underlyi
 
 The rest of the post will focus on the second game and proving Equation $$\eqref{eq:lln}$$.
 
-## Some Terminology 
+## 2.1 Some Terminology 
 
 To begin rigorously analyzing such games, we need to introduce various concepts. 
 
@@ -98,7 +98,7 @@ depend only on $$\omega^{n-1}$$. That is, the $$n$$-th move of Bob's strategy de
 
 If any of this is overly confusing, you can probably just ignore it. A path is a sequence of moves by World, and $$\strat$$ is a betting strategy for Bob which determines the amount to bet given what's already happened in the game. The rest is details. 
 
-## The Capital Process
+## 2.2 The Capital Process
 
 Bob's _capital process_ is a function $$\cps_n(\omega)$$ is a function of his strategy $$\omega$$, the moves made by World $$\omega$$, and tracks how his capital evolves over time. Its definition depends on the exact game being played. For the first game above it is defined recursively as 
 
@@ -119,7 +119,7 @@ $$
 since $$v_n=0$$. The dependence on $$\omega$$ is usually dropped. Results will involve developing a strategy $$\strat$$ such that $$\eqref{eq:cp}$$ can be analyzed.  
 
 
-# Forcing and Weak Forcing 
+# 3. Forcing and Weak Forcing 
 
 A foundational concept is normal probability is an _almost sure_ event. Here, as alluded to above, this means an event $$E$$ such that $$\cps\geq 0$$ and either 
 
@@ -147,7 +147,7 @@ Let $$\hstrat$$ continuing emulating $$\strat$$ until $$\cps_{n}>T_2$$, and then
     Example of changing strategy \(\strat\) into \(\hstrat\). Here, the capital process of \(\strat\), \(\cps\), has progressively higher peaks, so \(\sup_n \cps_n=\infty\). But it always loses enough capital to return to some baseline value near 0, so that the limit is undefined and in particular, is not infinity. \(\hstrat\) on the other hand, saves capital at thresholds \(T_i\) so that its baseline progressively moves upwards, and is infinite in the limit. In this example, we've selectively chosen \(T_i\) such that they're always at the peaks of \(\cps\) (i.e., \(\strat\) loses the next bet) but this is not necessarily the case. If \(\strat\) wins the bet, \(\hstrat\) simply wins less.
 </p>
 
-# Averaging Strategies: The Infinite Casino
+# 4. Averaging Strategies: The Infinite Casino
 
 Thus far, we've conceived of Bob as playing a single game against his opponents. But, as we'll see, a common technique to force events is to average various strategies. To this end, it's helpful to consider the Bob as splitting his attention among many games. He walks into an infinite casino with two players, World and Alice, sitting at each table. He can decide to play at any subset of the tables. 
 
@@ -186,7 +186,7 @@ $$\sum_k \vert 2^{-k}\strat_{i,n}\vert \leq \frac{2^nC_0}{B}\sum_k \frac{1}{2^k}
 From here, the arguments proceeds the same as above. For a path $$\omega$$ with $$\sup_n \cps_n(\omega)<\infty$$, it must be the case that $$\sup_n 2^{-k}\cp_n^{\strat_i}<\infty$$ as well. Therefore, on this path, $$E_k$$ occurs, meaning that $$\cap_{k=1}^\infty E_k$$ does too. 
 
 
-# Proving the Game-theoretic LLN
+# 5. Proving the Game-theoretic LLN
 
 Recall that our goal is to show that the Bob can force event $$E$$ in the second game, where $$E$$ is the event 
 
@@ -233,7 +233,7 @@ which is precisely the event $$\lim_n \by_n =0$$.
 
 
 
-# Resources 
+# 6. Resources 
 
 - [Game-Theoretic Foundations for Probability and Finance](https://www.wiley.com/en-us/Game+Theoretic+Foundations+for+Probability+and+Finance+-p-9780470903056) by Glenn Shafer and Vladimir Vovk. 
 - The [Game-Theoretic Probability and Finance Project](http://www.probabilityandfinance.com/). 
