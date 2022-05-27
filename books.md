@@ -1,5 +1,7 @@
 ---
 layout: recommendations
+description: Recommended books
+image: '/assets/images/bookshelf.jpeg'
 title: Books
 ---
 

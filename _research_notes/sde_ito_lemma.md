@@ -2,7 +2,9 @@
 layout: note 
 date: "2022-02-07" 
 title: "Itô Processes and The Fundamental Theorem of Stochastic Calculus" 
+description: "Part II of the exploration of stochastic calculus and the Itô integral" 
 status: published
+image: /assets/writing_images/brownian_motion.gif
 ---
 
 <p class='title'>Itô Processes and The Fundamental Theorem of Stochastic Calculus</p>

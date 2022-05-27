@@ -998,6 +998,8 @@ pre code {
   padding-left: 25px; }
   .note-list span {
     padding-right: 30px;
+    padding-top: 2.5px;
+    font-size: 10pt;
     float: right; }
 
 .research-notes-quote {

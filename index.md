@@ -1,10 +1,10 @@
 ---
 layout: default
 title: "Ben Chugg"
+image: /assets/images/heads.jpg
 ---
 
 <img id='headerim' src="/assets/images/lawme.jpg">
-<!-- ![image](/assets/lawme.jpg) -->
 
 I'm lead research analyst at Stanford Law School's 
 Regulation, Evaluation, and Governance Lab (<a href="https://reglab.stanford.edu/" rel='nofollow'>RegLab</a>). I spend most of my time developing and analyzing algorithms, typically with applications to some problem in public policy. 

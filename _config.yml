@@ -2,22 +2,34 @@
 
 # Setup
 title:               benny 
-tagline:             ''
-description:         ''
+tagline:             'Mayhem & Math'
+description:         "Ben Chugg's academic website"
 url:                 'https://benchugg.com'
 baseurl:             ''
 
 # About/contact
 author:
-  name:              Ben Chugg
-  url:               https://benchugg.com
-  email:             ben.ih.chugg@gmail.com
+  name: Ben Chugg
+  url: https://benchugg.com
+  email: ben.ih.chugg@gmail.com
+
+twitter: 
+  username: bennychugg
+  card: summary
+
+social: 
+  name: Ben Chugg
+  links: 
+    - https://twitter.com/BennyChugg
+    - https://www.linkedin.com/in/benchugg/
+    - https://github.com/bchugg
+
 
 # Permalinks
-permalink: /:title/
+permalink: /:title
 
 # Set encoding to UTF-8
-encoding: utf-8
+encoding: UTF-8
 
 # Collections for texts
 collections:
@@ -42,7 +54,7 @@ kramdown:
   footnote_backlink: "&#x21a9;&#xfe0e;"
   toc_levels:     1..6
   smart_quotes:   lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
+  # enable_coderay: false
 
 # Exclusions from the final site
 exclude:
@@ -67,3 +79,4 @@ remote_theme: minicomp/ed
 
 plugins:
   - jekyll-sitemap
+  - jekyll-seo-tag

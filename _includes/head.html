@@ -18,6 +18,8 @@
   <title>
     {% if page.title == "Ben Chugg" %}
       {{ page.title }}
+    {% elsif page.layout == 'note' %}
+     {{ page.title }}
     {% else %}
       Ben &middot; {{ page.title }}
     {% endif %}
@@ -62,4 +64,6 @@
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ directory_url }}/atom.xml" />
+
+  {% seo title=false %}
 </head>

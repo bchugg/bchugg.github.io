@@ -1,8 +1,10 @@
 ---
 layout: note
 title: "Itô Integral: Construction and Basic Properties"
+description: "General introduction to stochastic calculus and Itô integration" 
 status: published
 date: "2022-01-16"
+image: /assets/writing_images/brownian_motion.gif
 ---
 
 
@@ -44,7 +46,7 @@ $$V(f) = \sup_\Pi \sum_{t_i} |f(t_i) - f(t_{i-1})|,$$
 
 where the supremum is taken over all partitions $$\Pi=\{t_0,\dots,t_n\}$$ of $$[0,T]$$. The paths of Brownian motion have infinite variation a.s. (almost surely). That is, $$\P(\omega:V(f(\omega))<\infty)=0.$$ Stronger still, Brownian motion is a.s. nowhere differentiable (which implies infinite variation), making typical statements from regular calculus such as $$\int X\dif W=\int X \frac{dW}{dt} dt$$ impossible here, since the derivative of $$W$$ doesn't exist. Intuitively, this all stems from the fact that Brownian motion is fractal-like in its movement over time (illustrated below). It's wiggling up and down an infinite amount in every finite time period. 
 
-![brownian-motion](/assets/images/brownian_motion.gif){: style="text-align: center;"}
+![brownian-motion](/assets/writing_images/brownian_motion.gif){: style="text-align: center;"}
 <p class='caption'>
     Example of a single realization of Brownian motion over time. Stolen from <a href="https://users.math.yale.edu/public_html/People/frame/Fractals/RandFrac/Brownian/BrGrphMovie.html">this beautiful website</a> dedicated to fractals at Yale. Here, the x-axis is time, and the y-axis is the value of the random variable. 
 </p>

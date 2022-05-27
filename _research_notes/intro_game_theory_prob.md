@@ -2,7 +2,9 @@
 layout: note 
 date: "2022-03-19" 
 title: "Introduction to Game-Theoretic Probability"
+description: "Probability as betting"
 status: published
+image: /assets/writing_images/intro_game_theory_prob.jpg
 ---
 
 <p class='title'>Introduction to Game-Theoretic Probability</p>

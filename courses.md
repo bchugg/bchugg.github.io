@@ -1,5 +1,7 @@
 ---
 layout: recommendations
+description: "A list of recommended online courses worth consuming" 
+image: '/assets/images/socrates.jpeg'
 title: Courses
 ---
 

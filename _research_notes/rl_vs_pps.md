@@ -1,6 +1,7 @@
 ---
 layout: note
 title: "OPE in RL vs Mean Estimation in Survey Sampling"
+description: "A link between reinforcement learning and survey sampling" 
 status: published
 date: "2022-05-25"
 ---

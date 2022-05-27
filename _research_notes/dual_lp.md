@@ -1,6 +1,7 @@
 ---
 layout: note
 title: Intuition for LP Duality
+description: "Short derivation of the dual of a linear program" 
 status: published
 date: "2022-01-16"
 ---

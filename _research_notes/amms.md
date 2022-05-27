@@ -2,6 +2,7 @@
 layout: note 
 date: "2022-03-21" 
 title: "Understanding Automated Market Makers (AMMs)"
+description: "Introduction to Automated Market Makers in DeFi"
 status: published
 ---
 

@@ -1,7 +1,10 @@
 ---
 layout: page
 title: Papers
+description: Publications, preprints, and theses
+image: /assets/images/manuscript.jpeg
 ---
+
 
 <div class='papers'>
   <p style="text-align: center">
