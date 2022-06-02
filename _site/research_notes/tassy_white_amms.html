@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head prefix="og: http://ogp.me/ns#; dc: http://purl.org/dc/terms/#">
+  
+  
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="http://localhost:4000/research_notes/tassy_white_amms" />
+
+  <!-- Basic meta elements -->
+  <meta charset="utf-8" />
+
+  <!-- Enable responsiveness on mobile devices -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+
+  <!-- Mathjax Support -->
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <title>
+    
+     Liquidity Provider Wealth in Constant Product AMMs
+    
+  </title>
+
+  <!-- Dublin Core metadata for Zotero -->
+  <meta property="dc:title" content="Liquidity Provider Wealth in Constant Product AMMs" />
+  <meta property="dc:creator" content="Ben Chugg" />
+  <meta property="dc:identifier" content="http://localhost:4000/research_notes/tassy_white_amms" />
+  
+  
+  
+  <meta property="dc:source" content="benny" />
+
+  <!-- Open Graph metadata -->
+  <meta property="og:title" content="Liquidity Provider Wealth in Constant Product AMMs" />
+  <meta property="og:url" content="http://localhost:4000/research_notes/tassy_white_amms" />
+  <meta property="og:image" content="http://localhost:4000/assets/favicon.ico" />
+  <meta property="og:image:width" content="200" />
+  <meta property="og:image:height" content="200" />
+  <meta property="fb:admins" content="elotroalex" />
+  <meta property="fb:app_id" content="589495744558280" />
+
+
+  <meta property="og:description" content="">
+  <meta property="og:type" content="article" />
+
+
+  <!-- CSS link -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="167x167" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/assets/favicon.ico" />
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="114×114" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="72×72" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” href="/assets/favicon.ico" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml" />
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.9.1" />
+<meta property="og:title" content="Liquidity Provider Wealth in Constant Product AMMs" />
+<meta name="author" content="Ben Chugg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Calculating the average geometric return for a liquidity provider in a constant product AMM" />
+<meta property="og:description" content="Calculating the average geometric return for a liquidity provider in a constant product AMM" />
+<link rel="canonical" href="http://localhost:4000/research_notes/tassy_white_amms" />
+<meta property="og:url" content="http://localhost:4000/research_notes/tassy_white_amms" />
+<meta property="og:site_name" content="benny" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-05-31T00:00:00-07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Liquidity Provider Wealth in Constant Product AMMs" />
+<meta name="twitter:site" content="@bennychugg" />
+<meta name="twitter:creator" content="@Ben Chugg" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"dateModified":"2022-05-31T00:00:00-07:00","datePublished":"2022-05-31T00:00:00-07:00","description":"Calculating the average geometric return for a liquidity provider in a constant product AMM","headline":"Liquidity Provider Wealth in Constant Product AMMs","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/research_notes/tassy_white_amms"},"url":"http://localhost:4000/research_notes/tassy_white_amms"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+
+  <body class="theme-base-">
+
+    <!-- This if statement decides which sidebar to use -->
+    
+    <!--
+  Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for
+  behavior.
+-->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <!-- <p>Ben Chugg's academic website</p> -->
+  </div> 
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/papers">Papers</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/research_notes">Research Notes</a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/writing">Writing</a>
+        
+      
+    
+
+    <a class='sidebar-nav-item' href="http://incrementspodcast.com">Podcast</a>
+
+    <span class='sidebar-nav-item'>Recommendations</span>
+    <ul class="dropdown-menu">
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+            <li><a href="/books">Books</a></li>
+          
+        
+      
+        
+          
+            <li><a href="/courses">Courses</a></li>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    </ul>
+
+
+    <!-- The code below is used for manually entered links  -->
+    <!-- <span style='cursor:pointer;' onclick="javascript:var hypothesis = document.createElement('script');
+      hypothesis.setAttribute('src','https://hypothes.is/embed.js');
+      document.head.appendChild(hypothesis);"><a class="sidebar-nav-item">Annotate me</a></span> -->
+
+  <!--
+    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://localhost:4000/research_notes/tassy_white_amms/" data-proofer-ignore>Annotate me</a>
+    <script src="https://hypothes.is/embed.js" async></script>
+  -->
+
+    <!-- <a class="sidebar-nav-item" href="https://github.com/minicomp/ed" target="_blank">GitHub project</a> -->
+   </nav> 
+
+  <div class="sidebar-links">
+    <div class='container'>
+      <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github_white.png"></a>
+      <a href="https://www.linkedin.com/in/ben-chugg-3a4616aa/" rel='nofollow'><img src="/assets/images/linkedin_white.png"></a>
+      <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads_white.png"></a>
+      <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter_white.png"></a>
+    </div>
+     <!-- <p>
+      A modified version of <a href="https://minicomp.github.io/ed/">Ed.</a> 
+    </p>  -->
+  </div>
+</aside>
+
+    
+
+    <!--
+      Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS
+      collisions with our real content.
+    -->
+    <div class="wrap">
+      <header class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">benny</a>
+            
+          </h3>
+        </div>
+      </header>
+
+      <main class="container content" id="main">
+        <article class="note">
+  <small>
+    <a href="/research_notes">Back to all notes</a>
+  </small>
+  <!-- <hr> -->
+  <p class="title">Liquidity Provider Wealth in Constant Product AMMs</p>
+
+\[\newcommand{\N}{\mathbb{N}}
+\newcommand{\ratio}{\Lambda}
+\newcommand{\DX}{\Delta X}
+\newcommand{\DY}{\Delta Y}
+\newcommand{E}{\mathbb{E}}\]
+
+<h1 id="1-setting">1. Setting</h1>
+
+<p>Our goal is to compute the geometric mean return of a Liquidity Provider’s (LP) wealth \(W_t = Y_tS_t + X_t\) for numeraire \(X_t\), asset \(Y_t\), and price process \(S_t\) (see <a href="/_research_notes/amms.md">this post</a> for more on the setting). In particular, for a given fee \(\gamma\), we want to calculate</p>
+
+\[\lim_{T\to\infty}\frac{1}{T}\E[\log W_T].\]
+
+<p>We’ll move away from the abstract setting considered <a href="/research_notes/amms/">last time</a>, and consider an actual price process. We’ll adopt that used by Martin Tassy and David White in <a rel="nofollow noopener noreferrer" href="https://math.dartmouth.edu/~mtassy/articles/AMM_returns.pdf">this paper</a> which has the price process \(S_t\) follow (discrete) geometric Brownian motion.</p>
+
+\[\label{eq:price_process}
+    S_t = 
+    \begin{cases}
+    1, &amp; t=0, \\
+    S_{t-1}e^{\delta U_t},&amp; t&gt;0,
+    \end{cases}\]
+
+<p>where \(U_t\) are iid binomial random variables with success probability \(p\), and \(\delta&gt;0\) is some constant parameter. Wlog we may assume \(p\geq 1/2\), otherwise we flip the role of \(X_t\) and \(Y_t\).</p>
+
+<p>It’s more intutive to look at the price process in log space. Then we see that</p>
+
+\[\log(S_t)-\log(S_{t-1})\in\{-\delta,\delta\},\]
+
+<p>meaning prices can jump up or down by a factor of \(\delta\). \(\delta\) sort of acts as our “discretization factor.”</p>
+
+<p>Now, because products of exponentials play well together, we’re going to choose the fee \(\gamma\) to be \(\exp=(-k\delta)\) for some \(k\in\N\). This constrains the structure of \(S_t\) very nicely. In particular, if \(S_0=X_0/Y_0\), then at all times \(t\), \(S_t=\exp(m_t\delta)\ratio_t\) for some integer \(m_t\). This is clear from induction on \(t\): if \(S_t=\exp(m_t\delta)\ratio_t\) then by definition of the price process, \(S_{t+1}\in\{\exp(\delta)S_t,\exp(-\delta)S_t\}=\{\exp((m_t+1)\delta)\ratio_t, \exp((m_t-1)\delta)\ratio_t\}\) (the two cases come from \(U_{t+1}\)).</p>
+
+<h1 id="2-trading-game">2. Trading Game</h1>
+
+<p>Under these assumptions, the no arbitrage condition is now</p>
+
+\[S_t \in [\exp(-k\delta)\ratio_t, \exp(k\delta)\ratio_t].\]
+
+<p>As soon as the price is outside these bounds – and it will be outside by a factor of either \(e^\delta\) or \(e^{-\delta}\) by definition of the price process – then a trade is made.</p>
+
+<p>Thus, we can rewrite the trading game from last time as follows.</p>
+
+<ol>
+  <li>
+    <p>If \(S_t&lt;\gamma\ratio_t\), then \(S_t=\exp(-\delta)\gamma\ratio_t=\exp(-\delta(k+1))\ratio_t\) and exchanging \(\DY_t\) for \(\DX_t\) is profitable. Using the equations we derived last time for how much is traded, along with definitions of \(\gamma,\ratio_t\) and the value \(S_t\), we obtain</p>
+
+\[\DY_t = Y_t(\exp(\frac{\delta}{\gamma+1})-1),\quad \DX_t = X_t(1 - \exp(-\frac{\delta \gamma}{\gamma +1})).\]
+  </li>
+  <li>
+    <p>If \(S_t&gt;\gamma^{-1}\ratio_t\), then \(S_t=\exp(\delta)\gamma^{-1}\ratio_t=\exp(\delta(k+1))\ratio_t\) and exchanging \(\DX_t\) for \(\DY_t\) is profitable. We obtain</p>
+
+\[\DX_t = X_t(\exp(\frac{\delta}{\gamma+1}) -1),\quad \DY_t = Y_t(1 - \exp(-\frac{\delta\gamma}{\gamma+1})).\]
+  </li>
+  <li>
+    <p>If \(\exp(-k\delta)\ratio_t\leq S_t\leq \exp(k\delta) \ratio_t\) then no trade is made.</p>
+  </li>
+</ol>
+
+<p>Now, notice that the ratio \(S_t/\ratio_t\) is always in the set \(\{\exp(-(k+1)\delta), \exp(-k\delta),\dots,\exp((k+1)\delta)\}\), i.e.,</p>
+
+\[\log\frac{S_t}{\ratio_t}\in\delta\{-k-1,-k,\dots,k,k+1\},\]
+
+<p>with the two ends corresponding to trading states.</p>
+
+<p>Put \(M_t = \log(S_t/\ratio_t)\). We can treat the movement of \(M_t\) as markov chain on the finite state space \(\{-k\delta,\dots,k\delta\}\), which represent all the non-arbitrage states.</p>
+
+<p>In state \(k\delta\), \(M_t\) transitions with probability \(\delta\) back to itself, meaning the price went up and a trade was made (case 2 in the trading game). In that case the ratio returns to \(S_t/\ratio_t=\exp(k\delta)\). With probability \(1-\delta\) the price went down and \(M_t\) moves to state \((k-1)\delta\).</p>
+
+<p>Similarly, in state \(-k\delta\), \(M_t\) returns to its current state with probability \(1-\delta\) and moves to state \((-k+1)\delta\) with probability \(\delta\). Note the probabilities are reversed in this case because a trade is made when the price moves down instead of up.</p>
+
+<p>In all states besides the end state, the dynamics are driven solely by the price process.  In these states, the subsequent state moves up (towards \(k\delta\)) with probability \(\delta\), and down (towards \(-k\delta\)) with probability \(1-\delta\).</p>
+
+<p>The transition matrix for this process is therefore</p>
+
+\[P  = \begin{pmatrix}
+1-p &amp; p \\ 
+1-p &amp; 0 &amp; p \\
+0 &amp; 1-p &amp; 0 &amp; p \\
+&amp; &amp;&amp; \ddots  \\
+&amp;&amp;&amp; 1-p &amp; 0 &amp; p \\ 
+&amp;&amp;&amp;&amp; 1-p &amp; p
+\end{pmatrix}\]
+
+<p>To find the long run behavior of \(M_t\) we find the stationary distribution \(\pi\) such that \(\pi P=\pi\).  Solving this equation gives that \(\pi_{i+1}=\frac{p}{q}\pi_{i-1}\) for \(q=1-p\) for all \(i\), or \(\pi_i = (p/q)^{i-1}\pi_1\). If \(p=q=1-p\), i.e., \(p=1/2\), then \(\pi_i=\pi_{i-1}\) for all \(i\) and the stationary distribution is</p>
+
+\[\pi = \bigg(\frac{1}{2k+1},\dots,\frac{1}{2k+1}\bigg).\]
+
+<p>Otherwise, since we need all entries to sum to 1,</p>
+
+\[1=\sum_{i=1}^{2k+1}(p/q)^{i-1}\pi_1 = \pi_1 \bigg(\frac{(p/q)^{2k+1}-1}{p/q-1}\bigg).\]
+
+<p>So we get</p>
+
+\[\pi = \bigg(r, \frac{p}{q}r, \dots,\bigg(\frac{p}{q}\bigg)^{2k}r\bigg),\]
+
+<p>where</p>
+
+\[r=\frac{p/q - 1}{(p/q)^{2k+1}-1}.\]
+
+<h1 id="3-expected-return">3. Expected Return</h1>
+
+<p>Recall the no-arbitrage condition: \(S_t \in [\gamma \ratio_t, \gamma^{-1}\ratio_t]\), that is,  \(\gamma\leq S_t/\ratio_t \leq \gamma^{-1}\).  We can use this to bound the difference between \(W_t\) and \(Y_t\ratio_t+X_t\), which we call the <em>implicit wealth</em>. We have</p>
+
+\[\frac{W_t}{Y_t\ratio_t + X_t} = \frac{Y_tS_t}{2X_t} + \frac{X_t}{2X_t} = \frac{S_t}{2\ratio_t} + \frac{1}{2} \in \bigg[\frac{\gamma}{2}, \frac{1}{2\gamma}\bigg].\]
+
+<p>This lets us write the expected log return as</p>
+
+\[\begin{align}
+\E[\log W_t] &amp;= \E\bigg[\log\bigg(\frac{W_t}{Y_t\ratio_t + X_t}\bigg) + \log(Y_t\ratio_t + X_t)\bigg] \\ 
+&amp;= \E[\log O(1)] + \E[\log(Y_t\ratio_t+X_t)]. 
+\end{align}\]
+
+<p>The reason we want to work with the implicit wealth instead of the true wealth is because it’s easier to get a handle on the behavior of \(\ratio_t\) than that of \(S_t\). In particular, recall from last post that we know how the ratio \(\frac{X_{t+1}Y_{t+1}}{X_tY_t}\) behaves over time. Trading \(X_t\) for \(Y_t\), we saw that</p>
+
+\[\frac{X_{t+1}Y_{t+1}}{X_tY_t} = \bigg(\frac{\gamma S_t}{\ratio_t}\bigg)^{\frac{1-\gamma}{\gamma+1}}.\]
+
+<p>Note that in our case, \(S_t = \exp(\delta)\gamma\ratio_t\) (Case 2 in the trading game), we get that</p>
+
+\[\frac{X_{t+1}Y_{t+1}}{X_tY_t} = \exp\bigg(\delta\frac{1-\gamma}{1+\gamma}\bigg)=:C\]
+
+<p>Remarkably, we get the same result when trading \(Y_t\) for \(X_t\). Consequently, if there have been \(N_t\) trades at time \(t\) we have</p>
+
+\[X_tY_t = C^{N_t} X_0Y_0 = C^n,\]
+
+<p>since \(X_0=Y_0=1\). Drawing some inspiration from the fact that we know how \(X_tY_t\) behaves over time, write</p>
+
+\[\begin{align}
+\ratio_t = \frac{X_t}{Y_t} = \frac{X_t^2}{X_tY_t} = \frac{1}{4X_tY_t}(X_t\ratio_t + Y_t)^{2}. 
+\end{align}\]
+
+<p>In other words,</p>
+
+\[Y_t\ratio_t + X_t = 2(\ratio_t)^{1/2}(X_tY_t)^{1/2} = 2\ratio_t^{1/2} C^{N_t/2},\]
+
+<p>therefore</p>
+
+\[\E[\log(Y_t\ratio_t + X_t)] = \frac{1}{2}\E[\log \ratio_t ] + \frac{1}{2}\log(C)\E[N_t] + \log(2).\]
+
+<p>For the term \(\E[\log\ratio_t]\), notice that \(X_t/Y_t\) doesn’t change unless there’s a trade. If \(X_t\) is traded for \(Y_t\), then ratio changes as</p>
+
+\[\frac{X_t + \Delta X_t}{Y_t - \Delta Y_t} = \frac{X_t}{Y_t}\exp\bigg(\frac{\delta}{\gamma+1}-\frac{-\delta\gamma}{\gamma+1}\bigg) = \frac{X_t}{Y_t}\exp(\delta).\]
+
+<p>Similarly, exchanging \(Y_t\) for \(X_t\) leads to a change by a factor of \(\exp(-\delta)\). Since \(X_0=Y_0=1\), it follows that \(\log(\ratio_t)\) is always changing by a factor of \(\delta\) or \(-\delta\). Thus, to evaluate \(\E[\log\ratio_t]\), we want to know how many times it ticked up by \(\delta\), and how many times it ticked down by \(-\delta\). Let \(M_T^\uparrow\) be the number of times the price exceeded the top of the no-arbitrage range, i.e., \(S_t&gt;\gamma^{-1}\ratio_t\) (number of times \(\log\ratio_t\) ticked up). Similarly, let \(M_t^\downarrow\) be the number of times it falls below. Then,</p>
+
+\[\E[\log \ratio_t] = \delta \E[M_T^\uparrow ] - \delta\E[M_T^\downarrow].\]
+
+<p>We evaluate these terms using the markov chain \(M_t\). In the limit, \(T^{-1}\E[M_T^\uparrow]\) is the fraction of time during the interval \([0,T]\) that a trade (at the upper end of the arbitrage region) is made. This is precisely \(nTp\pi(k\delta)\), where \(\pi\) is the stationary distribution of \(M_t\), \(nT\) is total number of iterations played<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> during time \([0,T]\), and \(p\) is probability of the price moving up when in state \(\pi(k\delta)\). Note we need to multiply \(\pi(k\delta)\) by \(p\), since we don’t make a trade in state \(k\delta\), only if the price increases while \(M_t\) is already in state \(k\delta\). The probability of the price increasing is \(p\). A similar argument for \(T^{-1}\E[M_T^\downarrow]\) in the limit implies its value is \(nT(1-p)\pi(-k\delta)\).</p>
+
+<p>Finally, note that \(N_T = M_T^\uparrow + M_T^\downarrow\), so we can use the above analysis to obtain the value of \(T^{-1}\E[N_T]\) in the limit. Putting this all together we get</p>
+
+\[\begin{align}
+\lim_T \frac{1}{T}\E[\log W_T] &amp;= \lim_T \frac{1}{T}\bigg(\E[\log O(1)] + \E[Y_t\ratio_t + X_t]\bigg) \\ 
+&amp;= \lim_T \frac{1}{T}\bigg(\frac{1}{2}\E[\log\ratio_t] + \frac{1}{2}\log(C)\E[N_T] + \log(2)\bigg) \\ 
+&amp;= \lim_T\frac{1}{2T}\bigg(\delta\E[M_T^\uparrow] - \delta\E[M_T^\downarrow] + \log(C)(\E[M_T^\uparrow] + \E[M_T^\downarrow])\bigg)\\
+&amp;= \lim_T\frac{\delta}{2T}\bigg\{\E[M_T^\uparrow]\bigg(1 + \frac{1-\gamma}{1+\gamma}\bigg) + \E[M_T^\downarrow]\bigg(\frac{1-\gamma}{1+\gamma}-1\bigg)\bigg\}\\
+&amp;= \frac{\delta}{2}\bigg\{np\pi(k\delta)\bigg(\frac{1}{1+\gamma}\bigg) - n(1-p)\pi(-k\delta)\bigg(\frac{2\gamma}{1+\gamma}\bigg)\bigg\}.
+\end{align}\]
+
+<p>From here, there are two cases to consider: \(p=1/2\) and \(p&gt;1/2\). For \(p=1/2\), we have \(\pi(k\delta)=\pi(-k\delta)=(2k+1)^{-1}\), and</p>
+
+\[\begin{align}
+\lim_T\frac{1}{T}\E[\log W_T] 
+&amp;= \frac{\delta n}{2(1+\gamma)(2k+1)}(p - 2\gamma(1-p)).
+\end{align}\]
+
+<p>Whereas for \(p&gt;1/2\),</p>
+
+\[\begin{align}
+\lim_T \frac{1}{T} \E[\log W_T] 
+&amp;= \frac{\delta nr}{2(1+\gamma)}\bigg\{p\bigg(\frac{p}{q}\bigg)^{2k} - 2\gamma(1-p)\bigg\}.
+\end{align}\]
+
+<p>In sum,</p>
+
+\[\begin{equation}
+\label{eq:return}
+\lim_{T\to\infty}\frac{1}{T}\E[\log W_T] =  \begin{cases}
+\frac{\delta n}{2(1+e^{-k\delta})(2k+1)}(p - 2e^{-k\delta}(1-p)),
+&amp; \text{if }p=1/2 \\ 
+\frac{\delta nr}{2(1+e^{-k\delta})}(p(p/q)^{2k} - 2e^{-k\delta}(1-p)), &amp;\text{if }p&gt;1/2. 
+\end{cases} \tag{1}
+\end{equation}\]
+
+<p>From here, you can start taking limits (slightly trickier than you think because the relationship between \(\delta\) and \(p\) is constrained by requirement that price process is geometric Brownian motion) to move into the continuous case. We’re going to skip that because you can still gain insight into the optimal fee structure from this equation.</p>
+
+<p>How should we set the fee in order to maximize return? In particular, how do we choose \(k\)? For \(p&gt;1/2\), we can check that Equation \eqref{eq:return} is monotonically increasing as \(k\to\infty\), implying it gets larger as \(\gamma\) gets smaller. That is, we want to set the fee as close to zero as possible without it actually being zero.<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup></p>
+
+<p>This is what’s refered to as Uniswap’s “<a rel="nofollow noopener noreferrer" href="https://research.paradigm.xyz/uniswaps-alchemy">financial alchemy</a>”, because the result is so counterintuitive. Of course, in reality I’m not sure what it means to set the fee arbitrarily close to zero. Most likely, something would break. Better, I think, to realize that this model is imperfect and likely not capturing true market behavior.</p>
+
+<p>Then again, the model is more robust than it might appear at first glance, at least from the perspective of maximizing LP wealth (besides it being discrete, but that can be fixed). Sure, it makes the assumption that a trade occurs each time step. But even if not, and the prices deviates significantly from the no-arbitrage region, then the next trade which optimizes its profits is mathematically equivalent to multiple intermediary trades (i.e., in some sense, the model is linear – not prefering one big trade to many small ones). Moreover, while the model assumes that only arbitrage trades are made, other trades would simply add to the LP’s wealth while not being worth it for the trader. In that sense, the model is conservative in its estimate of wealth accumulation.</p>
+
+<p>Still, it <em>does</em> assume perfect information and, of course, that the price follows a well-defined geometric brownian motion. This implies that there are no huge, near-instantaneous price drops (or at least they occur with very, very low probability), which is not the case in practice. I’m sure Nassim Taleb has yelled about this somewhere.</p>
+
+<p>It’s also worth noting that Equation \eqref{eq:return} looks slighly different from that obtained by Tassy and White in their <a rel="nofollow noopener noreferrer" href="https://math.dartmouth.edu/~mtassy/articles/AMM_returns.pdf">paper</a>. I think they made a mistake when calculating \(\lim \E[\log \ratio_T]/T\), but it’s hard to be sure. Either way, we get the same result for the optimal fee.</p>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>This is an annoying detail that I chose to ignore for most of the post. Technically, there’s one final detail we need to add to the model, and that’s the number of trades that occur during an interval of time. So far we’ve just been writing \(t\) and \(t+1\), but since we’re going to start taking limits in terms of time we need to be a little more careful. We’ll assume that there are \(n\) steps (e.g., price changes) in a single interval of time, so that in \([0,T]\) there are \(nT\) steps played. Abusing notation, when we write e.g., \(X_{t+1}\), we mean the next value of \(X_t\), not the value at the next unit time \(n\) steps later. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>Note our math prohibits it from ever reaching zero, and if we did simply set \(\gamma=0\) then the LP wealth wouldn’t ever increase. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+    </li>
+  </ol>
+</div>
+
+  <small>
+    <a href="/research_notes">Back to all notes</a>
+  </small>
+</article>
+ <!-- "> -->
+      </main>
+
+      <!-- Footer  -->
+      <div class="container" id="footer">
+        <hr>
+        <div class='container links'>
+          <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github.png"></a>
+          <a href="https://www.linkedin.com/in/ben-chugg-3a4616aa/" rel='nofollow'><img src="/assets/images/linkedin.png"></a>
+          <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads.png"></a>
+          <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter.png"></a>
+        </div>
+      
+        <div class='copyright'>
+          <small>&#169; 2022 Ben Chugg</small>
+        </div>
+      
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+
+    // Highlight search Query
+    var url = window.location.href;
+      if (url.lastIndexOf("?q=") > 0) {
+        // get the index of the parameter, add three (to account for length)
+        var stringloc = url.lastIndexOf("?q=") + 3;
+        // get the substring (query) and decode
+        var searchquery = decodeURIComponent(url.substr(stringloc));
+        // regex matches at beginning of line, end of line or word boundary, useful for poetry
+        var regex = new RegExp("(?:^|\\b)(" + searchquery + ")(?:$|\\b)", "gim");
+        // get, add mark and then set content
+        var content = document.getElementById("main").innerHTML;
+        document.getElementById("main").innerHTML = content.replace(regex, "<mark>$1</mark>");
+      }
+
+      // Toggle sidebar
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             !sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+
+<!-- Facebook SDK for JavaScript -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '589495744558280',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+  </body>
+</html>

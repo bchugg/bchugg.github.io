@@ -5,7 +5,7 @@
   
   
   <!-- Canonical link to help search engines -->
-  <link rel="canonical" href="http://localhost:4000/writing/" />
+  <link rel="canonical" href="http://localhost:4000/research_notes/dual_lp" />
 
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
@@ -20,22 +20,22 @@
 
   <title>
     
-      Ben &middot; Writing
+     Intuition for LP Duality
     
   </title>
 
   <!-- Dublin Core metadata for Zotero -->
-  <meta property="dc:title" content="Writing" />
+  <meta property="dc:title" content="Intuition for LP Duality" />
   <meta property="dc:creator" content="Ben Chugg" />
-  <meta property="dc:identifier" content="http://localhost:4000/writing/" />
+  <meta property="dc:identifier" content="http://localhost:4000/research_notes/dual_lp" />
   
   
   
   <meta property="dc:source" content="benny" />
 
   <!-- Open Graph metadata -->
-  <meta property="og:title" content="Writing" />
-  <meta property="og:url" content="http://localhost:4000/writing/" />
+  <meta property="og:title" content="Intuition for LP Duality" />
+  <meta property="og:url" content="http://localhost:4000/research_notes/dual_lp" />
   <meta property="og:image" content="http://localhost:4000/assets/favicon.ico" />
   <meta property="og:image:width" content="200" />
   <meta property="og:image:height" content="200" />
@@ -63,21 +63,22 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v3.9.1" />
-<meta property="og:title" content="Writing" />
+<meta property="og:title" content="Intuition for LP Duality" />
 <meta name="author" content="Ben Chugg" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Spicy takes and explorations of various topics" />
-<meta property="og:description" content="Spicy takes and explorations of various topics" />
-<link rel="canonical" href="http://localhost:4000/writing/" />
-<meta property="og:url" content="http://localhost:4000/writing/" />
+<meta name="description" content="Short derivation of the dual of a linear program" />
+<meta property="og:description" content="Short derivation of the dual of a linear program" />
+<link rel="canonical" href="http://localhost:4000/research_notes/dual_lp" />
+<meta property="og:url" content="http://localhost:4000/research_notes/dual_lp" />
 <meta property="og:site_name" content="benny" />
-<meta property="og:image" content="http://localhost:4000/assets/images/building.jpg" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="http://localhost:4000/assets/images/building.jpg" />
-<meta property="twitter:title" content="Writing" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-01-16T00:00:00-08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Intuition for LP Duality" />
+<meta name="twitter:site" content="@bennychugg" />
+<meta name="twitter:creator" content="@Ben Chugg" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"description":"Spicy takes and explorations of various topics","headline":"Writing","image":"http://localhost:4000/assets/images/building.jpg","url":"http://localhost:4000/writing/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"dateModified":"2022-01-16T00:00:00-08:00","datePublished":"2022-01-16T00:00:00-08:00","description":"Short derivation of the dual of a linear program","headline":"Intuition for LP Duality","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/research_notes/dual_lp"},"url":"http://localhost:4000/research_notes/dual_lp"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -128,13 +129,13 @@
     
       
         
-          <a class="sidebar-nav-item" href="/papers/">Papers</a>
+          <a class="sidebar-nav-item" href="/papers">Papers</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="/research_notes/">Research Notes</a>
+          <a class="sidebar-nav-item" href="/research_notes">Research Notes</a>
         
       
     
@@ -144,7 +145,7 @@
     
       
         
-          <a class="sidebar-nav-item active" href="/writing/">Writing</a>
+          <a class="sidebar-nav-item" href="/writing">Writing</a>
         
       
     
@@ -168,13 +169,13 @@
       
         
           
-            <li><a href="/books/">Books</a></li>
+            <li><a href="/books">Books</a></li>
           
         
       
         
           
-            <li><a href="/courses/">Courses</a></li>
+            <li><a href="/courses">Courses</a></li>
           
         
       
@@ -203,7 +204,7 @@
       document.head.appendChild(hypothesis);"><a class="sidebar-nav-item">Annotate me</a></span> -->
 
   <!--
-    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://localhost:4000/writing//" data-proofer-ignore>Annotate me</a>
+    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://localhost:4000/research_notes/dual_lp/" data-proofer-ignore>Annotate me</a>
     <script src="https://hypothes.is/embed.js" async></script>
   -->
 
@@ -235,123 +236,74 @@
           <h3 class="masthead-title">
             <a href="/" title="Home">benny</a>
             
-              <br><small>Writing</small>
-            
           </h3>
         </div>
       </header>
 
       <main class="container content" id="main">
-        <article class="page">
-  <p>Thoughts on things. If a post is old I’m probably at least semi-embarrased by it and/or partially disagree with my own conclusions (does this happen to good writers?). So if you disagree with something send me an email and perhaps we can <del>fight to the death</del> laugh at it together.</p>
+        <article class="note">
+  <small>
+    <a href="/research_notes">Back to all notes</a>
+  </small>
+  <!-- <hr> -->
+  <p class="title">Some intuition for the dual of a linear program</p>
 
-<p><br /></p>
+\[\newcommand{R}{\mathbb{R}}\]
 
-<ul class="writing-list">
+<p>Suppose we have the following basic linear program:</p>
 
-<li>
-    <div class="writing-entry">
-        <p class="title-date">
-            
-            <a class="title" href="https://towardsdatascience.com/the-false-philosophy-plaguing-ai-bdcfd4872c45">The False Philosophy Plaguing AI</a>
-            
-            <span>Jun 2021</span>
-        </p>
-        
-        <p class="subtitle">    
-            Erik J. Larson and The Myth of Artificial Intelligence
-        </p>    
-        
-        
-        <p class="external-info">
-        (Towards Data Science)
-        </p>
-        
-    </div>
-</li>
+\[\begin{align*}
+\max_{x_1,x_2} \quad &amp;  3x_1+2x_2 \\
+ \text{s.t.} \quad &amp; x_1+x_2/2\leq 1, \\
+ &amp; 4x_1+5x_2\leq 5, \\ 
+ &amp; x_1,x_2\geq 0.
+\end{align*}\]
 
-<li>
-    <div class="writing-entry">
-        <p class="title-date">
-            
-            <a class="title" href="https://medium.com/conjecture-magazine/the-dangers-of-cliodynamics-c48392b4a985">Cliodynamics and the Dangers of Prophesy</a>
-            
-            <span>Jan 2021</span>
-        </p>
-        
-        <p class="subtitle">    
-            How the new “science” of divining humanity’s future revives an ancient fallacy
-        </p>    
-        
-        
-        <p class="external-info">
-        (Medium)
-        </p>
-        
-    </div>
-</li>
+<p>What’s an upper bound on the solution? Five is one, simply because the coefficients of the second constraint are larger than those in the objective. If \(4x_1+5x_2\leq 5\) then because \(3x_1\leq 4x_1\), \(2x_2\leq 5x_2\), we have \(3x_1+2x_2\leq 5\) as well. We could also divide the second constraint through by 3/4 and get that \(3x_1+15x_2/4\leq 15/4\), hence 15/4 is another (tighter) upper bound. If we divide the second constraint by anything smaller than 3/4 however, the coefficient of \(x_1\) will become smaller than 3 (the coefficient of \(x_1\) in the objective function), hence it will not be an upper bound. However, we can get an even tighter bound via linear combinations of the first and second constraints. Dividing the second constraint by 2, and then adding the first constraint yields \(3x_1+3x_2\leq 7/2\), so we get a third, even tigher, upper bound of \(7/2\).</p>
 
-<li>
-    <div class="writing-entry">
-        <p class="title-date">
-            
-            <a class="title" href="https://www.givingwhatwecan.org/post/2020/12/when-unprecedented-times-meet-unprecedented-opportunities/">When unprecedented times meet unprecedented opportunities</a>
-            
-            <span>Dec 2020</span>
-        </p>
-        
-        <p class="subtitle">    
-            Despite this year’s setbacks, we are at an unprecedented time in history: we can do something about the abundance of suffering around us.
-        </p>    
-        
-        
-        <p class="external-info">
-        (Giving What We Can)
-        </p>
-        
-    </div>
-</li>
+<p>We could go on like this, but we can also formulate this process as an optimization problem. In the cases above, we multiply the two constraints by \(y_1\) and \(y_2\):</p>
 
-<li>
-    <div class="writing-entry">
-        <p class="title-date">
-            
-            <a class="title" href="https://forum.effectivealtruism.org/posts/2NJszbnBTwibfdpo7/strong-longtermism-irrefutability-and-moral-progress">Strong Longtermism, Irrefutability, and Moral Progress</a>
-            
-            <span>Dec 2020</span>
-        </p>
-        
-        <p class="subtitle">    
-            A response to Greaves and MacAskill
-        </p>    
-        
-        
-        <p class="external-info">
-        (EA Forum)
-        </p>
-        
-    </div>
-</li>
+\[\begin{align*}
+&amp;y_1(x_1+x_2/2)\leq y_1,\\
+&amp;y_2(4x_1+5x_2)\leq 5y_2,
+\end{align*}\]
 
-<li>
-    <div class="writing-entry">
-        <p class="title-date">
-            
-            <a class="title" href="https://medium.com/conjecture-magazine/pascals-mugging-and-the-poverty-of-the-expected-value-calculus-70b190d953cd">Pascal's Mugging and Bad Explanations</a>
-            
-            <span>Dec 2020</span>
-        </p>
-        
-        
-        <p class="external-info">
-        (Medium)
-        </p>
-        
-    </div>
-</li>
+<p>and sum the equations. (In the first two attempts, \(y_1=0\)). So that the inequalities don’t flip, we need \(y_1,y_2\geq 0\). We also need to ensure that \(y_1\) and \(y_2\) are large enough so that the coefficients of the result are larger than the coefficients of the objective function. That is, we need that \(y_1+4y_2\geq 3\) and \(y_1/2+5y_2\geq 2\). The bound is then \(y_1+5y_2\). We want the smallest such upper bound, so we want to minimize that sum. That is, we want to solve</p>
 
-</ul>
+\[\begin{align*}
+\min_{y_1,y_2} \quad &amp;y_1+5y_2 \\
+\text{s.t.}\quad &amp; y_1+4y_2\geq 3, \\ 
+&amp; y_1/2+5y_2\geq 2, \\
+&amp; y_1,y_2\geq 0.
+\end{align*}\]
 
+<p>That’s the dual linear program! If we started with the minimization version, we could repeat much the same process and obtain the maximization version. This can be generalized to arbitrary LPs. The LP</p>
+
+\[\begin{align*}
+\max_{\bf{x}\in\R^n} \quad &amp;\sum_{k=1}^n c_kx_k \\ 
+\text{ s.t. }\quad &amp; \forall j\in[m]: \sum_{k=1}^n a_{jk}x_k\leq b_j, \\
+&amp; \bf{x}\geq 0,
+\end{align*}\]
+
+<p>has dual</p>
+
+\[\begin{align*}
+\min_{\bf{y}\in\R^m} \quad &amp; \sum_{k=1}^m b_ky_k \\
+\text{ s.t. }\quad &amp; \forall j\in[n]: \sum_{k=1}^m a_{kj}y_k\geq c_j, \\
+&amp; \bf{y}\geq 0,
+\end{align*}\]
+
+<p>and vice versa. More concisely:</p>
+
+\[\max_{\bf{x}} \bf{c}^T\bf{x} \quad\text{s.t.}\quad A\bf{x}\leq \bf{b},\;\bf{x}\geq 0,\]
+
+<p>has dual</p>
+
+\[\min_{\bf{y}}\bf{b}^T\bf{y}\quad\text{s.t.}\quad A^T\bf{y}\geq \bf{c},\;\bf{y}\geq 0.\]
+
+  <small>
+    <a href="/research_notes">Back to all notes</a>
+  </small>
 </article>
  <!-- "> -->
       </main>

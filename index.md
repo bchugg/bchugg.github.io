@@ -6,26 +6,25 @@ image: /assets/images/heads.jpg
 
 <img id='headerim' src="/assets/images/lawme.jpg">
 
-I'm lead research analyst at Stanford Law School's 
-Regulation, Evaluation, and Governance Lab (<a href="https://reglab.stanford.edu/" rel='nofollow'>RegLab</a>). I spend most of my time developing and analyzing algorithms, typically with applications to some problem in public policy. 
+I'm an incoming PhD student in the [machine learning department](https://www.ml.cmu.edu/) at Carnegie Mellon University.  Currently, I'm the lead research analyst at Stanford Law School's 
+Regulation, Evaluation, and Governance Lab (<a href="https://reglab.stanford.edu/" rel='nofollow'>RegLab</a>). 
 
 
-On the side, I co-host the <a href="https://www.incrementspodcast.com/" ref='nofollow'>Increments</a> podcast, where <a href="https://vmasrani.github.io/">Vaden Masrani</a> and I yell at each other and others about philosophy and science. Sometimes I also [write]({% link writing.md %}) about these topics. 
-Since research can be confusing, I often distract myself with good [books]({% link books.md %}) and interesting online [courses]({% link courses.md %}). 
+On the side, I co-host the <a href="https://www.incrementspodcast.com/" ref='nofollow'>Increments</a> podcast, where <a href="https://vmasrani.github.io/">Vaden Masrani</a> and I yell at each other and others about philosophy and science. Sometimes I also [write]({% link writing.md %}) about these topics. I often distract myself with good [books]({% link books.md %}) and interesting online [courses]({% link courses.md %}). 
 
+<!-- There is a weird norm in academia of providing your CV on your webpage. I don't understand it (as if you don't submit it alongside any grant proposals or job applications?), but here is mine anyways. If you find it useful, I'd love to know why.   -->
 
-You can contact me at benchugg [at] stanford.edu. 
+You can contact me at benchugg $$\alpha\tau$$ stanford.edu. 
 
 --- 
 
 
 # research interests
-My primary interests involve developing robust sequential decision-making algorithms, particularly in settings where traditional assumptions are violated. 
-I try and straddle the borderlands between theory and practice, but I've also spent some time doing purely applied work. 
+My primary interests at the moment involve developing robust sequential decision-making algorithms, particularly through a non-parametric and non-asymptotic lens, that are as assumption-free as possible. I've previously worked on problems in graph theory, combinatorial optimization, and stochastic reaction networks.
 
-I'm also interested in algorithm design and analysis more broadly, having previously worked on problems in graph theory, combinatorial optimization, and stochastic reaction networks.
+Ideally, I try and straddle the borderlands between theory and practice with a bias towards the former, but apparently the results have high variance because I've spent time doing doing both pure theory and pure application. 
 
-Papers are [here]({% link papers.md %}). I've recently begun keeping some [research notes]({% link research_notes.md %}) as well. 
+My papers are [here]({% link papers.md %}). I've recently begun keeping some [research notes]({% link research_notes.md %}) as well. 
 
 ---
 
@@ -38,8 +37,7 @@ In 2018, I spent some time at <a href="http://www.riken.jp/en/research/labs/aip/
 in Tokyo, where I was  lucky to work with <a href="http://www.prefield.com/index.html" rel='nofollow'>Dr. Maehara</a>
 as part of the Discrete Optimization Unit.
 
-My undergraduate was spent at the
-<a href="https://www.ubc.ca/" rel='nofollow'>University of British Columbia</a> studying mathematics and computer science, where I was immensely fortunate to be
+My undergraduate was spent at the University of British Columbia studying mathematics and computer science, where I was immensely fortunate to be
 supervised by <a href="http://www.cs.ubc.ca/~will/" rel='nofollow'>Will Evans</a> and  <a href="https://www.cs.ubc.ca/~condon/" rel='nofollow'>Anne Condon</a>.
 
 ---

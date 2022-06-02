@@ -5,7 +5,7 @@
   
   
   <!-- Canonical link to help search engines -->
-  <link rel="canonical" href="http://localhost:4000/books/" />
+  <link rel="canonical" href="http://localhost:4000/books" />
 
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
@@ -27,7 +27,7 @@
   <!-- Dublin Core metadata for Zotero -->
   <meta property="dc:title" content="Books" />
   <meta property="dc:creator" content="Ben Chugg" />
-  <meta property="dc:identifier" content="http://localhost:4000/books/" />
+  <meta property="dc:identifier" content="http://localhost:4000/books" />
   
   
   
@@ -35,7 +35,7 @@
 
   <!-- Open Graph metadata -->
   <meta property="og:title" content="Books" />
-  <meta property="og:url" content="http://localhost:4000/books/" />
+  <meta property="og:url" content="http://localhost:4000/books" />
   <meta property="og:image" content="http://localhost:4000/assets/favicon.ico" />
   <meta property="og:image:width" content="200" />
   <meta property="og:image:height" content="200" />
@@ -68,16 +68,18 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Recommended books" />
 <meta property="og:description" content="Recommended books" />
-<link rel="canonical" href="http://localhost:4000/books/" />
-<meta property="og:url" content="http://localhost:4000/books/" />
+<link rel="canonical" href="http://localhost:4000/books" />
+<meta property="og:url" content="http://localhost:4000/books" />
 <meta property="og:site_name" content="benny" />
 <meta property="og:image" content="http://localhost:4000/assets/images/bookshelf.jpeg" />
 <meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:card" content="summary" />
 <meta property="twitter:image" content="http://localhost:4000/assets/images/bookshelf.jpeg" />
 <meta property="twitter:title" content="Books" />
+<meta name="twitter:site" content="@bennychugg" />
+<meta name="twitter:creator" content="@Ben Chugg" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"description":"Recommended books","headline":"Books","image":"http://localhost:4000/assets/images/bookshelf.jpeg","url":"http://localhost:4000/books/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"description":"Recommended books","headline":"Books","image":"http://localhost:4000/assets/images/bookshelf.jpeg","url":"http://localhost:4000/books"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -128,13 +130,13 @@
     
       
         
-          <a class="sidebar-nav-item" href="/papers/">Papers</a>
+          <a class="sidebar-nav-item" href="/papers">Papers</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="/research_notes/">Research Notes</a>
+          <a class="sidebar-nav-item" href="/research_notes">Research Notes</a>
         
       
     
@@ -144,7 +146,7 @@
     
       
         
-          <a class="sidebar-nav-item" href="/writing/">Writing</a>
+          <a class="sidebar-nav-item" href="/writing">Writing</a>
         
       
     
@@ -168,13 +170,13 @@
       
         
           
-            <li><a href="/books/">Books</a></li>
+            <li><a href="/books">Books</a></li>
           
         
       
         
           
-            <li><a href="/courses/">Courses</a></li>
+            <li><a href="/courses">Courses</a></li>
           
         
       
@@ -203,7 +205,7 @@
       document.head.appendChild(hypothesis);"><a class="sidebar-nav-item">Annotate me</a></span> -->
 
   <!--
-    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://localhost:4000/books//" data-proofer-ignore>Annotate me</a>
+    <a class="sidebar-nav-item" href="https://via.hypothes.is/http://localhost:4000/books/" data-proofer-ignore>Annotate me</a>
     <script src="https://hypothes.is/embed.js" async></script>
   -->
 
@@ -1081,6 +1083,16 @@
 				<div class="title">Tribe</div>
 				<br />
 				<auth>Sebastian Junger</auth>
+				<br />
+			</div>
+		</div>
+		
+		<div class="book-rec">
+			<img src="/assets/books/where_is_my_flying_car.jpeg" />
+			<div class="middle">
+				<div class="title">Where is my flying car?</div>
+				<br />
+				<auth>J. Storrs Hall</auth>
 				<br />
 			</div>
 		</div>

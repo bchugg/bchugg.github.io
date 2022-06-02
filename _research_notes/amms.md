@@ -119,7 +119,7 @@ Note that
 
 $$\frac{d^2 f}{d\DX_t^2}=-\frac{\gamma(\gamma+1) S_tY_tX_t^\gamma}{(X_t+\DX_t)^{\gamma+2}}<0,$$
 
-meaning $$f$$ is concave so it has a single maximum. It follows that the maximum to the constrained problem is either at $$\DX_t$$ of \eqref{eq:uncon_sol}, or at 0 (since if $$\DX_t<0$$ then it \emph{strictly} decreases away from this point). Thus, the solution to \eqref{eq:opt1} is $$\DX_t^*=\max\{\DX_t,0\}$$, and $$\DY_t^*=\max\{\DY_t,0\}$$, where $$\DY_t$$ and $$\DX_t$$ are as in Equation \eqref{eq:uncon_sol}.
+meaning $$f$$ is concave so it has a single maximum. It follows that the maximum to the constrained problem is either at $$\DX_t$$ of \eqref{eq:uncon_sol}, or at 0 (since if $$\DX_t<0$$ then it _strictly_ decreases away from this point). Thus, the solution to \eqref{eq:opt1} is $$\DX_t^*=\max\{\DX_t,0\}$$, and $$\DY_t^*=\max\{\DY_t,0\}$$, where $$\DY_t$$ and $$\DX_t$$ are as in Equation \eqref{eq:uncon_sol}.
 
 Notice that $$\DX_t^*> 0$$ iff $$S_t > \gamma^{-1} X_t/Y_t$$, implying the trade is not worth it for $$S_t$$ less than that (and recall that the trader knows $$S_t$$ -- she can check the price of lumber). The same condition holds for $$\DY_t^*$$. We've learned when it is profitable to trade $$X_t$$ for $$Y_t$$. 
 
@@ -207,6 +207,26 @@ $$
 $$
 
 The knowledge that the ratio of $$X_t/Y_t$$ evolves according to a multiplicative factor of $$\gamma$$ and price process will be valuable later on. 
+
+Finally, let's analyze how the quantity $$X_tY_t$$ changes over time. In particular we'll analyze the ratio $$\frac{X_{t+1}Y_{t+1}}{X_tY_t}$$. If no trade is made, then the ratio stays the same. If we trade $$X_t$$ for $$Y_t$$, then Equation \eqref{eq:uncon_sol} gives 
+
+$$
+\begin{align}
+\frac{X_{t+1}Y_{t+1}}{X_tY_t} &= \frac{(X_t - \Delta X_t)(Y_t + \Delta Y_t)}{X_tY_t} \\ 
+&= \bigg(\frac{\gamma S_t Y_t}{X_t}\bigg)^{\frac{1}{\gamma+1}}\bigg(\frac{\gamma S_tY_t}{X_t}\bigg)^{-\frac{\gamma}{\gamma+1}} \\ 
+&= \bigg(\frac{\gamma S_t}{\ratio_t}\bigg)^{\frac{1-\gamma}{\gamma+1}}.
+\end{align}
+$$
+
+Similarly, trading $$Y_t$$ for $$X_t$$ gives 
+
+$$
+\begin{align}
+\frac{X_{t+1}Y_{t+1}}{X_tY_t} = \bigg(\frac{S_t}{\gamma \ratio_t}\bigg)^{\frac{\gamma-1}{\gamma+1}}.
+\end{align}
+$$
+
+As before, this will come in handy later when we have more specific values of $$S_t,\ratio_t$$ and $$\gamma$$. 
 
 # 4. Resources 
 
