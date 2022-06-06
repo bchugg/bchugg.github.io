@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Ben Chugg"
-image: /assets/images/heads.jpg
+image: /assets/images/heads.jpeg
 ---
 
 <img id='headerim' src="/assets/images/lawme.jpg">

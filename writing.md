@@ -2,7 +2,7 @@
 layout: page
 title: Writing
 description: "Spicy takes and explorations of various topics"
-image: /assets/images/building.jpg
+image: /assets/images/building.jpeg
 ---
 
 Thoughts on things. If a post is old I'm probably at least semi-embarrased by it and/or partially disagree with my own conclusions (does this happen to good writers?). So if you disagree with something send me an email and perhaps we can ~~fight to the death~~ laugh at it together. 
