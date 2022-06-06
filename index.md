@@ -12,7 +12,6 @@ Regulation, Evaluation, and Governance Lab (<a href="https://reglab.stanford.edu
 
 On the side, I co-host the <a href="https://www.incrementspodcast.com/" ref='nofollow'>Increments</a> podcast, where <a href="https://vmasrani.github.io/">Vaden Masrani</a> and I yell at each other and others about philosophy and science. Sometimes I also [write]({% link writing.md %}) about these topics. I often distract myself with good [books]({% link books.md %}) and interesting online [courses]({% link courses.md %}). 
 
-<!-- There is a weird norm in academia of providing your CV on your webpage. I don't understand it (as if you don't submit it alongside any grant proposals or job applications?), but here is mine anyways. If you find it useful, I'd love to know why.   -->
 
 You can contact me at benchugg $$\alpha\tau$$ stanford.edu. 
 
@@ -20,7 +19,7 @@ You can contact me at benchugg $$\alpha\tau$$ stanford.edu.
 
 
 # research interests
-My primary interests at the moment involve developing robust sequential decision-making algorithms, particularly through a non-parametric and non-asymptotic lens, that are as assumption-free as possible. I've previously worked on problems in graph theory, combinatorial optimization, and stochastic reaction networks.
+My primary interests at the moment involve developing robust sequential decision-making algorithms, particularly through a non-parametric and non-asymptotic lens, that are as assumption free as possible. I've previously worked on problems in graph theory, combinatorial optimization, and stochastic reaction networks.
 
 Ideally, I try and straddle the borderlands between theory and practice with a bias towards the former, but apparently the results have high variance because I've spent time doing doing both pure theory and pure application. 
 
@@ -34,7 +33,7 @@ Prior to Stanford, I was a master's student at the <a rel='nofollow' href="https
 at Oxford, where I studied topics at the intersection of spectral graph theory and geometry. <a href="files/ox_thesis.pdf">Here</a> is my thesis on the subject.
 			
 In 2018, I spent some time at <a href="http://www.riken.jp/en/research/labs/aip/" rel='nofollow'>RIKEN AIP</a>
-in Tokyo, where I was  lucky to work with <a href="http://www.prefield.com/index.html" rel='nofollow'>Dr. Maehara</a>
+in Tokyo, where I was  lucky to work with <a href="http://www.prefield.com/index.html" rel='nofollow'>Takanori Maehara</a>
 as part of the Discrete Optimization Unit.
 
 My undergraduate was spent at the University of British Columbia studying mathematics and computer science, where I was immensely fortunate to be
