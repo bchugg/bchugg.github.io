@@ -3,7 +3,7 @@
 # Setup
 title:               benny 
 tagline:             'Mayhem & Math'
-description:         "Ben Chugg's academic website"
+description:         "Ben Chugg's corner of the interwebs, wherein he mostly messes around but sometimes does real work"
 url:                 'https://benchugg.com'
 baseurl:             ''
 
@@ -26,7 +26,7 @@ social:
 
 
 # Permalinks
-permalink: /:title
+permalink: /:title/
 
 # Set encoding to UTF-8
 encoding: UTF-8

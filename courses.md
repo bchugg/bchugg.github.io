@@ -21,7 +21,7 @@ A list of courses worth working your way through.
 - Tamar Gendler's <a href="https://www.youtube.com/playlist?list=PL3F6BC200B2930084" rel='nofollow'>Philosophy and the Science of Human Nature.</a>
 - <a href="https://www.youtube.com/playlist?list=PL2FD48CE33DFBEA7E" rel='nofollow'>The Moral Foundations of Politics</a>, with Ian Shapiro.
 - <a href="https://www.youtube.com/playlist?list=PL8D95DEA9B7DFE825" rel='nofollow'>Introduction to  Political Philosophy</a> by Steven Smith.
--  Not a course per se, but Mike Duncan's <a href="https://podcasts.apple.com/us/podcast/revolutions/id703889772" rel='nofollow'>Revolutions</a> podcast is an epic series on the big political revolutions of the past. </li>
+-  Not a course per se, but Mike Duncan's <a href="https://podcasts.apple.com/us/podcast/revolutions/id703889772" rel='nofollow'>Revolutions</a> podcast is an epic series on the big political revolutions of the past.
 
 ## Paywalled
 <small>(Available via Audible)</small>
