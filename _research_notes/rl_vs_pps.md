@@ -6,8 +6,6 @@ status: published
 date: "2022-05-25"
 ---
 
-<p class='title'>OPE in RL vs Mean Estimation in Survey Sampling</p> 
-
 $$
 \newcommand{\hgamma}{\hat{\gamma}}
 \newcommand{\H}{\mathcal{H}}
@@ -328,7 +326,7 @@ Then
 $$
 \begin{align}
 \Var(A(z)) &= 
-\bigg\{\sum_{i\in [N]}\frac{z_i^2}{\pi_i^2}\Var(\delta_S(i)) + \sum_{i\in [N]}\sum_{j\neq i}\frac{z_iz_j}{\pi_i\pi_j}\Cov(\delta_S(i),\delta_S(j))\bigg\} \\
+\sum_{i\in [N]}\frac{z_i^2}{\pi_i^2}\Var(\delta_S(i)) + \sum_{i\in [N]}\sum_{j\neq i}\frac{z_iz_j}{\pi_i\pi_j}\Cov(\delta_S(i),\delta_S(j)) \\
 &= \sum_{i\in [N]}\frac{z_i^2}{\pi_i}(1-\pi_i) + \sum_{i\in [N]}\sum_{j\neq i}\frac{z_iz_j}{\pi_i \pi_j}(\pi_{i,j}-\pi_i\pi_j), 
 \end{align}
 $$
@@ -344,7 +342,7 @@ $$
 
 Consequently, 
 
-$$\sum_{j\neq i}\pi_{i,j}-\pi_i\pi_j = (n-1)\pi_i - \pi_i(n-\pi_i) = \pi_i(\pi_i-1).$$
+$$\sum_{j\neq i}(\pi_{i,j}-\pi_i\pi_j) = (n-1)\pi_i - \pi_i(n-\pi_i) = \pi_i(\pi_i-1).$$
 
 Plugging this into the first sum of $$\Var(A(z))$$ we have 
 

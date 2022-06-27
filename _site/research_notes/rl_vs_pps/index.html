@@ -5,7 +5,7 @@
   
   
   <!-- Canonical link to help search engines -->
-  <link rel="canonical" href="http://localhost:4000/research_notes/rl_vs_pps" />
+  <link rel="canonical" href="http://localhost:4000/research_notes/rl_vs_pps/" />
 
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
@@ -31,8 +31,8 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="A link between reinforcement learning and survey sampling" />
 <meta property="og:description" content="A link between reinforcement learning and survey sampling" />
-<link rel="canonical" href="http://localhost:4000/research_notes/rl_vs_pps" />
-<meta property="og:url" content="http://localhost:4000/research_notes/rl_vs_pps" />
+<link rel="canonical" href="http://localhost:4000/research_notes/rl_vs_pps/" />
+<meta property="og:url" content="http://localhost:4000/research_notes/rl_vs_pps/" />
 <meta property="og:site_name" content="benny" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-05-25T00:00:00-07:00" />
@@ -41,14 +41,14 @@
 <meta name="twitter:site" content="@bennychugg" />
 <meta name="twitter:creator" content="@Ben Chugg" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"dateModified":"2022-05-25T00:00:00-07:00","datePublished":"2022-05-25T00:00:00-07:00","description":"A link between reinforcement learning and survey sampling","headline":"OPE in RL vs Mean Estimation in Survey Sampling","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/research_notes/rl_vs_pps"},"url":"http://localhost:4000/research_notes/rl_vs_pps"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"dateModified":"2022-05-25T00:00:00-07:00","datePublished":"2022-05-25T00:00:00-07:00","description":"A link between reinforcement learning and survey sampling","headline":"OPE in RL vs Mean Estimation in Survey Sampling","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/research_notes/rl_vs_pps/"},"url":"http://localhost:4000/research_notes/rl_vs_pps/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   <!-- Dublin Core metadata for Zotero -->
   <meta property="dc:title" content="OPE in RL vs Mean Estimation in Survey Sampling" />
   <meta property="dc:creator" content="Ben Chugg" />
-  <meta property="dc:identifier" content="http://localhost:4000/research_notes/rl_vs_pps" />
+  <meta property="dc:identifier" content="http://localhost:4000/research_notes/rl_vs_pps/" />
   
   <meta property="dc:date" content="2022-05-25 00:00:00 -0700" />
   
@@ -56,7 +56,7 @@
 
   <!-- Open Graph and Twitter metadata -->
   <meta property="og:title" content="OPE in RL vs Mean Estimation in Survey Sampling" />
-  <meta property="og:url" content="http://localhost:4000/research_notes/rl_vs_pps" />
+  <meta property="og:url" content="http://localhost:4000/research_notes/rl_vs_pps/" />
   
     <meta property="og:image" content="/assets/images/heads.jpeg" />
     <meta name="twitter:image" content="/assets/images/heads.jpeg" />
@@ -143,13 +143,13 @@
     
       
         
-          <a class="sidebar-nav-item" href="/papers">Papers</a>
+          <a class="sidebar-nav-item" href="/papers/">Papers</a>
         
       
     
       
         
-          <a class="sidebar-nav-item" href="/research_notes">Research Notes</a>
+          <a class="sidebar-nav-item" href="/research_notes/">Research Notes</a>
         
       
     
@@ -159,7 +159,7 @@
     
       
         
-          <a class="sidebar-nav-item" href="/writing">Writing</a>
+          <a class="sidebar-nav-item" href="/writing/">Writing</a>
         
       
     
@@ -183,13 +183,13 @@
       
         
           
-            <li><a href="/books">Books</a></li>
+            <li><a href="/books/">Books</a></li>
           
         
       
         
           
-            <li><a href="/courses">Courses</a></li>
+            <li><a href="/courses/">Courses</a></li>
           
         
       
@@ -242,12 +242,11 @@
       <main class="container content" id="main">
         <article class="note">
   <small>
-    <a href="/research_notes">Back to all notes</a>
+    <a href="/research_notes/">Back to all notes</a>
   </small>
-  <!-- <hr> -->
-  <p class="title">OPE in RL vs Mean Estimation in Survey Sampling</p>
-
-\[\newcommand{\hgamma}{\hat{\gamma}}
+  <hr>
+  <p class='title'>OPE in RL vs Mean Estimation in Survey Sampling</p> 
+  \[\newcommand{\hgamma}{\hat{\gamma}}
 \newcommand{\H}{\mathcal{H}}
 \renewcommand{\Pr}{\mathbb{P}}
 \newcommand{\S}{\mathcal{S}}
@@ -542,7 +541,7 @@ Inclusion probabilities do not behave as a typical distribution because they are
 
 \[\begin{align}
 \Var(A(z)) &amp;= 
-\bigg\{\sum_{i\in [N]}\frac{z_i^2}{\pi_i^2}\Var(\delta_S(i)) + \sum_{i\in [N]}\sum_{j\neq i}\frac{z_iz_j}{\pi_i\pi_j}\Cov(\delta_S(i),\delta_S(j))\bigg\} \\
+\sum_{i\in [N]}\frac{z_i^2}{\pi_i^2}\Var(\delta_S(i)) + \sum_{i\in [N]}\sum_{j\neq i}\frac{z_iz_j}{\pi_i\pi_j}\Cov(\delta_S(i),\delta_S(j)) \\
 &amp;= \sum_{i\in [N]}\frac{z_i^2}{\pi_i}(1-\pi_i) + \sum_{i\in [N]}\sum_{j\neq i}\frac{z_iz_j}{\pi_i \pi_j}(\pi_{i,j}-\pi_i\pi_j), 
 \end{align}\]
 
@@ -555,7 +554,7 @@ Inclusion probabilities do not behave as a typical distribution because they are
 
 <p>Consequently,</p>
 
-\[\sum_{j\neq i}\pi_{i,j}-\pi_i\pi_j = (n-1)\pi_i - \pi_i(n-\pi_i) = \pi_i(\pi_i-1).\]
+\[\sum_{j\neq i}(\pi_{i,j}-\pi_i\pi_j) = (n-1)\pi_i - \pi_i(n-\pi_i) = \pi_i(\pi_i-1).\]
 
 <p>Plugging this into the first sum of \(\Var(A(z))\) we have</p>
 
@@ -587,7 +586,7 @@ Inclusion probabilities do not behave as a typical distribution because they are
 
 
   <small>
-    <a href="/research_notes">Back to all notes</a>
+    <a href="/research_notes/">Back to all notes</a>
   </small>
 </article>
  <!-- "> -->

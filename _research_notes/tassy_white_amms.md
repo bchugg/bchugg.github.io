@@ -6,8 +6,6 @@ description: "Calculating the average geometric return for a liquidity provider 
 status: published
 ---
 
-<p class='title'>Liquidity Provider Wealth in Constant Product AMMs</p>
-
 $$
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\ratio}{\Lambda}

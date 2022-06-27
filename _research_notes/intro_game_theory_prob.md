@@ -7,7 +7,6 @@ status: published
 image: /assets/writing_images/intro_game_theory_prob.jpg
 ---
 
-<p class='title'>Introduction to Game-Theoretic Probability</p>
 $$
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\strat}{\varphi}

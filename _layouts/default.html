@@ -21,7 +21,7 @@
         <div class="container">
           <h3 class="masthead-title">
             <a href="{{ site.baseurl }}/" title="Home">{{ site.title | newline_to_br }}</a>
-            {% unless page.collection == "research_notes" or page.title == "Ben Chugg" %}
+            {% unless page.collection == "research_notes" or page.title == "Ben Chugg" or page.collection == "writing" %}
               <br><small>{{ page.title }}</small>
             {% endunless %}
           </h3>

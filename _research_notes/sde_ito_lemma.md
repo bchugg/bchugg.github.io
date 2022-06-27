@@ -7,8 +7,6 @@ status: published
 image: /assets/writing_images/brownian_motion.gif
 ---
 
-<p class='title'>Itô Processes and The Fundamental Theorem of Stochastic Calculus</p>
-
 $$
 \newcommand{\dif}{\;\text{d}}
 \newcommand{\dd}{\text{d}}

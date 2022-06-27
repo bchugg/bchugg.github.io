@@ -6,8 +6,6 @@ description: "Introduction to Automated Market Makers in DeFi"
 status: published
 ---
 
-<p class='title'>Introduction to Automated Market Makers (AMMs)</p>
-
 $$
 \newcommand{\blambda}{\bar{\lambda}}
 \newcommand{\bp}{\bar{p}}
@@ -21,7 +19,7 @@ $$
 - TOC 
 {:toc}
 
-Decentralized Exchanges (DEXs) are digital markets enabling cryptocurrency transactions which do not require third parties to oversee the process. Part of this involves replacing human [market makers](https://www.investopedia.com/terms/m/marketmaker.asp#:~:text=The%20term%20market%20maker%20refers,in%20the%20bid%2Dask%20spread.) with smart contracts known as _automated market makers_ (AMMs). Roughly, AMMs are rules determining how much of good $$X$$ can be traded for good $$Y$$ (where "goods" here typically refer to various cryptocurrencies). Examples of DEXs include [Uniswap](https://uniswap.org/) and [Balancer](https://balancer.fi/), each of which has their own AMM protocol. 
+Decentralized Exchanges (DEXs) are digital markets enabling cryptocurrency transactions which do not require third parties to oversee the process. Part of this involves replacing human [market makers](https://www.investopedia.com/terms/m/marketmaker.asp) with smart contracts known as _automated market makers_ (AMMs). Roughly, AMMs are rules determining how much of good $$X$$ can be traded for good $$Y$$ (where "goods" here typically refer to various cryptocurrencies). Examples of DEXs include [Uniswap](https://uniswap.org/) and [Balancer](https://balancer.fi/), each of which has their own AMM protocol. 
 
 I'm basically agnostic as to the promise of DEXs, and there are certainly [known problems](https://cointelegraph.com/explained/crypto-rug-pulls-what-is-a-rug-pull-in-crypto-and-6-ways-to-spot-it#:~:text=Rug%20pulls%20happen%20when%20fraudulent,decentralized%20finance%20(DeFi)%20exploit.) as they exist right now. But the math is interesting, so we're going to explore them from that perspective. Going forward, we'll focus on markets exchanging two goods. 
 

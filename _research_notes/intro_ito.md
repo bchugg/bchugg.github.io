@@ -8,8 +8,16 @@ image: /assets/writing_images/brownian_motion.gif
 ---
 
 
-<p class='title'>Introduction to Itô Integration</p>
-$$\newcommand{\dif}{\;\text{d}}\newcommand{\ind}{\mathbf{1}}\newcommand{\R}{\mathbb{R}}\newcommand{\F}{\mathcal{F}}\renewcommand{P}{\mathbb{P}}\newcommand{\B}{\mathcal{B}}\newcommand{\E}{\mathbb{E}}\newcommand{\Var}{\mathbb{V}}$$
+$$
+\newcommand{\dif}{\;\text{d}}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\F}{\mathcal{F}}
+\renewcommand{P}{\mathbb{P}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\mathbb{V}}
+$$
 
 - TOC 
 {:toc}
