@@ -4,6 +4,7 @@ title: "The case for replacing peer-review with preprints and overlay journals"
 description: Pre-publication peer-review sucks - embrace the preprint revolution! 
 date: "2022-06-26" 
 status: published
+image: /assets/images/building.jpeg
 ---
 
 <br/><br/>

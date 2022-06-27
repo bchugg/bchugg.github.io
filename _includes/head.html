@@ -40,11 +40,11 @@
   <meta property="og:title" content="{{ page.title }}" />
   <meta property="og:url" content="{{ resource_url }}" />
   {% if page.image %}
-    <meta property="og:image" content="{{ page.image }}" />
-    <meta name="twitter:image" content="{{ page.image }}" />
+    <meta property="og:image" content="{{ page.image | absolute_url }}" />
+    <meta name="twitter:image" content="{{ page.image | absolute_url }}" />
   {% else %}
-    <meta property="og:image" content="{{ site.baseurl }}/assets/images/heads.jpeg" />
-    <meta name="twitter:image" content="{{ site.baseurl }}/assets/images/heads.jpeg" />
+    <meta property="og:image" content="{{ '/assets/images/heads.jpeg' | absolute_url }}"/>
+    <meta name="twitter:image" content="{{ '/assets/images/heads.jpeg' | absolute_url }}" />
   {% endif %}
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
