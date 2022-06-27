@@ -23,7 +23,7 @@ Yann LeCun, one of the biggest names in the field of machine learning, [had all 
 
 > To me, the benefit is pretty much zero. To the students and postdocs working with me who actually wrote the paper, it's pretty important. It may impact their career trajectory in pretty major ways.
 
-This is a striking statement. Aren't venues such as ICML supposed to be what precipitate progress? Aren't they where we look for rigorously reviewed papers which answer the biggest questions and change the field? Shouldn't we be surprised that failing to publish in ICML is not benefiting LeCun?
+This is a striking statement. Aren't venues such as ICML supposed to be what precipitate progress? Aren't they where we look for rigorously reviewed papers which answer the biggest questions and change the field? Shouldn't we be surprised that publishing in ICML is not benefiting LeCun?
 
 ## 1.1 The preprint revolution
 
