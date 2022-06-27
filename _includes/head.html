@@ -18,7 +18,7 @@
   <title>
     {% if page.title == "Ben Chugg" %}
       {{ page.title }}
-    {% elsif page.layout == 'note' %}
+    {% elsif page.layout == 'note' or page.layout == 'writing' %}
      {{ page.title }}
     {% else %}
       Ben &middot; {{ page.title }}
@@ -48,7 +48,7 @@
   {% endif %}
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary">
   <meta name="twitter:domain" value="benchugg.com" />
   <meta name="twitter:title" value="{{ page.title }}" />
   <meta name="twitter:url" value="{{ site.url }}" />

@@ -1,7 +1,7 @@
 ---
 layout: writing
-title: "The case for replacing pre-publication peer-review with preprints and overlay journals"
-description: An argument that we should replace prepublication peer-review with comment-augmented preprint servers and overlay journals 
+title: "The case for replacing peer-review with preprints and overlay journals"
+description: Pre-publication peer-review sucks - embrace the preprint revolution! 
 date: "2022-06-26" 
 status: published
 ---
