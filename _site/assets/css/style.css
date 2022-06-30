@@ -1089,9 +1089,10 @@ pre code {
   padding-top: 20px;
   font-size: 14pt; }
 .papers .pubitem {
-  margin: 2em 0; }
+  margin: 1.5em 0; }
 .papers .pubtitle {
-  line-height: 1.2em; }
+  line-height: 1.2em;
+  font-size: 12pt; }
 .papers .pubauthors,
 .papers .pubinfo {
   font-size: 80%; }

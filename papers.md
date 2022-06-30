@@ -17,11 +17,16 @@ image: /assets/images/manuscript.jpeg
   {% for pub in publications %}
   <div class="pubitem">
     <div class="pubtitle"><a href='{{ pub.link }}'>{{ pub.title }}</a></div>
-    <div class="pubauthors">{{ pub.authors }}</div>
-    <div class="pubinfo"><em>{{ pub.publication }}</em>, {{ pub.year}}</div>
+    <div class="pubauthors">{{ pub.authors }}. 
+    <!-- <em>{{ pub.publication }}</em>, {{ pub.year}}. 
     {% if pub.publication2 != nil and pub.year2 != nil %}
-      <div class="pubinfo"><em>{{ pub.publication2 }}</em>, {{ pub.year2}}</div>
-    {% endif %}
+      Also in <em>{{ pub.publication2 }}</em>, {{ pub.year2}}
+    {% endif %} -->
+    </div>
+    <div class="pubinfo"><em>{{ pub.publication }}</em>, {{ pub.year}}</div>
+     {% if pub.publication2 != nil and pub.year2 != nil %}
+      <div class="pubinfo">Prelim version in <em>{{ pub.publication2 }}</em>, {{ pub.year2}}</div>
+    {% endif %} 
   </div>
   {% endfor %}
 
