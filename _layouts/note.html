@@ -7,6 +7,9 @@ layout: default
     <a href="{% link research_notes.md %}">Back to all notes</a>
   </small>
   <hr>
+  {% if page.status == 'unpublished' %}
+    <b>Not yet public. Please do not share.</b>
+  {% endif %}
   <p class='title'>{{ page.title }}</p> 
   {{ content }}
   <small>

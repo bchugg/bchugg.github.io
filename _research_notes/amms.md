@@ -171,7 +171,7 @@ We make the following assumption:
 
 (A1) _When there is an arbitrage opportunity, there exists a trader in the market who will make a trade to maximize her profits. Moreover, this trade freezes the market, i.e., no two traders try to trade at the same time. The subsequent change in the availability of $$X_t$$ and $$Y_t$$ are known to all traders in the market immediately after the transaction has occurred._
 
-Note that assumption A1 implies that only one trade happens per timestep. 
+Note that assumption A1 implies that only one trade happens per time step. 
 
 The game proceeds as follows. We start with some initial amount of numeraire and asset, $$X_0$$, $$Y_0$$, and an initial price $$S_0$$. At each time $$t$$: 
 

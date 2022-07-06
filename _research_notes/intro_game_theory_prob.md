@@ -38,7 +38,7 @@ Consider a full information game between three players: Alice, Bob, and World. I
 - Bob has some initial capital, $$C_0$$. 
 - For rounds $$n=1,2,\dots$$ 
     - Alice announces a value $$v_n$$ 
-    - Bob annonces a value $$M_n$$ 
+    - Bob announces a value $$M_n$$ 
     - World announces $$y_n\in[-B,B]$$
     - Bob's new capital is $$C_n = C_{n-1} + M_n(y_n - v_n)$$
 

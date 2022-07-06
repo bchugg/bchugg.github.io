@@ -33,7 +33,7 @@ $$
 
 where $$U_t$$ are iid binomial random variables with success probability $$p$$, and $$\delta>0$$ is some constant parameter. Wlog we may assume $$p\geq 1/2$$, otherwise we flip the role of $$X_t$$ and $$Y_t$$. 
 
-It's more intutive to look at the price process in log space. Then we see that 
+It's more intuitive to look at the price process in log space. Then we see that 
 
 $$\log(S_t)-\log(S_{t-1})\in\{-\delta,\delta\},$$
 
@@ -68,7 +68,7 @@ $$\log\frac{S_t}{\ratio_t}\in\delta\{-k-1,-k,\dots,k,k+1\},$$
 
 with the two ends corresponding to trading states. 
 
-Put $$M_t = \log(S_t/\ratio_t)$$. We can treat the movement of $$M_t$$ as markov chain on the finite state space $$\{-k\delta,\dots,k\delta\}$$, which represent all the non-arbitrage states. 
+Put $$M_t = \log(S_t/\ratio_t)$$. We can treat the movement of $$M_t$$ as Markov chain on the finite state space $$\{-k\delta,\dots,k\delta\}$$, which represent all the non-arbitrage states. 
 
 In state $$k\delta$$, $$M_t$$ transitions with probability $$\delta$$ back to itself, meaning the price went up and a trade was made (case 2 in the trading game). In that case the ratio returns to $$S_t/\ratio_t=\exp(k\delta)$$. With probability $$1-\delta$$ the price went down and $$M_t$$ moves to state $$(k-1)\delta$$. 
 
@@ -159,7 +159,7 @@ Similarly, exchanging $$Y_t$$ for $$X_t$$ leads to a change by a factor of $$\ex
 
 $$\E[\log \ratio_t] = \delta \E[M_T^\uparrow ] - \delta\E[M_T^\downarrow].$$
 
-We evaluate these terms using the markov chain $$M_t$$. In the limit, $$T^{-1}\E[M_T^\uparrow]$$ is the fraction of time during the interval $$[0,T]$$ that a trade (at the upper end of the arbitrage region) is made. This is precisely $$nTp\pi(k\delta)$$, where $$\pi$$ is the stationary distribution of $$M_t$$, $$nT$$ is total number of iterations played[^1] during time $$[0,T]$$, and $$p$$ is probability of the price moving up when in state $$\pi(k\delta)$$. Note we need to multiply $$\pi(k\delta)$$ by $$p$$, since we don't make a trade in state $$k\delta$$, only if the price increases while $$M_t$$ is already in state $$k\delta$$. The probability of the price increasing is $$p$$. A similar argument for $$T^{-1}\E[M_T^\downarrow]$$ in the limit implies its value is $$nT(1-p)\pi(-k\delta)$$. 
+We evaluate these terms using the Markov chain $$M_t$$. In the limit, $$T^{-1}\E[M_T^\uparrow]$$ is the fraction of time during the interval $$[0,T]$$ that a trade (at the upper end of the arbitrage region) is made. This is precisely $$nTp\pi(k\delta)$$, where $$\pi$$ is the stationary distribution of $$M_t$$, $$nT$$ is total number of iterations played[^1] during time $$[0,T]$$, and $$p$$ is probability of the price moving up when in state $$\pi(k\delta)$$. Note we need to multiply $$\pi(k\delta)$$ by $$p$$, since we don't make a trade in state $$k\delta$$, only if the price increases while $$M_t$$ is already in state $$k\delta$$. The probability of the price increasing is $$p$$. A similar argument for $$T^{-1}\E[M_T^\downarrow]$$ in the limit implies its value is $$nT(1-p)\pi(-k\delta)$$. 
 
 [^1]: This is an annoying detail that I chose to ignore for most of the post. Technically, there's one final detail we need to add to the model, and that's the number of trades that occur during an interval of time. So far we've just been writing $$t$$ and $$t+1$$, but since we're going to start taking limits in terms of time we need to be a little more careful. We'll assume that there are $$n$$ steps (e.g., price changes) in a single interval of time, so that in $$[0,T]$$ there are $$nT$$ steps played. Abusing notation, when we write e.g., $$X_{t+1}$$, we mean the next value of $$X_t$$, not the value at the next unit time $$n$$ steps later. 
 
@@ -208,16 +208,16 @@ $$
 \end{equation}
 $$
 
-From here, you can start taking limits (slightly trickier than you think because the relationship between $$\delta$$ and $$p$$ is constrained by requirement that price process is geometric Brownian motion) to move into the continuous case. We're going to skip that because you can still gain insight into the optimal fee structure from this equation.
+From here, you can start taking limits (slightly trickier than you think because of the relationship between $$\delta$$ and $$p$$ is constrained by the requirement that price process is geometric Brownian motion) to move into the continuous case. We're going to skip that because you can still gain insight into the optimal fee structure from this equation.
 
 How should we set the fee in order to maximize return? In particular, how do we choose $$k$$? For $$p>1/2$$, we can check that Equation \eqref{eq:return} is monotonically increasing as $$k\to\infty$$, implying it gets larger as $$\gamma$$ gets smaller. That is, we want to set the fee as close to zero as possible without it actually being zero.[^2]
 
 [^2]: Note our math prohibits it from ever reaching zero, and if we did simply set $$\gamma=0$$ then the LP wealth wouldn't ever increase. 
 
-This is what's refered to as Uniswap's "[financial alchemy](https://research.paradigm.xyz/uniswaps-alchemy)", because the result is so counterintuitive. Of course, in reality I'm not sure what it means to set the fee arbitrarily close to zero. Most likely, something would break. Better, I think, to realize that this model is imperfect and likely not capturing true market behavior. 
+This is what's referred to as Uniswap's "[financial alchemy](https://research.paradigm.xyz/uniswaps-alchemy)", because the result is so counterintuitive. Of course, in reality I'm not sure what it means to set the fee arbitrarily close to zero. Most likely, something would break. Better, I think, to realize that this model is imperfect and likely not capturing true market behavior. 
 
-Then again, the model is more robust than it might appear at first glance, at least from the perspective of maximizing LP wealth (besides it being discrete, but that can be fixed). Sure, it makes the assumption that a trade occurs each time step. But even if not, and the prices deviates significantly from the no-arbitrage region, then the next trade which optimizes its profits is mathematically equivalent to multiple intermediary trades (i.e., in some sense, the model is linear -- not prefering one big trade to many small ones). Moreover, while the model assumes that only arbitrage trades are made, other trades would simply add to the LP's wealth while not being worth it for the trader. In that sense, the model is conservative in its estimate of wealth accumulation. 
+Then again, the model is more robust than it might appear at first glance, at least from the perspective of maximizing LP wealth (besides it being discrete, but that can be fixed). Sure, it makes the assumption that a trade occurs each time step. But even if not, and the prices deviates significantly from the no-arbitrage region, then the next trade which optimizes its profits is mathematically equivalent to multiple intermediary trades (i.e., in some sense, the model is linear -- not preferring one big trade to many small ones). Moreover, while the model assumes that only arbitrage trades are made, other trades would simply add to the LP's wealth while not being worth it for the trader. In that sense, the model is conservative in its estimate of wealth accumulation. 
 
 Still, it _does_ assume perfect information and, of course, that the price follows a well-defined geometric brownian motion. This implies that there are no huge, near-instantaneous price drops (or at least they occur with very, very low probability), which is not the case in practice. I'm sure Nassim Taleb has yelled about this somewhere. 
 
-It's also worth noting that Equation \eqref{eq:return} looks slighly different from that obtained by Tassy and White in their [paper](https://math.dartmouth.edu/~mtassy/articles/AMM_returns.pdf). I think they made a mistake when calculating $$\lim \E[\log \ratio_T]/T$$, but it's hard to be sure. Either way, we get the same result for the optimal fee.  
+It's also worth noting that Equation \eqref{eq:return} looks slightly different from that obtained by Tassy and White in their [paper](https://math.dartmouth.edu/~mtassy/articles/AMM_returns.pdf). I think they made a mistake when calculating $$\lim \E[\log \ratio_T]/T$$, but it's hard to be sure. Either way, we get the same result for the optimal fee.  

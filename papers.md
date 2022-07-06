@@ -14,20 +14,18 @@ image: /assets/images/manuscript.jpeg
   <h1>Publications and Preprints</h1>
 
   {% assign publications = site.papers | sort: "date" | reverse | where_exp: "item", "item.type != 'thesis'" %}
+  {% assign n = publications.size %}
   {% for pub in publications %}
   <div class="pubitem">
     <div class="pubtitle"><a href='{{ pub.link }}'>{{ pub.title }}</a></div>
     <div class="pubauthors">{{ pub.authors }}. 
-    <!-- <em>{{ pub.publication }}</em>, {{ pub.year}}. 
-    {% if pub.publication2 != nil and pub.year2 != nil %}
-      Also in <em>{{ pub.publication2 }}</em>, {{ pub.year2}}
-    {% endif %} -->
     </div>
     <div class="pubinfo"><em>{{ pub.publication }}</em>, {{ pub.year}}</div>
      {% if pub.publication2 != nil and pub.year2 != nil %}
       <div class="pubinfo">Prelim version in <em>{{ pub.publication2 }}</em>, {{ pub.year2}}</div>
     {% endif %} 
   </div>
+  {% assign n = n | minus:1 %}
   {% endfor %}
 
   <h1>Theses</h1>
