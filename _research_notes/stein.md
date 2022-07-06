@@ -1,6 +1,6 @@
 ---
 layout: note 
-date: "2022-06-29" 
+date: "2022-07-05" 
 title: "Degrees of Freedom and Stein's Estimator"
 description: "Minimum risk estimators for normal random vectors: Stein's paradox "
 status: published

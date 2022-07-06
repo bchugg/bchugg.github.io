@@ -41,9 +41,7 @@ collections:
     output: false
   papers: 
     output: false
-  books: 
-    output: false
-
+  
 # Markdown specs
 markdown: kramdown
 
