@@ -19,7 +19,7 @@ You can contact me at benchugg $$\alpha\tau$$ stanford.edu.
 
 
 # research interests
-My primary interests at the moment involve developing robust sequential decision-making algorithms, particularly through a non-parametric and non-asymptotic lens, that are as assumption free as possible. I've previously worked on problems in graph theory, combinatorial optimization, and stochastic reaction networks.
+My primary interests at the moment involve developing robust algorithms for sequential decision problems, particularly in non-parametric and non-asymptotic settings. I'm increasingly interested in game-theoretic statistics, and algorithmic statistics more generally, for this purpose. Previously, I worked on problems in graph theory, combinatorial optimization, and stochastic reaction networks.
 
 Ideally, I try and straddle the borderlands between theory and practice with a bias towards the former, but apparently the results have high variance because I've spent time doing doing both pure theory and pure application. 
 

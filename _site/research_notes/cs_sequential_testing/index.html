@@ -5,7 +5,7 @@
   
   
   <!-- Canonical link to help search engines -->
-  <link rel="canonical" href="http://localhost:4000/" />
+  <link rel="canonical" href="http://localhost:4000/research_notes/cs_sequential_testing/" />
 
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
@@ -20,60 +20,59 @@
 
   <title>
     
-      Ben Chugg
+     Supermartingales for Nonparametric Confidence Sequences
     
   </title>
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v3.9.1" />
-<meta property="og:title" content="Ben Chugg" />
+<meta property="og:title" content="Supermartingales for Nonparametric Confidence Sequences" />
 <meta name="author" content="Ben Chugg" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Ben Chugg’s corner of the interwebs, wherein he mostly messes around but sometimes does real work" />
-<meta property="og:description" content="Ben Chugg’s corner of the interwebs, wherein he mostly messes around but sometimes does real work" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
+<meta name="description" content="Achieving nonparametric confidence sequences by" />
+<meta property="og:description" content="Achieving nonparametric confidence sequences by" />
+<link rel="canonical" href="http://localhost:4000/research_notes/cs_sequential_testing/" />
+<meta property="og:url" content="http://localhost:4000/research_notes/cs_sequential_testing/" />
 <meta property="og:site_name" content="benny" />
-<meta property="og:image" content="http://localhost:4000/assets/images/heads.jpeg" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-03-21T00:00:00-07:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:image" content="http://localhost:4000/assets/images/heads.jpeg" />
-<meta property="twitter:title" content="Ben Chugg" />
+<meta property="twitter:title" content="Supermartingales for Nonparametric Confidence Sequences" />
 <meta name="twitter:site" content="@bennychugg" />
 <meta name="twitter:creator" content="@Ben Chugg" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"description":"Ben Chugg’s corner of the interwebs, wherein he mostly messes around but sometimes does real work","headline":"Ben Chugg","image":"http://localhost:4000/assets/images/heads.jpeg","name":"Ben Chugg","sameAs":["https://twitter.com/BennyChugg","https://www.linkedin.com/in/benchugg/","https://github.com/bchugg"],"url":"http://localhost:4000/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"dateModified":"2022-03-21T00:00:00-07:00","datePublished":"2022-03-21T00:00:00-07:00","description":"Achieving nonparametric confidence sequences by","headline":"Supermartingales for Nonparametric Confidence Sequences","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/research_notes/cs_sequential_testing/"},"url":"http://localhost:4000/research_notes/cs_sequential_testing/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   <!-- Dublin Core metadata for Zotero -->
-  <meta property="dc:title" content="Ben Chugg" />
+  <meta property="dc:title" content="Supermartingales for Nonparametric Confidence Sequences" />
   <meta property="dc:creator" content="Ben Chugg" />
-  <meta property="dc:identifier" content="http://localhost:4000/" />
+  <meta property="dc:identifier" content="http://localhost:4000/research_notes/cs_sequential_testing/" />
   
-  
+  <meta property="dc:date" content="2022-03-21 00:00:00 -0700" />
   
   <meta property="dc:source" content="benny" />
 
   <!-- Open Graph and Twitter metadata -->
-  <meta property="og:title" content="Ben Chugg" />
-  <meta property="og:url" content="http://localhost:4000/" />
+  <meta property="og:title" content="Supermartingales for Nonparametric Confidence Sequences" />
+  <meta property="og:url" content="http://localhost:4000/research_notes/cs_sequential_testing/" />
   
-    <meta property="og:image" content="http://localhost:4000/assets/images/heads.jpeg" />
+    <meta property="og:image" content="http://localhost:4000/assets/images/heads.jpeg"/>
     <meta name="twitter:image" content="http://localhost:4000/assets/images/heads.jpeg" />
   
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary">
   <meta name="twitter:domain" value="benchugg.com" />
-  <meta name="twitter:title" value="Ben Chugg" />
+  <meta name="twitter:title" value="Supermartingales for Nonparametric Confidence Sequences" />
   <meta name="twitter:url" value="http://localhost:4000" />
   
   <!-- Description is dependent on page type  -->
   
-    <meta property="og:description" content="Ben Chugg's corner of the interwebs, wherein he mostly messes around but sometimes does real work">
-    <meta name="twitter:description" value="Ben Chugg's corner of the interwebs, wherein he mostly messes around but sometimes does real work" />
-    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Achieving nonparametric confidence sequences by ">
+    <meta name="twitter:description" value="Achieving nonparametric confidence sequences by " />
+    <meta property="og:type" content="article" />
   
   
 
@@ -221,31 +220,33 @@
       </header>
 
       <main class="container content" id="main">
-        <p><img id="headerim" src="/assets/images/lawme.jpg" /></p>
+        <article class="note">
+  <small>
+    <a href="/research_notes/">Back to all notes</a>
+  </small>
+  <hr>
+  
+    <b>Not yet public. Please do not share.</b>
+  
+  <p class='title'>Supermartingales for Nonparametric Confidence Sequences</p> 
+  \[\renewcommand{\Pr}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}\]
 
-<p>I’m an incoming PhD student in the <a rel="nofollow noopener noreferrer" href="https://www.ml.cmu.edu/">machine learning department</a> at Carnegie Mellon University.  Currently, I’m the lead research analyst at Stanford Law School’s 
-Regulation, Evaluation, and Governance Lab (<a rel="nofollow noopener noreferrer" href="https://reglab.stanford.edu/" rel="nofollow">RegLab</a>). Before Stanford I was a master’s student at Oxford’s <a rel="nofollow noopener noreferrer" href="https://www.maths.ox.ac.uk/">Mathematical Institute</a>, and before that I was an undergraduate at UBC.</p>
+<p>Suppose you observe a continuous stream of iid data on \(X_1,X_2,\dots\) with unknown mean \(\E[X_i]=\mu\) and \(X_i\in[0,1]\) for all \(i\).</p>
 
-<p>On the side, I co-host the <a rel="nofollow noopener noreferrer" href="https://www.incrementspodcast.com/" ref="nofollow">Increments</a> podcast, where <a rel="nofollow noopener noreferrer" href="https://vmasrani.github.io/">Vaden Masrani</a> and I yell at each other and others about philosophy and science. Sometimes I also <a href="/writing/">write</a> about these topics.</p>
+<p>At a fixed time \(t\), a confidence interval (CI) is a random variable \(C_n\) depending on the first \(n\) variables \(X_1,\dots,X_n\) such that</p>
 
-<p>You can contact me at benchugg \(\alpha\tau\) stanford.edu.</p>
+\[\inf_P \Pr_{X\sim P}(\mu\in C_n)\geq 1-\alpha,\]
 
-<hr />
+<p>where the infimum is taken over all distributions on \([0,1]\) with mean \(\mu\). A confidence <em>sequence</em> on the other hand, is a sequence of random variables \((C_t)_{t=1}^\infty\) such that</p>
 
-<h1 id="research-interests">research interests</h1>
-<p>My primary interests at the moment involve developing robust algorithms for sequential decision problems, particularly in non-parametric and non-asymptotic settings. I’m increasingly interested in game-theoretic statistics, and algorithmic statistics more generally, for this purpose. Previously, I worked on problems in graph theory, combinatorial optimization, and stochastic reaction networks.</p>
+\[\inf_P \Pr_{X\sim P}(\forall t, \; \mu\in C_t)\geq \alpha.\]
 
-<p>Ideally, I try and straddle the borderlands between theory and practice with a bias towards the former, but apparently the results have high variance because I’ve spent time doing doing both pure theory and pure application.</p>
 
-<p>My papers are <a href="/papers/">here</a>. I’ve recently begun keeping some <a href="/research_notes/">research notes</a> as well.</p>
-
-<hr />
-
-<h1 id="increments">increments</h1>
-<p>The podcast is mostly an attempt to break out of the academic echo chamber and talk about things other than limit theorems and algorithmic performance. We have a few beers and chat about anything from <a rel="nofollow noopener noreferrer" href="https://www.incrementspodcast.com/26" rel="nofollow">moral philosophy</a>  and <a rel="nofollow noopener noreferrer" href="https://www.incrementspodcast.com/22" rel="nofollow">thought experiments</a>, to the <a rel="nofollow noopener noreferrer" href="https://www.incrementspodcast.com/28" rel="nofollow">philosophy of logic</a>, <a rel="nofollow noopener noreferrer" href="https://www.incrementspodcast.com/32" rel="nofollow">climate change</a>, <a rel="nofollow noopener noreferrer" href="https://www.incrementspodcast.com/23" rel="nofollow">free will</a>, <a rel="nofollow noopener noreferrer" href="https://www.incrementspodcast.com/24" rel="nofollow">dualism</a>, and <a rel="nofollow noopener noreferrer" href="https://www.incrementspodcast.com/15" rel="nofollow">social media</a>.<br />
-We also have an ongoing series on <em>Conjectures and Refutations</em> by Karl Popper.</p>
-
-<iframe src="https://player.fireside.fm/v2/AlCT9XAu/latest?theme=light" width="100%" frameborder="0" scrolling="no"></iframe>
+  <small>
+    <a href="/research_notes/">Back to all notes</a>
+  </small>
+</article>
  <!-- "> -->
       </main>
 
