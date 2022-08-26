@@ -5,7 +5,7 @@
   
   
   <!-- Canonical link to help search engines -->
-  <link rel="canonical" href="http://localhost:4000/research_notes/" />
+  <link rel="canonical" href="http://localhost:4000/research_notes/ville/" />
 
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
@@ -20,59 +20,58 @@
 
   <title>
     
-      Ben &middot; Research Notes
+     Markov for Martingales
     
   </title>
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v3.9.1" />
-<meta property="og:title" content="Research Notes" />
+<meta property="og:title" content="Markov for Martingales" />
 <meta name="author" content="Ben Chugg" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Muddling my way through various topics in math, statistics, and computer science" />
-<meta property="og:description" content="Muddling my way through various topics in math, statistics, and computer science" />
-<link rel="canonical" href="http://localhost:4000/research_notes/" />
-<meta property="og:url" content="http://localhost:4000/research_notes/" />
+<meta name="description" content="Ville’s inequality for supermartingales" />
+<meta property="og:description" content="Ville’s inequality for supermartingales" />
+<link rel="canonical" href="http://localhost:4000/research_notes/ville/" />
+<meta property="og:url" content="http://localhost:4000/research_notes/ville/" />
 <meta property="og:site_name" content="benny" />
-<meta property="og:image" content="http://localhost:4000/assets/images/chalkboard.jpeg" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-08-24T00:00:00-04:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:image" content="http://localhost:4000/assets/images/chalkboard.jpeg" />
-<meta property="twitter:title" content="Research Notes" />
+<meta property="twitter:title" content="Markov for Martingales" />
 <meta name="twitter:site" content="@bennychugg" />
 <meta name="twitter:creator" content="@Ben Chugg" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"description":"Muddling my way through various topics in math, statistics, and computer science","headline":"Research Notes","image":"http://localhost:4000/assets/images/chalkboard.jpeg","url":"http://localhost:4000/research_notes/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"dateModified":"2022-08-24T00:00:00-04:00","datePublished":"2022-08-24T00:00:00-04:00","description":"Ville’s inequality for supermartingales","headline":"Markov for Martingales","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/research_notes/ville/"},"url":"http://localhost:4000/research_notes/ville/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   <!-- Dublin Core metadata for Zotero -->
-  <meta property="dc:title" content="Research Notes" />
+  <meta property="dc:title" content="Markov for Martingales" />
   <meta property="dc:creator" content="Ben Chugg" />
-  <meta property="dc:identifier" content="http://localhost:4000/research_notes/" />
+  <meta property="dc:identifier" content="http://localhost:4000/research_notes/ville/" />
   
-  
+  <meta property="dc:date" content="2022-08-24 00:00:00 -0400" />
   
   <meta property="dc:source" content="benny" />
 
   <!-- Open Graph and Twitter metadata -->
-  <meta property="og:title" content="Research Notes" />
-  <meta property="og:url" content="http://localhost:4000/research_notes/" />
+  <meta property="og:title" content="Markov for Martingales" />
+  <meta property="og:url" content="http://localhost:4000/research_notes/ville/" />
   
-    <meta property="og:image" content="http://localhost:4000/assets/images/chalkboard.jpeg" />
-    <meta name="twitter:image" content="http://localhost:4000/assets/images/chalkboard.jpeg" />
+    <meta property="og:image" content="http://localhost:4000/assets/images/heads.jpeg"/>
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/heads.jpeg" />
   
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary">
   <meta name="twitter:domain" value="benchugg.com" />
-  <meta name="twitter:title" value="Research Notes" />
+  <meta name="twitter:title" value="Markov for Martingales" />
   <meta name="twitter:url" value="http://localhost:4000" />
   
   <!-- Description is dependent on page type  -->
   
-    <meta property="og:description" content="Muddling my way through various topics in math, statistics, and computer science">
-    <meta name="twitter:description" value="Muddling my way through various topics in math, statistics, and computer science" />
+    <meta property="og:description" content="Ville's inequality for supermartingales">
+    <meta name="twitter:description" value="Ville's inequality for supermartingales" />
     <meta property="og:type" content="article" />
   
   
@@ -142,7 +141,7 @@
     
       
         
-          <a class="sidebar-nav-item active" href="/research_notes/">Research Notes</a>
+          <a class="sidebar-nav-item" href="/research_notes/">Research Notes</a>
         
       
     
@@ -216,78 +215,72 @@
           <h3 class="masthead-title">
             <a href="/" title="Home">benny</a>
             
-              <br><small>Research Notes</small>
-            
           </h3>
         </div>
       </header>
 
       <main class="container content" id="main">
-        <article class="page">
-  <div class="research-notes-quote"> 
-<i>We have not succeeded in answering all our problems.
-The answers we have found only serve to raise a whole set
-of new questions. In some ways we feel we are as confused
-as ever, but we believe we are confused on a higher level
-and about more important things.</i>
-<p id="credit">
- - Posted outside the mathematics reading room at Tromsø University 
-</p>
-</div>
+        <article class="note">
+  <small>
+    <a href="/research_notes/">Back to all notes</a>
+  </small>
+  <hr>
+  
+  <p class='title'>Markov for Martingales</p> 
+  \[\newcommand{E}{\mathbb{E}}
+\renewcommand{\Pr}{\mathbb{P}}
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\gn}{\;|\;}\]
 
-<p>Notes on various topics for my own edification. The majority of material is not original and is simply a restatement of previous results in language that makes the most intuitive sense to me. Making the notes public just helps keep me accountable for their accuracy. Maybe they can also help others in the eternal quest to reduce confusion. Some wiser advice on why keeping such notes is useful comes from Ryan Giordano <a rel="nofollow noopener noreferrer" href="https://rgiordan.github.io/meta/2019/07/26/why.html">here</a>.</p>
+<p>Possibly one of the most useful inequalities in all of probability is Markov’s inequality, which states that for a non-negative random variable \(X\),</p>
 
-<hr />
+\[\Pr(X \geq \alpha )\leq \frac{\E[X]}{\alpha},\]
 
-<ul class="note-list">
+<p>for all \(\alpha&gt;0\). The intuition is simple if looked at as an optimization problem. Suppose we fix the probability \(p_\alpha = \Pr(X\geq \alpha)\) and ask the question: How small can we make \(\E[X]\)? That is, we want to solve</p>
 
-<li>
-    <a href="/research_notes/ville/">Markov for Martingales</a> 
-    <span>Aug 2022</span>
-</li>
+\[\begin{align*}
+\min_{\D} \quad &amp; \E_{X\sim D}[X]  \\ 
+\text{s.t}\quad &amp; p_\alpha = \Pr(X\geq \alpha) \\ 
+&amp; X\geq 0.
+\end{align*}\]
 
-<li>
-    <a href="/research_notes/stein/">Degrees of Freedom and Stein's Estimator</a> 
-    <span>Jul 2022</span>
-</li>
+<p>This is easy. If we could, we’d put all of \(X\)’s mass at 0, which would minimize \(\E[X]\) subject to \(X\geq 0\). But we have to move at least some of the mass to \(\alpha\) or beyond. So we’ll put mass \(p\) at \(\alpha\), and mass \(1-p\) at 0. It should be clear that any other alteration would simply increase \(\E[X]\). With these choices, we have \(\E[X] = \alpha p_\alpha\), and since this minimized \(\E[X]\), we have \(\E[X]\geq \alpha p_\alpha\), which is the desired result.</p>
 
-<li>
-    <a href="/research_notes/tassy_white_amms/">Liquidity Provider Wealth in Constant Product AMMs</a> 
-    <span>May 2022</span>
-</li>
+<p>Admittedly, despite it’s usefulness, you can only make Markov’s inequality so interesting. However, it’s natural to wonder whether Markov-like inequalities hold for more than just non-negative random variables. For instance, do certain random <em>processes</em> exhibit this kind of behavior? The answer is yes.</p>
 
-<li>
-    <a href="/research_notes/rl_vs_pps/">OPE in RL vs Mean Estimation in Survey Sampling</a> 
-    <span>May 2022</span>
-</li>
+<p>Recall that a supermartingale \((X_t)\) adapted to the filtration \((\F_t)\) on the filtered space \((\Omega,\F,(\F_t),\Pr)\) obeys</p>
 
-<li>
-    <a href="/research_notes/amms/">Understanding Automated Market Makers (AMMs)</a> 
-    <span>Mar 2022</span>
-</li>
+\[\E[X_t\gn \F_\tau] = X_\tau, \quad \text{for all }\tau\leq t.\]
 
-<li>
-    <a href="/research_notes/intro_game_theory_prob/">Introduction to Game-Theoretic Probability</a> 
-    <span>Mar 2022</span>
-</li>
+<p>Ville’s inequality (mentioned in the <a href="/research_notes/intro_game_theory_prob.md">intro post</a> on game-theoretic probability) generalizes Markov’s inequality to supermartingales. In particular, it states that</p>
 
-<li>
-    <a href="/research_notes/sde_ito_lemma/">Itô Processes and The Fundamental Theorem of Stochastic Calculus</a> 
-    <span>Feb 2022</span>
-</li>
+\[\Pr(\exists t\geq 0: X_t \geq \alpha \gn \F_0) \leq \frac{X_0}{\alpha}.\]
 
-<li>
-    <a href="/research_notes/intro_ito/">Itô Integral: Construction and Basic Properties</a> 
-    <span>Jan 2022</span>
-</li>
+<p>In other words, the probability – given the information at the beginning of the process – that the value of \(X_t\) <em>at any time</em> exceeds \(\alpha\), is bounded in Markov-like fashion. For this reason, it’s sometimes called an <em>infinite-horizon</em> extension of Markov’s inequality.</p>
 
-<li>
-    <a href="/research_notes/dual_lp/">Intuition for LP Duality</a> 
-    <span>Jan 2022</span>
-</li>
+<p>To prove it, we’ll show it holds for all finite times \(k\), and then take the limit as \(k\to\infty\). Define the stopping time \(T\) to be the first time at which \(X_t\) is at least \(\alpha\). Formally, \(T=\inf\{t:X_t\geq \alpha\}\). (Recall that a stopping time is simply a random \(T\) where, for all \(t\), one can determine if \(T=t\) given \(\F_t\).) Then, for some arbitrary \(k\), define the truncated stopping time \(\tau = \min(T,k)\). Clearly, both \(T\) and \(\tau\) are well-defined stopping times.</p>
 
-</ul>
+<p>Recall <a rel="nofollow noopener noreferrer" href="https://math.dartmouth.edu/~pw/math100w13/lalonde.pdf">Doob’s optional stopping theorem</a>, which states that \(X_\tau\) is measurable (almost surely) since \(\tau\) is bounded (by construction). Thus, Markov’s inequality applies to \(X_\tau\):</p>
 
+\[\Pr(T&lt; k)\leq \Pr(X_\tau\geq \alpha \gn \F_0) \leq \frac{\E[X_\tau \gn \F_0]}{\alpha} \leq \frac{X_0}{\alpha},\]
+
+<p>where the first inequality follows since if \(T&lt; k\), then  \(\tau=T\) and \(X_\tau =X_T\geq \alpha\) by definition of \(T\). The final inequality holds because \((X_t)\) is a supermartingale. Since this holds for all \(k\), taking limits gives</p>
+
+\[\Pr(T&lt;\infty) = \lim_{k\to\infty} \Pr(T&lt;k) \leq \frac{X_0}{\alpha}.\]
+
+<p>Noting that \(\Pr(T&lt;\infty) = \Pr(\exists t\geq 0: X_t\geq \alpha)\) completes the proof.</p>
+
+<p>Notice that there was nothing special about \(\F_0\). The same proof yields</p>
+
+\[\Pr(\exists t\geq T: X_t \geq \alpha \gn \F_T) \leq \frac{X_T}{\alpha},\]
+
+<p>for any \(T\).</p>
+
+
+  <small>
+    <a href="/research_notes/">Back to all notes</a>
+  </small>
 </article>
  <!-- "> -->
       </main>
