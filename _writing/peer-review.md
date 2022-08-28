@@ -7,8 +7,6 @@ status: published
 image: /assets/images/building.jpeg
 ---
 
-<br/><br/>
-
 **tl;dr** The traditional model of academic publishing involves pre-publication peer-review, whereby papers are submitted to journals (or conferences), evaluated by two or three anonymous referees, and accepted if they are deemed sufficiently important. Preprint servers, on the other hand, allow authors to upload papers without passing peer-review thus enabling them to immediately disseminate their work. I argue that preprint servers, augmented with public commenting capability, should entirely replace pre-publication peer-review. Public comments would play the role of the referee process and make the overall model more incentive compatible than the status quo. I also argue for "overlay journals," which are retrospective instead of prospective and publish the most successful papers from the preprint server. 
 
 <br/>
