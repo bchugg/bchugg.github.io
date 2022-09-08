@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head prefix="og: http://ogp.me/ns#; dc: http://purl.org/dc/terms/#">
+  
+  
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="http://localhost:4000/research_notes/supermartingales_confseq/" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PN2H9928PZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PN2H9928PZ');
+  </script>
+
+  <!-- Basic meta elements -->
+  <meta charset="utf-8" />
+
+  <!-- Enable responsiveness on mobile devices -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+
+  <!-- Mathjax Support -->
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <title>
+    
+     Supermartingales for Nonparametric Confidence Sequences
+    
+  </title>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.9.1" />
+<meta property="og:title" content="Supermartingales for Nonparametric Confidence Sequences" />
+<meta name="author" content="Ben Chugg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Constructing nonparametric confidence sequences using hypothesis testing and Ville’s inequality for supermartingales" />
+<meta property="og:description" content="Constructing nonparametric confidence sequences using hypothesis testing and Ville’s inequality for supermartingales" />
+<link rel="canonical" href="http://localhost:4000/research_notes/supermartingales_confseq/" />
+<meta property="og:url" content="http://localhost:4000/research_notes/supermartingales_confseq/" />
+<meta property="og:site_name" content="benny" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-09-08T00:00:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Supermartingales for Nonparametric Confidence Sequences" />
+<meta name="twitter:site" content="@bennychugg" />
+<meta name="twitter:creator" content="@Ben Chugg" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"dateModified":"2022-09-08T00:00:00-04:00","datePublished":"2022-09-08T00:00:00-04:00","description":"Constructing nonparametric confidence sequences using hypothesis testing and Ville’s inequality for supermartingales","headline":"Supermartingales for Nonparametric Confidence Sequences","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/research_notes/supermartingales_confseq/"},"url":"http://localhost:4000/research_notes/supermartingales_confseq/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- Dublin Core metadata for Zotero -->
+  <meta property="dc:title" content="Supermartingales for Nonparametric Confidence Sequences" />
+  <meta property="dc:creator" content="Ben Chugg" />
+  <meta property="dc:identifier" content="http://localhost:4000/research_notes/supermartingales_confseq/" />
+  
+  <meta property="dc:date" content="2022-09-08 00:00:00 -0400" />
+  
+  <meta property="dc:source" content="benny" />
+
+  <!-- Open Graph and Twitter metadata -->
+  <meta property="og:title" content="Supermartingales for Nonparametric Confidence Sequences" />
+  <meta property="og:url" content="http://localhost:4000/research_notes/supermartingales_confseq/" />
+  
+    <meta property="og:image" content="http://localhost:4000/assets/images/heads.jpeg"/>
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/heads.jpeg" />
+  
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:domain" value="benchugg.com" />
+  <meta name="twitter:title" value="Supermartingales for Nonparametric Confidence Sequences" />
+  <meta name="twitter:url" value="http://localhost:4000" />
+  
+  <!-- Description is dependent on page type  -->
+  
+    <meta property="og:description" content="Constructing nonparametric confidence sequences using hypothesis testing and Ville's inequality for supermartingales">
+    <meta name="twitter:description" value="Constructing nonparametric confidence sequences using hypothesis testing and Ville's inequality for supermartingales" />
+    <meta property="og:type" content="article" />
+  
+  
+
+  <!-- CSS link -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="167x167" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="/assets/favicon.ico">
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="114×114" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="72×72" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” href="/assets/favicon.ico" />
+  <link rel=”icon” href="/assets/favicon.ico", sizes="32x32"/>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml" />
+
+  
+</head>
+
+
+  <body class="theme-base-">
+
+    <!-- This if statement decides which sidebar to use -->
+    
+    <!--
+  Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for
+  behavior.
+-->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    
+  </div> 
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/papers/">Papers</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/research_notes/">Research Notes</a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/writing/">Writing</a>
+        
+      
+    
+
+    <a class='sidebar-nav-item' href="http://incrementspodcast.com">Podcast</a>
+
+    <!-- <span class='sidebar-nav-item'>Recommendations</span>
+    <ul class="dropdown-menu">
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    </ul> -->
+
+   </nav> 
+
+  <div class="sidebar-links">
+    <div class='container'>
+      <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github_white.png"></a>
+      <a href="https://www.linkedin.com/in/ben-chugg-3a4616aa/" rel='nofollow'><img src="/assets/images/linkedin_white.png"></a>
+      <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads_white.png"></a>
+      <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter_white.png"></a>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <!--
+      Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS
+      collisions with our real content.
+    -->
+    <div class="wrap">
+      <header class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">benny</a>
+            
+          </h3>
+        </div>
+      </header>
+
+      <main class="container content" id="main">
+        <article class="note">
+  <small>
+    <a href="/research_notes/">Back to all notes</a>
+  </small>
+  <hr>
+  
+  <p class='title'>Supermartingales for Nonparametric Confidence Sequences</p> 
+  \[\renewcommand{\Pr}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\sep}{\;\vert\;}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\R}{\mathbb{R}}\]
+
+<ul id="markdown-toc">
+  <li><a href="#1-general-approach" id="markdown-toc-1-general-approach">1. General Approach</a></li>
+  <li><a href="#2-recovering-chernoff" id="markdown-toc-2-recovering-chernoff">2. Recovering Chernoff</a></li>
+  <li><a href="#3-generalizing-chernoff-adaptive-lambda" id="markdown-toc-3-generalizing-chernoff-adaptive-lambda">3. Generalizing Chernoff: Adaptive \(\lambda\)</a></li>
+  <li><a href="#resources" id="markdown-toc-resources">Resources</a></li>
+</ul>
+
+<p>This is an exploration of the paper <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2010.09686.pdf">Estimating Means of Bounded Random Variables by Betting</a>.</p>
+
+<h1 id="1-general-approach">1. General Approach</h1>
+
+<p>For all \(v\in[0,1]\), let \(\D(v)\) be the set of all distributions with mean \(v\) (discrete, continuous, mixtures, etc). Given a sequence a sequence \(X_1,X_2,\dots\sim \D\) for some \(\D\in\D(\mu)\) with unknown \(\mu\), we are interested in constructing a <em>confidence sequence</em>  for \(\mu\). A \((1-\alpha)\) confidence sequence is a sequence of sets \((C_t)_{t\geq 0}\) such that</p>
+
+\[\inf_{\D\in\D(\mu)}\Pr_{\D}(\forall t,\; \mu\in C_t)\geq 1-\alpha.\]
+
+<p>This is equivalent to</p>
+
+\[\inf_{\D\in\D(\mu)}\Pr_{\D}(\exists t,\; \mu\notin C_t)\leq \alpha,\]
+
+<p>and we’ll generally work with the latter. Note the distinction between confidence <em>sequences</em> and confidence <em>intervals</em>. A \((1-\alpha)\) confidence interval is a random variable \(C_t\) such that</p>
+
+\[\text{for all }t,\quad \inf_{\D\in\D(\mu)} \Pr_\D(\mu\in C_t)\geq 1-\alpha.\]
+
+<p>Having the universal quantifier outside the probability makes a big difference. It is the difference between (i) for each \(t\), \(\mu\) is not in \(C_t\) with probability at most \(\alpha\), and (ii) \(\mu\) is not in each \(C_t\) with probability at most \(\alpha\). The latter is much stronger. Of course, a confidence sequence at a particular time \(t\) will be a confidence interval at that time.</p>
+
+<p>Here we investigate how to construct such confidence sequences, using supermartingales and ideas from <a href="/_research_notes/intro_game_theory_prob.md">game-theoretic probability</a>. Recall <a href="/_research_notes/ville.md">Ville’s martingale inequality</a>, which states that for a supermartingale \(M_t\) adapted to the filtration \((\F_t)\), we have</p>
+
+\[\begin{equation}
+\label{eq:ville}
+\Pr(\exists t,\; M_t\geq \lambda\sep \F_0) \leq \frac{M_0}{\lambda}.\tag{1}
+\end{equation}\]
+
+<p>If \(G_t\) is upper-bounded by the supermartingale \(M_t\) (i.e., \(G_t\leq M_t\) a.s.) and we take \(\lambda =1/\alpha\), then Equation \eqref{eq:ville} implies</p>
+
+\[\begin{equation}
+\label{eq:ville2}
+\Pr(\exists t,\; G_t\geq 1/\alpha\sep \F_0) \leq \alpha, \tag{2}
+\end{equation}\]
+
+<p>if \(G_0\leq 1\). Suppose that for each \(v\in[0,1]\), we construct a sequence \(G^t(v)=G^t(v)(X_1,\dots,X_t)\) such that, for each \(\D\in\D(\mu)\) (note the \(\mu\)) \(G^t(\mu)\) is upper-bounded by a supermartingale \(M^t_\D(\mu)\) with \(M^0_\D(\mu)=1\). 
+The intuition from Ville’s inequality tells us that the supermartingale \(M^t_\D(\mu)\) blows up with low probability. Therefore, we want to form our confidence sequence around those values of \(v\) such that \(G_t(v)\) remains small.</p>
+
+<p>Formally, we are interested in the event \(G^t(v)\geq 1/\alpha\). Then, Equation \eqref{eq:ville2} gives that, for each \(\D\in\D(\mu)\), \(\Pr_\D(\exists t,\; G_t(\mu)\geq 1/\alpha)\leq \alpha.\) Since this holds for all \(\D\in\D(\mu)\), we have</p>
+
+\[\inf_{\D\in\D(\mu)}\Pr_\D(\exists t,\; G^t(\mu)\geq 1/\alpha)\leq \alpha.\]
+
+<p>Finally, it remains to actually construct the confidence sequence. As you might expect, we simply take the set of all \(v\in[0,1]\) such that \(G^t(v)\leq 1/\alpha\) (i.e., it has remained “small”). Call this set \(C_t\). Then,</p>
+
+\[\inf_{\D\in\D(\mu)}\Pr_\D(\exists t,\; \mu\notin C_t) = \inf_{\D\in\D(\mu)}\Pr_\D(\exists t,\; G^t(\mu)\geq 1/\alpha)\leq \alpha.\]
+
+<p>This is undoubtedly cool, but it’s not immediately clear how useful it is. Is it feasible to even construct supermartingales that obey the desired properties? It turns out that yes … yes it is.</p>
+
+<h1 id="2-recovering-chernoff">2. Recovering Chernoff</h1>
+
+<p>N.B. In this section I switch from writing \(G^t(v)\) to \(G_t(v)\). Whoops.</p>
+
+<p>The first supermartingale we’ll construct is based on Hoeffding’s <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Hoeffding%27s_lemma">famous inequality</a>. Recall that for bounded random variables \(X\in[a,b]\), Hoeffding showed that for any \(\lambda\in\R\) and any \(\D\in\D(\mu)\),</p>
+
+\[\E_\D[\exp(\lambda(X-\mu))] \leq \exp(\frac{\lambda^2}{8}(b-a)^2).\]
+
+<p>So, for \(X\in[0,1]\),</p>
+
+\[\begin{equation}
+\label{eq:hoeffding_lemma}
+\sup_{\D\in\D(\mu)}\E[\exp(\lambda(X-\mu) - \lambda^2/8)]\leq 1. \tag{3}
+\end{equation}\]
+
+<p>Put</p>
+
+\[G_t(v) = \prod_{i=1}^t \exp(\lambda (X_i-v) - \lambda^2/8),\]
+
+<p>for each \(v\in[0,1]\). Equation \eqref{eq:hoeffding_lemma} then implies that \(G_t(\mu)\) is a supermartingale (for any \(\D\in\D(\mu)\)):</p>
+
+\[\begin{align}
+\E[G_t(\mu)|\F_{t-1}] &amp;= \prod_{i=1}^t \E[\exp(\lambda (X_i-\mu) - \lambda^2/8)|\F_{t-1}] \\
+&amp;= \E[\exp(\lambda(X-\mu) - \lambda^2/8)]\prod_{i=1}^{t-1}\exp(\lambda (X_i-\mu) - \lambda^2/8) \\
+&amp;\leq \prod_{i=1}^{t-1}\exp(\lambda (X_i-\mu) - \lambda^2/8).
+\end{align}\]
+
+<p>Here we’re relying on independence of each \(X_i\) and the fact that \(G_t(\mu)\) is \(\F_t\) measurable. Note that there is no guarantee that \(G_t(v)\) is a supermartingale for \(v\neq \mu\).</p>
+
+<p>Okay, this is all well and good, but how do we actually construct the confidence sequence \(C_t\) from here? We’ve defined \(C_t\) as those values \(v\) such that \(G_t(v)\) stays small, i.e., \(C_t=\{v:G_t(v)&lt;\beta/\alpha\}\). And notice that \(G_t(v)\geq 1/\alpha\) iff</p>
+
+\[\log\prod_i \exp(\lambda(X_i-v)-\lambda^2/8)\geq \log(\beta/\alpha),\]
+
+<p>that is,</p>
+
+\[v\leq \overline{X}_t - \lambda/8 - \log(\beta/\alpha)/(n\lambda),\]
+
+<p>where \(\overline{X}_t = \frac{1}{t}\sum_{i=1}^t X_i\). Now, just like in normal concentration bounds, we’ll repeat the same process for \(-\overline{X}_t\) with mean \(-\mu\) to get the other tail. In particular, we construct the supermartingale</p>
+
+\[H_t(v) = \prod_{i=1}^t \exp(\lambda(-X_i+v) - \lambda^2/8).\]
+
+<p>By similar arguments, we have \(H_t(v)\geq \beta/\alpha\) iff \(v\geq \overline{X}_t +\lambda/8 + \log(\beta/\alpha)/(n\lambda)\). Put \(A(\lambda) = \lambda/8 + \log(\beta/\alpha)\). Then,</p>
+
+\[\begin{align}
+&amp; \Pr(\exists t: \mu\notin(\overline{X}_t-A(\lambda), \overline{X}_t+A(\lambda))) \\ 
+&amp;\leq \Pr(\exists t: \mu \leq \overline{X}_t-A(\lambda)) + \Pr(\exists t: \mu\geq \overline{X}_t + A(\lambda)) \\ 
+&amp;= \Pr(\exists t: G_t(v)\geq \beta/\alpha) + \Pr(\exists t: H_t(v)\geq \beta/\alpha) \leq \frac{2\alpha}{\beta}. 
+\end{align}\]
+
+<p>Taking \(\beta=2\) gives us the desired bound of \(\alpha\) and the confidence sequence \(C_t = \overline{X}_t \pm (\lambda/8 + \log(\frac{2}{\alpha})/(t\lambda))\). So far, we haven’t picked \(\lambda\). To do so, we’ll minimize \(A(\lambda)\) to get</p>
+
+\[\lambda=\sqrt{\frac{8\log(2/\alpha)}{t}},\]
+
+<p>which results in the confidence sequence</p>
+
+\[C_t = \bigg(\overline{X}_t - \sqrt{\frac{\log(2/\alpha)}{2t}}, \overline{X}_t + \sqrt{\frac{\log(2/\alpha)}{2t}}\bigg).\]
+
+<p>This is precisely the Chernoff bound for iid random variables between 0 and 1! Because we can recover Chernoff with a particular supermartingale, this demonstrates that this approach is in fact more general (in some sense) than the Chernoff method, which involves bounding the moment generating function using Markov’s inequality. Perhaps this is not surprising, given that the martingale approach is based on Ville’s inequality, which itself is a generalization of Markov’s inequality.</p>
+
+<h1 id="3-generalizing-chernoff-adaptive-lambda">3. Generalizing Chernoff: Adaptive \(\lambda\)</h1>
+
+<p>Notice that \(G_t(v)\) from the previous section uses the same \(\lambda\) for all terms in the product. Since \(\lambda\) for \(G_t(v)\) depends on \(t\), this means we have to construct a new supermartingale for each set in the confidence sequence. That is, \(G_t(v)\) and \(G_{t-1}(v)\) do not share the same first \(t-1\) terms in their product since \(\lambda\) is distinct for both.</p>
+
+<p>It is natural to wonder if we can let \(\lambda\) be a function of \(i\) in the product, i.e.,</p>
+
+\[G_t(v) = \prod_{i=1}^t \exp(\lambda_i(X_i-v) - \lambda_i^2/8).\]
+
+<p>Indeed, \(G_t(v)\) remains a supermartingale because Hoeffding’s lemma still applies to each term. In fact, the mechanics of the previous section remain more or less untouched, and we obtain the confidence interval</p>
+
+\[C_t = \frac{1}{\sum_{i=1}^t \lambda_i}\bigg(\sum_{i=1}^t \lambda_i X_i\pm[ \log(2/\alpha) + \frac{1}{8}\sum_{i=1}^t \lambda_i^2]\bigg).\]
+
+<p>This is much more computationally efficient, since we can reuse all values for subsequent calculations of \(C_t\). The drawback is that optimizing the values of \(\lambda_i\) becomes more difficult. The paper provides several “guiding principles” to help ensure tightness.</p>
+
+<h1 id="resources">Resources</h1>
+
+<ul>
+  <li><a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2010.09686.pdf">Estimating means of bounded random variables by betting</a></li>
+  <li><a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/1808.03204.pdf">Time-Uniform Chernoff bounds via nonnegative supermartingales</a></li>
+</ul>
+
+  <small>
+    <a href="/research_notes/">Back to all notes</a>
+  </small>
+</article>
+ <!-- "> -->
+      </main>
+
+      <!-- Footer  -->
+      <div class="container" id="footer">
+        <hr>
+        <div class='container links'>
+          <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github.png"></a>
+          <a href="https://www.linkedin.com/in/ben-chugg-3a4616aa/" rel='nofollow'><img src="/assets/images/linkedin.png"></a>
+          <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads.png"></a>
+          <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter.png"></a>
+        </div>
+      
+        <div class='copyright'>
+          <small>&#169; 2022 Ben Chugg</small>
+        </div>
+      
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+
+    // Highlight search Query
+    var url = window.location.href;
+      if (url.lastIndexOf("?q=") > 0) {
+        // get the index of the parameter, add three (to account for length)
+        var stringloc = url.lastIndexOf("?q=") + 3;
+        // get the substring (query) and decode
+        var searchquery = decodeURIComponent(url.substr(stringloc));
+        // regex matches at beginning of line, end of line or word boundary, useful for poetry
+        var regex = new RegExp("(?:^|\\b)(" + searchquery + ")(?:$|\\b)", "gim");
+        // get, add mark and then set content
+        var content = document.getElementById("main").innerHTML;
+        document.getElementById("main").innerHTML = content.replace(regex, "<mark>$1</mark>");
+      }
+
+      // Toggle sidebar
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             !sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+
+<!-- Facebook SDK for JavaScript -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '589495744558280',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+  </body>
+</html>
