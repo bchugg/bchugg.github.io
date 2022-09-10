@@ -55,9 +55,6 @@ body {
       -ms-text-size-adjust: 100%;
 }
 
-// .posts {
-//   color: black;
-// }
 
 .content {
   margin-bottom: 4rem;
@@ -197,14 +194,13 @@ blockquote p:last-child {
 img {
   display: block;
   max-width: 100%;
-  margin: 0 0 1rem;
+  //margin: 0 0 1rem;
   border-radius: 5px;
 }
 
 /* Header image */
 #headerim {
   width: 45%;
-  //text-align: center;
   height: auto;
   float: left;
   margin-right: 20px;
