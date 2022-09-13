@@ -4,6 +4,7 @@ title: "The commentary is all that matters (or, why nobody is actually a Bayesia
 description: What would true Bayesian epistemology look like?
 date: "2022-09-10" 
 status: published
+image: /assets/images/bayes.jpeg
 ---
 
 Like many tech-adjacent twenty-somethings who have spent time in the Bay Area, I greatly admire [Astral Codex Ten](https://astralcodexten.substack.com/), the newsletter written by Scott Alexander. The writing is funny, smart, and remarkably broad in scope. 

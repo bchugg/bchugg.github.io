@@ -8,9 +8,9 @@ image: /assets/images/heads.jpeg
 
 I'm a first year PhD student in the [machine learning department](https://www.ml.cmu.edu/) at Carnegie Mellon University.  
 
-On the side, I co-host the <a href="https://www.incrementspodcast.com/" ref='nofollow'>Increments</a> podcast, where <a href="https://vmasrani.github.io/">Vaden Masrani</a> and I yell at each other and others about philosophy and science. Occasionally I also [write]({% link writing.md %}) about such things. 
+On the side, I co-host the <a href="https://www.incrementspodcast.com/" ref='nofollow'>Increments</a> podcast, where <a href="https://vmasrani.github.io/">Vaden Masrani</a> and I yell at each other and others about philosophy and science. Occasionally I also [write]({% link writing.md %}) things. 
 
-Previously, I was the lead research analyst at Stanford Law School's [RegLab](https://reglab.stanford.edu/). Before Stanford I was a master's student at Oxford's [Mathematical Institute](https://www.maths.ox.ac.uk/), and before that I was an undergraduate in maths and computer science at UBC. Sometime before that I played Lego and watched a lot of Blue's Clues. 
+Previously, I was the lead research analyst at Stanford's [RegLab](https://reglab.stanford.edu/). Prior to Stanford I was a master's student at Oxford's [Mathematical Institute](https://www.maths.ox.ac.uk/), and before that I was an undergraduate in maths and computer science at UBC. Sometime before that I played Lego and watched a lot of Blue's Clues. 
 
 
 
