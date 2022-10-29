@@ -18,8 +18,10 @@ Thoughts on things. If a post is old I'm probably at least semi-embarrassed by i
 <li>
     <div class='writing-entry'>
         <p class='title-date'>
-            {% unless text.external_only != nil and text.external_only %}
-            <a class="title" href="{{ text.url }}">{{ text.title }}</a> <small>({{ text.date | date: "%b %Y"}})</small>
+            {% unless text.external_only != nil and text.external_link %}
+            <a class="title" href="{{ text.url }}">{{ text.title }}</a> 
+            <small>({{ text.date | date: "%b %Y"}}{% if text.external_source != nil %}, {{ text.external_source }} {% endif %})
+            </small>
             {% else %}
             <a class='title' href="{{ text.external_link }}">{{ text.title }}</a> 
             <small>

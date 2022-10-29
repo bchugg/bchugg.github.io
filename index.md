@@ -6,13 +6,11 @@ image: /assets/images/heads.jpeg
 
 <img id='headerim' src="/assets/images/lawme.jpg">
 
-I'm a first year PhD student in the [machine learning department](https://www.ml.cmu.edu/) at Carnegie Mellon University.  
+I'm a first year PhD student in the [machine learning department](https://www.ml.cmu.edu/) at CMU, where I'm advised by [Aaditya Ramdas](https://www.stat.cmu.edu/~aramdas/). 
 
 On the side, I co-host the <a href="https://www.incrementspodcast.com/" ref='nofollow'>Increments</a> podcast, where <a href="https://vmasrani.github.io/">Vaden Masrani</a> and I yell at each other and others about philosophy and science. Occasionally I also [write]({% link writing.md %}) things. 
 
 Previously, I was the lead research analyst at Stanford's [RegLab](https://reglab.stanford.edu/). Prior to Stanford I was a master's student at Oxford's [Mathematical Institute](https://www.maths.ox.ac.uk/), and before that I was an undergraduate in maths and computer science at UBC. Sometime before that I played Lego and watched a lot of Blue's Clues. 
-
-
 
 
 You can contact me at benchugg $$\alpha\tau$$ cmu.edu. In accordance with the bizarre norms of academia, here is my [CV](assets/files/cv.pdf). 

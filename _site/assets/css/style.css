@@ -1091,10 +1091,11 @@ pre code {
   margin: 1.5em 0; }
 .papers .pubtitle {
   line-height: 1.2em;
-  font-size: 12pt; }
+  font-size: 12pt;
+  font-weight: bold; }
 .papers .pubauthors,
 .papers .pubinfo {
-  font-size: 80%; }
+  font-size: 12pt; }
 
 #footer {
   clear: both;
