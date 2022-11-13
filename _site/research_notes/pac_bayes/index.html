@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head prefix="og: http://ogp.me/ns#; dc: http://purl.org/dc/terms/#">
+  
+  
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="http://localhost:4000/research_notes/pac_bayes/" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PN2H9928PZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PN2H9928PZ');
+  </script>
+
+  <!-- Basic meta elements -->
+  <meta charset="utf-8" />
+
+  <!-- Enable responsiveness on mobile devices -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+
+  <!-- Mathjax Support -->
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <title>
+    
+     PAC-Bayes: McAllester and Motivation
+    
+  </title>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.9.1" />
+<meta property="og:title" content="PAC-Bayes: McAllester and Motivation" />
+<meta name="author" content="Ben Chugg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Introduction to PAC-Bayes bounds" />
+<meta property="og:description" content="Introduction to PAC-Bayes bounds" />
+<link rel="canonical" href="http://localhost:4000/research_notes/pac_bayes/" />
+<meta property="og:url" content="http://localhost:4000/research_notes/pac_bayes/" />
+<meta property="og:site_name" content="benny" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-11-13T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="PAC-Bayes: McAllester and Motivation" />
+<meta name="twitter:site" content="@bennychugg" />
+<meta name="twitter:creator" content="@Ben Chugg" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"dateModified":"2022-11-13T00:00:00-05:00","datePublished":"2022-11-13T00:00:00-05:00","description":"Introduction to PAC-Bayes bounds","headline":"PAC-Bayes: McAllester and Motivation","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/research_notes/pac_bayes/"},"url":"http://localhost:4000/research_notes/pac_bayes/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- Dublin Core metadata for Zotero -->
+  <meta property="dc:title" content="PAC-Bayes: McAllester and Motivation" />
+  <meta property="dc:creator" content="Ben Chugg" />
+  <meta property="dc:identifier" content="http://localhost:4000/research_notes/pac_bayes/" />
+  
+  <meta property="dc:date" content="2022-11-13 00:00:00 -0500" />
+  
+  <meta property="dc:source" content="benny" />
+
+  <!-- Open Graph and Twitter metadata -->
+  <meta property="og:title" content="PAC-Bayes: McAllester and Motivation" />
+  <meta property="og:url" content="http://localhost:4000/research_notes/pac_bayes/" />
+  
+    <meta property="og:image" content="http://localhost:4000/assets/images/heads.jpeg"/>
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/heads.jpeg" />
+  
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:domain" value="benchugg.com" />
+  <meta name="twitter:title" value="PAC-Bayes: McAllester and Motivation" />
+  <meta name="twitter:url" value="http://localhost:4000" />
+  
+  <!-- Description is dependent on page type  -->
+  
+    <meta property="og:description" content="Introduction to PAC-Bayes bounds">
+    <meta name="twitter:description" value="Introduction to PAC-Bayes bounds" />
+    <meta property="og:type" content="article" />
+  
+  
+
+  <!-- CSS link -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="167x167" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="/assets/favicon.ico">
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="114×114" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="72×72" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” href="/assets/favicon.ico" />
+  <link rel=”icon” href="/assets/favicon.ico", sizes="32x32"/>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml" />
+
+  
+</head>
+
+
+  <body class="theme-base-">
+
+    <!-- This if statement decides which sidebar to use -->
+    
+    <!--
+  Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for
+  behavior.
+-->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    
+  </div> 
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/papers/">Papers</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/research_notes/">Research Notes</a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/writing/">Writing</a>
+        
+      
+    
+
+    <a class='sidebar-nav-item' href="http://incrementspodcast.com">Podcast</a>
+
+    <!-- <span class='sidebar-nav-item'>Recommendations</span>
+    <ul class="dropdown-menu">
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    </ul> -->
+
+   </nav> 
+
+  <div class="sidebar-links">
+    <div class='container'>
+      <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github_white.png"></a>
+      <a href="https://www.linkedin.com/in/ben-chugg-3a4616aa/" rel='nofollow'><img src="/assets/images/linkedin_white.png"></a>
+      <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads_white.png"></a>
+      <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter_white.png"></a>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <!--
+      Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS
+      collisions with our real content.
+    -->
+    <div class="wrap">
+      <header class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">benny</a>
+            
+          </h3>
+        </div>
+      </header>
+
+      <main class="container content" id="main">
+        <article class="note">
+  <small>
+    <a href="/research_notes/">Back to all notes</a>
+  </small>
+  <hr>
+  
+  <p class='title'>PAC-Bayes: McAllester and Motivation</p> 
+  \[\newcommand{E}{\mathbb{E}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\hR}{\widehat{R}}
+\newcommand{\kl}{D_{\text{KL}}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\vp}{\varphi}\]
+
+<ul id="markdown-toc">
+  <li><a href="#1-the-burden-of-uniform-convergence" id="markdown-toc-1-the-burden-of-uniform-convergence">1. The burden of uniform convergence</a></li>
+  <li><a href="#2-pac-bayes-bounds" id="markdown-toc-2-pac-bayes-bounds">2. PAC-Bayes bounds</a></li>
+  <li><a href="#3-proving-mcallesters-bound" id="markdown-toc-3-proving-mcallesters-bound">3. Proving McAllester’s bound</a>    <ul>
+      <li><a href="#31-change-of-measure" id="markdown-toc-31-change-of-measure">3.1 Change of measure</a></li>
+      <li><a href="#32-the-proof" id="markdown-toc-32-the-proof">3.2 The proof</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Suppose we’re in the following supervised learning setting. We observe training data \(\{Z_i=(X_i,Y_i)\}_{i=1}^n\subset\mathcal{Z}\) drawn iid from some unknown distribution \(D\). We have a family of hypotheses \(\F\) and oracle access to some unknown loss function \(\ell:\F\times \mathcal{Z}\to\R\).  The expected risk of a predictor \(f\in\F\) is \(R(f)=\E_D[\ell(f,Z)]\), and the empirical risk for \(f\) is</p>
+
+\[\hR_n(f)=\frac{1}{n}\sum_{i=1}^n \ell(f,Z_i).\]
+
+<p>Much of learning theory is concerned with bounding the difference between the true risk  and the empirical risk.  Typically, this is done using the PAC (probably approximately correct) framework, in which we try to show that \(\hR_n(f)\) is not too far from \(R(f)\) (hence “approximately”) with high probability (hence “probably”). A common way to prove PAC bounds is via uniform convergence.</p>
+
+<h1 id="1-the-burden-of-uniform-convergence">1. The burden of uniform convergence</h1>
+<p>A uniform convergence (UC) guarantee has the following form: For any \(\delta\in(0,1)\), with probability at least \(1-\delta\),</p>
+
+\[\sup_{f\in \F} \vert \hR_n(f) - R(f)\vert  \leq G(\F,t,\delta),\]
+
+<p>where \(G\) is some function which depends on the family \(\F\) under consideration, the number of training examples \(n\), and increases as \(\delta\) decreases.</p>
+
+<p>UC guarantees are worst case bounds: we’re looking at the supremum over the entire class \(\F\). It’s natural to wonder why we can’t just reason about a particular classifier \(\hat{f}\in\F\) instead. For instance, in practice we usually minimize the training error and choose</p>
+
+\[\hat{f}=\text{argmin}_{f\in\F} \hR_n(f).\]
+
+<p>Let \(f^*=\text{argmin}_{f\in \F} R(f)\) be the predictor which minimizes the true expected risk. That is, \(f^*\) is the optimal predictor. We want to understand the true risk of \(\hat{f}\) vs that of \(f^*\), which we can decompose as</p>
+
+\[\begin{align*}
+R(\hat{f}) - R(f^*) &amp;= R(\hat{f}) - \hR_n(\hat{f}) + \hR_n(\hat{f}) - \hR_n(f^*) + \hR_n(f^*) - R(f^*) \\
+&amp;\leq R(\hat{f}) - \hR_n(\hat{f}) + \hR_n(f^*) - R(f^*),
+\end{align*}\]
+
+<p>since, by definition of \(\hat{f}\), \(\hR_n(\hat{f})\leq \hR_n(f^*).\) Now, since \(f^*\) is independent of the training set, \(\hR_n(f^*)\) is simply the average of iid random variables \(\ell(f^*,Z_i)\), which all have mean \(\E[\ell(f^*,Z)] = R(f^*)\). Therefore, we can use typical concentration inequalities to bound the difference. The difficulty arises in the attempt to bound \(R(\hat{f}) - \hR_n(\hat{f})\). Since \(\hat{f}\) is data-dependent, \(\hR_n(\hat{f})\) is not the sum of iid rvs. This is where UC comes in. Instead of trying to reason about \(\hat{f}\) in particular, we’ll simply bound \(\vert \hR_n(f) - R(f)\vert\) for all \(f\in\F\). Combining this UC bound with the concentration inequality gives us a bound on \(R(\hat{f})\).</p>
+
+<p>So that’s the story of why UC bounds are useful. But they also have their issues. Possibly the most significant is that the function \(G\) typically depends on either the VC-dimension or Rademacher complexity of \(\F\). These can be extremely difficult to calculate for many families \(\F\), especially for families of predictors we like to use in practice. Moreover, even when they can be calculated, the resulting bounds often end up being too loose. That is, in practice, we observe much faster convergence than what UC theory tells us.</p>
+
+<p>This motivates a different approach to bounding the difference between the empirical error and the true error.</p>
+
+<h1 id="2-pac-bayes-bounds">2. PAC-Bayes bounds</h1>
+
+<p>As the name suggests, PAC-Bayes bounds deal with distributions over the hypothesis class, instead of with single hypotheses. Suppose we have a prior distribution \(P\) over \(\F\). The PAC-Bayes approach seeks to bound the mixture \(\E_{f\sim Q}[\hR_n(f)]\) in terms of \(\E_{f\sim Q}[R(f)]\) for any data-dependent distribution \(Q\) over \(\F\).</p>
+
+<p>As an example, here’s one of the earliest PAC-Bayes bounds from McAllester in 1998. It states that if losses are bounded between [0,1], then with probability at least \(1-\delta\),</p>
+
+\[\begin{equation}
+\label{eq:mcallester}
+\E_{f\sim Q}[\hR_n(f) - R(f)] \leq \bigg(\frac{\kl(Q\vert \vert P) + \log(n/\delta)}{2(n-1)}\bigg)^{1/2}, \tag{1}
+\end{equation}\]
+
+<p>for all \(Q\). Here, \(\kl(Q\vert \vert P)\) is the KL-divergence, which we recall is defined as</p>
+
+\[\kl(Q\vert\vert P) = \E_Q \log(dQ/dP) = \int \log(dQ/dP)dQ,\]
+
+<p>where \(dQ/dP\) is the Radon-Nikodym derivative of \(Q\) w.r.t. \(P\).</p>
+
+<p>Naturally, we might wonder in what sense this is actually an improvement over uniform convergence. The short answer is that we’ve lost the dependence on the class \(\F\) in the right hand side, and replaced it with the KL-divergence between \(Q\) and \(P\).</p>
+
+<p>Consider what happens if \(\F\) is finite (countable also works), and suppose our data dependent posterior \(Q\) has unit mass on a single classifier \(\hat{f}\). Then \(\kl(Q\vert \vert P) = \log(1/P(\hat{f}))\), so the bound yields</p>
+
+\[\hR_n(\hat{f}) - R(\hat{f})\leq \bigg(\frac{\log(1/P(\hat{f})) + \log(n/\delta)}{2(n-1)}\bigg)^{1/2} = \bigg(\frac{\log(n/(\delta P(\hat{f}))}{2(n-1)}\bigg)^{1/2}.\]
+
+<p>Let’s compare this to the VC theorem, which tells us that, with probability \(1-\delta\),</p>
+
+\[\hR_n(\hat{f}) - R(\hat{f}) \leq \bigg(\frac{32\log(s(\F,n)/\delta))}{n}\bigg)^{1/2},\]
+
+<p>where \(s(\F,n)\) is the \(n\)-th shattering coefficient of \(\F\). Ignoring constants, the two bounds differ by a factor of \(s(\F,n)\) versus \(n/P(\hat{f})\) in the log term. We know from Sauer’s lemma that \(s(\F,n)\leq (n+1)^{VC(\F)}\) (for large enough \(n\)) where \(VC(\F)\) is the VC dimension of \(\F\). So the bounds differ by a log factor of \(n^{VC(\F)}\) versus \(n/P(\hat{f})\). Depending on our prior \(P\), the latter can be much smaller.</p>
+
+<h1 id="3-proving-mcallesters-bound">3. Proving McAllester’s bound</h1>
+
+<p>Okay so let’s actually prove McAllester’s bound (Equation \eqref{eq:mcallester}) to get a sense of how PAC-Bayes bounds work. Most of the heavy lifting is done by the incredibly useful change-of-measure inequality, which goes back to Donsker and Varadhan in 1975.</p>
+
+<h2 id="31-change-of-measure">3.1 Change of measure</h2>
+
+<p>For a prior \(P\), the change of measure inequality states that, for any measure \(Q\) (that is absolutely continuous w.r.t. to \(P\)),</p>
+
+\[\begin{equation}
+\label{eq:com}
+\log \E_{f\sim P} \exp(\vp(f)) \geq \E_{f\sim Q} [\vp(f)] - \kl(Q\vert \vert P), 
+\end{equation}\]
+
+<p>for any function \(\vp:\F\to\R\). Seeing this involves one trick, and then simply massaging the definition of the KL divergence. The trick is to define a distribution \(P_G\) via its density w.r.t. to \(P\):</p>
+
+\[\frac{dP_G}{dP}(f) = \frac{\exp(\vp(f))}{\E_{h\sim P} \exp(\vp(h))}.\]
+
+<p>This is called the “Gibbs measure”. Notice that</p>
+
+\[\begin{align}
+\kl(Q\vert \vert P_G) - \kl(Q\vert \vert P) &amp;= \int\log\bigg(\frac{dP_G}{dQ}\bigg) - \log\bigg(\frac{dP}{dQ}\bigg)dQ \\
+&amp;= \int \log\bigg(\frac{dP_G}{dQ}\frac{dQ}{dP}\bigg)dQ \\
+&amp;= \int \log(\frac{dP_G}{dP})dQ \\
+&amp;= \E_{f\sim Q}\log \bigg(\frac{\exp(\vp(f))}{\E_{h\sim P}\exp(\vp(h))} \bigg)\\ 
+&amp;= \E_Q \vp(f) - \log \E_P \exp(\vp(f)). 
+\end{align}\]
+
+<p>Thus,</p>
+
+\[\log\E_P\exp(\vp(f)) = \E_Q\vp(f) - \kl(Q\vert \vert P) + \kl(Q\vert \vert P_G) \geq \E_Q\vp(f) - \kl(Q\vert \vert P),\]
+
+<p>since the KL divergence is non-negative. This proves what we wanted to show, but notice we’ve also showed something stronger. Namely, that there is an equality iff \(Q=P_G\).</p>
+
+<h2 id="32-the-proof">3.2 The proof</h2>
+
+<p>In order to prove McAllester’s bound, we’re going to apply the change of measure inequality to the function \(2(n-1)\Delta(f)^2\), where \(\Delta(f) = R(f) - \hR_n(f)\). This gives</p>
+
+\[\begin{equation}
+\exp(2(n-1)\E_Q\Delta^2(f) - \kl(Q\vert \vert P)) \leq \E_P \exp(2(n-1)\Delta^2(f)).
+\end{equation}\]
+
+<p>Consider taking the expectation w.r.t. to the sample \(S\) on both sides. Since \(P\) is data-free (it’s a prior), we can swap the order of \(\E_P\) and \(\E_S\) to get</p>
+
+\[\begin{equation}
+\label{eq:mc1}
+\E_S[\exp(2(n-1)\E_Q\Delta^2(f) - \kl(Q\vert \vert P))] \leq \E_P \E_S\exp(2(n-1)\Delta^2(f)). \tag{2}
+\end{equation}\]
+
+<p>We want to upper bound the right hand side. Since \(f\) is fixed, we can bound \(\Delta(f)\) using Hoeffding:</p>
+
+\[\Pr(\vert \Delta(f)\vert \geq \epsilon) = \Pr(\vert R(f) - \hR_n(f)\vert \geq \epsilon) \leq 2\exp(-2n\epsilon^2).\]
+
+<p>Therefore, since \(2(n-1)\Delta^2(f)\geq 0\), we have</p>
+
+\[\begin{align}
+\E_S\exp(2(n-1)\Delta^2(f)) &amp;= \int_0^\infty \Pr(\exp(2(n-1)\Delta^2(f))\geq s)ds \\
+&amp;\leq 1 + \int_1^\infty \Pr(\vert \Delta(f)\vert  \geq \sqrt{\log(s)/2(n-1)})ds\\
+&amp;\leq 1 + \int_1^\infty 2\exp(-2n\log(s)/[2(n-1)])ds \\
+&amp;= 1 + 2(n-1)\leq 2n. 
+\end{align}\]
+
+<p>Plugging this back into Equation \eqref{eq:mc1}, we get</p>
+
+\[\begin{equation}
+\E_S[\exp(2(n-1)\E_Q\Delta^2(f) - \kl(Q\vert \vert P))] \leq 2n.
+\end{equation}\]
+
+<p>Therefore, Markov’s inequality tells us that</p>
+
+\[\Pr(\exp(2(n-1)\E_Q\Delta^2(f) - \kl(Q\vert \vert P))&gt;2n/\delta)\leq \delta.\]
+
+<p>That is, with probability at least \(1-\delta\),</p>
+
+\[2(n-1)\E_Q\Delta^2(f) \leq \log(2n/\delta) + \kl(Q\vert \vert P).\]
+
+<p>Using Jensen, this gives</p>
+
+\[(\E_Q\Delta(f))^2 \leq \E_Q\Delta^2(f) \leq \frac{\log(2n/\delta) + \kl(Q\vert \vert P)}{2(n-1)}.\]
+
+<p>Taking the square root of both sides gives the result. Notice that our result has an extra factor of 2 in the log, but I’m not sure how to get rid of it. There’s no reason \(\Delta(f)\) must be positive, so we must use the two-sided Hoeffding. Of course, there might be a different way to prove that \(\E_S[\exp(2(n-1)\Delta^2(f))]\leq n\).</p>
+
+<p>Finally, note that this gives us an objective function to optimize. Namely, given a prior \(P\), solve</p>
+
+\[\min_Q \bigg\{\E_Q\hR_n(f) + \sqrt{\frac{\kl(Q\vert \vert P) + \log(2n/\delta)}{2(n-1)}}\bigg\}.\]
+
+  <small>
+    <a href="/research_notes/">Back to all notes</a>
+  </small>
+</article>
+ <!-- "> -->
+      </main>
+
+      <!-- Footer  -->
+      <div class="container" id="footer">
+        <hr>
+        <div class='container links'>
+          <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github.png"></a>
+          <a href="https://www.linkedin.com/in/ben-chugg-3a4616aa/" rel='nofollow'><img src="/assets/images/linkedin.png"></a>
+          <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads.png"></a>
+          <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter.png"></a>
+        </div>
+      
+        <div class='copyright'>
+          <small>&#169; 2022 Ben Chugg</small>
+        </div>
+      
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+
+    // Highlight search Query
+    var url = window.location.href;
+      if (url.lastIndexOf("?q=") > 0) {
+        // get the index of the parameter, add three (to account for length)
+        var stringloc = url.lastIndexOf("?q=") + 3;
+        // get the substring (query) and decode
+        var searchquery = decodeURIComponent(url.substr(stringloc));
+        // regex matches at beginning of line, end of line or word boundary, useful for poetry
+        var regex = new RegExp("(?:^|\\b)(" + searchquery + ")(?:$|\\b)", "gim");
+        // get, add mark and then set content
+        var content = document.getElementById("main").innerHTML;
+        document.getElementById("main").innerHTML = content.replace(regex, "<mark>$1</mark>");
+      }
+
+      // Toggle sidebar
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             !sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+
+<!-- Facebook SDK for JavaScript -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '589495744558280',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+  </body>
+</html>

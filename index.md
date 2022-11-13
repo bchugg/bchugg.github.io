@@ -22,9 +22,10 @@ You can contact me at benchugg $$\alpha\tau$$ cmu.edu. In accordance with the bi
 
 You can find my papers [here]({% link papers.md %}) and some informal research notes [here]({% link research_notes.md %}). 
 
-My primary interests at the moment involve developing robust algorithms for sequential problems, particularly in nonparametric  settings. I'm increasingly interested in game-theoretic statistics, and algorithmic statistics more generally, for this purpose. Previously, I worked on problems in graph theory, combinatorial optimization, and stochastic reaction networks.
+I like questions at the intersection of statistics and machine learning. 
+Currently I'm most interested in anytime-valid guarantees for sequential problems (e.g., online learning, bandits). 
 
-Ideally, I try and straddle the borderlands between theory and practice with a bias towards the former, but apparently the results have high variance because I've spent time doing doing both pure theory and pure application. 
+Previously, I worked on problems in graph theory, combinatorial optimization, and stochastic reaction networks. Aside from theory, I've also spent some time doing applied machine learning, mostly in the realm of law and policy. 
 
 ---
 

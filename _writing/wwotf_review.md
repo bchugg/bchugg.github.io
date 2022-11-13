@@ -1,9 +1,8 @@
 ---
 layout: writing
 title: "Longtermism and the second wave of effective altruism"
-subtitle: A review of What We Owe the Future
-description: A Review of What We Owe the Future 
-external_source: IAI
+description: A Review of What We Owe the Future
+external_source: Institute of Art and Ideas
 date: "2022-10-20" 
 status: published
 image: /assets/images/tunnel.jpeg

@@ -1,7 +1,7 @@
 ---
 layout: writing
 title: When unprecedented times meet unprecedented opportunities
-subtitle: "Despite this year’s setbacks, we are at an unprecedented time in history: we can do something about the abundance of suffering around us."
+description: "It's novel to be able to effect change at a large scale"
 date: "2020-12-30" 
 external_only: True 
 external_source: GWWC

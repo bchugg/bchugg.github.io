@@ -5,7 +5,7 @@ description: "Spicy takes and explorations of various topics"
 image: /assets/images/building.jpeg
 ---
 
-Thoughts on things. If a post is old I'm probably at least semi-embarrassed by it and/or partially disagree with my own conclusions. So if you disagree with something send me an email and perhaps we can ~~fight to the death~~ laugh at it together. 
+Sometimes I have thoughts, and sometimes I write them down. 
 
 <br/>
 
@@ -13,28 +13,24 @@ Thoughts on things. If a post is old I'm probably at least semi-embarrassed by i
 {% assign external_texts = site.external_writing | where_exp: "item", "item.status == 'published'" %}
 {% assign texts = internal_texts | concat: external_texts | sort: "date" | reverse %}
 
-<ul class='writing-list'>
+<table class='writing-table'>
 {% for text in texts %}
-<li>
-    <div class='writing-entry'>
-        <p class='title-date'>
-            {% unless text.external_only != nil and text.external_link %}
-            <a class="title" href="{{ text.url }}">{{ text.title }}</a> 
-            <small>({{ text.date | date: "%b %Y"}}{% if text.external_source != nil %}, {{ text.external_source }} {% endif %})
-            </small>
-            {% else %}
-            <a class='title' href="{{ text.external_link }}">{{ text.title }}</a> 
-            <small>
-            ({{ text.date | date: "%b %Y"}}, {{ text.external_source }})
-            </small>
-            {% endunless %}
-        </p>
-        {% if text.subtitle != nil %}
-        <p class='subtitle'>    
-            {{ text.subtitle }}
-        </p>    
-        {% endif %}
-    </div>
-</li>
+<tr>
+<td>
+    {% unless text.external_only != nil and text.external_link %}
+    <a class="title" href="{{ text.url }}">{{ text.title }}</a> 
+    {% else %}
+    <a class='title' href="{{ text.external_link }}">{{ text.title }}</a> 
+    {% endunless %}
+    <p><small class='subtitle'>{{ text.description }}
+    <i>{% if text.external_source != nil %}({{ text.external_source }}){% endif %}</i>
+    </small>  
+    </p>
+</td>
+<td>
+    <small id='date'>{{ text.date | date: "%b %Y"}}</small>
+</td>
+</tr>
 {% endfor %}
-</ul>
+</table>
+

@@ -1,7 +1,7 @@
 ---
 layout: writing
 title: "Break up big tech (departments)"
-description: The case for offering specialized degrees in computer science.  
+description: The case for offering specialized degrees in computer science  
 date: "2022-08-28" 
 status: published
 ---
