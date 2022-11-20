@@ -60,7 +60,7 @@ As an example, here's one of the earliest PAC-Bayes bounds from McAllester in 19
 $$
 \begin{equation}
 \label{eq:mcallester}
-\E_{f\sim Q}[\hR_n(f) - R(f)] \leq \bigg(\frac{\kl(Q\vert \vert P) + \log(n/\delta)}{2(n-1)}\bigg)^{1/2}, \tag{1}
+\E_{f\sim Q}[R(f) - \hR_n(f)] \leq \bigg(\frac{\kl(Q\vert \vert P) + \log(n/\delta)}{2(n-1)}\bigg)^{1/2}, \tag{1}
 \end{equation}
 $$
 
@@ -74,11 +74,11 @@ Naturally, we might wonder in what sense this is actually an improvement over un
 
 Consider what happens if $$\F$$ is finite (countable also works), and suppose our data dependent posterior $$Q$$ has unit mass on a single classifier $$\hat{f}$$. Then $$\kl(Q\vert \vert P) = \log(1/P(\hat{f}))$$, so the bound yields 
 
-$$\hR_n(\hat{f}) - R(\hat{f})\leq \bigg(\frac{\log(1/P(\hat{f})) + \log(n/\delta)}{2(n-1)}\bigg)^{1/2} = \bigg(\frac{\log(n/(\delta P(\hat{f}))}{2(n-1)}\bigg)^{1/2}.$$
+$$R(\hat{f}) - \hR_n(\hat{f})\leq \bigg(\frac{\log(1/P(\hat{f})) + \log(n/\delta)}{2(n-1)}\bigg)^{1/2} = \bigg(\frac{\log(n/(\delta P(\hat{f}))}{2(n-1)}\bigg)^{1/2}.$$
 
 Let's compare this to the VC theorem, which tells us that, with probability $$1-\delta$$, 
 
-$$\hR_n(\hat{f}) - R(\hat{f}) \leq \bigg(\frac{32\log(s(\F,n)/\delta))}{n}\bigg)^{1/2},$$ 
+$$R(\hat{f}) - \hR_n(\hat{f}) \leq \bigg(\frac{32\log(s(\F,n)/\delta))}{n}\bigg)^{1/2},$$ 
 
 where $$s(\F,n)$$ is the $$n$$-th shattering coefficient of $$\F$$. Ignoring constants, the two bounds differ by a factor of $$s(\F,n)$$ versus $$n/P(\hat{f})$$ in the log term. We know from Sauer's lemma that $$s(\F,n)\leq (n+1)^{VC(\F)}$$ (for large enough $$n$$) where $$VC(\F)$$ is the VC dimension of $$\F$$. So the bounds differ by a log factor of $$n^{VC(\F)}$$ versus $$n/P(\hat{f})$$. Depending on our prior $$P$$, the latter can be much smaller.
 
@@ -107,7 +107,7 @@ $$
 \begin{align}
 \kl(Q\vert \vert P_G) - \kl(Q\vert \vert P) &= \int\log\bigg(\frac{dP_G}{dQ}\bigg) - \log\bigg(\frac{dP}{dQ}\bigg)dQ \\
 &= \int \log\bigg(\frac{dP_G}{dQ}\frac{dQ}{dP}\bigg)dQ \\
-&= \int \log(\frac{dP_G}{dP})dQ \\
+&= \int \log\bigg(\frac{dP_G}{dP}\bigg)dQ \\
 &= \E_{f\sim Q}\log \bigg(\frac{\exp(\vp(f))}{\E_{h\sim P}\exp(\vp(h))} \bigg)\\ 
 &= \E_Q \vp(f) - \log \E_P \exp(\vp(f)). 
 \end{align}
