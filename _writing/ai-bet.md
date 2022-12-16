@@ -4,7 +4,7 @@ title: "An AI-capabilities bet with JY Koh"
 description: Will a paper written by a language model be accepted to an A-tier conference or journal?
 date: "2022-12-16" 
 status: published
-image: /assets/images/bayes.jpeg
+image: /assets/images/brain_surreal.jpg
 ---
 
 
