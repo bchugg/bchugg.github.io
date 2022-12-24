@@ -6,7 +6,7 @@ image: /assets/images/heads.jpeg
 
 <img id='headerim' src="/assets/images/lawme.jpg">
 
-I'm a first year PhD student in the [machine learning department](https://www.ml.cmu.edu/) at CMU, where I'm advised by [Aaditya Ramdas](https://www.stat.cmu.edu/~aramdas/). 
+I'm a first year PhD student in the [machine learning department](https://www.ml.cmu.edu/) at CMU where I'm advised by [Aaditya Ramdas](https://www.stat.cmu.edu/~aramdas/). 
 
 On the side, I co-host the <a href="https://www.incrementspodcast.com/" ref='nofollow'>Increments</a> podcast, where <a href="https://vmasrani.github.io/">Vaden Masrani</a> and I yell at each other and others about philosophy and science. Occasionally I also [write]({% link writing.md %}) things. 
 

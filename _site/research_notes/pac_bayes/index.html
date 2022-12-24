@@ -45,13 +45,13 @@
 <meta property="og:url" content="http://localhost:4000/research_notes/pac_bayes/" />
 <meta property="og:site_name" content="benny" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-11-13T00:00:00-05:00" />
+<meta property="article:published_time" content="2022-11-13T00:00:00-07:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="PAC-Bayes: McAllester and Motivation" />
 <meta name="twitter:site" content="@bennychugg" />
 <meta name="twitter:creator" content="@Ben Chugg" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"dateModified":"2022-11-13T00:00:00-05:00","datePublished":"2022-11-13T00:00:00-05:00","description":"Introduction to PAC-Bayes bounds","headline":"PAC-Bayes: McAllester and Motivation","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/research_notes/pac_bayes/"},"url":"http://localhost:4000/research_notes/pac_bayes/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"dateModified":"2022-11-13T00:00:00-07:00","datePublished":"2022-11-13T00:00:00-07:00","description":"Introduction to PAC-Bayes bounds","headline":"PAC-Bayes: McAllester and Motivation","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/research_notes/pac_bayes/"},"url":"http://localhost:4000/research_notes/pac_bayes/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -60,7 +60,7 @@
   <meta property="dc:creator" content="Ben Chugg" />
   <meta property="dc:identifier" content="http://localhost:4000/research_notes/pac_bayes/" />
   
-  <meta property="dc:date" content="2022-11-13 00:00:00 -0500" />
+  <meta property="dc:date" content="2022-11-13 00:00:00 -0700" />
   
   <meta property="dc:source" content="benny" />
 
@@ -206,7 +206,6 @@
   <div class="sidebar-links">
     <div class='container'>
       <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github_white.png"></a>
-      <a href="https://www.linkedin.com/in/ben-chugg-3a4616aa/" rel='nofollow'><img src="/assets/images/linkedin_white.png"></a>
       <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads_white.png"></a>
       <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter_white.png"></a>
     </div>
@@ -334,8 +333,8 @@ R(\hat{f}) - R(f^*) &amp;= R(\hat{f}) - \hR_n(\hat{f}) + \hR_n(\hat{f}) - \hR_n(
 <p>This is called the “Gibbs measure”. Notice that</p>
 
 \[\begin{align}
-\kl(Q\vert \vert P_G) - \kl(Q\vert \vert P) &amp;= \int\log\bigg(\frac{dP_G}{dQ}\bigg) - \log\bigg(\frac{dP}{dQ}\bigg)dQ \\
-&amp;= \int \log\bigg(\frac{dP_G}{dQ}\frac{dQ}{dP}\bigg)dQ \\
+\kl(Q\vert \vert P) - \kl(Q\vert \vert P_G) &amp;= \int\log\bigg(\frac{dQ}{dP}\bigg) - \log\bigg(\frac{dQ}{dP_G}\bigg)dQ \\
+&amp;= \int \log\bigg(\frac{dQ}{dP}\frac{dP_G}{dQ}\bigg)dQ \\
 &amp;= \int \log\bigg(\frac{dP_G}{dP}\bigg)dQ \\
 &amp;= \E_{f\sim Q}\log \bigg(\frac{\exp(\vp(f))}{\E_{h\sim P}\exp(\vp(h))} \bigg)\\ 
 &amp;= \E_Q \vp(f) - \log \E_P \exp(\vp(f)). 
@@ -411,7 +410,6 @@ R(\hat{f}) - R(f^*) &amp;= R(\hat{f}) - \hR_n(\hat{f}) + \hR_n(\hat{f}) - \hR_n(
         <hr>
         <div class='container links'>
           <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github.png"></a>
-          <a href="https://www.linkedin.com/in/ben-chugg-3a4616aa/" rel='nofollow'><img src="/assets/images/linkedin.png"></a>
           <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads.png"></a>
           <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter.png"></a>
         </div>

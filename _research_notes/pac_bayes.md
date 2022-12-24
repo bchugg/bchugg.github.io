@@ -105,8 +105,8 @@ This is called the "Gibbs measure". Notice that
 
 $$
 \begin{align}
-\kl(Q\vert \vert P_G) - \kl(Q\vert \vert P) &= \int\log\bigg(\frac{dP_G}{dQ}\bigg) - \log\bigg(\frac{dP}{dQ}\bigg)dQ \\
-&= \int \log\bigg(\frac{dP_G}{dQ}\frac{dQ}{dP}\bigg)dQ \\
+\kl(Q\vert \vert P) - \kl(Q\vert \vert P_G) &= \int\log\bigg(\frac{dQ}{dP}\bigg) - \log\bigg(\frac{dQ}{dP_G}\bigg)dQ \\
+&= \int \log\bigg(\frac{dQ}{dP}\frac{dP_G}{dQ}\bigg)dQ \\
 &= \int \log\bigg(\frac{dP_G}{dP}\bigg)dQ \\
 &= \E_{f\sim Q}\log \bigg(\frac{\exp(\vp(f))}{\E_{h\sim P}\exp(\vp(h))} \bigg)\\ 
 &= \E_Q \vp(f) - \log \E_P \exp(\vp(f)). 

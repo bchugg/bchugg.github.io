@@ -34,7 +34,7 @@ Admittedly, despite it's usefulness, you can only make Markov's inequality so in
 
 Recall that a supermartingale $$(X_t)$$ adapted to the filtration $$(\F_t)$$ on the filtered space $$(\Omega,\F,(\F_t),\Pr)$$ obeys 
 
-$$\E[X_t\gn \F_\tau] = X_\tau, \quad \text{for all }\tau\leq t.$$
+$$\E[X_t\gn \F_\tau] \le X_\tau, \quad \text{for all }\tau\leq t.$$
 
 Ville's inequality (mentioned in the [intro post](/research_notes/intro_game_theory_prob.md) on game-theoretic probability) generalizes Markov's inequality to supermartingales. In particular, it states that 
 

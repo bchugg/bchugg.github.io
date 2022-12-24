@@ -23,11 +23,16 @@ Notes on various topics for my own edification. The majority of material is not 
 <hr>
 
 {% assign notes = site.research_notes | where_exp: "item", "item.status == 'published'" | sort: "date" | reverse %}
-<ul class='note-list'>
-{% for note in notes %}
-<li>
-    <a href="{{ note.url }}">{{ note.title }}</a> 
-    <span>{{note.date | date: "%b %Y"}}</span>
-</li>
+
+<table class='notes-table'>
+{% for note in notes %} 
+<tr>
+<td>
+<small>&#x2022;</small> <a href="{{ note.url }}">{{ note.title }}</a> 
+</td>
+<td class='date'>
+<small id='date'>{{note.date | date: "%b %Y"}}</small>
+</td>
+</tr>
 {% endfor %}
-</ul>
+</table>

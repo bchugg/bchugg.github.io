@@ -23,7 +23,7 @@ This is an exploration of the paper [Estimating Means of Bounded Random Variable
 
 # 1. General Approach
 
-For all $$v\in[0,1]$$, let $$\D(v)$$ be the set of all distributions with mean $$v$$ (discrete, continuous, mixtures, etc). Given a sequence a sequence $$X_1,X_2,\dots\sim \D$$ for some $$\D\in\D(\mu)$$ with unknown $$\mu$$, we are interested in constructing a _confidence sequence_  for $$\mu$$. A $$(1-\alpha)$$ confidence sequence is a sequence of sets $$(C_t)_{t\geq 0}$$ such that 
+For all $$v\in[0,1]$$, let $$\D(v)$$ be the set of all distributions with mean $$v$$ (discrete, continuous, mixtures, etc). Given a sequence $$X_1,X_2,\dots\sim \D$$ for some $$\D\in\D(\mu)$$ with unknown $$\mu$$, we are interested in constructing a _confidence sequence_  for $$\mu$$. A $$(1-\alpha)$$ confidence sequence is a sequence of sets $$(C_t)_{t\geq 0}$$ such that 
 
 $$\inf_{\D\in\D(\mu)}\Pr_{\D}(\forall t,\; \mu\in C_t)\geq 1-\alpha.$$
 

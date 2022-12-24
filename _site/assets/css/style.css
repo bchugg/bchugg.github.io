@@ -282,7 +282,7 @@ tbody tr:nth-child(odd) th {
     align-items: center;
     justify-content: center; }
     .sidebar-links .container img {
-      height: 20px;
+      height: 15px;
       width: auto;
       padding-left: 5px;
       padding-right: 5px;
@@ -993,14 +993,6 @@ pre code {
 .highlight pre {
   margin-bottom: 0; }
 
-.note-list {
-  padding-left: 25px; }
-  .note-list span {
-    padding-right: 30px;
-    padding-top: 2.5px;
-    font-size: 10pt;
-    float: right; }
-
 .research-notes-quote {
   text-align: justify;
   font-size: 11pt;
@@ -1039,6 +1031,18 @@ pre code {
     margin-left: 20px;
     margin-right: 20px; }
 
+.notes-table {
+  border: 0px; }
+  .notes-table tr:nth-child(odd) td {
+    background-color: white; }
+  .notes-table td {
+    border: 0px;
+    padding: 0; }
+  .notes-table .date {
+    width: 60px; }
+  .notes-table #date {
+    float: right; }
+
 .writing-table {
   border: 0px; }
   .writing-table tr:nth-child(odd) td {
@@ -1049,7 +1053,7 @@ pre code {
     border: 0px;
     vertical-align: top; }
     .writing-table td p {
-      margin-bottom: 20px; }
+      margin-bottom: 0px; }
     .writing-table td #date {
       padding-top: 2px;
       float: right;
