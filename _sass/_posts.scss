@@ -6,6 +6,9 @@
 }
 
 .note {
+    a {
+        color: lightseagreen;
+    }
     .title {
         padding-top: 20px;
         font-size: 18pt;
@@ -80,6 +83,7 @@
             margin-bottom: 0px;
         }
         #date {
+            width: 60px;
             padding-top: 2px;
             float: right;
             text-align: right;
@@ -89,6 +93,9 @@
 
 
 .writing {
+    a {
+        color: lightseagreen;
+    }
     .title {
         padding-top: 20px;
         font-size: 18pt;

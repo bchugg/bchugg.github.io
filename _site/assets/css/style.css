@@ -87,7 +87,7 @@ body {
     max-width: 41rem; } }
 /* Links */
 a, .text-title a {
-  color: #121a84;
+  color: navy;
   text-decoration: none; }
 
 /* `:focus` is linked to `:hover` for basic accessibility */
@@ -200,29 +200,15 @@ tbody tr:nth-child(odd) th {
   margin-bottom: 3rem;
   padding-top: 26px;
   padding-bottom: 1rem;
-  text-align: center;
   margin-left: 0;
   margin-right: 0; }
-
-.masthead-title {
-  color: #505050;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-size: 1.8rem;
-  line-height: .777em;
-  margin-top: 2em;
-  margin-bottom: 0;
-  margin-right: 0;
-  margin-left: 0;
-  text-align: center; }
-
-.masthead-title small {
-  color: #686565;
-  display: none;
-  /* This is an accessibility no-no */
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-size: .88rem;
-  font-weight: normal;
-  letter-spacing: .05rem; }
+  .masthead a {
+    color: gray; }
+  .masthead .span {
+    float: right;
+    text-align: right; }
+    .masthead .span a {
+      padding-left: 10px; }
 
 @media (min-width: 320px) {
   .masthead-title {
@@ -1002,6 +988,8 @@ pre code {
 .note {
   color: black;
   text-align: justify; }
+  .note a {
+    color: lightseagreen; }
   .note .title {
     padding-top: 20px;
     font-size: 18pt;
@@ -1055,6 +1043,7 @@ pre code {
     .writing-table td p {
       margin-bottom: 0px; }
     .writing-table td #date {
+      width: 60px;
       padding-top: 2px;
       float: right;
       text-align: right; }
@@ -1062,6 +1051,8 @@ pre code {
 .writing {
   color: black;
   text-align: justify; }
+  .writing a {
+    color: lightseagreen; }
   .writing .title {
     padding-top: 20px;
     font-size: 18pt;
