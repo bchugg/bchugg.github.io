@@ -112,6 +112,18 @@
     h3 {
         font-weight: bold;
     }
+    img {
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        // text-align: center;
+    }
+    .caption {
+        font-size: 10pt;
+        color: gray;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 }
 
 #markdown-toc {
