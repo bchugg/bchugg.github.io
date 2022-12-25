@@ -5,7 +5,6 @@ description: The failure to understand the limitations of mathematical models br
 date: "2022-12-24" 
 status: published
 image: /assets/images/prof_prediction.jpg
-banner: /assets/images/prof_prediction.jpg
 ---
 
 A worried friend recently sent me an [article](https://www.vice.com/en/article/z3xw3x/new-research-vindicates-1972-mit-prediction-that-society-will-collapse-soon) by Vice suggesting that humanity is nearing its demise. The focus of the piece is an update to a 1972 study by MIT scientists, [Limits to Growth](https://www.donellameadows.org/wp-content/userfiles/Limits-to-Growth-digital-scan-version.pdf) (LtG), which warned of the collapse of industrial civilisation by 2040. “The most probable result will be a rather sudden and uncontrollable decline in both population and industrial capacity,” warn the authors. The LtG study created a computational model called World3 which predicts our civilisational trajectory based on current trends such as economic growth and environmental limitations. The [update](https://advisory.kpmg.us/articles/2021/limits-to-growth.html) revalidates the findings and charmingly warns us that “it’s almost, but not yet, too late for society to change course.”

@@ -110,109 +110,6 @@
 
   <body class="theme-base-">
 
-    <!-- This if statement decides which sidebar to use -->
-    
-    <!--
-  Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for
-  behavior.
--->
-<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
-
-<!-- Toggleable sidebar -->
-<aside class="sidebar" id="sidebar">
-  <div class="sidebar-item">
-    
-  </div> 
-
-  <nav class="sidebar-nav">
-    <a class="sidebar-nav-item" href="/">Home</a>
-
-    
-
-    
-    
-      
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/papers/">Papers</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/research_notes/">Research Notes</a>
-        
-      
-    
-      
-    
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/writing/">Writing</a>
-        
-      
-    
-
-    <a class='sidebar-nav-item' href="http://incrementspodcast.com">Podcast</a>
-
-    <!-- <span class='sidebar-nav-item'>Recommendations</span>
-    <ul class="dropdown-menu">
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-          
-        
-      
-    </ul> -->
-
-   </nav> 
-
-  <div class="sidebar-links">
-    <div class='container'>
-      <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github_white.png"></a>
-      <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads_white.png"></a>
-      <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter_white.png"></a>
-    </div>
-  </div>
-</aside>
-
-    
 
     <!--
       Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS
@@ -221,7 +118,7 @@
     <div class="wrap">
       <header class="masthead">
         <div class="container">
-          <a href="/">Ben Chugg</a>
+          <a id='name' href="/">Ben Chugg</a>
           <div class="span">
             <a href="/papers/">Papers</a> 
             <a href="/writing/">Writing</a>
@@ -312,61 +209,6 @@
       
       </div>
     </div>
-
-    <!-- <label for="sidebar-checkbox" class="sidebar-toggle"></label>
-
-    <script>
-
-    // Highlight search Query
-    var url = window.location.href;
-      if (url.lastIndexOf("?q=") > 0) {
-        // get the index of the parameter, add three (to account for length)
-        var stringloc = url.lastIndexOf("?q=") + 3;
-        // get the substring (query) and decode
-        var searchquery = decodeURIComponent(url.substr(stringloc));
-        // regex matches at beginning of line, end of line or word boundary, useful for poetry
-        var regex = new RegExp("(?:^|\\b)(" + searchquery + ")(?:$|\\b)", "gim");
-        // get, add mark and then set content
-        var content = document.getElementById("main").innerHTML;
-        document.getElementById("main").innerHTML = content.replace(regex, "<mark>$1</mark>");
-      }
-
-      // Toggle sidebar
-      (function(document) {
-        var toggle = document.querySelector('.sidebar-toggle');
-        var sidebar = document.querySelector('#sidebar');
-        var checkbox = document.querySelector('#sidebar-checkbox');
-
-        document.addEventListener('click', function(e) {
-          var target = e.target;
-
-          if(!checkbox.checked ||
-             !sidebar.contains(target) ||
-             (target === checkbox || target === toggle)) return;
-
-          checkbox.checked = false;
-        }, false);
-      })(document);
-    </script> -->
-
-<!-- Facebook SDK for JavaScript -->
-<!-- <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '589495744558280',
-      xfbml      : true,
-      version    : 'v2.6'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script> -->
 
   </body>
 </html> 
