@@ -22,7 +22,7 @@ image: /assets/images/manuscript.jpeg
     </div>
     {% if pub.publication != nil %}
       <div class="pubinfo">
-        <em>{{ pub.publication }}</em>, {{ pub.year}}
+        <em>{{ pub.publication }}</em>, {{ pub.year}}{% if pub.highlight != nil %}. <span id='highlight'>{{ pub.highlight }}</span> {% endif %}
       </div>
     {% endif %}
   </div>

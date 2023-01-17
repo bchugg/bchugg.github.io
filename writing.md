@@ -22,11 +22,7 @@ Sometimes I have thoughts, and sometimes I write them down.
     {% else %}
     <a class='title' href="{{ text.external_link }}">{{ text.title }}</a> 
     {% endunless %} 
-    <p><small class='subtitle'>{{ text.description }}
     <i>{% if text.external_source != nil %}({{ text.external_source }}){% endif %}</i>
-    </small>  
-    </p>
-    <hr>
 </td>
 <td>
     <small id='date'>{{ text.date | date: "%b %Y"}}</small>

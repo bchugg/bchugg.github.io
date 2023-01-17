@@ -202,6 +202,8 @@ tbody tr:nth-child(odd) th {
   padding-bottom: 1rem;
   margin-left: 0;
   margin-right: 0; }
+  .masthead #name {
+    font-weight: bold; }
   .masthead a {
     color: gray; }
   .masthead .span {
@@ -661,8 +663,6 @@ pre code {
   .writing-table tr:nth-child(odd) td {
     background-color: white; }
   .writing-table td {
-    margin-bottom: 0px;
-    padding: 0px;
     border: 0px;
     vertical-align: top; }
     .writing-table td p {
@@ -719,11 +719,12 @@ pre code {
   margin: 1.5em 0; }
 .papers .pubtitle {
   line-height: 1.2em;
-  font-size: 12pt;
-  font-weight: bold; }
+  font-size: 12pt; }
 .papers .pubauthors,
 .papers .pubinfo {
   font-size: 12pt; }
+.papers #highlight {
+  color: black; }
 
 #footer {
   clear: both;

@@ -240,6 +240,9 @@ tbody tr:nth-child(odd) th {
   padding-bottom: 1rem;
   margin-left: 0;
   margin-right: 0;
+  #name {
+    font-weight: bold;
+  }
   a {
     color: gray;
 

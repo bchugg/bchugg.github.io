@@ -5,6 +5,6 @@ description: The new “science” of divining the future revives an ancient fal
 date: "2021-01-04" 
 status: published
 external_only: True 
-external_source: Medium 
+external_source: Conjecture Mag 
 external_link: https://medium.com/conjecture-magazine/the-dangers-of-cliodynamics-c48392b4a985
 ---
