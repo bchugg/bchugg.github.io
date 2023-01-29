@@ -86,7 +86,7 @@ To see that this isn't completely hopeless, we'll note that this equation has a 
 
 It's worth highlighting the importance of choosing the left endpoint of $$X_i$$ in Equation $$\eqref{eq:I_simple}$$ over the interval $$W_{i+1}-W_i$$, instead of say the middle point $$(X_{i+1}-X_i)/2$$ (as is done in Stratonovich calculus), or the right endpoint. The choice of left endpoint is suitable for finance: we choose how much stock to buy when we see the price at the beginning of the day. Choosing anything after $$X_i$$ would imply seeing into the future. Also, unlike in traditional calculus, this choice matters (due to, as we'll see, the quadratic variation of $$W$$)! Different choices yield different results for even fairly basic integrands. 
 
-Now we'd like to extend the definition of the integral to general integrands. The proofs are finnicky and not very illuminating unless you're really keen on practicing your dominated and bounded convergence theorems. So suffice it to say that the usual tactic works out: Given a a general process $$X$$ we construct a sequence of simple processes $$X_n$$ which convergence pointwise to $$X$$: $$X_n(t,\omega)\to X(t,\omega)$$. Then we show that $$(X_n(t,\omega)-X(t,\omega))^2\to 0$$ and finally that 
+Now we'd like to extend the definition of the integral to general integrands. The proofs are finnicky and not very illuminating unless you're really keen on practicing your dominated and bounded convergence theorems. So suffice it to say that the usual tactic works out: Given a a general process $$X$$ we construct a sequence of simple processes $$X_n$$ which converge pointwise to $$X$$: $$X_n(t,\omega)\to X(t,\omega)$$. Then we show that $$(X_n(t,\omega)-X(t,\omega))^2\to 0$$ and finally that 
 
 $$\lim_{n\to\infty}\E\int_0^T (X_n(t,\omega)-X(t,\omega))^2\dif t\to0.$$
 
@@ -113,12 +113,12 @@ Typically, $$W$$ is taken to be a [Wiener Process](https://en.wikipedia.org/wiki
 
 - $$B_0=0$$ (we can relax this to any real number but for the Itô integral it's always taken as 0). 
 - $$B_{t+\tau} - B_t$$, $$\tau\geq 0$$ are independent of past values of $$W_s$$, $$s\leq t$$ (independent increments)
-- $$B_{t+\tau}-B_t\sim\mathcal{N}(0,\tau^2)$$, $$\tau\geq 0$$ (increments are normally distributed)
+- $$B_{t+\tau}-B_t\sim\mathcal{N}(0,\tau)$$, $$\tau\geq 0$$ (increments are normally distributed)
 - $$B_t$$ is continuous as a function of $$t$$. 
 
 To get a sense of what this looks like just scroll up and look at the example above again. It looks like that damn stock market trend that you want a try and predict but can't. Super spikey, super random. If you need more than that right now then, sorry, you're going to have to Google it, because we have things to do. [Here](https://studiousguy.com/brownian-motion-examples/) are eight examples of brownian motion in real life (albeit most are two dimensional) - don't have too much fun.
 
-The first thing to note is that $$\E[B_t]=\E[B_t-B_0]=0$$, using that $$B_0=0$$ and that increments are normally distributed. Also, $$\E[(B_{t+\tau}-B_t)^2] = \Var((B_{t+\tau}-B_t)^2) = \tau^2$$ since $$\E[B_{t+\tau}-B_t]^2=0$$. We call this final property _linear variation_ of Brownian motion. 
+The first thing to note is that $$\E[B_t]=\E[B_t-B_0]=0$$, using that $$B_0=0$$ and that increments are normally distributed. Also, $$\E[(B_{t+\tau}-B_t)^2] = \Var((B_{t+\tau}-B_t)^2) = \tau$$ since $$\E[B_{t+\tau}-B_t]^2=0$$. We call this final property _linear variation_ of Brownian motion. 
 
 
 ## 3.1 $$I_T$$ is a Martingale
@@ -135,7 +135,7 @@ $$\E[W_t \vert \F_s] = \E[W_t - W_s + W_s\vert \F_s] = \E[W_t - W_s \vert \F_s] 
 
 Also, Jensen's inequality with $$\varphi:x\mapsto x^2$$ gives 
 
-$$\E(\vert W_t\vert)^2 \leq \E(\vert W_t\vert^2) = \E[(W_t - W_0)^2] =t^2<\infty,$$
+$$\E(\vert W_t\vert)^2 \leq \E(\vert W_t\vert^2) = \E[(W_t - W_0)^2] =t<\infty,$$
 
 so $$\E(\vert W_t\vert)$$ is finite and we see that $$W$$ is a martingale. 
 
