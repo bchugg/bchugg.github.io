@@ -4,16 +4,17 @@ layout: default
 
 <article class="writing">
   <small>
-    <a href="{% link writing.md %}">Back to all writing</a>
+    <a id="back", href="{% link writing.md %}">Back to all writing</a>
   </small>
   <hr>
   {% if page.status == 'unpublished' %}
     <b>Not yet public. In the midst of soliciting feedback. Please do not share.</b>
   {% endif %}
   <p class='title'>{{ page.title }}</p> 
+  <p id="date">{{ page.date | date: '%B %d, %Y'}}</p>
   <br/><br/>
   {{ content }}
   <small>
-    <a href="{% link writing.md %}">Back to all writing</a>
+    <a id="back", href="{% link writing.md %}">Back to all writing</a>
   </small>
 </article>

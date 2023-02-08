@@ -203,6 +203,7 @@ tbody tr:nth-child(odd) th {
   margin-left: 0;
   margin-right: 0; }
   .masthead #name {
+    color: navy;
     font-weight: bold; }
   .masthead a {
     color: gray; }
@@ -612,39 +613,59 @@ pre code {
   padding-left: 10%;
   padding-right: 10%; }
 
-.note {
+.note, .writing {
   color: black;
   text-align: justify; }
-  .note a {
-    color: lightseagreen; }
-  .note .title {
+  .note #back, .writing #back {
+    color: navy; }
+  .note a, .writing a {
+    color: lightslategray; }
+  .note #date, .writing #date {
+    text-align: center;
+    color: gray;
+    font-size: 10pt;
+    padding-top: 10px; }
+  .note #markdown-toc, .writing #markdown-toc {
+    padding-bottom: 20px; }
+    .note #markdown-toc a, .writing #markdown-toc a {
+      color: navy; }
+    .note #markdown-toc li ul, .writing #markdown-toc li ul {
+      padding-bottom: 0;
+      margin-bottom: 0; }
+  .note .title, .writing .title {
     padding-top: 20px;
     font-size: 18pt;
     text-align: center;
     padding-bottom: 0;
     margin-bottom: 0; }
-  .note h1 {
+  .note h1, .writing h1 {
     font-weight: bold;
     font-size: 16pt;
     padding-bottom: 15px;
     padding-top: 20px; }
-  .note h2 {
+  .note h2, .writing h2 {
     font-size: 14pt;
     font-weight: bold;
     padding-top: 16px; }
-  .note h3 {
+  .note h3, .writing h3 {
     font-weight: bold; }
-  .note img {
-    padding-top: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%; }
-  .note .caption {
+  .note .caption, .writing .caption {
     font-size: 10pt;
     color: gray;
     margin-left: 20px;
     margin-right: 20px; }
+
+.note img {
+  padding-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%; }
+
+.writing img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%; }
 
 .notes-table {
   border: 0px; }
@@ -672,44 +693,6 @@ pre code {
       padding-top: 2px;
       float: right;
       text-align: right; }
-
-.writing {
-  color: black;
-  text-align: justify; }
-  .writing a {
-    color: lightseagreen; }
-  .writing .title {
-    padding-top: 20px;
-    font-size: 18pt;
-    text-align: center;
-    padding-bottom: 0;
-    margin-bottom: 0; }
-  .writing h1 {
-    font-weight: bold;
-    font-size: 16pt;
-    padding-bottom: 15px;
-    padding-top: 20px; }
-  .writing h2 {
-    font-size: 14pt;
-    font-weight: bold;
-    padding-top: 16px; }
-  .writing h3 {
-    font-weight: bold; }
-  .writing img {
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%; }
-  .writing .caption {
-    font-size: 10pt;
-    color: gray;
-    margin-left: 20px;
-    margin-right: 20px; }
-
-#markdown-toc {
-  padding-bottom: 20px; }
-  #markdown-toc li ul {
-    padding-bottom: 0;
-    margin-bottom: 0; }
 
 .papers h1 {
   font-weight: bold;

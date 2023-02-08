@@ -4,7 +4,7 @@ title: "Ben Chugg"
 image: /assets/images/heads.jpeg
 ---
 
-<img id='headerim' src="/assets/images/lawme.jpg">
+<img id='headerim' src="/assets/images/ben_max.jpeg">
 
 I'm a first year PhD student in the [machine learning department](https://www.ml.cmu.edu/) at CMU where I'm advised by [Aaditya Ramdas](https://www.stat.cmu.edu/~aramdas/). 
 
@@ -23,9 +23,9 @@ You can contact me at benchugg $$\alpha\tau$$ cmu.edu. In accordance with the bi
 You can find my papers [here]({% link papers.md %}) and some informal research notes [here]({% link research_notes.md %}). 
 
 I like questions at the intersection of statistics and machine learning. 
-Currently I'm most interested in anytime-valid guarantees for sequential problems (e.g., online learning, bandits). 
+Currently I'm most excited about sequential analysis, game-theoretic statistics, and anytime-valid learning and inference.    
 
-Previously, I worked on problems in graph theory, combinatorial optimization, and stochastic reaction networks. Aside from theory, I've also spent some time doing applied machine learning, mostly in the realm of law and policy. 
+In the past, I worked on problems in graph theory, combinatorial optimization, and stochastic reaction networks. Aside from theory, I've also spent some time doing applied machine learning, mostly in the realm of law and policy. 
 
 ---
 

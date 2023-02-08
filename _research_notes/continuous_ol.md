@@ -1,7 +1,7 @@
 ---
 layout: note 
 date: "2023-01-29" 
-title: "Continuous online learning"
+title: "Continuous Online Learning"
 description: "The continuous extension of the learning with experts' advice problem"
 status: published
 ---
@@ -25,18 +25,18 @@ $$
 
 Nick Harvey's group at UBC has seemingly done the impossible, which is to apply stochastic calculus to something besides finance. This post is about a continuous time version of the prediction with experts' advice problem, following [this paper](https://arxiv.org/pdf/2206.00236.pdf). 
 
-Before we jump to the continuous version, let's discuss the discrete time version of the experts problem. Suppose we have $$n$$ experts. 
+Before we jump to the continuous version, let's discuss the discrete time version of the problem. Suppose we have $$n$$ experts. 
 
 For $$t=1,2,\dots,T$$: 
-- The player chooses a strategy $$p_t \in \Delta_n := \{p\in[0,1]^n: \vert\vert p\vert\vert_1=1\}.$$
-- An adversary chooses $$g_t \in [-1,1]^n$$, i.e., a *gain* for each expert. 
-- The player receives the reward $$r_t = \la p_t,g_t\ra$$. 
+- The player chooses a strategy $$p(t) \in \Delta_n := \{p\in[0,1]^n: \vert\vert p\vert\vert_1=1\}.$$
+- An adversary chooses $$g(t) \in [-1,1]^n$$, i.e., a *gain* for each expert. 
+- The player receives the reward $$r(t) = \la p(t),g(t)\ra$$. 
 
 This may look slightly different than what you're used to. Online learning with experts is often framed in terms of losses instead of gains, but this is an equivalent formulation and is more amenable to a continuous time extension.  
 
 Typically we're interested in the _regret_ of the player, i.e., the difference between the best expert in hindsight and the player's reward. Formally, the regret at time $$t$$ is, 
 
-$$R(t) = \max_{j\in[n]}\sum_{i=1}^t g_i(j) - \sum_{i=1}^t r_i.$$
+$$R(t) = \max_{i\in[n]}\sum_{s=1}^t g_i(s) - \sum_{s=1}^t r(s).$$
 
 If the time horizon $$T$$ is known in advance, we are in the _fixed-time_ (or fixed _horizon_) setting. If not, we are in the _anytime_ setting. The anytime setting is harder than the fixed-time setting, as we want regret guarantees that hold for all $$t$$ simultaneously. In the fixed-time setting we know which $$t$$ we're optimizing for which tends to make things easier. How *much* easier is actually an open question: Is the anytime-version fundamentally harder than the fixed-time setting? Currently there is a difference of $$\sqrt{2}$$ between the best fixed-time regret (which we know to be optimal), and the best anytime regret (which we don't). 
 
@@ -47,8 +47,8 @@ For gains in $$[-1,1]$$, the state of the literature looks like this:
 | | Discrete time  | Continuous time | 
 | ----:  |  ----  | -- | 
 | Fixed-horizon regret | $$\sqrt{2T\log n}$$ (MWU, Vovk 1990). Optimal | $$\sqrt{2T\log n}$$ (Harvey et al. 2022)| 
-| Anytime regret | $$2\sqrt{T\log n}$$ (MWU, Bubeck et al. 2011) | $$2\sqrt{T \log n}$$ (Harvey et al. 2022)| 
-| Fixed-horizon $$\eps$$-quantile regret | $$2\sqrt{2T\log(1/\eps)}$$ (Orabona and Pal, 2016 & Harvey et al. 2022) | $$\leq 2\sqrt{2 t\log(1/\eps)}$$ (Harvey et al. 2022) |
+| Anytime regret | $$2\sqrt{t\log n}$$ (MWU, Bubeck et al. 2011) | $$2\sqrt{t \log n}$$ (Harvey et al. 2022)| 
+| Fixed-horizon $$\eps$$-quantile regret | $$2\sqrt{2T\log(1/\eps)}$$ (Orabona and Pal, 2016 & Harvey et al. 2022) | $$\leq 2\sqrt{2 T\log(1/\eps)}$$ (Harvey et al. 2022) |
 | Anytime $$\eps$$-quantile regret | $$\leq 2\sqrt{2 t\log(1/\eps)}$$ (Harvey et al. 2022) |  $$\leq 2\sqrt{2 t\log(1/\eps)}$$ (Harvey et al. 2022) |
 
 
@@ -58,7 +58,7 @@ We won't focus on the discretization step here, only the setup and algorithm for
 
 To adapt this problem to the continuous setting, we need continuous notions of a strategy, the adversarial gain, and the reward. To do so, we'll use stochastic calculus. 
 
-The continuous notion of a strategy is easy enough. It will simply be a continuous time predictable stochastic process $$(p_t)_{t\in [0,\infty]}$$. Technically we'll need to assume that the process is left-continuous. 
+The continuous notion of a strategy is easy enough. It will simply be a continuous time predictable stochastic process $$(p_t)_{t\in [0,\infty)}$$. Technically we'll need to assume that the process is left-continuous. 
 
 We'll model the gain as a stochastic differential equation. For the moment, suppose there is just one expert. Her gain $$G$$ will obey the SDE 
 
@@ -89,7 +89,7 @@ For $$n$$ experts, we define the gain process of the $$i$$-th expert as
 
 $$ \d G_i(t) = \sum_{j=1}^n w_j^{(i)}(t) \d B_j(t).$$
 
-The sum across all experts means we're allowing correlation between the gains of each expert. Here, $$w^{(i)}$$ is some stochastic process in $$\R^n$$ (it's allowed to be negative) such that $$\sum_j w^{(i)}(t)=1$$. That is, the gain of expert $$i$$ is a convex combination of the processes of all experts. As above, this equation is shorthand for the Itô integral
+The sum across all experts means we're allowing correlation between the gains of each expert. Here, $$w^{(i)}$$ is some stochastic process in $$\R^n$$ (it's allowed to be negative) such that $$\vert\vert w^{(i)}(t)\vert\vert_2=1$$. That is, the gain of expert $$i$$ is a normalized combination of the processes of all experts. As above, this equation is shorthand for the Itô integral
 
 $$G_i(t) - G_i(s) = \sum_{j=1}^n \int_s^t w_j^{(i)}(\tau)\d B_j(\tau).$$
 
@@ -119,9 +119,9 @@ $$ \reg(t) = \max_i G_i(t) - A(t).$$
 
 An optimal algorithm in the discrete, fixed-time setting is the multiplicative weights update algorithm, originally proposed by Vovk in 1990. It has regret at most $$\sqrt{2 T \log n}$$, which was shown to be (asymptotically) optimal in 1997 by Cesa-Bianchi et al. 
 
-The idea behind MWU is to draw from the pool of experts randomly, where each expert is assigned weighted proportional to its cumulative gain until that point. More precisely, expert $$i$$ is assigned weight proportional to $$\exp(\eta_t G_i(t))$$, where $$\eta_t$$ is some hyperparameter.  The continuous setting will be no different. We want the strategy $$(p_t)$$ to obey 
+The idea behind MWU is to draw from the pool of experts randomly, where each expert is assigned weighted proportional to its cumulative gain until that point. More precisely, expert $$i$$ is assigned weight proportional to $$\exp(\eta_t G_i(t))$$, where $$\eta_t$$ is some hyperparameter.  The continuous setting will be no different. We want the strategy $$p(t)$$ to obey 
 
-$$(p_t)_i = \frac{\exp(\eta_t G_i(t))}{\sum_j \exp(\eta_t G_j(t))}.$$
+$$p_i(t) = \frac{\exp(\eta_t G_i(t))}{\sum_j \exp(\eta_t G_j(t))}.$$
 
 In order to analyze the regret of this approach, we need a way to calculate $$A(t)$$. A natural tool for analyzing Itô integrals like the one above is, of course, Itô's lemma. I [discussed]({% link _research_notes/sde_ito_lemma.md %}) the one-dimensional version of this lemma previously (when the differential was Brownian motion), but we'll need the more general version for our purposes. The general version states for appropriate stochastic processes $$X(t)\in\R^n$$, (technically, $$X(t)$$ must be a continuous semimartingale), and a smooth function $$F:\R\times \R^n\to\R$$, we have 
 
@@ -181,8 +181,8 @@ by monotonicity of the log. This implies that $$\max_i G_i(t) - F(t,G(t))\leq 0$
 
 $$\begin{align}
 \reg(T) &=  \max_i G_i(T) - A(T) \\
-&\leq F(0,G(0)) + \int_0^T \bigg\{\partial_t F(t,G(t)) - \frac{1}{2}\sum_{i} \partial_{g_i,g_i} F(t,G(t))W_{i,j}(t)\bigg\}\d t.
+&\leq F(0,G(0)) + \int_0^T \bigg\{\partial_t F(t,G(t)) + \frac{1}{2}\sum_{i} \partial_{g_i,g_i} F(t,G(t))W_{i,j}(t)\bigg\}\d t.
 \end{align}
 $$
 
-From here, the game is to bound the terms $$\partial_t F(t,G(t))$$ and $$\partial_{g_i,g_i} F(t,G(t))W_{i,j}(t)$$. This is mostly just calculation so we'll skip the details. The result is that if we choose $$\eta_t = \sqrt{\log (n)/2t}$$, then we get regret $$\leq 2\sqrt{t \log(n)}$$. If the time horizon $$T$$ is known beforehand and we set $$\eta_t = \sqrt{\log (n) / 2T}$$, then we get regret $$\sqrt{2t\log (n)}$$.  Note that these are the same rates as in the discrete setting. The paper then goes on to show how you can discretize the algorithm (note that this is not trivial since the strategy above depends on a continuous gain process) at no loss. All in all, this as an exceptionally cool application of stochastic calculus, and I'll be curious to see whether more people start to analyze continuous versions of various statistical problems.  
+From here, the game is to bound the terms $$\partial_t F(t,G(t))$$ and $$\partial_{g_i,g_i} F(t,G(t))W_{i,j}(t)$$. This is mostly just calculation so we'll skip the details. The result is that if we choose $$\eta_t = \sqrt{\log (n)/2t}$$, then we get regret $$\leq 2\sqrt{t \log(n)}$$. If the time horizon $$T$$ is known beforehand and we set $$\eta_t = \sqrt{\log (n) / 2T}$$, then we get regret $$\sqrt{2t\log (n)}$$.  These are the same rates as the best known bounds in the discrete setting. The paper then goes on to show how you can discretize the algorithm (note that this is not trivial since the strategy above depends on a continuous gain process) at no loss. All in all, this as an exceptionally cool application of stochastic calculus, and I'll be curious to see whether more people start to analyze continuous versions of various statistical problems.  
