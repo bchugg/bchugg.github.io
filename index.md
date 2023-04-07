@@ -30,7 +30,7 @@ In the past, I worked on problems in graph theory, combinatorial optimization, a
 ---
 
 # increments
-The podcast is mostly an attempt to break out of the academic echo chamber and talk about things other than limit theorems and algorithmic performance. We have a few beers and chat about anything from <a href="https://www.incrementspodcast.com/26" rel='nofollow'>moral philosophy</a>  and <a href="https://www.incrementspodcast.com/22" rel='nofollow'>thought experiments</a>, to the <a href="https://www.incrementspodcast.com/28" rel='nofollow'>philosophy of logic</a>, <a href="https://www.incrementspodcast.com/32" rel='nofollow'>climate change</a>, <a href="https://www.incrementspodcast.com/23" rel='nofollow'>free will</a>, <a href="https://www.incrementspodcast.com/24" rel='nofollow'>dualism</a>, and <a href="https://www.incrementspodcast.com/15" rel='nofollow'>social media</a>.  
+The podcast is mostly an attempt to break out of the academic echo chamber and talk about things other than limit theorems and algorithmic performance. We have a few beers and chat about anything from <a href="https://www.incrementspodcast.com/26" rel='nofollow'>moral philosophy</a>  and <a href="https://www.incrementspodcast.com/22" rel='nofollow'>thought experiments</a>, to the <a href="https://www.incrementspodcast.com/28" rel='nofollow'>philosophy of logic</a>, <a href="https://www.incrementspodcast.com/37" rel='nofollow'>education</a>, <a href="https://www.incrementspodcast.com/23" rel='nofollow'>free will</a>, <a href="https://www.incrementspodcast.com/24" rel='nofollow'>dualism</a>, and <a href="https://www.incrementspodcast.com/15" rel='nofollow'>social media</a>.  
 We also have an ongoing series on <em>Conjectures and Refutations</em> by Karl Popper.
 
 
