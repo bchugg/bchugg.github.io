@@ -4,7 +4,7 @@ title: "There are no Ramanujans in Abstract Expressionism"
 description: "When there are no objective metrics of talent in a domain, success is determined by social status"
 date: "2023-04-27" 
 status: published
-image: /assets/images/orange-and-yellow.jpeg
+image: /assets/writing_images/orange-and-yellow.jpeg
 ---
 
 In _Knowledge and Decisions_, Thomas Sowell discusses knowledge authentication processes: How do new ideas become certified as bona fide knowledge in different domains? As Sowell likes to point out, processes can vary tremendously between areas:
