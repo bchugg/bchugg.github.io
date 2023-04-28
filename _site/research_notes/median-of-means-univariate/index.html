@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head prefix="og: http://ogp.me/ns#; dc: http://purl.org/dc/terms/#">
+  
+  
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="http://localhost:4000/research_notes/median-of-means-univariate/" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PN2H9928PZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PN2H9928PZ');
+  </script>
+
+  <!-- Basic meta elements -->
+  <meta charset="utf-8" />
+
+  <!-- Enable responsiveness on mobile devices -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+
+  <!-- Mathjax Support -->
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <title>
+    
+     Median-of-Means for Univariate Distributions
+    
+  </title>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.9.1" />
+<meta property="og:title" content="Median-of-Means for Univariate Distributions" />
+<meta name="author" content="Ben Chugg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Analysis of the median-of-means estimator in one-dimension" />
+<meta property="og:description" content="Analysis of the median-of-means estimator in one-dimension" />
+<link rel="canonical" href="http://localhost:4000/research_notes/median-of-means-univariate/" />
+<meta property="og:url" content="http://localhost:4000/research_notes/median-of-means-univariate/" />
+<meta property="og:site_name" content="benny" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-04-25T00:00:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Median-of-Means for Univariate Distributions" />
+<meta name="twitter:site" content="@bennychugg" />
+<meta name="twitter:creator" content="@Ben Chugg" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"dateModified":"2023-04-25T00:00:00-04:00","datePublished":"2023-04-25T00:00:00-04:00","description":"Analysis of the median-of-means estimator in one-dimension","headline":"Median-of-Means for Univariate Distributions","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/research_notes/median-of-means-univariate/"},"url":"http://localhost:4000/research_notes/median-of-means-univariate/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- Dublin Core metadata for Zotero -->
+  <meta property="dc:title" content="Median-of-Means for Univariate Distributions" />
+  <meta property="dc:creator" content="Ben Chugg" />
+  <meta property="dc:identifier" content="http://localhost:4000/research_notes/median-of-means-univariate/" />
+  
+  <meta property="dc:date" content="2023-04-25 00:00:00 -0400" />
+  
+  <meta property="dc:source" content="benny" />
+
+  <!-- Open Graph and Twitter metadata -->
+  <meta property="og:title" content="Median-of-Means for Univariate Distributions" />
+  <meta property="og:url" content="http://localhost:4000/research_notes/median-of-means-univariate/" />
+  
+    <meta property="og:image" content="http://localhost:4000/assets/images/heads.jpeg"/>
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/heads.jpeg" />
+  
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:domain" value="benchugg.com" />
+  <meta name="twitter:title" value="Median-of-Means for Univariate Distributions" />
+  <meta name="twitter:url" value="http://localhost:4000" />
+  
+  <!-- Description is dependent on page type  -->
+  
+    <meta property="og:description" content="Analysis of the median-of-means estimator in one-dimension">
+    <meta name="twitter:description" value="Analysis of the median-of-means estimator in one-dimension" />
+    <meta property="og:type" content="article" />
+  
+  
+
+  <!-- CSS link -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="167x167" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="/assets/favicon.ico">
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="114×114" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="72×72" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” href="/assets/favicon.ico" />
+  <link rel=”icon” href="/assets/favicon.ico", sizes="32x32"/>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml" />
+
+  
+</head>
+
+
+  <body class="theme-base-">
+
+
+    <!--
+      Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS
+      collisions with our real content.
+    -->
+    <div class="wrap">
+      <header class="masthead">
+        <div class="container">
+          <a id='name' href="/">Ben Chugg</a>
+          <div class="span">
+            <a href="/papers/">Papers</a> 
+            <a href="/writing/">Writing</a>
+            <a href="/research_notes/">Notes</a>
+            <a href="http://incrementspodcast.com">Podcast</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="container content" id="main">
+        <article class="note">
+  <small>
+    <a id="back", href="/research_notes/">Back to all notes</a>
+  </small>
+  <hr>
+  
+  <p class='title'>Median-of-Means for Univariate Distributions</p> 
+  <p id="date">April 25, 2023</p>
+  \[\newcommand{\ov}[1]{\overline{#1}}
+\newcommand{\X}{\mathcal{X}}
+\DeclareMathOperator*{\argmin}{\text{argmin}}
+\newcommand{\rad}{\text{rad}}
+\renewcommand{\Re}{\mathbb{R}}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\eps}{\epsilon}
+\renewcommand{\subset}{\subseteq}
+\renewcommand{\Pr}{\mathbb{P}}
+\newcommand{\bin}{\text{Bin}}
+\newcommand{\Var}{\mathbb{V}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\hmu}{\widehat{\mu}}
+\newcommand{\mom}{\text{MoM}}
+\newcommand{\median}{\text{median}}
+\newcommand{\spn}{\text{span}}\]
+
+<ul id="markdown-toc">
+  <li><a href="#1-problems-with-the-empirical-mean" id="markdown-toc-1-problems-with-the-empirical-mean">1. Problems with the empirical mean</a></li>
+  <li><a href="#2-mom-with-finite-variance" id="markdown-toc-2-mom-with-finite-variance">2. MoM with finite variance</a></li>
+  <li><a href="#3-mom-with-infinite-variance" id="markdown-toc-3-mom-with-infinite-variance">3. MoM with infinite variance</a></li>
+  <li><a href="#4-resources" id="markdown-toc-4-resources">4. Resources</a></li>
+</ul>
+
+<p>Consider \(n\) iid random variables \(X_1,\dots,X_n\) drawn from some distribution \(P\) with mean \(\mu=\E[X_1]\). We want to generate an estimate \(\hmu=\hmu(X_1,\dots,X_n)\) which is not too far from \(\mu\) with high probability (as opposed to has low expected MSE, say). If \(P\) is sufficiently light-tailed, the empirical mean is an optimal estimator. But its performance suffers when \(P\) is heavy-tailed. Here we show that the <em>Median-of-Means</em> (MoM) estimator achieves better performance on such distributions.</p>
+
+<h1 id="1-problems-with-the-empirical-mean">1. Problems with the empirical mean</h1>
+
+<p>A natural choice of estimator is the empirical mean  \(\overline{X} = \frac{1}{n}\sum_i X_i\). And indeed, this works nicely for sufficiently well-behaved distributions \(P\). In particular, suppose that \(P\) is \(\sigma\)-<em>sub-Gaussian</em>, i.e., \(\E_P e^{\lambda(X_i-\mu)}\leq e^{\lambda^2\sigma^2/2}\) for all \(\lambda\in\Re\). 
+The Chernoff bound implies that</p>
+
+\[\begin{equation}
+\label{eq:chernoff}
+    \Pr\bigg(|\ov{X} - \mu\vert \leq \sigma \sqrt{\frac{2\log (2/\delta)}{n}}\bigg)\geq 1-\delta. \tag{1}
+\end{equation}\]
+
+<p>However, suppose only the variance \(\sigma^2=\Var(X_1)\) exists, but no higher moments. In such a case we cannot deploy the Chernoff bound. Instead, Chebyshev’s inequality tells us that, with probability at least \(1-\delta\),</p>
+
+\[\begin{equation}
+\label{eq:cheby-bound}
+    |\ov{X} -\mu\vert \leq \sigma \frac{\sqrt{1/\delta}}{\sqrt{n}}. \tag{2}
+\end{equation}\]
+
+<p>This bound has a much looser dependence on \(\delta\) than \eqref{eq:chernoff}. Unfortunately, rather than simply a limitation of the analysis, this dependence is inherent to such heavy-tailed distributions. <a rel="nofollow noopener noreferrer" href="https://arxiv.org/abs/1009.2048">Catoni</a> gives an example demonstrating that \eqref{eq:cheby-bound} is essentially tight among distributions with only finite variance.</p>
+
+<p>This motivates the search for a new estimator. In particular, we would like an estimator which achieves the sub-Gaussian bound of \eqref{eq:chernoff} but without making light-tailed assumptions on the distribution. Let’s say that an estimator \(\hmu=\hmu(X_1,\dots,X_n)\) is \(L\)-sub-Gaussian if, for all \(\delta\in(0,1)\), with probability at least \(1-\delta\),</p>
+
+\[\begin{equation}
+    |\hmu - \mu\vert \lesssim L \sqrt{\frac{\log(1/\delta)}{n}}. 
+\end{equation}\]
+
+<p>We emphasize that we are searching for <em>non-asymptotic</em> bounds. That is, we want bounds to hold for all sample sizes \(n\), not only in the limit as \(n\to\infty\). Such asymptotic bounds are easier to generate due to the central limit theorem (and require fewer assumptions on \(P\)), but may fail at finite (especially small) sample sizes.</p>
+
+<h1 id="2-mom-with-finite-variance">2. MoM with finite variance</h1>
+
+<p>It turns out that there is a simple estimator that achieves precisely what we want (and more). The median-of-means estimator proceeds as follows. We split the data in \(k\) groups. To keep the arithmetic easy, we will assume that \(n\) is multiple of \(k\). Formally, let \(G_1,\dots,G_k\) be any partition \([n]\) such that \(|G_i|=n/k\), i.e., \(\cup G_i=[n]\) and \(G_i\cap G_j=\emptyset\) for all distinct \(i\) and \(j\). 
+Let</p>
+
+\[\begin{equation}
+    S_g = \frac{1}{\vert G_g\vert }\sum_{j\in G_g}X_j,
+\end{equation}\]
+
+<p>denote the sample mean of group \(g\). The MoM estimator is</p>
+
+\[\begin{equation}
+    \hmu^\mom_n = \median(S_1,\dots,S_k).
+\end{equation}\]
+
+<p>Suppose \(\delta\in(0,1)\) and \(k=\lceil 8\log(1/\delta)\rceil\), then \(\hmu^\mom_n\) satisfies</p>
+
+\[\begin{equation}
+    |\hmu^\mom_n - \mu| \leq \sigma \bigg(\frac{32\log(1/\delta)}{n}\bigg)^{1/2}.
+\end{equation}\]
+
+<p>with probability \(1-\delta\), where \(\Var(X_1)\leq \sigma^2\). The intuition is relatively  straightforward. The sample mean for each group is an unbiased estimator of the true mean \(\mu\). Chebyshev’s inequality implies that, with constant probability, the error \(\vert S_i-\mu\vert\) is on the order \(\sigma/\sqrt{n/k}\) with constant probability. Also, each \(S_i\) is independent of the others. Thus, for \(\hmu_n^\mom\) to be far for \(\mu\) it would require that many independent Bernoulli events are all far from their mean, which we can bound via exponential tail inequalities. Thus, even though we don’t assume anything higher than a second moment for \(P\), we can employ powerful tail bounds on the behavior of the group means.</p>
+
+<p>As for the analysis, let \(m=n/k\), so each group \(S_i\) has \(m\) elements (by assumption, \(m\) is an integer). 
+Since \(\E[S_i]=\mu\), Chebyshev’s inequality implies</p>
+
+\[\begin{align*}
+    \Pr(\vert S_i - \mu\vert \geq 2\sigma/\sqrt{m}) = \Pr(\vert S_i - \mu\vert^2 \geq 4\sigma^2/m) \leq \frac{m\Var(S_i)}{4\sigma^2} \leq 1/4,
+\end{align*}\]
+
+<p>since \(\Var(S_i) = \frac{1}{m^2}\sum_{i\in S_g} \Var(X_i) \leq \sigma^2/m\)  by independence. Let \(E_i\) denote the event that \(|S_i-\mu\vert \geq 2\sigma/\sqrt{m}\). Put \(S=\sum_i E_i\), so \(S\) counts the number of groups whose average exceeds the mean by \(2\sigma/\sqrt{m}\). The probability that \(S\geq k/2\) is the probability that at least \(k/2\) independent events, each with probability at most 1/4, occur. By definition of a binomial distribution, this is upper bounded by \(\Pr(B\geq k/2)\) for \(B\sim\text{Bin}(k,1/4)\). 
+That is,</p>
+
+\[\Pr(S\geq k/2) \leq \Pr_{B\sim \bin(k,1/4)}(B\geq k/2).\]
+
+<p>By definition of the median, for \(\hmu^\mom_n\) to exceed \(\mu\) by \(2\sigma/\sqrt{m}\), \(k/2\) of the groups must all exceed \(\mu\) by that amount. Thus,</p>
+
+\[\begin{align*}
+    \Pr(|\hmu^\mom_n-\mu\vert\geq 2\sigma/\sqrt{m}) &amp;= \Pr(S\geq k/2)\leq \Pr_{B\sim \bin(k,1/4)}(B\geq k/2)\\&amp;=  \Pr(B-k/4\geq k/4)\leq e^{-\frac{2(k/4)^2}{k}} = e^{-k/8},  
+\end{align*}\]
+
+<p>where the final inequality follows from Hoeffding’s lemma. With \(k\geq  8\log(1/\delta)\), we thus have</p>
+
+\[\Pr(|\hmu^\mom_n-\mu\vert\geq 4\sigma\sqrt{2\log(1/\delta)/n}) \leq \Pr(B\geq k/2) \leq  e^{-k/8} \leq \delta,\]
+
+<p>as desired.</p>
+
+<h1 id="3-mom-with-infinite-variance">3. MoM with infinite variance</h1>
+
+<p>It’s possible to weaken the requirement that \(\Var(X_1)\) is finite. Suppose only that the \(1-\eps\) moment exists, for some \(\eps\in(0,1)\). As before, let \(k=\lceil 8\log(1/\delta)\rceil\). Then, with probability at least \(1-\delta\),</p>
+
+\[\begin{equation}
+    \Pr\bigg(|\hmu_n^\mom - \mu\vert&gt; (12v)^{\frac{1}{1+\eps}} \bigg(\frac{8\log(1/\delta))}{n}\bigg)^{\frac{\eps}{\eps+1}}\bigg) \leq \delta. \tag{3}
+\end{equation}\]
+
+<p>Proving this requires a little more machinery than the finite variance case. 
+Since we can no longer rely on Chebyshev’s inequality, we need a different way to analyze the behavior of the sample means. The following is a rather technical result proved by Sébastien Bubeck and others <a rel="nofollow noopener noreferrer" href="https://arxiv.org/abs/1209.1727">here</a>.</p>
+
+<p>Let \(\hmu\) be the empirical mean. Then, for all \(\delta\in(0,1)\), with probability at least \(1-\delta\),</p>
+
+\[\begin{equation}
+\label{eq:partial_moment_bound}
+\Pr(|\hmu -\mu\vert&gt;\delta) \leq \bigg(\frac{3v}{n^\eps \delta}\bigg)^{\frac{1}{1+\eps}}. \tag{4}
+\end{equation}\]
+
+<p>To see this, fix any constants \(\alpha,\beta&gt;0\). Observe that</p>
+
+\[\begin{equation}
+\label{eq:lem_moment_bound1}
+    \bigg\{|\hmu - \mu\vert &gt; \beta\bigg\} \subset \bigg\{\exists i: \vert X_i - \mu\vert &gt; \alpha \bigg\} \cup\bigg\{ \frac{1}{n}\sum_{i: \vert X_i-\mu\vert\leq\alpha} \vert X_i-\mu\vert &gt; \beta\bigg\}. \tag{5}
+\end{equation}\]
+
+<p>This is easily seen by noticing that if the first event on the right hand side does not hold, then the second event on the same side is precisely the event \(\{\hmu - \mu&gt;\beta\}\). The union bound gives</p>
+
+\[\begin{align}
+    \Pr(\exists i: \vert X_i-\mu\vert&gt;\alpha) \leq n \Pr(\vert X - \mu\vert&gt;\alpha) = n \Pr(\vert X - \mu\vert^{1+\eps}&gt;\alpha^{1+\eps}) \leq \frac{n v}{\alpha^{1+\eps}}. \label{eq:lem_moment_bound2} \tag{6}
+\end{align}\]
+
+<p>As for the second term in \eqref{eq:lem_moment_bound1}, let \(E_i = \{\vert X_i-\mu\vert\leq \alpha\}\). Then, by Chebyshev,</p>
+
+\[\begin{align*}
+    &amp;\quad\Pr\bigg(\frac{1}{n}\sum_i \vert X_i-\mu\vert \ind_{E_i} &gt;\beta\bigg) \\
+    &amp;= \frac{1}{n^2\beta^2}\E\bigg(\sum_i \vert X_i-\mu\vert\ind_{E_i}\bigg)^2 \\ 
+    &amp;= \frac{1}{n^2\beta^2}\bigg((n^2-n)\E[(X_1-\mu)\ind_{E_1}]^2 + n\E[(X_1-\mu)^2 \ind_{E_1}^2]\bigg) \\ 
+    &amp;\leq \frac{1}{\beta^2}\E[(X_1-\mu)\ind_{E_1}]^2 + \frac{1}{n\beta^2}\E[(X_1-\mu)^2\ind_{E_1}].
+\end{align*}\]
+
+<p>Note that \(E_1 = \{\vert X_1-\mu\vert\leq \alpha\} = \{\vert X_1-\mu\vert^{1-\eps}\leq \alpha^{1-\eps}\}\), so</p>
+
+\[\begin{align*}
+    \E[(X_1-\mu)^2\ind_{E_1}] = \E[(X_1-\mu)^{1+\eps} (X_1-\mu)^{1-\eps}\ind_{E_1}] \leq v \alpha^{1-\eps}. 
+\end{align*}\]
+
+<p>Further, by employing Hölder’s inequality with \(p = 1+\eps\) and \(q = 1 + 1/\eps\) (it’s easy to check that \(1/p + 1/q =1\)), we obtain</p>
+
+\[\begin{align*}
+    \E[(X_1-\mu)\ind_{E_1}]^2 &amp;\leq \E[(X_1-\mu)^p]^{2/p} \E[\ind_{E_1}^q]^{2/q} \\
+    &amp;\leq v^{\frac{2}{1+\eps}} \Pr(E_1)^{2/q} \leq v^{\frac{2}{1+\eps}} \bigg(\frac{v}{\alpha^{1+\eps}}\bigg)^{2/q} = v^2 \alpha^{-2\eps},  
+\end{align*}\]
+
+<p>where we’ve bounded \(\Pr(E_1)\) the same way as above. Thus, we conclude that</p>
+
+\[\begin{equation}
+\label{eq:lem_moment_bound3}
+    \Pr\bigg(\frac{1}{n}\sum_i \vert X_i-\mu\vert \ind_{E_i} &gt;\beta\bigg) \leq \frac{v^2}{\beta^2 \alpha^{2\eps}}  + \frac{v\alpha^{1-\eps}}{n\beta^2}.\tag{7}
+\end{equation}\]
+
+<p>Combining \eqref{eq:lem_moment_bound1}, \eqref{eq:lem_moment_bound2}, and \eqref{eq:lem_moment_bound3} and setting \(\alpha=n\beta\) gives</p>
+
+\[\Pr(\vert \hmu - \mu\vert&gt;\beta)\leq \frac{nv}{\alpha^{1+\eps}} + \frac{v^2}{\beta^2 \alpha^{2\eps}}  + \frac{v\alpha^{1-\eps}}{n\beta^2} = \frac{2v}{n^\eps \beta^{1+\eps}} + \bigg(\frac{v}{n^\eps \beta^{1+\eps}}\bigg)^2.\]
+
+<p>Set \(b = \frac{v}{n^\eps \beta^{1+\eps}}\). If \(b&gt;1\), then clearly \(\Pr(\vert\hmu -\mu\vert&gt;\beta)\leq 3b\). If \(b&lt;1\), then \(b^2&lt;b\) hence \(\Pr(\vert\hmu-\mu\vert&gt;\beta)\leq 3b\). Therefore, in either case we have \(\Pr(\vert\hmu-\mu\vert&gt;\beta)\leq 3b\). Setting \(b=\delta\) and solving for \(\beta\) gives the desired result.</p>
+
+<p>Now we can return to the analysis of the MoM estimator. The proof is similar to the finite variance case but we employ \eqref{eq:partial_moment_bound} to analyze the sample means in each group. For \(i\in[k]\), let \(E_i = \{ \vert\hmu - \mu\vert\geq \eta\}\) and \(S = \sum_i E_i\). \eqref{eq:partial_moment_bound} implies that \(E_i\) is Bernoulli with parameter bounded by \((3v m^{-\eps}\eta^{-1})^{(1+\eps)^{-1}}\), where \(m=n/k\) is the number of points in each bin. Setting this equal to \(1/4\) and solving for \(\eta\) gives</p>
+
+\[\eta = \bigg(\frac{12v}{m^\eps}\bigg)^{\frac{1}{1+\eps}} = \bigg(\frac{12vk^\eps}{n^\eps}\bigg)^{\frac{1}{1+\eps}} \geq (12v)^{\frac{1}{1+\eps}} \bigg(\frac{8\log(1/\delta))}{n}\bigg)^{\frac{\eps}{\eps+1}}.\]
+
+<p>Therefore, following precisely the same logic as above, we have</p>
+
+\[\begin{align*}
+    \Pr(\vert\hmu_n^\mom - \mu\vert&gt;\eta)\leq \Pr_{B\sim \bin(k,1/4)}(B\geq k/2) \leq e^{-k/8}, 
+\end{align*}\]
+
+<p>completing the argument.</p>
+
+<h1 id="4-resources">4. Resources</h1>
+<ul>
+  <li><a rel="nofollow noopener noreferrer" href="https://arxiv.org/abs/1209.1727">Bandits with Heavy Tail</a>, Bubeck, Cesa-Bianchi, Lugosi</li>
+  <li><a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/1906.04280.pdf">Mean estimation and regression under
+heavy-tailed distributions—a survey</a>, Lugosi and Mendelson</li>
+</ul>
+
+  <small>
+    <a link="back", href="/research_notes/">Back to all notes</a>
+  </small>
+</article>
+ <!-- "> -->
+      </main>
+
+      <!-- Footer  -->
+      <div class="container" id="footer">
+        <hr>
+        <div class='container links'>
+          <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github.png"></a>
+          <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads.png"></a>
+          <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter.png"></a>
+        </div>
+      
+        <div class='copyright'>
+          <small>&#169; 2023 Ben Chugg</small>
+        </div>
+      
+      </div>
+    </div>
+
+  </body>
+</html> 

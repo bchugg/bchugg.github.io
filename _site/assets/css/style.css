@@ -665,7 +665,7 @@ pre code {
 .writing img {
   margin-left: auto;
   margin-right: auto;
-  width: 50%; }
+  width: auto; }
 
 .notes-table {
   border: 0px; }
@@ -707,7 +707,9 @@ pre code {
 .papers .pubinfo {
   font-size: 12pt; }
 .papers #highlight {
-  color: black; }
+  color: black;
+  font-weight: bold;
+  font-size: 10pt; }
 
 #footer {
   clear: both;
