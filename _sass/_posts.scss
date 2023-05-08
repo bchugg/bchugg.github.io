@@ -84,48 +84,11 @@
         margin-right: auto;
         width: auto;
     }
-}
-
-
-
-.notes-table {
-    border: 0px;
-    tr:nth-child(odd) td{
-        background-color: white;
-    }
-    td {
-        border: 0px;
-        padding: 0;
-    }
-    .date {
-        width: 60px;
-    }
-    #date {
-        float: right;
-    }
-}
-
-
-
-.writing-table {
-    border: 0px;
-    tr:nth-child(odd) td{
-        background-color: white;
-    }
-    td {
-        border: 0px;
-        vertical-align: top;
-        p {
-            margin-bottom: 0px;
+    #subscribe {
+        a {
+            color: navy;
         }
-        #date {
-            width: 60px;
-            padding-top: 2px;
-            float: right;
-            text-align: right;
-        }
+        
     }
 }
-
-
 
