@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head prefix="og: http://ogp.me/ns#; dc: http://purl.org/dc/terms/#">
+  
+  
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="http://localhost:4000/research_notes/median-of-means-multivariate/" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PN2H9928PZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PN2H9928PZ');
+  </script>
+
+  <!-- Basic meta elements -->
+  <meta charset="utf-8" />
+
+  <!-- Enable responsiveness on mobile devices -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+
+  <!-- Mathjax Support -->
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <title>
+    
+     Median-of-Means for Multivariate Distributions
+    
+  </title>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.9.1" />
+<meta property="og:title" content="Median-of-Means for Multivariate Distributions" />
+<meta name="author" content="Ben Chugg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Analysis of the median-of-means estimator for multivariate distributions" />
+<meta property="og:description" content="Analysis of the median-of-means estimator for multivariate distributions" />
+<link rel="canonical" href="http://localhost:4000/research_notes/median-of-means-multivariate/" />
+<meta property="og:url" content="http://localhost:4000/research_notes/median-of-means-multivariate/" />
+<meta property="og:site_name" content="benny" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-05-18T00:00:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Median-of-Means for Multivariate Distributions" />
+<meta name="twitter:site" content="@bennychugg" />
+<meta name="twitter:creator" content="@Ben Chugg" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"dateModified":"2023-05-18T00:00:00-04:00","datePublished":"2023-05-18T00:00:00-04:00","description":"Analysis of the median-of-means estimator for multivariate distributions","headline":"Median-of-Means for Multivariate Distributions","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/research_notes/median-of-means-multivariate/"},"url":"http://localhost:4000/research_notes/median-of-means-multivariate/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- Dublin Core metadata for Zotero -->
+  <meta property="dc:title" content="Median-of-Means for Multivariate Distributions" />
+  <meta property="dc:creator" content="Ben Chugg" />
+  <meta property="dc:identifier" content="http://localhost:4000/research_notes/median-of-means-multivariate/" />
+  
+  <meta property="dc:date" content="2023-05-18 00:00:00 -0400" />
+  
+  <meta property="dc:source" content="benny" />
+
+  <!-- Open Graph and Twitter metadata -->
+  <meta property="og:title" content="Median-of-Means for Multivariate Distributions" />
+  <meta property="og:url" content="http://localhost:4000/research_notes/median-of-means-multivariate/" />
+  
+    <meta property="og:image" content="http://localhost:4000/assets/images/heads.jpeg"/>
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/heads.jpeg" />
+  
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:domain" value="benchugg.com" />
+  <meta name="twitter:title" value="Median-of-Means for Multivariate Distributions" />
+  <meta name="twitter:url" value="http://localhost:4000" />
+  
+  <!-- Description is dependent on page type  -->
+  
+    <meta property="og:description" content="Analysis of the median-of-means estimator for multivariate distributions">
+    <meta name="twitter:description" value="Analysis of the median-of-means estimator for multivariate distributions" />
+    <meta property="og:type" content="article" />
+  
+  
+
+  <!-- CSS link -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="167x167" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="/assets/favicon.ico">
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="114×114" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="72×72" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” href="/assets/favicon.ico" />
+  <link rel=”icon” href="/assets/favicon.ico", sizes="32x32"/>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml" />
+
+  
+</head>
+
+
+  <body class="theme-base-">
+
+
+    <!--
+      Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS
+      collisions with our real content.
+    -->
+    <div class="wrap">
+      <header class="masthead">
+        <div class="container">
+          <a id='name' href="/">Ben Chugg</a>
+          <div class="span">
+            <a href="/papers/">Papers</a> 
+            <a href="/writing/">Writing</a>
+            <a href="/research_notes/">Notes</a>
+            <a href="http://incrementspodcast.com">Podcast</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="container content" id="main">
+        <article class="note">
+  <small>
+    <a id="back", href="/research_notes/">Back to all notes</a>
+  </small>
+  <hr>
+  
+  <p class='title'>Median-of-Means for Multivariate Distributions</p> 
+  <p id="date">May 18, 2023</p>
+  \[\newcommand{\ov}[1]{\overline{#1}}
+\newcommand{\X}{\mathcal{X}}
+\DeclareMathOperator*{\argmin}{\text{argmin}}
+\newcommand{\rad}{\text{rad}}
+\renewcommand{\Re}{\mathbb{R}}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\eps}{\epsilon}
+\renewcommand{\subset}{\subseteq}
+\renewcommand{\Pr}{\mathbb{P}}
+\newcommand{\bin}{\text{Bin}}
+\newcommand{\Var}{\mathbb{V}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\hmu}{\widehat{\mu}}
+\newcommand{\mom}{\text{MoM}}
+\newcommand{\median}{\text{median}}
+\newcommand{\spn}{\text{span}}
+\newcommand{\norm}[1]{\|#1\|}
+\newcommand{\tr}{\text{tr}}
+\newcommand{\C}{\mathscr{C}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}\]
+
+<ul id="markdown-toc">
+  <li><a href="#1-performance-of-sample-mean" id="markdown-toc-1-performance-of-sample-mean">1. Performance of sample mean</a></li>
+  <li><a href="#2-coordinate-wise-median" id="markdown-toc-2-coordinate-wise-median">2. Coordinate-wise median</a></li>
+  <li><a href="#3-a-new-notion-of-median" id="markdown-toc-3-a-new-notion-of-median">3. A new notion of median</a></li>
+  <li><a href="#4-proof-of-sub-gaussian-performance" id="markdown-toc-4-proof-of-sub-gaussian-performance">4. Proof of sub-Gaussian performance</a>    <ul>
+      <li><a href="#step-1-high-probability-bound-for-single-vector" id="markdown-toc-step-1-high-probability-bound-for-single-vector">Step 1: High probability bound for single vector</a></li>
+      <li><a href="#step-2-extend-to-epsilon-packing" id="markdown-toc-step-2-extend-to-epsilon-packing">Step 2: Extend to \(\epsilon\)-packing</a></li>
+      <li><a href="#step-3-uniform-bound-by-deviation-analysis" id="markdown-toc-step-3-uniform-bound-by-deviation-analysis">Step 3: Uniform bound by deviation analysis</a></li>
+    </ul>
+  </li>
+  <li><a href="#5-computing-the-median" id="markdown-toc-5-computing-the-median">5. Computing the median</a></li>
+</ul>
+
+<p>We’re back to median-of-means (MoM) estimators, but this time we’ll consider multivariate distributions. We’ll follow the recent(ish) paper of <a rel="nofollow noopener noreferrer" href="https://arxiv.org/abs/1702.00482">Lugosi and Mendelson</a> which introduces a sub-Gaussian MoM estimator for high dimensions. 
+Assume that \(X_1,\dots,X_n\) lie in \(\Re^d\) and are distributed according to some distribution \(P\) with mean \(\mu\) and covariance matrix \(\Sigma\). Before extending the <a href="/research_notes/median-of-means-univariate/">univariate MoM estimator</a> to this setting, we need to clarify what sub-Gaussian performance means in higher dimensions. To do so, we appeal (like we did for \(d=1\)) to the performance of the sample mean for light-tailed distributions. Throughout, we’ll use \(\norm{\cdot}\) to refer to the \(\ell_2\)-norm \(\norm{\cdot}_2\).</p>
+
+<h1 id="1-performance-of-sample-mean">1. Performance of sample mean</h1>
+
+<p>Let \(\ov{X} = \sum_{i\leq n} X_i/n\) where \(X_i \sim N(\mu,\Sigma)\). Note that by independence, \(\ov{X}\sim N(\mu,\Sigma/n)\), so \(\ov{X}-\mu\sim N(0,\Sigma/n)\). Therefore,</p>
+
+\[\begin{equation}
+\label{eq:gauss1}
+    \Pr(\|\ov{X} - \mu\| \geq \E\|\ov{X} - \mu\| + u) \leq \Pr( \|Z\| \geq \E\|Z\|+u\sqrt{n}), \tag{1}
+\end{equation}\]
+
+<p>where \(Z\sim N(0,\Sigma)\). The multivariate Gaussian concentration inequality (e.g., <a rel="nofollow noopener noreferrer" href="https://link.springer.com/chapter/10.1007/bfb0077482">here</a>) gives</p>
+
+\[\begin{equation}
+\label{eq:gauss_tail_bound}
+    \Pr( \|Z\| \geq \E\|Z\|+u\sqrt{n}) \leq \exp(-\frac{nt^2}{2\lambda_{\max}}).\tag{2}
+\end{equation}\]
+
+<p>Also, note that,  \(\E\|\ov{X} - \mu\|^2 = \frac{1}{n}\sum_i \E(\ov{X}_i - \mu_i)^2 = \tr(\Sigma)/n\). Therefore, by Jensen’s inequality, \(\E\|\ov{X}-\mu\|\leq \sqrt{\tr(\Sigma)/n}\). 
+Combining this fact with \eqref{eq:gauss1} and \eqref{eq:gauss_tail_bound} and solving the right hand side of \eqref{eq:gauss_tail_bound} for \(\delta\) gives</p>
+
+\[\begin{equation*}
+    \Pr(\|\ov{X}-\mu\| \geq \delta) \leq \sqrt{\frac{\tr(\Sigma)}{n}} + \sqrt{\frac{2\lambda_{\max}(\Sigma)\log(1/\delta)}{n}}.
+\end{equation*}\]
+
+<p>This will be our standard for estimators going forward. 
+In particular, we will say that an estimator \(\hmu\) of \(\mu\) is sub-Gaussian with respect to \(\norm{\cdot}\) if, with probability \(1-\delta\),</p>
+
+\[\begin{equation}
+\label{eq:subgaussian-multivariate}
+    \norm{\hmu - \mu} \lesssim \sqrt{\frac{\tr(\Sigma)}{n}} + \sqrt{\frac{\lambda_{\max}(\Sigma)\log(1/\delta)}{n}}, \tag{3}
+\end{equation}\]
+
+<p>where \(\lambda_{\max}(\Sigma)\) is the maximum eigenvalue of \(\Sigma\). Notice that the dimension makes no appearance in \eqref{eq:subgaussian-multivariate}. It’s also worth emphasizing that the second term is multiplied by \(\lambda_{\max}(\Sigma)\) instead of \(\tr(\Sigma)\). This is a big distinction in situations where all eigenvalues are roughly the same order, in which case \(\tr(\Sigma)\) might be order \(d\) and \(\tr(\Sigma)\log(1/\delta)\gg \lambda_{\max}(\Sigma)\log(1/\delta)\).</p>
+
+<h1 id="2-coordinate-wise-median">2. Coordinate-wise median</h1>
+
+<p>The first thing one would probably try is a naive reduction from the multivariate case to the univariate case. In particular, consider constructing the univariate MoM estimator for each coordinate of the samples separately. That is, \(\hmu_i\) will be the \(\hmu^\mom\) constructed on \(\Pi_i(X_1),\dots,\Pi_i(X_n)\), where \(\Pi_i\) is the projection from \(\Re^d\) onto \(\spn(e_i)\).</p>
+
+<p>To analyze this estimator, we simply apply a union bound to the event that the estimator for each coordinate does “well”. More precisely, let \(E_i\) be the event</p>
+
+\[E_i = \bigg\{ |\hmu^\mom_i - \mu_i| \leq \sigma_i \bigg(\frac{32\log(d/\delta)}{n}\bigg)^{1/2}\bigg\},\]
+
+<p>where \(\sigma_i = \Var(\Pi_i(X)) = \Var_{(X_1,\dots,X_n)\sim P}[X_i]\). 
+Using the bound from the univariate case, conditional on the event \(\cap E_i\) (i.e., all \(E_i\)’s occur),</p>
+
+\[\begin{equation*}
+    \norm{\hmu - \mu}_2^2 = \sum_{i\leq n}|\hmu^\mom_i - \mu|^2 \leq \frac{32\log(d/\delta)}{n}\sum_{i\leq n}\sigma_i^2 =  \frac{32\log(d/\delta)\tr(\Sigma)}{n}. 
+\end{equation*}\]
+
+<p>Moreover, the probability that all \(E_i\) occur simultaneously is \(\Pr(\cap E_i) = 1 - \Pr(\cup E_i^c) \geq 1 - \delta\). We’ve obtained the following bound for this estimator:  For \(k\in\mathbb{N}\) and \(\delta&gt;0\) such that \(k\) divides \(n\) and \(k=\lceil 8\log(1/\delta)\rceil\),</p>
+
+\[\begin{equation}
+    \Pr\bigg\{\norm{\hmu -\mu}_2 \leq \bigg(\frac{32\log(d/\delta)\tr(\Sigma)}{n}\bigg)^{1/2}\bigg\}\geq 1-\delta.
+\end{equation}\]
+
+<p>Thus, we see that the coordinate-wise median does not result in sub-Gaussian performance. We must therefore turn to another strategy.</p>
+
+<h1 id="3-a-new-notion-of-median">3. A new notion of median</h1>
+
+<p>Here we discuss an altogether different notion of median, originally proposed by <a rel="nofollow noopener noreferrer" href="https://arxiv.org/abs/1702.00482">Lugosi and Mendelson</a>. To introduce it, let us consider an alternative way to frame the median in \(\Re\). Let \(\{s_1,\dots,s_k\}\in\Re\). Consider the order statistics \(s_{(1)},\dots,s_{(k)}\) and assume for simplicity that \(k\) is even so the median is \(a = (s_{(k/2)} + s_{(k/2 + 1)})/2\). Let \(p= a+\eps\) for some \(\eps&gt;0\). What makes \(p\) a “worse” choice of median than \(a\)? Indeed, for small enough \(\eps\), \(p\) still has \(k/2\) points to either side of it (if picturing the points on a horizontal axis). In some sense, then, it still accomplishes what we expect of a median.</p>
+
+<p>One way to formalize why \(a\) is a better median than \(p\) is to notice that \(p\) breaks symmetry in rather unappealing ways. For a point \(z\in \Re\), let \(\C(z)\) be the set of points which are as close or closer to \(k/2\) of the points \(s_1,\dots,s_k\) as \(z\). Intuitively, \(\C(z)\) is the set of points which are possibly better medians than \(z\). It is easy to see that \(\C(a)= [s_{(k/2)} - d(s_{(k/2)},a), s_{(k/2+1)} + d(s_{(k/2+1)},a)]\) and, for sufficiently small \(\eps\), \(\C(p)= [s_{(k/2)} - d(s_{(k/2)},a+\eps), s_{(k/2+1)} + d(s_{(k/2+1)},a+\eps)]\). For \(\eps&gt;0\) and the Euclidean metric, \(d(s_{(k/2)},a+\eps) = d(s_{(k/2)},p) + \eps\). Thus, the radius of \(\C(p)\), defined as \(\sup_{y\in \C(p)} d(p,y)\) is equal to \(2\eps\) plus the radius of \(\C(a)\). In fact, while the precise arithmetic in this example works only for small \(\eps\), it remains true that \(\C(a)\) has minimal radius among all points.</p>
+
+<p>The benefit of framing the median as such is that it extends to arbitrary dimensions (indeed, to any metric space). For a metric space \((\X,d)\) and \(S=\{s_1,\dots,s_k\}\), define</p>
+
+\[\begin{equation}
+\label{eq:multi_median}
+    \median(s_1,\dots,s_k) = \argmin_{a\in \X} \rad(\C_S(a)), \tag{4}
+\end{equation}\]
+
+<p>where \(\rad(\C_S(a)) = \sup_{y} d(a,y)\) and</p>
+
+\[\begin{equation}
+    \C_S(a) = \big\{x\in\X: \exists J\subset[k] \text{ with }|J|\geq k/2\text{ s.t. } d(s_j,x) \leq d(s_j,a)\text{ for all }j\in [J]\big\}.
+\end{equation}\]
+
+<p>This motivates the following median-of-means estimator for \(\X=\Re^d\). As in the univariate case, we are presented with \(X_1,\dots,X_n\in\Re^d\). We form \(k\) groups \(G_1,\dots,G_k\) for some \(k\) which divides \(n\), compute the sample mean within each group, and then take the median  in accordance with \eqref{eq:multi_median}:</p>
+
+\[\begin{equation}
+\label{eq:mom_multivariate}
+  \hmu^\mom = \argmin_{a\in\Re^d} \rad(\C_{\{S_1,\dots,S_k\}}(a)),\quad\text{where}\quad S_i = \frac{1}{|G_i|}\sum_{k\in G_i}X_i.  \tag{5}
+\end{equation}\]
+
+<p>Now we analyze the performance of this estimator. Set</p>
+
+\[\begin{equation}
+    r := \max\bigg\{960\sqrt{\frac{\tr(\Sigma)}{n}}, 240\sqrt{\frac{\lambda_{\max}\log(2/\delta)}{n}}\bigg\},
+\end{equation}\]
+
+<p>where again, \(\lambda_{\max}\) is the maximum eigenvalue of \(\Sigma\).</p>
+
+<h1 id="4-proof-of-sub-gaussian-performance">4. Proof of sub-Gaussian performance</h1>
+
+<p>The proof relies on a technique dubbed “median-of-mean tournaments,” whereby we compare successive pairs of points and argue about which points are closer to the point cloud \(S_1,\dots,S_k\) (the group means) on average. Let us introduce the following notation which will be helpful in the analysis. 
+For \(a\in \Re^d\), let</p>
+
+\[\ell_g(a) := \frac{1}{|S_g|} \sum_{i\in S_g}\|a - X_i\|_2^2,\]
+
+<p>denote the mean distance of \(a\) from the all points in \(S_g\). Observe the following relationship:</p>
+
+\[\begin{align}
+    \ell_g(a)- \ell_g(b) &amp;= \norm{a-b}_2^2 - \frac{2}{|S_g|}\sum_{i\in S_g}\la X_i-b,a-b\ra  \\
+    &amp;= \norm{a-b}_2^2 -2 \la S_g - b,a-b\ra = \norm{S_g - a}_2^2 - \norm{S_g -b}_2^2.\label{eq:la-lb} \tag{6}
+\end{align}\]
+
+<p>We introduce a partial ordering among vectors in \(\Re^d\) by writing</p>
+
+\[a &lt;_S b \quad\text{iff}\quad \ell_g(a) &lt; \ell_g(b)\text{ for a majority of }g\in[k].\]
+
+<p>Clearly, if \(a&lt;_S b\), then \(a\in \C_S(b)\). 
+If \(a&lt;_S b\), we will say that \(a\) <em>beats</em> \(b\). Intuitively, this should be taken to mean that \(a\) is better candidate for the median than \(b\). The following claim constitutes the core of the proof. It says that, with high probability, all points \(b\) that are sufficiently far from the mean \(\mu\) will be beaten by \(\mu\). Thus, they will not be contenders for the median. We emphasize that the probability statement in this result is <em>uniform</em> over \(b\). That is, it holds simultaneously for all such vectors.</p>
+
+<p><em>Claim</em>: With probability at least \(1-\delta\), \(\mu &lt;_S b\) for all \(b\in\Re^d\) such that \(\norm{\mu - b}\geq r\).</p>
+
+<p>Before proving this, let us first note how it implies the main result. Combined with \eqref{eq:la-lb}, it implies that with probability \(1-\delta\), if \(\norm{\mu-b}\geq r\), then \(\norm{S_g -\mu} &lt; \norm{S_g - b}\) on a majority of \(g\). Conditioning on this event, if \(\norm{\mu-b}&gt;r\), then \(b\notin \C_S(\mu)\), so \(\rad \C_S(\mu)\leq r\). And since \(\hmu^\mom\) is chosen to minimize this radius, we have \(\rad\C_S(\hmu^\mom)\leq \rad\C_S(\mu)\leq r\). Finally, since either \(\mu \in \C_S(\hmu^\mom)\) or \(\hmu\in \C_S(\hmu^\mom)\) (because \(\C_S(a) \cup \C_S(a)^c=\Re^d\)), this implies that \(\hmu\) and \(\mu\) are distance at most \(r\) apart.</p>
+
+<p>So, it remains only to prove the claim. The proof is quite technical, and many of the details are not terribly illuminating, so we’ll provide only a sketch here. The proof follows a so-called “small ball” strategy, the high-level steps of which are as follows. (i) First, a high probability bound is obtained for an arbitrary \(b\) with \(\norm{\mu-b}\geq r\). (ii) A union bound is then taken over a finite, well-chosen collection of points. In particular, we choose the points to be an \(\eps\)-packing over \(r S^{d-1}\) in a suitable metric. (iii) We then show that points near the points of the \(\eps\)-packing retain the desired behavior (that is, the bound is immune to small perturbations).</p>
+
+<p>We’ll outline the steps in more detail, but first let us rewrite our objective. 
+Fix \(b\in\Re^d\) with \(\norm{\mu-b}\geq r\). We have via \eqref{eq:la-lb} that \(\mu&lt;_S b\) if \(0&lt; \ell_g(b) - \ell_g(\mu) = \norm{\mu - b}^2 - \frac{2}{m}\sum_{i\in S_g}\la X_i-\mu,b-\mu\ra\). That is, \(\mu&lt;_S b\) if</p>
+
+\[\begin{equation}
+\label{eq:desired}
+    2\la S_g - \mu, v\ra \leq \norm{v}_2^2 \quad\text{where}\quad v = b-\mu.\tag{7}
+\end{equation}\]
+
+<p>It thus suffices to show that with high probability, the above inequality holds simultaneously for all vectors \(v\) with \(\norm{v}_2^2=r\).</p>
+
+<h2 id="step-1-high-probability-bound-for-single-vector">Step 1: High probability bound for single vector</h2>
+<p>Since \(S_g-\mu\) is the average of centered random variables, Chebyschev’s inequality  gives</p>
+
+\[\begin{align}
+    \Pr(\vert\la S_g-\mu,v\ra\vert \geq t) &amp;\leq \frac{\Var(\la S_g-\mu,v\ra)}{t^2} = \frac{\E\la X-\mu,v\ra^2}{mt^2}  \\
+    &amp;\leq \frac{\norm{v}_2^2\E\norm{X-\mu}_2^2}{mt^2}\leq \frac{\norm{v}_2^2\lambda_{\max}}{mt^2},
+\end{align}\]
+
+<p>where we recall that \(m=|S_g|\). 
+Setting the right hand side equal to 1/10 gives that with probability at least 9/10,</p>
+
+\[\vert\la S_g-\mu,v\ra\vert \leq \norm{v}\sqrt{10 \lambda_{\max}/m}=r\sqrt{10\lambda_{\max}/m}.\]
+
+<p>Note that \(r\geq 4\sqrt{10\lambda_{\max}/m}\), so the above implies \(\vert\la S_g-\mu,v\ra\vert\leq r^2/4\). 
+Applying Hoeffding’s inequality on the above event across all \(g\), we conclude that with probability at least \(1 - e^{-k/50}\), \(\vert\la S_g-\mu,v\ra\vert \leq r^2/4\) for at least \(8k/10\) of the groups \(g\). This gives us the desired high probability bound for a fixed \(v\).</p>
+
+<h2 id="step-2-extend-to-epsilon-packing">Step 2: Extend to \(\epsilon\)-packing</h2>
+<p>Now we want to apply this bound to a well-selected group of vectors \(v\) with norm \(r\). Let \(S^{d-1}(r)\) denote the \(d\)-sphere \(\{x\in\Re^d:\norm{x}_2=r\}\). We consider an \(\eps\)-packing of \(S^{d-1}(r)\) in the norm \(\norm{\cdot}_\Sigma\) defined by the covariance matrix. More specifically, we choose a finite set of points of maximum cardinality \(V_1 = \{v_1,\dots,v_L\}\) such that \(\norm{v_i-v_j}_\Sigma = \la \Sigma^{1/2}(v_i-v_j),\Sigma^{1/2}(v_i-v_j)\ra^{1/2}\geq \eps\) for all \(i,j\in[L]\). The size of \(V_1\), \(L\), can be estimated via the so-called <a rel="nofollow noopener noreferrer" href="https://www.math.uci.edu/~rvershyn/papers/GFA-book.pdf">dual Sudakov inequality</a>, which tells us that, if \(G\) is a standard Gaussian,</p>
+
+\[\begin{equation}
+    \log(L) \leq \log(2) + \frac{1}{32}\bigg(\frac{\E\la G,\Sigma G\ra^{1/2}}{\eps/r}\bigg)^2 \leq \log(2) + \frac{1}{32}\bigg(\frac{\sqrt{\tr(\Sigma)}}{\eps/r}\bigg)^2.
+\end{equation}\]
+
+<p>Taking \(\eps = 2r\sqrt{\tr(\Sigma)/k}\) gives \(L\leq 2\exp(k/100)\). Thus, employing a union bound over the result in step 1, we obtain that \(\vert\la S_g-\mu,v\ra\vert\leq r^2/4\) on \(8k/10\) groups for each \(v\in V\) with probability \(1- L\exp(-k/50)\geq 1 - 2\exp(-k/100)\).</p>
+
+<h2 id="step-3-uniform-bound-by-deviation-analysis">Step 3: Uniform bound by deviation analysis</h2>
+<p>Step 2 provided a high probability guarantee simultaneously over a maximal \(\eps\)-packing of \(S^{d-1}(r)\). Now we want to extend this guarantee simultaneously to all \(v\in S^{d-1}(r)\). For any \(x\in \Re^d\), let \(v_x\) denote the point in \(V_1\) closest to \(x\). Suppose we could show that with probability at least \(1- \exp(-k/200)\),</p>
+
+\[\begin{equation}
+\label{eq:supx}
+    \sup_{x\in S^{d-1}(r)} \frac{1}{k}\sum_{g\leq k}\ind\bigg\{ \big|\la S_g-\mu,v-v_x\ra\big| \geq \frac{r^2}{4} \bigg\}\leq \frac{1}{10}. \tag{8}
+\end{equation}\]
+
+<p>This would imply that for each \(x\), \(\vert\la S_g - \mu,v-v_x\ra \vert\leq r^2/4\) for \(9k/10\) groups  \(g\). Taking a union bound with the result in Step 2 (applying it to \(v_x\)), we obtain that in at least \(7k/10\) groups \(g\), we have both</p>
+
+\[\begin{equation}
+\label{eq:step3_2conds}
+  \vert\la S_g - \mu,v_x\ra\vert \leq r^2/4,\quad\text{and}\quad \vert\la S_g - \mu,v\ra -\la S_g-\mu,v_x\ra\vert\ra \leq r^2/4.  \tag{9}
+\end{equation}\]
+
+<p>This occurs with probability at least \(1 - (2\exp(-k/200) + \exp(-k/100))\geq 1 - \delta\) since \(k \geq 200 \log(2/\delta)\). Note that the \(7k/10\) ratio comes from the fact that the first event holds on \(8k/10\) groups and the second on \(9k/10\) groups. The intersection must be at least \(7k/10\) groups by the pigeonhole principle.</p>
+
+<p>The conditions in \eqref{eq:step3_2conds} imply that</p>
+
+\[\la S_g-\mu,v\ra\leq  \la S_g-\mu,v_x\ra + \frac{r^2}{4}\leq \frac{r^2}{4}+\frac{r^2}{4} = \frac{r^2}{2},\]
+
+<p>which is \eqref{eq:desired}, i.e., the desired inequality. Therefore, it remains only to prove \eqref{eq:supx}. To do so, let \(W\) be the random variable on the left hand side of \eqref{eq:supx}. The main idea is to argue about its expected value and show that \(\E W\leq 1/20\). Then, since \(W\) is an average of indicators, we can employ the bounded differences inequality to obtain that 
+\(W \leq \E W + 1/20\leq 1/10\) with probability at least \(1-\exp(-k/200)\), which is the desired result. To bound \(\E W\), we first notice that \(\ind\{ \la S_g-\mu,v-v_x\ra|\geq r^2/4\}\leq \frac{4}{r^2}|\la S_g-\mu,v-v_x\ra|\) (by simple case analysis). Therefore, letting \(\ov{S}_g = S_g-\mu\) and \(\ov{v}=v-v_x\),</p>
+
+\[\begin{align*}
+    \E W &amp;\leq \E\sup_{x\in S^{d-1}(r)} \frac{4}{kr^2} \sum_{g\leq k} |\la \ov{S}_g,\ov{v}\ra | \\
+    &amp;= \E\sup_{x\in S^{d-1}(r)} \bigg\{ \frac{4}{kr^2} \sum_{g\leq k} (|\la \ov{S}_g,\ov{v}\ra | - \E|\la \ov{S},\ov{v}\ra|) + \frac{4}{r^2}\E|\la \ov{S},\ov{v}\ra|\bigg\}, 
+\end{align*}\]
+
+<p>where \(\ov{S}\) is distributed as some arbitrary \(\ov{S}_g\) (which have the same distribution for all \(g\)). Then, by independence,</p>
+
+\[\begin{align*}
+    \E|\la \ov{S},\ov{v}\ra| \leq \sqrt{\E\la \ov{S},\ov{v}\ra^2} = \sqrt{\frac{\E\la X-\mu,v-v_x\ra^2}{m}} \leq   \frac{\eps}{\sqrt{m}},
+\end{align*}\]
+
+<p>where the last line follows by definition of the metric chosen for the \(\eps\)-packing:</p>
+
+\[\norm{v-v_x}_\Sigma = \sqrt{ \E\la X-\mu,v-v_x\ra^2}\leq \eps.\]
+
+<p>Hence,</p>
+
+\[\begin{equation}
+\label{eq:EW}
+  \E W \leq \E\sup_{x\in S^{d-1}(r)} \bigg\{ \frac{4}{kr^2} \sum_{g\leq k} (|\la \ov{S}_g,\ov{v}\ra | - \E|\la \ov{S},\ov{v}\ra|)\bigg\} + \frac{4\eps}{r^2\sqrt{m}}.  \tag{10}
+\end{equation}\]
+
+<p>By choice of \(\eps\) in Step 2 and the definition of \(r\), the quantity \(4\eps/(r^2\sqrt{m})\) is at most \(1/60\). Meanwhile, the other quantity on the right hand side of \eqref{eq:EW} can be handled by various techniques from empirical process theory (common when analyzing Rademacher complexities, for instance). In particular, using symmetrization and contraction arguments, we obtain that this quantity is bounded by \(1/30\). Thus, \(\E W \leq 1/20\), completing the proof.</p>
+
+<h1 id="5-computing-the-median">5. Computing the median</h1>
+
+<p>Finally, given the expression for \(\hmu^\mom\) in \eqref{eq:mom_multivariate}, a natural question is whether it can be efficiently computed. It certainly looks intractable. And indeed, the first results concerning this estimator were purely theoretical and did not investigate how it might be computed. However, shortly after these initial results were published, Sam Hopkins <a rel="nofollow noopener noreferrer" href="https://arxiv.org/abs/1809.07425">demonstrated</a> that \eqref{eq:mom_multivariate} can be approximated in polynomial time and, moreover, that this approximation maintains a sub-Gaussian rate. 
+His approach uses semi-definite programming and can be computed in time \(O(nd + d\log(1/\delta)^c)\), where \(c\) is some (dimension-agnostic) constant. 
+Consequently, everything we’ve discussed here is not only  mathematically powerful, but is also useful in practice.</p>
+
+
+  <small>
+    <a link="back", href="/research_notes/">Back to all notes</a>
+  </small>
+</article>
+ <!-- "> -->
+      </main>
+
+      <!-- Footer  -->
+      <div class="container" id="footer">
+        <hr>
+        <div class='container links'>
+          <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github.png"></a>
+          <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads.png"></a>
+          <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter.png"></a>
+        </div>
+      
+        <div class='copyright'>
+          <small>&#169; 2023 Ben Chugg</small>
+        </div>
+      
+      </div>
+    </div>
+
+  </body>
+</html> 

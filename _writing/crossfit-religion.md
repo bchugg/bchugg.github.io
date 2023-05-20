@@ -1,7 +1,7 @@
 ---
 layout: writing
 title: "Secular religion, groupishness, and ... crossfit"
-description: Crossfit displays many features of secular religion, making it a possible candidate to replace the tribalism in politics
+description: A three-quarters-serious essay on crossfit as a kind of secular religon, making it a possible replacement of religious-like politics
 date: "2023-05-07" 
 status: published
 image: /assets/writing_images/cult_of_reason.jpeg
