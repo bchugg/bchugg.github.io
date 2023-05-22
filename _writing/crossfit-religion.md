@@ -3,6 +3,7 @@ layout: writing
 title: "Secular religion, groupishness, and ... crossfit"
 description: A three-quarters-serious essay on crossfit as a kind of secular religon, making it a possible replacement of religious-like politics
 date: "2023-05-07" 
+updated: "2023-05-21"
 status: published
 image: /assets/writing_images/cult_of_reason.jpeg
 ---
@@ -42,7 +43,7 @@ The cult of reason was an explicitly atheistic replacement for Catholicism.  It 
 
 There have been some lofty attempts to answer this question. The [cult of reason](https://en.wikipedia.org/wiki/Cult_of_Reason) post French revolution and [God-building](https://en.wikipedia.org/wiki/God-Building) of the early Bolsheviks come to mind. Both were attempts to create replacements of religion from the top-down. Neither succeeded. I want to offer an example that is undoubtedly more parochial than such grandiose endeavors, but I think offers a genuine and healthy answer.
 
-My suggestion: Crossfit. Yes, seriously.
+My suggestion: Crossfit. (Seriously? I don't know. But let's see how it goes.)
 
 The fastest I ever made friends was on my college rowing team during grad school in the UK. Stick a bunch of guys in a boat together, tell them to outrow the guys in the next boat, and all of a sudden you're friends for life. Suffering together promotes loyalty and solidarity. Crossfit is not rowing, but it offers suffering in spades. If you walk in at the end of a crossfit class you'll see everyone lying on the ground gasping for breath, unable to stand up straight. Everyone is doing the same workout[^7] and therefore knows just how much everyone else is suffering. When you come out alive on the other side you feel like you've been through battle together.
 
@@ -71,8 +72,8 @@ You can watch the video <a herf="https://www.youtube.com/watch?v=YPSFcYAeR64&ab_
 </p>
 
 
-
-Crossfit is a fascinating sociological experiment. I think it offers more than typical sports vis-a-vis community and principles and can be considered a secular religion. Considering that there aren't many competing ideas on offer for healthy tribes, crossfit is worth considering (plus you'll look good naked, which is always a bonus). 
+Okay, do I _actually_ think we can replace tribal political attachments with crossfit? Probably not. I'm not about to die on some clean-your-room-and-something-something-lobsters hill like Jordan Peterson and claim that going to the gym a few times a week is the path to spiritual and moral nirvana. But I _do_ think that crossfit is a fascinating sociological experiment that no one seems to have noticed is a sociological experiment. It offers more than typical sports vis-a-vis community and ethical principles and should be considered on the spectrum of secular religion. 
+Considering that there aren't many competing ideas on offer for healthy tribes, crossfit is worth considering (plus you'll look good naked, which is always a bonus). 
 
 _Thanks to Cam Peters for comments._ 
 

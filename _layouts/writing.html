@@ -11,7 +11,7 @@ layout: default
     <b>Not yet public. In the midst of soliciting feedback. Please do not share.</b>
   {% endif %}
   <p class='title'>{{ page.title }}</p> 
-  <p id="date">{{ page.date | date: '%B %d, %Y'}}</p>
+  <p id="date">{{ page.date | date: '%B %d, %Y'}}{% if page.updated != nil %}; Updated {{ page.updated | date: '%B %d, %Y'}}{% endif %}</p>
   <br/><br/>
   {{ content }}
   <small>
