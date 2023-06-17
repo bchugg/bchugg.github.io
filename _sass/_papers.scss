@@ -1,31 +1,56 @@
 .papers {
 
   h1 {
-    font-weight: bold;
+    //font-weight: bold;
     padding-top: 20px;
-    font-size: 14pt;
+    // font-size: 14pt;
   }
 
-  .pubitem {
-    margin: 1.5em 0;
-  }
-  
   .pubtitle {
-    line-height: 1.2em;
-    font-size: 12pt;
-    // font-weight: bold;
-  }
-  
-  .pubauthors,
-  .pubinfo {
-    font-size: 12pt;
+    font-weight: bold;
+    color: black;
   }
 
-  #highlight {
-    color: black;
-    font-weight: bold;
-    font-size: 10pt;
-  }
+  // .pubitem {
+  //   margin: 1.5em 0;
+  // }
+  
+  // .pubtitle {
+  //   line-height: 1.2em;
+  //   font-size: 12pt;
+  //   // font-weight: bold;
+  // }
+  
+  // .pubauthors,
+  // .pubinfo {
+  //   font-size: 12pt;
+  // }
+
+  
+
+  .papers-table {
+    border: 0px;
+    margin-top: 35px;
+    tr:nth-child(odd) td{
+        background-color: white;
+    }
+    td {
+        border: 0px;
+        padding: 0;
+        vertical-align: top;
+        padding-bottom: 20px;
+    }
+    .pubinfo {
+      text-align: right;
+      #highlight {
+        color: black;
+        font-weight: bold;
+        font-size: 10pt;
+      }
+    }
+}
+
+
 
 
 }

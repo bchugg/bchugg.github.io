@@ -43,7 +43,7 @@ body {
   overflow-x: hidden; }
 
 html {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-family: "Inconsolata";
   font-size: 1em;
   /* 16px; specify in ems to support text resizing in all browsers */
   line-height: 1.5; }
@@ -151,7 +151,7 @@ blockquote {
   padding: 0rem 1.5rem 0rem 2rem;
   margin: 0 0 20px 0;
   color: #686565;
-  border-left: none;
+  border-left: solid 2px navy;
   font-style: italic; }
 
 blockquote p:last-child {
@@ -169,10 +169,20 @@ img {
 
 /* Header image */
 #headerim {
-  width: 45%;
+  width: 50%;
   height: auto;
-  float: left;
-  margin-right: 20px; }
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -10px; }
+  @media (max-width: 400px) {
+    #headerim {
+      width: 90%; } }
+
+#caption {
+  font-size: 10pt;
+  text-align: center;
+  margin-bottom: 30px; }
 
 /* Tables */
 table {
@@ -637,7 +647,10 @@ pre code {
     font-size: 18pt;
     text-align: center;
     padding-bottom: 0;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto; }
   .note h1, .writing h1 {
     font-weight: bold;
     font-size: 16pt;
@@ -666,25 +679,36 @@ pre code {
   margin-left: auto;
   margin-right: auto;
   width: auto; }
+.writing #img-50 {
+  width: 50%; }
+.writing #img-70 {
+  width: 70%; }
+.writing #img-40 {
+  width: 40%; }
 .writing #subscribe a {
   color: navy; }
 
 .papers h1 {
-  font-weight: bold;
-  padding-top: 20px;
-  font-size: 14pt; }
-.papers .pubitem {
-  margin: 1.5em 0; }
+  padding-top: 20px; }
 .papers .pubtitle {
-  line-height: 1.2em;
-  font-size: 12pt; }
-.papers .pubauthors,
-.papers .pubinfo {
-  font-size: 12pt; }
-.papers #highlight {
-  color: black;
   font-weight: bold;
-  font-size: 10pt; }
+  color: black; }
+.papers .papers-table {
+  border: 0px;
+  margin-top: 35px; }
+  .papers .papers-table tr:nth-child(odd) td {
+    background-color: white; }
+  .papers .papers-table td {
+    border: 0px;
+    padding: 0;
+    vertical-align: top;
+    padding-bottom: 20px; }
+  .papers .papers-table .pubinfo {
+    text-align: right; }
+    .papers .papers-table .pubinfo #highlight {
+      color: black;
+      font-weight: bold;
+      font-size: 10pt; }
 
 #footer {
   clear: both;

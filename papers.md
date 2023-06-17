@@ -6,41 +6,47 @@ image: /assets/images/manuscript.jpeg
 ---
 
 
+
+
 <div class='papers'>
   <p style="text-align: center">
     <em>"Curiouser and curiouser!" Cried Alice.</em>
   </p>
 
-  <h1>Publications and Preprints</h1>
+  {% assign categories = "Theory|Application" | split: "|" %}
 
-  {% assign publications = site.papers | sort: "date" | reverse | where_exp: "item", "item.type != 'thesis'" %}
-  {% assign n = publications.size %}
+
+  {% for cat in categories %}
+
+  <h1>Papers - {{ cat }} </h1>
+
+  {% assign publications = site.papers | sort: "date" | reverse | where_exp: "item", "item.category == cat"%}
+
+  <table class='papers-table'>
   {% for pub in publications %}
-  <div class="pubitem">
-    <div class="pubtitle"><a href='{{ pub.link }}'>{{ pub.title }}</a></div>
-    <div class="pubauthors">{{ pub.authors }}. 
-    </div>
+  <tr>
+  <td>
+   <div class="pubtitle">{{ pub.title }}</div>
+    <div class="pubauthors">{{ pub.authors }}.</div>
     {% if pub.publication != nil %}
-      <div class="pubinfo">
-        <em>{{ pub.publication }}</em>, {{ pub.year}}{% if pub.highlight != nil %}. <span id='highlight'>{{ pub.highlight }}</span> {% endif %}
-      </div>
+      <em>{{ pub.publication }}</em> | 
     {% endif %}
-  </div>
-  {% assign n = n | minus:1 %}
+    <a href='{{ pub.link }}'>paper</a>
+    {% if pub.code != nil %} 
+       | <a href='{{ pub.code }}'>code</a>
+    {% endif %}
+  </td> 
+  <td>
+    <div class="pubinfo">
+        {{ pub.year }}
+        <small id='highlight'>{% if pub.highlight != nil %} <br> {{ pub.highlight }}{% endif %}</small>
+    </div>
+  </td>
+  </tr>
+  {% endfor %}
+  </table>
+   
   {% endfor %}
 
-  <h1>Theses</h1>
-
-  {% assign theses = site.papers | where_exp: "item", "item.type == 'thesis'" | sort: "date" | reverse %}
-  {% for pub in theses %}
-  <div class="pubitem">
-    {% if pub.link != nil %}
-      <div class="pubtitle"><a href='{{ pub.link }}'>{{ pub.title }}</a></div>
-    {% else %}
-      <div class="pubtitle">{{ pub.title }}</div>
-    {% endif %}
-    <div class="pubinfo"><em>{{ pub.publication }}</em>, {{ pub.year}}</div>
-  </div>
-  {% endfor %}
-
+  
 </div>

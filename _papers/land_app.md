@@ -7,4 +7,6 @@ publication: ACM CIKM
 year: 2022
 date: "2022-05-01"
 link: https://arxiv.org/pdf/2208.08919.pdf
+code: https://github.com/reglab/land-application-detection
+category: Application
 ---

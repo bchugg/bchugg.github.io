@@ -37,7 +37,8 @@ body {
 }
 
 html {
-  font-family: $main-font;
+  //font-family: $main-font;
+  font-family: "Inconsolata";
   font-size: 1em; /* 16px; specify in ems to support text resizing in all browsers */
   line-height: 1.5;
 }
@@ -177,7 +178,7 @@ blockquote {
   padding: 0rem 1.5rem 0rem 2rem;
   margin: 0 0 20px 0;
   color: $text-color;
-  border-left: none;
+  border-left: solid 2px navy;
   font-style: italic;
 }
 
@@ -202,11 +203,29 @@ img {
 
 /* Header image */
 #headerim {
-  width: 45%;
-  height: auto;
-  float: left;
-  margin-right: 20px;
+    width: 50%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -10px;
+
+    @media (max-width: 400px) {
+      width: 90%;
+    }
+  }
+
+#caption {
+  font-size: 10pt;
+  text-align: center;
+  margin-bottom: 30px;
 }
+// #headerim {
+//   width: 45%;
+//   height: auto;
+//   float: left;
+//   margin-right: 20px;
+// }
 
 /* Tables */
 table {
