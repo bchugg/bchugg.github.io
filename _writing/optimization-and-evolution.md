@@ -34,7 +34,7 @@ In machine learning, we choose the loss to measure how well the model is perform
 
 # Evolution as optimization?
 
-Biological evolution can certainly be seen as _some_ kind of optimization process. The accumulation of adaptive mutations over long periods of time create organisms that are especially well-suited to a given niche. Depending on the niche, this may involve gills and eyes. It may involve echolocation or the ability to photosynthesize. Or, as in the case of humans, it may involve the evolution of minds capable of art, language, and reason.
+Biological evolution can certainly be seen as _some_ kind of optimization process. The accumulation of adaptive mutations over long periods of time create organisms that are especially well-suited to a given niche. Depending on the niche, this may involve gills and eyes. It may involve echolocation or the ability to photosynthesize. Or, as in the case of humans, it may involve the evolution of minds [capable of art](https://www.incrementspodcast.com/50), language, and [reason](https://www.incrementspodcast.com/39).
 
 That said, there is some distance between the notions of mathematical optimization and evolution. Yudkowsky, however, recently [tweeted](https://twitter.com/ESYudkowsky/status/1660361300051136512) out the following, which suggests that he—and probably the many people he's influenced—are relying on the parallels as arguments about the inevitability and imminent arrival of artificial superintelligence.
 
