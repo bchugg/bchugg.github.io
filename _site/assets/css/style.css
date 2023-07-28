@@ -151,8 +151,7 @@ blockquote {
   padding: 0rem 1.5rem 0rem 2rem;
   margin: 0 0 20px 0;
   color: #686565;
-  border-left: solid 2px navy;
-  font-style: italic; }
+  border-left: solid 2px navy; }
 
 blockquote p:last-child {
   margin-bottom: 0; }
@@ -624,8 +623,7 @@ pre code {
   padding-right: 10%; }
 
 .note, .writing {
-  color: black;
-  text-align: justify; }
+  color: black; }
   .note #back, .writing #back {
     color: navy; }
   .note a, .writing a {
@@ -668,12 +666,14 @@ pre code {
     margin-left: 20px;
     margin-right: 20px; }
 
-.note img {
-  padding-top: 20px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%; }
+.note {
+  text-align: justify; }
+  .note img {
+    padding-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%; }
 
 .writing .twitter-tweet {
   margin-left: auto;
@@ -693,6 +693,8 @@ pre code {
 
 .papers h1 {
   padding-top: 20px; }
+.papers p strong {
+  color: black; }
 .papers .pubtitle {
   font-weight: bold;
   color: black; }

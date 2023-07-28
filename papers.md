@@ -6,8 +6,6 @@ image: /assets/images/manuscript.jpeg
 ---
 
 
-
-
 <div class='papers'>
   <p style="text-align: center">
     <em>"Curiouser and curiouser!" Cried Alice.</em>
@@ -48,5 +46,21 @@ image: /assets/images/manuscript.jpeg
    
   {% endfor %}
 
-  
+
 </div>
+
+<!-- {% capture markdown_content %}
+# Software 
+
+Aside from the code associated with the papers above, here are some packages that I maintain. 
+
+<span style="color: black; font-weight: bold">testing-by-betting</span>: A python package which implements various methods for sequential, nonparametric hypothesis testing using various tools from game-theoretic probability and statistics. [[github]()] [[pypi]()]
+
+<span style="color: black; font-weight: bold">xbounds</span>: A lightweight python package for Extreme Bounds Analysis. Computes both Leamer and Sala-i-Martin robustness criteria. Handles fixed-effects and multiprocessing. [[github]()] [[pypi]()]
+
+{% endcapture %}
+{{ markdown_content | markdownify }} -->
+
+
+
+

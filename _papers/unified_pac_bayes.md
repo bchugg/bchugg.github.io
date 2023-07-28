@@ -1,6 +1,6 @@
 ---
 layout: default 
-title: A general recipe for deriving (time-uniform) PAC-Bayes bounds
+title: A unified recipe for deriving (time-uniform) PAC-Bayes bounds
 authors: Ben Chugg, Hongjian Wang, Aaditya Ramdas
 publication: 
 year: 2023+
