@@ -22,7 +22,7 @@ But this has been disputed. See [this](https://mathoverflow.net/questions/191929
 
 Nielsen's analysis is refreshing because it presents us with some insight into the actual creative process. What it's _like_ in those moments of ingenuity. What I find most interesting is the emphasis on error and doubt. I think he's right. A creative thought is not usually accompanied by confidence. It can be _exciting_, sure—but often vague and uncertain as well. This makes sense, upon reflection. A truly novel idea should not be obvious from prior experience or knowledge.
 
-It's always a good sign when the same idea is presented by different people. In his 2020 book _Creativity_, John Cleese expresses much the same idea as Nielsen. He writes
+It's always a good sign when the same idea is presented by different people. In his 2020 book _Creativity_ ([h/t Vaden Masrani](https://www.incrementspodcast.com/52)), John Cleese expresses much the same idea as Nielsen. He writes
 
 > When we're trying to be creative, there's a real lack of clarity during most of the process. Our rational, analytical mind, of course, loves clarity—in fact, it worships it. But at the start of the creative process things cannot be clear. They are bound to be confusing. If it's a new thought, how can you possibly understand it straight away? You've never been there before. It feels unfamiliar. (pg 40-41).
 
