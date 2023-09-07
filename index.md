@@ -8,7 +8,7 @@ image: /assets/images/heads.jpeg
 <p id='caption'>This is Max. Max is excited. You should see him around yams.</p>
 
 
-I'm a first year PhD student in the [machine learning department](https://www.ml.cmu.edu/) at CMU. I'm advised by [Aaditya Ramdas](https://www.stat.cmu.edu/~aramdas/).  Here is a totally-unnecessary-yet-for-some-reason-expected [CV](assets/files/cv.pdf).
+I'm a second year PhD student in the [machine learning department](https://www.ml.cmu.edu/) at CMU. I'm advised by [Aaditya Ramdas](https://www.stat.cmu.edu/~aramdas/).  Here is a totally-unnecessary-yet-for-some-reason-expected [CV](assets/files/cv.pdf).
 
 Research-wise, I'm mainly interested in mathematical statistics---sequential analysis, game-theoretic probability, and anytime-valid learning and inference in particular. Here are 
 my [papers]({% link papers.md %}) and some informal [research notes]({% link research_notes.md %}). 
