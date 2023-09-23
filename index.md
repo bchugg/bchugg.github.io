@@ -4,9 +4,8 @@ title: "Ben Chugg"
 image: /assets/images/heads.jpeg
 ---
 
-<img id='headerim' src="/assets/images/ben_max_mira.jpg">
-<p id='caption'>This is Max. Max is excited. You should see him around yams.</p>
-
+<img id='headerim' src="/assets/images/lawme.jpg">
+<p id="caption"></p>
 
 I'm a second year PhD student in the [machine learning department](https://www.ml.cmu.edu/) at CMU. I'm advised by [Aaditya Ramdas](https://www.stat.cmu.edu/~aramdas/).  Here is a totally-unnecessary-yet-for-some-reason-expected [CV](assets/files/cv.pdf).
 

@@ -1,7 +1,7 @@
 ---
 layout: writing
 title: "Epistemological Frankenstein (or, Does anyone take superforecasting seriously?)"
-description: The rationalists are the only people who take 
+description: The only people who claim to take superforecasting seriously abandon it when the going gets tough 
 date: "2023-09-22" 
 status: published
 image: /assets/writing_images/glassball.jpg
