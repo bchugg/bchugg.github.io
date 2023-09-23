@@ -22,7 +22,7 @@ I also co-host the [Increments Podcast](https://www.incrementspodcast.com/) with
 
 ## contact
 
-You can try and reach me by email (benchugg $$\alpha\tau$$ cmu.edu), twitter, or by screaming my name twelve times in succession in a very public place. The latter has, to my knowledge, never not worked. 
+You can try and reach me by email (benchugg $$\alpha\tau$$ cmu.edu) or by screaming my name twelve times in succession in a very public place. The latter has, to my knowledge, never not worked. 
 
 
 
