@@ -1,9 +1,9 @@
 ---
 layout: writing
-title: "Epistemological Frankenstein (or, does anyone take superforecasting seriously?)"
-description: The only people who purportedly take superforecasting seriously abandon it when the going gets tough 
+title: "An epistemological Frankenstein"
+description: "Or: Does anyone take superforcasting seriously?" 
 date: "2023-09-22" 
-updated: "2023-09-27" 
+updated: "2023-11-25" 
 status: published
 image: /assets/writing_images/glassball.jpg
 ---
@@ -65,10 +65,12 @@ Alas, for now, it seems like governments still rely on people providing them wit
 
 > During the pandemic, Dominic Cummings said some of the most useful stuff that he received and circulated in the British government was not forecasting. It was qualitative information explaining the general model of what's going on, which enabled decision-makers to think more clearly about their options for action and the likely consequences. If you're worried about a new disease outbreak, you don't just want a percentage probability estimate about future case numbers, you want an explanation of how the virus is likely to spread, what you can do about it, how you can prevent it.
 
-So what do we conclude about superforecasting? Certainly it's not a magic bullet. After all, if it were, we'd see a priestly class of very rich people in control of everything. But there might be some signal in the noise, however faint.  
-After all much of superforecasting appears to be adhering to basic principles such as open-mindedness, changing your worldview as new information becomes available, and being open to criticism. It's not too surprising that someone acting on these ideas outperforms an ideologue wedded to a single perspective. This doesn't give you magical abilities to peer into the future, but it can make you see reality more clearly.
+So what do we conclude about superforecasting? Certainly it's not a magic bullet. If it were, we'd see a priestly class of very rich people in control of everything. But there might be some signal in the noise, however faint. This is not overly surprising. After all, much of superforecasting appears to be adhering to basic principles such as open-mindedness, changing your worldview as new information becomes available, and being open to criticism. As Tetlock puts it, superforecasters aren't actually using Bayes' theorem or fancy math. They're simply willing to change their minds upon receiving new information and arguments: 
 
-But believing that superforecasters have unlocked the ability to pull back the veil on the future puts those that disagree with them at an impass.  Unless, of course,  superforecasting only works when you agree with the results?
+> The superforecasters are a numerate bunch: many know about Bayes' theorem and could deploy it if they felt it was worth the trouble. But they rarely crunch the numbers so explicitly. What matters far more to the superforecasters than Bayes' theorem is Bayes' core insight of gradually getting closer to the truth by constantly updating in proportion to the weight of the evidence.
+> _Superforecasting_, pg 238 
+
+It's unsurprising that someone with epistemic humility outperforms an ideologue wedded to a single perspective. This doesn't give you magical abilities to peer into the future, but it can make you see reality more clearly. Believing that superforecasters _have_ unlocked the ability to pull back the veil on the future puts those that disagree with them at an impass.  Unless, of course,  superforecasting only works when you agree with the results?
 
 _Thanks to Cam Peters for comments._
 

@@ -5,7 +5,7 @@ description: "Spicy takes and explorations of various topics"
 image: /assets/images/building.jpeg
 ---
 
-Sometimes I have thoughts, and sometimes I write them down. You can [subscribe]({% link subscribe.md %}) to receive occasional updates, if you want. 
+Sometimes I have thoughts, and sometimes I write them down. You can [subscribe]({% link subscribe.md %}) to receive occasional updates. 
 
 <br/>
 
