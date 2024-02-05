@@ -1,0 +1,31 @@
+---
+layout: writing
+title: "The paradox of dogmatism"
+description: On the benefit of dogmatism in open societies
+date: "2024-02-04" 
+status: published
+---
+
+It's rare to call someone a dogmatist and mean it as a compliment. To label someone dogmatic implies that they are stubbornly clinging to their preconceived notions about how the world is, or should be, while ignoring the possibility they could be wrong. To be dogmatic is to persistently seek out arguments, no matter how weak, that support your position and to dismiss any arguments, no matter how strong, that oppose it. It is to seek vindication instead of truth.
+
+Being dogmatic bears personal costs. For one, you can lose friends because you're an annoying conversation partner. Second, it torpedoes your ability to see the world clearly, making it harder to navigate. A mother convinced that vaccines cause autism denies herself and her child the benefits of modern medicine. A teenager convinced the world is about to end might dedicate their life to radical, counterproductive policies. Whatever idea you hold dogmatically (there is probably at least one, dear reader) people do not envy you. You are cutting yourself off from exploring new ideas, ideas that might dramatically increase your quality of life.
+
+So here is the paradox. While dogmatism is negative for an individual, it can be socially beneficial. A dogmatic person will find the strongest version of their arguments and find all the flaws in their opponents' arguments. This makes it easier for third parties to evaluate the strongest arguments on both sides and come nearer the truth.
+
+This is, after all, precisely how a court of law works. We don't assign neutral observers to sift through the evidence and come to an unbiased conclusion. We pit the prosecution and defense against each other, two teams which refuse to give an inch to the other. And we hope the jury—who ideally have no personal connection to the trial—will be swayed by the strongest arguments. We trust that truth will emerge as a byproduct of the ruthless battle of ideas.
+
+Dogmatism functions as nearly the opposite of a [_tragedy of the commons_](https://en.wikipedia.org/wiki/Tragedy_of_the_commons), a situation in which the reasonable thing for each individual person to do results in a worse outcome for everyone (e.g., overfishing a local bay). Being dogmatic, on the other hand, is something like a _boon of the commons_: it is bad for the individual but good for the group.
+
+Of course, it's an exaggeration to say that dogmatism is _always_ bad for the individual and good for the group. Dogma can be used to gain membership to a group that will provide social and emotional support, often genuinely making your life better. A common example is religious communities. A religious person is not (typically) suffering the consequences of their metaphysical beliefs and gains a sense of community and solidarity. Holding a dogmatic religious belief is often benefitting someone more than it is harming them. (This is what [rational-irrationality](https://en.wikipedia.org/wiki/Rational_irrationality) is all about: when it is cheap to believe something it is rational to believe it.) Religion is only one example—politics and activism can have similar dynamics.
+
+Likewise, dogmatism can be bad at the group level if it causes [affective polarization](https://en.wikipedia.org/wiki/Political_polarization#:~:text=Affective%20polarization%20refers%20to%20the%20phenomenon%20where%20individuals'%20feelings%20and,or%20group%20become%20more%20negative.) (increased hostility to those who disagree with you) in the group. Such polarization leads to lower trust societies, which is [generally a bad thing](https://www.theatlantic.com/ideas/archive/2020/10/collapsing-levels-trust-are-devastating-america/616581/). If everyone becomes dogmatic, then there is nobody left to benefit from the resulting battle of ideas. Dogmatism works best when a few voices are steadfast on either side of an issue, and the majority of people are capable of having their minds changed based on the resulting conflagration. 
+
+Even with these drawbacks, I think that dogmatism is underrated in general. Dogmatists provide the best arguments in favor of their position because they are determined to prove the other side wrong. My personal views on a variety of subjects can be traced back to arguments between dogmatists—whether atheism vs theism, environmental pessimism vs optimism, the woke vs anti-woke on critical theory, Israel and Palestine, US foreign policy, the dangers of AGI, the benefits and harms of social media, libertarianism and socialism, or critical rationalism vs Bayesianism.
+
+Do I think the people publicly participating in these debates are neutral arbiters of the evidence? Not at all. In fact, I would be extremely surprised if any of them ever changed their mind. Paul Ehrlich, famous environmental pessimist, has been writing books and papers about the end of the world for more than 50 years. But his dogmatism on this point has been beneficial for me. In particular, examining in what ways he's been wrong has influenced my views on the [limitations of mathematical models](https://benchugg.com/writing/mismeasure-of-models/).
+
+But surely, you scream, it's possible to marshall good arguments for a position without being a dogmatist about it? Surely we can have civil disagreements led by rational, open-minded, good-willed people who just want to get to the truth and aren't wed to a particular position? This is, of course, possible to some extent. But I think this optimistic picture misunderstands what we know about human psychology. Who has the most incentive to seek out every possible argument in their favor, and to spot every possible flaw in their opponent's position? People who are emotionally and tribally attached to a particular view.  
+
+Dogmatists lay anchor points for public conversation, helping the rest of us navigate the complex world of ideas more efficiently. They generate the strongest arguments for their side so that the rest of us can feel confident that we are hearing the best case possible—a public service.
+
+_Thanks to Cam Peters for comments._

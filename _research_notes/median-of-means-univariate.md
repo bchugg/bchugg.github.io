@@ -92,11 +92,11 @@ Suppose $$\delta\in(0,1)$$ and $$k=\lceil 8\log(1/\delta)\rceil$$, then $$\hmu^\
 
 $$
 \begin{equation}
-    |\hmu^\mom_n - \mu| \leq \sigma \bigg(\frac{32\log(1/\delta)}{n}\bigg)^{1/2}.
+    |\hmu^\mom_n - \mu| \leq \sigma \bigg(\frac{32\log(1/\delta)}{n}\bigg)^{1/2},
 \end{equation}
 $$
 
-with probability $$1-\delta$$, where $$\Var(X_1)\leq \sigma^2$$. The intuition is relatively  straightforward. The sample mean for each group is an unbiased estimator of the true mean $$\mu$$. Chebyshev's inequality implies that, with constant probability, the error $$\vert S_i-\mu\vert$$ is on the order $$\sigma/\sqrt{n/k}$$ with constant probability. Also, each $$S_i$$ is independent of the others. Thus, for $$\hmu_n^\mom$$ to be far for $$\mu$$ it would require that many independent Bernoulli events are all far from their mean, which we can bound via exponential tail inequalities. Thus, even though we don't assume anything higher than a second moment for $$P$$, we can employ powerful tail bounds on the behavior of the group means. 
+with probability $$1-\delta$$, where $$\Var(X_1)\leq \sigma^2$$. The intuition is relatively  straightforward. The sample mean for each group is an unbiased estimator of the true mean $$\mu$$. Chebyshev's inequality implies that, with constant probability, the error $$\vert S_i-\mu\vert$$ is on the order $$\sigma/\sqrt{n/k}$$. Also, each $$S_i$$ is independent of the others. So for $$\hmu_n^\mom$$ to be far for $$\mu$$ it would require that many independent Bernoulli events are all far from their mean, which we can bound via exponential tail inequalities. Therefore, even though we don't assume anything higher than a second moment for $$P$$, we can employ powerful tail bounds on the behavior of the group means. 
 
 As for the analysis, let $$m=n/k$$, so each group $$S_i$$ has $$m$$ elements (by assumption, $$m$$ is an integer). 
 Since $$\E[S_i]=\mu$$, Chebyshev's inequality implies 
