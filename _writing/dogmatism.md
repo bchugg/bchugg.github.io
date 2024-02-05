@@ -4,6 +4,7 @@ title: "The paradox of dogmatism"
 description: On the benefit of dogmatism in open societies
 date: "2024-02-04" 
 status: published
+image: /assets/writing_images/dogmatism.jpeg
 ---
 
 It's rare to call someone a dogmatist and mean it as a compliment. To label someone dogmatic implies that they are stubbornly clinging to their preconceived notions about how the world is, or should be, while ignoring the possibility they could be wrong. To be dogmatic is to persistently seek out arguments, no matter how weak, that support your position and to dismiss any arguments, no matter how strong, that oppose it. It is to seek vindication instead of truth.

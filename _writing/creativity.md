@@ -4,6 +4,7 @@ title: "On Creativity"
 description: "A few rogue thoughts on creativity inspired by Michael Nielsen, John Cleese, and Guy Claxton."
 date: "2023-07-28" 
 status: published
+image: /assets/writing_images/creativity.jpeg
 ---
 
 ## I. Nielsen on Creativity
