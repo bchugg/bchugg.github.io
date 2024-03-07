@@ -25,11 +25,11 @@ I'm basically agnostic as to the promise of DEXs, and there are certainly [known
 
 # 1. Wealth and Price Processes
 
-A _numeraire_ is any financial standard against which we compare the value of assets. Typically numeraires are stable, providing a reliable means against we can compare something more volatile. Technically speaking, however, they can be anything. 
+A _numeraire_ is any financial standard against which we compare the value of assets. Typically numeraires are stable, providing a reliable means against which we can compare something more volatile. Technically speaking, however, they can be anything. 
 
 For example, a numeraire might be the US dollar, and the asset lumber. In crypto land, they're typically cryptocurrencies. But it's helpful to keep the USD and lumber example in the back of your head. 
 
-At time $$t$$, let $$X_t$$ be the amount of numeraire (USD), and $$Y_t$$ the amount of asset (lumber). The price of the asset w.r.t. to the numeraire is controlled by stochastic market forces, captured mathematically by what we'll call a _price process_. The price process is a sequence of random variables $$S_t$$, which define the relationship between wealth, numeraire, and assets: 
+At time $$t$$, let $$X_t$$ be the amount of numeraire (USD), and $$Y_t$$ the amount of asset (lumber). The price of the asset with respect to the numeraire is controlled by stochastic market forces, captured mathematically by what we'll call a _price process_. The price process is a sequence of random variables $$S_t$$, which define the relationship between wealth, numeraire, and assets: 
 
 $$
 \begin{equation}

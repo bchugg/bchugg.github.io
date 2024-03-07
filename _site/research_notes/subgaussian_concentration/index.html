@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head prefix="og: http://ogp.me/ns#; dc: http://purl.org/dc/terms/#">
+  
+  
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="http://localhost:4000/research_notes/subgaussian_concentration/" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PN2H9928PZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PN2H9928PZ');
+  </script>
+
+  <!-- Basic meta elements -->
+  <meta charset="utf-8" />
+
+  <!-- Enable responsiveness on mobile devices -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+
+  <!-- Mathjax Support -->
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <title>
+    
+     Slightly tighter concentration for sub-Gaussian random vectors
+    
+  </title>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.9.1" />
+<meta property="og:title" content="Slightly tighter concentration for sub-Gaussian random vectors" />
+<meta name="author" content="Ben Chugg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A PAC-Bayesian argument yields slightly tighter concentration bounds for sums of sub-Gaussian random vectors" />
+<meta property="og:description" content="A PAC-Bayesian argument yields slightly tighter concentration bounds for sums of sub-Gaussian random vectors" />
+<link rel="canonical" href="http://localhost:4000/research_notes/subgaussian_concentration/" />
+<meta property="og:url" content="http://localhost:4000/research_notes/subgaussian_concentration/" />
+<meta property="og:site_name" content="benny" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-03-06T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Slightly tighter concentration for sub-Gaussian random vectors" />
+<meta name="twitter:site" content="@bennychugg" />
+<meta name="twitter:creator" content="@Ben Chugg" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"dateModified":"2024-03-06T00:00:00-05:00","datePublished":"2024-03-06T00:00:00-05:00","description":"A PAC-Bayesian argument yields slightly tighter concentration bounds for sums of sub-Gaussian random vectors","headline":"Slightly tighter concentration for sub-Gaussian random vectors","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/research_notes/subgaussian_concentration/"},"url":"http://localhost:4000/research_notes/subgaussian_concentration/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- Dublin Core metadata for Zotero -->
+  <meta property="dc:title" content="Slightly tighter concentration for sub-Gaussian random vectors" />
+  <meta property="dc:creator" content="Ben Chugg" />
+  <meta property="dc:identifier" content="http://localhost:4000/research_notes/subgaussian_concentration/" />
+  
+  <meta property="dc:date" content="2024-03-06 00:00:00 -0500" />
+  
+  <meta property="dc:source" content="benny" />
+
+  <!-- Open Graph and Twitter metadata -->
+  <meta property="og:title" content="Slightly tighter concentration for sub-Gaussian random vectors" />
+  <meta property="og:url" content="http://localhost:4000/research_notes/subgaussian_concentration/" />
+  
+    <meta property="og:image" content="http://localhost:4000/assets/images/heads.jpeg"/>
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/heads.jpeg" />
+  
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:domain" value="benchugg.com" />
+  <meta name="twitter:title" value="Slightly tighter concentration for sub-Gaussian random vectors" />
+  <meta name="twitter:url" value="http://localhost:4000" />
+  
+  <!-- Description is dependent on page type  -->
+  
+    <meta property="og:description" content="A PAC-Bayesian argument yields slightly tighter concentration bounds for sums of sub-Gaussian random vectors">
+    <meta name="twitter:description" value="A PAC-Bayesian argument yields slightly tighter concentration bounds for sums of sub-Gaussian random vectors" />
+    <meta property="og:type" content="article" />
+  
+  
+
+  <!-- CSS link -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="167x167" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="/assets/favicon.ico">
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="114×114" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="72×72" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” href="/assets/favicon.ico" />
+  <link rel=”icon” href="/assets/favicon.ico", sizes="32x32"/>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml" />
+
+  
+</head>
+
+
+  <body class="theme-base-">
+
+
+    <!--
+      Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS
+      collisions with our real content.
+    -->
+    <div class="wrap">
+      <header class="masthead">
+        <div class="container">
+          <a id='name' href="/">Ben Chugg</a>
+          <div class="span">
+            <a href="/papers/">Papers</a> 
+            <a href="/writing/">Writing</a>
+            <a href="/research_notes/">Notes</a>
+            <a href="http://incrementspodcast.com">Podcast</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="container content" id="main">
+        <article class="note">
+  <!-- <small>
+    <a id="back", href="/research_notes/">Back to all notes</a>
+  </small> -->
+  <!-- <hr> -->
+  
+  <p class='title'>Slightly tighter concentration for sub-Gaussian random vectors</p> 
+  <p id="date">March 06, 2024</p>
+  \[\newcommand{\bs}[1]{\boldsymbol{#1}}
+\newcommand{\Xvec}{\bs{X}}
+\newcommand{\muvec}{\bs{\mu}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\thetavec}{\bs{\theta}}
+\newcommand{\sd}{\mathbb{S}^{d-1}}
+\renewcommand{\Re}{\mathbb{R}}
+\newcommand{\kl}{D_{\text{KL}}}
+\newcommand{\varthetavec}{\bs{\vartheta}}
+\newcommand{\phivec}{\bs{\phi}}
+\newcommand{\norm}[1]{\left\|#1\right\|}\]
+
+<h1 id="introduction">Introduction</h1>
+
+<p>We say a random vector \(\Xvec\in\Re^d\), \(d\geq 1\), drawn from a distribution \(P\) with mean \(\muvec\) is \(\sigma\)-sub-Gaussian if</p>
+
+\[\begin{equation}
+\label{eq:subgaussian}
+    \E_P \exp\{\lambda \la \phivec, \Xvec - \muvec\ra\} \leq \exp\left(\frac{\lambda^2\sigma^2}{2}\right)\quad\text{ for all }\quad\phivec\in\sd \text{ and }\lambda\in\Re, \tag{1}
+\end{equation}\]
+
+<p>where \(\sd:=\{\bs{x}\in\Re^d: \norm{\bs{x}}=1\}\) is the unit ball in \(\Re^d\). 
+The concentration of sub-Gaussian random vectors is a well-studied topic, especially in the scalar case. Here we make a brief observation that by appealing to a seemingly unrelated branch of statistical learning theory—<a href="/research_notes/pac_bayes/">PAC-Bayesian bounds</a>—we can obtain tighter (and arguably cleaner) concentration inequalities on the behavior of sums of sub-Gaussian random vectors.</p>
+
+<p>PAC-Bayesian (a.k.a. simply “PAC-Bayes”) theory emerged in the late 1990s and was refined in the early 2000s. At a high-level, the theory provides a Bayesian perspective on the successful “probably approximately correct” (PAC) framework of Valiant for statistical learning. PAC bounds are concerned with the worst case difference between the empirical loss and the expected loss and depend on the complexity of the class of learners \(\Theta\) (via the VC-dimension, Rademacher complexity, metric entropy, etc.). The PAC-Bayes approach, meanwhile, places a prior \(\nu\) over \(\Theta\) and bounds the expected difference between the empirical and expected loss according to any “posterior” distribution \(\rho\).<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> The complexity term is replaced by a KL-divergence term between the prior and posterior.</p>
+
+<p>Of course, while PAC-Bayes theory was originally motivated by statistical learning, the mathematics involved can extend beyond this setting. 
+Catoni and Giulini <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/1712.02747.pdf">were the first to observe this fact</a>, using PAC-Bayes bounds to estimate the mean of heavy-tailed random vectors. 
+In a recent paper, <a rel="nofollow noopener noreferrer" href="https://arxiv.org/abs/2302.03421">we studied</a> such bounds for general stochastic processes. A corollary of our main result is the following:</p>
+
+<p><strong>Proposition 1</strong>
+Suppose \(\Xvec_1,\dots,\Xvec_n\sim P\) and let \(f:\Re^d\times\Theta \to \Re\) obey \(\E_P \exp \{f(\Xvec, \theta)\}\leq 1\) for each \(\theta\in\Theta\). Fix a prior \(\nu\) over \(\Theta\). Then, for all \(\delta\in(0,1)\),<br />
+    \begin{equation}
+        P\left(\forall \rho\in\mathcal{M}(\Theta):  \sum_{i=1}^n \E_{\theta\sim\rho} f(\Xvec_i,\theta) \leq \kl(\rho|\nu) + \log(1/\delta)\right)\geq 1-\delta.
+    \end{equation}</p>
+
+<p>Here \(\kl(\cdot\|\cdot)\) is the <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">KL divergence</a>. 
+A concentration result for sub-Gaussian random vectors will follow after selecting an appropriate function \(f\), parameter space \(\Theta\), prior and family of posteriors and then applying Proposition 1.</p>
+
+<h1 id="sub-gaussian-concentration">Sub-Gaussian concentration</h1>
+
+<p>Suppose we instantiate Proposition 1 with the parameter space \(\Theta = \Re^d\) and the function</p>
+
+\[\begin{equation}
+ f:(\Xvec,\thetavec)\mapsto \lambda \la \thetavec, \Xvec-\muvec\ra - \frac{\lambda^2\sigma^2\norm{\thetavec}^2}{2},   
+\end{equation}\]
+
+<p>for any fixed \(\lambda\in\Re\). If \(\Xvec \sim P\) has mean \(\muvec\) and is \(\sigma\)-sub-Gaussian, then \eqref{eq:subgaussian} implies that \(\E_P \exp\{f(\Xvec,\thetavec)\}\leq 1\). After choosing an appropriate prior and posterior, we obtain the following result.</p>
+
+<p><strong>Proposition 2</strong>
+Let \(\Xvec_1,\Xvec_2,\dots,\Xvec_n \sim P\) be \(\sigma\)-sub-Gaussian with mean \(\muvec\). For any \(\beta,\lambda&gt;0\) and \(\delta\in(0,1)\), with probability \(1-\delta\),</p>
+
+\[\begin{equation}
+    \norm{\frac{1}{n}\sum_{i=1}^n \Xvec_i - \muvec}_2 \leq \frac{\lambda\sigma^2(d/\beta + 1)}{2} + \frac{\beta/2 + \log(1/\delta)}{n\lambda}.
+\end{equation}\]
+
+<p><em>Proof</em>. 
+Let \(\rho_{\phivec}\) denote the density of the multivariate Gaussian distribution with mean \(\phivec\) and covariance \(\beta^{-1}\bs{I}_d\), where \(\bs{I}_d\) is the \(d\times d\) identity matrix. We choose our prior to be a Gaussian centered at \(\bs{0}\), i.e., \(\nu = \rho_{\bs{0}}\). Note that for any \(\phivec\in\sd\), \(\kl(\rho_{\phivec}\|\nu) = \beta/2\), which follows from well-known equations for the KL divergence between Gaussians.<br />
+Proposition 1 applies for all posteriors over \(\Theta=\Re^d\), but in our case it is sufficient to consider the family of posteriors \(\rho_{\phivec}\) for \(\phivec\in\sd\). Doing so yields that with probability \(1-\delta\), simultaneously for all \(\phivec\in\sd\),</p>
+
+\[\begin{align}
+\label{eq:}
+    \lambda \sum_{i=1}^n \E_{\thetavec\sim\rho_{\phivec}} \la\thetavec, \Xvec_i-\muvec\ra \leq \frac{n\lambda^2\sigma^2}{2}\E_{\thetavec\sim \rho_{\phivec}} \norm{\thetavec}^2 + \frac{\beta}{2} + \log(1/\delta). 
+\end{align}\]
+
+<p>Observing that</p>
+
+\[\E_{\thetavec\sim\rho_{\phivec}} \la\thetavec, \Xvec_i-\muvec\ra = \la\phivec,\Xvec_i-\muvec\ra,\]
+
+<p>and</p>
+
+\[\E_{\thetavec\sim \rho_{\phivec}} \norm{\thetavec}^2 = \text{Tr}(\text{Cov}(\beta^{-1}\bs{I}_d)) + \norm{\phivec}^2 = d/\beta + 1,\]
+
+<p>we can rearrange the above display to read</p>
+
+\[\begin{align*}
+    \sup_{\phivec\in\sd} \lambda \sum_{i=1}^n \left\langle \phivec, \Xvec_i-\muvec\right\rangle \leq \frac{\lambda^2 \sigma^2 (d/\beta +1)}{2} + \frac{\beta}{2}+ \log(1/\delta).
+\end{align*}\]
+
+<p>Dividing by \(n\lambda\) and 
+noting that \(\sup_{\phivec\in\sd}\la \phivec, \bs{y}\ra = \norm{\bs{y}}_2\) completes the proof.</p>
+
+<p>Proposition 2 provides us with two parameters to optimize: \(\beta\) and \(\lambda\). Taking \(\lambda = \sigma\sqrt{\log(1/\alpha)/n}\) and \(\beta=\sqrt{d\log(1/\alpha)}\) we obtain the following corollary.</p>
+
+<p><strong>Corollary 1.</strong> Let \(\Xvec_1,\dots,\Xvec_n\sim P\) be \(\sigma\)-sub-Gaussian.  Then, for all \(\alpha\in(0,1)\), with probability \(1-\alpha\),</p>
+
+\[\begin{equation}
+    \norm{\frac{1}{n}\sum_{i=1}^n \Xvec_i - \muvec}_2 \leq \sigma\sqrt{\frac{d}{n}} + \frac{3\sigma}{2}\sqrt{\frac{\log(1/\alpha)}{n}}.
+    \end{equation}\]
+
+<p>Why is the PAC-Bayesian approach useful here? 
+Intuitively, it’s providing a high-dimensional analogue of a union bound. We are translating the fact that Proposition 1 provides a uniform bound over all posteriors into a bound in each direction \(\phivec\in\sd\), hence the choice of \(\rho_{\phivec}\) as our family of posteriors. In the univariate case, a traditional analysis would employ a union bound and pay a an additional factor of \(\log(2)\). The PAC-Bayes approach replaces this price with the KL divergence between prior and posterior, which in our case is \(\beta/2\).</p>
+
+<p>It’s annoyingly hard to find explicit high probability bounds for sub-Gaussian random vectors in the literature (oddly, there are more bounds for sub-Gaussian matrices), but let’s try and compare Corollary 1 to a few known results.</p>
+
+<p>A classical concentration result (found <a rel="nofollow noopener noreferrer" href="https://www.stat.cmu.edu/~arinaldo/Teaching/36709/S19/Scribed_Lectures/Feb21_Shenghao.pdf">here</a> for example) obtained with a covering argument, states that, with probability \(1-\alpha\), \(\norm{\frac{1}{n}\sum_i \Xvec_i-\muvec}\leq 4\sigma \sqrt{d}/\sqrt{n} + 2\sigma\sqrt{\log(1/\alpha)}/\sqrt{n}\). Corollary 1 has the same order as this bound but improves the constants.</p>
+
+<p>A separate result comes from <a rel="nofollow noopener noreferrer" href="https://sham.seas.harvard.edu/files/kakade/files/1902-03736-2019.pdf">Jin et al.</a>, who studied so-called “norm sub-Gaussian” random vectors. These are generalizations of both norm-bounded vectors and sub-Gaussian vectors. In particular, if a random variable is \(\sigma/\sqrt{d}\)-sub-Gaussian, then it is \(2\sqrt{2}\sigma\)-norm-subGaussian. Translating their Hoeffding-style concentration result into one concerning sub-Gaussian random vectors gives that with probability \(1-\alpha\),</p>
+
+\[\norm{\frac{1}{n}\sum_i \Xvec_i-\muvec}_2 = O(\sigma\sqrt{d\log(2d/\alpha)/n}).\]
+
+<p>Corollary 1 instead gives a bound with width \(O(\frac{\sigma}{\sqrt{n}}(\sqrt{d + \log(1/\alpha)))}\), 
+thus replacing the multiplicative dependence between 
+\(d\) and \(\log(1/\alpha)\) with an additive dependence, and removing a factor of \(2d\) in the log.</p>
+
+<hr />
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Here, posterior is not meant in the Bayesian sense, i.e., it is not obtained by updating the prior via Bayes’ theorem. Instead it refers to any distribution chosen after seeing the data. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+    </li>
+  </ol>
+</div>
+
+  <small>
+    <a link="back", href="/research_notes/">Back to all notes</a>
+  </small>
+</article>
+ <!-- "> -->
+      </main>
+
+      <!-- Footer  -->
+      <div class="container" id="footer">
+        <hr>
+        <div class='container links'>
+          <!-- <a href="https://scholar.google.ca/citations?user=wYJDbD4AAAAJ&hl=en" rel='nofollow'><img src="/assets/images/googlescholar.png"></a> -->
+          <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github.png"></a>
+          <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads.png"></a>
+          <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter.png"></a>
+        </div>
+      
+        <div class='copyright'>
+          <small>&#169; 2024 Ben Chugg</small>
+        </div>
+      
+      </div>
+    </div>
+
+  </body>
+</html> 

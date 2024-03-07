@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head prefix="og: http://ogp.me/ns#; dc: http://purl.org/dc/terms/#">
+  
+  
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="http://localhost:4000/research_notes/catoni_giulini/" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PN2H9928PZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PN2H9928PZ');
+  </script>
+
+  <!-- Basic meta elements -->
+  <meta charset="utf-8" />
+
+  <!-- Enable responsiveness on mobile devices -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+
+  <!-- Mathjax Support -->
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <title>
+    
+     The Catoni-Giulini estimator
+    
+  </title>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.9.1" />
+<meta property="og:title" content="The Catoni-Giulini estimator" />
+<meta name="author" content="Ben Chugg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An analysis of the Catoni-Giulini estimator for heavy-tailed random vectors" />
+<meta property="og:description" content="An analysis of the Catoni-Giulini estimator for heavy-tailed random vectors" />
+<link rel="canonical" href="http://localhost:4000/research_notes/catoni_giulini/" />
+<meta property="og:url" content="http://localhost:4000/research_notes/catoni_giulini/" />
+<meta property="og:site_name" content="benny" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-03-07T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="The Catoni-Giulini estimator" />
+<meta name="twitter:site" content="@bennychugg" />
+<meta name="twitter:creator" content="@Ben Chugg" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"dateModified":"2024-03-07T00:00:00-05:00","datePublished":"2024-03-07T00:00:00-05:00","description":"An analysis of the Catoni-Giulini estimator for heavy-tailed random vectors","headline":"The Catoni-Giulini estimator","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/research_notes/catoni_giulini/"},"url":"http://localhost:4000/research_notes/catoni_giulini/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- Dublin Core metadata for Zotero -->
+  <meta property="dc:title" content="The Catoni-Giulini estimator" />
+  <meta property="dc:creator" content="Ben Chugg" />
+  <meta property="dc:identifier" content="http://localhost:4000/research_notes/catoni_giulini/" />
+  
+  <meta property="dc:date" content="2024-03-07 00:00:00 -0500" />
+  
+  <meta property="dc:source" content="benny" />
+
+  <!-- Open Graph and Twitter metadata -->
+  <meta property="og:title" content="The Catoni-Giulini estimator" />
+  <meta property="og:url" content="http://localhost:4000/research_notes/catoni_giulini/" />
+  
+    <meta property="og:image" content="http://localhost:4000/assets/images/heads.jpeg"/>
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/heads.jpeg" />
+  
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:domain" value="benchugg.com" />
+  <meta name="twitter:title" value="The Catoni-Giulini estimator" />
+  <meta name="twitter:url" value="http://localhost:4000" />
+  
+  <!-- Description is dependent on page type  -->
+  
+    <meta property="og:description" content="An analysis of the Catoni-Giulini estimator for heavy-tailed random vectors">
+    <meta name="twitter:description" value="An analysis of the Catoni-Giulini estimator for heavy-tailed random vectors" />
+    <meta property="og:type" content="article" />
+  
+  
+
+  <!-- CSS link -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="167x167" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="/assets/favicon.ico">
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="114×114" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="72×72" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” href="/assets/favicon.ico" />
+  <link rel=”icon” href="/assets/favicon.ico", sizes="32x32"/>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml" />
+
+  
+</head>
+
+
+  <body class="theme-base-">
+
+
+    <!--
+      Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS
+      collisions with our real content.
+    -->
+    <div class="wrap">
+      <header class="masthead">
+        <div class="container">
+          <a id='name' href="/">Ben Chugg</a>
+          <div class="span">
+            <a href="/papers/">Papers</a> 
+            <a href="/writing/">Writing</a>
+            <a href="/research_notes/">Notes</a>
+            <a href="http://incrementspodcast.com">Podcast</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="container content" id="main">
+        <article class="note">
+  <!-- <small>
+    <a id="back", href="/research_notes/">Back to all notes</a>
+  </small> -->
+  <!-- <hr> -->
+  
+  <p class='title'>The Catoni-Giulini estimator</p> 
+  <p id="date">March 07, 2024</p>
+  \[\newcommand{\E}{\mathbb{E}}
+% cals 
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cK}{\mathcal{K}}
+% Vector stuff 
+\newcommand{\bs}[1]{\boldsymbol{#1}}
+\newcommand{\Xvec}{\boldsymbol{X}}
+\newcommand{\xvec}{\boldsymbol{x}}
+\newcommand{\Yvec}{\boldsymbol{Y}}
+\newcommand{\yvec}{\boldsymbol{x}}
+\newcommand{\muvec}{\boldsymbol{\mu}}
+\newcommand{\muhat}{\widehat{\boldsymbol{\mu}}}
+\newcommand{\thetavec}{\boldsymbol{\theta}}
+\newcommand{\varthetavec}{\boldsymbol{\vartheta}}
+\newcommand{\sphere}{\mathbb{S}}
+\newcommand{\sd}{\sphere^{d-1}}
+\newcommand{\Cov}{\text{Cov}}
+\newcommand{\Var}{\mathbb{V}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\thres}{\text{th}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\d}{\text{d}}
+\newcommand{\kl}{D_{\text{KL}}}
+\renewcommand{\Re}{\mathbb{R}}
+\newcommand{\Tr}{\text{Tr}}\]
+
+<ul id="markdown-toc">
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#bounding-ii" id="markdown-toc-bounding-ii">Bounding (ii)</a></li>
+  <li><a href="#bounding-i" id="markdown-toc-bounding-i">Bounding (i)</a></li>
+  <li><a href="#the-main-result" id="markdown-toc-the-main-result">The main result</a></li>
+</ul>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>We’ve previously discussed the <a href="/research_notes/median-of-means-multivariate/">median-of-means estimator</a> for estimating the mean of random vectors. While median-of-means has sub-Gaussian performance assuming only the existence of the covariance matrix, it’s a complicated estimator to implement in the multivariate setting. Remarkably, there’s a simple threshold-based estimator <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/1802.04308.pdf">due to Catoni and Giulini</a> that achieves <em>near</em> sub-Gaussian performance.</p>
+
+<p>Let \(\Xvec_1, \Xvec_2,\dots,\Xvec_n\sim P\) be iid (this condition can be weakened—see <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2311.08168.pdf">our paper</a>) with mean \(\muvec\) and assume that the second moment is bounded by \(v\):</p>
+
+\[\begin{equation}
+\E_P \norm{\Xvec}^2 \leq v&lt;\infty. 
+\end{equation}\]
+
+<p>For a positive scalar \(\lambda&gt;0\) to be chosen later, define the threshold function</p>
+
+\[\begin{equation}
+     \thres(\bs{x}) := \frac{\lambda \norm{\bs{x}} \wedge 1}{\lambda\norm{\bs{x}}}\bs{x}. 
+\end{equation}\]
+
+<p>Here \(a\wedge b = \min(a,b)\). This function simply shrinks \(\bs{x}\) towards the origin by an amount proportional to \(\lambda\) and is clearly easy to implement computationally. The Catoni-Giulini estimator is</p>
+
+\[\widehat{\muvec} = \frac{1}{n}\sum_{i=1}^n \thres(\Xvec_i).\]
+
+<p>Notice that by Cauchy-Schwarz,</p>
+
+\[\begin{equation}
+\label{eq:muvec-mu-decomp}
+\norm{\widehat{\muvec} - \muvec} = \sup_{\varthetavec\in\sd} \la \varthetavec, \widehat{\muvec} - \muvec\ra = \sup_{\varthetavec\in\sd}\frac{1}{n}\sum_{i=1}^n \la \varthetavec, \thres(\Xvec_i) - \muvec\ra,\tag{1}
+\end{equation}\]
+
+<p>where \(\sd = \{\bs{x}\in \Re^d: \norm{\bs{x}=1}\}.\) Therefore, we’ll bound the deviation of \(\widehat{\muvec}\) from \(\muvec\) by bounding \(\la \varthetavec, \thres(\Xvec_i) - \muvec\ra\). We proceed by separating this  quantity into two terms:</p>
+
+\[\begin{equation}
+\label{eq:thres_decomp}
+  \la \varthetavec, \thres(\Xvec_i) - \muvec\ra = \underbrace{\la \varthetavec, \thres(\Xvec_i)  - \muvec^\thres\ra}_{(i)} + \underbrace{\la \varthetavec, \muvec^\thres - \muvec\ra}_{(ii)}, \tag{2}
+\end{equation}\]
+
+<p>where \(\muvec^\thres = \E[\thres(\Xvec)]\). First we’ll bound term (ii) and then we’ll bound term (i).</p>
+
+<h1 id="bounding-ii">Bounding (ii)</h1>
+
+<p>Notice the relationship</p>
+
+\[\begin{equation*}
+    0\leq 1 - \frac{a\wedge 1}{a}\leq a,\quad \forall a&gt;0. 
+\end{equation*}\]
+
+<p>This is easily seen by case analysis. Indeed, for \(a\geq 1\), we have \((a\wedge 1)/a = 1/a\) and \(1-1/a\leq 1\leq a\). For \(a&lt;1\), we have \(1-(a\wedge 1)/a = 1 - 1=0\leq a\). Now, let</p>
+
+\[\alpha(\Xvec) = \frac{\lambda \norm{\Xvec} \wedge 1}{\lambda \norm{\Xvec}},\]
+
+<p>and note that the above analysis demonstrates that</p>
+
+\[\begin{equation}
+\label{eq:abs_alpha_bound}
+  |\alpha(\Xvec)-1| = 1 - \alpha(\Xvec) \leq \lambda\norm{\Xvec}.   \tag{3}
+\end{equation}\]
+
+<p>Therefore,</p>
+
+\[\begin{align*}
+    \quad \la \varthetavec,\muvec^\thres - \muvec\ra 
+    &amp;= \la \varthetavec, \E[\alpha(\Xvec) \Xvec] - \E[\Xvec]\ra \\ 
+    &amp;= \E (\alpha(\Xvec)-1)\la \varthetavec, \Xvec\ra \\ 
+    &amp;\leq \E |\alpha(\Xvec)-1||\la \varthetavec, \Xvec\ra| &amp; 
+    \\ 
+    &amp;\leq \E \lambda \norm{\Xvec} \norm{\varthetavec}\norm{\Xvec} &amp; \text{by \eqref{eq:abs_alpha_bound} and Cauchy-Schwarz} \\
+    &amp; = \lambda \E \norm{\Xvec}^2 &amp; 
+    \norm{\varthetavec} =1  \\ 
+    &amp;\leq \lambda v,
+\end{align*}\]
+
+<p>demonstrating that the second term in \eqref{eq:thres_decomp} is bounded by \(\lambda v\).</p>
+
+<h1 id="bounding-i">Bounding (i)</h1>
+
+<p>To handle term (i), we appeal to <a href="/research_notes/pac_bayes/">PAC-Bayesian</a> techniques. (This was Catoni and Giulini’s big insight: the ability to use PAC-Bayesian arguments in estimation problems). We’ll use the following bound:</p>
+
+<p><strong>Lemma 1.</strong> Let \(f:\cX \times \Theta\to\Re\) be a measurable function. Fix a prior \(\nu\) over \(\Theta\). Then, with probability \(1-\alpha\) over \(P\), for all distributions \(\rho\) over \(\Theta\),</p>
+
+\[\sum_{i\leq t} \int_{\Theta} f(\Xvec_i,\thetavec) \rho(\d\thetavec)
+\leq \sum_{i\leq t}\int_{\Theta} \log\E e^{ f(\Xvec,\thetavec)} \rho(\d\thetavec)+ \kl(\rho\|\nu) + \log\frac{1}{\alpha}.\]
+
+<p>We won’t prove this bound (though it’s perhaps worth noting that it follows from Proposition 1 in the <a href="/research_notes/subgaussian_concentration/">last post</a>). It’s also in Catoni’s <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/0712.0248.pdf">treatise</a> on PAC-Bayesian theory.</p>
+
+<p>Let’s apply this result with the function \(f(\Xvec, \thetavec) = \lambda\la \thetavec, \thres(\Xvec) - \muvec^\thres\ra\).
+Keeping in mind that</p>
+
+\[\E_{\thetavec\sim\rho_{\varthetavec}}\la \thetavec ,\thres(\Xvec_i)-\muvec^\thres\ra 
+= \la \varthetavec, \thres(\Xvec_i) - \muvec^\thres\ra,\]
+
+<p>we obtain that with probability \(1-\alpha\),</p>
+
+\[\begin{align}
+\label{eq:pb_mgf_applied}
+    &amp; \sup_{\varthetavec\in\sd}\sum_{i\leq t} \lambda\la\varthetavec, \thres(\Xvec_i) - \muvec^\thres \ra 
+    \le 
+    \sum_{i\leq t} \E_{\thetavec\sim\rho_{\varthetavec}}\log \E\left\{ e^{\lambda \la \thetavec, \thres(\Xvec_i) - \muvec^\thres \ra }\right\} + \frac{\beta}{2} + \log\frac{1}{\alpha}. \tag{4}
+\end{align}\]
+
+<p>Next, we bound the right hand side of \eqref{eq:pb_mgf_applied}. To begin, notice that Jensen’s inequality gives</p>
+
+\[\begin{align*}
+    &amp;\quad \int  \log \E_{\Xvec\sim P}\left\{ e^{\lambda  \la \thetavec, \thres(\Xvec) - \muvec^\thres \ra  } \right\}  \rho_{\varthetavec}(\d \thetavec)
+    \\ &amp;\le  \log \int \E_{\Xvec\sim P}\left\{ e^{\lambda \la\thetavec, \thres(\Xvec) - \muvec^\thres \ra  } \right\}  \rho_{\varthetavec}(\d \thetavec)
+    \\ &amp;=  \log \E_{\Xvec\sim P}\left\{ \int e^{  \lambda\la \thetavec, \thres(\Xvec) - \muvec^\thres \ra  } \rho_{\varthetavec}(\d \thetavec) \right\}
+    \\ &amp;=  \log \E \exp\left(\lambda\la \varthetavec, \thres(\Xvec) - \muvec^\thres \ra + \frac{\lambda^2}{2\beta} \| \thres(\Xvec) - \muvec^\thres \|^2 \right), 
+\end{align*}\]
+
+<p>where the final line uses the usual closed-form expression of the multivariate Gaussian MGF. 
+Define the functions on \(\mathbb R\)</p>
+
+\[g_1(x) := \frac{1}{x}(e^x-1),\]
+
+<p>and</p>
+
+\[g_2(x) := \frac{2}{x^2}(e^x-x-1),\]
+
+<p>(with \(g_1(0) = g_2(0) = 1\) by continuous extension).
+Both \(g_1\) and \(g_2\) are increasing. Notice that</p>
+
+\[\begin{equation}
+\label{eq:ex+y}
+  e^{x+y} = 1 + x+ \frac{x^2}{2}g_2(x) + g_1(y)ye^x.  \tag{5}
+\end{equation}\]
+
+<p>Consider setting \(x\) and \(y\) to be the two terms in the CGF above, i.e.,</p>
+
+\[x = \lambda\la \varthetavec, \thres(\Xvec) - \muvec^\thres\ra,\]
+
+\[y = \frac{\lambda^2}{2\beta} \| \thres(\Xvec) - \muvec^\thres \|^2,\]
+
+<p>where we recall that \(\varthetavec\in\sd\). Before applying \eqref{eq:ex+y} we would like to develop upper bounds on \(x\) and \(y\). 
+Observe that</p>
+
+\[\begin{equation*}
+    \norm{\thres(\Xvec)} = \frac{\lambda\norm{\Xvec} \wedge 1}{\lambda} \leq \frac{1}{\lambda}, 
+\end{equation*}\]
+
+<p>and consequently,</p>
+
+\[\norm{\muvec^\thres} = \norm{\E\thres(\Xvec)} \leq \E\norm{\thres(\Xvec)} \leq \frac{1}{\lambda},\]
+
+<p>by Jensen’s inequality. Therefore, by Cauchy-Schwarz and the triangle inequality,</p>
+
+\[x \leq \lambda\norm{\varthetavec}\norm{\thres(\Xvec) - \muvec^\thres} \leq \lambda(\norm{\thres(\Xvec)} + \norm{\muvec^\thres})\leq 2.\]
+
+<p>Via similar reasoning, we can bound \(y\) as</p>
+
+\[\begin{align*}
+    y \leq \frac{\lambda^2}{2\beta}(\norm{\thres(\Xvec)}+\norm{\muvec^\thres})^2 \leq \frac{2}{\beta}. 
+\end{align*}\]
+
+<p>Finally, substituting in these values of \(x\) and \(y\) to \eqref{eq:ex+y}, taking expectations, and using the fact that \(g_1\) and \(g_2\) are increasing gives</p>
+
+\[\begin{align*}
+  &amp; \quad \E \left[\exp\left(\la \varthetavec, \thres(\Xvec) - \muvec^\thres \ra + \frac{1}{2\beta} \| \thres(\Xvec) - \muvec^\thres \|^2 \right) \right]  \\ 
+  &amp;\leq 1 + \lambda\E [\la \varthetavec, \thres(\Xvec) - \muvec^\thres\ra]  
+  + g_2\left(2\right)\frac{\lambda^2}{2}\E[\la \varthetavec, \thres(\Xvec) - \muvec^\thres\ra^2 ]
+  \\
+  &amp;\qquad + g_1\left(\frac{2}{\beta}\right )\frac{\lambda^2 e^{2}}{2\beta}\E[\norm{\thres(\Xvec) - \muvec^\thres}^2] \\ 
+  &amp;\leq 1 + g_2\left(2\right)\frac{\lambda^2}{2}\E[\norm{\thres(\Xvec) - \muvec^\thres}^2 ]
+  + g_1\left(\frac{2}{\beta}\right )\frac{\lambda^2 e^{2}}{2\beta}\E[\norm{\thres(\Xvec) - \muvec^\thres}^2],  
+\end{align*}\]
+
+<p>where we’ve used that \(\E[\thres(\Xvec) - \muvec^\thres]= \bs{0}\). 
+Denote by \(\Xvec'\) an iid copy of \(\Xvec\). We can bound the norm as follows:</p>
+
+\[\begin{align*}
+     \E[\norm{\thres(\Xvec) - \muvec^\thres}^2 ]
+    &amp; = \E [\norm{\thres(\Xvec) }^2 ]-  \norm{\muvec^\thres}^2
+    \\
+     &amp; = \frac{1}{2} \E \left[ \norm{\thres(\Xvec) }^2 - 2\la \thres(\Xvec), \muvec^\thres  \ra + \E [\norm{\thres(\Xvec) }^2] \right]
+    \\
+     &amp; =\frac{1}{2} \E_{\Xvec} \bigg[\norm{\thres(\Xvec) }^2 - 2\la \thres(\Xvec), \E_{\Xvec'} [\thres(\Xvec')  ]\ra 
+     +  \E_{\Xvec'} \left[\norm{\thres(\Xvec') }^2   \right]\bigg] 
+     \\
+    &amp; =  \frac{1}{2} \E_{\Xvec, \Xvec'} \left[\norm{\thres(\Xvec) - \thres(\Xvec')}^2\right]
+    \\
+    &amp; \le \frac{1}{2} \E_{\Xvec, \Xvec'} \left[\norm{\Xvec - \Xvec'}^2\right] \\
+    &amp;= \E \norm{ \Xvec - \E \Xvec  }^2 \le \E \norm{\Xvec}^2
+    \le  v,
+\end{align*}\]
+
+<p>where the first inequality uses the basic fact from convex analysis that, for a closed a convex set \(D\subset \Re^n\) and any \(\bs{x},\bs{y}\in \Re^n\),</p>
+
+\[\begin{equation*}
+    \norm{\Pi_D (\bs{x}) - \Pi_D(\bs{y})} \leq \norm{\bs{x}-\bs{y}},
+\end{equation*}\]
+
+<p>where \(\Pi_D\) is the projection onto \(D\). We have therefore shown that</p>
+
+\[\begin{align*}
+    &amp;\int  \log \E_{\Xvec\sim P}\left\{ e^{  \lambda \la\thetavec, \thres(\Xvec) - \muvec^\thres \ra  }\right\}  \rho_{\varthetavec}(\d \thetavec)   \\
+    &amp;\leq \log\left\{1 + g_2\left(2\right)\frac{\lambda^2 v}{2} + g_1\left(\frac{2}{\beta}\right)\frac{\lambda^2e^{2}}{2\beta}v\right\} \\ 
+    &amp;\leq g_2\left(2\right)\frac{\lambda^2 v}{2} + g_1\left(\frac{2}{\beta}\right)\frac{\lambda^2e^{2}}{2\beta}v \\ 
+    &amp;= v\frac{\lambda^2}{4}\left\{e^{2/\beta + 2} -3\right\} \\ 
+    &amp;\leq \frac{1}{4}v\lambda^2 e^{2/\beta + 2},
+\end{align*}\]
+
+<p>Dividing both sides of  \eqref{eq:pb_mgf_applied} by \(\lambda\) and bounding the right hand side via the above display, we’ve shown that 
+with probability \(1-\alpha\),</p>
+
+\[\begin{align}
+\label{eq:bound_i}
+    &amp; \sup_{\varthetavec\in\sd}\sum_{i=1}^n \la\varthetavec, \thres(\Xvec_i) - \muvec^\thres \ra 
+    \le 
+    \frac{n}{4}v\lambda e^{2/\beta + 2} + \frac{\beta}{2\lambda} + \frac{\log(1/\alpha)}{\lambda}. \tag{6}
+\end{align}\]
+
+<h1 id="the-main-result">The main result</h1>
+
+<p>To obtain the main result, we apply \eqref{eq:muvec-mu-decomp} with the bound on term (i) and the bound on term (ii) to obtain that with probability \(1-\alpha\),</p>
+
+\[\begin{align*}
+\norm{\widehat{\muvec} - \muvec} &amp;= 
+    \sup_{\varthetavec\in\sd}\frac{1}{n}\sum_{i=1}^n \la \varthetavec, \thres(\Xvec_i) - \muvec\ra  \\
+    &amp;= \sup_{\varthetavec\in\sd} \frac{1}{n}\sum_{i=1}^n \bigg(\la \varthetavec, \thres(\Xvec_i) - \muvec^\thres\ra + \la\varthetavec, \muvec^\thres - \muvec\ra \bigg) \\
+    &amp;= \sup_{\varthetavec\in\sd}\frac{1}{n}\sum_{i=1}^n \la \varthetavec, \thres(\Xvec_i) - \muvec^\thres\ra + \sup_{\varthetavec\in\sd} \frac{1}{n}\sum_{i=1}^n \la\varthetavec, \muvec^\thres - \muvec\ra  \\
+    &amp;\leq \frac{1}{4}v\lambda e^{2/\beta + 2} + \frac{\beta}{2n\lambda} + \frac{\log(1/\alpha)}{n\lambda} + \lambda v.
+\end{align*}\]
+
+<p>Taking \(\beta=1\) and</p>
+
+\[\lambda \asymp \sqrt{\frac{\log(1/\alpha)}{nv}},\]
+
+<p>we obtain the high probability bound</p>
+
+\[\norm{\widehat{\muvec} - \muvec} \lesssim \sqrt{\frac{v\log(1/\alpha)}{n}}.\]
+
+<p>Recall that sub-Gaussian estimators have bounds which scale as</p>
+
+\[O\left(\sqrt{\frac{\lambda_{\max}\log(1/\alpha)}{n}} + \sqrt{\frac{\Tr(\Sigma)}{n}}\right),\]
+
+<p>where \(\lambda_{\max} = \lambda_{\max}(\Sigma)\) is the maximum eigenvalue of the covariance matrix. Since \(\lambda_{\max} \leq \Tr(\Sigma) \leq v\), the width of the bound for the Catoni-Giulini estimator is larger than the median-of-means estimator. Depending on the distribution, however, they can be close.</p>
+
+
+  <small>
+    <a link="back", href="/research_notes/">Back to all notes</a>
+  </small>
+</article>
+ <!-- "> -->
+      </main>
+
+      <!-- Footer  -->
+      <div class="container" id="footer">
+        <hr>
+        <div class='container links'>
+          <!-- <a href="https://scholar.google.ca/citations?user=wYJDbD4AAAAJ&hl=en" rel='nofollow'><img src="/assets/images/googlescholar.png"></a> -->
+          <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github.png"></a>
+          <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads.png"></a>
+          <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter.png"></a>
+        </div>
+      
+        <div class='copyright'>
+          <small>&#169; 2024 Ben Chugg</small>
+        </div>
+      
+      </div>
+    </div>
+
+  </body>
+</html> 

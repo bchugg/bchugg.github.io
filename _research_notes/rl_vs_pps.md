@@ -63,7 +63,7 @@ V(\pi) = \E_{x\sim \D}\E_{a\sim \pi(\cdot\vert x)}[f(x,a)]. \tag{1}
 \end{equation}
 $$
 
-For simplicitly, we'll assume that $$\pi$$ is _stationary_, i.e., it doesn't change over time. The results are similar if we don't make this assumption, but somewhat harder to interpret as their is an extra sum in all the equations. 
+For simplicitly, we'll assume that $$\pi$$ is _stationary_, i.e., it doesn't change over time. The results are similar if we don't make this assumption, but somewhat harder to interpret as there is an extra sum in all the equations. 
 
 Also, instead of writing out three expectations everytime, we'll often write $$\E_{\pi}$$ to indicate that the expected value in Equation \eqref{eq:Vpi} depends on the policy, i.e., $$V(\pi)=\E_{\pi}[y].$$
 
