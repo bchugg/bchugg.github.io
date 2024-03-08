@@ -46,7 +46,7 @@ It's helpful to consider yourself as playing Bob, and against Alice and World (w
 
 $$C_n \xrightarrow{n\to\infty} \infty,$$
 
-or, barring that, you want to constrain the behavior of Alice and World -- that is, to force them to play particular values. Basically, if we can't get our way and become infinitely wealth, let's be sure to exact some vengeance. For example, in the game above one can show that you can force them to agree with each other in the limit: 
+or, barring that, you want to constrain the behavior of Alice and World -- that is, to force them to play particular values. Basically, if we can't get our way and become infinitely wealthy, let's be sure to exact some vengeance. For example, in the game above one can show that you can force them to agree with each other in the limit: 
 
 $$
 \begin{equation}
