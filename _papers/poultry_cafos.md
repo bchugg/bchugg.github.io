@@ -8,4 +8,5 @@ date: "2022-01-01"
 publication: IEEE Journal of Applied Earth Observations and Remote Sensing
 code: https://github.com/microsoft/poultry-cafos
 category: Application
+show: False
 ---

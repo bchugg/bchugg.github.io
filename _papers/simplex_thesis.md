@@ -7,4 +7,5 @@ year: 2019
 date: "2019-09-23"
 link: /assets/files/ox_thesis.pdf
 category: Theory
+show: True
 ---

@@ -9,4 +9,5 @@ date: "2021-12-14"
 link: https://arxiv.org/pdf/2110.13306.pdf
 code: https://github.com/reglab/mab-infectious-disease
 category: Application
+show: False
 ---

@@ -11,11 +11,14 @@ image: /assets/images/manuscript.jpeg
     <em>"Curiouser and curiouser!" Cried Alice.</em>
   </p>
 
-  {% assign pubs = site.papers | sort: "date" | reverse | uniq %}
+  {% assign pubs = site.papers | sort: "date" | where_exp:"item", "item.show" | reverse | uniq %}
 
 
   
-  <h1>Papers & Preprints </h1>
+<h1> Selected Papers </h1>
+  
+  For a full list see my <a href="{% link assets/files/cv.pdf %}">CV</a>.
+
   <table class='papers-table'>
   {% for pub in pubs %}
   <tr>
