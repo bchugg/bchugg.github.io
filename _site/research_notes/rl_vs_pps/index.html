@@ -123,7 +123,7 @@
             <a href="/papers/">Papers</a> 
             <a href="/writing/">Writing</a>
             <a href="/research_notes/">Notes</a>
-            <a href="http://incrementspodcast.com">Podcast</a>
+            <!-- <a href="http://incrementspodcast.com">Podcast</a> -->
           </div>
         </div>
       </header>
@@ -178,7 +178,7 @@
   </li>
 </ul>
 
-<p>Off Policy Evaluation (OPE) in Reinforement learning and mean estimation in survey sampling are distinct problems and settings, but can employ similar tools. We’ll investigate model-based estimates, inverse propensity weighting, and doubly robust estimation in the context of both problems.</p>
+<p>Off Policy Evaluation (OPE) in Reinforcement learning and mean estimation in survey sampling are distinct problems and settings, but can employ similar tools. We’ll investigate model-based estimates, inverse propensity weighting, and doubly robust estimation in the context of both problems.</p>
 
 <h1 id="1-rl-perspective">1. RL Perspective</h1>
 
@@ -372,7 +372,7 @@ B &amp;= \E_{x,a,r}[\pi\lambda\hgamma^{-1}(y^2 - 2y\model + \model^2)] \\
 
 <p>If \(\gamma=\hgamma\) is small with non-negligible probability, then this difference can be large.</p>
 
-<p>On the other hand, the model based variance isn’t a function of the randomness in rewards (\(\Var[y]\) or the policy \(\gamma\), so can be much smaller in general. In practive, however, it’s often harder to generate a reliable model \(\model\) than a estimate of \(\gamma\).</p>
+<p>On the other hand, the model based variance isn’t a function of the randomness in rewards or the policy \(\gamma\), so can be much smaller in general. In practice, however, it’s often harder to generate a reliable model \(\model\) than an estimate of \(\gamma\).</p>
 
 <h1 id="2-survey-sampling-perspective">2. Survey Sampling Perspective</h1>
 

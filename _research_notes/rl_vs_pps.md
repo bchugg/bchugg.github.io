@@ -38,7 +38,7 @@ $$
 {:toc}
 
 
-Off Policy Evaluation (OPE) in Reinforement learning and mean estimation in survey sampling are distinct problems and settings, but can employ similar tools. We'll investigate model-based estimates, inverse propensity weighting, and doubly robust estimation in the context of both problems. 
+Off Policy Evaluation (OPE) in Reinforcement learning and mean estimation in survey sampling are distinct problems and settings, but can employ similar tools. We'll investigate model-based estimates, inverse propensity weighting, and doubly robust estimation in the context of both problems. 
 
 
 # 1. RL Perspective 
@@ -257,7 +257,7 @@ $$\Var(\hVipw) - \Var(\hVdr) = \frac{1}{N}\bigg(\E_{x,a}\bigg[\frac{\pi}{\gamma}
 
 If $$\gamma=\hgamma$$ is small with non-negligible probability, then this difference can be large. 
 
-On the other hand, the model based variance isn't a function of the randomness in rewards ($$\Var[y]$$ or the policy $$\gamma$$, so can be much smaller in general. In practive, however, it's often harder to generate a reliable model $$\model$$ than a estimate of $$\gamma$$. 
+On the other hand, the model based variance isn't a function of the randomness in rewards or the policy $$\gamma$$, so can be much smaller in general. In practice, however, it's often harder to generate a reliable model $$\model$$ than an estimate of $$\gamma$$. 
 
 
 # 2. Survey Sampling Perspective 

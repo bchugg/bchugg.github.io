@@ -203,28 +203,33 @@ img {
 
 /* Header image */
 #headerim {
-    width: 50%;
+    width: 35%;
     height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 40px;
+    float: left;
+    margin-left: 15px;
+    margin-right: 25px;
+    margin-bottom: 10px;
     @media (max-width: 400px) {
-      width: 90%;
+      width: 80%;
+      display: block;
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
+
 
 #caption {
   font-size: 10pt;
   text-align: center;
   margin-bottom: 30px;
 }
-// #headerim {
-//   width: 45%;
-//   height: auto;
-//   float: left;
-//   margin-right: 20px;
-// }
+
+
+#index-intro-text {
+  //padding-top: 20px;
+  //display: block;
+}
 
 /* Tables */
 table {
