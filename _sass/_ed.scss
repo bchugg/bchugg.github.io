@@ -39,7 +39,9 @@ body {
 html {
   //font-family: $main-font;
   font-family: "Inconsolata";
-  font-size: 1em; /* 16px; specify in ems to support text resizing in all browsers */
+  //font-family: "Iowan Old Style", "Palatino", "Georgia", "Times New Roman", "Times", "serif";
+  // font-size: 1em; /* 16px; specify in ems to support text resizing in all browsers */
+  font-size: 13pt;
   line-height: 1.5;
 }
 
@@ -92,8 +94,8 @@ body {
 
 @media (min-width: 56em) {
   .container {
-    //max-width: 38rem;
-    max-width: 41rem;
+    max-width: 38rem;
+    // max-width: 41rem;
     //text-align: justify;
   }
 }

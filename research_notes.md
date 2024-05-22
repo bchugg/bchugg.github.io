@@ -18,6 +18,8 @@ and about more important things.</i>
 
 Notes on various topics for my own edification. The majority of material is not original and is simply a restatement of previous results in language that makes the most intuitive sense to me. Making the notes public just helps keep me accountable for their accuracy. Maybe they can also help others in the eternal quest to reduce confusion. Some wiser advice on why keeping such notes is useful comes from [Ryan Giordano](https://rgiordan.github.io/meta/2019/07/26/why.html). 
 
+You can [subscribe]({% link subscribe.md %}) to be notified of new posts.  
+
 
 
 <hr>

@@ -5,6 +5,10 @@
     padding-right: 10%;
 }
 
+.writing {
+    font-size: 13.5pt;
+}
+
 // shared between notes and writing 
 .note, .writing {
     color: black;
@@ -18,14 +22,13 @@
     #date {
         text-align: center;
         color: gray;
-        font-size: 10pt;
+        font-size: 12pt;
         padding-top: 10px;
     }
     #markdown-toc {
         a {
             color: navy;
         }
-        
         padding-bottom: 20px;
         li {
             ul {
@@ -36,7 +39,7 @@
     }
     .title {
         padding-top: 20px;
-        font-size: 18pt;
+        font-size: 20pt;
         text-align: center;
         padding-bottom: 0;
         margin-bottom: 0;
@@ -46,12 +49,12 @@
     } 
     h1 {
         font-weight: bold;
-        font-size: 16pt;
+        font-size: 18pt;
         padding-bottom: 15px;
         padding-top: 20px;
     }
     h2 {
-        font-size: 14pt;
+        font-size: 16pt;
         font-weight: bold;
         padding-top: 16px;
     }
@@ -59,7 +62,7 @@
         font-weight: bold;
     }
     .caption {
-        font-size: 10pt;
+        font-size: 12pt;
         color: gray;
         margin-left: 20px;
         margin-right: 20px;

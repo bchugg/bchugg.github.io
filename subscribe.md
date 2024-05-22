@@ -5,7 +5,7 @@ description: "Get notified of new happenings every month or so"
 image: /assets/images/building.jpeg
 ---
 
-You can subscribe by email to receive occasional[^1] updates about new essays. I'll send you things I've written and possibly a few other findings worth ingesting. 
+You can subscribe by email to receive occasional[^1] updates about new essays and research notes. I'll send you things I've written and possibly a few other findings worth ingesting. 
 
 [^1]: Probably something like bi-monthly with a standard deviation of a few months ...  
 

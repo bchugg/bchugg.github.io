@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head prefix="og: http://ogp.me/ns#; dc: http://purl.org/dc/terms/#">
+  
+  
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="http://localhost:4000/research_notes/dim_free_bernstein/" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PN2H9928PZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PN2H9928PZ');
+  </script>
+
+  <!-- Basic meta elements -->
+  <meta charset="utf-8" />
+
+  <!-- Enable responsiveness on mobile devices -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+
+  <!-- Mathjax Support -->
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <title>
+    
+     A dimension-free Bernstein bound
+    
+  </title>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.9.1" />
+<meta property="og:title" content="A dimension-free Bernstein bound" />
+<meta name="author" content="Ben Chugg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A martingale approach for concentration of bounded random vectors" />
+<meta property="og:description" content="A martingale approach for concentration of bounded random vectors" />
+<link rel="canonical" href="http://localhost:4000/research_notes/dim_free_bernstein/" />
+<meta property="og:url" content="http://localhost:4000/research_notes/dim_free_bernstein/" />
+<meta property="og:site_name" content="benny" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-05-21T00:00:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="A dimension-free Bernstein bound" />
+<meta name="twitter:site" content="@bennychugg" />
+<meta name="twitter:creator" content="@Ben Chugg" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"dateModified":"2024-05-21T00:00:00-04:00","datePublished":"2024-05-21T00:00:00-04:00","description":"A martingale approach for concentration of bounded random vectors","headline":"A dimension-free Bernstein bound","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/research_notes/dim_free_bernstein/"},"url":"http://localhost:4000/research_notes/dim_free_bernstein/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- Dublin Core metadata for Zotero -->
+  <meta property="dc:title" content="A dimension-free Bernstein bound" />
+  <meta property="dc:creator" content="Ben Chugg" />
+  <meta property="dc:identifier" content="http://localhost:4000/research_notes/dim_free_bernstein/" />
+  
+  <meta property="dc:date" content="2024-05-21 00:00:00 -0400" />
+  
+  <meta property="dc:source" content="benny" />
+
+  <!-- Open Graph and Twitter metadata -->
+  <meta property="og:title" content="A dimension-free Bernstein bound" />
+  <meta property="og:url" content="http://localhost:4000/research_notes/dim_free_bernstein/" />
+  
+    <meta property="og:image" content="http://localhost:4000/assets/images/heads.jpeg"/>
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/heads.jpeg" />
+  
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:domain" value="benchugg.com" />
+  <meta name="twitter:title" value="A dimension-free Bernstein bound" />
+  <meta name="twitter:url" value="http://localhost:4000" />
+  
+  <!-- Description is dependent on page type  -->
+  
+    <meta property="og:description" content="A martingale approach for concentration of bounded random vectors">
+    <meta name="twitter:description" value="A martingale approach for concentration of bounded random vectors" />
+    <meta property="og:type" content="article" />
+  
+  
+
+  <!-- CSS link -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="167x167" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="/assets/favicon.ico">
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="114×114" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="72×72" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” href="/assets/favicon.ico" />
+  <link rel=”icon” href="/assets/favicon.ico", sizes="32x32"/>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml" />
+
+  
+</head>
+
+
+  <body class="theme-base-">
+
+
+    <!--
+      Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS
+      collisions with our real content.
+    -->
+    <div class="wrap">
+      <header class="masthead">
+        <div class="container">
+          <a id='name' href="/">Ben Chugg</a>
+          <div class="span">
+            <a href="/papers/">Papers</a> 
+            <a href="/writing/">Writing</a>
+            <a href="/research_notes/">Notes</a>
+            <!-- <a href="http://incrementspodcast.com">Podcast</a> -->
+          </div>
+        </div>
+      </header>
+
+      <main class="container content" id="main">
+        <article class="note">
+  <!-- <small>
+    <a id="back", href="/research_notes/">Back to all notes</a>
+  </small> -->
+  <!-- <hr> -->
+  
+  <p class='title'>A dimension-free Bernstein bound</p> 
+  <p id="date">May 21, 2024</p>
+  \[\newcommand{\Re}{\mathbb{R}}
+\newcommand{\norm}[1]{\left\| {#1}\right\|}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\eps}{\epsilon}
+\renewcommand{\Pr}{\mathbb{P}}\]
+
+<ul id="markdown-toc">
+  <li><a href="#1-approach-i-azuma-hoeffding" id="markdown-toc-1-approach-i-azuma-hoeffding">1. Approach i: Azuma-Hoeffding</a></li>
+  <li><a href="#2-interlude-a-martingale-variance-inequality" id="markdown-toc-2-interlude-a-martingale-variance-inequality">2. Interlude: A martingale-variance inequality</a>    <ul>
+      <li><a href="#21-the-proof" id="markdown-toc-21-the-proof">2.1. The proof</a></li>
+    </ul>
+  </li>
+  <li><a href="#3-approach-ii-a-better-bound" id="markdown-toc-3-approach-ii-a-better-bound">3. Approach ii: A better bound</a></li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
+</ul>
+
+<p>Let \(X_1, X_2, \dots, X_n\) be independent random vectors in \(\Re^d\) with mean \(\mu\) such that \(\norm{X_t}\leq c_t\) almost surely. Assume the norm \(\norm{\cdot}\) is the \(\ell_2\) norm. What sort of concentration inequalities exist for \(\norm{S_n}\), where \(S_n = \frac{1}{n}\sum_{i\leq n}X_i\)?</p>
+
+<p>Here we’ll investigate a method to obtain a dimension-free Bernstein bound for \(\norm{S_n}\). I like this result for several reasons. First, it’s not <em>a priori</em> obvious that there should be a dimension-free bound in this case. Second, the proof technique is different than other known techniques for multivariate concentration (such as covering, variational, and isoperimetric arguments). More concretely, instead of trying to bound \(\langle \nu, S_n\rangle\) in each direction \(\nu\), we’ll instead work directly with the norm \(\norm{S_n}\).</p>
+
+<p>The high-level idea is simple: Construct the Doob-martingale for \(\norm{S_n}\) and apply known inequalities for scalar valued  martingales. Since the \(X_i\) are bounded, a natural result to use is the Azuma-Hoeffding inequality. This is where we’ll begin, but we’ll see that we can do better.</p>
+
+<h1 id="1-approach-i-azuma-hoeffding">1. Approach i: Azuma-Hoeffding</h1>
+
+<p>First we form a scalar-valued martingale out of \(\norm{S_n}\). In particular, we consider its Doob decomposition:</p>
+
+\[Z_t := \E[\norm{S_n}\vert \calF_{t}] - \E[\norm{S_n}],\]
+
+<p>where \(\calF_t = \sigma(X_1,\dots,X_t)\). By total expectation it’s easy to see that \(\E[Z_t\vert \calF_{t-1}] = Z_{t-1}\), so \((Z_t)_{t\geq 0}\) is indeed a martingale. Note that \(Z_0 = 0\). 
+Next we claim that \((Z_t)\) has bounded increments. Let \(D_t\) denote these increments, i.e.,</p>
+
+\[D_t = Z_t - Z_{t-1}.\]
+
+<p>We want to bound \(\vert D_t\vert\). First, notice that</p>
+
+\[\E[\norm{S_n - X_t}\vert \calF_{t}] - \E[\norm{S_n - X_{t}}\vert \calF_{t-1}] = 0,\]
+
+<p>since the only terms that remain in \(S_n - X_t=\sum_{i\neq t}X_i\) are either measurable with respect to both \(\calF_t\) and \(\calF_{t-1}\) or remain random. Therefore,</p>
+
+\[\begin{align}
+\vert D_t\vert  &amp;= \left\vert  \E[\norm{S_n}\vert \calF_t] - \E[\norm{S_n}\vert \calF_{t-1}]\right\vert  \\
+&amp;=  \left\vert \E[\norm{S_n} - \norm{S_n - X_t}\vert \calF_t] - \E[\norm{S_n} - \norm{S_n - X_{t}}\vert \calF_{t-1}] \right\vert  \\ 
+&amp;\leq \left\vert \E[\norm{S_n} - \norm{S_n - X_t}\vert \calF_t] \right\vert  +  \left\vert \E[\norm{S_n} - \norm{S_n - X_{t}}\vert \calF_{t-1}] \right\vert  \\ 
+&amp;= \left\vert \E[\norm{S_n} - \norm{S_n - X_t}\vert \calF_t] - \E[\norm{S_n} - \norm{S_n - X_{t}}\vert \calF_{t-1}] \right\vert  \\ 
+&amp;\leq \E[\left\vert \norm{S_n} - \norm{S_n - X_t}\right\vert  \vert \calF_t]  +  \E[\left\vert \norm{S_n} - \norm{S_n - X_{t}}\right\vert  \vert \calF_{t-1}] \\ 
+&amp;\leq \E[\norm{X_t}\vert \calF_t] + \E[\norm{X_t}\vert \calF_{t-1}] \\ 
+&amp;= \norm{X_t} + \E[\norm{X_t}\vert \calF_{t-1}].
+\end{align}\]
+
+<p>Here, the first inequality is via the triangle inequality, the second by Jensen’s inequality, and the third by the reverse triangle inequality. Using our assumption on the boundedness of \(X_t\), we have</p>
+
+\[\vert D_t\vert  \leq 2c_t.\]
+
+<p>A martingale with bounded increments is susceptible to the <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Azuma%27s_inequality">Azuma-Hoeffding inequality</a>. Since \(Z_0=0\), this gives</p>
+
+\[\Pr(Z_n \geq \eps)\leq \exp\left(\frac{-\eps^2}{2\sum_{t\leq n}c_t^2 }\right).\]
+
+<p>Put \(V_n = \sum_{i\leq n} \E\norm{X_i}^2\). 
+Observing that \(Z_n = \norm{S_n} - \E[\norm{S_n}]\) and 
+\(\E\norm{S_n}\leq \sqrt{\E\norm{S_n}^2} = \sqrt{\sum_{i\leq n}\E\norm{X_i}^2}\), we can rewrite the above bound as</p>
+
+\[\Pr(\norm{S_n}\geq \sqrt{V_n} + \eps )\leq \exp\left(\frac{-\eps^2}{2\sum_{t\leq n}c_t^2 }\right).\]
+
+<p>In other words, with probability at least \(1-\delta\), we have</p>
+
+\[\norm{S_n} \leq \sqrt{V_n} + \sqrt{2\log(1/\delta)\sum_{i\leq n}c_i^2}.\]
+
+<p>Can we strengthen this bound? It turns out that we can. In fact, we can replace the term \(\sum_{i\leq n}c_i^2\) with the term \(V_n\) (or any upper bound thereof). Is this better than the current bound? Yes. Notice that since \(\norm{X_t}\leq c_t\) we have the trivial bound \(\E\norm{X_t}^2 \leq c_t^2\). Therefore, if we have more information about the second moments of \(X_t\), say they are upper bounded by \(\sigma_t^2\), then we may assume that \(\sigma_t^2\leq c_t^2\).</p>
+
+<p>To make this replacement, we need to modify the Azuma-Hoeffding inequality.</p>
+
+<h1 id="2-interlude-a-martingale-variance-inequality">2. Interlude: A martingale-variance inequality</h1>
+
+<p>Let \((M_t)_{t\geq 0}\) be a martingale with increments bounded by \(b_t\) (i.e., \(\vert M_t - M_{t-1}\vert \leq b_t\)) and, in addition,</p>
+
+\[\E [\vert M_t - M_{t-1}\vert ^2\vert \calF_{t-1}]\leq \sigma_t^2.\]
+
+<p>Let \(V_n = \sum_{i\leq n}\sigma_i^2\). With this extra information about the variance of the increments, we can modify Azuma’s bound above to read: For all \(n\),</p>
+
+\[\begin{equation}
+\label{eq:variance-martingale-bound}
+\Pr(M_n \geq M_0 + \eps) \leq \exp\left(\frac{-\eps^2}{4V}\right), \quad \text{ for all }\eps \leq \frac{2V}{\max_i b_i}. \tag{1}
+\end{equation}\]
+
+<p>As far as history is concerned, this bound was first proved by DA Grable in <a rel="nofollow noopener noreferrer" href="https://citeseerx.ist.psu.edu/document?repid=rep1&amp;type=pdf&amp;doi=3b7858b4475d8027cf49c8afbaac34b4229731fb">A Large Deviation Inequality for Functions of Independent, Multi-way Choices</a>. A very clean proof is given by Dubhasi and Panconesi in their textbook, <a rel="nofollow noopener noreferrer" href="http://wwwusers.di.uniroma1.it/~ale/Corsi/AlgoPro/monograph.pdf">Concentration of Measure for the Analysis of Randomized Algorithms</a>, Chapter 8. And for those of you who are interested in Matrix inequalities, David Gross gives an operator version of this bound (when \(M_t\) are \(d\times d\) Hermitian matrices) in <a rel="nofollow noopener noreferrer" href="https://www.math.ucdavis.edu/~strohmer/courses/270/lowrank_Gross.pdf">Recovering Low-Rank Matrices From Few Coefficients In Any Basis</a>.</p>
+
+<h2 id="21-the-proof">2.1. The proof</h2>
+
+<p>To prove this bound, start with the basic Chernoff method. Let \(D_t= M_t - M_{t-1}\) denote the increments of \((M_t)\). For any \(\lambda&gt;0\),</p>
+
+\[\begin{align}
+\Pr(M_n \geq M_0 + \eps ) &amp;= \Pr(e^{\lambda M_n} \geq e^{\lambda (M_0 + \eps)}) \leq e^{-\lambda (M_0 + \eps)}\E[e^{\lambda M_n}]. 
+\end{align}\]
+
+<p>Then, write</p>
+
+\[\begin{align}
+\E[e^{\lambda M_n}] &amp;= \E[\E[e^{\lambda (M_{n-1} + D_n)}\vert \calF_{n-1}]]  
+ = \E[e^{\lambda M_{n-1}} \E[e^{\lambda D_n}\vert \calF_{n-1}]]. 
+\end{align}\]
+
+<p>Recall that for \(\vert x\vert \leq 1\) we have the inequality \(e^x \leq 1 + x + x^2\). Therefore, if \(\vert \lambda D_n\vert  \leq 1\) we have</p>
+
+\[\begin{align}
+\E[e^{\lambda D_n}\vert \calF_{n-1}] &amp;\leq \E[1 + \lambda D_n + \lambda^2D_n^2 \vert \calF_{n-1}] \\
+&amp;= 1 + \lambda^2\E[D_n^2\vert \calF_{n-1}] 
+\leq e^{\lambda^2 \E[D_n^2\vert \calF_{n-1}]} 
+\leq e^{\lambda^2 \sigma_n^2},
+\end{align}\]
+
+<p>where we’ve used that \(1 + x \leq e^x\) and that \(\E[D_n\vert \calF_{n-1}]=0\). Hence,</p>
+
+\[\E[e^{\lambda M_n}] \leq e^{\lambda^2 \sigma_n^2}\E[e^{\lambda M_{n-1}}] \leq \dots \leq e^{\lambda M_0}\prod_{i=1}^n e^{\lambda^2\sigma_i^2} = e^{\lambda M_0 + \lambda^2V_n}.\]
+
+<p>Note the expectation has disappeared from \(e^{\lambda M_0}\) because \(M_0\) is assumed to be known (if not just replace \(M_0\) with \(\E[M_0]\) everywhere). Putting this all together gives</p>
+
+\[\Pr(M_n \geq M_0 + \eps) \leq e^{\lambda^2 V_n - \lambda\eps}.\]
+
+<p>Optimizing the value of \(\lambda\) on the right hand side gives</p>
+
+\[\lambda = \frac{\eps}{2V}.\]
+
+<p>Recall that we require that \(\max_n \lambda \vert D_n\vert \leq 1\). This holds if \(\eps \leq 2V / \max_t c_t\) since \(\vert D_t\vert \leq c_t\) by assumption. This gives us \eqref{eq:variance-martingale-bound}.</p>
+
+<h1 id="3-approach-ii-a-better-bound">3. Approach ii: A better bound</h1>
+
+<p>Let’s return to our Doob-martingale \((Z_t)\) and its increments \(D_t\). In order to use the above martingale-variance inequality we need to find a bound on \(\E[D_t^2 \vert \calF_{t-1}].\) 
+Using the same trick as above, write</p>
+
+\[D_t^2 = (\E[\norm{S_n} - \norm{S_n - X_t}\vert \calF_t] - \E[\norm{S_n} - \norm{S_n - X_{t}}\vert \calF_{t-1}])^2.\]
+
+<p>Expanding the square and taking expectations over \(\calF_{t-1}\) gives,</p>
+
+\[\begin{align}
+\E[D_t^2 \vert \calF_{t-1}] &amp;= \E[\E[\norm{S_n} - \norm{S_n - X_t}\vert \calF_{t}]^2\vert \calF_{t-1}]  - \E[\norm{S_n} - \norm{S_n - X_t}\vert \calF_{t-1}]^2 \\ 
+&amp;\leq \E[\E[\norm{S_n} - \norm{S_n - X_t}\vert \calF_{t}]^2\vert \calF_{t-1}] \\ 
+&amp;\leq \E[(\norm{S_n} - \norm{S_n - X_t})^2 \vert \calF_{t-1}] \\ 
+&amp;\leq \E[\norm{X_t}^2 \vert \calF_{t-1}] =: \sigma_t^2.
+\end{align}\]
+
+<p>Now, define \(V_n= \sum_{i=1}\sigma_i^2\). 
+Applying the martingale-variance inequality we obtain that</p>
+
+\[\Pr( Z_n \geq Z_0 + \eps) \geq \exp\left(\frac{-\eps^2}{4V_n}\right), \quad\text{for all } \eps\leq \frac{V}{\max_t c_t}.\]
+
+<p>Notice that, compared to \eqref{eq:variance-martingale-bound} the factor of 2 has disappeared from the constraint on \(\eps\). This is because our increments \(D_t\) are bounded as \(2c_t\). As in the Azuma-Hoeffding case above, we bound \(\E[\norm{S_n}]\) as \(\sqrt{V_n}\) and rewrite the above as:</p>
+
+\[\Pr( \norm{S_n} \geq \sqrt{V_n} + \eps) \geq \exp\left(\frac{-\eps^2}{4V_n}\right), \quad\text{for all } \eps\leq \frac{V}{\max_t c_t},\]
+
+<p>which is the main result.</p>
+
+<p>We should notice the parallel between what we’ve done here and the scalar case. Given bounded real-valued random variables, Hoeffding’s inequality gives an immediate bound. But if we have  additional moment information we can apply a Bennett or Bernstein style bound. The discussion here generalizes this to the multivariate setting.</p>
+
+<h1 id="references">References</h1>
+<ul>
+  <li><a rel="nofollow noopener noreferrer" href="https://citeseerx.ist.psu.edu/document?repid=rep1&amp;type=pdf&amp;doi=3b7858b4475d8027cf49c8afbaac34b4229731fb">A Large Deviation Inequality for Functions of Independent, Multi-way Choices</a>.</li>
+  <li><a rel="nofollow noopener noreferrer" href="http://wwwusers.di.uniroma1.it/~ale/Corsi/AlgoPro/monograph.pdf">Concentration of Measure for the Analysis of Randomized Algorithms</a>, Chapter 8.</li>
+</ul>
+
+
+  <small>
+    <a link="back", href="/research_notes/">Back to all notes</a>
+  </small>
+</article>
+ <!-- "> -->
+      </main>
+
+      <!-- Footer  -->
+      <div class="container" id="footer">
+        <hr>
+        <div class='container links'>
+          <!-- <a href="https://scholar.google.ca/citations?user=wYJDbD4AAAAJ&hl=en" rel='nofollow'><img src="/assets/images/googlescholar.png"></a> -->
+          <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github.png"></a>
+          <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads.png"></a>
+          <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter.png"></a>
+        </div>
+      
+        <div class='copyright'>
+          <small>&#169; 2024 Ben Chugg</small>
+        </div>
+      
+      </div>
+    </div>
+
+  </body>
+</html> 

@@ -18,7 +18,7 @@ Distraught as I am to have to disagree with this cheery lot who foresee humanity
 
 Let's take a minute to lay the groundwork for those not neck deep in vexing arguments about AI on twitter.
 
-# Brief recap of optimization and evolution
+# 1. Brief recap of optimization and evolution
 
 Evolution by natural selection involves blind variation of genes followed by the selective retention of those changes which were advantageous for the organism. _Blind_ variation refers to the fact that the variation at the gene-level is effectively random (they are due to chance mutations or copying errors during replication). Consequently, the process is undirected: genes have no goals. They are not trying to mutate in any particular direction---they are not _trying_ to do anything. But different genes have different effects, and different effects lead to differential rates of survival among organisms. And bada-boom bada-bing we have evolution: genes whose effects proved useful are more likely to be found in the next generation. Now simply iterate for millions and billions of years.
 
@@ -32,7 +32,7 @@ A particularly successful optimization technique is [gradient descent](https://e
 
 In machine learning, we choose the loss to measure how well the model is performing on a specific task. Roughly, it compares the true label to the predicted label and penalizes the prediction according to how wrong it is. For the much discussed large language models (LLMs), the label is simply the next word in the sequence. For instance, given the input "Harry Potter is a," the predicted word "wizard" will score better than the word "toad." The model is trained by minimizing the loss over training data (e.g., a bunch of text from the internet), using optimization to efficiently tweak the parameters of the model until the loss is sufficiently small. (In our example above $$x$$ is the only parameter, but large neural networks have billions of parameters. Optimization tells us how to tweak each one to minimize the loss.) 
 
-# Evolution as optimization?
+# 2. Evolution as optimization?
 
 Biological evolution can certainly be seen as _some_ kind of optimization process. The accumulation of adaptive mutations over long periods of time create organisms that are especially well-suited to a given niche. Depending on the niche, this may involve gills and eyes. It may involve echolocation or the ability to photosynthesize. Or, as in the case of humans, it may involve the evolution of minds [capable of art](https://www.incrementspodcast.com/50), language, and [reason](https://www.incrementspodcast.com/39).
 
@@ -48,25 +48,25 @@ To be fair, I'm sure Yudkowsky would take issue with this example. Perhaps he wo
 
 <img id='img-40' src="/assets/writing_images/time.jpeg">
 
-# Real versus artificial worlds
+# 3. Real versus artificial worlds
 
 Machine learning takes place in a highly artificial world. We carefully select training data and structure it so that learning is possible. The goal is well-specified (minimize the loss), and so is the procedure for reaching this goal (gradient descent). The space of possible outputs is known beforehand (e.g., the set of words constituting the corpus). Models are being trained in what Jimmy Savage would call "small worlds," which I've [described previously](https://benchugg.com/writing/mismeasure-of-models/) as "worlds where all inputs and outputs are known, as well as the rules governing all interactions. There are no unknown unknowns." This is why math, inductive reasoning, and probability work so well in these domains. We have crafted the artificial world such that they are useful. We have parceled the world into legible chunks, told the model which chunks are relevant, and given it a mass of examples to learn those chunks.
 
 This artificial world is the opposite of the real world which, of course, is where natural selection occurs. This distinction is responsible for several substantial differences between mathematical optimization and genetic evolution.
 
-### What's the loss?
+## 3.1. What's the loss?
 
 If one is to analogize evolution and optimization, the first step is to identify a loss function in the former. What, exactly, is evolution optimizing? One may be tempted to say that evolution has "[inclusive fitness](https://en.wikipedia.org/wiki/Inclusive_fitness)" as a loss function, i.e., the number of descendants and close relatives that an organism shares in the next generation. But this would be misleading in several ways.
 
 First, evolution is not goal-oriented—there is nothing it's trying to do. It is not proceeding "in the direction of steepest descent" in the same way that gradient descent is (even if that phrase were to mean anything in the context of natural selection). Second, inclusive fitness is a more abstract notion than a mathematical loss function. It is constantly changing depending on the organism and its niche, whereas a loss function is not. Third, loss functions in machine learning include the desired output. That is, they compare the predicted output with the target output. This target output is selected by humans. Inclusive fitness has no target output; there is no superhuman figure dictating whether a genetic change was good or bad. Therefore, the means by which you're judging progress is different in the two cases. Finally, genetic evolution is discrete (the "parameters" of the "model" are the ACGT base pairs). This is distinct from machine learning, where we choose the loss to be continuous and differentiable (mathematical properties which make the optimization process tractable).     
 
-### Hardware versus software
+## 3.2. Hardware versus software
 
 As Quintin Pope [points out](https://www.lesswrong.com/posts/wAczufCpMdaamF9fy/my-objections-to-we-re-all-gonna-die-with-eliezer-yudkowsky), the "optimization" of natural selection and the optimization in machine learning are working at different levels. Natural selection changes our genome, which gives rise to our brain structure—what connects to what, how many connections there are, the physical shape of our brains, and so on. Optimization in machine learning takes the model architecture (typically a neural network) as given and optimizes over the parameters of the network. The number of parameters in evolution (the size of the genome) is therefore constantly changing, whereas the number of parameters is fixed in machine learning. 
 
 More generally, natural selection is an embodied process. It involves directly interacting with the world. The claim that (super)intelligence can be evolved in an artificial, digital world is not at all obvious. In fact, there is a direct conflict between evolution and optimization here: natural selection in humans first produced motor functionality and only then evolved higher cognitive capacities. (Arms and legs predate the human brain. The former evolved in [Hominidae](https://en.wikipedia.org/wiki/Timeline_of_human_evolution#Hominidae).) Machine learning is attempting to go directly for the latter. Even if you believe this is possible (which I do), the argument as to _why_ it's possible cannot follow evolutionary logic.
 
-### Novelty is punished
+## 3.3. Novelty is punished
 
 The final disanalogy comes from a personal discussion with [Jacob Springer](https://sprin.xyz/). Optimization in machine learning works, as we've (tediously) discussed, optimizing the parameters of a model by minimizing the prediction error over the training data. This implies that the model will be penalized for new "ideas" (sequences of words) that are not part of the training set, _regardless of whether they are true or false_. More precisely, it will be penalized for sequences of words whose conditional frequencies do not match those of the training set.
 
@@ -74,13 +74,13 @@ To make this concrete, imagine training a language model on all text prior to Ga
 
 Random genetic mutations, by contrast, do not have to be consistent with any "training data." New phenotypes are judged only according to whether they prove advantageous at gene replication in the current environment.
 
-# Having it both ways
+# 4. Having it both ways
 
 The analogy between evolution and optimization tends to be applied when convenient and ignored when not. If evolution optimized humans to be smart, then it also optimized us to be social, curious, sexual, and all the things that fit into the messy bucket labeled "human nature". Oddly, I never seem to hear about a possible existential risk due to social, self-conscious, and status-seeking automata.
 
 Meanwhile, we often hear the AIs will undergo some sort of recursive self-improvement. They'll start modifying their own code, proceeding from human-level intelligence to superintelligence within a matter of [months, days, or minutes](https://www.lesswrong.com/tag/the-hanson-yudkowsky-ai-foom-debate). Humans, however, don't do this. If we're going to appeal to the equivalence of gradient descent and evolution as an argument for why deep learning will produce general intelligence, let's at least be consistent about it. We can't begin arbitrarily layering on abilities never seen in any organism produced by natural selection.
 
-# Optimization is not manna
+# 5. Optimization is not manna
 
 It may seem unfair to pick on this single tweet. (I'd feel worse if its author didn't [think he was the smartest human alive](https://twitter.com/ESYudkowsky/status/1622679567264813056). Perhaps he'll deign to explain himself next time.) But I think this view is widely held (though perhaps not stated in these terms), and is fomenting huge amounts of confusion. For instance, the philosopher David Chalmers recently gave [a talk](https://cmu.zoom.us/rec/component-page?action=viewdetailpage&sharelevel=meeting&useWhichPasswd=meeting&clusterId=aw1&componentName=need-password&meetingId=FPNRy7wxwKR3RdSLTHEI98RkTFKuR6-x4_qY6YC0pamzE4H5ByJJms0YMAd8JARK.U2ACBGJ0h-4YApDH&originRequestUrl=https%3A%2F%2Fcmu.zoom.us%2Frec%2Fshare%2FOxNp8xyGgLazxWGXMYglBLKJiL834EXCec5P-pi_jkuxN-caBLkfUfrDNNz-UqP3.ndbNO7FVwCFau3bR)[^1] in my department. One of his slides read:
 

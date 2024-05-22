@@ -17,14 +17,18 @@ You can reach me at benchugg $$\alpha\tau$$ cmu.edu.
 
 ---
 
+## Research 
+
 <p id='index-main-text' markdown="1">
-Research-wise, I'm mainly interested in mathematical statistics and applied probability---sequential analysis, game-theoretic probability, and anytime-valid learning and inference in particular. Here are 
+I'm mainly interested in mathematical statistics and applied probability---sequential analysis, game-theoretic probability, and anytime-valid learning and inference in particular. Here are 
 my [papers]({% link papers.md %}) and some informal [research notes]({% link research_notes.md %}). 
 </p>
 
+## Other
+
 Occasionally I [write]({% link writing.md %}). If you enjoy eclectic permutations of philosophy, sporadic book reviews, some statistics, and lukewarm takes you can [subscribe]({% link subscribe.md %}) to be notified of new essays. 
 
-I co-host the [Increments podcast](https://www.incrementspodcast.com/) with [Vaden Masrani](https://vmasrani.github.io/). We have a few [_sic_] drinks and yell about topics ranging from [the reality of abstractions](https://www.incrementspodcast.com/24) to the [evolutionary origins of art](https://www.incrementspodcast.com/50). I also co-host [do you even lit?](https://doyouevenlit.podbean.com/) where two unintelligible kiwis and I make our (haphazard and tangent-filled) way through the world of literary classics. 
+After-hours, I co-host the [Increments podcast](https://www.incrementspodcast.com/). We have a few [_sic_] drinks and yell about topics ranging from [the reality of abstractions](https://www.incrementspodcast.com/24) to the [evolutionary origins of art](https://www.incrementspodcast.com/50). I also co-host [do you even lit?](https://doyouevenlit.podbean.com/) where two unintelligible kiwis and I make our (haphazard and tangent-filled) way through the world of literary classics. 
 
 
 <!-- ---

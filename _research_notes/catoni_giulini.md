@@ -141,7 +141,7 @@ $$
 \leq \sum_{i\leq t}\int_{\Theta} \log\E e^{ f(\Xvec,\thetavec)} \rho(\d\thetavec)+ \kl(\rho\|\nu) + \log\frac{1}{\alpha}.
 $$
 
-We won't prove this bound (though it's perhaps worth noting that it follows from Proposition 1 in the [last post]({% link _research_notes/subgaussian_concentration.md %})). It's also in Catoni's [treatise](https://arxiv.org/pdf/0712.0248.pdf) on PAC-Bayesian theory. 
+We won't prove this bound. It's a standard result and appears in Catoni's [treatise](https://arxiv.org/pdf/0712.0248.pdf) on PAC-Bayesian theory. 
 
 Let's apply this result with the function $$f(\Xvec, \thetavec) = \lambda\la \thetavec, \thres(\Xvec) - \muvec^\thres\ra$$.
 Keeping in mind that 
