@@ -1,6 +1,6 @@
 ---
 layout: note 
-date: "2024-06-08" 
+date: "2024-06-10" 
 title: "The variational approach to concentration"
 description: "Concentration for multivariate processess based on a variational inequality"
 status: published
@@ -21,7 +21,7 @@ $$
 \newcommand{\d}{\text{d}}
 $$
 
-Let $$(S_n)$$ be some stochastic process in, say, in $$\Re^d$$. For instance, $$S_n = \sum_{i=1}^n X_i$$ for multivariate observations $$X_i\in\Re^d$$. We are aiming to generate a high probability bound on 
+Let $$(S_n)$$ be some stochastic process in, say, $$\Re^d$$. For instance, $$S_n = \sum_{i=1}^n X_i$$ for multivariate observations $$X_i\in\Re^d$$. We are aiming to generate a high probability bound on 
 
 $$\norm{S_n} = \sup_{v:\norm{v}=1} \la v,S_n\ra.$$
 
