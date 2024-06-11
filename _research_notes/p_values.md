@@ -64,7 +64,7 @@ Part of the issue is that by changing your $$\alpha$$ value post-hoc, you're inf
 
 ## 2. Peeking and early stopping
 
-Let's stick with $$n=10,000$$ participants. It's like that you don't get all the data for your study all at once. Instead, the trial is run over several months and every day you get the results for a few more participants. **You should not monitor this data as it comes in, re-computing your p-value each day, and checking if it's significant**. 
+Let's stick with $$n=10,000$$ participants. Suppose you don't get all the data for your study all at once. Instead, the trial is run over several months and every day you get the results for a few more participants. **You should not monitor this data as it comes in, re-computing your p-value each day, and checking whether it's significant**. 
 
 Your p-value should only be calculated on the final sample of 10,000 people, since 10,000 was the initial number of observations chosen independently of the data. If you continuously monitor the result there's a possibility that you will stop early (at 5,000 participants say), in which case the sample size is data-dependent and the p-value is invalid. 
 
