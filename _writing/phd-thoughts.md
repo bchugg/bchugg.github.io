@@ -3,12 +3,13 @@ layout: writing
 title: "Some thoughts from two-fifths of the way through grad school"
 description: Not advice
 date: "2024-08-18" 
+updated: "2024-08-21"
 status: published
 image: /assets/writing_images/professors_arguing.jpg
 ---
 
 
-Here are some opinions after the second year of my PhD. I would not consider this any sort of advice. Some of this is geared specifically to PhDs in technical subjects. 
+Here are some opinions after the second year of my PhD. I would not consider it any sort of advice. Some of this is geared specifically to PhDs in technical subjects. 
 
 
 **It's not a sprint but it's not a marathon either. And sometimes it's a sprint.**  
@@ -68,6 +69,12 @@ Unfortunately, I've been told that Google scholar is basically required when app
 <img id='img-70' src="/assets/writing_images/wiles.jpeg">
 <p class='caption'>Andrew Wiles didn't publish anything for seven years while he was working on the proof of Fermat's last theorem. His Google scholar would not have been looking so hot.</p>
 
+**Not everyone has the same research style.** 
+Just like students, professors are good at different things. Some are extremely good at solving technical problems. They'll write papers with 40 page appendices shaving off logarithmic factors from the best known bounds and they know the Engelbert-Schmidt zero-one law and Fatou's lemma by heart. If you put a hard problem in front of them, they'll solve it. Others are good at asking the right questions. They see which way the field is moving and set out to solve a problem which sets the tone of the research to come. They often have a lot of intuition for what the right answer should look like at a high level.  
+
+Different skills translate to different research styles. Some like to spend hours at the blackboard with a colleague working through math. Others prefer to work out the details in private, and spend meeting time talking about high-level intuition. Part of your job in grad school is to figure out what kind of researcher you are. 
+
+
 
 **Figure out how to incentivize learning, not papers.** 
 When you're an expert in a field, there's very little distance between learning something new and producing novel work. If it's new to you, then it's probably new to many others as well and it wouldn't be silly to write a paper about it. This is not true when you're a junior PhD student. Most things that are new to you are already well-known to the community. But you still need to spend time learning these things because this is how you accumulate enough knowledge to do good research in the future. If you view time spent learning as wasted time (which is remarkably easy to do, especially if all your friends are writing NeurIPS papers) then you'll end up focusing on easier but less worthwhile projects. 
@@ -121,7 +128,7 @@ But if you like your program and have good friends, it's easy to put up with a m
 
 
 **You should think really hard before going to grad school.** 
-The most serious, the most obvious, and also the most important point. Grad school sucks for a lot of people. [The mental health statistics are abysmal](https://pubmed.ncbi.nlm.nih.gov/37624099/#:~:text=In%20fact%2C%20studies%20show%20that,students'%20decision%20to%20leave%20academia.). [Depression skyrockets and suicide is many times as prevalent](https://www.sciencefarts.com/uploads/6/3/9/8/63980147/acad_psychiatry_2014.pdf) as it is among the normal population. Even though the difficulties of grad school are somewhat common knowledge, people still treat it like a default option. _Grad school is the worst default option imaginable._ Notwithstanding the comments about it being the new MBA above, the hours are long, the pay is low, and unless you're extremely curious about what you're studying then you're going to be miserable. Most grad students are in their twenties. You should not be spending these years anxious and depressed. 
+The most serious, the most obvious, and also the most important point. Grad school sucks for a lot of people. [The mental health statistics are abysmal](https://pubmed.ncbi.nlm.nih.gov/37624099/#:~:text=In%20fact%2C%20studies%20show%20that,students'%20decision%20to%20leave%20academia.). [Depression skyrockets and suicide is many times as prevalent as it is among the normal population](https://www.sciencefarts.com/uploads/6/3/9/8/63980147/acad_psychiatry_2014.pdf). Even though the difficulties of grad school are somewhat common knowledge, people still treat it like a default option. _Grad school is the worst default option imaginable._ Notwithstanding the comments about it being the new MBA above, the hours are long, the pay is low, and unless you're extremely curious about what you're studying then you're going to be miserable. Most grad students are in their twenties. You should not be spending these years anxious and depressed. 
 
 
 _Thanks to Vaden for pointing me towards the Popper quote._
