@@ -1,11 +1,25 @@
 ---
 layout: page
 title: Writing
-description: "Spicy takes and explorations of various topics"
+description: "There is nothing to writing. All you do is sit down at a typewriter and bleed."
 image: /assets/images/building.jpeg
 ---
 
-Sometimes I have thoughts, and sometimes I write them down. You can [subscribe]({% link subscribe.md %}) to receive occasional updates. 
+You can subscribe to receive occasional updates ([archive](https://buttondown.com/benchugg/archive/)).  
+
+<div class='signup-form'>
+<form
+  action="https://buttondown.email/api/emails/embed-subscribe/benchugg"
+  method="post"
+  target="popupwindow"
+  onsubmit="window.open('https://buttondown.email/benchugg', 'popupwindow')"
+  class="embeddable-buttondown-form"
+>
+  <input type="email" name="email" id="bd-email" placeholder='email'/>
+  <input type="submit" value="Subscribe" />
+</form>
+</div>
+
 
 <br/>
 

@@ -5,11 +5,11 @@ description: "Get notified of new happenings every month or so"
 image: /assets/images/building.jpeg
 ---
 
-You can subscribe by email to receive occasional[^1] updates about new essays and research notes. I'll send you things I've written and possibly a few other findings worth ingesting. 
+You can subscribe to receive occasional (every few months) updates about new essays. I'll send you things I've written and possibly a few other findings worth ingesting. 
 
-[^1]: Probably something like bi-monthly with a standard deviation of a few months ...  
+See the [archive of past newsletters](https://buttondown.com/benchugg/archive/). 
 
-No spam and you can unsubscribe at any time. It will cause only minor amounts of existential horror on my end.
+
 
 <div class='signup-form'>
 <form
@@ -19,10 +19,10 @@ No spam and you can unsubscribe at any time. It will cause only minor amounts of
   onsubmit="window.open('https://buttondown.email/benchugg', 'popupwindow')"
   class="embeddable-buttondown-form"
 >
-  <input type="email" name="email" id="bd-email" value='Enter your email'/>
+  <input type="email" name="email" id="bd-email" placeholder='email'/>
   <input type="submit" value="Subscribe" />
 </form>
 </div>
  
- --- 
+
 

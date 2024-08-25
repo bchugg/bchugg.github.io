@@ -1,9 +1,10 @@
-    
-.signup-form{ 
+.signup-form {
+    justify-content: center;
+    display: flex;
     input[type=email] {
         font-family: $main-font;
-        display: block;
-        width: 500px;
+        //display: block;
+        //width: 50%;
         color: gray;
         border: 1px solid #ABB0B2; 
         -webkit-border-radius: 3px; 
@@ -22,8 +23,8 @@
         color: black;
         cursor: pointer;  
         display: inline-block; 
-        height: 32px; 
-        line-height: 32px;
+        height: 27px; 
+        // line-height: 32px;
         margin: 0 5px 10px 0; 
         padding: 0 22px; 
         text-align: center; 
