@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head prefix="og: http://ogp.me/ns#; dc: http://purl.org/dc/terms/#">
+  
+  
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="http://localhost:4000/research_notes/sequential-median-of-means/" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PN2H9928PZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PN2H9928PZ');
+  </script>
+
+  <!-- Basic meta elements -->
+  <meta charset="utf-8" />
+
+  <!-- Enable responsiveness on mobile devices -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+
+  <!-- Mathjax Support -->
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <title>
+    
+     A sequential median-of-means template
+    
+  </title>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.9.1" />
+<meta property="og:title" content="A sequential median-of-means template" />
+<meta name="author" content="Ben Chugg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="How to construct a time-uniform median-of-means estimator" />
+<meta property="og:description" content="How to construct a time-uniform median-of-means estimator" />
+<link rel="canonical" href="http://localhost:4000/research_notes/sequential-median-of-means/" />
+<meta property="og:url" content="http://localhost:4000/research_notes/sequential-median-of-means/" />
+<meta property="og:site_name" content="benny" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-09-09T00:00:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="A sequential median-of-means template" />
+<meta name="twitter:site" content="@bennychugg" />
+<meta name="twitter:creator" content="@Ben Chugg" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"dateModified":"2024-09-09T00:00:00-04:00","datePublished":"2024-09-09T00:00:00-04:00","description":"How to construct a time-uniform median-of-means estimator","headline":"A sequential median-of-means template","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/research_notes/sequential-median-of-means/"},"url":"http://localhost:4000/research_notes/sequential-median-of-means/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- Dublin Core metadata for Zotero -->
+  <meta property="dc:title" content="A sequential median-of-means template" />
+  <meta property="dc:creator" content="Ben Chugg" />
+  <meta property="dc:identifier" content="http://localhost:4000/research_notes/sequential-median-of-means/" />
+  
+  <meta property="dc:date" content="2024-09-09 00:00:00 -0400" />
+  
+  <meta property="dc:source" content="benny" />
+
+  <!-- Open Graph and Twitter metadata -->
+  <meta property="og:title" content="A sequential median-of-means template" />
+  <meta property="og:url" content="http://localhost:4000/research_notes/sequential-median-of-means/" />
+  
+    <meta property="og:image" content="http://localhost:4000/assets/images/heads.jpeg"/>
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/heads.jpeg" />
+  
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:domain" value="benchugg.com" />
+  <meta name="twitter:title" value="A sequential median-of-means template" />
+  <meta name="twitter:url" value="http://localhost:4000" />
+  
+  <!-- Description is dependent on page type  -->
+  
+    <meta property="og:description" content="How to construct a time-uniform median-of-means estimator">
+    <meta name="twitter:description" value="How to construct a time-uniform median-of-means estimator" />
+    <meta property="og:type" content="article" />
+  
+  
+
+  <!-- CSS link -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="167x167" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="/assets/favicon.ico">
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="114×114" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="72×72" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” href="/assets/favicon.ico" />
+  <link rel=”icon” href="/assets/favicon.ico", sizes="32x32"/>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml" />
+
+  
+</head>
+
+
+  <body class="theme-base-">
+
+
+    <!--
+      Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS
+      collisions with our real content.
+    -->
+    <div class="wrap">
+      <header class="masthead">
+        <div class="container">
+          <a id='name' href="/">Ben Chugg</a>
+          <div class="span">
+            <a href="/papers/">Papers</a> 
+            <a href="/writing/">Writing</a>
+            <a href="/research_notes/">Notes</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="container content" id="main">
+        <article class="note">
+  <!-- <small>
+    <a id="back", href="/research_notes/">Back to all notes</a>
+  </small> -->
+  <!-- <hr> -->
+  
+  <p class='title'>A sequential median-of-means template</p> 
+  <p id="date">September 09, 2024</p>
+  <br/>
+  \[\newcommand{\muhat}{\widehat{\mu}}
+\newcommand{\mom}{\text{MoM}}
+\newcommand{\median}{\text{median}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\calF}{\mathcal{F}}
+\renewcommand{\Pr}{\mathbb{P}}
+\newcommand{\Var}{\mathbb{V}}
+\renewcommand{\Re}{\mathbb{R}}\]
+
+<p>The <a href="/research_notes/median-of-means-univariate/">median-of-means (MoM) estimator</a> is one of the best known estimator for mean estimation in heay-tailed settings. Is there a time-uniform version of MoM? Unlike Chernoff bounds which rely on exponential inequalities and can thus be made time-uniform very naturally via <a href="/research_notes/ville/">Ville’s inequality</a>, it’s much less clear how to approach the problem for the MoM estimator.</p>
+
+<p>Recall that the fixed-time MoM estimator splits the data into \(k\) groups, takes the sample mean of each group, and then computes the median among those sample means. The same logic holds in the <a href="/research_notes/median-of-means-multivariate/">multivariate case</a>, but the computation of the median is much trickier. Here we’ll stick to the univariate setting for simplicity (although very similar arguments carry over).</p>
+
+<p>Suppose we observe that random variables \(X_1,X_2,\dots,X_n\in\Re\) with mean \(\mu\). Given \(\delta\in(0,1)\), if we choose \(k = \lceil 8\log(1/\delta)\rceil\), one can show that the MoM estimator \(\muhat^\mom\) satisfies</p>
+
+\[\begin{equation}
+\label{eq:fixed-time-mom}
+    \Pr\left(|\muhat^\mom - \mu| \leq \sigma \bigg(\frac{32\log(1/\delta)}{n}\bigg)^{1/2}\right)\geq 1-\delta.\tag{1}
+\end{equation}\]
+
+<p>There are two possible approaches to sequentializing this estimator. We could keep the group size fixed and create more groups as we receive more observations. Or we could keep the number of groups fixed and have their size grow over time. I think the first approach is possible (using <a rel="nofollow noopener noreferrer" href="https://arxiv.org/abs/1906.09712">confidence sequences for the median</a>), but it gets messy (what does one do when the newest group is not full, for instance?). The second approach leads to a much cleaner solution.</p>
+
+<p>Fix the number of groups at \(k\). Call them  \(G_1,\dots,G_k\). We iteratively add observations to each group over time. We maintain a confidence sequence \(C^g(\alpha) \equiv (C^g_t(\alpha))_{t\geq 1}\) for the  mean of each group, centered at some (weighted) empirical mean \(S_t^g\).   We then have \(\muhat_t^\mom = \median(S_t^1,\dots,S_t^g)\). The following result provides a template on the deviation from \(\mu\) of \(\muhat_t^\mom\) as a function of the widths of the confidence sequences. Let \(\ell(C)\) denote the Lebesgue measure of a set \(C\subset\mathbb R\).</p>
+
+<p><strong>Sequential MoM template.</strong> Let \(X_1,X_2,\dots\) be iid with mean \(\mu\) and variance upper bounded by \(\sigma^2\). Let \(C^g(\alpha)\) be a \((1-\alpha)\)-CS for the mean of bucket \(g\in[k]\), where \(C_t^g(\alpha)\) is centered at \(S_t^g\). Then, 
+the sequential MoM estimator satisfies</p>
+
+\[\begin{equation}
+    \Pr\left(\forall t\geq 1: |\muhat^\mom_t - \mu| \leq \max_{g\in[k]} \ell(C^g_{\lfloor t/k\rfloor}(1/4))\right) \geq 1-\exp\{-k/8\}. 
+\end{equation}\]
+
+<p><em>Proof.</em> Let \(m_t^g\) be the number of observations in group \(g\) at time \(t\). Note that \(m_t^g \in\{\lfloor t/k\rfloor, \lceil t/k\rceil\}\). By definition of a \((1-\alpha)\)-CS, we are guaranteed that, for all \(g\in[k]\),</p>
+
+\[\begin{equation}
+    \Pr(\exists t\geq 1: \mu \notin C^g_{m_t}(1/4)) \leq 1/4. 
+\end{equation}\]
+
+<p>Let \(E^g=\{\exists t\geq 1: \mu \notin C^g_{m_t}(1/4)\}\), i.e., the event that the mean \(\mu\) is not contained in \(C^g(1/4)\) uniformly across time—call this a ``failure’’. Let \(E = \sum_{g=1}^k E^g\) count the number of failures. \(E\) is the sum of independent Bernoulli events, each with probability at most \(1/4\). Therefore,</p>
+
+\[\begin{equation*}
+    \Pr(E\geq k/2) \leq \Pr_{B\sim \text{Bin}(k,1/4)}(B\geq k/2)\leq \exp\left\{-\frac{2(k/4)^2}{k}\right\} = \exp\{-k/8\}, 
+\end{equation*}\]
+
+<p>where we’ve employed Hoeffding’s inequality to bound the event \(\{B\geq k/2\}\). 
+If there are fewer than \(k/2\) failures, it implies that the majority of the CSs contain \(\mu\) across all \(t\). 
+On the event \(E&gt;k/2\), more than half the empirical means \(S_t^g\) are within distance \(\ell(C_{m_t}^g(1/4))\) of the true mean \(\mu\), in turn implying that \(\muhat^\mom\) is within \(\max_{g\in[k]}\ell(C_{m_t}^g(1/4))\) of \(\mu\). QED.</p>
+
+<p>Which CSs should we deploy with the template? Since we’re in a heavy-tailed setting, it’s tempting to use the best known CSs for heavy-tailed observations, something like the <a href="/research_notes/catoni_giulini/">sequential Catoni-Giulini estimator</a>. But we’re only deploying these CSs with \(\alpha=1/4\), so we just want them to have a small width in that case. In the fixed-time setting, we use Chebyshev’s inequality. In the sequential setting it’s natural to use a sequential analogue of Chebyshev, the Dubins-Savage inequality.</p>
+
+<p><strong>Dubins-Savage Inequality.</strong> Let \((Z_t)_{t\geq 1}\) be a scalar-valued stochastic process with conditional means \(\mu_t = \E[Z_t\vert\calF_{t-1}]\) and conditional variances \(V_t = \Var(Z_t\vert\calF_{t-1})\). Assume that \(\mu_t\) is a.s. finite for all \(t\). Then, for any \(a,b&gt;0\),</p>
+
+\[\begin{equation}
+\label{eq:dubins-savage}
+    \Pr\left(\exists t\geq 1: \sum_{i\leq t}( Z_i - \mu_i)  \geq a + b\sum_{i\leq t} V_i\right)\leq \frac{1}{ab + 1}. 
+\end{equation}\]
+
+<p>We apply Dubins-Savage inequality twice, once with \(Z_t^+ = \lambda_t X_t\) for predictable scalars \((\lambda_t)\) and once with \(Z_t^- = -\lambda_t X_t\). We take \(a=7\) and \(b=1\). Via a union bound we then obtain that</p>
+
+\[\begin{equation}
+    \Pr\left(\exists t\geq 1: \bigg|\frac{\sum_{i\leq t}\lambda_iX_i}{\sum_{i\leq t} \lambda_i}-\mu\bigg| \geq \frac{7 + \sigma^2\sum_{i\leq t}\lambda_i^2}{\sum_{i\leq t}\lambda_i}\right) \leq \frac14.
+\end{equation}\]
+
+<p>The width of our \(1/4\)-CS is therefore \((7 + \sum_{i\leq t}\lambda_i^2\sigma^2)/\sum_{i\leq t}\lambda_i\). Plugging this into the template above gives the following.</p>
+
+<p><strong>Proposition 1.</strong> Let \(X_1,X_2,\dots\) have conditional mean \(\mu\) and conditional variance upper bounded by \(\sigma^2\). Let \((\lambda_t)_t\) be a predictable sequence of positive scalars and set</p>
+
+\[S^g_t = \frac{\sum_{i\leq m_t^g} \lambda_iX_{\lfloor i/k\rfloor + g}}{\sum_{i\leq m_t^g} \lambda_i}.\]
+
+<p>Then, for all \(\delta\in(0,1)\), letting \(k(\delta) = \lceil 8\log(1/\delta)\rceil\),</p>
+
+\[\begin{equation}
+\label{eq:seq-mom-bound}
+    \Pr\left(\forall t\geq 1: |\muhat^\mom_t - \mu| \leq \frac{7 + \sigma^2\sum_{i\leq \lfloor t/k(\delta)\rfloor} \lambda_i^2}{\sum_{i\leq \lfloor t/k(\delta)\rfloor}\lambda_i}\right) \geq 1-\delta. \tag{2}
+\end{equation}\]
+
+<p>Consider taking</p>
+
+\[\lambda_i \asymp \sqrt{\frac{1}{\sigma^2i\log(i+1)}}.\]
+
+<p>Then,</p>
+
+\[\sum_{i\leq m}\lambda_i \asymp \frac{1}{\sigma}\sqrt{\frac{m}{\log m}} \quad \text{and}\quad\sum_{i\leq m}\lambda_i^2 \asymp \frac{\log\log(m)}{\sigma^2},\]
+
+<p>so the right hand side of \eqref{eq:seq-mom-bound} is</p>
+
+\[\frac{7 + \sigma^2\sum_{i\leq \lfloor t/k(\delta)\rfloor} \lambda_i^2}{\sum_{i\leq \lfloor t/k(\delta)\rfloor}\lambda_i} \lesssim \sigma \sqrt{\frac{k(\delta)\log(t/k(\delta))}{t}} \log\log(t/k(\delta)).\]
+
+<p>Loosening this bound slightly, we obtain that</p>
+
+\[\Pr\left(|\muhat_t^\mom - \mu| \lesssim \sigma\sqrt{\frac{\log(1/\delta)\log(t)}{t}}\log\log(t)\right) \geq 1-\delta,\]
+
+<p>which is a sequential analogue to \eqref{eq:fixed-time-mom}.</p>
+
+  <small>
+    <a link="back", href="/research_notes/">Back to all notes</a>
+  </small>
+</article>
+ <!-- "> -->
+      </main>
+
+      <!-- Footer  -->
+      <div class="container" id="footer">
+        <hr>
+        <div class='container links'>
+          <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github.png"></a>
+          <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads.png"></a>
+          <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter.png"></a>
+        </div>
+      
+        <div class='copyright'>
+          <small>&#169; 2024 Ben Chugg</small>
+        </div>
+      
+      </div>
+    </div>
+
+  </body>
+</html> 
