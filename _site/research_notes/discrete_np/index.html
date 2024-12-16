@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head prefix="og: http://ogp.me/ns#; dc: http://purl.org/dc/terms/#">
+  
+  
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="http://localhost:4000/research_notes/discrete_np/" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PN2H9928PZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PN2H9928PZ');
+  </script>
+
+  <!-- Basic meta elements -->
+  <meta charset="utf-8" />
+
+  <!-- Enable responsiveness on mobile devices -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+
+  <!-- Mathjax Support -->
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <title>
+    
+     Discrete Neyman-Pearson via external randomization
+    
+  </title>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.9.1" />
+<meta property="og:title" content="Discrete Neyman-Pearson via external randomization" />
+<meta name="author" content="Ben Chugg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="How to recover the Neyman-Pearson lemma by randomizing discrete data" />
+<meta property="og:description" content="How to recover the Neyman-Pearson lemma by randomizing discrete data" />
+<link rel="canonical" href="http://localhost:4000/research_notes/discrete_np/" />
+<meta property="og:url" content="http://localhost:4000/research_notes/discrete_np/" />
+<meta property="og:site_name" content="benny" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-12-14T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Discrete Neyman-Pearson via external randomization" />
+<meta name="twitter:site" content="@bennychugg" />
+<meta name="twitter:creator" content="@Ben Chugg" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"dateModified":"2024-12-14T00:00:00-05:00","datePublished":"2024-12-14T00:00:00-05:00","description":"How to recover the Neyman-Pearson lemma by randomizing discrete data","headline":"Discrete Neyman-Pearson via external randomization","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/research_notes/discrete_np/"},"url":"http://localhost:4000/research_notes/discrete_np/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- Dublin Core metadata for Zotero -->
+  <meta property="dc:title" content="Discrete Neyman-Pearson via external randomization" />
+  <meta property="dc:creator" content="Ben Chugg" />
+  <meta property="dc:identifier" content="http://localhost:4000/research_notes/discrete_np/" />
+  
+  <meta property="dc:date" content="2024-12-14 00:00:00 -0500" />
+  
+  <meta property="dc:source" content="benny" />
+
+  <!-- Open Graph and Twitter metadata -->
+  <meta property="og:title" content="Discrete Neyman-Pearson via external randomization" />
+  <meta property="og:url" content="http://localhost:4000/research_notes/discrete_np/" />
+  
+    <meta property="og:image" content="http://localhost:4000/assets/images/heads.jpeg"/>
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/heads.jpeg" />
+  
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:domain" value="benchugg.com" />
+  <meta name="twitter:title" value="Discrete Neyman-Pearson via external randomization" />
+  <meta name="twitter:url" value="http://localhost:4000" />
+  
+  <!-- Description is dependent on page type  -->
+  
+    <meta property="og:description" content="How to recover the Neyman-Pearson lemma by randomizing discrete data">
+    <meta name="twitter:description" value="How to recover the Neyman-Pearson lemma by randomizing discrete data" />
+    <meta property="og:type" content="article" />
+  
+  
+
+  <!-- CSS link -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="167x167" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="/assets/favicon.ico">
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="114×114" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="72×72" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” href="/assets/favicon.ico" />
+  <link rel=”icon” href="/assets/favicon.ico", sizes="32x32"/>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml" />
+
+  
+</head>
+
+
+  <body class="theme-base-">
+
+
+    <!--
+      Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS
+      collisions with our real content.
+    -->
+    <div class="wrap">
+      <header class="masthead">
+        <div class="container">
+          <a id='name' href="/">Ben Chugg</a>
+          <div class="span">
+            <a href="/papers/">Papers</a> 
+            <a href="/writing/">Writing</a>
+            <a href="/research_notes/">Notes</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="container content" id="main">
+        <article class="note">
+  <!-- <small>
+    <a id="back", href="/research_notes/">Back to all notes</a>
+  </small> -->
+  <!-- <hr> -->
+  
+  <p class='title'>Discrete Neyman-Pearson via external randomization</p> 
+  <p id="date">December 14, 2024</p>
+  <br/>
+  \[\newcommand{\lr}{\Lambda}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\Pr}{\mathbb{P}}\]
+
+<p>When testing a point null \(P\) against a point alternative \(Q\), the <a href="[Neyman-Pearson lemma](https://thestatsmap.com/Neyman-Pearson-lemma)">Neyman-Pearson lemma</a> says to find the threshold \(\kappa\) such that</p>
+
+\[P(\lr(X) \geq \kappa) =\alpha,\]
+
+<p>where \(\lr = d Q/d P\) is the likelihood ratio between \(Q\) and \(P\). The resulting test rejects when \(\lr\) is at least \(\kappa\), i.e.,</p>
+
+\[\phi(x) = \begin{cases}
+1,&amp; \text{if }\lr(x) \geq \kappa,\\
+0,&amp;\text{otherwise},
+\end{cases}\]
+
+<p>and is <a rel="nofollow noopener noreferrer" href="https://thestatsmap.com/uniformly-most-powerful-test">uniformly most powerful</a>.</p>
+
+<p>Such a value \(\kappa\) can only be guaranteed to exist when the distributions are continuous. What do you do when the distributions are discrete?</p>
+
+<p>Suppose you order the values of the likelihood ratio, \(\lr(x_i)&lt;\lr(x_{i+1})\) for all \(i\) (there are possibly infinitely many, but countably many so such an ordering makes sense). Suppose you add uniform noise between \(\lr(x_i)\) and \(\lr(x_{i+1})\). That is, you preprocess your data such that if the original likelihood ratio was \(\lr(X) = \lr(x_i)\), you observe</p>
+
+\[\widetilde{\lr}(X) = \lr(x_i) + z, \text{ where } z\sim U[\lr(x_i), \lr(x_{i+1})].\]
+
+<p>On this augmented probability space, the desired value of \(\kappa\) does exist. In particular, let \(i\) be such that \(P(\lr(X) \geq \lr(x_i)) &gt;\alpha\) and \(P(\lr(X) \geq \lr(x_{i+1})) &lt; \alpha\) (if there exists some \(i\) such that \(P(\lr(X) \geq \lr(x_{i+1})) = \alpha\) then there’s no problem).  Then there exists a value of \(\kappa\in(\lr(x_i),\lr(x_{i+1}))\) such that</p>
+
+\[\Pr(\widetilde{\lr}(X) \geq \kappa) = \alpha.\]
+
+<p>Here I’m using \(\Pr\) instead of \(P\) to indicate that we’re technically working on a different space, since we’re adding the randomness of \(z\) to the original space. Note that \(z\) is drawn after observing \(\lr(X)\) so the distribution from which it’s drawn is well-defined. Rewriting this,</p>
+
+\[\begin{align}
+\alpha &amp;= \Pr(\widetilde{\lr}(X) \geq \kappa) \\ 
+&amp;= P(\lr(X) &gt; \lr(x_i)) + \Pr(\lr(X) = \lr(x_i), z \geq k) \\ 
+&amp;= P(\lr(X) &gt; \lr(x_i)) + P(\lr(X) = \lr(x_i))\gamma,
+\end{align}\]
+
+<p>where \(\gamma = \Pr(z \geq k)\). Now consider the following alternative explanation of the display above: If you draw \(\lr(X) = \lr(x_i)\) then flip a coin with bias \(\gamma\) and reject if the coin lands heads. Otherwise, reject if \(\lr(X) &gt; \lr(x_i)\) and accept if \(\lr(X) &lt; \lr(x_i)\). In other words, run the test</p>
+
+\[\psi(x) = \begin{cases}
+1, &amp; \lr(x) &gt; \lr(x_i), \\
+\gamma,&amp; \lr(x) =\lr(x_i),\\ 
+0, &amp; \lr(x) &lt;\lr(x_i).
+\end{cases}\]
+
+<p>But this is precisely the classical form of the <a rel="nofollow noopener noreferrer" href="https://thestatsmap.com/Neyman-Pearson-lemma-for-discrete-distributions">Neyman-Pearson lemma in the discrete case</a>. So we have recovered the discrete NP-lemma by using external randomization on the data and applying the continuous NP-lemma. I would like to claim that this is a fresh and deep insight, but alas this should in fact be radically unsurprising if you think about what “randomization” actually means in the discrete case. Merry Christmas.</p>
+
+
+  <small>
+    <a link="back", href="/research_notes/">Back to all notes</a>
+  </small>
+</article>
+ <!-- "> -->
+      </main>
+
+      <!-- Footer  -->
+      <div class="container" id="footer">
+        <hr>
+        <div class='container links'>
+          <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github.png"></a>
+          <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads.png"></a>
+          <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter.png"></a>
+        </div>
+      
+        <div class='copyright'>
+          <small>&#169; 2024 Ben Chugg</small>
+        </div>
+      
+      </div>
+    </div>
+
+  </body>
+</html> 
