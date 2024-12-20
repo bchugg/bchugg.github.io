@@ -1,6 +1,6 @@
 ---
 layout: writing
-title: "The two math cultures"
+title: "Two math cultures"
 description: Math as engineering vs math as discovery
 date: "2024-12-15" 
 status: published

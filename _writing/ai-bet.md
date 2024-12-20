@@ -1,6 +1,6 @@
 ---
 layout: writing
-title: "An AI-capabilities bet with JY Koh"
+title: "An AI-capabilities bet"
 description: Will a paper written by a language model be accepted to an A-tier conference or journal?
 date: "2022-12-16" 
 status: published
