@@ -50,3 +50,4 @@ Moreover, concern with the entire purview of the future entitles one to forget t
 One wonders how he feels about the state of effective altruism today. 
 
 
+--- 

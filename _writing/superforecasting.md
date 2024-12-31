@@ -72,6 +72,6 @@ So what do we conclude about superforecasting? Certainly it's not a magic bullet
 
 It's unsurprising that someone with epistemic humility outperforms an ideologue wedded to a single perspective. This doesn't give you magical abilities to peer into the future, but it can make you see reality more clearly. Believing that superforecasters _have_ unlocked the ability to pull back the veil on the future puts those that disagree with them at an impass.  Unless, of course,  superforecasting only works when you agree with the results?
 
-_Thanks to Cam Peters for comments._
+_Thanks to [Cam](https://falliblepieces.substack.com/) for comments._
 
 ---

@@ -30,3 +30,5 @@ There is a chance that a model generated paper is accepted but the event goes un
 I've written [elsewhere](/writing/peer-review) that peer-review doesn't work, so relying on it as the gatekeeper between model- and human-generated papers may seem odd. But despite the flaws, to make it past peer-review will require many pages of coherent narrative supporting some (hopefully) novel contribution. I don't think current models have this capacity, nor do I think the current deep learning paradigm is capable of the kind of reasoning required to make a significant scientific contribution. But I could be wrong, and what's better than being wrong in public and held to account by tapioca balls ... 
 
 I suspect that if I lose it will be due to a survey article, or an idea that doesn't hold much water when examined thoroughly, but was enough to make it past peer-review. Even this would be quite the achievement, however, so I'm happy to bet against it.  
+
+---

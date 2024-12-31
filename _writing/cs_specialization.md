@@ -35,3 +35,5 @@ Admittedly, most computer science programs allow you to choose your electives in
 This isn't just a problem for the students themselves, who are forced to take classes in areas well outside their interests. It's also an issue for their eventual employers. The lack of specialization in the degree name means they have to dig through a morass of course codes to discover what you actually studied. 
 
 Of course, some students will want a broad education in computer science, just as some want a broad education in the arts. Just as General Arts degrees exist, so too can General Computer Science degrees. But this shouldn't be the _only_ kind of computer science degree offered. 
+
+---

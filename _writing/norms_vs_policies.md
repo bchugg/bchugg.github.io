@@ -42,6 +42,6 @@ These two norms---the open contest between candidates and the ability to vote a 
 
 
 
-_Thanks to Vaden, Kasra, Rich, and Cam for feedback on earlier drafts._ 
+_Thanks to [Vaden](https://vmasrani.github.io/), [Kasra](https://kasra.io/), [Rich](https://thedeepdish.org/), and [Cam](https://falliblepieces.substack.com/) for feedback on earlier drafts._ 
 
 ---

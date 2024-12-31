@@ -131,7 +131,7 @@ But if you like your program and have good friends, it's easy to put up with a m
 The most serious, the most obvious, and also the most important point. Grad school sucks for a lot of people. [The mental health statistics are abysmal](https://pubmed.ncbi.nlm.nih.gov/37624099/#:~:text=In%20fact%2C%20studies%20show%20that,students'%20decision%20to%20leave%20academia.). [Depression skyrockets and suicide is many times as prevalent as it is among the normal population](https://www.sciencefarts.com/uploads/6/3/9/8/63980147/acad_psychiatry_2014.pdf). Even though the difficulties of grad school are somewhat common knowledge, people still treat it like a default option. _Grad school is the worst default option imaginable._ Notwithstanding the comments about it being the new MBA above, the hours are long, the pay is low, and unless you're extremely curious about what you're studying then you're going to be miserable. Most grad students are in their twenties. You should not be spending these years anxious and depressed. 
 
 
-_Thanks to Vaden for pointing me towards the Popper quote._
+_Thanks to [Vaden](https://vmasrani.github.io/) for pointing me towards the Popper quote._
 
 ---
 

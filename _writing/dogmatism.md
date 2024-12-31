@@ -29,4 +29,4 @@ But surely, you scream, it's possible to marshall good arguments for a position 
 
 Dogmatists lay anchor points for public conversation, helping the rest of us navigate the complex world of ideas more efficiently. They generate the strongest arguments for their side so that the rest of us can feel confident that we are hearing the best case possible—a public service.
 
-_Thanks to Cam Peters for comments._
+_Thanks to [Cam](https://falliblepieces.substack.com/) for comments._

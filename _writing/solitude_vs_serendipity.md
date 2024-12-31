@@ -51,3 +51,5 @@ On the other hand, it’s possible to work on problems that truly don’t matter
 In other words, when obtaining ideas from others via conversation or talks, you are more likely to work on the kind of things they find interesting. You’ll pick up ideas that are in the air. They’ll criticize your ideas more effectively and this leads to faster progress and new insights. But you’ll probably be less original. Solitary work, on the other hand, lets you take your own ideas more seriously without having to justify them to other people. This is [important for fostering creativity](https://benchugg.com/writing/creativity/).
 
 So what’s the right tradeoff?
+
+---

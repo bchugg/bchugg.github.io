@@ -80,7 +80,7 @@ The commentary on Scott’s blog is really _all_ that matters. It’s the substa
 > The commentary is all that matters. Sometimes $$P(A\vert B) = P(A)P(B\vert A)/P(B)$$, but not in a very literal way. In fact, I could just leave out the probabilities and it wouldn’t make a difference. 
 
 
-_Thanks to Cam Peters for helpful comments._ 
+_Thanks to [Cam](https://falliblepieces.substack.com/) for helpful comments._ 
 
 
 

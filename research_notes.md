@@ -16,9 +16,7 @@ and about more important things.</i>
 </p>
 </div>
 
-Notes on various topics for my own edification. The majority of material is not original and is simply a restatement of previous results in language that makes the most intuitive sense to me. Making the notes public just helps keep me accountable for their accuracy. Maybe they can also help others in the eternal quest to reduce confusion. 
-
-You can [subscribe]({% link subscribe.md %}) to be notified of new posts.  
+Notes for my own benefit. You can [subscribe]({% link subscribe.md %}) to be notified of new posts.  
 
 
 

@@ -37,3 +37,5 @@ But didn't I say that statisticians use Bayes' rule all the time? How do they ge
 So what do we do about this whole rationality thing? Are we doomed? Yes, in some sense. I don't think it makes sense to look for the ultimate foundations of rationality, a mathematical theory that will tell you precisely what to believe and how strongly to believe it. (What a mind-numbingly boring world that would be, anyway.) If rationality means "have perfectly calibrated numerical beliefs over the space of all propositions," then the search for rationality is futile.
 
 But if rationality is simply the recognition that we're all fallible and must therefore scrutinize our ideas because we might be wrong, then there's hope, and we can indeed move towards a more rational world. In such a conception of rationality, it doesn't matter where the ideas come from, only that we do our best to discover how they are flawed. You don't run into mathematical paradoxes because nothing need rest on some ultimate logical-mathematical foundation.
+
+--- 

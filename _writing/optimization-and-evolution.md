@@ -100,4 +100,4 @@ Alas, "optimization" is not a magical fluid that can be poured onto problems of 
 
 Of course, none of this is a knock down argument against AI risk (even of an existential nature). In fact, I agree there are things to be worried about. But I find the connections between optimization and evolution to be tenuous at best, and relying on such connections as arguments as to why deep learning will inevitably create superintelligence is careless. 
 
-_Thanks to Vaden Masrani for comments._ 
+_Thanks to [Vaden](https://vmasrani.github.io/) for comments._ 

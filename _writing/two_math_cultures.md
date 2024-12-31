@@ -22,3 +22,4 @@ In _math as discovery_, you might begin with a set of assumptions, or an intrigu
 
 Of course, math isn't the only endeavor with both a discovery mode and an engineering mode. All kinds of research, and daily life in general, consists of alternating between modes of investigation. But the idea that there’s a discovery side to math is foreign to most, because that’s not how math is taught at school. And that's very sad, because that's the magical part. It's the feeling of discovery resulting from the exploration that students of math are addicted to, not calculating derivatives. 
 
+---
