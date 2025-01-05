@@ -12,7 +12,7 @@ $$
 \newcommand{\Pr}{\mathbb{P}}
 $$
 
-When testing a point null $$P$$ against a point alternative $$Q$$, the [Neyman-Pearson lemma]([Neyman-Pearson lemma](https://thestatsmap.com/Neyman-Pearson-lemma)) says to find the threshold $$\kappa$$ such that 
+When testing a point null $$P$$ against a point alternative $$Q$$, the [Neyman-Pearson lemma](https://thestatsmap.com/Neyman-Pearson-lemma) says to find the threshold $$\kappa$$ such that 
 
 $$
 P(\lr(X) \geq \kappa) =\alpha,

@@ -24,7 +24,7 @@ None of this is to say that moving is a net negative. There is tremendous upside
 
 There are also less obvious benefits. Moving around forces a certain amount of independence and maturity—both social and financial. You have to make choices about savings and investments, about rent and groceries, about banks and insurance which vary from city to city and country to country. You learn to make friends quickly, otherwise you'll be unbearably lonely. You learn to do things alone, like walk into a bar and talk to strangers. All of this creates a general sense of agency—you discover that the world is navigable and intelligible. 
 
-I don’t wish I had lived in only one place as an adult. But I do wish my 20 year old self had been more aware of the costs of moving so much. Unfortunately, my 20 year old self was acting under asymmetric information—the benefits were apparent but the costs were hidden. I barely knew what community was yet. But 20 year olds have more leverage over their futures than their 30 year old counterparts. 
+I don’t wish I had lived in only one place as an adult. But I do wish my 20 year old self had been more aware of the costs of moving so much. Unfortunately, my 20 year old self was acting under asymmetric information—the benefits were apparent but the costs were hidden. I barely knew what community was yet. And 20 year olds have more leverage over their futures than their 30 year old counterparts. 
 
 This lesson is particularly sharp for people like me—people who are addicted to ideas in their twenties and want to go wherever they can to most easily study those ideas. It takes some time to realize that you should be equally as addicted to people.  
 

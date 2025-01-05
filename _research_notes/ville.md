@@ -36,7 +36,7 @@ Recall that a supermartingale $$(X_t)$$ adapted to the filtration $$(\F_t)$$ on 
 
 $$\E[X_t\gn \F_\tau] \le X_\tau, \quad \text{for all }\tau\leq t.$$
 
-Ville's inequality (mentioned in the [intro post](/research_notes/intro_game_theory_prob.md) on game-theoretic probability) generalizes Markov's inequality to supermartingales. In particular, it states that 
+Ville's inequality (mentioned in the [intro post]({% link _research_notes/intro_game_theory_prob.md %}) on game-theoretic probability) generalizes Markov's inequality to supermartingales. In particular, it states that 
 
 $$\Pr(\exists t\geq 0: X_t \geq \alpha \gn \F_0) \leq \frac{X_0}{\alpha}.$$
 

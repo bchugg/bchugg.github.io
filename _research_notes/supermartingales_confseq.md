@@ -37,7 +37,7 @@ $$\text{for all }t,\quad \inf_{\D\in\D(\mu)} \Pr_\D(\mu\in C_t)\geq 1-\alpha.$$
 
 Having the universal quantifier outside the probability makes a big difference. It is the difference between (i) for each $$t$$, $$\mu$$ is not in $$C_t$$ with probability at most $$\alpha$$, and (ii) $$\mu$$ is not in each $$C_t$$ with probability at most $$\alpha$$. The latter is much stronger. Of course, a confidence sequence at a particular time $$t$$ will be a confidence interval at that time. 
 
-Here we investigate how to construct such confidence sequences, using supermartingales and ideas from [game-theoretic probability](/_research_notes/intro_game_theory_prob.md). Recall [Ville's martingale inequality](/_research_notes/ville.md), which states that for a supermartingale $$M_t$$ adapted to the filtration $$(\F_t)$$, we have 
+Here we investigate how to construct such confidence sequences, using supermartingales and ideas from [game-theoretic probability]({% link _research_notes/intro_game_theory_prob.md %}). Recall [Ville's martingale inequality]({% link _research_notes/ville.md %}), which states that for a supermartingale $$M_t$$ adapted to the filtration $$(\F_t)$$, we have 
 
 $$
 \begin{equation}
