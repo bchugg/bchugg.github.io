@@ -16,7 +16,7 @@ $$
 
 # 1. Setting
 
-Our goal is to compute the geometric mean return of a Liquidity Provider's (LP) wealth $$W_t = Y_tS_t + X_t$$ for numeraire $$X_t$$, asset $$Y_t$$, and price process $$S_t$$ (see [this post](/_research_notes/amms.md) for more on the setting). In particular, for a given fee $$\gamma$$, we want to calculate 
+Our goal is to compute the geometric mean return of a Liquidity Provider's (LP) wealth $$W_t = Y_tS_t + X_t$$ for numeraire $$X_t$$, asset $$Y_t$$, and price process $$S_t$$ (see [this post](/research_notes/amms) for more on the setting). In particular, for a given fee $$\gamma$$, we want to calculate 
 
 $$\lim_{T\to\infty}\frac{1}{T}\E[\log W_T].$$ 
 

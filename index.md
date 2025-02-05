@@ -21,7 +21,7 @@ You can reach me at benchugg $$\alpha\tau$$ cmu.edu.
 These days I mostly think about problems in mathematical statistics and probability theory. Two areas of particular interest are concentration of measure and game-theoretic statistics (anytime-valid inference, e-values, hypothesis testing, and martingales). 
 
 
-Here are [my papers]({% link papers.md %}) and some [informal research notes]({% link research_notes.md %}).
+Here are [my papers]({% link papers.md %}) and some [informal research notes]({% link research_notes.md %}). I also maintain a [second brain for statistics](https://thestatsmap.com/). 
 
 
 ## Other
