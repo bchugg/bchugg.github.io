@@ -13,7 +13,7 @@ image: /assets/writing_images/fisher.jpg
 
 # Royall’s three questions
 
-In [Statistical Evidence: A likelihood paradigm](https://www.amazon.com/Statistical-Evidence-Likelihood-Monographs-Probability/dp/0412044110), Richard Royall asks three questions that various schools of thought in the foundations of statistics have tried to answer in the past century:
+In [Statistical evidence: A likelihood paradigm](https://www.amazon.com/Statistical-Evidence-Likelihood-Monographs-Probability/dp/0412044110), Richard Royall asks three questions that various schools of thought in the foundations of statistics have tried to answer in the past century:
 
 1. What should I believe?
 2. What should I do?
@@ -80,7 +80,7 @@ Neyman and Pearson considered statistics to be about action; about what to do ne
 > 
 > \- Neyman, _A first course in probability and statistics,_ 1950, pg 258.
 
-The influence of the Neyman-Pearson approach to statistics can be felt every time universities offer classes on “decision-making under uncertainty,” which invariably use statistical decision theory to make “data-driven decisions”. In hypothesis testing in particular, we usually test the null hypothesis against an alternative hypothesis, choosing to accept one and reject the other. This also comes from Neyman and Pearson, who thought it was nonsensical to simply test a single hypothesis (as opposed to Fisher, as we’ll see when studying the third question.) For them, one can only evaluate the relative merits of two hypotheses; you can’t say anything sensible about a single hypothesis.
+The influence of the Neyman-Pearson approach to statistics can be felt every time universities offer classes on “decision-making under uncertainty,” which invariably use statistical decision theory to make “data-driven decisions”. In hypothesis testing in particular, we often test the null hypothesis against an alternative hypothesis, choosing to accept one and reject the other. This also comes from Neyman and Pearson, who thought it was nonsensical to simply test a single hypothesis (as opposed to Fisher, as we’ll see when studying the third question.) For them, one can only evaluate the relative merits of two hypotheses; you can’t say anything sensible about one hypothesis on its own. 
 
 You might think that the Neyman-Pearson paradigm, and Royall’s second question more generally, are still about belief. After all, won’t you only choose action A instead of action B if you believe A and not B? Isn’t talking about decision making just a sneaky way to talk about belief? Νο, for several reasons:
 
@@ -105,13 +105,13 @@ Fisher developed the [p-value](https://thestatsmap.com/p-value)—bane of studen
 
 Because Neyman and Pearson were focused on action, they always thought statistical testing should involve a null and an alternative hypothesis. Accepting a hypothesis meant choosing one action over another. Fisher, on the other hand, thought it was perfectly sensible—and preferable—to examine a single hypothesis and try to quantify the evidence in its favor.
 
-Fisher was concerned that the Neyman-Pearson paradigm was confusing policy and science. He thought that as statisticians we should be in the business of helping people tell to what extent the data disqualifies a particular hypothesis. What to do with that information is up to others. For him, the statistician is not the decision-maker, he’s the lab tech.
+Fisher was concerned that the Neyman-Pearson paradigm confuses policy and science. He thought that statisticians should be in the business of helping people tell to what extent the data disqualifies a particular hypothesis. What to do with that information is up to others. For him, the statistician is not the decision-maker, he’s the lab tech.
 
 Fisher, Neyman, and Pearson went back and forth, attacking each other in writing and trying to ensure that the statistics community adopted their preferred position. Fisher compared Neyman to
 
 > Russians [who] are made familiar with the ideal that research in pure science can and should be geared to technological performance, in the comprehensive organized effort of a five-year plan for the nation.
 >
-> \- [Fisher, 1955](https://errorstatistics.com/wp-content/uploads/2021/02/fisher_1955-statmethssci-induct.pdf), page 70
+> \- [Fisher, 1955](https://errorstatistics.com/wp-content/uploads/2021/02/fisher_1955-statmethssci-induct.pdf), pg 70.
 
 He goes on to suggest that Neyman and Pearson are sacrificing truth for economic value:
 
@@ -127,7 +127,7 @@ However, statistical practice today—especially hypothesis testing—_is_ an aw
 
 1. Set up a statistical null hypothesis of “no mean difference” or “zero correlation.” Don’t specify the predictions of your research hypothesis or of any alternative substantive hypotheses.
 2. Use 0.05 as a convention for rejecting the null. If significant, accept your research hypothesis. Report the result as p < 0.05, p < 0.01, or p < 0.001.
-3. Always perform this procedure
+3. Always perform this procedure.
 
 There’s no alternative hypothesis specified in the null ritual, which makes it Fisherian. But we’re also making a binary decision about whether to accept or reject the null, which is firmly in the Neyman-Pearson camp. However, we _also_ report the p-value, which is again Fisherian.
 
