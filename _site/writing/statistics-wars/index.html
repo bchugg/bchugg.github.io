@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head prefix="og: http://ogp.me/ns#; dc: http://purl.org/dc/terms/#">
+  
+  
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="http://localhost:4000/writing/statistics-wars/" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PN2H9928PZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PN2H9928PZ');
+  </script>
+
+  <!-- Basic meta elements -->
+  <meta charset="utf-8" />
+
+  <!-- Enable responsiveness on mobile devices -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+
+  <!-- Mathjax Support -->
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <title>
+    
+     The statistics wars via Royall's three questions
+    
+  </title>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.9.1" />
+<meta property="og:title" content="The statistics wars via Royall’s three questions" />
+<meta name="author" content="Ben Chugg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A guide to the war between rationality, decision-making, and evidence." />
+<meta property="og:description" content="A guide to the war between rationality, decision-making, and evidence." />
+<link rel="canonical" href="http://localhost:4000/writing/statistics-wars/" />
+<meta property="og:url" content="http://localhost:4000/writing/statistics-wars/" />
+<meta property="og:site_name" content="benny" />
+<meta property="og:image" content="http://localhost:4000/assets/writing_images/fisher.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-02-12T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="http://localhost:4000/assets/writing_images/fisher.jpg" />
+<meta property="twitter:title" content="The statistics wars via Royall’s three questions" />
+<meta name="twitter:site" content="@bennychugg" />
+<meta name="twitter:creator" content="@Ben Chugg" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"dateModified":"2025-02-12T00:00:00-05:00","datePublished":"2025-02-12T00:00:00-05:00","description":"A guide to the war between rationality, decision-making, and evidence.","headline":"The statistics wars via Royall’s three questions","image":"http://localhost:4000/assets/writing_images/fisher.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/writing/statistics-wars/"},"url":"http://localhost:4000/writing/statistics-wars/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- Dublin Core metadata for Zotero -->
+  <meta property="dc:title" content="The statistics wars via Royall's three questions" />
+  <meta property="dc:creator" content="Ben Chugg" />
+  <meta property="dc:identifier" content="http://localhost:4000/writing/statistics-wars/" />
+  
+  <meta property="dc:date" content="2025-02-12 00:00:00 -0500" />
+  
+  <meta property="dc:source" content="benny" />
+
+  <!-- Open Graph and Twitter metadata -->
+  <meta property="og:title" content="The statistics wars via Royall's three questions" />
+  <meta property="og:url" content="http://localhost:4000/writing/statistics-wars/" />
+  
+    <meta property="og:image" content="http://localhost:4000/assets/writing_images/fisher.jpg" />
+    <meta name="twitter:image" content="http://localhost:4000/assets/writing_images/fisher.jpg" />
+  
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:domain" value="benchugg.com" />
+  <meta name="twitter:title" value="The statistics wars via Royall's three questions" />
+  <meta name="twitter:url" value="http://localhost:4000" />
+  
+  <!-- Description is dependent on page type  -->
+  
+    <meta property="og:description" content="A guide to the war between rationality, decision-making, and evidence.">
+    <meta name="twitter:description" value="A guide to the war between rationality, decision-making, and evidence." />
+    <meta property="og:type" content="article" />
+  
+  
+
+  <!-- CSS link -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="167x167" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="/assets/favicon.ico">
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="114×114" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="72×72" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” href="/assets/favicon.ico" />
+  <link rel=”icon” href="/assets/favicon.ico", sizes="32x32"/>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml" />
+
+  
+</head>
+
+
+  <body class="theme-base-">
+
+
+    <!--
+      Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS
+      collisions with our real content.
+    -->
+    <div class="wrap">
+      <header class="masthead">
+        <div class="container">
+          <a id='name' href="/">Ben Chugg</a>
+          <div class="span">
+            <a href="/papers/">Papers</a> 
+            <a href="/writing/">Writing</a>
+            <a href="/research_notes/">Notes</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="container content" id="main">
+        <article class="writing">
+  <!-- <small>
+    <a id="back", href="/writing/">Back to all writing</a>
+  </small>
+  <hr> -->
+  
+  <p class='title'>The statistics wars via Royall's three questions</p> 
+  <p id="date">February 12, 2025</p>
+  <br/><br/>
+  <ul id="markdown-toc">
+  <li><a href="#royalls-three-questions" id="markdown-toc-royalls-three-questions">Royall’s three questions</a></li>
+  <li><a href="#question-1-what-should-i-believe" id="markdown-toc-question-1-what-should-i-believe">Question 1: What should I believe?</a>    <ul>
+      <li><a href="#objective-vs-subjective-bayesians" id="markdown-toc-objective-vs-subjective-bayesians">Objective vs Subjective Bayesians</a></li>
+    </ul>
+  </li>
+  <li><a href="#question-2-what-should-i-do" id="markdown-toc-question-2-what-should-i-do">Question 2: What should I do?</a></li>
+  <li><a href="#question-3-how-much-evidence-does-this-provide" id="markdown-toc-question-3-how-much-evidence-does-this-provide">Question 3: How much evidence does this provide?</a></li>
+  <li><a href="#what-happens-in-practice" id="markdown-toc-what-happens-in-practice">What happens in practice?</a></li>
+</ul>
+
+<h1 id="royalls-three-questions">Royall’s three questions</h1>
+
+<p>In <a rel="nofollow noopener noreferrer" href="https://www.amazon.com/Statistical-Evidence-Likelihood-Monographs-Probability/dp/0412044110">Statistical Evidence: A likelihood paradigm</a>, Richard Royall asks three questions that various schools of thought in the foundations of statistics have tried to answer in the past century:</p>
+
+<ol>
+  <li>What should I believe?</li>
+  <li>What should I do?</li>
+  <li>How much evidence does this observation provide for a hypothesis?</li>
+</ol>
+
+<p>Royall focuses on the third question, arguing that any reasonable answer must rely on the “likelihood ratio” (a view called the <a rel="nofollow noopener noreferrer" href="https://thestatsmap.com/law-of-likelihood">law of the likelihood</a>).</p>
+
+<p>But Royall’s questions also serve as a useful frame on the debates at the foundations of statistics. They highlight the distinctions between various schools—Bayesian and frequentism, pragmatism versus puritanism, and disagreements over what the role of statistics really is and how probability should be used. Here I’ll try to show that much of the debate arises because various schools of statistical thought are trying to answer different questions.</p>
+
+<p>A reader could be forgiven for staring in bewilderment at the phrase “debates at the foundations of statistics.” Are there such things? What is there to debate about tallying the number of car crashes in Missouri, or calculating the standard deviation in the heights of school children? Regrettably, this is a reasonable question because of the way statistics is taught … everywhere. The stale view of statistics taught from grade school to undergraduate haunts every grad student who, at the bar, is asked “what do you do?”</p>
+
+<p>In fact, statistics has been the epicenter of more feuds and controversies than most fields. Throughout the 20th century, entire academic departments would often pick a side and staunchly refuse to hire anyone with the opposing perspective. Deborah Mayo calls these the <a rel="nofollow noopener noreferrer" href="https://www.lse.ac.uk/philosophy/events/phil-stats-wars/">statistics wars</a>. Statisticians believed the very foundations of reason itself were at stake. Ronald Fisher, one of the more colorful characters in the discipline’s history, <a rel="nofollow noopener noreferrer" href="https://statmodeling.stat.columbia.edu/2014/05/23/neyman-really-say-fishers-work-easy-get-right-answer-never-define-question-fisher-really-describe-neyman-theorem-proving-poseur-wouldnt-re/">is said to have</a> called one some of his colleagues’ views “horrifying [for] intellectual freedom in the west.”</p>
+
+<p>Here I’ll give a brief tour of how I think about the statistics wars. I’ll try to be mostly impartial—I’ll explore where I personally sit in future posts.</p>
+
+<p>A note before we begin: Statistics is written in the language of probability, and debates about one usually bleed into debates about the other. Views on the proper use of statistics often directly follow from your views on the nature of probability, and vice versa. Here I’ll touch on both the philosophy of probability and the philosophy of statistics, separating them only if appropriate.</p>
+
+<h1 id="question-1-what-should-i-believe">Question 1: What should I believe?</h1>
+
+<p>The idea that probability can and should be used to model beliefs is held most firmly by the Bayesians, a school of thought named after the 18th century reverend Thomas Bayes<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>. This is not to say that other schools think that statistics has no role to play in shaping our beliefs (it’s supposed to help us reason about the world, after all), but the Bayesians are unique in how formally they make the connection between probability and belief.</p>
+
+<p>In the Bayesian conception, everything should be treated as a random quantity and everything is thus amenable to probabilistic analysis. Whereas most people would consider “the number of people who sneezed on December 21st, 1988, in Accra, Ghana” to be a fixed (deterministic) but unknown number, Bayesians treat this as a random variable drawn from some distribution. They begin with a guess for what this distribution is (a <em>prior</em> distribution), and then slowly change their guess as new information arrives (a friend reports they saw 12 people sneezing). The process of changing the distribution over time is known as Bayesian updating.</p>
+
+<p><img id="img-70" src="/assets/writing_images/bayes_laplace.jpeg" /></p>
+<p class="caption">Pierre Simon de Laplace (right) was the main reason that Thomas Bayes' (left) ideas caught on, and why they were originally tied to rationality.</p>
+
+<p>While one can use Bayesian methods for purely pragmatic reasons, if you push Bayesian practitioners hard enough they will typically justify the use of their methods by appealing to the Bayesian interpretation of probability, which claims that <em>degrees of belief are represented by probabilities</em>. This is the core claim behind the Bayesian philosophy and is the link between Bayesianism and Royall’s first question. Bayesians contend that belief is best handled using the tools of probability theory and that the role of statistics is to formally update these beliefs using data.</p>
+
+<p>For Bayesians, this link between rationality and probability is more than mere analogy. They have developed frameworks to formally connect the two. The most famous of these is <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Cox%27s_theorem">Cox’s theorem</a> which posits that the beliefs of a rational agent <em>must</em> be treated as probabilities and obey certain arithmetical axioms. Cox was reacting to <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Probability_axioms">Kolmogorov’s axioms</a>, which are the most widely used axioms of probability theory but have nothing to do with rationality or belief. Unfortunately for Cox, while his axioms are the subject of the occasional philosophy seminar, they are never used by practicing statisticians (not least because they do not handle countable additivity, a technical yet crucial property when dealing with all but the simplest sample spaces).</p>
+
+<p>Most modern Bayesians appeal instead to Dutch book arguments to justify the connection between probability and belief. These say that if you assign numerical values to your beliefs and bet on them, then you are guaranteed to lose money unless your beliefs are consistent. That is, you should not bet at 3:2 odds that a coin will come up both heads and tails, otherwise a bookie can take both bets and be guaranteed to make money from you. Dutch book arguments are cleaner than Cox’s theorems, but significantly less powerful. They show only that <em>if</em> you are willing to assign numbers to your beliefs <em>and</em> want to bet on all outcomes, <em>then</em> your beliefs should be consistent. They don’t tell you why you should assign numbers to your beliefs in the first place, nor how to update your beliefs in the face of new evidence, a core part of Bayesianism.</p>
+
+<p>A technical but important caveat: Because Bayesianism has entered the mainstream due of movements like effective altruism and Βay-area rationalism, there is naturally tremendous confusion over what exactly it means. This is not helped by people with names like Nate Gold and Liam Silver who write books confusing using Bayes’ theorem with Bayesianism itself. Everyone uses Bayes’ theorem, it’s simply a mathematical identity. <em>The identifying feature of Bayesianism is treating unknown parameters as random quantities</em>. Bayesians put distributions over things that other statisticians would rather die than treat as random.</p>
+
+<h2 id="objective-vs-subjective-bayesians">Objective vs Subjective Bayesians</h2>
+
+<p>There are a couple of sub-schools of Bayesian thought, the main ones being subjective and objective Bayesianism. The split comes from a disagreement over how one should assign prior probabilities. Before you see any data, what should the distribution be over the number of people who sneezed in Accra, Ghana? Perhaps it should be uniform over the population, or perhaps it should be a Gaussian centered at 10?</p>
+
+<p>Objective Bayesians (sometimes called logical Bayesians) are of the view that there is a single, correct prior that should be used. They typically appeal to symmetries and rational constraints to determine what it is. For instance, they would typically take the view that the correct prior to have when estimating the bias of a coin is 50/50 heads/tails because there is no reason to favor heads over tails and vice versa.</p>
+
+<p>The father of objective Bayesianism is arguably <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Harold_Jeffreys">Harold Jeffreys</a>, though <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/John_Maynard_Keynes">Keynes</a> introduced many of the concepts first. But Keynes didn’t think that <em>all</em> beliefs were quantifiable, setting him apart from most Bayesians. Jeffreys introduced the <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Jeffreys_prior">Jeffreys’ prior</a> which is often appealed to by objective Bayesians as the correct prior. Other notable objective Bayesians are <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Rudolf_Carnap">Rudolf Carnap</a>, <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Edwin_Thompson_Jaynes">ET Jaynes</a>, and <a rel="nofollow noopener noreferrer" href="https://www2.stat.duke.edu/~berger/">James Berger</a>.</p>
+
+<p><img id="img-50" src="/assets/writing_images/ramsey.jpeg" /></p>
+<p class="caption">The hulking figure of Frank Ramsey, who made seminal contributions to combinatorics (Ramsey numbers and graphs), optimal taxation (Ramsey rule), expeced utility theory (helped formalize it), and laid the foundations for modern subjective Bayesian theory.</p>
+
+<p>Subjective Bayesians, as you can probably guess, disagree that there is an objectively correct prior. They think of probability as something much more personal. Everyone will have a different prior to reflect their own thinking and assumptions. In the modern era, the two figures most associated with the subjectivist school are <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Frank_Ramsey_%28mathematician%29">Frank Ramsey</a> (see his 1926 paper <a rel="nofollow noopener noreferrer" href="https://fitelson.org/probability/ramsey.pdf">truth and probability</a>) and <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Bruno_de_Finetti">Bruno de Finetti</a> (if you speak French, see his 1937 paper <a rel="nofollow noopener noreferrer" href="http://www.numdam.org/item/AIHP_1937__7_1_1_0.pdf">La prévision: ses lois logiques, ses sources subjectives</a>). Other key figures in this tradition are LJ Savage and JL Doob.</p>
+
+<h1 id="question-2-what-should-i-do">Question 2: What should I do?</h1>
+
+<p>Battles in the history of statistics are often framed in terms of Bayesianism versus <em>frequentism</em>. Frequentist methods treat unknown parameters as fixed (the number of people who sneezed in Accra, Ghana isn’t random, it’s deterministic but unknown), and then perform inference on them. In other words, for the frequentist the only randomness comes from the data.</p>
+
+<p>In terms of outcomes that practicing statisticians actually care about, frequentism has mostly won the day. Confidence intervals, minimax rates, type-I and type-II error guarantees are all frequentist notions of performance.<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> And even when statisticians use Bayesian methods, they usually try to measure performance of those methods with frequentist notions (see, e.g., the <a rel="nofollow noopener noreferrer" href="https://thestatsmap.com/Bernstein-von-Mises-theorem">Bernstein von-Mises theorem</a>).</p>
+
+<p>But just like Bayesianism, there are divides within frequentism as well. The most famous of these is the battle between Jerzy Neyman, Egon Pearson, and Ronald Fisher, which began in the 1920s and lasts until this day. The disagreement is usually framed in terms of hypothesis testing, but it’s really over what statistics is trying to do as a discipline. The Neyman-Pearson camp were focused on Royall’s second question, while the Fisherian camp was focused on the third.</p>
+
+<p>Neyman and Pearson considered statistics to be about action; about what to do next. For Neyman in particular, statistics is a branch of decision-theory. He called mathematical statistics the search for “inductive rules for action”, meaning we’re making decisions informed by the data we’ve gathered.</p>
+
+<blockquote>
+  <p>The problem of testing a statistical hypothesis occurs when circumstances force us to make a choice between two courses of action: either take step A or take step B…</p>
+
+  <p>- Neyman, <em>A first course in probability and statistics,</em> 1950, pg 258.</p>
+</blockquote>
+
+<p>The influence of the Neyman-Pearson approach to statistics can be felt every time universities offer classes on “decision-making under uncertainty,” which invariably use statistical decision theory to make “data-driven decisions”. In hypothesis testing in particular, we usually test the null hypothesis against an alternative hypothesis, choosing to accept one and reject the other. This also comes from Neyman and Pearson, who thought it was nonsensical to simply test a single hypothesis (as opposed to Fisher, as we’ll see when studying the third question.) For them, one can only evaluate the relative merits of two hypotheses; you can’t say anything sensible about a single hypothesis.</p>
+
+<p>You might think that the Neyman-Pearson paradigm, and Royall’s second question more generally, are still about belief. After all, won’t you only choose action A instead of action B if you believe A and not B? Isn’t talking about decision making just a sneaky way to talk about belief? Νο, for several reasons:</p>
+
+<ol>
+  <li><strong>You might believe neither A nor B is true</strong> (replace <em>true</em> with <em>closest to true</em> if you’re an adamant fallibilist). Suppose you’re a doctor and a patient presents with symptoms of Malaria. Even though you’re quite sure it’s Malaria, you might order a test for yellow fever as well. If it turns out, based on the data, they’re more likely than not to have yellow fever, you might order extra screenings despite maintaining a belief that they really have malaria.</li>
+  <li><strong>Utility versus belief.</strong> You work in public policy and are deciding whether to roll out a new congestion tax. The economists in your department have run a small study: implementing the tax reduces the average number of cars on the road by 10%, but also disproportionately affect the poor. While you might now believe that congestion taxes are effective, they are not effective <em>enough</em> to warrant implementation.</li>
+  <li><strong>Lack of alternatives</strong>. Now you’re a physicist. You predict a new particle, particle X, based on the standard model of particle physics. We run some tests to look for particle X, but we don’t have sufficient evidence to reject the hypothesis that the particle doesn’t exist (the null hypothesis). Do you stop believing in the existence of the particle? Maybe, but maybe not. The standard model is our best theory. Until a coherent, alternative theory is proposed that does not have a particle X, it may not be sensible to entirely discard the idea of a new particle.</li>
+</ol>
+
+<p>Neyman himself was adamant about the distinction between Royall’s first and second questions. He made sure to highlight the difference between action and belief:</p>
+
+<blockquote>
+  <p>The terms ‘accepting’ and ‘rejecting’ a statistical hypothesis are very convenient and are well established. It is important, however, to keep their exact meaning in mind and to discard various additional implications which may be suggested by intuition. Thus, to accept a hypothesis H means only to decide to take action A rather than action B. This does not mean that we necessarily believe that the hypothesis H is true. Also if the application… ‘rejects’ H, this means only that the rule prescribes action B and does not imply that we believe that H is false.</p>
+
+  <p>- Neyman, <em>A first course in probability and statistics,</em> 1950, p. 259.</p>
+</blockquote>
+
+<h1 id="question-3-how-much-evidence-does-this-provide">Question 3: How much evidence does this provide?</h1>
+
+<p>Ronald Fisher—often called the father of modern statistics, seeing as he invented half the methods covered in a first year grad course—thought that statistics was in the business of quantifying evidence. This is a very natural idea and is in fact how statistics is often taught. If we have the hypothesis “smoking cigarettes causes lung cancer,” we collect data from smokers and non-smokers, see how many of each have lung cancer, and check to what extent the results refute our hypothesis.</p>
+
+<p>Fisher developed the <a rel="nofollow noopener noreferrer" href="https://thestatsmap.com/p-value">p-value</a>—bane of students and social scientists alike—for precisely this purpose. The p-value is a number that is computed from a dataset. The smaller the p-value, the more inconsistent the data is with a given hypothesis. <a rel="nofollow noopener noreferrer" href="http://thestatsmap.com/lady-tasting-tea">Legend has it</a> that Fisher developed the p-value trying to test if his colleague Muriel could tell if milk was placed in tea before or after the hot water. (She could … probably.)</p>
+
+<p><img id="img-90" src="/assets/writing_images/npf.jpg" /></p>
+<p id="center" class="caption">Neyman (left), Pearson (center), Fisher (right). The progenitors of the statistics wars.</p>
+
+<p>Because Neyman and Pearson were focused on action, they always thought statistical testing should involve a null and an alternative hypothesis. Accepting a hypothesis meant choosing one action over another. Fisher, on the other hand, thought it was perfectly sensible—and preferable—to examine a single hypothesis and try to quantify the evidence in its favor.</p>
+
+<p>Fisher was concerned that the Neyman-Pearson paradigm was confusing policy and science. He thought that as statisticians we should be in the business of helping people tell to what extent the data disqualifies a particular hypothesis. What to do with that information is up to others. For him, the statistician is not the decision-maker, he’s the lab tech.</p>
+
+<p>Fisher, Neyman, and Pearson went back and forth, attacking each other in writing and trying to ensure that the statistics community adopted their preferred position. Fisher compared Neyman to</p>
+
+<blockquote>
+  <p>Russians [who] are made familiar with the ideal that research in pure science can and should be geared to technological performance, in the comprehensive organized effort of a five-year plan for the nation.</p>
+
+  <p>- <a rel="nofollow noopener noreferrer" href="https://errorstatistics.com/wp-content/uploads/2021/02/fisher_1955-statmethssci-induct.pdf">Fisher, 1955</a>, page 70</p>
+</blockquote>
+
+<p>He goes on to suggest that Neyman and Pearson are sacrificing truth for economic value:</p>
+
+<blockquote>
+  <p>In the U.S. also the great importance of organized technology has I think made it easy to confuse the process appropriate for drawing correct conclusions, with those aimed rather at, let us say, speeding production, or saving money. There is therefore something to be gained by at least being able to think of our scientific problems in a language distinct from that of technological efficiency.</p>
+</blockquote>
+
+<h1 id="what-happens-in-practice">What happens in practice?</h1>
+
+<p>In terms of how scientists and social scientists use statistics in practice, very few are concerned with Royall’s first question. Seldom, if ever, do papers give explicit probabilities for the authors’ beliefs, nor claim a right to tell the reader what to believe. Using statistics to mathematize beliefs has mostly left industry and academia, insteading ending up in niche (<a rel="nofollow noopener noreferrer" href="https://www.amazon.com/Precipice-Existential-Risk-Future-Humanity/dp/0316484911">or perhaps not so niche</a>) corners of the internet.</p>
+
+<p>However, statistical practice today—especially hypothesis testing—<em>is</em> an awkward blend of both the second and the third question. In <a rel="nofollow noopener noreferrer" href="https://pure.mpg.de/rest/items/item_2101336/component/file_2101335/content">Mindless Statistics</a>, Gert Gigerenzer calls attention to the “null ritual”, which is the standardized hypothesis testing procedure taught in many textbooks and graduate programs to psychologists and social scientists.</p>
+
+<p><strong>The null ritual</strong>:</p>
+
+<ol>
+  <li>Set up a statistical null hypothesis of “no mean difference” or “zero correlation.” Don’t specify the predictions of your research hypothesis or of any alternative substantive hypotheses.</li>
+  <li>Use 0.05 as a convention for rejecting the null. If significant, accept your research hypothesis. Report the result as p &lt; 0.05, p &lt; 0.01, or p &lt; 0.001.</li>
+  <li>Always perform this procedure</li>
+</ol>
+
+<p>There’s no alternative hypothesis specified in the null ritual, which makes it Fisherian. But we’re also making a binary decision about whether to accept or reject the null, which is firmly in the Neyman-Pearson camp. However, we <em>also</em> report the p-value, which is again Fisherian.</p>
+
+<p>This may not seem like an issue—so what if we’re combining two perspectives? But it leads to trouble.</p>
+
+<p>For one, we’re including irrelevant information. In the Neyman-Pearson paradigm, the p-value has no use beyond comparing it to the pre-chosen significance level (0.05 in the null ritual). If the p-value is less than 0.05, we reject the null hypothesis. If not, we don’t. This means that a p-value of 0.049 and 0.00001 have the exact same implication for decision-making. So what are we doing by reporting it?</p>
+
+<p>Unfortunately, this extra information is not only irrelevant, it’s actively harmful. Reporting the p-value alongside the decision (accept/reject) confuses the p-value for the significance level, resulting in invalid statistical guarantees. You can read more about the issues <a rel="nofollow noopener noreferrer" href="https://benchugg.com/research_notes/p_values/">here</a>, but the non-technical overview is that the null ritual makes it dangerously easy to make false and misleading claims.</p>
+
+<p>The upshot is that the statistics wars haven’t been fought and won, they’re still being fought.</p>
+
+<p><em>Thanks to <a rel="nofollow noopener noreferrer" href="https://thedeepdish.org/">Rich</a> for comments.</em></p>
+
+<hr />
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>While Bayesianism is usually laid at the feet of Thomas Bayes, it can arguably be traced by to Blaise Pascal and Pierre de Fermat in a <a rel="nofollow noopener noreferrer" href="https://www.york.ac.uk/depts/maths/histstat/pascal.pdf">correspondence</a> between 1654 and 1660 about what rational gamblers would do in games of chance. (These letters are often associated with the birth of probability itself). Also, while Bayes’ discovered (a simple version of) the theorem that Bayesians use to update their beliefs, it’s unclear that he would have endorsed Bayesianism as practiced today. Pierre de Laplace actually did much more to popularize Bayes’ contributions than did Bayes himself, and also made the formal connection between belief and Bayes’ theorem. Laplace took an equation that was published post-humously by Bayes in 1763, and drew the connection to human belief. In fact, the <a rel="nofollow noopener noreferrer" href="https://web.archive.org/web/20110410085940/http://www.stat.ucla.edu/history/essay.pdf">original paper by Bayes and Price</a> does not contain the words “belief”, “credence”, “rational”, etc. But Laplace, the stalwart academic, duly credited his insights to Bayes, and the philosophical school which links belief and probability is known as “Bayesianism”. After Laplace, however, Bayesianism mostly lay dormant until the 20th century, when it was revived by figures such as Ramsey, Finetti, and Jeffreys. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>They are all claims about what properties your method has if you run it many times. Eg, a 95% confidence interval says that if you run the experiment n times, then the true parameter will be in your confidence set 95% of the time as n tends to infinity. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+    </li>
+  </ol>
+</div>
+
+  <small>
+    <a id="back", href="/writing/">Back to all writing</a>
+  </small>
+  <br><br>
+  <p id="subscribe"><a href="/subscribe/">Subscribe</a> to get notified about new essays.</p>
+</article>
+ <!-- "> -->
+      </main>
+
+      <!-- Footer  -->
+      <div class="container" id="footer">
+        <hr>
+        <div class='container links'>
+          <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github.png"></a>
+          <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads.png"></a>
+          <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter.png"></a>
+        </div>
+      
+        <div class='copyright'>
+          <small>&#169; 2025 Ben Chugg</small>
+        </div>
+      
+      </div>
+    </div>
+
+  </body>
+</html> 
