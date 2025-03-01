@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head prefix="og: http://ogp.me/ns#; dc: http://purl.org/dc/terms/#">
+  
+  
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="http://localhost:4000/research_notes/self-normalized-variational/" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PN2H9928PZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PN2H9928PZ');
+  </script>
+
+  <!-- Basic meta elements -->
+  <meta charset="utf-8" />
+
+  <!-- Enable responsiveness on mobile devices -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+
+  <!-- Mathjax Support -->
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <title>
+    
+     A variational approach to sub-Gaussian self-normalized bounds
+    
+  </title>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.9.1" />
+<meta property="og:title" content="A variational approach to sub-Gaussian self-normalized bounds" />
+<meta name="author" content="Ben Chugg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Recovering the Abbasi-Yadkori result using different techniques" />
+<meta property="og:description" content="Recovering the Abbasi-Yadkori result using different techniques" />
+<link rel="canonical" href="http://localhost:4000/research_notes/self-normalized-variational/" />
+<meta property="og:url" content="http://localhost:4000/research_notes/self-normalized-variational/" />
+<meta property="og:site_name" content="benny" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-02-28T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="A variational approach to sub-Gaussian self-normalized bounds" />
+<meta name="twitter:site" content="@bennychugg" />
+<meta name="twitter:creator" content="@Ben Chugg" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"dateModified":"2025-02-28T00:00:00-05:00","datePublished":"2025-02-28T00:00:00-05:00","description":"Recovering the Abbasi-Yadkori result using different techniques","headline":"A variational approach to sub-Gaussian self-normalized bounds","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/research_notes/self-normalized-variational/"},"url":"http://localhost:4000/research_notes/self-normalized-variational/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- Dublin Core metadata for Zotero -->
+  <meta property="dc:title" content="A variational approach to sub-Gaussian self-normalized bounds" />
+  <meta property="dc:creator" content="Ben Chugg" />
+  <meta property="dc:identifier" content="http://localhost:4000/research_notes/self-normalized-variational/" />
+  
+  <meta property="dc:date" content="2025-02-28 00:00:00 -0500" />
+  
+  <meta property="dc:source" content="benny" />
+
+  <!-- Open Graph and Twitter metadata -->
+  <meta property="og:title" content="A variational approach to sub-Gaussian self-normalized bounds" />
+  <meta property="og:url" content="http://localhost:4000/research_notes/self-normalized-variational/" />
+  
+    <meta property="og:image" content="http://localhost:4000/assets/images/heads.jpeg"/>
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/heads.jpeg" />
+  
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:domain" value="benchugg.com" />
+  <meta name="twitter:title" value="A variational approach to sub-Gaussian self-normalized bounds" />
+  <meta name="twitter:url" value="http://localhost:4000" />
+  
+  <!-- Description is dependent on page type  -->
+  
+    <meta property="og:description" content="Recovering the Abbasi-Yadkori result using different techniques">
+    <meta name="twitter:description" value="Recovering the Abbasi-Yadkori result using different techniques" />
+    <meta property="og:type" content="article" />
+  
+  
+
+  <!-- CSS link -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="167x167" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="/assets/favicon.ico">
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="114×114" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="72×72" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” href="/assets/favicon.ico" />
+  <link rel=”icon” href="/assets/favicon.ico", sizes="32x32"/>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml" />
+
+  
+</head>
+
+
+  <body class="theme-base-">
+
+
+    <!--
+      Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS
+      collisions with our real content.
+    -->
+    <div class="wrap">
+      <header class="masthead">
+        <div class="container">
+          <a id='name' href="/">Ben Chugg</a>
+          <div class="span">
+            <a href="/papers/">Papers</a> 
+            <a href="/writing/">Writing</a>
+            <a href="/research_notes/">Notes</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="container content" id="main">
+        <article class="note">
+  <!-- <small>
+    <a id="back", href="/research_notes/">Back to all notes</a>
+  </small> -->
+  <!-- <hr> -->
+  
+  <p class='title'>A variational approach to sub-Gaussian self-normalized bounds</p> 
+  <p id="date">February 28, 2025</p>
+  <br/>
+  \[\newcommand{\E}{\mathbb{E}}
+\newcommand{\calF}{\mathcal{F}}
+\renewcommand{\Re}{\mathbb{R}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\d}{\text{d}}
+\newcommand{\kl}{\text{KL}}
+\renewcommand{\Pr}{\mathbb{P}}
+\newcommand{\Tr}{\text{Tr}}\]
+
+<p>Self-normalized bounds for martingales arise naturally in various statistical tasks, from regression to bandits. <a rel="nofollow noopener noreferrer" href="https://scholar.google.com/citations?view_op=list_works&amp;hl=en&amp;hl=en&amp;user=9W4bmC4AAAAJ">De La Pena</a> and coauthors did a tremendous amont of work on self-normalized bounds in the 90s and 2000s, and in 2011 <a rel="nofollow noopener noreferrer" href="https://proceedings.neurips.cc/paper/2011/file/e1d5be1c7f2f456670de3d53c7b54f4a-Paper.pdf">Abbasi-Yadkori et al</a> applied some of their results to contextual bandits. The resulting concentration inequality has become a famous self-normalized bound.</p>
+
+<p>To state it, let \(X_1,X_2,\dots\) be a sequence of vectors in \(\Re^d\). Let \(\eta_1,\eta_2,\dots\) be a sequence of mean-zero, conditionally \(\sigma^2\)-sub-Gaussian random variables in \(\Re\), i.e.,</p>
+
+\[\E_{t-1} \exp(\lambda \eta_t ) \leq \exp\left(\psi(\lambda\sigma)\right),\]
+
+<p>for all \(\lambda\in\Re\) where \(\psi(u) = u^2/2\) and \(\E_{t-1}[\cdot]\equiv \E[\cdot \vert \calF_{t-1}]\) and \(\calF=(\calF_t)_{t\geq 1}\) is some filtration. We assume that \((X_t)\) is \(\calF\)-predictable, meaning that \(X_t\) is \(\calF_{t-1}\)-predictable. In the bandit setting, \(X_t\) is the action chosen at time \(t\),  which is made with the information available at time \(t-1\). \(\eta_t\) is the noise accompanying the observed reward.</p>
+
+<p>Set</p>
+
+\[S_t = \sum_{k\leq t} \eta_k X_k, \quad V_t = \sum_{k\leq t} X_kX_k^t.\]
+
+<p>Let \(V_0\) be some PSD matrix. The Abbasi-Yadkori bound reads, for all stopping times \(\tau\),</p>
+
+\[\|S_\tau\|_{(V_\tau + V_0)^{-1}}^2 \leq 2\sigma^2 \log\left(\frac{\det^{1/2}(V_\tau)\det^{-1/2}(V_0)}{\delta}\right), \tag{1} \label{eq:abbasi_bound}\]
+
+<p>where \(\|Y\|^2_{A} = Y^t A Y\). If the rewards we observe are of the form \(Y_t = \la \theta^*, X_t\ra + \eta_t\), \eqref{eq:abbasi_bound} allows us to derive confidence sets for \(\theta^*\).</p>
+
+<p>Abbasi-Yadkori et al use the method of mixtures to prove their bound. Recently, <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2412.20949">Ingvar Ziemann noticed</a> that one can recover the result using the <a href="/research_notes/variational_approach_to_concentration/">variational approach to nconcentration</a>. I’m very curious about the limits of this approach, so I want to explore how this is done.</p>
+
+<p>Let’s recall the main template used in the variational approach to concentration.</p>
+
+<p><strong>Proposition 1.</strong> Fix a parameter space \(\Theta\), and let \(M(\theta)\equiv (M_t(\theta))\) be a nonnegative supermartingale with initial value 1 for each \(\theta\in \Theta\) with respect to a filtration \(\calF\). For any data-free distribution \(\pi\) over \(\Theta\), with probability \(1-\delta\), for any (data-dependent) distribution \(\rho\) over \(\Theta\) and stopping-time \(\tau\),</p>
+
+\[\label{eq:template}
+\int M_t(\theta) \d\rho \leq \kl(\rho\|\nu) + \log(1/\delta). \tag{2}\]
+
+<p>Let’s prove \eqref{eq:abbasi_bound} using this proposition. By virtue of the sub-Gaussianity of \(\eta_t\), we have</p>
+
+\[\E_{t-1} \exp( \eta_t \la \theta, X_t\ra - \psi(\sigma\la\theta, X_t\ra))\leq 1,\]
+
+<p>implying that the process defined by these increments, namely</p>
+
+\[M_t(\theta) = \prod_{k\leq t}  \exp\left\{\la \theta, \eta_k X_k\ra - \psi(\sigma\la \theta, X_k\ra) \right\} = \exp\left\{\la \theta, S_t\ra - \psi(\sigma \|\theta\|_{V_t})\right\},\]
+
+<p>\(M_0(\theta) \equiv 1\), is a (nonnegative) supermartingale. (Note that here we’ve used that \(\sum_{k\leq t}\la \theta, X_k\ra^2 = \sum_k \la \theta, X_kX_k^t \theta\ra = \|\theta\|_{V_t}^2\).) Define</p>
+
+\[U_t = \sigma^2(V_t + V_0),\]
+
+<p>and observe that we can rewrite</p>
+
+\[\begin{align}
+2\la \theta, S_t\ra - \sigma^2\|\theta\|_{V_t}^2 &amp;= 2\theta^t S_t\theta - \theta^t U_t\theta +   \sigma^2\theta^t V_0\theta \\ 
+&amp;= S_t U_t^{-1}S_t - \theta^t U_t\theta + 2\theta^t U_tU_t^{-1}S_t - S_t^t U_t^{-1} U_tU_t^{-1}S_t + \sigma^2\theta^tV_0\theta \\ 
+&amp;= S_t^t U_t^{-1} S_t - (\theta - U_t^{-1}S_t)^tU_t(\theta - U_t^{-1}S_t) + \sigma^2\theta^tV_0\theta \\ 
+&amp;= \|S_t\|^2_{U_t^{-1}} - \|\theta - U_t^{-1}S_t\|_{U_t}^2 +  \sigma^2\|\theta\|^2_{V_0}.
+\end{align}\]
+
+<p>Therefore,</p>
+
+\[M_t(\theta) = \exp\left\{ \frac{1}{2}\|S_t\|^2_{U_t^{-1}} - \frac{1}{2}\|\theta - U_t^{-1}S_t\|_{U_t}^2 + \frac{\sigma^2}{2}\|\theta\|^2_{V_0}\right\}.\]
+
+<p>Fix a data-free distribution \(\pi\) over \(\Re^d\) and let \(\rho\) be a Gaussian with mean \(\mu_\rho\) and covariance \(\Sigma_\rho\). Then</p>
+
+\[\begin{align}
+\int \log M_t(\theta) \d\rho &amp;= \frac{1}{2}\|S_t\|_{U_t^{-1}} - \frac{1}{2}\int \|\theta - U_t^{-1} S_t\|_{U_t}^2 \d\rho + \frac{\sigma^2}{2}\int \theta^tV_0\theta \d\rho \\ 
+&amp;= -\frac{1}{2}\int (\theta^t U_t\theta - 2\theta^t S_t)\d\rho  + \frac{\sigma^2}{2}\left(\mu_\rho^t V_0\mu_\rho + \Tr(V_0\Sigma_\rho)\right) \\ 
+&amp;= -\frac{1}{2}\left( \mu_\rho^t U_t\mu_\rho + \Tr(U_t \Sigma_\rho) - 2\mu_\rho^t S_t\right) + \frac{\sigma^2}{2}\left( \mu_\rho^tV_0\mu_\rho + \Tr(V_0\Sigma_\rho)\right)
+\end{align}\]
+
+<p>Consider taking \(\mu_\rho = U_t^{-1} S_t\). Then the above simplifies to</p>
+
+\[\begin{align}
+\int\log M_t(\theta) \d\rho &amp;= \frac12\left(S_t^t U_t^{-1} S_t - \Tr(U_t\Sigma_\rho) + \sigma^2(S_t^t U_t^{-1}V_0U_t^{-1} S_t + \Tr(V_0\Sigma_\rho))\right) \\ 
+&amp;= \frac12\left(S_t^t U_t^{-1} S_t - \sigma^2\Tr(V_t\Sigma_\rho) +  \sigma^2S_t^t U_t^{-1}V_0U_t^{-1} S_t \right), \tag{3} \label{eq:ut2}
+\end{align}\]
+
+<p>since \(\Tr(U_t \Sigma_\rho ) = \sigma^2\Tr(V_t\Sigma_\rho) + \sigma^2\Tr(V_0 \Sigma_\rho)\). Now let’s choose \(\pi\). If we take \(\pi\) to be normal with mean 0 and covariance \(\Sigma_\pi\) then, using the standard formula for KL-divergence,</p>
+
+\[\begin{align}
+\kl(\rho\|\pi) &amp;= \frac12\left\{\Tr(\Sigma_\pi^{-1}\Sigma_\rho) + \mu_\rho^t \Sigma_\pi^{-1}\mu_\rho - d + \log\left(\frac{\vert\Sigma_\pi\vert}{\vert \Sigma_\rho\vert}\right) \right\} \\ 
+&amp;= \frac12\left\{\Tr(\Sigma_\pi^{-1}\Sigma_\rho) + S_t^t U_t^{-1} \Sigma_\pi^{-1} U_t^{-1}S_t - d + \log\left(\frac{\vert\Sigma_\pi\vert}{\vert \Sigma_\rho\vert}\right) \right\}.
+\end{align}\]
+
+<p>In order to cancel out the term \(\sigma^2 S^t U_t^{-1}V_0 S_t\) in \eqref{eq:ut2}, we should choose \(\Sigma_\pi^{-1} = \sigma^2 V_0\) (this is data-free hence legal). In this case, our guarantee in Proposition 1 reads, for all stopping times \(\tau\),</p>
+
+\[\begin{align}
+\frac{1}{2} \|S_\tau\|_{U_\tau^{-1}}^2 &amp;\leq \frac{1}{2}\left(\sigma^2\Tr(V_\tau\Sigma_\rho) + \sigma^2\Tr(V_0 \Sigma_\rho) -d + \log(\vert V_0^{-1}\vert/ \vert \Sigma_\rho\vert) \right) + \log(1/\delta) \\ 
+&amp;= \frac{1}{2}\left(\Tr(U_\tau\Sigma_\rho) -d + \log(\vert V_0^{-1}\vert/ \vert \Sigma_\rho\vert) \right) + \log(1/\delta)
+\end{align}\]
+
+<p>Consider choosing \(\Sigma_\rho = U_\tau^{-1}\). Then \(\Tr(U_t \Sigma_\rho) =d\), so the above bound becomes</p>
+
+\[\begin{align}
+\|S_\tau\|_{U_\tau^{-1}}^2 &amp;\leq \log\left(\frac{\det U_\tau}{\det \sigma^2 V_0}\right) + 2 \log(1/\delta)  \\ 
+&amp;= \log\left(\frac{\det V_\tau}{\det V_0}\right) + 2 \log(1/\delta).
+\end{align}\]
+
+<p>Noticing that \(\|S_\tau\|_{U_\tau^{-1}}^2 = \sigma^{-2}\| S_\tau \|_{(V_\tau + V_0)^{-1}}^2\), we recover (a slightly tighter version of) \eqref{eq:abbasi_bound}.</p>
+
+
+  <small>
+    <a link="back", href="/research_notes/">Back to all notes</a>
+  </small>
+</article>
+ <!-- "> -->
+      </main>
+
+      <!-- Footer  -->
+      <div class="container" id="footer">
+        <hr>
+        <div class='container links'>
+          <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github.png"></a>
+          <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads.png"></a>
+          <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter.png"></a>
+        </div>
+      
+        <div class='copyright'>
+          <small>&#169; 2025 Ben Chugg</small>
+        </div>
+      
+      </div>
+    </div>
+
+  </body>
+</html> 
