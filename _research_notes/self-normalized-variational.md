@@ -39,7 +39,7 @@ $$
 Let $$V_0$$ be some PSD matrix. The Abbasi-Yadkori bound reads, for all stopping times $$\tau$$,  
 
 $$
-\|S_\tau\|_{(V_\tau + V_0)^{-1}}^2 \leq 2\sigma^2 \log\left(\frac{\det^{1/2}(V_\tau)\det^{-1/2}(V_0)}{\delta}\right), \tag{1} \label{eq:abbasi_bound} 
+\|S_\tau\|_{(V_\tau + V_0)^{-1}}^2 \leq 2\sigma^2 \log\left(\frac{\det(V_\tau + V_0)}{\delta\det(V_0)}\right), \tag{1} \label{eq:abbasi_bound} 
 $$
 
 where $$ \|Y\|^2_{A} = Y^t A Y$$. If the rewards we observe are of the form $$Y_t = \la \theta^*, X_t\ra + \eta_t$$, \eqref{eq:abbasi_bound} allows us to derive confidence sets for $$\theta^*$$. 
@@ -125,7 +125,7 @@ Consider choosing $$\Sigma_\rho = U_\tau^{-1}$$. Then $$\Tr(U_t \Sigma_\rho) =d$
 $$
 \begin{align}
 \|S_\tau\|_{U_\tau^{-1}}^2 &\leq \log\left(\frac{\det U_\tau}{\det \sigma^2 V_0}\right) + 2 \log(1/\delta)  \\ 
-&= \log\left(\frac{\det V_\tau}{\det V_0}\right) + 2 \log(1/\delta).
+&= \log\left(\frac{\det (V_\tau + V_0)}{\det V_0}\right) + 2 \log(1/\delta).
 \end{align}
 $$
 
