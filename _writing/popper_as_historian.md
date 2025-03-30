@@ -4,7 +4,7 @@ title: "Popper as Historian: The Case of Kant"
 description: "A dive into Immanuel Kant's bewildering antimonies" 
 date: "2025-03-29" 
 status: published
-image: /assets/writing_images/kant.png
+image: /assets/writing_images/kant.jpg
 ---
 
 
