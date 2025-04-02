@@ -72,3 +72,5 @@ Not many scientists or philosophers buy the idea of a priori knowledge now (not 
 [^1]: See Conjectures and Refutations, Chapter two. 
 
 [^2]: This is less true of general relativity, which we know to be an incomplete theory because of the fact that the field equations break down at small scales. 
+
+---
