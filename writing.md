@@ -5,7 +5,7 @@ description: "There is nothing to writing. All you do is sit down at a typewrite
 image: /assets/images/building.jpeg
 ---
 
-You can subscribe to receive occasional updates ([archive](https://buttondown.com/benchugg/archive/)).  
+<!-- You can subscribe to receive occasional updates ([archive](https://buttondown.com/benchugg/archive/)).  
 
 <div class='signup-form'>
 <form
@@ -21,7 +21,9 @@ You can subscribe to receive occasional updates ([archive](https://buttondown.co
 </div>
 
 
-<br/>
+<br/> -->
+
+You can subscribe to be notified of new essays [here](https://stepstophaeacia.substack.com/). 
 
 {% assign internal_texts = site.writing | where_exp: "item", "item.status == 'published'" %}
 {% assign external_texts = site.external_writing | where_exp: "item", "item.status == 'published'" %}

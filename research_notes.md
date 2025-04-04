@@ -16,7 +16,7 @@ and about more important things.</i>
 </p>
 </div>
 
-Notes for my own benefit. You can [subscribe]({% link subscribe.md %}) to be notified of new posts. 
+Notes for my own benefit. 
 
 <hr>
 

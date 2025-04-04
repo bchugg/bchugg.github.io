@@ -21,13 +21,12 @@ You can reach me at benchugg $$\alpha\tau$$ cmu.edu.
 These days I mostly think about problems in mathematical statistics and probability theory. Two areas of particular interest are concentration of measure and game-theoretic statistics (anytime-valid inference, e-values, hypothesis testing, and martingales). 
 
 
-Here are [my papers]({% link papers.md %}) and some [informal research notes]({% link research_notes.md %}). I also maintain a [second brain for statistics](https://thestatsmap.com/). 
+Here are [my papers]({% link papers.md %}) and some [informal research notes]({% link research_notes.md %}). 
+<!-- I also maintain a [second brain for statistics](https://thestatsmap.com/).  -->
 
 
 ## Other
 
-Occasionally I [write]({% link writing.md %}). You can [subscribe]({% link subscribe.md %}) to be notified of new essays. 
-
-After-hours, I co-host the [increments podcast](https://www.incrementspodcast.com/). We have a few [_sic_] drinks and yell about topics ranging from the [problem of induction](https://www.incrementspodcast.com/75) to the [evolutionary origins of art](https://www.incrementspodcast.com/50). I also co-host [do you even lit?](https://doyouevenlit.podbean.com/) where two unintelligible kiwis and I make our (haphazard and tangent-filled) way through the world of literary classics. 
+Occasionally I [write]({% link writing.md %}). Sometimes I also talk, and sometimes I talk in public on the [increments podcast](https://www.incrementspodcast.com/). We have a few [_sic_] drinks and discuss topics ranging from the [problem of induction](https://www.incrementspodcast.com/75) to the [evolutionary origins of art](https://www.incrementspodcast.com/50). I also co-host [do you even lit?](https://doyouevenlit.podbean.com/) where two unintelligible kiwis and I make our (haphazard and tangent-filled) way through the world of literary classics. 
 
 

@@ -1,7 +1,7 @@
 ---
 layout: writing
 title: "(Book review) The Anxious Generation"
-description: "A review of Jonathan Haidt's 2024 book on social media and mental health." 
+description: "A deep dive into Jonathan Haidt's 2024 book on social media and mental health." 
 date: "2025-04-01" 
 updated: "2025-04-02"
 status: published
@@ -162,7 +162,7 @@ Where does all the data leave us? There does seem to be a precipitous rise in se
 
 However, there are clearly some data which contradict his view. For one, there are countries in which self-harm rates are decreasing. Second, the rise stops in many countries after 2015, which is possibly inconsistent with Haidt’s thesis (though we wouldn’t know, because we’re not told what his thesis predicts specifically).  Third, the rise in suicide is only in select countries. 
 
-Disappointingly, the book does nothing to explore these complexities. It leaves readers with the impression that wherever data exists, we see this rise. Moreover, it deliberately sweeps various complexities under the rug. It uses data for 10-14 year olds when convenient, and data for 15-19 year olds otherwise. Later in the book it will justify its conclusions with experiments done on college students, i.e., 18-25 year olds. This lack of nuance and attention to detail is frustrating, to say the least. 
+Disappointingly, the book does nothing to explore these complexities. It leaves readers with the impression that wherever data exists, we see this rise. Moreover, it deliberately sweeps various complexities under the rug. It uses data for 10-14 year olds when convenient, and data for 15-19 year olds otherwise. Later in the book Haidt will justify his conclusions with experiments done on college students, i.e., 18-25 year olds. This lack of nuance and attention to detail is frustrating, to say the least. 
 
 # II. Haidt’s thesis
 
@@ -326,5 +326,5 @@ My only advice is to not take Haidt’s conclusions at face value. Even if he is
 
 [^2]:  Also, for randomized trials with binary treatments, correlation coefficients are convertible to effect sizes (via Cohen’s d), so the correlation coefficient is relevant for causal questions in this case. 
 
-[^3]:  The first hypothesis predicted that girls would have lower body satisfaction after exposure to manipulated Instagram photos than original photos. This hypothesis was supported, F(1,139) \= 4.252; p \= .021;r \= .17. Girls exposed to the manipulated photos showed to have a significant lower body satisfaction (M \= 4.57; SE \= .13) compared to girls exposed to the original photos (M \= 4.94; SE \= .13).
+[^3]:  > The first hypothesis predicted that girls would have lower body satisfaction after exposure to manipulated Instagram photos than original photos. This hypothesis was supported, F(1,139) \= 4.252; p \= .021;r \= .17. Girls exposed to the manipulated photos showed to have a significant lower body satisfaction (M \= 4.57; SE \= .13) compared to girls exposed to the original photos (M \= 4.94; SE \= .13).
 
