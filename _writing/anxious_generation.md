@@ -1,6 +1,6 @@
 ---
 layout: writing
-title: "(Book review) The Anxious Generation"
+title: "Book review: The Anxious Generation"
 description: "A deep dive into Jonathan Haidt's 2024 book on social media and mental health." 
 date: "2025-04-01" 
 updated: "2025-04-02"
