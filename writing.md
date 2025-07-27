@@ -5,25 +5,8 @@ description: "There is nothing to writing. All you do is sit down at a typewrite
 image: /assets/images/building.jpeg
 ---
 
-<!-- You can subscribe to receive occasional updates ([archive](https://buttondown.com/benchugg/archive/)).  
 
-<div class='signup-form'>
-<form
-  action="https://buttondown.email/api/emails/embed-subscribe/benchugg"
-  method="post"
-  target="popupwindow"
-  onsubmit="window.open('https://buttondown.email/benchugg', 'popupwindow')"
-  class="embeddable-buttondown-form"
->
-  <input type="email" name="email" id="bd-email" placeholder='email'/>
-  <input type="submit" value="Subscribe" />
-</form>
-</div>
-
-
-<br/> -->
-
-You can subscribe to be notified of new essays [here](https://stepstophaeacia.substack.com/). 
+You can subscribe to be notified of new essays [here](https://www.stepstophaeacia.com/). 
 
 {% assign internal_texts = site.writing | where_exp: "item", "item.status == 'published'" %}
 {% assign external_texts = site.external_writing | where_exp: "item", "item.status == 'published'" %}
