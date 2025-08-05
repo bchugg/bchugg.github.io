@@ -15,7 +15,7 @@ image: /assets/images/manuscript.jpeg
 
 
   
-<h1> Selected Papers </h1>
+<h1> Selected papers </h1>
   
   For a full list see my <a href="{% link assets/files/cv.pdf %}">CV</a>.
 
@@ -24,7 +24,22 @@ image: /assets/images/manuscript.jpeg
   <tr>
   <td>
    <div class="pubtitle">{{ pub.title }}</div> 
-    <div class="pubauthors">{{ pub.authors }}.</div>
+    <!-- <div class="pubauthors">{{ pub.authors }}.</div> -->
+    <div class="pubauthors">
+      {% assign author_list = pub.authors | split: ", " %}
+      {% for author in author_list %} 
+        {% assign name_parts = author | split: " " %}
+        {% assign last_name = name_parts[-1] %}
+        {% assign initials = "" %}
+        {% for name_part in name_parts %}
+          {% unless forloop.last %}
+            {% assign initial = name_part | slice: 0 %}
+            {% assign initials = initials | append: initial | append: "." %}
+          {% endunless %}
+        {% endfor %}
+        {{ initials }} {{ last_name }}{% unless forloop.last %}, {% endunless %}
+      {% endfor %}
+    </div>
     {% if pub.publication != nil %}
       <em>{{ pub.publication }}, </em> 
     {% endif %}
@@ -36,12 +51,6 @@ image: /assets/images/manuscript.jpeg
        | <a href='{{ pub.code }}'>code</a>
     {% endif %}
   </td> 
-  <!-- <td>
-    <div class="pubinfo">
-        {{ pub.year }}
-        <small id='highlight'>{% if pub.highlight != nil %} <br> {{ pub.highlight }}{% endif %}</small>
-    </div>
-  </td> -->
   </tr>
   {% endfor %}
   </table> 

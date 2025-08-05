@@ -20,7 +20,7 @@ Before CMU I was doing various things at Oxford, Stanford, and UBC. Here is an e
 These days I mostly think about problems in mathematical statistics and probability theory. Two areas of particular interest are concentration of measure and game-theoretic statistics (anytime-valid inference, e-values, hypothesis testing, and martingales). 
 
 
-Here are [my papers]({% link papers.md %}) and some [informal research notes]({% link research_notes.md %}). Here is a very incomplete [zettelkasten for statistics](https://thestatsmap.com/). 
+Here are [my papers]({% link papers.md %}) and some [informal research notes]({% link research_notes.md %}). Here is a horrendously incomplete [zettelkasten for statistics](https://thestatsmap.com/). 
 
 
 ## Other
