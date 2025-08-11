@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head prefix="og: http://ogp.me/ns#; dc: http://purl.org/dc/terms/#">
+  
+  
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="http://localhost:4000/drafts/self-normalized-mixture/" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PN2H9928PZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PN2H9928PZ');
+  </script>
+
+  <!-- Basic meta elements -->
+  <meta charset="utf-8" />
+
+  <!-- Enable responsiveness on mobile devices -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+
+  <!-- Mathjax Support -->
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <title>
+    
+     The mixture approach to sub-Gaussian self-normalized bounds
+    
+  </title>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.9.1" />
+<meta property="og:title" content="The mixture approach to sub-Gaussian self-normalized bounds" />
+<meta name="author" content="Ben Chugg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The standard way to prove the famous sub-Gaussian self-normalized bound" />
+<meta property="og:description" content="The standard way to prove the famous sub-Gaussian self-normalized bound" />
+<link rel="canonical" href="http://localhost:4000/drafts/self-normalized-mixture/" />
+<meta property="og:url" content="http://localhost:4000/drafts/self-normalized-mixture/" />
+<meta property="og:site_name" content="benny" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-08-08T00:00:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="The mixture approach to sub-Gaussian self-normalized bounds" />
+<meta name="twitter:site" content="@bennychugg" />
+<meta name="twitter:creator" content="@Ben Chugg" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"dateModified":"2025-08-08T00:00:00-04:00","datePublished":"2025-08-08T00:00:00-04:00","description":"The standard way to prove the famous sub-Gaussian self-normalized bound","headline":"The mixture approach to sub-Gaussian self-normalized bounds","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/drafts/self-normalized-mixture/"},"url":"http://localhost:4000/drafts/self-normalized-mixture/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- Dublin Core metadata for Zotero -->
+  <meta property="dc:title" content="The mixture approach to sub-Gaussian self-normalized bounds" />
+  <meta property="dc:creator" content="Ben Chugg" />
+  <meta property="dc:identifier" content="http://localhost:4000/drafts/self-normalized-mixture/" />
+  
+  <meta property="dc:date" content="2025-08-08" />
+  
+  <meta property="dc:source" content="benny" />
+
+  <!-- Open Graph and Twitter metadata -->
+  <meta property="og:title" content="The mixture approach to sub-Gaussian self-normalized bounds" />
+  <meta property="og:url" content="http://localhost:4000/drafts/self-normalized-mixture/" />
+  
+    <meta property="og:image" content="http://localhost:4000/assets/images/heads.jpeg"/>
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/heads.jpeg" />
+  
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:domain" value="benchugg.com" />
+  <meta name="twitter:title" value="The mixture approach to sub-Gaussian self-normalized bounds" />
+  <meta name="twitter:url" value="http://localhost:4000" />
+  
+  <!-- Description is dependent on page type  -->
+  
+    <meta property="og:description" content="The standard way to prove the famous sub-Gaussian self-normalized bound">
+    <meta name="twitter:description" value="The standard way to prove the famous sub-Gaussian self-normalized bound" />
+    <meta property="og:type" content="article" />
+  
+  
+
+  <!-- CSS link -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="167x167" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="/assets/favicon.ico">
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="114×114" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="72×72" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” href="/assets/favicon.ico" />
+  <link rel=”icon” href="/assets/favicon.ico", sizes="32x32"/>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml" />
+
+  
+</head>
+
+
+  <body class="theme-base-">
+
+
+    <!--
+      Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS
+      collisions with our real content.
+    -->
+    <div class="wrap">
+      <header class="masthead">
+        <div class="container">
+          <a id='name' href="/">Ben Chugg</a>
+          <div class="span">
+            <a href="/papers/">Papers</a> 
+            <a href="/writing/">Writing</a>
+            <a href="/research_notes/">Notes</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="container content" id="main">
+        <article class="note">
+  <!-- <small>
+    <a id="back", href="/research_notes/">Back to all notes</a>
+  </small> -->
+  <!-- <hr> -->
+  
+  <p class='title'>The mixture approach to sub-Gaussian self-normalized bounds</p> 
+  <p id="date">August 08, 2025</p>
+  <br/>
+  <p>In this section we show that the method of mixtures—the proof method used by \citet{abbasi2011improved} and \citet{pena2008self}—can also be used to prove Theorem~\ref{thm:sub-gaussian}. To repeat what was said in that section, existing proofs assume that $V_t$ is predictable, not adapted. Here we show that the same proof technique can accommodate an adapted variance process.</p>
+
+<p>Let $(S_t,V_t)$ be a sub-$\psi_N$ process, implying that for all $\theta\in\Re^d$,
+[M_t(\theta) = \exp\left{ \la \theta, S_t\ra - \psi_N(1)\la \theta, V_t\theta\ra\right} \leq N_t(\theta),]
+where $(N_t(\theta))$ is a nonnegative supermartingale. (To see why we can consider all $\theta\in\Re^d$ instead of $\theta\in\dsphere$, see Section~\ref{proof:sub-gaussian} below.) Let $\nu$ be a Gaussian with mean 0 and covariance $U_0^{-1}$ and consider the process with increments
+\begin{equation}
+    M_t = \int_{\Re^d} \exp{  \la \theta, S_t\ra - \psi_N(1)\la \theta, V_t\theta\ra }\nu(\d\theta).<br />
+\end{equation}
+To compute $M_t$, notice that we can write 
+\begin{equation<em>}
+    \la\theta, S_t \ra - \psi_N(1) \la \theta, V_t\theta\ra = \frac{1}{2}|S_t|_{V_t^{-1}} - \frac{1}{2}|\theta - V_t^{-1}S_t|_{V_t}^2, 
+\end{equation</em>}
+and 
+\begin{equation<em>}
+  | \theta - V_t^{-1}S_t|_{V_t}^2 +\la \theta, U_0\theta\ra  = |\theta - (U_0 + V_t)^{-1}S_t|_{U_0 + V_t}^2 -2|S_t|_{V_t^{-1}}^{2} +2|S_t|_{(U_0 + V_t)^{-1}}^2. 
+\end{equation</em>}
+Hence, writing out the density of $\nu$,<br />
+\begin{align<em>}
+    M_t &amp;= \frac{\exp(\frac{1}{2}|S_t|_{V_t^{-1}}) }{\sqrt{2\pi \det(U_0^{-1})}} \int_{\Re^d} \exp\left(- \frac{1}{2}| \theta - V_t^{-1}S_t|_{V_t}^2 - \frac{1}{2}\la \theta, U_0\theta\ra\right) \d\theta  \ 
+    %&amp;= \frac{\exp(\frac{1}{2}|S_t|_{V_t^{-1}}) }{\sqrt{2\pi \det(U_0^{-1})}} \int_{\Re^d} \exp\left(- \frac{1}{2}\left(|\theta - (U_0 + V_t)^{-1}S_t|_{U_0 + V_t}^2 +|S_t|_{V_t^{-1}}^{2} -|S_t|_{(U_0 + V_t)^{-1}}^2\right)\right) \d\theta \ 
+    &amp;= \frac{\exp(\frac{1}{2}|S_t|_{(U_0 + V_t)^{-1}}^2)}{\sqrt{2\pi \det(U_0^{-1})}} \int_{\Re^d} \exp\left(- \frac{1}{2}|\theta - (U_0 + V_t)^{-1}S_t|_{U_0 + V_t}^2  \right) \d\theta<br />
+    &amp;= \frac{\exp(\frac{1}{2}|S_t|_{(U_0 + V_t)^{-1}}^2)}{\sqrt{2\pi \det(U_0^{-1})}} 
+    \sqrt{2\pi \det((U_0 + V_t)^{-1}} \ 
+    &amp;= \sqrt{\frac{\det(U_0)}{\det(U_0 + V_t)}} \exp\left(\frac{1}{2}|S_t|_{(U_0 + V_t)^{-1}}^2\right). 
+\end{align</em>}
+Since $\int N_t(\theta) \d\nu(\theta)$ is a supermartingale by Fubini’s theorem, $M_t$ remains upper bounded by a nonnegative supermartingale. We may thus apply Ville’s inequality to obtain $P(M_\tau \geq 1/\delta) \leq \E[M_1]\delta\leq \delta$. In other words, with probability $1-\delta$, $\log M_\tau \leq 1/\delta$, which translates to 
+[
+\frac{1}{2}|S_\tau|^2<em>{(U_0 + V</em>\tau)^{-1}} \leq \frac{1}{2}\log\left(\frac{\det (U_0 + V_\tau)}{\det U_0}\right) + \log(1/\delta),
+]
+which is precisely Theorem~\ref{thm:sub-gaussian}.</p>
+
+
+  <small>
+    <a link="back", href="/research_notes/">Back to all notes</a>
+  </small>
+</article>
+ <!-- "> -->
+      </main>
+
+      <!-- Footer  -->
+      <div class="container" id="footer">
+        <hr>
+        <div class='container links'>
+          <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github.png"></a>
+          <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads.png"></a>
+          <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter.png"></a>
+          <a href="https://www.stepstophaeacia.com/" rel='nofollow'><img src="/assets/images/substack.jpeg"></a>
+        </div>
+      
+        <div class='copyright'>
+          <small>&#169; 2025 Ben Chugg</small>
+        </div>
+      
+      </div>
+    </div>
+
+  </body>
+</html> 
