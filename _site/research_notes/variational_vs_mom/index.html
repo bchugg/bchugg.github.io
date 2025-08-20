@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head prefix="og: http://ogp.me/ns#; dc: http://purl.org/dc/terms/#">
+  
+  
+  <!-- Canonical link to help search engines -->
+  <link rel="canonical" href="http://localhost:4000/research_notes/variational_vs_mom/" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PN2H9928PZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PN2H9928PZ');
+  </script>
+
+  <!-- Basic meta elements -->
+  <meta charset="utf-8" />
+
+  <!-- Enable responsiveness on mobile devices -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+
+  <!-- Mathjax Support -->
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <title>
+    
+     Variational vs mixture methods
+    
+  </title>
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v3.9.1" />
+<meta property="og:title" content="Variational vs mixture methods" />
+<meta name="author" content="Ben Chugg" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A convenient way to think about the variational approach to concentration" />
+<meta property="og:description" content="A convenient way to think about the variational approach to concentration" />
+<link rel="canonical" href="http://localhost:4000/research_notes/variational_vs_mom/" />
+<meta property="og:url" content="http://localhost:4000/research_notes/variational_vs_mom/" />
+<meta property="og:site_name" content="benny" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-08-20T00:00:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Variational vs mixture methods" />
+<meta name="twitter:site" content="@bennychugg" />
+<meta name="twitter:creator" content="@Ben Chugg" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ben Chugg","url":"https://benchugg.com"},"dateModified":"2025-08-20T00:00:00-04:00","datePublished":"2025-08-20T00:00:00-04:00","description":"A convenient way to think about the variational approach to concentration","headline":"Variational vs mixture methods","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/research_notes/variational_vs_mom/"},"url":"http://localhost:4000/research_notes/variational_vs_mom/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- Dublin Core metadata for Zotero -->
+  <meta property="dc:title" content="Variational vs mixture methods" />
+  <meta property="dc:creator" content="Ben Chugg" />
+  <meta property="dc:identifier" content="http://localhost:4000/research_notes/variational_vs_mom/" />
+  
+  <meta property="dc:date" content="2025-08-20 00:00:00 -0400" />
+  
+  <meta property="dc:source" content="benny" />
+
+  <!-- Open Graph and Twitter metadata -->
+  <meta property="og:title" content="Variational vs mixture methods" />
+  <meta property="og:url" content="http://localhost:4000/research_notes/variational_vs_mom/" />
+  
+    <meta property="og:image" content="http://localhost:4000/assets/images/heads.jpeg"/>
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/heads.jpeg" />
+  
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:domain" value="benchugg.com" />
+  <meta name="twitter:title" value="Variational vs mixture methods" />
+  <meta name="twitter:url" value="http://localhost:4000" />
+  
+  <!-- Description is dependent on page type  -->
+  
+    <meta property="og:description" content="A convenient way to think about the variational approach to concentration">
+    <meta name="twitter:description" value="A convenient way to think about the variational approach to concentration" />
+    <meta property="og:type" content="article" />
+  
+  
+
+  <!-- CSS link -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" sizes="167x167" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="/assets/favicon.ico">
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="114×114" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” sizes="72×72" href="/assets/favicon.ico" />
+  <link rel=”apple-touch-icon” href="/assets/favicon.ico" />
+  <link rel=”icon” href="/assets/favicon.ico", sizes="32x32"/>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://localhost:4000/atom.xml" />
+
+  
+</head>
+
+
+  <body class="theme-base-">
+
+
+    <!--
+      Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS
+      collisions with our real content.
+    -->
+    <div class="wrap">
+      <header class="masthead">
+        <div class="container">
+          <a id='name' href="/">Ben Chugg</a>
+          <div class="span">
+            <a href="/papers/">Papers</a> 
+            <a href="/writing/">Writing</a>
+            <a href="/research_notes/">Notes</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="container content" id="main">
+        <article class="note">
+  <!-- <small>
+    <a id="back", href="/research_notes/">Back to all notes</a>
+  </small> -->
+  <!-- <hr> -->
+  
+  <p class='title'>Variational vs mixture methods</p> 
+  <p id="date">August 20, 2025</p>
+  <br/>
+  \[\renewcommand{\Re}{\mathbb{R}}
+\newcommand{\dsphere}{\mathbb{S}^{d-1}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\d}{\text{d}}
+\newcommand{\kl}{\text{D}_{\text{KL}}}\]
+
+<p>The last two posts explored two different ways to prove the classical self-normalized concentration inequality for sub-Gaussian processes. The original method used by de la Peña used the method mixtures. But we saw that one can also use the <a href="/research_notes/variational_approach_to_concentration/">variational approach to concentration</a> to prove the same thing, and the last post ended abruptly with me wondering about the relationship between  the variational technique and the method of mixtures.</p>
+
+<p>I finally strumbled upon an answer (an obvious one, in hindsight), which is that <em>they’re equally as powerful</em>.</p>
+
+<p>Suppose we have some random vector \(X\) in \(\Re^d\) with law \(P\). We want to bound \(\|X\|\) with high probability, where \(\|cdot\|\) is some norm on \(\Re^d\). Both the variational approach and the method of mixtures tell us to find some <a rel="nofollow noopener noreferrer" href="https://thestatsmap.com/e-value">e-value</a> \(E(\theta)\) for each \(\theta\in\Theta\) which is a function of \(\la \theta, X\ra\). Here \(\Theta\) is some parameter space, often the unit-sphere, the unit-ball, or all of \(\Re^d\).</p>
+
+<p>(In fact, this conversation applies to e-values more generally. We don’t have to be considering concentration. Though that is arguably the most natural application.)</p>
+
+<p>Such an e-value typically has the following form:</p>
+
+\[E(\theta) = \exp\{\la \theta, X\ra - \psi(\lambda)\la \theta, V\theta\ra\},\]
+
+<p>for some PSD matrix \(V\) and some real-valued function \(\psi\). (In the sequential setting this would be a sub-\(\psi\) process.) This is, for example, the kind of e-value we considered when proving <a rel="nofollow noopener noreferrer" href="https://arxiv.org/abs/2311.08168">\(\ell_2\) bounds on random vectors</a>, and when studying <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2508.06483">self-normalized concentration for sub-\(\psi\) processes</a>. But more general e-values can also be considered.</p>
+
+<p>In the method of mixtures we pick some data-free distribution \(\nu\) over \(\Theta\) and consider the random variable</p>
+
+\[E^{\nu} := \int E(\theta) \d\nu(\theta).\]
+
+<p>By Fubini’s theorem, \(E^\nu\) is also an e-value:</p>
+
+\[\begin{equation}
+\label{eq:switch}
+\E_P \int E(\theta)\d\nu  = \int \E_P E(\theta)\d\nu \leq 1,\tag{1}
+\end{equation}\]
+
+<p>where we can exchange the two integrals since \(\nu\) is independent of the data. Therefore, by Markov, \(P(E^\nu &gt; 1/\delta) \leq \delta\). That is, with probability \(1-\delta\),</p>
+
+\[\log(E^\nu) \leq \log(1/\delta) \tag{2} \label{eq:mom-guarantee}\]
+
+<p>That’s it! Of course, the trick is to choose an appropriate distribution \(\nu\) and to compute \(E^\nu\).</p>
+
+<p>In the variational approach, we pick some data-<em>dependent</em> distribution \(\rho\) and we consider</p>
+
+\[E^\rho := \int E(\theta) \d\rho.\]
+
+<p>This time, we cannot conclude that \(E^\rho\) is an e-variable since we cannot exchange the integrals as we did in \eqref{eq:switch}.  Instead, we rely on the Donsker-Varadhan formula, which states that for a measurable function \(f:\Theta\to\Re\) and a data-free distribution \(\nu\) as above,</p>
+
+\[\log \E_\nu \exp(f(\theta)) = \sup_\rho \left\{\E_\rho f(\theta) - \kl(\rho\|\nu)\right\},\tag{3} \label{eq:dv}\]
+
+<p>where the supremum is over all distributions \(\rho\) on \(\Theta\) and \(\kl(\rho\|\nu)\) is the KL-divergence between \(\rho\) and \(\nu\).</p>
+
+<p>Consider \(f(\theta) = \log E(\theta)\), which is well-defined since \(E(\theta)\) is nonnegative (and we’ll assume it’s not identically zero for convenience). Then the Donsker-Varadhan formula gives, for any distribution \(\rho\),</p>
+
+\[\begin{align}
+\int \log E(\theta) \d\rho - \kl(\rho\|\nu) &amp;\leq  \log \int E(\theta) \d\nu =  \log E^\nu.\tag{4} \label{eq:variational_bound}
+\end{align}\]
+
+<p>Then, using that \(\log E^\nu \leq \log(1/\delta)\) with probability \(1-\delta\) as above, the guarantee given by the variational approach is</p>
+
+\[\int \log E(\theta) \d\rho - \kl(\rho\|\nu) \leq  \log(1/\delta).
+\tag{5} \label{eq:variational-guarantee}\]
+
+<p>Now, the variational method is always looser than the method of mixtures in the sense of \eqref{eq:variational_bound}. To be more explicit, suppose that \(\log E^\nu = \|X\| f(\nu)\) for some function \(f(\nu)\) and \(\int \log E(\theta)\d\rho - \kl(\rho\|\nu) = \|X\|f(\rho)\). Then \(f(\rho)\leq f(\nu)\), and the method of mixtures results in a tighter bound:</p>
+
+\[\|X\| \leq \log(1/\delta)f^{-1}(\nu) \leq \log(1/\delta)f^{-1}(\rho).\]
+
+<p>But this is not the end of the story, because there exists a prior \(\rho^*\) which achieves equality in \eqref{eq:dv}. It is the <em>Gibbs posterior</em>:</p>
+
+\[\rho^*(\d\theta) \propto \frac{E(\theta)}{\E_{\phi\sim \pi} E(\phi)} \nu(\d\theta).\]
+
+<p>For the Gibbs posterior we have \(f(\rho^*) = f(\nu)\) and the variational technique and the method of mixtures both achieve the same bound.</p>
+
+<p>Ok, so if the variational approach is just as powerful as the mixture method, then why would you ever use it? Because it might be more tractable than the mixture method. Who says that \(\log E^\nu\) has to give you a nice closed-form bound on your quantity of interest? We might be able to pick a nice data-dependent distribution such that \(\int \log E(\theta)\d\rho - \kl(\rho\|\nu)\) is computable while \(E^\nu\) is not. And indeed, judging by recent work in the area, this seems to be the case.</p>
+
+<p>Another reason to use the variational technique is that it provides bounds <em>simultaneously</em> for all distributions \(\rho\). This can be useful if computing \(\int \log E(\theta)\d\rho\) results in a bound on \(\la \phi, X\ra\), for some direction \(\phi\), instead of a bound directly on the norm \(\|X\|\). We can usually translate “for all \(\rho\)” into “for all directions \(\phi\),” which then gives a bound on \(\|X\|\). This kind of flexibility isn’t available when using the method of mixtures.</p>
+
+
+  <small>
+    <a link="back", href="/research_notes/">Back to all notes</a>
+  </small>
+</article>
+ <!-- "> -->
+      </main>
+
+      <!-- Footer  -->
+      <div class="container" id="footer">
+        <hr>
+        <div class='container links'>
+          <a href="https://github.com/bchugg" rel='nofollow'><img src="/assets/images/github.png"></a>
+          <a href="https://www.goodreads.com/user/show/90945992-ben-chugg" rel='nofollow'><img src="/assets/images/goodreads.png"></a>
+          <a href="https://twitter.com/BennyChugg" rel='nofollow'><img src="/assets/images/twitter.png"></a>
+          <a href="https://www.stepstophaeacia.com/" rel='nofollow'><img src="/assets/images/substack.jpeg"></a>
+        </div>
+      
+        <div class='copyright'>
+          <small>&#169; 2025 Ben Chugg</small>
+        </div>
+      
+      </div>
+    </div>
+
+  </body>
+</html> 
