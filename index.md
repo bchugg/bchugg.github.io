@@ -8,7 +8,7 @@ image: /assets/images/heads.jpeg
 <img id='headerim' src="/assets/images/me.jpg">
 
 <p id='index-intro-text' markdown="1">
-I'm a PhD student in [machine learning](https://www.ml.cmu.edu/) and [statistics](https://www.cmu.edu/dietrich/statistics-datascience/index.html) at CMU. I'm advised by [Aaditya Ramdas](https://www.stat.cmu.edu/~aramdas/) and a member of the [StatML group](http://statml.cs.cmu.edu/).  
+I'm a PhD student in [machine learning](https://www.ml.cmu.edu/) and [statistics](https://www.cmu.edu/dietrich/statistics-datascience/index.html) at CMU. I'm advised by [Aaditya Ramdas](https://www.stat.cmu.edu/~aramdas/) and organize the [StatML group](http://statml.cs.cmu.edu/).  
 </p>
 
 Before CMU I was doing various things at Oxford, Stanford, and UBC. Here is an entirely-unnecessary-yet-for-some-reason-expected [CV](assets/files/cv.pdf). You can reach me at benchugg $$\alpha\tau$$ cmu.edu. 
