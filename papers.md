@@ -45,10 +45,10 @@ image: /assets/images/manuscript.jpeg
     {% endif %}
     {{ pub.year }} 
     {% if pub.highlight != nil %} <span id='highlight'>({{ pub.highlight }})</span> {% endif %}
-    | 
+    &middot;  
     <a href='{{ pub.link }}'>paper</a>
     {% if pub.code != nil %} 
-       | <a href='{{ pub.code }}'>code</a>
+       &middot; <a href='{{ pub.code }}'>code</a>
     {% endif %}
   </td> 
   </tr>
