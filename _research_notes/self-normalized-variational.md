@@ -52,7 +52,7 @@ Let's recall the main template used in the variational approach to concentration
 
 $$
 \label{eq:template}
-\int M_t(\theta) \d\rho \leq \kl(\rho\|\nu) + \log(1/\delta). \tag{2}
+\int \log M_t(\theta) \d\rho \leq \kl(\rho\|\nu) + \log(1/\delta). \tag{2}
 $$
 
 Let's prove \eqref{eq:abbasi_bound} using this proposition. By virtue of the sub-Gaussianity of $$\eta_t$$, we have 
