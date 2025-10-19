@@ -2,7 +2,7 @@
 layout: note 
 date: "2024-06-10" 
 title: "The variational approach to concentration"
-description: "Concentration for multivariate processess based on a variational inequality"
+description: "Concentration for multivariate processes based on a variational inequality"
 status: published
 ---
 
