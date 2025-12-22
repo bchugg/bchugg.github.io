@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -159,7 +180,7 @@
 
 <p>I remember attending some reading groups on differential privacy during my undergraduate days. My main takeaway was “add noise to data and privacy increases.” That seemed rather obvious, so I stopped attending and gradually lost interest in the subject.  It didn’t help that, at that point, differential privacy wasn’t being relied on in practice.</p>
 
-<p>After few years I can safely say that I regret my choice. Differential privacy is now used in a lot of applications. Apple <a rel="nofollow noopener noreferrer" href="https://www.apple.com/privacy/docs/Differential_Privacy_Overview.pdf">started using it in macOS Sierra</a> and has since expanded its application to Safari. Google <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2107.01179.pdf">used differential privacy</a> when gathering insights from searches related to Covid-19, and for their <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2004.04145.pdf">Covid-19 mobility reports</a>. Other examples include <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2010.13981.pdf">LinkedIn</a>, <a rel="nofollow noopener noreferrer" href="https://proceedings.neurips.cc/paper/2017/file/253614bbac999b38b5b60cae531c4969-Paper.pdf">Microsoft</a> and <a rel="nofollow noopener noreferrer" href="https://www.usenix.org/conference/enigma2018/presentation/ensign">Uber</a>. What didn’t occur to me was that that <em>how</em> you add noise matters, and developing methods to add the right amount of noise in the right ways is an interesting problem.</p>
+<p>After few years I can safely say that I regret my choice. Differential privacy is now used in a lot of applications. Apple <a href="https://www.apple.com/privacy/docs/Differential_Privacy_Overview.pdf">started using it in macOS Sierra</a> and has since expanded its application to Safari. Google <a href="https://arxiv.org/pdf/2107.01179.pdf">used differential privacy</a> when gathering insights from searches related to Covid-19, and for their <a href="https://arxiv.org/pdf/2004.04145.pdf">Covid-19 mobility reports</a>. Other examples include <a href="https://arxiv.org/pdf/2010.13981.pdf">LinkedIn</a>, <a href="https://proceedings.neurips.cc/paper/2017/file/253614bbac999b38b5b60cae531c4969-Paper.pdf">Microsoft</a> and <a href="https://www.usenix.org/conference/enigma2018/presentation/ensign">Uber</a>. What didn’t occur to me was that that <em>how</em> you add noise matters, and developing methods to add the right amount of noise in the right ways is an interesting problem.</p>
 
 <p>Intuitively, a differentially private mechanism should be one which is not excessively reactive to small changes in the dataset. Let \(\D\) be the set of all databases, and consider a function \(g\) which acts on \(\D\). (Think of a database as just some big data table where, e.g., each row corresponds to a different user.) For instance, given a database \(x\in \D\), \(g(x)\) might be the size of \(x\), or the total amount user deposits in \(x\), or it might ask for the number of users with some property (a “counting query”).</p>
 
@@ -218,7 +239,7 @@ is defined as</p>
 
 <p>Suppose \(f_1,f_2\) are \((\eps_1,\delta_1)\), \((\eps_2,\delta_2)\) differentially private, respectively. Considering concatenating the output so that, given a database \(x\), we construct a new map \(g\) such that \(g(x) = (f_1(x), f_2(x))\), where we run \(f_1\) and \(f_2\) independently of one another. Will \(g\) be differentially private?</p>
 
-<p>It turns out that \(g\) will be \((\eps_1+\eps_2,\delta_1+\delta_2)\) differentially private. You’ll often see this result referred to as “the epsilons and deltas add up.” Unfortunately, when people cite this result, they typically cite Theorem 1 of <a rel="nofollow noopener noreferrer" href="https://www.iacr.org/archive/eurocrypt2006/40040493/40040493.pdf">this paper</a>, which has an incorrect proof.  There is a corrected proof in the <a rel="nofollow noopener noreferrer" href="https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf">book by Dwork and Roth</a>, but I think it’s more complicated than necessary. Here’s a simpler proof.</p>
+<p>It turns out that \(g\) will be \((\eps_1+\eps_2,\delta_1+\delta_2)\) differentially private. You’ll often see this result referred to as “the epsilons and deltas add up.” Unfortunately, when people cite this result, they typically cite Theorem 1 of <a href="https://www.iacr.org/archive/eurocrypt2006/40040493/40040493.pdf">this paper</a>, which has an incorrect proof.  There is a corrected proof in the <a href="https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf">book by Dwork and Roth</a>, but I think it’s more complicated than necessary. Here’s a simpler proof.</p>
 
 <p>Note the range of \(g\) is the product space \(\range(f_1)\times\range(f_2)\).  Since we run \(f_1\) and \(f_2\) independently, we have, for any \(A\times B\in range(g)\) and any neighboring databases \(x\) and \(z\),</p>
 
@@ -247,7 +268,7 @@ is defined as</p>
 
 <p>So far the model we’ve posited is one where there exists some large database \(x\in \X\) which contains all users’ data, and then some administrator or custodian of the data privatizes it. In practice, this isn’t terribly secure. Do we trust the custodian? Does she delete the original database after it’s privatized? What if another company offers her a lot of money for \(x\), or her company is bought by another?</p>
 
-<p>For all these reasons, we might consider <em>local</em> differentially privacy. Here, the data is privatized on the users end before reaching any centralized database. Thus, no one sees the raw data besides the user themselves. Google <a rel="nofollow noopener noreferrer" href="https://ai.google/research/pubs/pub42852">uses</a> local differential privacy to collect information from users’ browsers, and Apple <a rel="nofollow noopener noreferrer" href="https://machinelearning.apple.com/2017/12/06/learning-with-privacy-at-scale.html">uses</a> local differential privacy to collect emoji data.</p>
+<p>For all these reasons, we might consider <em>local</em> differentially privacy. Here, the data is privatized on the users end before reaching any centralized database. Thus, no one sees the raw data besides the user themselves. Google <a href="https://ai.google/research/pubs/pub42852">uses</a> local differential privacy to collect information from users’ browsers, and Apple <a href="https://machinelearning.apple.com/2017/12/06/learning-with-privacy-at-scale.html">uses</a> local differential privacy to collect emoji data.</p>
 
 <p>In the local setting, instead of considering functions which act on the set of databases \(\D\), we consider functions which act on a users private data. If \(h\) is such a function, then we say that \(h\) is \(\eps\)-local differentially private if, for all user data \(x\) and \(y\) and all \(A\subset \image(h)\),</p>
 
@@ -275,7 +296,7 @@ is defined as</p>
     <a link="back", href="/research_notes/">Back to all notes</a>
   </small>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

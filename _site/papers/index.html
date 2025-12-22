@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -183,7 +204,7 @@
     2025 
     
     &middot;  
-    <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2512.16759">paper</a>
+    <a href="https://arxiv.org/pdf/2512.16759">paper</a>
     
   </td> 
   </tr>
@@ -214,7 +235,7 @@
     2025 
     
     &middot;  
-    <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2508.06483">paper</a>
+    <a href="https://arxiv.org/pdf/2508.06483">paper</a>
     
   </td> 
   </tr>
@@ -257,7 +278,7 @@
     2025 
     
     &middot;  
-    <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2508.00770">paper</a>
+    <a href="https://arxiv.org/pdf/2508.00770">paper</a>
     
   </td> 
   </tr>
@@ -294,7 +315,7 @@
     2025 
     
     &middot;  
-    <a rel="nofollow noopener noreferrer" href="https://arxiv.org/abs/2311.08168">paper</a>
+    <a href="https://arxiv.org/abs/2311.08168">paper</a>
     
   </td> 
   </tr>
@@ -337,7 +358,7 @@
     2024 
     
     &middot;  
-    <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2411.11271">paper</a>
+    <a href="https://arxiv.org/pdf/2411.11271">paper</a>
     
   </td> 
   </tr>
@@ -374,7 +395,7 @@
     2023 
     
     &middot;  
-    <a rel="nofollow noopener noreferrer" href="https://arxiv.org/abs/2302.03421">paper</a>
+    <a href="https://arxiv.org/abs/2302.03421">paper</a>
     
   </td> 
   </tr>
@@ -417,9 +438,9 @@
     2023 
      <span id="highlight">(Spotlight)</span> 
     &middot;  
-    <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2305.17570.pdf">paper</a>
+    <a href="https://arxiv.org/pdf/2305.17570.pdf">paper</a>
      
-       &middot; <a rel="nofollow noopener noreferrer" href="https://github.com/bchugg/auditing-fairness">code</a>
+       &middot; <a href="https://github.com/bchugg/auditing-fairness">code</a>
     
   </td> 
   </tr>
@@ -462,9 +483,9 @@
     2023 
      <span id="highlight">(Oral)</span> 
     &middot;  
-    <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2208.11747.pdf">paper</a>
+    <a href="https://arxiv.org/pdf/2208.11747.pdf">paper</a>
      
-       &middot; <a rel="nofollow noopener noreferrer" href="https://github.com/bchugg/ent-reg-pop-est">code</a>
+       &middot; <a href="https://github.com/bchugg/ent-reg-pop-est">code</a>
     
   </td> 
   </tr>
@@ -501,7 +522,7 @@
     2021 
     
     &middot;  
-    <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2005.00937.pdf">paper</a>
+    <a href="https://arxiv.org/pdf/2005.00937.pdf">paper</a>
     
   </td> 
   </tr>
@@ -538,7 +559,7 @@
     2020 
     
     &middot;  
-    <a rel="nofollow noopener noreferrer" href="https://drops.dagstuhl.de/opus/volltexte/2020/12956/pdf/LIPIcs-DNA-2020-3.pdf">paper</a>
+    <a href="https://drops.dagstuhl.de/opus/volltexte/2020/12956/pdf/LIPIcs-DNA-2020-3.pdf">paper</a>
     
   </td> 
   </tr>
@@ -600,7 +621,7 @@
     2018 
     
     &middot;  
-    <a rel="nofollow noopener noreferrer" href="https://drops.dagstuhl.de/opus/volltexte/2018/10081/pdf/LIPIcs-OPODIS-2018-21.pdf">paper</a>
+    <a href="https://drops.dagstuhl.de/opus/volltexte/2018/10081/pdf/LIPIcs-OPODIS-2018-21.pdf">paper</a>
     
   </td> 
   </tr>
@@ -615,7 +636,7 @@
 </div>
 
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

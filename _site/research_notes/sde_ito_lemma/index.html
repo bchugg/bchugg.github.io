@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -219,7 +240,7 @@ X_T-X_0 = \int_0^T \mu(X_t,t)\dif t + \int_0^T \sigma(X_t,t)\dif W_t. \tag{1}
 
 \[\dif X_t= \alpha X_t\dif t + \beta X_t\dif W_t.\]
 
-<p>GBM is so important it has its own <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Geometric_Brownian_motion">wikipedia page</a> (what else could possibly signal value?). It’s often used to model prices in mathematical finance. Itô’s lemma will give us a way to solve it.</p>
+<p>GBM is so important it has its own <a href="https://en.wikipedia.org/wiki/Geometric_Brownian_motion">wikipedia page</a> (what else could possibly signal value?). It’s often used to model prices in mathematical finance. Itô’s lemma will give us a way to solve it.</p>
 
 <h2 id="13-integrals-with-respect-to-an-itô-process">1.3 Integrals with respect to an Itô Process</h2>
 
@@ -247,7 +268,7 @@ X_T-X_0 = \int_0^T \mu(X_t,t)\dif t + \int_0^T \sigma(X_t,t)\dif W_t. \tag{1}
 
 \[\E\bigg\{\bigg(\sum_{i=0}^{n-1}\varphi(W_i)(\Delta W_i^2 - \Delta t_i)\bigg)^2\bigg\}\xrightarrow{n\to\infty}0.\]
 
-<p>Similarly for the other identities. This isn’t incredibly hard but it’s not incredibly insightful either, so we’re not giving the proof. <a rel="nofollow noopener noreferrer" href="https://pi.math.cornell.edu/~web6720/Wendy_slides.pdf">Here</a> are some details if you want them.</p>
+<p>Similarly for the other identities. This isn’t incredibly hard but it’s not incredibly insightful either, so we’re not giving the proof. <a href="https://pi.math.cornell.edu/~web6720/Wendy_slides.pdf">Here</a> are some details if you want them.</p>
 
 <h1 id="3-itôs-lemma">3. Itô’s Lemma</h1>
 
@@ -411,7 +432,7 @@ f(X_T,T)-f(X_0,0) &amp;= \lim_{n\to\infty}\sum_{i=0}^{n-1} (f(X_{i+1},t_{i+1}) -
     <a link="back", href="/research_notes/">Back to all notes</a>
   </small>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

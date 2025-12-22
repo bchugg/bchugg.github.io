@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -175,7 +196,7 @@ Informally, we can conceive of the CLT as stating that the <em>divergence</em> b
 \end{equation}\]
 
 <p>where \(D\) is some divergence between probability measures. 
-Here we’ll introduce <a rel="nofollow noopener noreferrer" href="https://projecteuclid.org/journals/annals-of-probability/volume-14/issue-1/Entropy-and-the-Central-Limit-Theorem/10.1214/aop/1176992632.full">some results by Andrew Barron</a> (proved in 1986) that confirm this when \(D\) is taken to be the KL-divergence.</p>
+Here we’ll introduce <a href="https://projecteuclid.org/journals/annals-of-probability/volume-14/issue-1/Entropy-and-the-Central-Limit-Theorem/10.1214/aop/1176992632.full">some results by Andrew Barron</a> (proved in 1986) that confirm this when \(D\) is taken to be the KL-divergence.</p>
 
 <p>Intriguingly, Barron’s result supplies an analogy between the CLT and thermodynamics. 
 In particular, it relates the concept of information-theoretic relative entropy to thermodynamic entropy. The second law of thermodynamics states that closed systems tend towards a state maximum entropy. Subject to a variance constraint, the normal distribution maximizes information-theoretic entropy. Thus, \eqref{eq:abstract_result} may be interpreted as the normalized sum \(S_n\) converging towards a state of maximum entropy, thereby providing us with an information-theoretic version of the second law.</p>
@@ -236,7 +257,7 @@ Statement~\eqref{eq:debruijn} can be generalized to the statement</p>
 
 <p>where \(I(X\|Y)\) is the Fisher distance defined above. Again, \(Y_1\) and \(Y_2\) are taken to be independent of \(\xi_\theta\). 
 Via a judicious application of change of variables, we can relate this to our quantity of interest. 
-In particular, let \(X\) have mean \(\mu\) and variance \(\sigma^2\). For any \(t\in[0,1]\), taking \(Y_1 = \sqrt{t}X\) and \(\theta^2 = (1-t)\sigma^2\),  <a rel="nofollow noopener noreferrer" href="https://books.google.ca/books?hl=en&amp;lr=&amp;id=r5XI8a0lYykC">Johnson demonstrates</a> that we may write</p>
+In particular, let \(X\) have mean \(\mu\) and variance \(\sigma^2\). For any \(t\in[0,1]\), taking \(Y_1 = \sqrt{t}X\) and \(\theta^2 = (1-t)\sigma^2\),  <a href="https://books.google.ca/books?hl=en&amp;lr=&amp;id=r5XI8a0lYykC">Johnson demonstrates</a> that we may write</p>
 
 \[\begin{equation}
     \frac{\partial }{\partial t} \kl(\sqrt{t} X + \sqrt{t-1}Z\| \xi) = \frac{\sigma^2}{2t} I(\sqrt{t}X + \sqrt{1-t} Z\| \xi),
@@ -349,7 +370,7 @@ However, there are other divergences which are lower bounded by the KL divergenc
     <a link="back", href="/research_notes/">Back to all notes</a>
   </small>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

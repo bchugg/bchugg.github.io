@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -139,7 +160,7 @@
   <p class='title'>Longtermism and the second wave of effective altruism</p> 
   <p id="date">October 20, 2022</p>
   <br/><br/>
-  <p><em>Note: This was written for the Institute of Art and Ideas. It was published as <a rel="nofollow noopener noreferrer" href="https://iai.tv/articles/what-we-dont-owe-the-future-auid-2273">What We Don’t Owe the Future</a>. I did not choose the title.</em></p>
+  <p><em>Note: This was written for the Institute of Art and Ideas. It was published as <a href="https://iai.tv/articles/what-we-dont-owe-the-future-auid-2273">What We Don’t Owe the Future</a>. I did not choose the title.</em></p>
 
 <p>In the 1970s, the philosopher Peter Singer catalyzed a moral revolution by arguing that we should do more to help the global poor. His essay, Famine, Affluence, and Morality, argued that distance should not affect our moral decision-making. A malaria stricken child is equally deserving of our attention whether they are our next-door neighbors or 20,000 kilometers away.</p>
 
@@ -189,9 +210,9 @@ The impenetrable wall of uncertainty that assails us as we attempt to peer into 
     <a id="back", href="/writing/">Back to all writing</a>
   </small>
   <br><br>
-  <p id="subscribe"><a rel="nofollow noopener noreferrer" href="https://stepstophaeacia.substack.com/">Subscribe</a> to get notified about new essays.</p>
+  <p id="subscribe"><a href="https://stepstophaeacia.substack.com/">Subscribe</a> to get notified about new essays.</p>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

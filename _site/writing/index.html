@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -130,68 +151,68 @@
 
       <main class="container content" id="main">
         <article class="page">
-  <p>You can subscribe to be notified of new essays <a rel="nofollow noopener noreferrer" href="https://www.stepstophaeacia.com/">here</a>.</p>
+  <p>You can subscribe to be notified of new essays <a href="https://www.stepstophaeacia.com/">here</a>.</p>
 
 <h1>2025</h1>
 <ul>
       
         <li>
             
-            10/18 - <a rel="nofollow noopener noreferrer" href="https://www.stepstophaeacia.com/p/the-hard-problem-of-community-building">The hard problem of community building</a>
+            10/18 - <a href="https://www.stepstophaeacia.com/p/the-hard-problem-of-community-building">The hard problem of community building</a>
             <i></i>
         </li>
       
         <li>
             
-            09/19 - <a rel="nofollow noopener noreferrer" href="https://www.stepstophaeacia.com/p/on-rechts-bureaucratic-theory-of">On Recht's bureaucratic theory of statistics</a>
+            09/19 - <a href="https://www.stepstophaeacia.com/p/on-rechts-bureaucratic-theory-of">On Recht's bureaucratic theory of statistics</a>
             <i></i>
         </li>
       
         <li>
             
-            08/29 - <a rel="nofollow noopener noreferrer" href="https://www.stepstophaeacia.com/p/book-review-stoner">Book review: Stoner</a>
+            08/29 - <a href="https://www.stepstophaeacia.com/p/book-review-stoner">Book review: Stoner</a>
             <i></i>
         </li>
       
         <li>
             
-            07/26 - <a rel="nofollow noopener noreferrer" href="https://www.stepstophaeacia.com/p/scientific-evidence-vs-statistical">Scientific evidence vs statistical evidence</a>
+            07/26 - <a href="https://www.stepstophaeacia.com/p/scientific-evidence-vs-statistical">Scientific evidence vs statistical evidence</a>
             <i></i>
         </li>
       
         <li>
             
-            07/15 - <a rel="nofollow noopener noreferrer" href="https://stepstophaeacia.substack.com/p/book-review-one-hundred-years-of">Book review: One hundred years of solitude</a>
+            07/15 - <a href="https://stepstophaeacia.substack.com/p/book-review-one-hundred-years-of">Book review: One hundred years of solitude</a>
             <i></i>
         </li>
       
         <li>
             
-            07/11 - <a rel="nofollow noopener noreferrer" href="https://www.stepstophaeacia.com/p/incentive-cascades">Incentive cascades</a>
+            07/11 - <a href="https://www.stepstophaeacia.com/p/incentive-cascades">Incentive cascades</a>
             <i></i>
         </li>
       
         <li>
             
-            06/13 - <a rel="nofollow noopener noreferrer" href="https://www.stepstophaeacia.com/p/book-review-ubik">Book review: Ubik</a>
+            06/13 - <a href="https://www.stepstophaeacia.com/p/book-review-ubik">Book review: Ubik</a>
             <i></i>
         </li>
       
         <li>
             
-            05/11 - <a rel="nofollow noopener noreferrer" href="https://www.stepstophaeacia.com/p/book-review-parfit?r=22lm7">Book review: Parfit</a>
+            05/11 - <a href="https://www.stepstophaeacia.com/p/book-review-parfit?r=22lm7">Book review: Parfit</a>
             <i></i>
         </li>
       
         <li>
             
-            04/26 - <a rel="nofollow noopener noreferrer" href="https://www.stepstophaeacia.com/p/the-waning-of-the-constrained-vision?r=22lm7">The waning of the constrained vision</a>
+            04/26 - <a href="https://www.stepstophaeacia.com/p/the-waning-of-the-constrained-vision?r=22lm7">The waning of the constrained vision</a>
             <i></i>
         </li>
       
         <li>
             
-            04/19 - <a rel="nofollow noopener noreferrer" href="https://www.stepstophaeacia.com/p/does-science-require-truth-seeking?r=22lm7">Does science require unbiased truth-seeking?</a>
+            04/19 - <a href="https://www.stepstophaeacia.com/p/does-science-require-truth-seeking?r=22lm7">Does science require unbiased truth-seeking?</a>
             <i></i>
         </li>
       
@@ -355,13 +376,13 @@
       
         <li>
             
-            06/09 - <a rel="nofollow noopener noreferrer" href="https://towardsdatascience.com/the-false-philosophy-plaguing-ai-bdcfd4872c45">The False Philosophy Plaguing AI</a>
+            06/09 - <a href="https://towardsdatascience.com/the-false-philosophy-plaguing-ai-bdcfd4872c45">The False Philosophy Plaguing AI</a>
             <i>(Towards Data Science)</i>
         </li>
       
         <li>
             
-            01/04 - <a rel="nofollow noopener noreferrer" href="https://medium.com/conjecture-magazine/the-dangers-of-cliodynamics-c48392b4a985">Cliodynamics and the Dangers of Prophesy</a>
+            01/04 - <a href="https://medium.com/conjecture-magazine/the-dangers-of-cliodynamics-c48392b4a985">Cliodynamics and the Dangers of Prophesy</a>
             <i>(Conjecture Mag)</i>
         </li>
       
@@ -372,19 +393,19 @@
       
         <li>
             
-            12/30 - <a rel="nofollow noopener noreferrer" href="https://www.givingwhatwecan.org/post/2020/12/when-unprecedented-times-meet-unprecedented-opportunities/">When unprecedented times meet unprecedented opportunities</a>
+            12/30 - <a href="https://www.givingwhatwecan.org/post/2020/12/when-unprecedented-times-meet-unprecedented-opportunities/">When unprecedented times meet unprecedented opportunities</a>
             <i>(GWWC)</i>
         </li>
       
         <li>
             
-            12/20 - <a rel="nofollow noopener noreferrer" href="https://forum.effectivealtruism.org/posts/2NJszbnBTwibfdpo7/strong-longtermism-irrefutability-and-moral-progress">Strong Longtermism, Irrefutability, and Moral Progress</a>
+            12/20 - <a href="https://forum.effectivealtruism.org/posts/2NJszbnBTwibfdpo7/strong-longtermism-irrefutability-and-moral-progress">Strong Longtermism, Irrefutability, and Moral Progress</a>
             <i>(EA Forum)</i>
         </li>
       
         <li>
             
-            12/18 - <a rel="nofollow noopener noreferrer" href="https://medium.com/conjecture-magazine/pascals-mugging-and-the-poverty-of-the-expected-value-calculus-70b190d953cd">Pascal's Mugging and Bad Explanations</a>
+            12/18 - <a href="https://medium.com/conjecture-magazine/pascals-mugging-and-the-poverty-of-the-expected-value-calculus-70b190d953cd">Pascal's Mugging and Bad Explanations</a>
             <i>(Conjecture Mag)</i>
         </li>
       
@@ -392,7 +413,7 @@
 
 
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

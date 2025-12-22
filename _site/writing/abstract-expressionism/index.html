@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -151,7 +172,7 @@
 
 <p>Other domains, such as dance, music, and comedy, have fewer clear, objective metrics. But there’s no doubt that some dancers are better than others, or that some people can hold a note while others cannot. And while people may have different comedic and musical tastes to some extent, there are no famous comedians who consistently fail to make audiences laugh. In these domains there is still lots of objective skill determining who becomes successful.</p>
 
-<p>Suppose an unknown person claims to have extraordinary talent in domain X. How are they treated? In any of the above areas—from sprinting to dancing—they will simply be asked to perform the skill. This makes breakthrough cases possible. Indeed, there are famous stories of such cases in almost all of these areas. Shows like “American Idol” and “So You Think You Can Dance” are possible precisely because there are better and worse singers and dancers. <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Srinivasa_Ramanujan">Srinivasa Ramanujan</a> is a famous breakthrough case in mathematics. Initially unknown outside of India, he became world renowned by sending a letter to G.H. Hardy at Cambridge. Even though Ramanujan’s notation was unfamiliar, Hardy was able to judge the quality of the work because the mathematics were, at the end of day, extremely insightful.</p>
+<p>Suppose an unknown person claims to have extraordinary talent in domain X. How are they treated? In any of the above areas—from sprinting to dancing—they will simply be asked to perform the skill. This makes breakthrough cases possible. Indeed, there are famous stories of such cases in almost all of these areas. Shows like “American Idol” and “So You Think You Can Dance” are possible precisely because there are better and worse singers and dancers. <a href="https://en.wikipedia.org/wiki/Srinivasa_Ramanujan">Srinivasa Ramanujan</a> is a famous breakthrough case in mathematics. Initially unknown outside of India, he became world renowned by sending a letter to G.H. Hardy at Cambridge. Even though Ramanujan’s notation was unfamiliar, Hardy was able to judge the quality of the work because the mathematics were, at the end of day, extremely insightful.</p>
 
 <p>Meanwhile, at the other end of the spectrum, there seem to be fields of endeavor which lack any objective metrics for judging talent. As my first exhibit I summon the rectangle:</p>
 
@@ -160,7 +181,7 @@
 #17 by John McLaughlin.
 </p>
 
-<p><a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/John_McLaughlin_(artist)">John McLaughlin</a> was a famous abstract expressionist active in the post WWII art scene. This painting, named #17 (one wonders what was wrong with the first 16), <a rel="nofollow noopener noreferrer" href="https://americanart.si.edu/artwork/17-1966-17185">appeared</a> at the Smithsonian. The art critic Christopher Knight <a rel="nofollow noopener noreferrer" href="https://www.latimes.com/entertainment/arts/la-et-cm-mclaughlin-lacma-20161104-htmlstory.html">wrote</a> in the LA times that “McLaughlin occupies the top tier of 20th century American art” and that “his work rivals in imaginative depth and beauty any produced in the undisputed art capital of New York.”</p>
+<p><a href="https://en.wikipedia.org/wiki/John_McLaughlin_(artist)">John McLaughlin</a> was a famous abstract expressionist active in the post WWII art scene. This painting, named #17 (one wonders what was wrong with the first 16), <a href="https://americanart.si.edu/artwork/17-1966-17185">appeared</a> at the Smithsonian. The art critic Christopher Knight <a href="https://www.latimes.com/entertainment/arts/la-et-cm-mclaughlin-lacma-20161104-htmlstory.html">wrote</a> in the LA times that “McLaughlin occupies the top tier of 20th century American art” and that “his work rivals in imaginative depth and beauty any produced in the undisputed art capital of New York.”</p>
 
 <p>What I find fascinating about McLaughlin’s success is that everyone can draw a rectangle (I daresay most can even draw a pair of rectangles). Why are his rectangles hanging in the best galleries in the world, while others are ignored?</p>
 
@@ -169,11 +190,11 @@
 Other famous abstract expressionist pieces. Left: Orange and Yellow by Mark Rothko, Center: Vision by Esteban Vicente, Right: Cyclops by William Baziotes.
 </p>
 
-<p>Some art is perhaps susceptible to the founder’s effect: we are more impressed with the person who does something first. We cherish the Beatles more than cover bands because we admire the talent required to <em>conceive</em> of the music, not only to play it. It’s easier to copy something than to generate the original idea. But rectangles existed before John Mclaughlin. Similarly for a lot of other abstract expressionism. I’m sure someone had <a rel="nofollow noopener noreferrer" href="https://magazine.artland.com/stories-of-iconic-artworks-andy-warhols-oxidation-paintings/">urinated on metal</a> before Andy Warhol, thrown <a rel="nofollow noopener noreferrer" href="https://www.metmuseum.org/art/collection/search/482447">random bits of paint</a> on a canvas before Jackson Pollock, or hung a <a rel="nofollow noopener noreferrer" href="https://www.moma.org/learn/moma_learning/marcel-duchamp-in-advance-of-the-broken-arm-august-1964-fourth-version-after-lost-original-of-november-1915/">snow shovel on a wall</a> before Marcel Duchamp.</p>
+<p>Some art is perhaps susceptible to the founder’s effect: we are more impressed with the person who does something first. We cherish the Beatles more than cover bands because we admire the talent required to <em>conceive</em> of the music, not only to play it. It’s easier to copy something than to generate the original idea. But rectangles existed before John Mclaughlin. Similarly for a lot of other abstract expressionism. I’m sure someone had <a href="https://magazine.artland.com/stories-of-iconic-artworks-andy-warhols-oxidation-paintings/">urinated on metal</a> before Andy Warhol, thrown <a href="https://www.metmuseum.org/art/collection/search/482447">random bits of paint</a> on a canvas before Jackson Pollock, or hung a <a href="https://www.moma.org/learn/moma_learning/marcel-duchamp-in-advance-of-the-broken-arm-august-1964-fourth-version-after-lost-original-of-november-1915/">snow shovel on a wall</a> before Marcel Duchamp.</p>
 
 <p>Before you yell at me, let me state for the record that I’m not passing judgment on the validity of abstract expressionism as “true art.” I don’t doubt that it’s possible to experience awe, wonder, and profound insight while staring at a rectangle (anyone who has taken psychedelics knows this is all too possible). I’m simply interested in how the elite artists of abstract expressionism became the elite in the first place, seeing as everyone after second grade would seem to possess the requisite skillset. A “Britain’s Got Talent” for abstract expressionism would not work so well.</p>
 
-<p>If the bottleneck to achieve success is not objective skill, then success must be allocated in more arbitrary ways. In the art world, this power resides with the curator. He or she will decide which artists get shown; which rectangles will be praised. In the absence of objective skill, this will involve social connections, whims, and signaling your sophistication to other curators. Stephanie Barron, curator of one McLaughlin exhibition, <a rel="nofollow noopener noreferrer" href="https://unframed.lacma.org/2016/12/06/john-mclaughlin-paintings-total-abstraction">describes him</a> as an artist’s artist, “held in high esteem by a coterie of artists, critics, collectors, and curators but otherwise virtually unknown.” In other words, this is part of a status game among the cultured—the plebs simply cannot appreciate a good rectangle.</p>
+<p>If the bottleneck to achieve success is not objective skill, then success must be allocated in more arbitrary ways. In the art world, this power resides with the curator. He or she will decide which artists get shown; which rectangles will be praised. In the absence of objective skill, this will involve social connections, whims, and signaling your sophistication to other curators. Stephanie Barron, curator of one McLaughlin exhibition, <a href="https://unframed.lacma.org/2016/12/06/john-mclaughlin-paintings-total-abstraction">describes him</a> as an artist’s artist, “held in high esteem by a coterie of artists, critics, collectors, and curators but otherwise virtually unknown.” In other words, this is part of a status game among the cultured—the plebs simply cannot appreciate a good rectangle.</p>
 
 <p>I’m picking on abstract expressionism because I think it’s a particularly clear example of a domain which lacks an objective criteria for talent. But it’s fruitful to analyze other areas from this angle. Take politics, for instance. It’s hard to imagine testing for political talent, so we might expect political success to be governed by social connections and hierarchies (which it certainly seemed to be, until the rise of a certain orange coloured outsider).</p>
 
@@ -194,9 +215,9 @@ Other famous abstract expressionist pieces. Left: Orange and Yellow by Mark Roth
     <a id="back", href="/writing/">Back to all writing</a>
   </small>
   <br><br>
-  <p id="subscribe"><a rel="nofollow noopener noreferrer" href="https://stepstophaeacia.substack.com/">Subscribe</a> to get notified about new essays.</p>
+  <p id="subscribe"><a href="https://stepstophaeacia.substack.com/">Subscribe</a> to get notified about new essays.</p>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

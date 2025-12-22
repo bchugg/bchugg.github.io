@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -183,7 +204,7 @@ The Chernoff bound implies that</p>
     |\ov{X} -\mu\vert \leq \sigma \frac{\sqrt{1/\delta}}{\sqrt{n}}. \tag{2}
 \end{equation}\]
 
-<p>This bound has a much looser dependence on \(\delta\) than \eqref{eq:chernoff}. Unfortunately, rather than simply a limitation of the analysis, this dependence is inherent to such heavy-tailed distributions. <a rel="nofollow noopener noreferrer" href="https://arxiv.org/abs/1009.2048">Catoni</a> gives an example demonstrating that \eqref{eq:cheby-bound} is essentially tight among distributions with only finite variance.</p>
+<p>This bound has a much looser dependence on \(\delta\) than \eqref{eq:chernoff}. Unfortunately, rather than simply a limitation of the analysis, this dependence is inherent to such heavy-tailed distributions. <a href="https://arxiv.org/abs/1009.2048">Catoni</a> gives an example demonstrating that \eqref{eq:cheby-bound} is essentially tight among distributions with only finite variance.</p>
 
 <p>This motivates the search for a new estimator. In particular, we would like an estimator which achieves the sub-Gaussian bound of \eqref{eq:chernoff} but without making light-tailed assumptions on the distribution. Let’s say that an estimator \(\hmu=\hmu(X_1,\dots,X_n)\) is \(L\)-sub-Gaussian if, for all \(\delta\in(0,1)\), with probability at least \(1-\delta\),</p>
 
@@ -249,7 +270,7 @@ That is,</p>
 \end{equation}\]
 
 <p>Proving this requires a little more machinery than the finite variance case. 
-Since we can no longer rely on Chebyshev’s inequality, we need a different way to analyze the behavior of the sample means. The following is a rather technical result proved by Sébastien Bubeck and others <a rel="nofollow noopener noreferrer" href="https://arxiv.org/abs/1209.1727">here</a>.</p>
+Since we can no longer rely on Chebyshev’s inequality, we need a different way to analyze the behavior of the sample means. The following is a rather technical result proved by Sébastien Bubeck and others <a href="https://arxiv.org/abs/1209.1727">here</a>.</p>
 
 <p>Let \(\hmu\) be the empirical mean. Then, for all \(\delta\in(0,1)\), with probability at least \(1-\delta\),</p>
 
@@ -320,8 +341,8 @@ Since we can no longer rely on Chebyshev’s inequality, we need a different way
 
 <h1 id="4-resources">4. Resources</h1>
 <ul>
-  <li><a rel="nofollow noopener noreferrer" href="https://arxiv.org/abs/1209.1727">Bandits with Heavy Tail</a>, Bubeck, Cesa-Bianchi, Lugosi</li>
-  <li><a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/1906.04280.pdf">Mean estimation and regression under
+  <li><a href="https://arxiv.org/abs/1209.1727">Bandits with Heavy Tail</a>, Bubeck, Cesa-Bianchi, Lugosi</li>
+  <li><a href="https://arxiv.org/pdf/1906.04280.pdf">Mean estimation and regression under
 heavy-tailed distributions—a survey</a>, Lugosi and Mendelson</li>
 </ul>
 
@@ -329,7 +350,7 @@ heavy-tailed distributions—a survey</a>, Lugosi and Mendelson</li>
     <a link="back", href="/research_notes/">Back to all notes</a>
   </small>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -149,7 +170,7 @@
 
 <p>I finally strumbled upon an answer (an obvious one, in hindsight), which is that <em>they’re equally as powerful</em>.</p>
 
-<p>Suppose we have some random vector \(X\) in \(\Re^d\) with law \(P\). We want to bound \(\|X\|\) with high probability, where \(\|cdot\|\) is some norm on \(\Re^d\). Both the variational approach and the method of mixtures tell us to find some <a rel="nofollow noopener noreferrer" href="https://thestatsmap.com/e-value">e-value</a> \(E(\theta)\) for each \(\theta\in\Theta\) which is a function of \(\la \theta, X\ra\). Here \(\Theta\) is some parameter space, often the unit-sphere, the unit-ball, or all of \(\Re^d\).</p>
+<p>Suppose we have some random vector \(X\) in \(\Re^d\) with law \(P\). We want to bound \(\|X\|\) with high probability, where \(\|cdot\|\) is some norm on \(\Re^d\). Both the variational approach and the method of mixtures tell us to find some <a href="https://thestatsmap.com/e-value">e-value</a> \(E(\theta)\) for each \(\theta\in\Theta\) which is a function of \(\la \theta, X\ra\). Here \(\Theta\) is some parameter space, often the unit-sphere, the unit-ball, or all of \(\Re^d\).</p>
 
 <p>(In fact, this conversation applies to e-values more generally. We don’t have to be considering concentration. Though that is arguably the most natural application.)</p>
 
@@ -157,7 +178,7 @@
 
 \[E(\theta) = \exp\{\la \theta, X\ra - \psi(\lambda)\la \theta, V\theta\ra\},\]
 
-<p>for some PSD matrix \(V\) and some real-valued function \(\psi\). (In the sequential setting this would be a sub-\(\psi\) process.) This is, for example, the kind of e-value we considered when proving <a rel="nofollow noopener noreferrer" href="https://arxiv.org/abs/2311.08168">\(\ell_2\) bounds on random vectors</a>, and when studying <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2508.06483">self-normalized concentration for sub-\(\psi\) processes</a>. But more general e-values can also be considered.</p>
+<p>for some PSD matrix \(V\) and some real-valued function \(\psi\). (In the sequential setting this would be a sub-\(\psi\) process.) This is, for example, the kind of e-value we considered when proving <a href="https://arxiv.org/abs/2311.08168">\(\ell_2\) bounds on random vectors</a>, and when studying <a href="https://arxiv.org/pdf/2508.06483">self-normalized concentration for sub-\(\psi\) processes</a>. But more general e-values can also be considered.</p>
 
 <p>In the method of mixtures we pick some data-free distribution \(\nu\) over \(\Theta\) and consider the random variable</p>
 
@@ -216,7 +237,7 @@
     <a link="back", href="/research_notes/">Back to all notes</a>
   </small>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -141,19 +162,19 @@
   <br/><br/>
   <h2 id="i-nielsen-on-creativity">I. Nielsen on Creativity</h2>
 
-<p>I was reading some old Michael Nielsen essays when I stumbled across <a rel="nofollow noopener noreferrer" href="https://michaelnielsen.org/blog/is-there-a-tension-between-creativity-and-accuracy/">an exchange</a> he had with Julia Galef. It contained some of the most insightful few sentences I’ve come across on the subject of creativity:</p>
+<p>I was reading some old Michael Nielsen essays when I stumbled across <a href="https://michaelnielsen.org/blog/is-there-a-tension-between-creativity-and-accuracy/">an exchange</a> he had with Julia Galef. It contained some of the most insightful few sentences I’ve come across on the subject of creativity:</p>
 
 <blockquote>
   <p>To be creative, you need to recognize those barely formed thoughts, thoughts which are usually wrong and poorly formed in many ways, but which have some kernel of originality and importance and truth. And if they seem important enough to be worth pursuing, you construct a creative cocoon around them, a set of stories you tell yourself to protect the idea not just from others, but from your own self doubts. The purpose of those stories isn’t to be an air tight defence. It’s to give you the confidence to nurture the idea, possibly for years, to find out if there’s something really there.</p>
 </blockquote>
 
-<p>If you google around for insights into creativity, you’ll run into lots of anecdotes about how creative people make connections that others missed. (<a rel="nofollow noopener noreferrer" href="https://fs.blog/steve-jobs-on-creativity/">Exhibit one</a>, <a rel="nofollow noopener noreferrer" href="https://buffer.com/resources/connections-in-the-brain-understanding-creativity-and-intelligenceconnections/">exhibit two</a>.) They’ll cite Einstein, or Seneca, or Steve Jobs, and then tell you to go learn a bunch of stuff so that you too can <em>connect</em>, as if creativity is some manual process that you perform after your morning crossword.</p>
+<p>If you google around for insights into creativity, you’ll run into lots of anecdotes about how creative people make connections that others missed. (<a href="https://fs.blog/steve-jobs-on-creativity/">Exhibit one</a>, <a href="https://buffer.com/resources/connections-in-the-brain-understanding-creativity-and-intelligenceconnections/">exhibit two</a>.) They’ll cite Einstein, or Seneca, or Steve Jobs, and then tell you to go learn a bunch of stuff so that you too can <em>connect</em>, as if creativity is some manual process that you perform after your morning crossword.</p>
 
 <p>There’s no doubt that part of creativity is making connections, but there are nearly an infinite number of connections one could make in principle—are creative people simply those who happen to stumble on the most interesting ones? Further, if the essence of creativity is making connections, it would suggest that creativity should rise in lock step with knowledge. But many of us know ten- and twenty-somethings who are more creative than forty- and fifty-somethings, even if they have similar backgrounds. In fact, a common belief among mathematicians is that they often do their most innovative work when young<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>. This idea also has nothing to say about the kinds of habits and environments which foster creativity.</p>
 
 <p>Nielsen’s analysis is refreshing because it presents us with some insight into the actual creative process. What it’s <em>like</em> in those moments of ingenuity. What I find most interesting is the emphasis on error and doubt. I think he’s right. A creative thought is not usually accompanied by confidence. It can be <em>exciting</em>, sure—but often vague and uncertain as well. This makes sense, upon reflection. A truly novel idea should not be obvious from prior experience or knowledge.</p>
 
-<p>It’s always a good sign when the same idea is presented by different people. In his 2020 book <em>Creativity</em> (<a rel="nofollow noopener noreferrer" href="https://www.incrementspodcast.com/52">h/t Vaden Masrani</a>), John Cleese expresses much the same idea as Nielsen. He writes</p>
+<p>It’s always a good sign when the same idea is presented by different people. In his 2020 book <em>Creativity</em> (<a href="https://www.incrementspodcast.com/52">h/t Vaden Masrani</a>), John Cleese expresses much the same idea as Nielsen. He writes</p>
 
 <blockquote>
   <p>When we’re trying to be creative, there’s a real lack of clarity during most of the process. Our rational, analytical mind, of course, loves clarity—in fact, it worships it. But at the start of the creative process things cannot be clear. They are bound to be confusing. If it’s a new thought, how can you possibly understand it straight away? You’ve never been there before. It feels unfamiliar. (pg 40-41).</p>
@@ -161,9 +182,9 @@
 
 <h2 id="ii-hairy-chelonians">II. Hairy Chelonians</h2>
 
-<p>Cleese frames his discussion around the concept of the “hare brain versus the tortoise mind,” a distinction <a rel="nofollow noopener noreferrer" href="https://www.amazon.com/Hare-Brain-Tortoise-Mind-Intelligence/dp/0060955414">introduced</a> by the cognitive scientist Guy Claxton. The hare brain is fast, logical, analytical. It wants to seek truth, to criticize, to prove, or discard. It is directed and deliberate. The tortoise mind is the opposite. It is playful, leisurely, and unconcerned with decisively deciding. It revels in the uncertainty, more interested in discovering patterns than deciding on truth or falsity.</p>
+<p>Cleese frames his discussion around the concept of the “hare brain versus the tortoise mind,” a distinction <a href="https://www.amazon.com/Hare-Brain-Tortoise-Mind-Intelligence/dp/0060955414">introduced</a> by the cognitive scientist Guy Claxton. The hare brain is fast, logical, analytical. It wants to seek truth, to criticize, to prove, or discard. It is directed and deliberate. The tortoise mind is the opposite. It is playful, leisurely, and unconcerned with decisively deciding. It revels in the uncertainty, more interested in discovering patterns than deciding on truth or falsity.</p>
 
-<p>Tortoise mind is on display during hypnagogia, that alluring mental state sometimes experienced on the edge of sleep. Many inventors have cited hypnagogia as playing a key role in their idea generation. To quote <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Hypnagogia#Cognitive_and_affective_phenomena">wikipedia</a>,</p>
+<p>Tortoise mind is on display during hypnagogia, that alluring mental state sometimes experienced on the edge of sleep. Many inventors have cited hypnagogia as playing a key role in their idea generation. To quote <a href="https://en.wikipedia.org/wiki/Hypnagogia#Cognitive_and_affective_phenomena">wikipedia</a>,</p>
 
 <blockquote>
   <p>The hypnagogic state can provide insight into a problem, the best-known example being August Kekulé’s realization that the structure of benzene was a closed ring while half-asleep in front of a fire and seeing molecules forming into snakes, one of which grabbed its tail in its mouth. Many other artists, writers, scientists and inventors – including Beethoven, Richard Wagner, Walter Scott, Salvador Dalí, Thomas Edison, Nikola Tesla and Isaac Newton – have credited hypnagogia and related states with enhancing their creativity.</p>
@@ -177,7 +198,7 @@
 
 <p>Creativity requires turning off the hare mind. New ideas need time to grow, to be sheltered from premature criticism, because they will often have only a seed of truth to them. They’ll be surrounded by error and attached to misconceptions. You need time to play with the idea, to nurture it into something that’s ready to interact with the world.<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup></p>
 
-<p>This is not to say that the initial idea does not occur to you in a flash. An insight often jumps into your mind unexpectedly—when you’re pouring your coffee, listening to a podcast, or <a rel="nofollow noopener noreferrer" href="https://youtu.be/nfzVowHa1aM?t=128">after stopping work for the night</a>. But it is to say that the initial idea is often not ready for prime time. It needs to be incubated by the tortoise mind. If you launch it into the world under-developed it won’t reach its full potential.</p>
+<p>This is not to say that the initial idea does not occur to you in a flash. An insight often jumps into your mind unexpectedly—when you’re pouring your coffee, listening to a podcast, or <a href="https://youtu.be/nfzVowHa1aM?t=128">after stopping work for the night</a>. But it is to say that the initial idea is often not ready for prime time. It needs to be incubated by the tortoise mind. If you launch it into the world under-developed it won’t reach its full potential.</p>
 
 <p>Put this way, the creative process has some interesting relationships to irrationality and close mindedness. Of course, once an idea is “ready,” it should be treated as any other idea and pressure tested in order to see if it has merit. Before that stage, however, perhaps you must be dogmatically attached to your own ideas, hesitant to expose them to too much criticism (both from yourself and from others).</p>
 
@@ -228,7 +249,7 @@
     <li id="fn:1" role="doc-endnote">
       <p>Okay, in fairness it’s a bit more complicated than this. GH Hardy famously claimed that no mathematical breakthroughs were made by anyone past fifty.</p>
       <blockquote> "No mathematician should ever allow him to forget that mathematics, more than any other art or science, is a young man's game. … Galois died at  twenty-one, Abel at twenty-seven, Ramanujan at thirty-three, Riemann at forty. There have been men who have done great work later; … [but] I do not know of a single instance of a major mathematical advance initiated by a man past fifty. … A mathematician may still be competent enough at sixty, but it is useless to expect him to have original ideas." - G.H. Hardy, A Mathematician's Apology. </blockquote>
-      <p>But this has been disputed. See <a rel="nofollow noopener noreferrer" href="https://mathoverflow.net/questions/191929/are-there-any-serious-investigations-of-whether-mathematicians-do-their-best-wo">this</a> math overflow post for some interesting links. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+      <p>But this has been disputed. See <a href="https://mathoverflow.net/questions/191929/are-there-any-serious-investigations-of-whether-mathematicians-do-their-best-wo">this</a> math overflow post for some interesting links. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
     </li>
     <li id="fn:2" role="doc-endnote">
       <p>It’s no wonder that Julia Galef disagreed with Nielsen. Galef represents a movement concerned with spreadsheets-style thinking and assigning credences to thoughts so that we can order them by confidence. Rogue, half-baked, scalar-free thoughts are anathema. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
@@ -240,9 +261,9 @@
     <a id="back", href="/writing/">Back to all writing</a>
   </small>
   <br><br>
-  <p id="subscribe"><a rel="nofollow noopener noreferrer" href="https://stepstophaeacia.substack.com/">Subscribe</a> to get notified about new essays.</p>
+  <p id="subscribe"><a href="https://stepstophaeacia.substack.com/">Subscribe</a> to get notified about new essays.</p>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

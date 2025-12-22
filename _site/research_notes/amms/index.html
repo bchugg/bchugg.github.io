@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -157,9 +178,9 @@
   <li><a href="#4-resources" id="markdown-toc-4-resources">4. Resources</a></li>
 </ul>
 
-<p>Decentralized Exchanges (DEXs) are digital markets enabling cryptocurrency transactions which do not require third parties to oversee the process. Part of this involves replacing human <a rel="nofollow noopener noreferrer" href="https://www.investopedia.com/terms/m/marketmaker.asp">market makers</a> with smart contracts known as <em>automated market makers</em> (AMMs). Roughly, AMMs are rules determining how much of good \(X\) can be traded for good \(Y\) (where “goods” here typically refer to various cryptocurrencies). Examples of DEXs include <a rel="nofollow noopener noreferrer" href="https://uniswap.org/">Uniswap</a> and <a rel="nofollow noopener noreferrer" href="https://balancer.fi/">Balancer</a>, each of which has their own AMM protocol.</p>
+<p>Decentralized Exchanges (DEXs) are digital markets enabling cryptocurrency transactions which do not require third parties to oversee the process. Part of this involves replacing human <a href="https://www.investopedia.com/terms/m/marketmaker.asp">market makers</a> with smart contracts known as <em>automated market makers</em> (AMMs). Roughly, AMMs are rules determining how much of good \(X\) can be traded for good \(Y\) (where “goods” here typically refer to various cryptocurrencies). Examples of DEXs include <a href="https://uniswap.org/">Uniswap</a> and <a href="https://balancer.fi/">Balancer</a>, each of which has their own AMM protocol.</p>
 
-<p>I’m basically agnostic as to the promise of DEXs, and there are certainly <a rel="nofollow noopener noreferrer" href="https://cointelegraph.com/explained/crypto-rug-pulls-what-is-a-rug-pull-in-crypto-and-6-ways-to-spot-it#:~:text=Rug%20pulls%20happen%20when%20fraudulent,decentralized%20finance%20(DeFi)%20exploit.">known problems</a> as they exist right now. But the math is interesting, so we’re going to explore them from that perspective. Going forward, we’ll focus on markets exchanging two goods.</p>
+<p>I’m basically agnostic as to the promise of DEXs, and there are certainly <a href="https://cointelegraph.com/explained/crypto-rug-pulls-what-is-a-rug-pull-in-crypto-and-6-ways-to-spot-it#:~:text=Rug%20pulls%20happen%20when%20fraudulent,decentralized%20finance%20(DeFi)%20exploit.">known problems</a> as they exist right now. But the math is interesting, so we’re going to explore them from that perspective. Going forward, we’ll focus on markets exchanging two goods.</p>
 
 <h1 id="1-wealth-and-price-processes">1. Wealth and Price Processes</h1>
 
@@ -337,15 +358,15 @@ Note that</p>
 <h1 id="4-resources">4. Resources</h1>
 
 <ul>
-  <li><a rel="nofollow noopener noreferrer" href="https://research.paradigm.xyz/LP_Wealth.pdf">LP Wealth</a></li>
-  <li><a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/1911.03380.pdf">An analysis of Uniswap markets</a></li>
+  <li><a href="https://research.paradigm.xyz/LP_Wealth.pdf">LP Wealth</a></li>
+  <li><a href="https://arxiv.org/pdf/1911.03380.pdf">An analysis of Uniswap markets</a></li>
 </ul>
 
   <small>
     <a link="back", href="/research_notes/">Back to all notes</a>
   </small>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

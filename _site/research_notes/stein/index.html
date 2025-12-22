@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -178,7 +199,7 @@ R(\hmu) &amp;= \E\norm{\mu-y+y-\hmu}_2^2 \\
 
 \[\frac{1}{\sigma\sqrt{2\pi}}\int_{\R^n}(\mu-y)^t(\mu-y)\exp\bigg(-\frac{1}{2}\bigg(\frac{y-\mu}{\sigma}\bigg)^2\bigg)dy,\]
 
-<p>which is an \(n\)-dimensional second moment and equal to \(n\sigma^2\) using some <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Normal_distribution#Moments">standard identities</a>. The final term can be expanded as</p>
+<p>which is an \(n\)-dimensional second moment and equal to \(n\sigma^2\) using some <a href="https://en.wikipedia.org/wiki/Normal_distribution#Moments">standard identities</a>. The final term can be expanded as</p>
 
 \[\begin{align}
 \E(\mu-y)^t(y-\hmu) &amp;= \sum_{i=1}^n \E[\mu_iy_i - \mu_i\hmu_i -y_i^2 + y_i\hmu_i] \\ 
@@ -191,7 +212,7 @@ R(\hmu) &amp;= \E\norm{\mu-y+y-\hmu}_2^2 \\
 
 \[R(\hmu) = \E\norm{y-\hmu}_2^2 + 2\sum_{i=1}^n \Cov(y_i,\hmu_i) - n\sigma^2.\]
 
-<p>If we view the estimator \(\hmu\) as a predictive model trained on the samples \(X_i\), then we can interpret \(\E\norm{y-\hmu}_2^2\) as the expected mean squared (training) error of the model. The <em>degrees of freedom</em> (see, e.g., <a rel="nofollow noopener noreferrer" href="https://www.stat.cmu.edu/~ryantibs/papers/sdf.pdf">this paper</a>) of this model is the quantity</p>
+<p>If we view the estimator \(\hmu\) as a predictive model trained on the samples \(X_i\), then we can interpret \(\E\norm{y-\hmu}_2^2\) as the expected mean squared (training) error of the model. The <em>degrees of freedom</em> (see, e.g., <a href="https://www.stat.cmu.edu/~ryantibs/papers/sdf.pdf">this paper</a>) of this model is the quantity</p>
 
 \[\df(\hmu) = \frac{1}{\sigma^2}\sum_{i=1}^n \Cov(y_i,\hmu_i).\]
 
@@ -206,7 +227,7 @@ R(\hmu) = \E\norm{y-\hmu}_2^2 + 2\sigma^2 \df(\hmu) - n\sigma^2.\tag{1}
 
 <h1 id="1-steins-lemma">1. Stein’s Lemma</h1>
 
-<p><a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Stein%27s_lemma">Stein’s lemma</a> provides a nice way to evaluate the degrees of freedom of an estimator. It says that instead of evaluating the covariance, we can actually just take partial derivates of our estimator. That is,</p>
+<p><a href="https://en.wikipedia.org/wiki/Stein%27s_lemma">Stein’s lemma</a> provides a nice way to evaluate the degrees of freedom of an estimator. It says that instead of evaluating the covariance, we can actually just take partial derivates of our estimator. That is,</p>
 
 \[\frac{1}{\sigma^2}\sum_{i=1}^n \Cov(y_i,\hmu_i) = \sum_{i=1}^n\E\frac{\partial \hmu_i}{\partial x_i}(X).\]
 
@@ -261,7 +282,7 @@ R(\hmu) = \E\norm{y-\hmu}_2^2 + 2\sigma^2 \sum_{i=1}^n \E\frac{\partial \hmu_i(X
 
 \[R(\hmu(X)) = n\sigma^2.\]
 
-<p>Remarkably, and counterintuitively (for me, at least), this is not the minimum risk estimator (i.e., it’s not admissible). Consider the <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/James%E2%80%93Stein_estimator">James-Stein estimator</a></p>
+<p>Remarkably, and counterintuitively (for me, at least), this is not the minimum risk estimator (i.e., it’s not admissible). Consider the <a href="https://en.wikipedia.org/wiki/James%E2%80%93Stein_estimator">James-Stein estimator</a></p>
 
 \[\hmu^{JS}(X,v) = \bigg(1 - \frac{n-2}{\norm{X-v}_2^2}\bigg)(X-v)+v,\]
 
@@ -302,7 +323,7 @@ R(\hmu_v^{JS}(X,v)) = n\sigma^2 +(n-2)^2(1-2\sigma^2)\E\bigg[\frac{1}{\norm{X-v}
 
 <p>This doesn’t seem to get you anything, however. The result is still the same: you need \(\sigma^2&gt;1/2\) for it to beat the canonical estimator.</p>
 
-<p>It’s worth noting that you can prove this result without resorting to Stein’s lemma and degrees of freedom (e.g., see <a rel="nofollow noopener noreferrer" href="http://www.statslab.cam.ac.uk/~rjs57/SteinParadox.pdf">here</a>), but I think this way is more insightful and general.</p>
+<p>It’s worth noting that you can prove this result without resorting to Stein’s lemma and degrees of freedom (e.g., see <a href="http://www.statslab.cam.ac.uk/~rjs57/SteinParadox.pdf">here</a>), but I think this way is more insightful and general.</p>
 
 <h2 id="21-optimizing-v">2.1 Optimizing \(v\)</h2>
 
@@ -333,7 +354,7 @@ R(\hmu_v^{JS}(X,v)) = n\sigma^2 +(n-2)^2(1-2\sigma^2)\E\bigg[\frac{1}{\norm{X-v}
 <h1 id="3-resources">3. Resources</h1>
 
 <ul>
-  <li><a rel="nofollow noopener noreferrer" href="https://www.stat.cmu.edu/~larry/=sml/stein.pdf">Stein’s Unbiased Risk Estimate</a>, by Tibshirani and Wasserman (I basically stole their proof of Stein’s lemma verbatim since it’s so nice).</li>
+  <li><a href="https://www.stat.cmu.edu/~larry/=sml/stein.pdf">Stein’s Unbiased Risk Estimate</a>, by Tibshirani and Wasserman (I basically stole their proof of Stein’s lemma verbatim since it’s so nice).</li>
 </ul>
 
 
@@ -341,7 +362,7 @@ R(\hmu_v^{JS}(X,v)) = n\sigma^2 +(n-2)^2(1-2\sigma^2)\E\bigg[\frac{1}{\norm{X-v}
     <a link="back", href="/research_notes/">Back to all notes</a>
   </small>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

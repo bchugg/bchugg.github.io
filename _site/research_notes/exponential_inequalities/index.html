@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -147,7 +168,7 @@
 
 <p>I considered writing a big list of <em>concentration</em> inequalities, but then I realized that most of the time what I really wanted was the inequality underlying the concentration inequality, which is typically some sort of exponential inequality. So here we are. Plus, I do a lot of work with martingales, and writing things out like I’ve done here makes obvious the resulting supermartingale.</p>
 
-<p>Are there papers that do this more formally and completely? Yes, e.g., <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/1808.03204.pdf">this one</a>. But I needed something for myself that was easy and interpretable.</p>
+<p>Are there papers that do this more formally and completely? Yes, e.g., <a href="https://arxiv.org/pdf/1808.03204.pdf">this one</a>. But I needed something for myself that was easy and interpretable.</p>
 
 <p>Throughout, let \(X\) be a random variable with mean \(\mu\). Set \(\Xbar = X-\mu\).</p>
 
@@ -205,7 +226,7 @@
 
 <h2 id="proof-of-hoeffding">Proof of Hoeffding</h2>
 
-<p>Just note that a bounded random variable \(X\in[a,b]\) is \((b-a)/2\)-sub-Gaussian, and apply the definition of sub-Gaussianity. It can also be proved more directly, see <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Hoeffding%27s_lemma">wikipedia</a>.</p>
+<p>Just note that a bounded random variable \(X\in[a,b]\) is \((b-a)/2\)-sub-Gaussian, and apply the definition of sub-Gaussianity. It can also be proved more directly, see <a href="https://en.wikipedia.org/wiki/Hoeffding%27s_lemma">wikipedia</a>.</p>
 
 <h2 id="proof-of-self-bounding">Proof of Self-Bounding</h2>
 
@@ -292,7 +313,7 @@ and</p>
 
 <h2 id="proof-of-fan">Proof of Fan</h2>
 
-<p>See original Fan et al. paper <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/1311.6273.pdf">here</a>. Note that the function</p>
+<p>See original Fan et al. paper <a href="https://arxiv.org/pdf/1311.6273.pdf">here</a>. Note that the function</p>
 
 \[f(x) = \frac{\log(1+x) -x}{x^2/2},\]
 
@@ -326,7 +347,7 @@ and</p>
     <a link="back", href="/research_notes/">Back to all notes</a>
   </small>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

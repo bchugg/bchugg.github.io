@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -155,7 +176,7 @@ Phi beta kappa, best person award, zeta tau alpha, beta gamma epsilon, 6min beer
 
 <p>The field of computer science has yet to figure this out. Whether you spend your undergraduate focusing on designing websites, programming operating systems, attempting to prove that \(P\neq NP\), or building machine learning algorithms, you often graduate with a degree simply called <em>Computer Science</em>.</p>
 
-<p>Some schools are wising up. As of this writing, of the “big four” computer science schools — MIT, CMU, UC Berkeley, and Stanford —  only Stanford fails to offer more than a single degree in computer science. Berkeley <a rel="nofollow noopener noreferrer" href="https://eecs.berkeley.edu/academics/undergraduate">offers two</a>. CMU <a rel="nofollow noopener noreferrer" href="https://www.cs.cmu.edu/academics/undergraduate/programs">offers seven</a>, including degrees in AI, computational biology and robotics. MIT <a rel="nofollow noopener noreferrer" href="https://www.eecs.mit.edu/academics/undergraduate-programs/">offers between seven and eight</a> depending on how you count, including one involving urban planning, and one at the intersection of economics and data science.</p>
+<p>Some schools are wising up. As of this writing, of the “big four” computer science schools — MIT, CMU, UC Berkeley, and Stanford —  only Stanford fails to offer more than a single degree in computer science. Berkeley <a href="https://eecs.berkeley.edu/academics/undergraduate">offers two</a>. CMU <a href="https://www.cs.cmu.edu/academics/undergraduate/programs">offers seven</a>, including degrees in AI, computational biology and robotics. MIT <a href="https://www.eecs.mit.edu/academics/undergraduate-programs/">offers between seven and eight</a> depending on how you count, including one involving urban planning, and one at the intersection of economics and data science.</p>
 
 <p>Still, most other schools offer a single degree in computer science (e.g., University of Washington, UT Austin, UBC, UofT, Oxford). This is insane. Imagine if most schools offered a single degree in engineering and only a few allowed any specialization. This is inefficient talent allocation: We’re forcing theoreticians to learn how to write efficient javascript, and roboticists to study asymptotics.</p>
 
@@ -173,9 +194,9 @@ Phi beta kappa, best person award, zeta tau alpha, beta gamma epsilon, 6min beer
     <a id="back", href="/writing/">Back to all writing</a>
   </small>
   <br><br>
-  <p id="subscribe"><a rel="nofollow noopener noreferrer" href="https://stepstophaeacia.substack.com/">Subscribe</a> to get notified about new essays.</p>
+  <p id="subscribe"><a href="https://stepstophaeacia.substack.com/">Subscribe</a> to get notified about new essays.</p>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

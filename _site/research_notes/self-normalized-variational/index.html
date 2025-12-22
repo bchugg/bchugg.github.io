@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -147,7 +168,7 @@
 \renewcommand{\Pr}{\mathbb{P}}
 \newcommand{\Tr}{\text{Tr}}\]
 
-<p>Self-normalized bounds for martingales arise naturally in various statistical tasks, from regression to bandits. <a rel="nofollow noopener noreferrer" href="https://scholar.google.com/citations?view_op=list_works&amp;hl=en&amp;hl=en&amp;user=9W4bmC4AAAAJ">De La Peña</a> and coauthors did a tremendous amont of work on self-normalized bounds in the 90s and 2000s, and in 2011 <a rel="nofollow noopener noreferrer" href="https://proceedings.neurips.cc/paper/2011/file/e1d5be1c7f2f456670de3d53c7b54f4a-Paper.pdf">Abbasi-Yadkori et al</a> applied some of their results to contextual bandits. The resulting concentration inequality has become a famous self-normalized bound.</p>
+<p>Self-normalized bounds for martingales arise naturally in various statistical tasks, from regression to bandits. <a href="https://scholar.google.com/citations?view_op=list_works&amp;hl=en&amp;hl=en&amp;user=9W4bmC4AAAAJ">De La Peña</a> and coauthors did a tremendous amont of work on self-normalized bounds in the 90s and 2000s, and in 2011 <a href="https://proceedings.neurips.cc/paper/2011/file/e1d5be1c7f2f456670de3d53c7b54f4a-Paper.pdf">Abbasi-Yadkori et al</a> applied some of their results to contextual bandits. The resulting concentration inequality has become a famous self-normalized bound.</p>
 
 <p>To state it, let \(X_1,X_2,\dots\) be a sequence of vectors in \(\Re^d\). Let \(\eta_1,\eta_2,\dots\) be a sequence of mean-zero, conditionally \(\sigma^2\)-sub-Gaussian random variables in \(\Re\), i.e.,</p>
 
@@ -165,7 +186,7 @@
 
 <p>where \(\|Y\|^2_{A} = Y^t A Y\). If the rewards we observe are of the form \(Y_t = \la \theta^*, X_t\ra + \eta_t\), \eqref{eq:abbasi_bound} allows us to derive confidence sets for \(\theta^*\).</p>
 
-<p>Abbasi-Yadkori et al. use the method of mixtures to prove their bound. Recently, <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2412.20949">Ingvar Ziemann noticed</a> that one can recover the result using the <a href="/research_notes/variational_approach_to_concentration/">variational approach to concentration</a>. I’m very curious about the limits of this approach, so I want to explore how this is done.</p>
+<p>Abbasi-Yadkori et al. use the method of mixtures to prove their bound. Recently, <a href="https://arxiv.org/pdf/2412.20949">Ingvar Ziemann noticed</a> that one can recover the result using the <a href="/research_notes/variational_approach_to_concentration/">variational approach to concentration</a>. I’m very curious about the limits of this approach, so I want to explore how this is done.</p>
 
 <p>Let’s recall the main template used in the variational approach to concentration.</p>
 
@@ -242,7 +263,7 @@
     <a link="back", href="/research_notes/">Back to all notes</a>
   </small>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

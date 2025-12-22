@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -132,7 +153,7 @@
         <p><img id="headerim" src="/assets/images/me.jpg" /></p>
 
 <p id="index-intro-text">
-I’m a PhD student in <a rel="nofollow noopener noreferrer" href="https://www.ml.cmu.edu/">machine learning</a> and <a rel="nofollow noopener noreferrer" href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">statistics</a> at CMU. I’m advised by <a rel="nofollow noopener noreferrer" href="https://www.stat.cmu.edu/~aramdas/">Aaditya Ramdas</a> and organize the <a rel="nofollow noopener noreferrer" href="http://statml.cs.cmu.edu/">StatML group</a>.<br />
+I’m a PhD student in <a href="https://www.ml.cmu.edu/">machine learning</a> and <a href="https://www.cmu.edu/dietrich/statistics-datascience/index.html">statistics</a> at CMU. I’m advised by <a href="https://www.stat.cmu.edu/~aramdas/">Aaditya Ramdas</a> and organize the <a href="http://statml.cs.cmu.edu/">StatML group</a>.<br />
 </p>
 
 <p>Before CMU I was doing various things at Oxford, Stanford, and UBC. Here is an entirely-unnecessary-yet-for-some-reason-expected <a href="assets/files/cv.pdf">CV</a>. You can reach me at benchugg \(\alpha\tau\) cmu.edu.</p>
@@ -143,13 +164,13 @@ I’m a PhD student in <a rel="nofollow noopener noreferrer" href="https://www.m
 
 <p>These days I mostly think about problems in mathematical statistics and probability theory. Two areas of particular interest are concentration of measure and game-theoretic statistics (anytime-valid inference, e-values, hypothesis testing, and martingales).</p>
 
-<p>Here are <a href="/papers/">my papers</a> and some <a href="/research_notes/">informal research notes</a>. Here is a horrendously incomplete <a rel="nofollow noopener noreferrer" href="https://thestatsmap.com/">zettelkasten for statistics</a>.</p>
+<p>Here are <a href="/papers/">my papers</a> and some <a href="/research_notes/">informal research notes</a>. Here is a horrendously incomplete <a href="https://thestatsmap.com/">zettelkasten for statistics</a>.</p>
 
 <h2 id="other">Other</h2>
 
-<p>I write at <a rel="nofollow noopener noreferrer" href="https://www.stepstophaeacia.com/">Steps to Phaeacia</a>. Sometimes I also talk, and sometimes I talk in public about applied philosophy and other topics on the <a rel="nofollow noopener noreferrer" href="https://www.incrementspodcast.com/">Increments podcast</a>.  I also co-host <a rel="nofollow noopener noreferrer" href="https://doyouevenlit.podbean.com/">do you even lit?</a> where two unintelligible kiwis and I make our (haphazard and tangent-filled) way through the world of literary classics.</p>
+<p>I write at <a href="https://www.stepstophaeacia.com/">Steps to Phaeacia</a>. Sometimes I also talk, and sometimes I talk in public about applied philosophy and other topics on the <a href="https://www.incrementspodcast.com/">Increments podcast</a>.  I also co-host <a href="https://doyouevenlit.podbean.com/">do you even lit?</a> where two unintelligible kiwis and I make our (haphazard and tangent-filled) way through the world of literary classics.</p>
 
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

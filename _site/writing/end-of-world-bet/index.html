@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -139,25 +160,25 @@
   <p class='title'>My end of the world bets</p> 
   <p id="date">December 20, 2024; Updated February 05, 2025</p>
   <br/><br/>
-  <p><em>Update Feb 5th:</em> I sent <a rel="nofollow noopener noreferrer" href="https://michaeltrazzi.com/">Michaël Trazzi</a> $1,000 USD on February 4th 2025. If we’re both alive in January 2030 he’ll send me $2,500 USD.</p>
+  <p><em>Update Feb 5th:</em> I sent <a href="https://michaeltrazzi.com/">Michaël Trazzi</a> $1,000 USD on February 4th 2025. If we’re both alive in January 2030 he’ll send me $2,500 USD.</p>
 
 <hr />
 
-<p>On December 19th, 2024, I sent <a rel="nofollow noopener noreferrer" href="https://twitter.com/gcolbourn">Greg Colbourn</a> $1,000 USD. If the world hasn’t ended by January 1st, 2030, Greg will send me $2,000 USD.</p>
+<p>On December 19th, 2024, I sent <a href="https://twitter.com/gcolbourn">Greg Colbourn</a> $1,000 USD. If the world hasn’t ended by January 1st, 2030, Greg will send me $2,000 USD.</p>
 
 <p>The bet is mostly about AI risk, but of course the nature of the contract is such that I’m betting against the world ending for any other reason (or things generally being so catastrophic that international financial transfers are impossible).</p>
 
 <p>I view existential risk from AI as essentially a non-problem, so from my perspective this is a relatively safe investment with a ~15% annualized return. Greg feels that there is a significant chance that AI kills everyone by 2030; enough risk that he’d rather have $1000 now than $2000 five years from now.</p>
 
-<p><em>Thanks to <a rel="nofollow noopener noreferrer" href="https://elliotolds.com/">Elliot Olds</a> for helping organize the bet.</em></p>
+<p><em>Thanks to <a href="https://elliotolds.com/">Elliot Olds</a> for helping organize the bet.</em></p>
 
   <small>
     <a id="back", href="/writing/">Back to all writing</a>
   </small>
   <br><br>
-  <p id="subscribe"><a rel="nofollow noopener noreferrer" href="https://stepstophaeacia.substack.com/">Subscribe</a> to get notified about new essays.</p>
+  <p id="subscribe"><a href="https://stepstophaeacia.substack.com/">Subscribe</a> to get notified about new essays.</p>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

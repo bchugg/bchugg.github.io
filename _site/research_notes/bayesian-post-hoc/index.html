@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -149,7 +170,7 @@
 
 <p>One response to this problem is to yell at practitioners until they get it in their heads that they can’t make these illegal post-hoc decisions. We’ve been doing this for many years, with limited success. There’s just too much incentive to p-hack.</p>
 
-<p>Another response is to try and save Neyman-Pearson theory by making it post-hoc valid. This was the goal of <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2205.00901">Peter Grünwald’s 2024 PNAS paper</a>. I’m very sympathetic to this approach, and also wrote <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2508.00770">a paper</a> about it. But there are drawbacks, the biggest being that the kind of guarantee you obtain is different than the standard error probabilities. It’s a heavy lift to convince the entire world to stop reporting p-values. Every social scientist would lose their mind.</p>
+<p>Another response is to try and save Neyman-Pearson theory by making it post-hoc valid. This was the goal of <a href="https://arxiv.org/pdf/2205.00901">Peter Grünwald’s 2024 PNAS paper</a>. I’m very sympathetic to this approach, and also wrote <a href="https://arxiv.org/pdf/2508.00770">a paper</a> about it. But there are drawbacks, the biggest being that the kind of guarantee you obtain is different than the standard error probabilities. It’s a heavy lift to convince the entire world to stop reporting p-values. Every social scientist would lose their mind.</p>
 
 <p>A third response is to give up on Neyman-Pearson theory and become a Bayesian. Enough of these type-I error guarantees and asymmetries between the null and the alternative. We’ll just put a prior over everything and update our posteriors, which tells us all we need to know.</p>
 
@@ -202,14 +223,14 @@ for all \(B:\calX\to\calB\).</p>
 
 <p>By minimizing the expected posterior \(\ell(\phi(x)\vert x)\) we’re minimizing the above integrand at every \(x\), thus minimizing the value of the integral.</p>
 
-<p>And there we have it. In the recent <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2508.00770">paper</a> that I mentioned, we also discuss what a notion of type-I error might  look like for Bayesians, and provide a decision rule which satisfies it. If you made it this far, you might like that.</p>
+<p>And there we have it. In the recent <a href="https://arxiv.org/pdf/2508.00770">paper</a> that I mentioned, we also discuss what a notion of type-I error might  look like for Bayesians, and provide a decision rule which satisfies it. If you made it this far, you might like that.</p>
 
 
   <small>
     <a link="back", href="/research_notes/">Back to all notes</a>
   </small>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

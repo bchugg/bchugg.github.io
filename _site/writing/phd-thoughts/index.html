@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -155,7 +176,7 @@ I’ve written roughly 15 papers and I’m proud of … four of them. Two of the
 Okay, don’t write bad papers. But also don’t underestimate how much you know about a topic. Once you really understand something, you will often think that others will find it obvious. But they won’t. So if the problem was interesting, you should write up your contributions. I think even senior academics sometimes make this mistake, refusing to write a paper they believe is too “simple” even if it could very elegantly solve a worthwhile problem. Simple solutions don’t always equate to bad papers.</p>
 
 <p><img id="img-50" src="/assets/writing_images/curse_of_knowledge.png" /></p>
-<p id="center" class="caption">Required <a rel="nofollow noopener noreferrer" href="https://xkcd.com/2501/" rel="nofollow">xkcd comic</a> on the curse of knowledge.</p>
+<p id="center" class="caption">Required <a href="https://xkcd.com/2501/" rel="nofollow">xkcd comic</a> on the curse of knowledge.</p>
 
 <p><strong>Being overly complicated is the eighth deadly sin.</strong> 
 In fact, simple solutions are what you should be aiming for. Or, rather, as simple as possible given the problem. Adding more notation than necessary or writing an overly long and complicated proof when something shorter will suffice is the mark of an amateur. I’ve also noticed that people who spend time trying to make things as simple as possible tend to understand the problem better, which translates to higher quality research.</p>
@@ -173,7 +194,7 @@ them with puzzling philosophies. Anyone who cannot speak
 simply and clearly should say nothing and continue to work until
 he can do so.</p>
 
-  <p>- Karl Popper, from <a rel="nofollow noopener noreferrer" href="http://www.the-rathouse.com/shortreviews/Against_Big_Words.pdf">Against big words</a></p>
+  <p>- Karl Popper, from <a href="http://www.the-rathouse.com/shortreviews/Against_Big_Words.pdf">Against big words</a></p>
 </blockquote>
 
 <p><strong>Be orthogonal to the hype.</strong>
@@ -204,15 +225,15 @@ When you’re an expert in a field, there’s very little distance between learn
 <p><strong>Computer science departments are not weird enough.</strong>
 I have a theory: A PhD in machine learning is the new MBA. You can expect to earn a lot of money afterwards, and many people are there for connections and job opportunities. It used to be (and still is in many departments) that pursuing a PhD was not financially rewarding or helpful for your career. Computer science departments now have much closer relationships with industry, which changes their research incentives away from tentative, longterm, high-risk research and towards very concrete and tangible research.</p>
 
-<p>Who could be against tangible and concrete progress? Me. I think academia should be the home of foundational research that may or may not pay off in the long run. If not academia, where else? Private industry has a hard time incentivizing basic science because it <a rel="nofollow noopener noreferrer" href="https://mattsclancy.substack.com/p/how-long-does-it-take-to-go-from">tends to take several decades to turn new science into usable products</a>. Once we know something works and it’s a matter of scaling it up, then industry can pick up the idea and run with it. They have more money and more incentive to turn things into usable products.</p>
+<p>Who could be against tangible and concrete progress? Me. I think academia should be the home of foundational research that may or may not pay off in the long run. If not academia, where else? Private industry has a hard time incentivizing basic science because it <a href="https://mattsclancy.substack.com/p/how-long-does-it-take-to-go-from">tends to take several decades to turn new science into usable products</a>. Once we know something works and it’s a matter of scaling it up, then industry can pick up the idea and run with it. They have more money and more incentive to turn things into usable products.</p>
 
-<p>The professionalization of the field also has consequences for the kinds of people pursuing PhDs.  As Dave Masters told Stoner, academia should be the home of weird nerds—quirky people with weird work habits obsessed with niche questions—but computer science departments (or, at least, the ML portion of computer science departments), are less and less hospital to weirdness. (In fact, this is maybe the case in academia more generally, see Alexandra Tuslo <a rel="nofollow noopener noreferrer" href="https://www.writingruxandrabio.com/p/the-flight-of-the-weird-nerd-from">on the flight of the weird nerd from academia</a>.)</p>
+<p>The professionalization of the field also has consequences for the kinds of people pursuing PhDs.  As Dave Masters told Stoner, academia should be the home of weird nerds—quirky people with weird work habits obsessed with niche questions—but computer science departments (or, at least, the ML portion of computer science departments), are less and less hospital to weirdness. (In fact, this is maybe the case in academia more generally, see Alexandra Tuslo <a href="https://www.writingruxandrabio.com/p/the-flight-of-the-weird-nerd-from">on the flight of the weird nerd from academia</a>.)</p>
 
 <p><img id="img-50" src="/assets/writing_images/shannon.jpg" /></p>
 <p class="caption">
 <i>Here, then, was a picture of Claude Shannon, circa 1955: a man—slender, agile, handsome, abstracted—who rarely showed up on time for work; who often played chess or fiddled with amusing machines all day; who frequently went down the halls juggling or pogoing; and who didn’t seem to care, really, what anyone thought of him or of his pursuits. He did what was interesting.</i></p>
 <p class="caption"> 
-A description of Claude Shannon from <a rel="nofollow noopener noreferrer" href="https://www.amazon.com/-/en/Jon-Gertner/dp/0143122797" rel="nofollow"> The Idea Factory.</a> I don’t think Shannon would be welcomed in a computer science department today.</p>
+A description of Claude Shannon from <a href="https://www.amazon.com/-/en/Jon-Gertner/dp/0143122797" rel="nofollow"> The Idea Factory.</a> I don’t think Shannon would be welcomed in a computer science department today.</p>
 
 <p><strong>You can separate yourself with speaking and writing skills.</strong>
 If you’re doing a PhD in maths, statistics, computer science, physics, etc., odds are that you’re already in the top percentile for analytical skill. This means that in absolute terms, you are not that much better or worse than your neighbor at solving a complicated homework problem. This is not the case for speaking and writing skills. PhD programs rarely select for these abilities, so the variance among people is <em>huge</em>. This is especially true for speaking skills (most academics learn to write well eventually). If you’re a demonstrably good speaker and writer during your PhD, it will open doors.</p>
@@ -236,9 +257,9 @@ Maybe this is motivated reasoning because I live in Pittsburgh, but I think your
 But if you like your program and have good friends, it’s easy to put up with a mediocre city.</p>
 
 <p><strong>You should think really hard before going to grad school.</strong> 
-The most serious, the most obvious, and also the most important point. Grad school sucks for a lot of people. <a rel="nofollow noopener noreferrer" href="https://pubmed.ncbi.nlm.nih.gov/37624099/#:~:text=In%20fact%2C%20studies%20show%20that,students'%20decision%20to%20leave%20academia.">The mental health statistics are abysmal</a>. <a rel="nofollow noopener noreferrer" href="https://www.sciencefarts.com/uploads/6/3/9/8/63980147/acad_psychiatry_2014.pdf">Depression skyrockets and suicide is many times as prevalent as it is among the normal population</a>. Even though the difficulties of grad school are somewhat common knowledge, people still treat it like a default option. <em>Grad school is the worst default option imaginable.</em> Notwithstanding the comments about it being the new MBA above, the hours are long, the pay is low, and unless you’re extremely curious about what you’re studying then you’re going to be miserable. Most grad students are in their twenties. You should not be spending these years anxious and depressed.</p>
+The most serious, the most obvious, and also the most important point. Grad school sucks for a lot of people. <a href="https://pubmed.ncbi.nlm.nih.gov/37624099/#:~:text=In%20fact%2C%20studies%20show%20that,students'%20decision%20to%20leave%20academia.">The mental health statistics are abysmal</a>. <a href="https://www.sciencefarts.com/uploads/6/3/9/8/63980147/acad_psychiatry_2014.pdf">Depression skyrockets and suicide is many times as prevalent as it is among the normal population</a>. Even though the difficulties of grad school are somewhat common knowledge, people still treat it like a default option. <em>Grad school is the worst default option imaginable.</em> Notwithstanding the comments about it being the new MBA above, the hours are long, the pay is low, and unless you’re extremely curious about what you’re studying then you’re going to be miserable. Most grad students are in their twenties. You should not be spending these years anxious and depressed.</p>
 
-<p><em>Thanks to <a rel="nofollow noopener noreferrer" href="https://vmasrani.github.io/">Vaden</a> for pointing me towards the Popper quote.</em></p>
+<p><em>Thanks to <a href="https://vmasrani.github.io/">Vaden</a> for pointing me towards the Popper quote.</em></p>
 
 <hr />
 
@@ -247,9 +268,9 @@ The most serious, the most obvious, and also the most important point. Grad scho
     <a id="back", href="/writing/">Back to all writing</a>
   </small>
   <br><br>
-  <p id="subscribe"><a rel="nofollow noopener noreferrer" href="https://stepstophaeacia.substack.com/">Subscribe</a> to get notified about new essays.</p>
+  <p id="subscribe"><a href="https://stepstophaeacia.substack.com/">Subscribe</a> to get notified about new essays.</p>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

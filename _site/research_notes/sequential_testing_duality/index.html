@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -204,7 +225,7 @@ Construct the following confidence region:</p>
 
 <p>The construction is general enough that such processes have been given a name: <em>e-processes</em>. At any time \(t\) the value \(E_t\) of an e-process is an <em>e-value</em> for \(\cP\), which simply a random variable with expected value at most 1 under any \(P\in\cP\).  This is because \(\E_P[E_t ]\leq \E_P[M_t^P]\leq 1\).</p>
 
-<p>In fact, it has been <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2009.03167.pdf">shown</a> that “well-behaved” e-processes must obey \(E_t = \inf_P M_t^P\). Therefore, if \(\cP = \{P\}\) is a singleton and \(M_t^P\) is a martingale (as opposed to a supermartingale), then</p>
+<p>In fact, it has been <a href="https://arxiv.org/pdf/2009.03167.pdf">shown</a> that “well-behaved” e-processes must obey \(E_t = \inf_P M_t^P\). Therefore, if \(\cP = \{P\}\) is a singleton and \(M_t^P\) is a martingale (as opposed to a supermartingale), then</p>
 
 \[1 = \E_P [M_t^P] = \E_P [E_t] = \int E_t dP,\]
 
@@ -214,7 +235,7 @@ Construct the following confidence region:</p>
 
 <h1 id="4-resources">4. Resources</h1>
 <ul>
-  <li><a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2210.01948.pdf">Game-theoretic statistics and safe anytime-valid inference</a></li>
+  <li><a href="https://arxiv.org/pdf/2210.01948.pdf">Game-theoretic statistics and safe anytime-valid inference</a></li>
 </ul>
 
 
@@ -222,7 +243,7 @@ Construct the following confidence region:</p>
     <a link="back", href="/research_notes/">Back to all notes</a>
   </small>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

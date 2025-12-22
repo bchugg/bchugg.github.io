@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -141,17 +162,17 @@
   <br/><br/>
   <p>If you ask people what it means to be rational, I think many would say something like “the strength of your belief should accord with the evidence.” This is a fairly natural notion after all. If there is good evidence for something, you should believe it strongly. If weak evidence, you should be sparing in your credulity.</p>
 
-<p>The philosophical tradition of <em>Bayesian epistemology</em> tries to formalize this idea, providing normative rules for precisely how much you should believe in various propositions. The formalization is based on <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Bayes%27_theorem"><em>Bayes’ rule</em></a>, a mathematical theorem which reads:</p>
+<p>The philosophical tradition of <em>Bayesian epistemology</em> tries to formalize this idea, providing normative rules for precisely how much you should believe in various propositions. The formalization is based on <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem"><em>Bayes’ rule</em></a>, a mathematical theorem which reads:</p>
 
 \[P(T|E) = \frac{P(E|T)P(T)}{P(E)}.\]
 
-<p>Bayes’ rule itself has nothing to do with beliefs or evidence or rationality per se. It’s a simple mathematical result that follows from the <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Probability_axioms">axioms of probability theory</a>. That is, as long as P is a so-called “probability measure,” then Bayes’ rule holds. Statisticians, for instance, use Bayes’ rule all the time without referring to credences or rationality.</p>
+<p>Bayes’ rule itself has nothing to do with beliefs or evidence or rationality per se. It’s a simple mathematical result that follows from the <a href="https://en.wikipedia.org/wiki/Probability_axioms">axioms of probability theory</a>. That is, as long as P is a so-called “probability measure,” then Bayes’ rule holds. Statisticians, for instance, use Bayes’ rule all the time without referring to credences or rationality.</p>
 
 <p>The core claim of Bayesian epistemology is that our credences (how much we believe various ideas) should be a probability measure over propositions. If we adopt this view, we can interpret Bayes’ theorem as telling us how to update our beliefs in light of new evidence. You should read the vertical line \(\vert\) in \(P(T\vert E)\) as “given”, so \(P(T\vert E)\) is the new probability of T given that you received evidence E. \(P(T)\) is the “prior probability” of T before you received evidence E, and \(P(E)\) is the overall probability of receiving evidence E.</p>
 
 <p>Examples always help. Let T be some theory you have about the world. (I’m going to use words theory and proposition interchangeably.) Maybe T is “my dog is mad at me.” When you receive some evidence E like “my dog didn’t greet me when I got home”, Bayes’ rule tells you precisely how concerned you should be that your best friend will never speak to you again, assuming you can put numbers on \(P(E\vert T)\), \(P(T)\) and \(P(E)\).</p>
 
-<p>There are many problems with Bayesian epistemology, some of which <a rel="nofollow noopener noreferrer" href="https://medium.com/conjecture-magazine/pascals-mugging-and-the-poverty-of-the-expected-value-calculus-70b190d953cd/">I’ve discussed before</a>. You can see a laundry list of other objections <a rel="nofollow noopener noreferrer" href="https://plato.stanford.edu/entries/epistemology-bayesian/#IssuAbouDiacNorm">here</a>, and a proof that probabilistic induction (a fancy term for using Bayes’ theorem in this way) is incoherent <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2107.00749.pdf">here</a>. These are all substantial criticisms, but I think an even more basic criticism exists.</p>
+<p>There are many problems with Bayesian epistemology, some of which <a href="https://medium.com/conjecture-magazine/pascals-mugging-and-the-poverty-of-the-expected-value-calculus-70b190d953cd/">I’ve discussed before</a>. You can see a laundry list of other objections <a href="https://plato.stanford.edu/entries/epistemology-bayesian/#IssuAbouDiacNorm">here</a>, and a proof that probabilistic induction (a fancy term for using Bayes’ theorem in this way) is incoherent <a href="https://arxiv.org/pdf/2107.00749.pdf">here</a>. These are all substantial criticisms, but I think an even more basic criticism exists.</p>
 
 <p>The problem is that evidence doesn’t speak for itself. Or, in other words, to determine what counts as evidence E for a theory T requires its own theory. And if you want to update your credence in <em>that</em> theory using Bayes’ rule, you need yet another theory. Mathematically, determining \(P(E)\)  requires a second theory, \(T_2\), which tells you what these numbers are. 
 And determining what counts as evidence for \(T_2\) requires yet another theory, \(T_3\). And so on and so forth, ad infinitum. 
@@ -163,7 +184,7 @@ And determining what counts as evidence for \(T_2\) requires yet another theory,
 
 <p>This means, frustratingly, that Bayesianism is skipping over the precise step we all care about the most. Nobody cares how numerically confident you are in your ideas—they care <em>why</em> you believe what you believe. They want to understand your arguments. And this boils down to understanding why you think some events are important and some aren’t. If you think Gabon is crucial to the future of self-driving cars, I want to know why. I don’t care that now you’re 68% confident instead of 73%. <a href="/writing/commentary_is_all_that_matters/">The commentary is all that matters</a>.</p>
 
-<p>But didn’t I say that statisticians use Bayes’ rule all the time? How do they get around this problem? By construction: They apply Bayes’ theorem only in well-defined statistical models, which are specifically tailored so that we can do such calculations. Models are simplifications of the world, engineered so that they can be useful, but not so they are true. <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/All_models_are_wrong">All models are wrong but some are useful</a>, goes the aphorism. Bayesian epistemology obliterates the crucial distinction between models and the world, thereby becoming meaningless in the process.</p>
+<p>But didn’t I say that statisticians use Bayes’ rule all the time? How do they get around this problem? By construction: They apply Bayes’ theorem only in well-defined statistical models, which are specifically tailored so that we can do such calculations. Models are simplifications of the world, engineered so that they can be useful, but not so they are true. <a href="https://en.wikipedia.org/wiki/All_models_are_wrong">All models are wrong but some are useful</a>, goes the aphorism. Bayesian epistemology obliterates the crucial distinction between models and the world, thereby becoming meaningless in the process.</p>
 
 <p>So what do we do about this whole rationality thing? Are we doomed? Yes, in some sense. I don’t think it makes sense to look for the ultimate foundations of rationality, a mathematical theory that will tell you precisely what to believe and how strongly to believe it. (What a mind-numbingly boring world that would be, anyway.) If rationality means “have perfectly calibrated numerical beliefs over the space of all propositions,” then the search for rationality is futile.</p>
 
@@ -175,9 +196,9 @@ And determining what counts as evidence for \(T_2\) requires yet another theory,
     <a id="back", href="/writing/">Back to all writing</a>
   </small>
   <br><br>
-  <p id="subscribe"><a rel="nofollow noopener noreferrer" href="https://stepstophaeacia.substack.com/">Subscribe</a> to get notified about new essays.</p>
+  <p id="subscribe"><a href="https://stepstophaeacia.substack.com/">Subscribe</a> to get notified about new essays.</p>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

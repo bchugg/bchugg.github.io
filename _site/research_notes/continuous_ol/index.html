@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -153,7 +174,7 @@
   <li><a href="#2-continuous-mwu" id="markdown-toc-2-continuous-mwu">2. Continuous MWU</a></li>
 </ul>
 
-<p>Nick Harvey’s group at UBC has seemingly done the impossible, which is to apply stochastic calculus to something besides finance. This post is about a continuous time version of the prediction with experts’ advice problem, following <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2206.00236.pdf">this paper</a>.</p>
+<p>Nick Harvey’s group at UBC has seemingly done the impossible, which is to apply stochastic calculus to something besides finance. This post is about a continuous time version of the prediction with experts’ advice problem, following <a href="https://arxiv.org/pdf/2206.00236.pdf">this paper</a>.</p>
 
 <p>Before we jump to the continuous version, let’s discuss the discrete time version of the problem. Suppose we have \(n\) experts.</p>
 
@@ -223,7 +244,7 @@
 \d G(t) = w(t) \d B(t),  \tag{1}
 \end{align}\]
 
-<p>where \(B(t)\) is a Wiener process (i.e., standard Brownian motion). Recall that the Wiener process obeys \(B(0)=0\), and \(B(t+z) - B(t)\) is a random variable distributed as \(N(0,z)\) which is independent from past values \(B(\tau)\), \(\tau&lt;t\) (independent increments). (But there are <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Wiener_process">many other</a> characterizations.)</p>
+<p>where \(B(t)\) is a Wiener process (i.e., standard Brownian motion). Recall that the Wiener process obeys \(B(0)=0\), and \(B(t+z) - B(t)\) is a random variable distributed as \(N(0,z)\) which is independent from past values \(B(\tau)\), \(\tau&lt;t\) (independent increments). (But there are <a href="https://en.wikipedia.org/wiki/Wiener_process">many other</a> characterizations.)</p>
 
 <p>Equation \eqref{eq:gain} is <a href="/research_notes/intro_ito/">shorthand for the Itô integral</a></p>
 
@@ -255,7 +276,7 @@
 
 <p>for functions \(\mu\) and \(\sigma\). Here, we interpret \(G(t+\delta)-G(t)\) as having mean \(\mu(G(t),t)\), which would be a natural way for an adversary to ensure some experts are performing better than others.</p>
 
-<p>It turns out, however, that this discussion is entirely academic. Considering (correlated) Brownian motion is enough to develop algorithms applicable to the general case (at least in discrete time). In <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/1409.3040.pdf">this 2016 paper</a>, Gravin et al. demonstrate that the optimal adversary need only ever assign gains of +1 or -1. In the case of three experts, for instance, the optimal adversary will assign the leading expert (i.e., the expert with the best performance so far) a gain of \(-g\), and the two lagging experts gains of \(g\). So the gain vector will be either \((1,-1,-1)\) or \((-1,1,1)\) (it doesn’t matter which). In our setting, such correlation between experts is possible because of the vector \(w^{(i)}\).</p>
+<p>It turns out, however, that this discussion is entirely academic. Considering (correlated) Brownian motion is enough to develop algorithms applicable to the general case (at least in discrete time). In <a href="https://arxiv.org/pdf/1409.3040.pdf">this 2016 paper</a>, Gravin et al. demonstrate that the optimal adversary need only ever assign gains of +1 or -1. In the case of three experts, for instance, the optimal adversary will assign the leading expert (i.e., the expert with the best performance so far) a gain of \(-g\), and the two lagging experts gains of \(g\). So the gain vector will be either \((1,-1,-1)\) or \((-1,1,1)\) (it doesn’t matter which). In our setting, such correlation between experts is possible because of the vector \(w^{(i)}\).</p>
 
 <p>Regardless of how we define the gain, the player’s reward process is the gain across all experts weighted by the player’s strategy. In the discrete case this is simply the sum of all rewards over time: \(A(T) = \sum_{t=1}^T  r_t = \sum_{t=1}^T \sum_{i=1}^n p_t(i) g_t(i)\). In continuous time we integrate:</p>
 
@@ -339,7 +360,7 @@ A(T) &amp;= \sum_{i=1}^n \int_0^T \partial_{g_i} F(t,G(t))\d G_i(t) \\
     <a link="back", href="/research_notes/">Back to all notes</a>
   </small>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

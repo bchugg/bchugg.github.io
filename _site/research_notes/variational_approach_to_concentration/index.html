@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -172,19 +193,19 @@ A PAC-Bayes bound provides a high probability bound <em>simultaneously</em> over
 
 <p>But now we’re stuck. This is not a bound on \(\sup_{v\in\sd}\la v,S_n\ra\). One’s first thought is to take a union bound over \(v\) in order to move the “\(\forall v\in\sd\)” inside the probability statement, which would give us the result. But there are uncountably many such vectors. The  approach explored here solves this problem by translating the “\(\forall \rho\in\Mspace{\Theta}\)” in \eqref{eq:pb-basic-bound} into “\(\forall v\in\sd\)”.</p>
 
-<p>This variational approach was pioneered by Catoni and Giulini (<a rel="nofollow noopener noreferrer" href="https://ocatoni.perso.math.cnrs.fr/GramReg05.pdf">here</a> and <a rel="nofollow noopener noreferrer" href="https://ocatoni.perso.math.cnrs.fr/CatGiulNips03.pdf">here</a>), and has now been used by a few authors to prove bounds in a variety of settings:</p>
+<p>This variational approach was pioneered by Catoni and Giulini (<a href="https://ocatoni.perso.math.cnrs.fr/GramReg05.pdf">here</a> and <a href="https://ocatoni.perso.math.cnrs.fr/CatGiulNips03.pdf">here</a>), and has now been used by a few authors to prove bounds in a variety of settings:</p>
 <ul>
-  <li><a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2108.08198">Zhivotovskiy in 2024</a> for bounding the singular values of random matrices,</li>
-  <li><a rel="nofollow noopener noreferrer" href="https://ui.adsabs.harvard.edu/abs/2022arXiv221009756N/abstract">Nakakita et al. in 2024</a> for bounding the mean of high-dimensional random matrices under heavy-tails,</li>
-  <li><a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/1511.06259">Giulini in 2018</a> for estimating the Gram operator in Hilbert spaces,</li>
-  <li><a rel="nofollow noopener noreferrer" href="https://arxiv.org/abs/2311.08168">Myself and others in 2024</a> for estimating the mean of random vectors.</li>
+  <li><a href="https://arxiv.org/pdf/2108.08198">Zhivotovskiy in 2024</a> for bounding the singular values of random matrices,</li>
+  <li><a href="https://ui.adsabs.harvard.edu/abs/2022arXiv221009756N/abstract">Nakakita et al. in 2024</a> for bounding the mean of high-dimensional random matrices under heavy-tails,</li>
+  <li><a href="https://arxiv.org/pdf/1511.06259">Giulini in 2018</a> for estimating the Gram operator in Hilbert spaces,</li>
+  <li><a href="https://arxiv.org/abs/2311.08168">Myself and others in 2024</a> for estimating the mean of random vectors.</li>
 </ul>
 
 <h1 id="a-general-variational-inequality">A general variational inequality</h1>
 
-<p>Different authors use seemingly different PAC-Bayesian inequalities to achieve their results. However, <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2302.03421">we recently showed</a> that all of these inequalities are specific instantiations of the following more general result.</p>
+<p>Different authors use seemingly different PAC-Bayesian inequalities to achieve their results. However, <a href="https://arxiv.org/pdf/2302.03421">we recently showed</a> that all of these inequalities are specific instantiations of the following more general result.</p>
 
-<p>Let \(\Theta\) be some measurable parameter space and let \(N(\theta)\) be nonnegative and have expected value at most 1 (it’s an <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/E-values">e-value</a>, if you like) for all \(\theta\in\Theta\). Then</p>
+<p>Let \(\Theta\) be some measurable parameter space and let \(N(\theta)\) be nonnegative and have expected value at most 1 (it’s an <a href="https://en.wikipedia.org/wiki/E-values">e-value</a>, if you like) for all \(\theta\in\Theta\). Then</p>
 
 \[\Pr(\forall\rho\in\Mspace{\Theta}: \E_\rho \log N(\theta) \leq \kl(\rho\|\nu) + \log(1/\delta))\geq 1-\delta,\]
 
@@ -192,7 +213,7 @@ A PAC-Bayes bound provides a high probability bound <em>simultaneously</em> over
 
 <h1 id="example-1-sub-gaussian-random-vectors">Example 1: Sub-Gaussian random vectors</h1>
 
-<p>This comes from our paper on <a rel="nofollow noopener noreferrer" href="https://arxiv.org/abs/2311.08168">time-uniform confidence spheres</a>. Consider \(n\) iid copies \(X_1,\dots,X_n\) of a \(\Sigma\)-sub-Gaussian random vector \(X\in\Re^d\). That is,</p>
+<p>This comes from our paper on <a href="https://arxiv.org/abs/2311.08168">time-uniform confidence spheres</a>. Consider \(n\) iid copies \(X_1,\dots,X_n\) of a \(\Sigma\)-sub-Gaussian random vector \(X\in\Re^d\). That is,</p>
 
 \[\E\exp(\lambda \la \theta, X\ra) \leq \exp\left(\frac{\lambda^2}{2}\la\theta,\Sigma\theta\ra\right),\]
 
@@ -208,7 +229,7 @@ A PAC-Bayes bound provides a high probability bound <em>simultaneously</em> over
 
 \[\E_\rho \la \theta, \Sigma\theta\ra = \la u,\Sigma u\ra + \beta^{-1}\Tr(\Sigma) \leq \norm{\Sigma} + \beta^{-1}\Tr(\Sigma),\]
 
-<p>using basic properties of the expectation of quadratic forms under Gaussian distributions (see e.g. <a rel="nofollow noopener noreferrer" href="https://statproofbook.github.io/P/mean-qf.html">here</a>), and definition of the operator norm as \(\norm{A} = \sup_{u,v:\norm{u}=\norm{v}=1}\la u,\Sigma v \ra\). Since this holds simultaneously for all \(\rho_u\), we obtain that, with probability \(1-\delta\),</p>
+<p>using basic properties of the expectation of quadratic forms under Gaussian distributions (see e.g. <a href="https://statproofbook.github.io/P/mean-qf.html">here</a>), and definition of the operator norm as \(\norm{A} = \sup_{u,v:\norm{u}=\norm{v}=1}\la u,\Sigma v \ra\). Since this holds simultaneously for all \(\rho_u\), we obtain that, with probability \(1-\delta\),</p>
 
 \[\sup_u \lambda \sum_{i\leq n} \la u,X_i\ra \leq \frac{n\lambda^2}{2}(\norm{\Sigma} + \beta^{-1}\Tr(\Sigma)) + \frac{\beta}{2} + \log(1/\delta).\]
 
@@ -216,7 +237,7 @@ A PAC-Bayes bound provides a high probability bound <em>simultaneously</em> over
 
 <h1 id="example-2-random-matrices-with-finite-orlicz-norm">Example 2: Random matrices with finite Orlicz-norm</h1>
 
-<p>This example is adapted from <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2108.08198">Zhivotovskiy (2024)</a>. Let \(M_1,\dots,M_n\) be iid copies of a random matrix \(M\) with finite sub-exponential <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Orlicz_space">Orlicz norm</a>, in the sense that, for some \(C&gt;0\),</p>
+<p>This example is adapted from <a href="https://arxiv.org/pdf/2108.08198">Zhivotovskiy (2024)</a>. Let \(M_1,\dots,M_n\) be iid copies of a random matrix \(M\) with finite sub-exponential <a href="https://en.wikipedia.org/wiki/Orlicz_space">Orlicz norm</a>, in the sense that, for some \(C&gt;0\),</p>
 
 \[\norm{\la \theta, M\phi\ra}_{\psi_1} \leq C \la\theta, \Sigma\phi\ra,\]
 
@@ -313,7 +334,7 @@ A PAC-Bayes bound provides a high probability bound <em>simultaneously</em> over
     <a link="back", href="/research_notes/">Back to all notes</a>
   </small>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

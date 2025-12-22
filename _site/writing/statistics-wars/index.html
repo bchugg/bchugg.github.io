@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -152,7 +173,7 @@
 
 <h1 id="royalls-three-questions">Royall’s three questions</h1>
 
-<p>In <a rel="nofollow noopener noreferrer" href="https://www.amazon.com/Statistical-Evidence-Likelihood-Monographs-Probability/dp/0412044110">Statistical evidence: A likelihood paradigm</a>, Richard Royall asks three questions that various schools of thought in the foundations of statistics have tried to answer in the past century:</p>
+<p>In <a href="https://www.amazon.com/Statistical-Evidence-Likelihood-Monographs-Probability/dp/0412044110">Statistical evidence: A likelihood paradigm</a>, Richard Royall asks three questions that various schools of thought in the foundations of statistics have tried to answer in the past century:</p>
 
 <ol>
   <li>What should I believe?</li>
@@ -160,13 +181,13 @@
   <li>How much evidence does this observation provide for a hypothesis?</li>
 </ol>
 
-<p>Royall focuses on the third question, arguing that any reasonable answer must rely on the “likelihood ratio” (a view called the <a rel="nofollow noopener noreferrer" href="https://thestatsmap.com/law-of-likelihood">law of the likelihood</a>).</p>
+<p>Royall focuses on the third question, arguing that any reasonable answer must rely on the “likelihood ratio” (a view called the <a href="https://thestatsmap.com/law-of-likelihood">law of the likelihood</a>).</p>
 
 <p>But Royall’s questions also serve as a useful frame on the debates at the foundations of statistics. They highlight the distinctions between various schools—Bayesian and frequentism, pragmatism versus puritanism, and disagreements over what the role of statistics really is and how probability should be used. Here I’ll try to show that much of the debate arises because various schools of statistical thought are trying to answer different questions.</p>
 
 <p>A reader could be forgiven for staring in bewilderment at the phrase “debates at the foundations of statistics.” Are there such things? What is there to debate about tallying the number of car crashes in Missouri, or calculating the standard deviation in the heights of school children? Regrettably, this is a reasonable question because of the way statistics is taught … everywhere. The stale view of statistics taught from grade school to undergraduate haunts every grad student who, at the bar, is asked “what do you do?”</p>
 
-<p>In fact, statistics has been the epicenter of more feuds and controversies than most fields. Throughout the 20th century, entire academic departments would often pick a side and staunchly refuse to hire anyone with the opposing perspective. Deborah Mayo calls these the <a rel="nofollow noopener noreferrer" href="https://www.lse.ac.uk/philosophy/events/phil-stats-wars/">statistics wars</a>. Statisticians believed the very foundations of reason itself were at stake. Ronald Fisher, one of the more colorful characters in the discipline’s history, <a rel="nofollow noopener noreferrer" href="https://statmodeling.stat.columbia.edu/2014/05/23/neyman-really-say-fishers-work-easy-get-right-answer-never-define-question-fisher-really-describe-neyman-theorem-proving-poseur-wouldnt-re/">is said to have</a> called one of his colleague’s views “horrifying [for] intellectual freedom in the west.”</p>
+<p>In fact, statistics has been the epicenter of more feuds and controversies than most fields. Throughout the 20th century, entire academic departments would often pick a side and staunchly refuse to hire anyone with the opposing perspective. Deborah Mayo calls these the <a href="https://www.lse.ac.uk/philosophy/events/phil-stats-wars/">statistics wars</a>. Statisticians believed the very foundations of reason itself were at stake. Ronald Fisher, one of the more colorful characters in the discipline’s history, <a href="https://statmodeling.stat.columbia.edu/2014/05/23/neyman-really-say-fishers-work-easy-get-right-answer-never-define-question-fisher-really-describe-neyman-theorem-proving-poseur-wouldnt-re/">is said to have</a> called one of his colleague’s views “horrifying [for] intellectual freedom in the west.”</p>
 
 <p>Here I’ll give a brief tour of how I think about the statistics wars. I’ll try to be mostly impartial—I’ll explore where I personally sit in future posts.</p>
 
@@ -183,7 +204,7 @@
 
 <p>While one can use Bayesian methods for purely pragmatic reasons, if you push Bayesian practitioners hard enough they will typically justify the use of their methods by appealing to the Bayesian interpretation of probability, which claims that <em>degrees of belief are represented by probabilities</em>. This is the core claim behind the Bayesian philosophy and is the link between Bayesianism and Royall’s first question. Bayesians contend that belief is best handled using the tools of probability theory and that the role of statistics is to formally update these beliefs using data.</p>
 
-<p>For Bayesians, this link between rationality and probability is more than mere analogy. They have developed frameworks to formally connect the two. The most famous of these is <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Cox%27s_theorem">Cox’s theorem</a> which posits that the beliefs of a rational agent <em>must</em> be treated as probabilities and obey certain arithmetical axioms. Cox was reacting to <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Probability_axioms">Kolmogorov’s axioms</a>, which are the most widely used axioms of probability theory but have nothing to do with rationality or belief. Unfortunately for Cox, while his axioms are the subject of the occasional philosophy seminar, they are never used by practicing statisticians (not least because they do not handle countable additivity, a technical yet crucial property when dealing with all but the simplest sample spaces).</p>
+<p>For Bayesians, this link between rationality and probability is more than mere analogy. They have developed frameworks to formally connect the two. The most famous of these is <a href="https://en.wikipedia.org/wiki/Cox%27s_theorem">Cox’s theorem</a> which posits that the beliefs of a rational agent <em>must</em> be treated as probabilities and obey certain arithmetical axioms. Cox was reacting to <a href="https://en.wikipedia.org/wiki/Probability_axioms">Kolmogorov’s axioms</a>, which are the most widely used axioms of probability theory but have nothing to do with rationality or belief. Unfortunately for Cox, while his axioms are the subject of the occasional philosophy seminar, they are never used by practicing statisticians (not least because they do not handle countable additivity, a technical yet crucial property when dealing with all but the simplest sample spaces).</p>
 
 <p>Most modern Bayesians appeal instead to Dutch book arguments to justify the connection between probability and belief. These say that if you assign numerical values to your beliefs and bet on them, then you are guaranteed to lose money unless your beliefs are consistent. That is, you should not bet at 3:2 odds that a coin will come up both heads and tails, otherwise a bookie can take both bets and be guaranteed to make money from you. Dutch book arguments are cleaner than Cox’s theorems, but significantly less powerful. They show only that <em>if</em> you are willing to assign numbers to your beliefs <em>and</em> want to bet on all outcomes, <em>then</em> your beliefs should be consistent. They don’t tell you why you should assign numbers to your beliefs in the first place, nor how to update your beliefs in the face of new evidence, a core part of Bayesianism.</p>
 
@@ -195,18 +216,18 @@
 
 <p>Objective Bayesians (sometimes called logical Bayesians) are of the view that there is a single, correct prior that should be used. They typically appeal to symmetries and rational constraints to determine what it is. For instance, they would typically take the view that the correct prior to have when estimating the bias of a coin is 50/50 heads/tails because there is no reason to favor heads over tails and vice versa.</p>
 
-<p>The father of objective Bayesianism is arguably <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Harold_Jeffreys">Harold Jeffreys</a>, though <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/John_Maynard_Keynes">Keynes</a> introduced many of the concepts first. But Keynes didn’t think that <em>all</em> beliefs were quantifiable, setting him apart from most Bayesians. Jeffreys introduced the <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Jeffreys_prior">Jeffreys’ prior</a> which is often appealed to by objective Bayesians as the correct prior. Other notable objective Bayesians are <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Rudolf_Carnap">Rudolf Carnap</a>, <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Edwin_Thompson_Jaynes">ET Jaynes</a>, and <a rel="nofollow noopener noreferrer" href="https://www2.stat.duke.edu/~berger/">James Berger</a>.</p>
+<p>The father of objective Bayesianism is arguably <a href="https://en.wikipedia.org/wiki/Harold_Jeffreys">Harold Jeffreys</a>, though <a href="https://en.wikipedia.org/wiki/John_Maynard_Keynes">Keynes</a> introduced many of the concepts first. But Keynes didn’t think that <em>all</em> beliefs were quantifiable, setting him apart from most Bayesians. Jeffreys introduced the <a href="https://en.wikipedia.org/wiki/Jeffreys_prior">Jeffreys’ prior</a> which is often appealed to by objective Bayesians as the correct prior. Other notable objective Bayesians are <a href="https://en.wikipedia.org/wiki/Rudolf_Carnap">Rudolf Carnap</a>, <a href="https://en.wikipedia.org/wiki/Edwin_Thompson_Jaynes">ET Jaynes</a>, and <a href="https://www2.stat.duke.edu/~berger/">James Berger</a>.</p>
 
 <p><img id="img-50" src="/assets/writing_images/ramsey.jpeg" /></p>
 <p class="caption">The hulking figure of Frank Ramsey, who made seminal contributions to combinatorics (Ramsey numbers and graphs), optimal taxation (Ramsey rule), expeced utility theory (helped formalize it), and laid the foundations for modern subjective Bayesian theory.</p>
 
-<p>Subjective Bayesians, as you can probably guess, disagree that there is an objectively correct prior. They think of probability as something much more personal. Everyone will have a different prior to reflect their own thinking and assumptions. In the modern era, the two figures most associated with the subjectivist school are <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Frank_Ramsey_%28mathematician%29">Frank Ramsey</a> (see his 1926 paper <a rel="nofollow noopener noreferrer" href="https://fitelson.org/probability/ramsey.pdf">truth and probability</a>) and <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Bruno_de_Finetti">Bruno de Finetti</a> (if you speak French, see his 1937 paper <a rel="nofollow noopener noreferrer" href="http://www.numdam.org/item/AIHP_1937__7_1_1_0.pdf">La prévision: ses lois logiques, ses sources subjectives</a>). Other key figures in this tradition are LJ Savage and JL Doob.</p>
+<p>Subjective Bayesians, as you can probably guess, disagree that there is an objectively correct prior. They think of probability as something much more personal. Everyone will have a different prior to reflect their own thinking and assumptions. In the modern era, the two figures most associated with the subjectivist school are <a href="https://en.wikipedia.org/wiki/Frank_Ramsey_%28mathematician%29">Frank Ramsey</a> (see his 1926 paper <a href="https://fitelson.org/probability/ramsey.pdf">truth and probability</a>) and <a href="https://en.wikipedia.org/wiki/Bruno_de_Finetti">Bruno de Finetti</a> (if you speak French, see his 1937 paper <a href="http://www.numdam.org/item/AIHP_1937__7_1_1_0.pdf">La prévision: ses lois logiques, ses sources subjectives</a>). Other key figures in this tradition are LJ Savage and JL Doob.</p>
 
 <h1 id="question-2-what-should-i-do">Question 2: What should I do?</h1>
 
 <p>Battles in the history of statistics are often framed in terms of Bayesianism versus <em>frequentism</em>. Frequentist methods treat unknown parameters as fixed (the number of people who sneezed in Accra, Ghana isn’t random, it’s deterministic but unknown), and then perform inference on them. In other words, for the frequentist the only randomness comes from the data.</p>
 
-<p>In terms of outcomes that practicing statisticians actually care about, frequentism has mostly won the day. Confidence intervals, minimax rates, type-I and type-II error guarantees are all frequentist notions of performance.<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> And even when statisticians use Bayesian methods, they usually try to measure performance of those methods with frequentist notions (see, e.g., the <a rel="nofollow noopener noreferrer" href="https://thestatsmap.com/Bernstein-von-Mises-theorem">Bernstein von-Mises theorem</a>).</p>
+<p>In terms of outcomes that practicing statisticians actually care about, frequentism has mostly won the day. Confidence intervals, minimax rates, type-I and type-II error guarantees are all frequentist notions of performance.<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> And even when statisticians use Bayesian methods, they usually try to measure performance of those methods with frequentist notions (see, e.g., the <a href="https://thestatsmap.com/Bernstein-von-Mises-theorem">Bernstein von-Mises theorem</a>).</p>
 
 <p>But just like Bayesianism, there are divides within frequentism as well. The most famous of these is the battle between Jerzy Neyman, Egon Pearson, and Ronald Fisher, which began in the 1920s and lasts until this day. The disagreement is usually framed in terms of hypothesis testing, but it’s really over what statistics is trying to do as a discipline. The Neyman-Pearson camp were focused on Royall’s second question, while the Fisherian camp was focused on the third.</p>
 
@@ -240,7 +261,7 @@
 
 <p>Ronald Fisher—often called the father of modern statistics, seeing as he invented half the methods covered in a first year grad course—thought that statistics was in the business of quantifying evidence. This is a very natural idea and is in fact how statistics is often taught. If we have the hypothesis “smoking cigarettes causes lung cancer,” we collect data from smokers and non-smokers, see how many of each have lung cancer, and check to what extent the results refute our hypothesis.</p>
 
-<p>Fisher developed the <a rel="nofollow noopener noreferrer" href="https://thestatsmap.com/p-value">p-value</a>—bane of students and social scientists alike—for precisely this purpose. The p-value is a number that is computed from a dataset. The smaller the p-value, the more inconsistent the data is with a given hypothesis. <a rel="nofollow noopener noreferrer" href="http://thestatsmap.com/lady-tasting-tea">Legend has it</a> that Fisher developed the p-value trying to test if his colleague Muriel could tell if milk was placed in tea before or after the hot water. (She could … probably.)</p>
+<p>Fisher developed the <a href="https://thestatsmap.com/p-value">p-value</a>—bane of students and social scientists alike—for precisely this purpose. The p-value is a number that is computed from a dataset. The smaller the p-value, the more inconsistent the data is with a given hypothesis. <a href="http://thestatsmap.com/lady-tasting-tea">Legend has it</a> that Fisher developed the p-value trying to test if his colleague Muriel could tell if milk was placed in tea before or after the hot water. (She could … probably.)</p>
 
 <p><img id="img-90" src="/assets/writing_images/npf.jpg" /></p>
 <p id="center" class="caption">Neyman (left), Pearson (center), Fisher (right). The progenitors of the statistics wars.</p>
@@ -254,7 +275,7 @@
 <blockquote>
   <p>Russians [who] are made familiar with the ideal that research in pure science can and should be geared to technological performance, in the comprehensive organized effort of a five-year plan for the nation.</p>
 
-  <p>- <a rel="nofollow noopener noreferrer" href="https://errorstatistics.com/wp-content/uploads/2021/02/fisher_1955-statmethssci-induct.pdf">Fisher, 1955</a>, pg 70.</p>
+  <p>- <a href="https://errorstatistics.com/wp-content/uploads/2021/02/fisher_1955-statmethssci-induct.pdf">Fisher, 1955</a>, pg 70.</p>
 </blockquote>
 
 <p>He goes on to suggest that Neyman and Pearson are sacrificing truth for economic value:</p>
@@ -265,9 +286,9 @@
 
 <h1 id="what-happens-in-practice">What happens in practice?</h1>
 
-<p>In terms of how scientists and social scientists use statistics in practice, very few are concerned with Royall’s first question. Seldom, if ever, do papers give explicit probabilities for the authors’ beliefs, nor claim a right to tell the reader what to believe. Using statistics to mathematize beliefs has mostly left industry and academia, insteading ending up in niche (<a rel="nofollow noopener noreferrer" href="https://www.amazon.com/Precipice-Existential-Risk-Future-Humanity/dp/0316484911">or perhaps not so niche</a>) corners of the internet.</p>
+<p>In terms of how scientists and social scientists use statistics in practice, very few are concerned with Royall’s first question. Seldom, if ever, do papers give explicit probabilities for the authors’ beliefs, nor claim a right to tell the reader what to believe. Using statistics to mathematize beliefs has mostly left industry and academia, insteading ending up in niche (<a href="https://www.amazon.com/Precipice-Existential-Risk-Future-Humanity/dp/0316484911">or perhaps not so niche</a>) corners of the internet.</p>
 
-<p>However, statistical practice today—especially hypothesis testing—<em>is</em> an awkward blend of both the second and the third question. In <a rel="nofollow noopener noreferrer" href="https://pure.mpg.de/rest/items/item_2101336/component/file_2101335/content">Mindless Statistics</a>, Gert Gigerenzer calls attention to the “null ritual”, which is the standardized hypothesis testing procedure taught in many textbooks and graduate programs to psychologists and social scientists.</p>
+<p>However, statistical practice today—especially hypothesis testing—<em>is</em> an awkward blend of both the second and the third question. In <a href="https://pure.mpg.de/rest/items/item_2101336/component/file_2101335/content">Mindless Statistics</a>, Gert Gigerenzer calls attention to the “null ritual”, which is the standardized hypothesis testing procedure taught in many textbooks and graduate programs to psychologists and social scientists.</p>
 
 <p><strong>The null ritual</strong>:</p>
 
@@ -283,17 +304,17 @@
 
 <p>For one, we’re including irrelevant information. In the Neyman-Pearson paradigm, the p-value has no use beyond comparing it to the pre-chosen significance level (0.05 in the null ritual). If the p-value is less than 0.05, we reject the null hypothesis. If not, we don’t. This means that a p-value of 0.049 and 0.00001 have the exact same implication for decision-making. So what are we doing by reporting it?</p>
 
-<p>Unfortunately, this extra information is not only irrelevant, it’s actively harmful. Reporting the p-value alongside the decision (accept/reject) confuses the p-value for the significance level, resulting in invalid statistical guarantees. You can read more about the issues <a rel="nofollow noopener noreferrer" href="https://benchugg.com/research_notes/p_values/">here</a>, but the non-technical overview is that the null ritual makes it dangerously easy to make false and misleading claims.</p>
+<p>Unfortunately, this extra information is not only irrelevant, it’s actively harmful. Reporting the p-value alongside the decision (accept/reject) confuses the p-value for the significance level, resulting in invalid statistical guarantees. You can read more about the issues <a href="https://benchugg.com/research_notes/p_values/">here</a>, but the non-technical overview is that the null ritual makes it dangerously easy to make false and misleading claims.</p>
 
 <p>The upshot is that the statistics wars haven’t been fought and won, they’re still being fought.</p>
 
-<p><em>Thanks to <a rel="nofollow noopener noreferrer" href="https://thedeepdish.org/">Rich</a> for comments.</em></p>
+<p><em>Thanks to <a href="https://thedeepdish.org/">Rich</a> for comments.</em></p>
 
 <hr />
 <div class="footnotes" role="doc-endnotes">
   <ol>
     <li id="fn:1" role="doc-endnote">
-      <p>While Bayesianism is usually laid at the feet of Thomas Bayes, it can arguably be traced back to Blaise Pascal and Pierre de Fermat in a <a rel="nofollow noopener noreferrer" href="https://www.york.ac.uk/depts/maths/histstat/pascal.pdf">correspondence</a> between 1654 and 1660 about what rational gamblers would do in games of chance. (These letters are often associated with the birth of probability itself). Also, while Bayes’ discovered (a simple version of) the theorem that Bayesians use to update their beliefs, it’s unclear that he would have endorsed Bayesianism as practiced today. Pierre de Laplace actually did much more to popularize Bayes’ contributions than did Bayes himself, and also made the formal connection between belief and Bayes’ theorem. Laplace took an equation that was published post-humously by Bayes in 1763, and drew the connection to human belief. In fact, the <a rel="nofollow noopener noreferrer" href="https://web.archive.org/web/20110410085940/http://www.stat.ucla.edu/history/essay.pdf">original paper by Bayes and Price</a> does not contain the words “belief”, “credence”, “rational”, etc. But Laplace, the stalwart academic, duly credited his insights to Bayes, and the philosophical school which links belief and probability is known as “Bayesianism”. After Laplace, however, Bayesianism mostly lay dormant until the 20th century, when it was revived by figures such as Ramsey, Finetti, and Jeffreys. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+      <p>While Bayesianism is usually laid at the feet of Thomas Bayes, it can arguably be traced back to Blaise Pascal and Pierre de Fermat in a <a href="https://www.york.ac.uk/depts/maths/histstat/pascal.pdf">correspondence</a> between 1654 and 1660 about what rational gamblers would do in games of chance. (These letters are often associated with the birth of probability itself). Also, while Bayes’ discovered (a simple version of) the theorem that Bayesians use to update their beliefs, it’s unclear that he would have endorsed Bayesianism as practiced today. Pierre de Laplace actually did much more to popularize Bayes’ contributions than did Bayes himself, and also made the formal connection between belief and Bayes’ theorem. Laplace took an equation that was published post-humously by Bayes in 1763, and drew the connection to human belief. In fact, the <a href="https://web.archive.org/web/20110410085940/http://www.stat.ucla.edu/history/essay.pdf">original paper by Bayes and Price</a> does not contain the words “belief”, “credence”, “rational”, etc. But Laplace, the stalwart academic, duly credited his insights to Bayes, and the philosophical school which links belief and probability is known as “Bayesianism”. After Laplace, however, Bayesianism mostly lay dormant until the 20th century, when it was revived by figures such as Ramsey, Finetti, and Jeffreys. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
     </li>
     <li id="fn:2" role="doc-endnote">
       <p>They are all claims about what properties your method has if you run it many times. Eg, a 95% confidence interval says that if you run the experiment n times, then the true parameter will be in your confidence set 95% of the time as n tends to infinity. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
@@ -305,9 +326,9 @@
     <a id="back", href="/writing/">Back to all writing</a>
   </small>
   <br><br>
-  <p id="subscribe"><a rel="nofollow noopener noreferrer" href="https://stepstophaeacia.substack.com/">Subscribe</a> to get notified about new essays.</p>
+  <p id="subscribe"><a href="https://stepstophaeacia.substack.com/">Subscribe</a> to get notified about new essays.</p>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

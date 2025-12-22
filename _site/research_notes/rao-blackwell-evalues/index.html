@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -140,9 +161,9 @@
   \[\newcommand{\E}{\mathbb{E}}
 \newcommand{\calF}{\mathcal{F}}\]
 
-<p>The <a rel="nofollow noopener noreferrer" href="https://thestatsmap.com/Rao-Blackwell-theorem">Rao-Blackwell theorem</a> is a famous result in statistical decision theory which says that the mean squared error (or more generally, any convex loss) of an estimator can never be made worse by conditioning on a sufficient statistic. While the theory doesn’t say that the estimator will certainly get better, the gains in practice are often significant. (See this <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Rao%E2%80%93Blackwell_theorem#Example">nice example from wikipedia</a>.)</p>
+<p>The <a href="https://thestatsmap.com/Rao-Blackwell-theorem">Rao-Blackwell theorem</a> is a famous result in statistical decision theory which says that the mean squared error (or more generally, any convex loss) of an estimator can never be made worse by conditioning on a sufficient statistic. While the theory doesn’t say that the estimator will certainly get better, the gains in practice are often significant. (See this <a href="https://en.wikipedia.org/wiki/Rao%E2%80%93Blackwell_theorem#Example">nice example from wikipedia</a>.)</p>
 
-<p>It turns out that there is a similar result in the world of <a rel="nofollow noopener noreferrer" href="https://thestatsmap.com/e-value">e-values</a>, which I realized recently while writing a <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2508.00770">paper on post-hoc hypothesis testing</a>. I only wrote down the result for testing point hypotheses (see Theorem 4.10 in there), but it holds more generally. The proof is exceedingly simple and the statement is very general.</p>
+<p>It turns out that there is a similar result in the world of <a href="https://thestatsmap.com/e-value">e-values</a>, which I realized recently while writing a <a href="https://arxiv.org/pdf/2508.00770">paper on post-hoc hypothesis testing</a>. I only wrote down the result for testing point hypotheses (see Theorem 4.10 in there), but it holds more generally. The proof is exceedingly simple and the statement is very general.</p>
 
 <p>Suppose we are testing the null \(\theta\in\Theta_0\) against the alternative \(\theta\in\Theta_1\), and suppose there is a sufficient statistic \(T\) for the parameter \(\theta\). (This probably means we’re in a parametric setting.)</p>
 
@@ -177,7 +198,7 @@
 
 <p>Log-power under the alternative is the usual criteria by which we judge e-values, and this result shows that log-power will never get worse if we condition on a sufficient statistic.</p>
 
-<p>This result can be easily extended to <a rel="nofollow noopener noreferrer" href="https://thestatsmap.com/e-process">e-processes</a>. If \((E_t)\) is an e-process adapted to a filtration \(\calF = (\calF_t)\) and \((T_t)\) is a sequence of sufficient statistics also adapted to \(\calF\) (e.g., \(T_t = \sum_{i\leq t}X_i\) for a binomial or Poisson process), then</p>
+<p>This result can be easily extended to <a href="https://thestatsmap.com/e-process">e-processes</a>. If \((E_t)\) is an e-process adapted to a filtration \(\calF = (\calF_t)\) and \((T_t)\) is a sequence of sufficient statistics also adapted to \(\calF\) (e.g., \(T_t = \sum_{i\leq t}X_i\) for a binomial or Poisson process), then</p>
 
 \[S_t = \E_{\theta^*}[E_t | T_t],\]
 
@@ -188,7 +209,7 @@
     <a link="back", href="/research_notes/">Back to all notes</a>
   </small>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

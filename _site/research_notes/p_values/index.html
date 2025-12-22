@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -158,7 +179,7 @@
 
 <h1 id="an-overly-long-introduction-to-p-values">An overly long introduction to p-values</h1>
 
-<p>With the <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Replication_crisis">replication crisis</a> in full swing (among those of us who aren’t <a rel="nofollow noopener noreferrer" href="https://bigthink.com/hard-science/the-replication-crisis-is-overstated/">in denial about its existence</a>, at least), p-values have taken a public relations beating. People are aware that they can be manipulated and abused to arrive at a pre-determined conclusion and make your results look falsely significant. Suspicion that your friendly neighborhood sociologist is p-hacking their way to their next Nature paper is at an all time high.</p>
+<p>With the <a href="https://en.wikipedia.org/wiki/Replication_crisis">replication crisis</a> in full swing (among those of us who aren’t <a href="https://bigthink.com/hard-science/the-replication-crisis-is-overstated/">in denial about its existence</a>, at least), p-values have taken a public relations beating. People are aware that they can be manipulated and abused to arrive at a pre-determined conclusion and make your results look falsely significant. Suspicion that your friendly neighborhood sociologist is p-hacking their way to their next Nature paper is at an all time high.</p>
 
 <p>I’m here to <del>comfort you</del> tell you that it’s even worse than you think. Many statisticians defend p-values by emphasizing that they’re simply tools—it’s their misuse which is causing the replication crisis. If everyone understood them better and adopted honest research practices, then things would be okay. “Don’t blame us” is being screamed from the ramparts.</p>
 
@@ -169,7 +190,7 @@ Suppose you set out to test the efficacy of a new drug. You gather some number o
 
 <p>This is a standard hypothesis testing setup. The null hypothesis \(H_0\) is that the drug is no more effective (or has a worse effect) than the placebo, on average. The alternative \(H_1\) is that the drug is more effective than the placebo, on average. We want to determine whether the study gives us enough evidence to reject the null.</p>
 
-<p>Hypothesis testing is usually done with p-values. A p-value is a random variable (a function of the data) such that, if the null hypothesis is true, is unlikely to be small. That is, if the drug is no more effective than the placebo, the p-value will be less than 0.05 only 5% of the time (say). Small p-values  therefore act as evidence against the null. (The p-value is <em>not</em> the probability that the null hypothesis is true nor the probability that the result is due to chance, <a rel="nofollow noopener noreferrer" href="https://journals.sagepub.com/doi/full/10.1177/2515245919858072?journalCode=ampa">as many intro psychology textbooks would have you believe</a>.)</p>
+<p>Hypothesis testing is usually done with p-values. A p-value is a random variable (a function of the data) such that, if the null hypothesis is true, is unlikely to be small. That is, if the drug is no more effective than the placebo, the p-value will be less than 0.05 only 5% of the time (say). Small p-values  therefore act as evidence against the null. (The p-value is <em>not</em> the probability that the null hypothesis is true nor the probability that the result is due to chance, <a href="https://journals.sagepub.com/doi/full/10.1177/2515245919858072?journalCode=ampa">as many intro psychology textbooks would have you believe</a>.)</p>
 
 <p>Mathematically, let \(P_n\) be a p-value which is a calculated based on \(n\) participants (usually by means of a test-statistic but the details are unimportant for this discussion). The (conservative) p-value guarantee reads:</p>
 
@@ -190,7 +211,7 @@ Suppose you set out to test the efficacy of a new drug. You gather some number o
 <h2 id="1-significance-adjustments">1. Significance adjustments</h2>
 
 <p>Let’s suppose you set your significance level to \(\alpha = 0.001\). You want to be careful—this is a drug trial after all. 
-You gather \(n=10,000\) participants and observe a p-value of 0.004. Uh oh. Now you have to go tell your boss that you can’t reject the null and the study was a waste. (Ideally you would still publish the study to avoid the <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Publication_bias#:~:text=Publication%20bias%20is%20sometimes%20called,a%20bias%20in%20published%20research.">file-drawer effect</a>, but we’d also like ).</p>
+You gather \(n=10,000\) participants and observe a p-value of 0.004. Uh oh. Now you have to go tell your boss that you can’t reject the null and the study was a waste. (Ideally you would still publish the study to avoid the <a href="https://en.wikipedia.org/wiki/Publication_bias#:~:text=Publication%20bias%20is%20sometimes%20called,a%20bias%20in%20published%20research.">file-drawer effect</a>, but we’d also like ).</p>
 
 <p>But \(P_n=0.004\) <em>seems</em> like such a low p-value. If you had only set \(\alpha\) to be 0.005, then you could have rejected the null! 
 It would be very tempting (and is undoubtedly common) to report that you reject the null at \(\alpha = 0.005\). Nobody is checking what your initial value of \(\alpha\) was. Unfortunately, this would mean that \(\alpha\) was selected based on the data, which is not allowed. You’re stuck with your original significance level, sorry.</p>
@@ -209,7 +230,7 @@ It would be very tempting (and is undoubtedly common) to report that you reject 
 
 <p>Optional continuation is the flip side of peeking and early stopping. Suppose you calculate your p-value after gathering the data from your 10,000 participants. As above, the p-value is 0.004 but your significance level is \(\alpha=0.001\). Since this looks promising, it’s very tempting to gather a few more participants and see if your p-value will go down. But again, this is illegal.  It would mean your sample size is a function of your data. <strong>So continuing the experiment by gathering more participants is invalid.</strong></p>
 
-<p>Unfortunately, this also seems to be common practice. In an anonymous survey of over 2,000 psychologists, <a rel="nofollow noopener noreferrer" href="https://pubmed.ncbi.nlm.nih.gov/22508865/">more than half admitted to</a> deciding whether to collect more data based on the results thus far. And <a rel="nofollow noopener noreferrer" href="https://faculty.haas.berkeley.edu/dana_carney/pdf_my%20position%20on%20power%20poses.pdf">here is Dana Carney discussing</a> how they conducted the infamous <a rel="nofollow noopener noreferrer" href="https://www.bu.edu/wgs/files/2014/12/Carney-et-al.-2010-PowerPosingAffectsNeuroendocrineHormones.pdf">power-posing study</a>:</p>
+<p>Unfortunately, this also seems to be common practice. In an anonymous survey of over 2,000 psychologists, <a href="https://pubmed.ncbi.nlm.nih.gov/22508865/">more than half admitted to</a> deciding whether to collect more data based on the results thus far. And <a href="https://faculty.haas.berkeley.edu/dana_carney/pdf_my%20position%20on%20power%20poses.pdf">here is Dana Carney discussing</a> how they conducted the infamous <a href="https://www.bu.edu/wgs/files/2014/12/Carney-et-al.-2010-PowerPosingAffectsNeuroendocrineHormones.pdf">power-posing study</a>:</p>
 
 <blockquote>
   <p>We ran subjects in chunks and checked the effect along the
@@ -217,14 +238,14 @@ way. It was something like 25 subjects run, then 10, then 7, then 5. Back then t
 seemed like saving money (assuming your effect size was big enough and p-value was the only issue). […] The final sample size was \(N=42\).</p>
 </blockquote>
 
-<p>Unsurprisingly, power-posing—despite being the <a rel="nofollow noopener noreferrer" href="https://www.ted.com/playlists/171/the_most_popular_ted_talks_of_all_time">second most popular Ted Talk of all time</a> with over <a rel="nofollow noopener noreferrer" href="https://www.ted.com/talks/amy_cuddy_your_body_language_may_shape_who_you_are?referrer=playlist-the_most_popular_ted_talks_of_all_time&amp;autoplay=true&amp;subtitle=en">71 million views</a>—failed to replicate and has been discredited. (If you’re wondering why anyone would publish a study with a sample size of 42 then you’re not alone. It’s insane anyone takes these studies seriously.)</p>
+<p>Unsurprisingly, power-posing—despite being the <a href="https://www.ted.com/playlists/171/the_most_popular_ted_talks_of_all_time">second most popular Ted Talk of all time</a> with over <a href="https://www.ted.com/talks/amy_cuddy_your_body_language_may_shape_who_you_are?referrer=playlist-the_most_popular_ted_talks_of_all_time&amp;autoplay=true&amp;subtitle=en">71 million views</a>—failed to replicate and has been discredited. (If you’re wondering why anyone would publish a study with a sample size of 42 then you’re not alone. It’s insane anyone takes these studies seriously.)</p>
 
 <p>The problems with optional continuation don’t stop there. They get more severe the more you meditate on them. Suppose you run a first clinical trial and, based on the results, run a second. In practice, we would consider this to be a completely separate study and assume that the p-value in the two studies are independent. Is this correct? After all, we only did the second study because of the results of the first. So in some sense, the sample size of the second study is data dependent.</p>
 
 <p>There’s no great solution to this problem. In the real world, everything is related to everything else. “Independence” is a nice statistical concept allowing us to do math, but few studies on the same topic would truly be independent of one another. If you take this issue seriously however, then you should be worried since it arises constantly in practice. Two examples:</p>
 
 <ul>
-  <li>In March 2021 <a rel="nofollow noopener noreferrer" href="https://www.bbc.com/news/science-environment-56491033">the LHC recorded a \(3\sigma\) event</a> against the null<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>, where the null hypothesis represented the standard model of physics. That is, they recorded an event that was extremely unlikely according to the standard model. Like good scientists, they were skeptical of the results, so they opted to collect data for 6 more months and then compute a new p-value. But this second experiment was dependent on the outcome (i.e., the data) of the first experiment.</li>
+  <li>In March 2021 <a href="https://www.bbc.com/news/science-environment-56491033">the LHC recorded a \(3\sigma\) event</a> against the null<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>, where the null hypothesis represented the standard model of physics. That is, they recorded an event that was extremely unlikely according to the standard model. Like good scientists, they were skeptical of the results, so they opted to collect data for 6 more months and then compute a new p-value. But this second experiment was dependent on the outcome (i.e., the data) of the first experiment.</li>
   <li>During the Covid-19 trials, many labs were running experiments on potential vaccines. When a vaccine looked promising, that lab would either conduct a larger experiment, or other labs would conduct experiments on the same vaccine. Should this be considered the same study?</li>
 </ul>
 
@@ -242,7 +263,7 @@ seemed like saving money (assuming your effect size was big enough and p-value w
 
 <p>So you don’t just have to guard against the issues of peeking and optional continuation in your experiment. You have to guard against them no matter what happens. But now we’re in an ugly situation: To argue about the validity of p-values, we have to argue about what we think would have happened had the outcome of the experiment been different. This brings an element of subjectivity into what was, moments before, a purely mathematical discussion.</p>
 
-<p>To drill this point home, let’s go back to the birth of the p-value. <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Lady_tasting_tea">Legend has it</a> that Ronald Fisher invented the p-value when a colleague, Muriel Bristol, claimed she could tell whether it was the milk or water that was first added to her tea. So Fisher made eight cups of tea, put milk in first in four of them and water in first in the other four.</p>
+<p>To drill this point home, let’s go back to the birth of the p-value. <a href="https://en.wikipedia.org/wiki/Lady_tasting_tea">Legend has it</a> that Ronald Fisher invented the p-value when a colleague, Muriel Bristol, claimed she could tell whether it was the milk or water that was first added to her tea. So Fisher made eight cups of tea, put milk in first in four of them and water in first in the other four.</p>
 
 <p>The null hypothesis is that she can’t tell the difference. Muriel guessed all eight cups correctly, which has odds 1/70 under the null. (70 is \({8\choose 4}\); Muriel knew there were four cups of each.) Fisher concluded that this was sufficient evidence to reject the null.</p>
 
@@ -254,14 +275,14 @@ seemed like saving money (assuming your effect size was big enough and p-value w
 
 <p>When we model the distribution of heights in the population as a normal distribution, this an approximation, it’s not literally true. Likewise, the assumption that a coin flip is equally likely to land heads or tails is false but allows us do useful calculations. Whether a coin lands heads or tails is entirely deterministic—it has to do with physics and laws of motion. In fact, the whole notion of “randomness,” (modulo possible quantum mechnical effects which don’t affect the macro-world) is a useful fiction enabling mathematicians to prove cool, and occasionally useful, theorems. Nothing is actually random.</p>
 
-<p>Statistics operates in the “all models are wrong but some are useful” paradigm, based on the now-extremely-popular-but-simulaneously-still-underappreciated aphorism <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/All_models_are_wrong">usually attributed to George Box</a>. Sure, the mathematics of p-values make some unrealistic assumptions, but are p-values useful?</p>
+<p>Statistics operates in the “all models are wrong but some are useful” paradigm, based on the now-extremely-popular-but-simulaneously-still-underappreciated aphorism <a href="https://en.wikipedia.org/wiki/All_models_are_wrong">usually attributed to George Box</a>. Sure, the mathematics of p-values make some unrealistic assumptions, but are p-values useful?</p>
 
-<p>Opinions differ, and they differ in part based on your philosophy of counterfactuals. I think the preceding discussion shows that they’re less useful than we’d like. No statistical tool will perfectly capture reality, but the ways in which they fail are important. The fact that the validity of p-values depends on counterfactuals is disappointing, and there are other tools which don’t have this property (<a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/E-values">e-values</a>, for instance). One can simultaneously recognize that statistics deals in imperfect tools while also trying to improve the quality of those tools.</p>
+<p>Opinions differ, and they differ in part based on your philosophy of counterfactuals. I think the preceding discussion shows that they’re less useful than we’d like. No statistical tool will perfectly capture reality, but the ways in which they fail are important. The fact that the validity of p-values depends on counterfactuals is disappointing, and there are other tools which don’t have this property (<a href="https://en.wikipedia.org/wiki/E-values">e-values</a>, for instance). One can simultaneously recognize that statistics deals in imperfect tools while also trying to improve the quality of those tools.</p>
 
 <h1 id="references">References</h1>
 <ul>
-  <li><a rel="nofollow noopener noreferrer" href="https://www.stat.cmu.edu/~aramdas/gtpsl/index.html">Aaditya Ramdas’ course on game-theoretic probability</a> which inspired a lot of this material.</li>
-  <li><a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2210.01948">Intro to safe anytime-valid inference</a>, which introduces technical tools that avoid many of the pitfalls of p-values.</li>
+  <li><a href="https://www.stat.cmu.edu/~aramdas/gtpsl/index.html">Aaditya Ramdas’ course on game-theoretic probability</a> which inspired a lot of this material.</li>
+  <li><a href="https://arxiv.org/pdf/2210.01948">Intro to safe anytime-valid inference</a>, which introduces technical tools that avoid many of the pitfalls of p-values.</li>
 </ul>
 
 <hr />
@@ -280,7 +301,7 @@ seemed like saving money (assuming your effect size was big enough and p-value w
     <a link="back", href="/research_notes/">Back to all notes</a>
   </small>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

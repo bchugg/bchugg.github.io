@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -174,9 +195,9 @@
 
 <h1 id="introduction">Introduction</h1>
 
-<p>We’ve previously discussed the <a href="/research_notes/median-of-means-multivariate/">median-of-means estimator</a> for estimating the mean of random vectors. While median-of-means has sub-Gaussian performance assuming only the existence of the covariance matrix, it’s a complicated estimator to implement in the multivariate setting. Remarkably, there’s a simple threshold-based estimator <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/1802.04308.pdf">due to Catoni and Giulini</a> that achieves <em>near</em> sub-Gaussian performance.</p>
+<p>We’ve previously discussed the <a href="/research_notes/median-of-means-multivariate/">median-of-means estimator</a> for estimating the mean of random vectors. While median-of-means has sub-Gaussian performance assuming only the existence of the covariance matrix, it’s a complicated estimator to implement in the multivariate setting. Remarkably, there’s a simple threshold-based estimator <a href="https://arxiv.org/pdf/1802.04308.pdf">due to Catoni and Giulini</a> that achieves <em>near</em> sub-Gaussian performance.</p>
 
-<p>Let \(\Xvec_1, \Xvec_2,\dots,\Xvec_n\sim P\) be iid (this condition can be weakened—see <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2311.08168.pdf">our paper</a>) with mean \(\muvec\) and assume that the second moment is bounded by \(v\):</p>
+<p>Let \(\Xvec_1, \Xvec_2,\dots,\Xvec_n\sim P\) be iid (this condition can be weakened—see <a href="https://arxiv.org/pdf/2311.08168.pdf">our paper</a>) with mean \(\muvec\) and assume that the second moment is bounded by \(v\):</p>
 
 \[\begin{equation}
 \E_P \norm{\Xvec}^2 \leq v&lt;\infty. 
@@ -252,7 +273,7 @@
 \[\sum_{i\leq t} \int_{\Theta} f(\Xvec_i,\thetavec) \rho(\d\thetavec)
 \leq \sum_{i\leq t}\int_{\Theta} \log\E e^{ f(\Xvec,\thetavec)} \rho(\d\thetavec)+ \kl(\rho\|\nu) + \log\frac{1}{\alpha}.\]
 
-<p>We won’t prove this bound. It’s a standard result and appears in Catoni’s <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/0712.0248.pdf">treatise</a> on PAC-Bayesian theory.</p>
+<p>We won’t prove this bound. It’s a standard result and appears in Catoni’s <a href="https://arxiv.org/pdf/0712.0248.pdf">treatise</a> on PAC-Bayesian theory.</p>
 
 <p>Let’s apply this result with the function \(f(\Xvec, \thetavec) = \lambda\la \thetavec, \thres(\Xvec) - \muvec^\thres\ra\).
 Keeping in mind that</p>
@@ -410,7 +431,7 @@ with probability \(1-\alpha\),</p>
     <a link="back", href="/research_notes/">Back to all notes</a>
   </small>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -157,7 +178,7 @@
     \Pr\left(|\muhat^\mom - \mu| \leq \sigma \bigg(\frac{32\log(1/\delta)}{n}\bigg)^{1/2}\right)\geq 1-\delta.\tag{1}
 \end{equation}\]
 
-<p>There are two possible approaches to sequentializing this estimator. We could keep the group size fixed and create more groups as we receive more observations. Or we could keep the number of groups fixed and have their size grow over time. I think the first approach is possible (using <a rel="nofollow noopener noreferrer" href="https://arxiv.org/abs/1906.09712">confidence sequences for the median</a>), but it gets messy (what does one do when the newest group is not full, for instance?). The second approach leads to a much cleaner solution.</p>
+<p>There are two possible approaches to sequentializing this estimator. We could keep the group size fixed and create more groups as we receive more observations. Or we could keep the number of groups fixed and have their size grow over time. I think the first approach is possible (using <a href="https://arxiv.org/abs/1906.09712">confidence sequences for the median</a>), but it gets messy (what does one do when the newest group is not full, for instance?). The second approach leads to a much cleaner solution.</p>
 
 <p>Fix the number of groups at \(k\). Call them  \(G_1,\dots,G_k\). We iteratively add observations to each group over time. We maintain a confidence sequence \(C^g(\alpha) \equiv (C^g_t(\alpha))_{t\geq 1}\) for the  mean of each group, centered at some (weighted) empirical mean \(S_t^g\).   We then have \(\muhat_t^\mom = \median(S_t^1,\dots,S_t^g)\). The following result provides a template on the deviation from \(\mu\) of \(\muhat_t^\mom\) as a function of the widths of the confidence sequences. Let \(\ell(C)\) denote the Lebesgue measure of a set \(C\subset\mathbb R\).</p>
 
@@ -234,7 +255,7 @@ On the event \(E&gt;k/2\), more than half the empirical means \(S_t^g\) are with
     <a link="back", href="/research_notes/">Back to all notes</a>
   </small>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -139,7 +160,7 @@
   <p class='title'>Popper as Historian: The Case of Kant</p> 
   <p id="date">March 29, 2025</p>
   <br/><br/>
-  <p>Karl Popper is underrated as a historian. His worldview was centered on the idea of a <em>problem</em>. He thought that knowledge growth begins with problems—not with observations or data or experience. His political philosophy was focused on piecemeal, incremental reforms aimed at specific problems, instead of ideologically driven radical approaches. His critique of historicism was based on the idea that today’s problems lead to solutions, which in turn create new problems that cannot be predicted. “All life is problem solving,” <a rel="nofollow noopener noreferrer" href="https://www.goodreads.com/book/show/61557.All_Life_is_Problem_Solving">he was fond of saying</a>.</p>
+  <p>Karl Popper is underrated as a historian. His worldview was centered on the idea of a <em>problem</em>. He thought that knowledge growth begins with problems—not with observations or data or experience. His political philosophy was focused on piecemeal, incremental reforms aimed at specific problems, instead of ideologically driven radical approaches. His critique of historicism was based on the idea that today’s problems lead to solutions, which in turn create new problems that cannot be predicted. “All life is problem solving,” <a href="https://www.goodreads.com/book/show/61557.All_Life_is_Problem_Solving">he was fond of saying</a>.</p>
 
 <p>Popper’s obsession with problems led him to read history differently than many people. He would never present the content of someone’s argument without understanding what particular problem they were trying to solve. This gave him tremendous respect for people who were ultimately wrong, but nevertheless solved a problem that were plaguing people at the time. He appreciated both empiricism and logical positivism, philosophical traditions which he ultimately abandoned but which helpfully pushed back against subjectivism and religious dogmatism.</p>
 
@@ -147,7 +168,7 @@
 
 <p>Popper wasn’t an uncontroversial historian. His problem-oriented perspective led him to theories that other historians wouldn’t consider kosher. His theory that Plato’s theory of forms rose from troubles with Pythagorean atomism<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> is not something I’ve seen corroborated elsewhere, and historians have criticized his readings of Kant, Hegel, and Plato. (He did teach himself ancient Greek, surely he gets some sort of break for that.)</p>
 
-<p>But his perspective is also a refreshing way of understanding history. And it’s often very insightful. Popper changed the way I think about Immanuel Kant and here I want to discuss two of the problems Kant was considering that led him to his critique of pure reason and his notion of a priori knowledge. (If you want to hear some version of this in audio form, <a rel="nofollow noopener noreferrer" href="https://www.incrementspodcast.com/80">episode 80</a> and <a rel="nofollow noopener noreferrer" href="https://www.incrementspodcast.com/59">episode 59</a> should keep you entertained.)</p>
+<p>But his perspective is also a refreshing way of understanding history. And it’s often very insightful. Popper changed the way I think about Immanuel Kant and here I want to discuss two of the problems Kant was considering that led him to his critique of pure reason and his notion of a priori knowledge. (If you want to hear some version of this in audio form, <a href="https://www.incrementspodcast.com/80">episode 80</a> and <a href="https://www.incrementspodcast.com/59">episode 59</a> should keep you entertained.)</p>
 
 <p><img id="img-70" src="/assets/writing_images/kant.jpg" /></p>
 <p class="caption">Immanuel Kant, presumably either wondering if it's ethical to go to a barber, or wondering how on earth you leave this city with all it's bridges.</p>
@@ -156,7 +177,7 @@
 
 <p>Kant was born, lived, and died in Konigsberg (now Kaliningrad). During all the time he spent not leaving Konigsberg, he naturally pondered whether the universe was finite or infinite in time. This was a problem left open by Newtonian mechanics, the going theory of physics at the time. (This was, of course, more than 100 years before Einstein.)</p>
 
-<p>Kant thought he had a logical proof for both. You can read these in detail in his <a rel="nofollow noopener noreferrer" href="https://www.gutenberg.org/files/4280/4280-h/4280-h.htm">Critique of Pure Reason</a>, but the arguments are roughly as follows:</p>
+<p>Kant thought he had a logical proof for both. You can read these in detail in his <a href="https://www.gutenberg.org/files/4280/4280-h/4280-h.htm">Critique of Pure Reason</a>, but the arguments are roughly as follows:</p>
 
 <ul>
   <li>Suppose the universe is infinite. Then an infinite number of years elapsed before this moment. But this is impossible, since we’ve reached this moment. Therefore, the universe must be finite.</li>
@@ -205,7 +226,7 @@
   <p>- <em>C&amp;R, page 244</em></p>
 </blockquote>
 
-<p>Not many scientists or philosophers buy the idea of a priori knowledge now (not in the way Kant was thinking about it at least, but Kant was of course correct that <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/The_Blank_Slate">we’re not blank slates</a>). But Kant’s philosophy helped break the spell that generating knowledge is easy and passive—that we learn by simply observing the truth which is the world is serving us. Kant helped us realize that we must actively theorize about the world, using observations not as an oracle for truth but instead as tests for our theories. And these insights laid the foundations for Popper’s own philosophy of critical rationalism.</p>
+<p>Not many scientists or philosophers buy the idea of a priori knowledge now (not in the way Kant was thinking about it at least, but Kant was of course correct that <a href="https://en.wikipedia.org/wiki/The_Blank_Slate">we’re not blank slates</a>). But Kant’s philosophy helped break the spell that generating knowledge is easy and passive—that we learn by simply observing the truth which is the world is serving us. Kant helped us realize that we must actively theorize about the world, using observations not as an oracle for truth but instead as tests for our theories. And these insights laid the foundations for Popper’s own philosophy of critical rationalism.</p>
 
 <hr />
 <div class="footnotes" role="doc-endnotes">
@@ -223,9 +244,9 @@
     <a id="back", href="/writing/">Back to all writing</a>
   </small>
   <br><br>
-  <p id="subscribe"><a rel="nofollow noopener noreferrer" href="https://stepstophaeacia.substack.com/">Subscribe</a> to get notified about new essays.</p>
+  <p id="subscribe"><a href="https://stepstophaeacia.substack.com/">Subscribe</a> to get notified about new essays.</p>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

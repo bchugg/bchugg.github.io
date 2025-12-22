@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -141,7 +162,7 @@
 \newcommand{\ind}{\mathbf{1}}
 \newcommand{\Pr}{\mathbb{P}}\]
 
-<p>When testing a point null \(P\) against a point alternative \(Q\), the <a rel="nofollow noopener noreferrer" href="https://thestatsmap.com/Neyman-Pearson-lemma">Neyman-Pearson lemma</a> says to find the threshold \(\kappa\) such that</p>
+<p>When testing a point null \(P\) against a point alternative \(Q\), the <a href="https://thestatsmap.com/Neyman-Pearson-lemma">Neyman-Pearson lemma</a> says to find the threshold \(\kappa\) such that</p>
 
 \[P(\lr(X) \geq \kappa) =\alpha,\]
 
@@ -152,7 +173,7 @@
 0,&amp;\text{otherwise},
 \end{cases}\]
 
-<p>and is <a rel="nofollow noopener noreferrer" href="https://thestatsmap.com/uniformly-most-powerful-test">uniformly most powerful</a>.</p>
+<p>and is <a href="https://thestatsmap.com/uniformly-most-powerful-test">uniformly most powerful</a>.</p>
 
 <p>Such a value \(\kappa\) can only be guaranteed to exist when the distributions are continuous. What do you do when the distributions are discrete?</p>
 
@@ -180,14 +201,14 @@
 0, &amp; \lr(x) &lt;\lr(x_i).
 \end{cases}\]
 
-<p>But this is precisely the classical form of the <a rel="nofollow noopener noreferrer" href="https://thestatsmap.com/Neyman-Pearson-lemma-for-discrete-distributions">Neyman-Pearson lemma in the discrete case</a>. So we have recovered the discrete NP-lemma by using external randomization on the data and applying the continuous NP-lemma. I would like to claim that this is a fresh and deep insight, but alas this should in fact be radically unsurprising if you think about what “randomization” actually means in the discrete case. Merry Christmas.</p>
+<p>But this is precisely the classical form of the <a href="https://thestatsmap.com/Neyman-Pearson-lemma-for-discrete-distributions">Neyman-Pearson lemma in the discrete case</a>. So we have recovered the discrete NP-lemma by using external randomization on the data and applying the continuous NP-lemma. I would like to claim that this is a fresh and deep insight, but alas this should in fact be radically unsurprising if you think about what “randomization” actually means in the discrete case. Merry Christmas.</p>
 
 
   <small>
     <a link="back", href="/research_notes/">Back to all notes</a>
   </small>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

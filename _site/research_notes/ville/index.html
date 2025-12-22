@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -171,7 +192,7 @@
 
 <p>To prove it, we’ll show it holds for all finite times \(k\), and then take the limit as \(k\to\infty\). Define the stopping time \(T\) to be the first time at which \(X_t\) is at least \(\alpha\). Formally, \(T=\inf\{t:X_t\geq \alpha\}\). (Recall that a stopping time is simply a random \(T\) where, for all \(t\), one can determine if \(T=t\) given \(\F_t\).) Then, for some arbitrary \(k\), define the truncated stopping time \(\tau = \min(T,k)\). Clearly, both \(T\) and \(\tau\) are well-defined stopping times.</p>
 
-<p>Recall <a rel="nofollow noopener noreferrer" href="https://math.dartmouth.edu/~pw/math100w13/lalonde.pdf">Doob’s optional stopping theorem</a>, which states that \(X_\tau\) is measurable (almost surely) since \(\tau\) is bounded (by construction). Thus, Markov’s inequality applies to \(X_\tau\):</p>
+<p>Recall <a href="https://math.dartmouth.edu/~pw/math100w13/lalonde.pdf">Doob’s optional stopping theorem</a>, which states that \(X_\tau\) is measurable (almost surely) since \(\tau\) is bounded (by construction). Thus, Markov’s inequality applies to \(X_\tau\):</p>
 
 \[\Pr(T&lt; k)\leq \Pr(X_\tau\geq \alpha \gn \F_0) \leq \frac{\E[X_\tau \gn \F_0]}{\alpha} \leq \frac{X_0}{\alpha},\]
 
@@ -192,7 +213,7 @@
     <a link="back", href="/research_notes/">Back to all notes</a>
   </small>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

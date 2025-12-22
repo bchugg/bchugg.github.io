@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -166,9 +187,9 @@
 
 <p>The analogy runs deeper, however. In his 1939 doctoral thesis <em>Étude Critique de la Notion de Collectif</em>, Jean Ville proved a result which formally ties modern probability to betting (although I don’t believe he knew it yet). Informally it says that, if an event is very unlikely, then there exists a supermartingale which tends to infinity on that event. This is intimately tied to betting because supermartingales represent betting strategies. An “almost sure” event in modern probability thus becomes, in game-theoretic probability, an event for which there exists a betting strategy which would make us infinitely rich if it didn’t come to pass.</p>
 
-<p>More broadly, game-theoretic probability is the formal approach to probability based on games and betting instead of \(\sigma\) algebras and measures. There has been development of these ideas from several perspectives, such as probability, statistical inference, and online learning (see the appendix of <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2010.09686.pdf">this paper</a> for an interesting history and a cool diagram), but has perhaps been most popularized by Glenn Shafer and Vladimir Vovk in their textbook <a rel="nofollow noopener noreferrer" href="https://www.wiley.com/en-us/Game+Theoretic+Foundations+for+Probability+and+Finance+-p-9780470903056">Game-Theoretic Foundations for Probability and Finance</a>.</p>
+<p>More broadly, game-theoretic probability is the formal approach to probability based on games and betting instead of \(\sigma\) algebras and measures. There has been development of these ideas from several perspectives, such as probability, statistical inference, and online learning (see the appendix of <a href="https://arxiv.org/pdf/2010.09686.pdf">this paper</a> for an interesting history and a cool diagram), but has perhaps been most popularized by Glenn Shafer and Vladimir Vovk in their textbook <a href="https://www.wiley.com/en-us/Game+Theoretic+Foundations+for+Probability+and+Finance+-p-9780470903056">Game-Theoretic Foundations for Probability and Finance</a>.</p>
 
-<p>When introducing an alternative foundation for a subject, a natural question is whether it’s more general. Is the reach of the game-theoretic perspective fundamentally greater than the Kolmogorov axioms; the results of the former a superset of the latter? The answer is … sort of? Modern and game-theoretic probability are equivalent for some games we’ll consider. After that, as Shafer and Vovk say in their book, they  generalize these core examples in different directions. But then they also go onto say that they can connect them more systemically by means of martingales. So I’m not actually sure anyone knows precisely whether one formalization is strictly more powerful than the other. What is certain though, is that you can improve on measure-theoretic results  by using game-theoretic probability and translating the results into measure-theory by means of martingales. Again, see this <a rel="nofollow noopener noreferrer" href="https://arxiv.org/pdf/2010.09686.pdf">recent paper</a> as an example. For that  reason alone, understanding game-theoretic probability is valuable.</p>
+<p>When introducing an alternative foundation for a subject, a natural question is whether it’s more general. Is the reach of the game-theoretic perspective fundamentally greater than the Kolmogorov axioms; the results of the former a superset of the latter? The answer is … sort of? Modern and game-theoretic probability are equivalent for some games we’ll consider. After that, as Shafer and Vovk say in their book, they  generalize these core examples in different directions. But then they also go onto say that they can connect them more systemically by means of martingales. So I’m not actually sure anyone knows precisely whether one formalization is strictly more powerful than the other. What is certain though, is that you can improve on measure-theoretic results  by using game-theoretic probability and translating the results into measure-theory by means of martingales. Again, see this <a href="https://arxiv.org/pdf/2010.09686.pdf">recent paper</a> as an example. For that  reason alone, understanding game-theoretic probability is valuable.</p>
 
 <h1 id="2-the-setup">2. The Setup</h1>
 
@@ -371,16 +392,16 @@ Define the next move \(\hstrat(\omega)\) to bet the amount \(\beta \strat_{n+1}(
 <h1 id="6-resources">6. Resources</h1>
 
 <ul>
-  <li><a rel="nofollow noopener noreferrer" href="https://www.wiley.com/en-us/Game+Theoretic+Foundations+for+Probability+and+Finance+-p-9780470903056">Game-Theoretic Foundations for Probability and Finance</a> by Glenn Shafer and Vladimir Vovk.</li>
-  <li>The <a rel="nofollow noopener noreferrer" href="http://www.probabilityandfinance.com/">Game-Theoretic Probability and Finance Project</a>.</li>
-  <li>The course <a rel="nofollow noopener noreferrer" href="https://www.stat.cmu.edu/~aramdas/betting/b21.html">Game-Theoretic Statistical Inference</a> by Shafer, Wang, and Ramdas.</li>
+  <li><a href="https://www.wiley.com/en-us/Game+Theoretic+Foundations+for+Probability+and+Finance+-p-9780470903056">Game-Theoretic Foundations for Probability and Finance</a> by Glenn Shafer and Vladimir Vovk.</li>
+  <li>The <a href="http://www.probabilityandfinance.com/">Game-Theoretic Probability and Finance Project</a>.</li>
+  <li>The course <a href="https://www.stat.cmu.edu/~aramdas/betting/b21.html">Game-Theoretic Statistical Inference</a> by Shafer, Wang, and Ramdas.</li>
 </ul>
 
   <small>
     <a link="back", href="/research_notes/">Back to all notes</a>
   </small>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

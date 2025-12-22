@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -159,7 +180,7 @@
 
 <p>This lesson is particularly sharp for people like me—people who are addicted to ideas in their twenties and want to go wherever they can to most easily study those ideas. It takes some time to realize that you should be equally as addicted to people.</p>
 
-<p><em>Thanks to <a rel="nofollow noopener noreferrer" href="https://www.frannerisms.com/">Fran</a> and <a rel="nofollow noopener noreferrer" href="https://falliblepieces.substack.com/">Cam</a> for comments.</em></p>
+<p><em>Thanks to <a href="https://www.frannerisms.com/">Fran</a> and <a href="https://falliblepieces.substack.com/">Cam</a> for comments.</em></p>
 
 <hr />
 
@@ -167,9 +188,9 @@
     <a id="back", href="/writing/">Back to all writing</a>
   </small>
   <br><br>
-  <p id="subscribe"><a rel="nofollow noopener noreferrer" href="https://stepstophaeacia.substack.com/">Subscribe</a> to get notified about new essays.</p>
+  <p id="subscribe"><a href="https://stepstophaeacia.substack.com/">Subscribe</a> to get notified about new essays.</p>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

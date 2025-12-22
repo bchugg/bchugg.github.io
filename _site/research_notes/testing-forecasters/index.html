@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -145,7 +166,7 @@
 
 <p>Suppose a forecaster claims that they can predict some class of events. How can you tell if they’re reliable?</p>
 
-<p>One way is to check if they are <em>calibrated</em>: Do events they say happen x% of the time actually happen roughly x% of the time? You could plot their calibration curve and measure the deviation from perfect calibration. Another way is the <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Brier_score">Brier score</a>, which is basically mean squared error applied to predictions.</p>
+<p>One way is to check if they are <em>calibrated</em>: Do events they say happen x% of the time actually happen roughly x% of the time? You could plot their calibration curve and measure the deviation from perfect calibration. Another way is the <a href="https://en.wikipedia.org/wiki/Brier_score">Brier score</a>, which is basically mean squared error applied to predictions.</p>
 
 <p>Both of these measures are useful but have drawbacks. How well-calibrated does someone need to be before they are a good forecaster? How should we choose the calibration buckets? How low should their Brier score be? What’s the right baseline to compare against?</p>
 
@@ -153,7 +174,7 @@
 
 <h1 id="the-setup">The setup</h1>
 
-<p>The math is fairly straightforward and follows immediately from the recent literature on <a rel="nofollow noopener noreferrer" href="https://thestatsmap.com/game-theoretic-hypothesis-testing">game-theoretic hypothesis testing</a>. In fact, all we’re doing is turning the problem of evaluating forecasters into a problem of (sequential) hypothesis testing. We treat the claim that the forecaster is correct (meaning they specify the correct probability distribution) as the null hypothesis, and see if we can accrue enough evidence (in this case, money) against them to reject that hypothesis.</p>
+<p>The math is fairly straightforward and follows immediately from the recent literature on <a href="https://thestatsmap.com/game-theoretic-hypothesis-testing">game-theoretic hypothesis testing</a>. In fact, all we’re doing is turning the problem of evaluating forecasters into a problem of (sequential) hypothesis testing. We treat the claim that the forecaster is correct (meaning they specify the correct probability distribution) as the null hypothesis, and see if we can accrue enough evidence (in this case, money) against them to reject that hypothesis.</p>
 
 <p>Suppose at times \(t=1,2,\dots\), a forecaster gives a distribution \(P_t\) over some outcome space \(\calX_t\) of their choosing. This distribution can be anything, and need not be defined over the same events from round to round. It can be a distribution over the weather for the next month, or capture their belief that Covid-19 had a natural origin.  We then see some observation \(X_t\in \calX_t\) which the forecaster claims was drawn according to \(P_t\).</p>
 
@@ -193,8 +214,8 @@
 
 <p>There are several reasons one might choose to do this:</p>
 <ul>
-  <li>In 1956, in the context of portfolio optimization theory, Kelly <a rel="nofollow noopener noreferrer" href="https://www.princeton.edu/~wbialek/rome/refs/kelly_56.pdf">pointed out that</a> logarithmic returns add, hence the strong law of large numbers applies which makes it easier to reason about the behavior of the log-wealth over time, if your wealth is a product of terms.</li>
-  <li>In 1961, <a rel="nofollow noopener noreferrer" href="http://stat.wharton.upenn.edu/~steele/Resources/FTSResources/KellyBreiman/Breiman61.pdf">Breiman showed that</a> in iid settings, maximizing the log-wealth leads to the reaching a desired threshold (\(1/\alpha\) say, for hypothesis testing purposes) as fast as possible, without risking all of your wealth at any time (which can happen if one maximizes \(\E_{Q_t}[S_t]\) directly, say).</li>
+  <li>In 1956, in the context of portfolio optimization theory, Kelly <a href="https://www.princeton.edu/~wbialek/rome/refs/kelly_56.pdf">pointed out that</a> logarithmic returns add, hence the strong law of large numbers applies which makes it easier to reason about the behavior of the log-wealth over time, if your wealth is a product of terms.</li>
+  <li>In 1961, <a href="http://stat.wharton.upenn.edu/~steele/Resources/FTSResources/KellyBreiman/Breiman61.pdf">Breiman showed that</a> in iid settings, maximizing the log-wealth leads to the reaching a desired threshold (\(1/\alpha\) say, for hypothesis testing purposes) as fast as possible, without risking all of your wealth at any time (which can happen if one maximizes \(\E_{Q_t}[S_t]\) directly, say).</li>
 </ul>
 
 <p>For binary forecasts, we can just solve \eqref{eq:opt} directly. Expanding \(\E_{P_t}[S_t(X_t)\vert \calF_{t-1}]\leq 1\) gives \(S_t(1)p_t + S_t(0)(1-p_t) \leq 1\). Since we want to maximize the wealth, we’ll always make \(S_t\) satisfy this constraint with equality. Therefore, we can write</p>
@@ -211,7 +232,7 @@ S_t(1) = \frac{1 - S_t(0)(1-p_t)}{p_t}.\tag{3}
 S_t(1) = \frac{q_t}{p_t}, \quad S_t(0) = \frac{1 - q_t}{1-p_t}. 
 \end{equation}\]
 
-<p>That is, \(S_t\) is just the likelihood ratio between \(Q_t\) and \(P_t\). (This phenomenon holds much more generally: When testing simple nulls vs simple alternatives—implicitly what we’re doing here—the optimal Kelly bet is always the likelihood ratio. One can derive this using Gibb’s inequality instead of calculus. Glenn Shafer wrote a <a rel="nofollow noopener noreferrer" href="https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/rssa.12647">JRSSB discussion paper</a> about this. )</p>
+<p>That is, \(S_t\) is just the likelihood ratio between \(Q_t\) and \(P_t\). (This phenomenon holds much more generally: When testing simple nulls vs simple alternatives—implicitly what we’re doing here—the optimal Kelly bet is always the likelihood ratio. One can derive this using Gibb’s inequality instead of calculus. Glenn Shafer wrote a <a href="https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/rssa.12647">JRSSB discussion paper</a> about this. )</p>
 
 <p>Now, this was all done assuming a particular alternative \(Q_t\). But usually we don’t have a particular alternative in mind; we just want to make money if the forecaster is wrong. What do we do?</p>
 
@@ -238,14 +259,14 @@ S_t(1) = \frac{q_t}{p_t}, \quad S_t(0) = \frac{1 - q_t}{1-p_t}.
 
 <p>In these experiments the forecaster specifies their prediction and we receive the feedback immediately. But this need not be the case; we could make many bets against the forecaster at once and wait for them to resolve.</p>
 
-<p>This isn’t the end of the story. One could imagine doing a more detailed empirical and theoretical analysis of precisely which betting strategies are best against which kinds of forecasters (for instance, if you suspect a forecaster is predisposed to be biased towards certain events, how should you bet?) or understanding when various betting strategies will fail. But I think this could be an interesting way to test real-world forecasters (eg political pundits or <a rel="nofollow noopener noreferrer" href="https://en.wikipedia.org/wiki/Superforecaster">superforecasters</a>).</p>
+<p>This isn’t the end of the story. One could imagine doing a more detailed empirical and theoretical analysis of precisely which betting strategies are best against which kinds of forecasters (for instance, if you suspect a forecaster is predisposed to be biased towards certain events, how should you bet?) or understanding when various betting strategies will fail. But I think this could be an interesting way to test real-world forecasters (eg political pundits or <a href="https://en.wikipedia.org/wiki/Superforecaster">superforecasters</a>).</p>
 
 
   <small>
     <a link="back", href="/research_notes/">Back to all notes</a>
   </small>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->

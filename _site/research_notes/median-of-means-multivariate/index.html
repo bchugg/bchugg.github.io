@@ -17,6 +17,27 @@
     gtag('config', 'G-PN2H9928PZ');
   </script>
 
+  <!-- Open external links in new tab -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+
+      // ignore in-page, mail, phone, js
+      if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+
+      const url = new URL(href, window.location.href);
+
+      // only external
+      if (url.origin !== window.location.origin) {
+        a.target = '_blank';
+        a.rel = 'nofollow noopener noreferrer';
+      }
+    });
+  });
+  </script>
+
   <!-- Basic meta elements -->
   <meta charset="utf-8" />
 
@@ -175,7 +196,7 @@
   <li><a href="#5-computing-the-median" id="markdown-toc-5-computing-the-median">5. Computing the median</a></li>
 </ul>
 
-<p>We’re back to median-of-means (MoM) estimators, but this time we’ll consider multivariate distributions. We’ll follow the recent(ish) paper of <a rel="nofollow noopener noreferrer" href="https://arxiv.org/abs/1702.00482">Lugosi and Mendelson</a> which introduces a sub-Gaussian MoM estimator for high dimensions. 
+<p>We’re back to median-of-means (MoM) estimators, but this time we’ll consider multivariate distributions. We’ll follow the recent(ish) paper of <a href="https://arxiv.org/abs/1702.00482">Lugosi and Mendelson</a> which introduces a sub-Gaussian MoM estimator for high dimensions. 
 Assume that \(X_1,\dots,X_n\) lie in \(\Re^d\) and are distributed according to some distribution \(P\) with mean \(\mu\) and covariance matrix \(\Sigma\). Before extending the <a href="/research_notes/median-of-means-univariate/">univariate MoM estimator</a> to this setting, we need to clarify what sub-Gaussian performance means in higher dimensions. To do so, we appeal (like we did for \(d=1\)) to the performance of the sample mean for light-tailed distributions. Throughout, we’ll use \(\norm{\cdot}\) to refer to the \(\ell_2\)-norm \(\norm{\cdot}_2\).</p>
 
 <h1 id="1-performance-of-sample-mean">1. Performance of sample mean</h1>
@@ -187,7 +208,7 @@ Assume that \(X_1,\dots,X_n\) lie in \(\Re^d\) and are distributed according to 
     \Pr(\|\ov{X} - \mu\| \geq \E\|\ov{X} - \mu\| + u) \leq \Pr( \|Z\| \geq \E\|Z\|+u\sqrt{n}), \tag{1}
 \end{equation}\]
 
-<p>where \(Z\sim N(0,\Sigma)\). The multivariate Gaussian concentration inequality (e.g., <a rel="nofollow noopener noreferrer" href="https://link.springer.com/chapter/10.1007/bfb0077482">here</a>) gives</p>
+<p>where \(Z\sim N(0,\Sigma)\). The multivariate Gaussian concentration inequality (e.g., <a href="https://link.springer.com/chapter/10.1007/bfb0077482">here</a>) gives</p>
 
 \[\begin{equation}
 \label{eq:gauss_tail_bound}
@@ -236,7 +257,7 @@ Using the bound from the univariate case, conditional on the event \(\cap E_i\) 
 
 <h1 id="3-a-new-notion-of-median">3. A new notion of median</h1>
 
-<p>Here we discuss an altogether different notion of median, originally proposed by <a rel="nofollow noopener noreferrer" href="https://arxiv.org/abs/1702.00482">Lugosi and Mendelson</a>. To introduce it, let us consider an alternative way to frame the median in \(\Re\). Let \(\{s_1,\dots,s_k\}\in\Re\). Consider the order statistics \(s_{(1)},\dots,s_{(k)}\) and assume for simplicity that \(k\) is even so the median is \(a = (s_{(k/2)} + s_{(k/2 + 1)})/2\). Let \(p= a+\eps\) for some \(\eps&gt;0\). What makes \(p\) a “worse” choice of median than \(a\)? Indeed, for small enough \(\eps\), \(p\) still has \(k/2\) points to either side of it (if picturing the points on a horizontal axis). In some sense, then, it still accomplishes what we expect of a median.</p>
+<p>Here we discuss an altogether different notion of median, originally proposed by <a href="https://arxiv.org/abs/1702.00482">Lugosi and Mendelson</a>. To introduce it, let us consider an alternative way to frame the median in \(\Re\). Let \(\{s_1,\dots,s_k\}\in\Re\). Consider the order statistics \(s_{(1)},\dots,s_{(k)}\) and assume for simplicity that \(k\) is even so the median is \(a = (s_{(k/2)} + s_{(k/2 + 1)})/2\). Let \(p= a+\eps\) for some \(\eps&gt;0\). What makes \(p\) a “worse” choice of median than \(a\)? Indeed, for small enough \(\eps\), \(p\) still has \(k/2\) points to either side of it (if picturing the points on a horizontal axis). In some sense, then, it still accomplishes what we expect of a median.</p>
 
 <p>One way to formalize why \(a\) is a better median than \(p\) is to notice that \(p\) breaks symmetry in rather unappealing ways. For a point \(z\in \Re\), let \(\C(z)\) be the set of points which are as close or closer to \(k/2\) of the points \(s_1,\dots,s_k\) as \(z\). Intuitively, \(\C(z)\) is the set of points which are possibly better medians than \(z\). It is easy to see that \(\C(a)= [s_{(k/2)} - d(s_{(k/2)},a), s_{(k/2+1)} + d(s_{(k/2+1)},a)]\) and, for sufficiently small \(\eps\), \(\C(p)= [s_{(k/2)} - d(s_{(k/2)},a+\eps), s_{(k/2+1)} + d(s_{(k/2+1)},a+\eps)]\). For \(\eps&gt;0\) and the Euclidean metric, \(d(s_{(k/2)},a+\eps) = d(s_{(k/2)},p) + \eps\). Thus, the radius of \(\C(p)\), defined as \(\sup_{y\in \C(p)} d(p,y)\) is equal to \(2\eps\) plus the radius of \(\C(a)\). In fact, while the precise arithmetic in this example works only for small \(\eps\), it remains true that \(\C(a)\) has minimal radius among all points.</p>
 
@@ -322,7 +343,7 @@ Setting the right hand side equal to 1/10 gives that with probability at least 9
 Applying Hoeffding’s inequality on the above event across all \(g\), we conclude that with probability at least \(1 - e^{-k/50}\), \(\vert\la S_g-\mu,v\ra\vert \leq r^2/4\) for at least \(8k/10\) of the groups \(g\). This gives us the desired high probability bound for a fixed \(v\).</p>
 
 <h2 id="step-2-extend-to-epsilon-packing">Step 2: Extend to \(\epsilon\)-packing</h2>
-<p>Now we want to apply this bound to a well-selected group of vectors \(v\) with norm \(r\). Let \(S^{d-1}(r)\) denote the \(d\)-sphere \(\{x\in\Re^d:\norm{x}_2=r\}\). We consider an \(\eps\)-packing of \(S^{d-1}(r)\) in the norm \(\norm{\cdot}_\Sigma\) defined by the covariance matrix. More specifically, we choose a finite set of points of maximum cardinality \(V_1 = \{v_1,\dots,v_L\}\) such that \(\norm{v_i-v_j}_\Sigma = \la \Sigma^{1/2}(v_i-v_j),\Sigma^{1/2}(v_i-v_j)\ra^{1/2}\geq \eps\) for all \(i,j\in[L]\). The size of \(V_1\), \(L\), can be estimated via the so-called <a rel="nofollow noopener noreferrer" href="https://www.math.uci.edu/~rvershyn/papers/GFA-book.pdf">dual Sudakov inequality</a>, which tells us that, if \(G\) is a standard Gaussian,</p>
+<p>Now we want to apply this bound to a well-selected group of vectors \(v\) with norm \(r\). Let \(S^{d-1}(r)\) denote the \(d\)-sphere \(\{x\in\Re^d:\norm{x}_2=r\}\). We consider an \(\eps\)-packing of \(S^{d-1}(r)\) in the norm \(\norm{\cdot}_\Sigma\) defined by the covariance matrix. More specifically, we choose a finite set of points of maximum cardinality \(V_1 = \{v_1,\dots,v_L\}\) such that \(\norm{v_i-v_j}_\Sigma = \la \Sigma^{1/2}(v_i-v_j),\Sigma^{1/2}(v_i-v_j)\ra^{1/2}\geq \eps\) for all \(i,j\in[L]\). The size of \(V_1\), \(L\), can be estimated via the so-called <a href="https://www.math.uci.edu/~rvershyn/papers/GFA-book.pdf">dual Sudakov inequality</a>, which tells us that, if \(G\) is a standard Gaussian,</p>
 
 \[\begin{equation}
     \log(L) \leq \log(2) + \frac{1}{32}\bigg(\frac{\E\la G,\Sigma G\ra^{1/2}}{\eps/r}\bigg)^2 \leq \log(2) + \frac{1}{32}\bigg(\frac{\sqrt{\tr(\Sigma)}}{\eps/r}\bigg)^2.
@@ -380,7 +401,7 @@ Applying Hoeffding’s inequality on the above event across all \(g\), we conclu
 
 <h1 id="5-computing-the-median">5. Computing the median</h1>
 
-<p>Finally, given the expression for \(\hmu^\mom\) in \eqref{eq:mom_multivariate}, a natural question is whether it can be efficiently computed. It certainly looks intractable. And indeed, the first results concerning this estimator were purely theoretical and did not investigate how it might be computed. However, shortly after these initial results were published, Sam Hopkins <a rel="nofollow noopener noreferrer" href="https://arxiv.org/abs/1809.07425">demonstrated</a> that \eqref{eq:mom_multivariate} can be approximated in polynomial time and, moreover, that this approximation maintains a sub-Gaussian rate. 
+<p>Finally, given the expression for \(\hmu^\mom\) in \eqref{eq:mom_multivariate}, a natural question is whether it can be efficiently computed. It certainly looks intractable. And indeed, the first results concerning this estimator were purely theoretical and did not investigate how it might be computed. However, shortly after these initial results were published, Sam Hopkins <a href="https://arxiv.org/abs/1809.07425">demonstrated</a> that \eqref{eq:mom_multivariate} can be approximated in polynomial time and, moreover, that this approximation maintains a sub-Gaussian rate. 
 His approach uses semi-definite programming and can be computed in time \(O(nd + d\log(1/\delta)^c)\), where \(c\) is some (dimension-agnostic) constant. 
 Consequently, everything we’ve discussed here is not only  mathematically powerful, but is also useful in practice.</p>
 
@@ -389,7 +410,7 @@ Consequently, everything we’ve discussed here is not only  mathematically powe
     <a link="back", href="/research_notes/">Back to all notes</a>
   </small>
 </article>
- <!-- "> -->
+
       </main>
 
       <!-- Footer  -->
