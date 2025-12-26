@@ -6,6 +6,7 @@ publication: Transactions on Machine Learning Research
 year: 2025
 date: "2025-05-11"
 link: https://arxiv.org/abs/2311.08168
+code: https://github.com/bchugg/confidence-spheres
 category: Theory
 show: True
 ---
