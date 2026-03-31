@@ -10,9 +10,17 @@ sitemap: false
 */
 
 /* Fonts */
-$main-font: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-$heading-font: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-$regular-font-size: 13pt; /*1.25em; /* 20px / 16px = 1.25em; support text resizing in all browsers */
+$font-stack: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+$main-font: "Times New Roman", "Times", "serif";
+$heading-font: "Times New Roman", "Times", "serif";
+
+/* Updated to rem for better browser scaling and accessibility */
+$regular-font-size: 1.1rem;
+
+// /* Fonts */
+// $main-font: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+// $heading-font: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+// $regular-font-size: 13pt; /*1.25em; /* 20px / 16px = 1.25em; support text resizing in all browsers */
 
 
 /*

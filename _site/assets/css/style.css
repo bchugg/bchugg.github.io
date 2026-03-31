@@ -4,7 +4,7 @@
   Feel free to change!
 */
 /* Fonts */
-/*1.25em; /* 20px / 16px = 1.25em; support text resizing in all browsers */
+/* Updated to rem for better browser scaling and accessibility */
 /*
   Color
 
@@ -43,13 +43,13 @@ body {
   overflow-x: hidden; }
 
 html {
-  font-family: "Inconsolata";
-  font-size: 13pt;
+  font-family: "Times New Roman", "Times", "serif";
+  font-size: 1.1rem;
   line-height: 1.5; }
 
 @media (min-width: 38em) {
   html {
-    font-size: 13pt; } }
+    font-size: 1.1rem; } }
 body {
   color: #686565;
   background-color: #fff;
@@ -96,7 +96,7 @@ a:focus {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-family: "Times New Roman", "Times", "serif";
   margin-bottom: .5rem;
   font-weight: normal;
   color: #000000;
@@ -762,7 +762,7 @@ pre code {
   justify-content: center;
   display: flex; }
   .signup-form input[type=email] {
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-family: "Times New Roman", "Times", "serif";
     color: gray;
     border: 1px solid #ABB0B2;
     -webkit-border-radius: 3px;
@@ -772,7 +772,7 @@ pre code {
     margin: 0 10px 10px 0; }
   .signup-form input[type=submit] {
     clear: both;
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-family: "Times New Roman", "Times", "serif";
     background-color: lightgrey;
     border: 0 none;
     border-radius: 4px;

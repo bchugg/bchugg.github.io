@@ -37,11 +37,14 @@ body {
 }
 
 html {
-  //font-family: $main-font;
-  font-family: "Inconsolata";
+  font-family: $main-font;
+  //font-family: "Inconsolata";
+  //font-family: "Palatino Linotype", "Book Antiqua", "Palatino", "Georgia", "serif";
+  //font-family: "Palatino";
   //font-family: "Iowan Old Style", "Palatino", "Georgia", "Times New Roman", "Times", "serif";
   // font-size: 1em; /* 16px; specify in ems to support text resizing in all browsers */
-  font-size: 13pt;
+  //font-size: 13pt;
+  font-size: $regular-font-size;
   line-height: 1.5;
 }
 
