@@ -31,7 +31,7 @@ For a full list see my <a href="{% link assets/files/cv.pdf %}">CV</a>.
   <tr>
   <td>
    <div class="pubtitle"><a href='{{ pub.link }}'>{{ pub.title }}</a></div> 
-    <div class="pubauthors">
+    <div class='pubinfo'>
       {% assign author_list = pub.authors | split: ", " %}
       {% for author in author_list %} 
         {% assign name_parts = author | split: " " %}
@@ -45,7 +45,6 @@ For a full list see my <a href="{% link assets/files/cv.pdf %}">CV</a>.
         {% endfor %}
         {{ initials }} {{ last_name }}{% if forloop.last %}.{% else %}, {% endif %}
       {% endfor %} 
-      {{ pub.year }} 
     </div>
   </td> 
   </tr>
@@ -60,7 +59,7 @@ For a full list see my <a href="{% link assets/files/cv.pdf %}">CV</a>.
   <tr>
   <td>
    <div class="pubtitle"><a href='{{ pub.link }}'>{{ pub.title }}</a></div> 
-    <div class="pubauthors">
+    <div class='pubinfo'>
       {% assign author_list = pub.authors | split: ", " %}
       {% for author in author_list %} 
         {% assign name_parts = author | split: " " %}
@@ -80,9 +79,6 @@ For a full list see my <a href="{% link assets/files/cv.pdf %}">CV</a>.
     {{ pub.year }} 
     {% if pub.highlight != nil %} <span id='highlight'>({{ pub.highlight }})</span> {% endif %}
     </div>
-    <!-- {% if pub.publication != nil %}
-      <em>{{ pub.publication }}, </em> 
-    {% endif %} -->
   </td> 
   </tr>
   {% endfor %}

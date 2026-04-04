@@ -1,7 +1,6 @@
 ---
 layout: default 
-title: "Integrating Reward Maximization and Population Estimation: Sequential
-Decision-Making for Internal Revenue Service Audit Selection"
+title: "Integrating Reward Maximization and Population Estimation: Sequential Decision-Making for Internal Revenue Service Audit Selection"
 authors: Peter Henderson, Ben Chugg, Brandon Anderson, Kristen Altenburger, Alex Turk, John L. Guyton, Jacob Goldin, Daniel E. Ho
 publication: AAAI
 highlight: Oral 

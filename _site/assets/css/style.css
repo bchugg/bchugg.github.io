@@ -708,11 +708,6 @@ pre code {
 
 .papers h1 {
   padding-top: 20px; }
-.papers p strong {
-  color: black; }
-.papers .pubtitle {
-  font-weight: bold;
-  color: black; }
 .papers .papers-table {
   border: 0px;
   margin-top: 35px; }
@@ -723,13 +718,7 @@ pre code {
     padding: 0;
     vertical-align: top;
     padding-bottom: 20px; }
-  .papers .papers-table .pubinfo {
-    text-align: right; }
-    .papers .papers-table .pubinfo #highlight {
-      color: black;
-      font-weight: bold;
-      font-size: 10pt; }
-  .papers .papers-table #highlight {
+  .papers .papers-table .pubinfo #highlight {
     color: green; }
 
 #footer {

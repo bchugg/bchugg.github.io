@@ -1,6 +1,6 @@
 ---
 layout: default 
-title: "E-values as statistical evidence: Comparisons to Bayes factors, likelihoods, and p-values"
+title: "E-values as statistical evidence: A comparison to Bayes factors, likelihoods, and p-values"
 authors: Ben Chugg, Aaditya Ramdas, Peter Grünwald
 publication: preprint
 year: 2026
