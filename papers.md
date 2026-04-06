@@ -84,8 +84,21 @@ For a full list see my <a href="{% link assets/files/cv.pdf %}">CV</a>.
   {% endfor %}
   </table> 
 
-  
+  <h2>Theses </h2>
 
+ 
+<table class='papers-table'>
+  <tr>
+  <td>
+   <div class="pubtitle"><a href='/assets/files/ox_thesis.pdf'>
+    The Graph Simplex Correspondence and its Algorithmic Foundations</a>
+   </div> 
+    <div class='pubinfo'>
+    M.Sc. Thesis, Oxford University
+    </div>
+  </td> 
+  </tr>
+  </table> 
 
 
 
