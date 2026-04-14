@@ -91,7 +91,7 @@ For a full list see my <a href="{% link assets/files/cv.pdf %}">CV</a>.
   <tr>
   <td>
    <div class="pubtitle"><a href='/assets/files/ox_thesis.pdf'>
-    The Graph Simplex Correspondence and its Algorithmic Foundations</a>
+    The Graph-Simplex Correspondence and its Algorithmic Foundations</a>
    </div> 
     <div class='pubinfo'>
     M.Sc. Thesis, Oxford University

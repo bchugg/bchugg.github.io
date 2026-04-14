@@ -1,6 +1,6 @@
 ---
 layout: default
-title: The Graph Simplex Correspondence and its Algorithmic Foundations
+title: The Graph-Simplex Correspondence and its Algorithmic Foundations
 authors: Ben Chugg
 publication: MSc Thesis. Oxford University
 shortpub: MSc Thesis. Oxford University
