@@ -31,7 +31,7 @@ Here are [my papers]({% link papers.md %}) and some [informal research notes]({%
 
 # Other
 
-I write at [Steps to Phaeacia](https://www.stepstophaeacia.com/). Sometimes I also talk, and sometimes I talk in public about applied philosophy and other topics on the [Increments podcast](https://www.incrementspodcast.com/).  I also co-host [do you even lit?](https://doyouevenlit.podbean.com/) where two unintelligible kiwis and I make our (haphazard and tangent-filled) way through the world of literary classics. 
+I write at [Steps to Phaeacia](https://www.stepstophaeacia.com/). Sometimes I also talk, and sometimes I talk in public about applied philosophy and other topics on the [Increments podcast](https://www.incrementspodcast.com/).  I also co-host [do you even lit?](https://doyouevenlit.com/) where two unintelligible kiwis and I make our haphazard and tangent-filled way through the world of literary classics. 
 
 
 </div>
