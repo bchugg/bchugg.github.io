@@ -29,7 +29,7 @@ For a full list see my <a href="{% link assets/files/cv.pdf %}">CV</a>.
 <table class='papers-table'>
   {% for pub in preprints %}
   <tr>
-  <td>
+  <td class='preprintinfo'>
    <div class="pubtitle"><a href='{{ pub.link }}'>{{ pub.title }}</a></div> 
     <div class='pubinfo'>
       {% assign author_list = pub.authors | split: ", " %}
