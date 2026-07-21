@@ -166,9 +166,9 @@
 \newcommand{\d}{\text{d}}
 \newcommand{\kl}{\text{D}_{\text{KL}}}\]
 
-<p>The last two posts explored two different ways to prove the classical self-normalized concentration inequality for sub-Gaussian processes. The original method used by de la Peña used the method mixtures. But we saw that one can also use the <a href="/research_notes/variational_approach_to_concentration/">variational approach to concentration</a> to prove the same thing, and the last post ended abruptly with me wondering about the relationship between  the variational technique and the method of mixtures.</p>
+<p>The last two posts explored two different ways to prove the classical self-normalized concentration inequality for sub-Gaussian processes. The original method used by de la Peña used the method of mixtures. But we saw that one can also use the <a href="/research_notes/variational_approach_to_concentration/">variational approach to concentration</a> to prove the same thing, and the last post ended abruptly with me wondering about the relationship between  the variational technique and the method of mixtures.</p>
 
-<p>I finally strumbled upon an answer (an obvious one, in hindsight), which is that <em>they’re equally as powerful</em>.</p>
+<p>I finally stumbled upon an answer (an obvious one, in hindsight), which is that <em>they’re equally as powerful</em>.</p>
 
 <p>Suppose we have some random vector \(X\) in \(\Re^d\) with law \(P\). We want to bound \(\|X\|\) with high probability, where \(\|cdot\|\) is some norm on \(\Re^d\). Both the variational approach and the method of mixtures tell us to find some <a href="https://thestatsmap.com/e-value">e-value</a> \(E(\theta)\) for each \(\theta\in\Theta\) which is a function of \(\la \theta, X\ra\). Here \(\Theta\) is some parameter space, often the unit-sphere, the unit-ball, or all of \(\Re^d\).</p>
 

@@ -208,7 +208,7 @@
 <p>More specifically, repeat for \(i=1,\dots,N\):</p>
 <ul>
   <li>\(x_i\in\R^d\) drawn iid from some (unknown) distribution \(\D\). Call \(x_i\) the <em>context</em> or <em>covariates</em>.</li>
-  <li>Some (unknown) policy \(\gamma\) takes action \(a_i\in\A\), possibly depending on history contexts, actions, and rewards to this point. Write \(\gamma_i(a\vert x_i)\), for the probability that \(\gamma\) selects action \(a\), where the index \(i\) allows for possibility that \(\gamma\) is a function of the past. Let</li>
+  <li>Some (unknown) policy \(\gamma\) takes action \(a_i\in\A\), possibly depending on history contexts, actions, and rewards to this point. Write \(\gamma_i(a\vert x_i)\), for the probability that \(\gamma\) selects action \(a\), where the index \(i\) allows for the possibility that \(\gamma\) is a function of the past.</li>
   <li>Reward \(y_i\in\R\) is drawn from \(\D(\cdot\vert x_i,a_i)\) and revealed to the policy.</li>
 </ul>
 
@@ -223,9 +223,9 @@
 V(\pi) = \E_{x\sim \D}\E_{a\sim \pi(\cdot\vert x)}[f(x,a)]. \tag{1}
 \end{equation}\]
 
-<p>For simplicitly, we’ll assume that \(\pi\) is <em>stationary</em>, i.e., it doesn’t change over time. The results are similar if we don’t make this assumption, but somewhat harder to interpret as there is an extra sum in all the equations.</p>
+<p>For simplicity, we’ll assume that \(\pi\) is <em>stationary</em>, i.e., it doesn’t change over time. The results are similar if we don’t make this assumption, but somewhat harder to interpret as there is an extra sum in all the equations.</p>
 
-<p>Also, instead of writing out three expectations everytime, we’ll often write \(\E_{\pi}\) to indicate that the expected value in Equation \eqref{eq:Vpi} depends on the policy, i.e., \(V(\pi)=\E_{\pi}[y].\)</p>
+<p>Also, instead of writing out three expectations every time, we’ll often write \(\E_{\pi}\) to indicate that the expected value in Equation \eqref{eq:Vpi} depends on the policy, i.e., \(V(\pi)=\E_{\pi}[y].\)</p>
 
 <p>So, how would you estimate this? The empirical mean of the select rewards won’t do since the actions that gave rise to them were selected by \(\gamma\), not \(\pi\). This leads us to modelling the rewards directly.</p>
 
@@ -235,7 +235,7 @@ V(\pi) = \E_{x\sim \D}\E_{a\sim \pi(\cdot\vert x)}[f(x,a)]. \tag{1}
 
 \[\hVm = \frac{1}{N}\sum_{k} \sum_{a\in\A}\pi(a\vert x_k)\model(a,x_k).\]
 
-<p>Clearly, \(\hVm\) is only as good as \(\model\). To see this more quantitatively,define</p>
+<p>Clearly, \(\hVm\) is only as good as \(\model\). To see this more quantitatively, define</p>
 
 \[\Delta(a,x)=\model(a,x) - f(a,x),\]
 
@@ -259,7 +259,7 @@ V(\pi) = \E_{x\sim \D}\E_{a\sim \pi(\cdot\vert x)}[f(x,a)]. \tag{1}
 &amp;= \frac{1}{N}\Var_{x}\E_{a\sim \pi}[\Delta(a,x) + f(a,x)]\\ 
 \end{align}\]
 
-<p>The quantity \(N^{-1}\Var_x\E_{a\sim\pi}[f(a,x)]\) is unavoidable variance obtained from sampling according to \(\pi\). So we see that both the bias and variance of \(\hVm\) depend on a very natural way on the error of model.</p>
+<p>The quantity \(N^{-1}\Var_x\E_{a\sim\pi}[f(a,x)]\) is unavoidable variance obtained from sampling according to \(\pi\). So we see that both the bias and variance of \(\hVm\) depend in a very natural way on the error of the model.</p>
 
 <h2 id="12-inverse-propensity-weighting-hmuipw">1.2 Inverse Propensity Weighting, \(\hmuipw\)</h2>
 
@@ -406,7 +406,7 @@ B &amp;= \E_{x,a,r}[\pi\lambda\hgamma^{-1}(y^2 - 2y\model + \model^2)] \\
 
 <p>This is the equivalent to estimating average reward in RL, but the two settings are clearly quite distinct. For one, we’re not assuming a distribution over the covariates \(x_i\); they’re simply given. This will be important for variance calculations, since there’s no independence assumptions and we can’t ignore covariance. Second, we assume that the probabilities \(\pi_i\) are known. You can change this assumption without too much fuss, in which case the results here resemble the RL setting more closely. Finally, in survey sampling, we typically don’t assume that the hidden values are generated from a conditional distribution of the context. Instead, they’re deterministic given the covariates. All of these assumptions simplify the calculations.</p>
 
-<p>Still, ignoring the details, the two settings can be tackled with similar approches. You can imagine training a model \(\model:\R^d\to\R\) to predict the reward given the covariates, and then estimating the mean by simply predicting over the population:</p>
+<p>Still, ignoring the details, the two settings can be tackled with similar approaches. You can imagine training a model \(\model:\R^d\to\R\) to predict the reward given the covariates, and then estimating the mean by simply predicting over the population:</p>
 
 \[\hmum = \frac{1}{N}\sum_{i\in[N]} \model(x_i).\]
 
@@ -486,7 +486,7 @@ Inclusion probabilities do not behave as a typical distribution because they are
 
 \[\Var(\hmudr) = \frac{1}{2N^2}\bigg\{\sum_{i,j\in [N]}\bigg(\frac{y_i-\hy_i}{\pi_i}-\frac{y_j-\hy_j}{\pi_j}\bigg)^2(\pi_i\pi_j-\pi_{i,j})\bigg\}.\]
 
-<p>These look similar, but the squared terms differ quite drastically in their behaviour. First, notice that \(\Var(A(z))=0\) if \(z_i/\pi_i\) is constant for every \(i\). For the NHT estimator, \(z_i=y_i\), implying the variance is zero if we chose the inclusion probabilities to be proportional to the true values. Of course, we don’t know the true values, so this is hard to do. For DR, \(z_i=y_i-\hy_i\), so the variance will be zero if the signed residual between the true value and the model’s prediction is proportional the inclusion probability.</p>
+<p>These look similar, but the squared terms differ quite drastically in their behaviour. First, notice that \(\Var(A(z))=0\) if \(z_i/\pi_i\) is constant for every \(i\). For the NHT estimator, \(z_i=y_i\), implying the variance is zero if we chose the inclusion probabilities to be proportional to the true values. Of course, we don’t know the true values, so this is hard to do. For DR, \(z_i=y_i-\hy_i\), so the variance will be zero if the signed residual between the true value and the model’s prediction is proportional to the inclusion probability.</p>
 
 <p>In order to say anything about which one is better, we’d need to know more about the model estimates \(\hy_i\). Beyond that, comparing the estimators term-by-term is difficult because of the pesky joint inclusion probabilities \(\pi_{i,j}\). For an unspecified sampling design, we can’t say whether the terms \(\pi_i\pi_j-\pi_{i,j}\) are positive or negative, so proving general theorems about the estimators is difficult.</p>
 
@@ -494,7 +494,7 @@ Inclusion probabilities do not behave as a typical distribution because they are
 
 \[\Var(\hmum) = \frac{1}{N^2}\sum_{i,j}\Cov(\Delta(x_i)+y_i,\Delta(x_j)+y_j),\]
 
-<p>which can be smaller than the either of the variances above for a well-calibrated model. In general then, there is a bias-variance tradeoff  in the choices of estimators.</p>
+<p>which can be smaller than either of the variances above for a well-calibrated model. In general then, there is a bias-variance tradeoff  in the choices of estimators.</p>
 
 
   <small>

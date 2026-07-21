@@ -50,7 +50,7 @@ proving the claim. An important special case is when $$f=\log$$, in which case w
 
 $$\E_\phi [\log(S_T)]\geq \E_\phi [\log(E)].$$
 
-Log-power under the alternative is the usual criteria by which we judge e-values, and this result shows that log-power will never get worse if we condition on a sufficient statistic. 
+Log-power under the alternative is the usual criterion by which we judge e-values, and this result shows that log-power will never get worse if we condition on a sufficient statistic. 
 
 This result can be easily extended to [e-processes](https://thestatsmap.com/e-process). If $$(E_t)$$ is an e-process adapted to a filtration $$\calF = (\calF_t)$$ and $$(T_t)$$ is a sequence of sufficient statistics also adapted to $$\calF$$ (e.g., $$T_t = \sum_{i\leq t}X_i$$ for a binomial or Poisson process), then 
 

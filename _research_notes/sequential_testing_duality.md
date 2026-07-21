@@ -42,7 +42,7 @@ Then,
 
 $$\sup_{P\in \mathcal{P}(\theta^*)}P(\theta^* \notin C(X^n)) = \sup_{P\in\cP(\theta^*)}P(\phi^{\theta^*}=1) =\sup_{P\in H_0}P(\phi^{\theta^*}=1) \leq \alpha,$$
 
-since the set of distributions in $$\cP(\theta^*)$$ is the set for which the null $$H_0 : \theta =\theta^*$$ is true. On the other hand, suppose you have a $$(1-\alpha)$$ confidence interval for some $$\theta^*$$. Then construct a hypothesis test $$\phi$$ which simply rejects if $$\theta^*\notin C(X_1,\dots,X_n)$$. It's easy to see that $$\phi$$ is level-$$\alpha$$. Therefore, confidence intervals are, in some sense, equivalent to confidence intervals. We'll see that this equivalence extends to the sequential setting as well. 
+since the set of distributions in $$\cP(\theta^*)$$ is the set for which the null $$H_0 : \theta =\theta^*$$ is true. On the other hand, suppose you have a $$(1-\alpha)$$ confidence interval for some $$\theta^*$$. Then construct a hypothesis test $$\phi$$ which simply rejects if $$\theta^*\notin C(X_1,\dots,X_n)$$. It's easy to see that $$\phi$$ is level-$$\alpha$$. Therefore, confidence intervals are, in some sense, equivalent to tests. We'll see that this equivalence extends to the sequential setting as well. 
 
 # 2. Sequential tests 
 
@@ -75,13 +75,13 @@ $$E_t \leq M_t^P\quad P\text{-almost surely}.$$
 
 Then, the probability that $$E_t$$ ever exceeds $$1/\alpha$$ under any $$P\in \cP$$ is also bounded by $$\alpha$$. This immediately yields a sequential test for the null $$H_0: P \in \cP$$ versus $$H_1: P\notin \cP$$: set $$\tau = \inf_t \{ E_t > 1/\alpha\}$$. 
 
-The construction is general enough that such processes have been given a name: _e-processes_. At any time $$t$$ the value $$E_t$$ of an e-process is an _e-value_ for $$\cP$$, which simply a random variable with expected value at most 1 under any $$P\in\cP$$.  This is because $$\E_P[E_t ]\leq \E_P[M_t^P]\leq 1$$. 
+The construction is general enough that such processes have been given a name: _e-processes_. At any time $$t$$ the value $$E_t$$ of an e-process is an _e-value_ for $$\cP$$, which is simply a random variable with expected value at most 1 under any $$P\in\cP$$.  This is because $$\E_P[E_t ]\leq \E_P[M_t^P]\leq 1$$. 
 
 In fact, it has been [shown](https://arxiv.org/pdf/2009.03167.pdf) that "well-behaved" e-processes must obey $$E_t = \inf_P M_t^P$$. Therefore, if $$\cP = \{P\}$$ is a singleton and $$M_t^P$$ is a martingale (as opposed to a supermartingale), then  
 
 $$1 = \E_P [M_t^P] = \E_P [E_t] = \int E_t dP,$$
 
-which implies that $$E_t dP$$ is the density of some distribution $$Q$$. That is, $$dQ = E_t dP$$, so $$E_t$$ is the Radon-Nikodym derivative $$dQ / dP$$. Thus, in this case, we have simply recovered the likelihood ratio-test (based on the samples $$X_1,\dots,X_t$$)! In fact, this shows that the likelihood-ratio test is anytime-valid. But the theory of e-processes is more general than this, since we may consider composite distributions $$\cP$$ (such as, e.g., the set of all bounded distibutions with a common mean). 
+which implies that $$E_t dP$$ is the density of some distribution $$Q$$. That is, $$dQ = E_t dP$$, so $$E_t$$ is the Radon-Nikodym derivative $$dQ / dP$$. Thus, in this case, we have simply recovered the likelihood ratio-test (based on the samples $$X_1,\dots,X_t$$)! In fact, this shows that the likelihood-ratio test is anytime-valid. But the theory of e-processes is more general than this, since we may consider composite distributions $$\cP$$ (such as, e.g., the set of all bounded distributions with a common mean). 
  
 The moral of the story is: If we can find an e-process for $$\cP$$, then we have a sequential test for $$H_0: P\in \cP$$, $$H_1:P\notin \cP$$. And finding e-processes is made easier via various tools from sequential analysis: martingales, Ville's inequality, and game-theoretic probability. 
 

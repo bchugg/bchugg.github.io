@@ -21,7 +21,7 @@ $$
 
 # Introduction 
 
-Let $$X_1,X_2,\dots, X_n\sim P$$ be iid random variables with mean $$\mu$$ and variance $$\sigma^2<\infty$$.  The (Lindeburg-Lévy) central limit theorem (CLT) states that 
+Let $$X_1,X_2,\dots, X_n\sim P$$ be iid random variables with mean $$\mu$$ and variance $$\sigma^2<\infty$$.  The (Lindeberg-Lévy) central limit theorem (CLT) states that 
 
 $$
 \begin{equation}
@@ -45,7 +45,7 @@ where $$D$$ is some divergence between probability measures.
 Here we'll introduce [some results by Andrew Barron](https://projecteuclid.org/journals/annals-of-probability/volume-14/issue-1/Entropy-and-the-Central-Limit-Theorem/10.1214/aop/1176992632.full) (proved in 1986) that confirm this when $$D$$ is taken to be the KL-divergence. 
 
 Intriguingly, Barron's result supplies an analogy between the CLT and thermodynamics. 
-In particular, it relates the concept of information-theoretic relative entropy to thermodynamic entropy. The second law of thermodynamics states that closed systems tend towards a state maximum entropy. Subject to a variance constraint, the normal distribution maximizes information-theoretic entropy. Thus, \eqref{eq:abstract_result} may be interpreted as the normalized sum $$S_n$$ converging towards a state of maximum entropy, thereby providing us with an information-theoretic version of the second law. 
+In particular, it relates the concept of information-theoretic relative entropy to thermodynamic entropy. The second law of thermodynamics states that closed systems tend towards a state of maximum entropy. Subject to a variance constraint, the normal distribution maximizes information-theoretic entropy. Thus, \eqref{eq:abstract_result} may be interpreted as the normalized sum $$S_n$$ converging towards a state of maximum entropy, thereby providing us with an information-theoretic version of the second law. 
 
 Thermodynamics aside, the result is also interesting for several purely statistical reasons. For one, it implies the classical CLT since convergence in KL-divergence implies convergence in $$L^1$$ and hence in distribution. Second, the proof of Barron's theorem entails several other interesting results, such as a relationship between KL-divergence and the so-called Fisher distance in addition to a separate CLT-like statement for the Fisher distance. 
 Finally, Barron's work opens the door to further work connecting information theory and probabilistic limit theorems. 
@@ -57,7 +57,7 @@ Finally, Barron's work opens the door to further work connecting information the
 Barron's theorem is undergirded by two results which are sufficiently interesting to warrant their own discussion, so we split the proof into three sections. 
 The first will present a relationship between the KL-divergence and the Fisher distance, the second will present a CLT-like result for the Fisher distance, and the third will prove the main result of interest. 
 
-Before we begin, let us recall some basic definitions. The Kullback-Liebler (KL) divergence, also known as the relative entropy, between measures $$P$$ and $$Q$$ on a sample space $$\Omega$$ is 
+Before we begin, let us recall some basic definitions. The Kullback-Leibler (KL) divergence, also known as the relative entropy, between measures $$P$$ and $$Q$$ on a sample space $$\Omega$$ is 
 
 $$
 \begin{equation}
@@ -92,7 +92,7 @@ for $$X\sim P$$ and $$Y\sim Q$$.
 
 ## Relative Entropy as an integral of the Fisher distance
 
-Trying to prove Barron's theorem by working directly with the KL-divergence is challenging. Instead, we leverage relationships between the KL diverge and other information-theoretic quantities, electing to work with those instead. In this section we demonstrate the relationship between the KL-divergence and the Fisher distance, which is both interesting in its own right and will be useful later on.
+Trying to prove Barron's theorem by working directly with the KL-divergence is challenging. Instead, we leverage relationships between the KL divergence and other information-theoretic quantities, electing to work with those instead. In this section we demonstrate the relationship between the KL-divergence and the Fisher distance, which is both interesting in its own right and will be useful later on.
 
 A central ingredient in the proof is _de Bruijn's identity_, which relates entropy and Fisher information. De Bruijn's identity can be written as 
 
@@ -243,7 +243,7 @@ This immediately follows from the inequality $$\int_\Omega \vert\log p/q\vert\d 
 
 The original intuition for the result laid out in the introduction was not specific to the KL-divergence. Indeed, we might expect the result to hold for many divergences between probability measures. 
 
-Of course, converge follows for some divergences by means of their relationship to the KL-divergence. For instance, the square of the Hellinger distance is bounded by the KL divergence, thus implying convergence  in that case. 
+Of course, convergence follows for some divergences by means of their relationship to the KL-divergence. For instance, the square of the Hellinger distance is bounded by the KL divergence, thus implying convergence  in that case. 
 However, there are other divergences which are lower bounded by the KL divergence; Rényi $$\alpha$$-divergences for all $$\alpha>1$$ for instance. An interesting open problem is to determine whether convergence holds in such cases. 
 
 

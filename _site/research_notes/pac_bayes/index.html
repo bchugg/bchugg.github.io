@@ -241,14 +241,14 @@ R(\hat{f}) - R(f^*) &amp;= R(\hat{f}) - \hR_n(\hat{f}) + \hR_n(\hat{f}) - \hR_n(
 
 <h2 id="31-change-of-measure">3.1 Change of measure</h2>
 
-<p>For a prior \(P\), the change of measure inequality states that, for any measure \(Q\) (that is absolutely continuous w.r.t. to \(P\)),</p>
+<p>For a prior \(P\), the change of measure inequality states that, for any measure \(Q\) (that is absolutely continuous w.r.t. \(P\)),</p>
 
 \[\begin{equation}
 \label{eq:com}
 \log \E_{f\sim P} \exp(\vp(f)) \geq \E_{f\sim Q} [\vp(f)] - \kl(Q\vert \vert P), 
 \end{equation}\]
 
-<p>for any function \(\vp:\F\to\R\). Seeing this involves one trick, and then simply massaging the definition of the KL divergence. The trick is to define a distribution \(P_G\) via its density w.r.t. to \(P\):</p>
+<p>for any function \(\vp:\F\to\R\). Seeing this involves one trick, and then simply massaging the definition of the KL divergence. The trick is to define a distribution \(P_G\) via its density w.r.t. \(P\):</p>
 
 \[\frac{dP_G}{dP}(f) = \frac{\exp(\vp(f))}{\E_{h\sim P} \exp(\vp(h))}.\]
 
@@ -276,7 +276,7 @@ R(\hat{f}) - R(f^*) &amp;= R(\hat{f}) - \hR_n(\hat{f}) + \hR_n(\hat{f}) - \hR_n(
 \exp(2(n-1)\E_Q\Delta^2(f) - \kl(Q\vert \vert P)) \leq \E_P \exp(2(n-1)\Delta^2(f)).
 \end{equation}\]
 
-<p>Consider taking the expectation w.r.t. to the sample \(S\) on both sides. Since \(P\) is data-free (it’s a prior), we can swap the order of \(\E_P\) and \(\E_S\) to get</p>
+<p>Consider taking the expectation w.r.t. the sample \(S\) on both sides. Since \(P\) is data-free (it’s a prior), we can swap the order of \(\E_P\) and \(\E_S\) to get</p>
 
 \[\begin{equation}
 \label{eq:mc1}

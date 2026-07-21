@@ -18,7 +18,7 @@ $$
 \newcommand{\Tr}{\text{Tr}}
 $$
 
-Self-normalized bounds for martingales arise naturally in various statistical tasks, from regression to bandits. [De La Peña](https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=9W4bmC4AAAAJ) and coauthors did a tremendous amont of work on self-normalized bounds in the 90s and 2000s, and in 2011 [Abbasi-Yadkori et al](https://proceedings.neurips.cc/paper/2011/file/e1d5be1c7f2f456670de3d53c7b54f4a-Paper.pdf) applied some of their results to contextual bandits. The resulting concentration inequality has become a famous self-normalized bound. 
+Self-normalized bounds for martingales arise naturally in various statistical tasks, from regression to bandits. [De La Peña](https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=9W4bmC4AAAAJ) and coauthors did a tremendous amount of work on self-normalized bounds in the 90s and 2000s, and in 2011 [Abbasi-Yadkori et al](https://proceedings.neurips.cc/paper/2011/file/e1d5be1c7f2f456670de3d53c7b54f4a-Paper.pdf) applied some of their results to contextual bandits. The resulting concentration inequality has become a famous self-normalized bound. 
 
  
 To state it, let $$X_1,X_2,\dots$$ be a sequence of vectors in $$\Re^d$$. Let $$\eta_1,\eta_2,\dots$$ be a sequence of mean-zero, conditionally $$\sigma^2$$-sub-Gaussian random variables in $$\Re$$, i.e., 

@@ -216,7 +216,7 @@ The Chernoff bound implies that</p>
 
 <h1 id="2-mom-with-finite-variance">2. MoM with finite variance</h1>
 
-<p>It turns out that there is a simple estimator that achieves precisely what we want (and more). The median-of-means estimator proceeds as follows. We split the data in \(k\) groups. To keep the arithmetic easy, we will assume that \(n\) is multiple of \(k\). Formally, let \(G_1,\dots,G_k\) be any partition \([n]\) such that \(|G_i|=n/k\), i.e., \(\cup G_i=[n]\) and \(G_i\cap G_j=\emptyset\) for all distinct \(i\) and \(j\). 
+<p>It turns out that there is a simple estimator that achieves precisely what we want (and more). The median-of-means estimator proceeds as follows. We split the data into \(k\) groups. To keep the arithmetic easy, we will assume that \(n\) is a multiple of \(k\). Formally, let \(G_1,\dots,G_k\) be any partition of \([n]\) such that \(|G_i|=n/k\), i.e., \(\cup G_i=[n]\) and \(G_i\cap G_j=\emptyset\) for all distinct \(i\) and \(j\). 
 Let</p>
 
 \[\begin{equation}
@@ -235,7 +235,7 @@ Let</p>
     |\hmu^\mom_n - \mu| \leq \sigma \bigg(\frac{32\log(1/\delta)}{n}\bigg)^{1/2},
 \end{equation}\]
 
-<p>with probability \(1-\delta\), where \(\Var(X_1)\leq \sigma^2\). The intuition is relatively  straightforward. The sample mean for each group is an unbiased estimator of the true mean \(\mu\). Chebyshev’s inequality implies that, with constant probability, the error \(\vert S_i-\mu\vert\) is on the order \(\sigma/\sqrt{n/k}\). Also, each \(S_i\) is independent of the others. So for \(\hmu_n^\mom\) to be far for \(\mu\) it would require that many independent Bernoulli events are all far from their mean, which we can bound via exponential tail inequalities. Therefore, even though we don’t assume anything higher than a second moment for \(P\), we can employ powerful tail bounds on the behavior of the group means.</p>
+<p>with probability \(1-\delta\), where \(\Var(X_1)\leq \sigma^2\). The intuition is relatively  straightforward. The sample mean for each group is an unbiased estimator of the true mean \(\mu\). Chebyshev’s inequality implies that, with constant probability, the error \(\vert S_i-\mu\vert\) is on the order \(\sigma/\sqrt{n/k}\). Also, each \(S_i\) is independent of the others. So for \(\hmu_n^\mom\) to be far from \(\mu\) it would require that many independent Bernoulli events are all far from their mean, which we can bound via exponential tail inequalities. Therefore, even though we don’t assume anything higher than a second moment for \(P\), we can employ powerful tail bounds on the behavior of the group means.</p>
 
 <p>As for the analysis, let \(m=n/k\), so each group \(S_i\) has \(m\) elements (by assumption, \(m\) is an integer). 
 Since \(\E[S_i]=\mu\), Chebyshev’s inequality implies</p>

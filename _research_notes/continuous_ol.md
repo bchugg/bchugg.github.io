@@ -75,7 +75,7 @@ Equation \eqref{eq:gain} is [shorthand for the Itô integral]({% link _research_
 
 $$G(t) - G(s) = \int_s^t w(\tau) \d B(\tau).$$
 
-Because Brownian motion has independent increments, Equation \eqref{eq:gain} is essentially saying that, in a small time interval $$\delta$$, $$G(t+\delta) - G(t)$$ is drawn as a random variable with mean 0 and variance $$w(t)^2 \delta$$. We can see this informally by assuming that the process $$w(t)$$ changes only at times $$t$$ and $$t+\delta$$. Then, the definition of the Itô integral gives: $$G(t+\delta) - G(t) = w(t)[B(t+\delta) - B(t)]$$. The process $$w$$ adapted to $$B$$, meaning that $$w(t)$$ is $$\F_t= \sigma(B(\tau)\vert\tau\leq t)$$ measurable. Therefore, 
+Because Brownian motion has independent increments, Equation \eqref{eq:gain} is essentially saying that, in a small time interval $$\delta$$, $$G(t+\delta) - G(t)$$ is drawn as a random variable with mean 0 and variance $$w(t)^2 \delta$$. We can see this informally by assuming that the process $$w(t)$$ changes only at times $$t$$ and $$t+\delta$$. Then, the definition of the Itô integral gives: $$G(t+\delta) - G(t) = w(t)[B(t+\delta) - B(t)]$$. The process $$w$$ is adapted to $$B$$, meaning that $$w(t)$$ is $$\F_t= \sigma(B(\tau)\vert\tau\leq t)$$ measurable. Therefore, 
 
 $$\E[G(t+\delta) - G(t)|\F_t] = w(t)\E[B(t+\delta) - B(t)]=0,$$
 
@@ -119,7 +119,7 @@ $$ \reg(t) = \max_i G_i(t) - A(t).$$
 
 An optimal algorithm in the discrete, fixed-time setting is the multiplicative weights update algorithm, originally proposed by Vovk in 1990. It has regret at most $$\sqrt{2 T \log n}$$, which was shown to be (asymptotically) optimal in 1997 by Cesa-Bianchi et al. 
 
-The idea behind MWU is to draw from the pool of experts randomly, where each expert is assigned weighted proportional to its cumulative gain until that point. More precisely, expert $$i$$ is assigned weight proportional to $$\exp(\eta_t G_i(t))$$, where $$\eta_t$$ is some hyperparameter.  The continuous setting will be no different. We want the strategy $$p(t)$$ to obey 
+The idea behind MWU is to draw from the pool of experts randomly, where each expert is assigned weight proportional to its cumulative gain until that point. More precisely, expert $$i$$ is assigned weight proportional to $$\exp(\eta_t G_i(t))$$, where $$\eta_t$$ is some hyperparameter.  The continuous setting will be no different. We want the strategy $$p(t)$$ to obey 
 
 $$p_i(t) = \frac{\exp(\eta_t G_i(t))}{\sum_j \exp(\eta_t G_j(t))}.$$
 
@@ -142,7 +142,7 @@ $$
 
 As we take $$\Delta X$$ and $$\Delta T$$ to zero, we have $$\Delta X\to \d X$$ and $$(\d t)^2=0$$, $$\d X_i\d t=0$$. We also need to use that $$\d X_i \d X_j = \d \la X_i,X_j\ra$$, where $$\la X_i,X_j\ra$$ is the quadratic variation. This is a technical point so we'll skip it. It also doesn't matter so much for our purposes since we'll actually use $$\d X_i \d X_j$$ for our calculations. From here, splitting up the interval $$[0,T]$$ into $$\Delta T$$ size chunks and taking the limit gives the result. 
 
-To apply this formula to $$A(t)$$, we need to massage $$\int_0^T p_i(t)\d G_i(t)$$ into looking like a term in Itô's lemma. The most natural candidate is the term $$\int_0^T \partial_{x_i} F(t,X(t))\d X_i(t)$$ as it is also an Itô integral. Thus, we need to find the function $$F$$ such that $$\partial_{x_i} F(t,G(t)) = p_i(t)$$. One could try to integrate $$p_i(t)$$ directly to solve this equation, but that seems gross. So instead we're just going use the fact that other people have solved this equation for us to note that the solution is 
+To apply this formula to $$A(t)$$, we need to massage $$\int_0^T p_i(t)\d G_i(t)$$ into looking like a term in Itô's lemma. The most natural candidate is the term $$\int_0^T \partial_{x_i} F(t,X(t))\d X_i(t)$$ as it is also an Itô integral. Thus, we need to find the function $$F$$ such that $$\partial_{x_i} F(t,G(t)) = p_i(t)$$. One could try to integrate $$p_i(t)$$ directly to solve this equation, but that seems gross. So instead we're just going to use the fact that other people have solved this equation for us to note that the solution is 
 
 $$F(t,G(t)) = \frac{1}{\eta_t} \log \sum_{i=1}^n \exp(\eta_t G_i(t)).$$
 
@@ -185,4 +185,4 @@ $$\begin{align}
 \end{align}
 $$
 
-From here, the game is to bound the terms $$\partial_t F(t,G(t))$$ and $$\partial_{g_i,g_i} F(t,G(t))W_{i,j}(t)$$. This is mostly just calculation so we'll skip the details. The result is that if we choose $$\eta_t = \sqrt{\log (n)/2t}$$, then we get regret $$\leq 2\sqrt{t \log(n)}$$. If the time horizon $$T$$ is known beforehand and we set $$\eta_t = \sqrt{\log (n) / 2T}$$, then we get regret $$\sqrt{2t\log (n)}$$.  These are the same rates as the best known bounds in the discrete setting. The paper then goes on to show how you can discretize the algorithm (note that this is not trivial since the strategy above depends on a continuous gain process) at no loss. All in all, this as an exceptionally cool application of stochastic calculus, and I'll be curious to see whether more people start to analyze continuous versions of various statistical problems.  
+From here, the game is to bound the terms $$\partial_t F(t,G(t))$$ and $$\partial_{g_i,g_i} F(t,G(t))W_{i,j}(t)$$. This is mostly just calculation so we'll skip the details. The result is that if we choose $$\eta_t = \sqrt{\log (n)/2t}$$, then we get regret $$\leq 2\sqrt{t \log(n)}$$. If the time horizon $$T$$ is known beforehand and we set $$\eta_t = \sqrt{\log (n) / 2T}$$, then we get regret $$\sqrt{2t\log (n)}$$.  These are the same rates as the best known bounds in the discrete setting. The paper then goes on to show how you can discretize the algorithm (note that this is not trivial since the strategy above depends on a continuous gain process) at no loss. All in all, this is an exceptionally cool application of stochastic calculus, and I'll be curious to see whether more people start to analyze continuous versions of various statistical problems.  

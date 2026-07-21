@@ -70,7 +70,7 @@ $$
 
 There are several reasons one might choose to do this: 
 - In 1956, in the context of portfolio optimization theory, Kelly [pointed out that](https://www.princeton.edu/~wbialek/rome/refs/kelly_56.pdf) logarithmic returns add, hence the strong law of large numbers applies which makes it easier to reason about the behavior of the log-wealth over time, if your wealth is a product of terms. 
-- In 1961, [Breiman showed that](http://stat.wharton.upenn.edu/~steele/Resources/FTSResources/KellyBreiman/Breiman61.pdf) in iid settings, maximizing the log-wealth leads to the reaching a desired threshold ($$1/\alpha$$ say, for hypothesis testing purposes) as fast as possible, without risking all of your wealth at any time (which can happen if one maximizes $$\E_{Q_t}[S_t]$$ directly, say). 
+- In 1961, [Breiman showed that](http://stat.wharton.upenn.edu/~steele/Resources/FTSResources/KellyBreiman/Breiman61.pdf) in iid settings, maximizing the log-wealth leads to reaching a desired threshold ($$1/\alpha$$ say, for hypothesis testing purposes) as fast as possible, without risking all of your wealth at any time (which can happen if one maximizes $$\E_{Q_t}[S_t]$$ directly, say). 
 
 For binary forecasts, we can just solve \eqref{eq:opt} directly. Expanding $$\E_{P_t}[S_t(X_t)\vert \calF_{t-1}]\leq 1$$ gives $$S_t(1)p_t + S_t(0)(1-p_t) \leq 1$$. Since we want to maximize the wealth, we'll always make $$S_t$$ satisfy this constraint with equality. Therefore, we can write 
 
@@ -90,11 +90,11 @@ S_t(1) = \frac{q_t}{p_t}, \quad S_t(0) = \frac{1 - q_t}{1-p_t}.
 \end{equation}
 $$
 
-That is, $$S_t$$ is just the likelihood ratio between $$Q_t$$ and $$P_t$$. (This phenomenon holds much more generally: When testing simple nulls vs simple alternatives---implicitly what we're doing here---the optimal Kelly bet is always the likelihood ratio. One can derive this using Gibb's inequality instead of calculus. Glenn Shafer wrote a [JRSSB discussion paper](https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/rssa.12647) about this. ) 
+That is, $$S_t$$ is just the likelihood ratio between $$Q_t$$ and $$P_t$$. (This phenomenon holds much more generally: When testing simple nulls vs simple alternatives---implicitly what we're doing here---the optimal Kelly bet is always the likelihood ratio. One can derive this using Gibbs' inequality instead of calculus. Glenn Shafer wrote a [JRSSB discussion paper](https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/rssa.12647) about this. ) 
 
 Now, this was all done assuming a particular alternative $$Q_t$$. But usually we don't have a particular alternative in mind; we just want to make money if the forecaster is wrong. What do we do? 
 
-One option is to try and learn a particular distribution. Our choice of $$Q_t$$ be can be $$\calF_{t-1}$$ measurable, so we can use information about what has happened in prior rounds to learn it. This is sometimes called the "plug-in" method in game-theoretic statistics. Here, however, it's not that appropriate---it's not obvious there is a distribution to learn. Reality can behave differently all the time; it's not conforming to a distribution. 
+One option is to try and learn a particular distribution. Our choice of $$Q_t$$ can be $$\calF_{t-1}$$ measurable, so we can use information about what has happened in prior rounds to learn it. This is sometimes called the "plug-in" method in game-theoretic statistics. Here, however, it's not that appropriate---it's not obvious there is a distribution to learn. Reality can behave differently all the time; it's not conforming to a distribution. 
 
 (Incidentally, we're taking part in a longstanding debate in statistics between the Neyman-Pearson school and the Fisherian school about whether hypothesis testing requires that an alternative distribution be specified, or whether one can talk sensibly about evidence against the null without any alternative. Sometimes, as is the case here, there's no "true" alternative and we construct one only for instrumental purposes. So we seem to come down on the side of Fisher.)
 
@@ -106,7 +106,7 @@ This works reasonably well in practice. Here's what happens if we bet against a 
 <img id='img-50' src="/assets/writing_images/forecaster_incorrect_random.png">
 <p class='caption'>Average wealth is given by the dark blue line, and the shaded area is the standard deviation from 100 trials. The horizontal lines give the wealth that we need to acquire to reject the accuracy of the forecaster at the desired confidence level. </p>
 
-Note that y-axis is the _log wealth_, not the wealth. So here we would reject that the forecaster is accurate within roughly 20 trials at both $$\alpha=0.01$$ and $$\alpha = 0.001$$.  
+Note that the y-axis is the _log wealth_, not the wealth. So here we would reject that the forecaster is accurate within roughly 20 trials at both $$\alpha=0.01$$ and $$\alpha = 0.001$$.  
 
 Perhaps it's unreasonable for the forecaster to be entirely decoupled from reality. Here's what happens if the forecaster is incorrect, but $$P_t$$ is correlated with the truth. More precisely, we let $$p_t = \xi_t + N(0,1)$$. That is, the forecaster uses a noisy version of the parameter used to generate reality. 
 

@@ -14,7 +14,7 @@ $$
 \newcommand{\E}{\mathbb{E}}
 $$
 
-[Last time]({% link _research_notes/self-normalized-variational.md %}) we showed how you can obtain the famous self-normalized bound of de la Peña et al. (usually cited as the bound of Abbasi-Yadkori et al.) via the [variational approach to concentration](%{ link _research_notes/variational_approach_to_concentration.md %}). The bound was originally proven using the method of mixtures which is different than, but related to, the variational approach. 
+[Last time]({% link _research_notes/self-normalized-variational.md %}) we showed how you can obtain the famous self-normalized bound of de la Peña et al. (usually cited as the bound of Abbasi-Yadkori et al.) via the [variational approach to concentration]({% link _research_notes/variational_approach_to_concentration.md %}). The bound was originally proven using the method of mixtures which is different than, but related to, the variational approach. 
 
 As before, let 
 
@@ -27,7 +27,7 @@ $$
 $$
 
 
-As the name suggests, the method of mixtures involves _mixing_ different process using appropriate mixture distributions. 
+As the name suggests, the method of mixtures involves _mixing_ different processes using appropriate mixture distributions. 
 Let $$\nu$$ be a Gaussian with mean 0 and covariance $$V_0^{-1}$$ and consider the stochastic process $$(M_t)$$ with increments
 
 $$
@@ -81,7 +81,7 @@ $$
 
 This is precisely \eqref{eq:abbasi_bound}. 
 
-What happened here? In the variational approach we also considered a mixture over supermartingales (the same supermartingales, in fact). But the mixture was data-dependent, and we paid the price for data-dependency with a KL divergence. Here we just stuck to a mixture over a data-independent distributions, and somehow out popped the same bound. The KL divergence was implicit in the calculation. 
+What happened here? In the variational approach we also considered a mixture over supermartingales (the same supermartingales, in fact). But the mixture was data-dependent, and we paid the price for data-dependency with a KL divergence. Here we just stuck to a mixture over a data-independent distribution, and somehow out popped the same bound. The KL divergence was implicit in the calculation. 
 
 Is this a more general phenomenon? What's the precise relationship between these two methods? 
 

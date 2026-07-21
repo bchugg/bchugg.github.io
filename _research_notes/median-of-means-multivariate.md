@@ -159,7 +159,7 @@ For $$a\in \Re^d$$, let
 
 $$\ell_g(a) := \frac{1}{|S_g|} \sum_{i\in S_g}\|a - X_i\|_2^2,$$
 
-denote the mean distance of $$a$$ from the all points in $$S_g$$. Observe the following relationship: 
+denote the mean distance of $$a$$ from all the points in $$S_g$$. Observe the following relationship: 
 
 $$
 \begin{align}
@@ -173,7 +173,7 @@ We introduce a partial ordering among vectors in $$\Re^d$$ by writing
 $$a <_S b \quad\text{iff}\quad \ell_g(a) < \ell_g(b)\text{ for a majority of }g\in[k].$$
 
 Clearly, if $$a<_S b$$, then $$a\in \C_S(b)$$. 
-If $$a<_S b$$, we will say that $$a$$ _beats_ $$b$$. Intuitively, this should be taken to mean that $$a$$ is better candidate for the median than $$b$$. The following claim constitutes the core of the proof. It says that, with high probability, all points $$b$$ that are sufficiently far from the mean $$\mu$$ will be beaten by $$\mu$$. Thus, they will not be contenders for the median. We emphasize that the probability statement in this result is _uniform_ over $$b$$. That is, it holds simultaneously for all such vectors.  
+If $$a<_S b$$, we will say that $$a$$ _beats_ $$b$$. Intuitively, this should be taken to mean that $$a$$ is a better candidate for the median than $$b$$. The following claim constitutes the core of the proof. It says that, with high probability, all points $$b$$ that are sufficiently far from the mean $$\mu$$ will be beaten by $$\mu$$. Thus, they will not be contenders for the median. We emphasize that the probability statement in this result is _uniform_ over $$b$$. That is, it holds simultaneously for all such vectors.  
 
 _Claim_: With probability at least $$1-\delta$$, $$\mu <_S b$$ for all $$b\in\Re^d$$ such that $$\norm{\mu - b}\geq r$$. 
 
@@ -196,7 +196,7 @@ $$
 It thus suffices to show that with high probability, the above inequality holds simultaneously for all vectors $$v$$ with $$\norm{v}_2^2=r$$. 
 
 ## Step 1: High probability bound for single vector
-Since $$S_g-\mu$$ is the average of centered random variables, Chebyschev's inequality  gives 
+Since $$S_g-\mu$$ is the average of centered random variables, Chebyshev's inequality  gives 
 
 $$
 \begin{align}

@@ -76,7 +76,7 @@ $$
 
 # 1. Stein's Lemma 
 
-[Stein's lemma](https://en.wikipedia.org/wiki/Stein%27s_lemma) provides a nice way to evaluate the degrees of freedom of an estimator. It says that instead of evaluating the covariance, we can actually just take partial derivates of our estimator. That is, 
+[Stein's lemma](https://en.wikipedia.org/wiki/Stein%27s_lemma) provides a nice way to evaluate the degrees of freedom of an estimator. It says that instead of evaluating the covariance, we can actually just take partial derivatives of our estimator. That is, 
 
 $$\frac{1}{\sigma^2}\sum_{i=1}^n \Cov(y_i,\hmu_i) = \sum_{i=1}^n\E\frac{\partial \hmu_i}{\partial x_i}(X).$$
 
@@ -186,7 +186,7 @@ It's worth noting that you can prove this result without resorting to Stein's le
 
 ## 2.1 Optimizing $$v$$ 
 
-It's tempting to try and optimize the risk as a function of $$v$$. However, this is challenging because the expectation in Equation \eqref{eq:risk_js} can't be computed since we don't know the distribution. If we receives multiple samples, we could use the empirical average instead, but in that case we'd be implicitly conditioning $$v$$ on $$X$$, in which case Equation \eqref{eq:risk_js} no longer holds. Indeed, if $$v$$ is chosen as a function of $$X$$, then the partial derivatives of the JS estimator  have extra terms: 
+It's tempting to try and optimize the risk as a function of $$v$$. However, this is challenging because the expectation in Equation \eqref{eq:risk_js} can't be computed since we don't know the distribution. If we receive multiple samples, we could use the empirical average instead, but in that case we'd be implicitly conditioning $$v$$ on $$X$$, in which case Equation \eqref{eq:risk_js} no longer holds. Indeed, if $$v$$ is chosen as a function of $$X$$, then the partial derivatives of the JS estimator  have extra terms: 
 
 $$\sum_i\frac{\partial \hmu_i^{JS}(X,v)}{\partial x_i} = n - \frac{n-2}{\norm{X-v}_2^2}\bigg(\sum_i(1-\partial_i v_i) + 2\sum_i\frac{(X_i-v_i)^2(1-\partial_iv_i)}{\norm{X-v}_2^2}\bigg).$$
 
@@ -194,7 +194,7 @@ That is, if $$\partial_iv_i$$ is not zero, then the optimization problem becomes
 
 ## 2.2 Multiple Samples 
 
-An obvious question is whether the result can be extended when multiples observations are drawn from $$N(\mu,\sigma^2I)$$. The answer is yes. In that case, we consider the estimator 
+An obvious question is whether the result can be extended when multiple observations are drawn from $$N(\mu,\sigma^2I)$$. The answer is yes. In that case, we consider the estimator 
 
 $$\hmu_v = \bigg(1 - \frac{(n-2)\sigma^2}{k\norm{\bZ-v}_2^2}\bigg)(\bZ-v) + v,$$
 

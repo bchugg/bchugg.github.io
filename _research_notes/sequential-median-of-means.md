@@ -17,11 +17,11 @@ $$
 \renewcommand{\Re}{\mathbb{R}}
 $$
 
-The [median-of-means (MoM) estimator]({% link _research_notes/median-of-means-univariate.md %}) is one of the best known estimator for mean estimation in heay-tailed settings. Is there a time-uniform version of MoM? Unlike Chernoff bounds which rely on exponential inequalities and can thus be made time-uniform very naturally via [Ville's inequality]({% link _research_notes/ville.md %}), it's much less clear how to approach the problem for the MoM estimator. 
+The [median-of-means (MoM) estimator]({% link _research_notes/median-of-means-univariate.md %}) is one of the best known estimators for mean estimation in heavy-tailed settings. Is there a time-uniform version of MoM? Unlike Chernoff bounds which rely on exponential inequalities and can thus be made time-uniform very naturally via [Ville's inequality]({% link _research_notes/ville.md %}), it's much less clear how to approach the problem for the MoM estimator. 
 
 Recall that the fixed-time MoM estimator splits the data into $$k$$ groups, takes the sample mean of each group, and then computes the median among those sample means. The same logic holds in the [multivariate case]({% link _research_notes/median-of-means-multivariate.md %}), but the computation of the median is much trickier. Here we'll stick to the univariate setting for simplicity (although very similar arguments carry over). 
 
-Suppose we observe that random variables $$X_1,X_2,\dots,X_n\in\Re$$ with mean $$\mu$$. Given $$\delta\in(0,1)$$, if we choose $$k = \lceil 8\log(1/\delta)\rceil$$, one can show that the MoM estimator $$\muhat^\mom$$ satisfies 
+Suppose we observe random variables $$X_1,X_2,\dots,X_n\in\Re$$ with mean $$\mu$$. Given $$\delta\in(0,1)$$, if we choose $$k = \lceil 8\log(1/\delta)\rceil$$, one can show that the MoM estimator $$\muhat^\mom$$ satisfies 
 
 $$
 \begin{equation}

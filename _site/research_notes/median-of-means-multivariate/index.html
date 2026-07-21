@@ -296,7 +296,7 @@ For \(a\in \Re^d\), let</p>
 
 \[\ell_g(a) := \frac{1}{|S_g|} \sum_{i\in S_g}\|a - X_i\|_2^2,\]
 
-<p>denote the mean distance of \(a\) from the all points in \(S_g\). Observe the following relationship:</p>
+<p>denote the mean distance of \(a\) from all the points in \(S_g\). Observe the following relationship:</p>
 
 \[\begin{align}
     \ell_g(a)- \ell_g(b) &amp;= \norm{a-b}_2^2 - \frac{2}{|S_g|}\sum_{i\in S_g}\la X_i-b,a-b\ra  \\
@@ -308,7 +308,7 @@ For \(a\in \Re^d\), let</p>
 \[a &lt;_S b \quad\text{iff}\quad \ell_g(a) &lt; \ell_g(b)\text{ for a majority of }g\in[k].\]
 
 <p>Clearly, if \(a&lt;_S b\), then \(a\in \C_S(b)\). 
-If \(a&lt;_S b\), we will say that \(a\) <em>beats</em> \(b\). Intuitively, this should be taken to mean that \(a\) is better candidate for the median than \(b\). The following claim constitutes the core of the proof. It says that, with high probability, all points \(b\) that are sufficiently far from the mean \(\mu\) will be beaten by \(\mu\). Thus, they will not be contenders for the median. We emphasize that the probability statement in this result is <em>uniform</em> over \(b\). That is, it holds simultaneously for all such vectors.</p>
+If \(a&lt;_S b\), we will say that \(a\) <em>beats</em> \(b\). Intuitively, this should be taken to mean that \(a\) is a better candidate for the median than \(b\). The following claim constitutes the core of the proof. It says that, with high probability, all points \(b\) that are sufficiently far from the mean \(\mu\) will be beaten by \(\mu\). Thus, they will not be contenders for the median. We emphasize that the probability statement in this result is <em>uniform</em> over \(b\). That is, it holds simultaneously for all such vectors.</p>
 
 <p><em>Claim</em>: With probability at least \(1-\delta\), \(\mu &lt;_S b\) for all \(b\in\Re^d\) such that \(\norm{\mu - b}\geq r\).</p>
 
@@ -327,7 +327,7 @@ Fix \(b\in\Re^d\) with \(\norm{\mu-b}\geq r\). We have via \eqref{eq:la-lb} that
 <p>It thus suffices to show that with high probability, the above inequality holds simultaneously for all vectors \(v\) with \(\norm{v}_2^2=r\).</p>
 
 <h2 id="step-1-high-probability-bound-for-single-vector">Step 1: High probability bound for single vector</h2>
-<p>Since \(S_g-\mu\) is the average of centered random variables, Chebyschev’s inequality  gives</p>
+<p>Since \(S_g-\mu\) is the average of centered random variables, Chebyshev’s inequality  gives</p>
 
 \[\begin{align}
     \Pr(\vert\la S_g-\mu,v\ra\vert \geq t) &amp;\leq \frac{\Var(\la S_g-\mu,v\ra)}{t^2} = \frac{\E\la X-\mu,v\ra^2}{mt^2}  \\
