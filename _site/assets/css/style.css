@@ -715,14 +715,14 @@ pre code {
   padding-top: 20px; }
 .papers .papers-table {
   border: 0px;
-  margin-top: 35px; }
+  margin-top: 10px; }
   .papers .papers-table tr:nth-child(odd) td {
     background-color: white; }
   .papers .papers-table td {
     border: 0px;
     padding: 0;
     vertical-align: top;
-    padding-bottom: 20px; }
+    padding-bottom: 15px; }
   .papers .papers-table .pubinfo #highlight {
     color: green; }
 
