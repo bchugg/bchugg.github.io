@@ -75,6 +75,8 @@ For a full list see my <a href="{% link assets/files/cv.pdf %}">CV</a>.
       {% endfor %}
       {% if pub.shortpub != nil %}
       <em>{{ pub.shortpub }}, </em> 
+    {% elsif pub.publication != nil %}
+      <em>{{ pub.publication }}, </em> 
     {% endif %}
     {{ pub.year }} 
     {% if pub.highlight != nil %} <span id='highlight'>({{ pub.highlight }})</span> {% endif %}
