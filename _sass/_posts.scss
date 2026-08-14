@@ -74,9 +74,41 @@
 
 
 
-// research notes only 
-.note { 
+// research notes only
+.note {
     text-align: justify;
+    .note-footer {
+        margin-top: 40px;
+        padding-top: 15px;
+        border-top: 1px solid lightgray;
+    }
+    .note-back {
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
+    .note-nav {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        font-size: 11pt;
+        text-align: left;
+        a {
+            color: navy;
+        }
+    }
+    .note-nav-prev, .note-nav-next {
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+    }
+    .note-nav-next {
+        text-align: right;
+    }
+    .note-nav-label {
+        color: gray;
+        font-size: 10pt;
+    }
     img {
         margin-top: 20px;
         display: block;
