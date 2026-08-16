@@ -61,7 +61,7 @@ satisfies
 for all $$B:\calX\to\calB$$. 
 
 
-Note that $$\phi_\pi$$ is well-defined since $$\phi$$ is allowed to see $$B(X)$$ (if $$\phi$$ is not allowed to see $$B(X)$$ before making a decision, then the problem is basically impossible to solve. You'd have to assume a worse case loss). 
+Note that $$\phi_\pi$$ is well-defined since $$\phi$$ is allowed to see $$B(X)$$ (if $$\phi$$ is not allowed to see $$B(X)$$ before making a decision, then the problem is basically impossible to solve. You'd have to assume a worst case loss). 
 
 Again, this result isn't new per se, and the proof isn't difficult. But I can't find a similar statement anywhere. 
 

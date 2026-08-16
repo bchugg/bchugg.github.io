@@ -82,7 +82,7 @@ We'll be using \eqref{eq:amm_fee} for the remainder of the post.
 
 # 3. Trading dynamics
 
-Our eventual goal is to understanding how the wealth of a liquidity provider increases or decreases over time as a function of the fee $$\gamma$$. To do this, we need to understand how the quantities of $$X_t$$ and $$Y_t$$ change over time. The first step is to understand when it is in a trader's interest to exchange goods -- i.e., when there is an arbitrage opportunity.  
+Our eventual goal is to understand how the wealth of a liquidity provider increases or decreases over time as a function of the fee $$\gamma$$. To do this, we need to understand how the quantities of $$X_t$$ and $$Y_t$$ change over time. The first step is to understand when it is in a trader's interest to exchange goods -- i.e., when there is an arbitrage opportunity.  
 
 ## 3.1 No Arbitrage Conditions
 At a fixed time $$t$$ and with $$S_t$$ known to a trader, we want to answer the question: what trade (if any) is the most profitable? First, consider trading $$X_t$$ for $$Y_t$$. For now, we'll assume that however much $$Y_t$$ the trader obtains, she's able to cash it all (the lumber can all be converted to cash). That is, if she obtains $$\DY_t$$ of $$Y_t$$, then the value is $$S_t\DY_t$$. The technical term for this is that the market is sufficiently liquid for any trade, or infinitely liquid. Thus, the trader is interested in maximizing $$S_t\DY_t - \DX_t$$ (she gains $$\DY_t$$ at unit price $$S_t$$, and loses $$\DX_t$$). Of course, $$\DX_t$$ and $$\DY_t$$ must be constrained by the AMM, and must be positive. This yields the following optimization problem: 
@@ -164,7 +164,7 @@ $$
 
 ## 3.2 The trading game
 
-Based on the no-arbitrage conditions derived above, we know understand when trades will and won't occur. It's now worth spelling out how the actual dynamics of this two good economy will play themselves out. 
+Based on the no-arbitrage conditions derived above, we now understand when trades will and won't occur. It's now worth spelling out how the actual dynamics of this two good economy will play themselves out. 
 
 We make the following assumption: 
 
@@ -180,7 +180,7 @@ The game proceeds as follows. We start with some initial amount of numeraire and
 - If $$S_t > \gamma^{-1}\ratio_t$$, then a trader exchanges $$\DX_t$$ for $$\DY_t$$ such that $$S_t\in [\gamma \ratio_{t+1},\gamma^{-1}\ratio_{t+1}]$$. In particular, $$S_t = \gamma^{-1}\Lambda_t$$. 
 - If $$S_t\in [\gamma \ratio_{t},\gamma^{-1}\ratio_{t}]$$ then no trade occurs. 
 
-While this is somewhat abstract, it's worth keeping this general process in mind. The upshot is that if the current price is in the no-arbitrage region then no trade occurs because it's not in any traders' interest. On the other hand, if $$X_t$$ is sufficiently underpriced relative to $$Y_t$$ such that $$S_t < \gamma \Lambda_t$$, then somebody will trades $$\DY_t$$ for $$\DX_t$$. In particular, they trade precisely the amount given by Equation \eqref{eq:uncon_sol}, which means that $$X$$ and $$Y$$ (which are now $$X_{t+1}$$ and $$Y_{t+1}$$) now obey $$S_t = \gamma\Lambda_{t+1}$$. Exchanging more $$\DY_t$$ would not have been profitable for the trader. 
+While this is somewhat abstract, it's worth keeping this general process in mind. The upshot is that if the current price is in the no-arbitrage region then no trade occurs because it's not in any traders' interest. On the other hand, if $$X_t$$ is sufficiently underpriced relative to $$Y_t$$ such that $$S_t < \gamma \Lambda_t$$, then somebody will trade $$\DY_t$$ for $$\DX_t$$. In particular, they trade precisely the amount given by Equation \eqref{eq:uncon_sol}, which means that $$X$$ and $$Y$$ (which are now $$X_{t+1}$$ and $$Y_{t+1}$$) now obey $$S_t = \gamma\Lambda_{t+1}$$. Exchanging more $$\DY_t$$ would not have been profitable for the trader. 
 
 ## 3.3 Evolution of $$X_t/Y_t$$
 

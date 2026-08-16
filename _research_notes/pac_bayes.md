@@ -88,7 +88,7 @@ Okay so let's actually prove McAllester's bound (Equation \eqref{eq:mcallester})
 
 ## 3.1 Change of measure 
 
-For a prior $$P$$, the change of measure inequality states that, for any measure $$Q$$ (that is absolutely continuous w.r.t. to $$P$$), 
+For a prior $$P$$, the change of measure inequality states that, for any measure $$Q$$ (that is absolutely continuous w.r.t. $$P$$), 
 
 $$
 \begin{equation}
@@ -97,7 +97,7 @@ $$
 \end{equation}
 $$
 
-for any function $$\vp:\F\to\R$$. Seeing this involves one trick, and then simply massaging the definition of the KL divergence. The trick is to define a distribution $$P_G$$ via its density w.r.t. to $$P$$: 
+for any function $$\vp:\F\to\R$$. Seeing this involves one trick, and then simply massaging the definition of the KL divergence. The trick is to define a distribution $$P_G$$ via its density w.r.t. $$P$$: 
 
 $$\frac{dP_G}{dP}(f) = \frac{\exp(\vp(f))}{\E_{h\sim P} \exp(\vp(h))}.$$
 
@@ -127,7 +127,7 @@ $$\begin{equation}
 \exp(2(n-1)\E_Q\Delta^2(f) - \kl(Q\vert \vert P)) \leq \E_P \exp(2(n-1)\Delta^2(f)).
 \end{equation}$$
 
-Consider taking the expectation w.r.t. to the sample $$S$$ on both sides. Since $$P$$ is data-free (it's a prior), we can swap the order of $$\E_P$$ and $$\E_S$$ to get 
+Consider taking the expectation w.r.t. the sample $$S$$ on both sides. Since $$P$$ is data-free (it's a prior), we can swap the order of $$\E_P$$ and $$\E_S$$ to get 
 
 $$\begin{equation}
 \label{eq:mc1}

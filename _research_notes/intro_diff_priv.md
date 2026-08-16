@@ -25,11 +25,11 @@ $$
 
 I remember attending some reading groups on differential privacy during my undergraduate days. My main takeaway was "add noise to data and privacy increases." That seemed rather obvious, so I stopped attending and gradually lost interest in the subject.  It didn't help that, at that point, differential privacy wasn't being relied on in practice. 
 
-After few years I can safely say that I regret my choice. Differential privacy is now used in a lot of applications. Apple [started using it in macOS Sierra](https://www.apple.com/privacy/docs/Differential_Privacy_Overview.pdf) and has since expanded its application to Safari. Google [used differential privacy](https://arxiv.org/pdf/2107.01179.pdf) when gathering insights from searches related to Covid-19, and for their [Covid-19 mobility reports](https://arxiv.org/pdf/2004.04145.pdf). Other examples include [LinkedIn](https://arxiv.org/pdf/2010.13981.pdf), [Microsoft](https://proceedings.neurips.cc/paper/2017/file/253614bbac999b38b5b60cae531c4969-Paper.pdf) and [Uber](https://www.usenix.org/conference/enigma2018/presentation/ensign). What didn't occur to me was that that _how_ you add noise matters, and developing methods to add the right amount of noise in the right ways is an interesting problem. 
+After a few years I can safely say that I regret my choice. Differential privacy is now used in a lot of applications. Apple [started using it in macOS Sierra](https://www.apple.com/privacy/docs/Differential_Privacy_Overview.pdf) and has since expanded its application to Safari. Google [used differential privacy](https://arxiv.org/pdf/2107.01179.pdf) when gathering insights from searches related to Covid-19, and for their [Covid-19 mobility reports](https://arxiv.org/pdf/2004.04145.pdf). Other examples include [LinkedIn](https://arxiv.org/pdf/2010.13981.pdf), [Microsoft](https://proceedings.neurips.cc/paper/2017/file/253614bbac999b38b5b60cae531c4969-Paper.pdf) and [Uber](https://www.usenix.org/conference/enigma2018/presentation/ensign). What didn't occur to me was that _how_ you add noise matters, and developing methods to add the right amount of noise in the right ways is an interesting problem. 
 
-Intuitively, a differentially private mechanism should be one which is not excessively reactive to small changes in the dataset. Let $$\D$$ be the set of all databases, and consider a function $$g$$ which acts on $$\D$$. (Think of a database as just some big data table where, e.g., each row corresponds to a different user.) For instance, given a database $$x\in \D$$, $$g(x)$$ might be the size of $$x$$, or the total amount user deposits in $$x$$, or it might ask for the number of users with some property (a "counting query"). 
+Intuitively, a differentially private mechanism should be one which is not excessively reactive to small changes in the dataset. Let $$\D$$ be the set of all databases, and consider a function $$g$$ which acts on $$\D$$. (Think of a database as just some big data table where, e.g., each row corresponds to a different user.) For instance, given a database $$x\in \D$$, $$g(x)$$ might be the size of $$x$$, or the total amount of user deposits in $$x$$, or it might ask for the number of users with some property (a "counting query"). 
 
-We want to add noise to $$g$$ in such a way that, regardless of how it queries the database, it cannot back out sensitive information. More precisely, we want to ensure that if there are two databases which are nearly identitical, then asking the same question of each will not betray anyone's private data. For example, if $$g(x)$$ is the total assets across all users in the database $$x$$, and $$z$$ equals $$x$$ except that it omits a single row, then $$g(x)-g(z)$$ tells you about the assets of the omitted user.  Similar examples abound: medical diagnoses, debts, etc. 
+We want to add noise to $$g$$ in such a way that, regardless of how it queries the database, it cannot back out sensitive information. More precisely, we want to ensure that if there are two databases which are nearly identical, then asking the same question of each will not betray anyone's private data. For example, if $$g(x)$$ is the total assets across all users in the database $$x$$, and $$z$$ equals $$x$$ except that it omits a single row, then $$g(x)-g(z)$$ tells you about the assets of the omitted user.  Similar examples abound: medical diagnoses, debts, etc. 
 
 Formally, we call a (randomized) mechanism $$f$$ which acts on databases $$(\eps,\delta)$$-differentially private if, for all outputs $$A\subset \text{Range}(f)$$ and all databases $$x$$ and $$z$$ such that $$x$$ and $$z$$ differ by one row, 
 
@@ -37,13 +37,13 @@ $$\Pr(f(x)\in A)\leq e^\eps \Pr(f(z)\in A) + \delta.$$
 
 If $$\delta=0$$, we call $$f$$ $$\eps$$-differentially private. 
 
-The intuition behind the definition is easier to grasp if we negate it. If $$f$$ is _not_ differentially private, this means there exists some $$A$$ such that $$\Pr(f(x)\in A)\gg \Pr(f(z) \in A)$$. That is, swapping just a single row of $$x$$ to $$z$$ changed the output distribution considerably, meaning that $$f$$ is sensitive to the data. If $$f$$ is differentiably private then, roughly speaking, small changes in the input result in small changes in the output. 
+The intuition behind the definition is easier to grasp if we negate it. If $$f$$ is _not_ differentially private, this means there exists some $$A$$ such that $$\Pr(f(x)\in A)\gg \Pr(f(z) \in A)$$. That is, swapping just a single row of $$x$$ to $$z$$ changed the output distribution considerably, meaning that $$f$$ is sensitive to the data. If $$f$$ is differentially private then, roughly speaking, small changes in the input result in small changes in the output. 
 
-A popular to write $$\eps$$-differential privacy is as the likelihood ratio
+A popular way to write $$\eps$$-differential privacy is as the likelihood ratio
 
 $$\sup_{A\in \image(f)} \sup_{x_1,x_2:x_1\in \delta_1(x_2)}\frac{\Pr(f(x_1)\in A)}{\Pr(f(x_2)\in A)}\leq e^\eps,$$
 
-where $$\delta_1(x)$$ is the set of databases which different by at most 1 row from $$x$$. 
+where $$\delta_1(x)$$ is the set of databases which differ by at most 1 row from $$x$$. 
 
 # 1. Example: The Laplace Mechanism
 
@@ -83,7 +83,7 @@ which shows that the Laplace mechanism is $$(\eps,0)$$-differentially private.
 
 One immediate question is how differentially private mechanisms behave under composition. For instance, can we employ multiple differentially private algorithms in tandem and retain differential privacy? Sort of. 
 
-Suppose $$f_1,f_2$$ are $$(\eps_1,\delta_1)$$, $$(\eps_2,\delta_2)$$ differentially private, respectively. Considering concatenating the output so that, given a database $$x$$, we construct a new map $$g$$ such that $$g(x) = (f_1(x), f_2(x))$$, where we run $$f_1$$ and $$f_2$$ independently of one another. Will $$g$$ be differentially private? 
+Suppose $$f_1,f_2$$ are $$(\eps_1,\delta_1)$$, $$(\eps_2,\delta_2)$$ differentially private, respectively. Consider concatenating the output so that, given a database $$x$$, we construct a new map $$g$$ such that $$g(x) = (f_1(x), f_2(x))$$, where we run $$f_1$$ and $$f_2$$ independently of one another. Will $$g$$ be differentially private? 
 
 It turns out that $$g$$ will be $$(\eps_1+\eps_2,\delta_1+\delta_2)$$ differentially private. You'll often see this result referred to as "the epsilons and deltas add up." Unfortunately, when people cite this result, they typically cite Theorem 1 of [this paper](https://www.iacr.org/archive/eurocrypt2006/40040493/40040493.pdf), which has an incorrect proof.  There is a corrected proof in the [book by Dwork and Roth](https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf), but I think it's more complicated than necessary. Here's a simpler proof. 
 
@@ -118,9 +118,9 @@ so $$f\circ g$$ is  $$(\eps,\delta)$$ private.
 
 So far the model we've posited is one where there exists some large database $$x\in \X$$ which contains all users' data, and then some administrator or custodian of the data privatizes it. In practice, this isn't terribly secure. Do we trust the custodian? Does she delete the original database after it's privatized? What if another company offers her a lot of money for $$x$$, or her company is bought by another? 
 
-For all these reasons, we might consider _local_ differentially privacy. Here, the data is privatized on the users end before reaching any centralized database. Thus, no one sees the raw data besides the user themselves. Google [uses](https://ai.google/research/pubs/pub42852) local differential privacy to collect information from users' browsers, and Apple [uses](https://machinelearning.apple.com/2017/12/06/learning-with-privacy-at-scale.html) local differential privacy to collect emoji data. 
+For all these reasons, we might consider _local_ differential privacy. Here, the data is privatized on the user's end before reaching any centralized database. Thus, no one sees the raw data besides the user themselves. Google [uses](https://ai.google/research/pubs/pub42852) local differential privacy to collect information from users' browsers, and Apple [uses](https://machinelearning.apple.com/2017/12/06/learning-with-privacy-at-scale.html) local differential privacy to collect emoji data. 
 
-In the local setting, instead of considering functions which act on the set of databases $$\D$$, we consider functions which act on a users private data. If $$h$$ is such a function, then we say that $$h$$ is $$\eps$$-local differentially private if, for all user data $$x$$ and $$y$$ and all $$A\subset \image(h)$$, 
+In the local setting, instead of considering functions which act on the set of databases $$\D$$, we consider functions which act on a user's private data. If $$h$$ is such a function, then we say that $$h$$ is $$\eps$$-local differentially private if, for all user data $$x$$ and $$y$$ and all $$A\subset \image(h)$$, 
 
 $$\Pr(h(x)\in A)\leq e^\eps \Pr(h(y)\in A).$$
 
@@ -140,7 +140,7 @@ Note that $$\Pr(Z=z\vert X=x) = r\ind(z=x) + (1-r)/2$$. Therefore,
 
 $$\max_z\max_x \frac{\Pr(Z|X=x)}{\Pr(Z|X=x')} = \max_x\max_z \frac{r\ind(z=x) + (1-r)/2}{r\ind(z=x') + (1-r)/2} = 1 + \frac{2r}{1-r}.$$
 
-If we set $$\eps=\log(1 + 2r/(1-r))$$, we see that Warner's randomized response is $$\eps$$-locally differentiably private. 
+If we set $$\eps=\log(1 + 2r/(1-r))$$, we see that Warner's randomized response is $$\eps$$-locally differentially private. 
 
 
 

@@ -18,7 +18,7 @@ $$
 {:toc}
 
 
-Throughout, let $$W$$ be a Wiener process starting at the origin, and let $$X$$ be a stochastic process adapted to $$W$$'s filtration. $$I_t=I_t(X)$$ is the [Itô integral](/research_notes/intro_ito/) of $$X$$ w.r.t. to $$W$$. 
+Throughout, let $$W$$ be a Wiener process starting at the origin, and let $$X$$ be a stochastic process adapted to $$W$$'s filtration. $$I_t=I_t(X)$$ is the [Itô integral](/research_notes/intro_ito/) of $$X$$ w.r.t. $$W$$. 
 
 # 1. Itô Processes
 There are at least two motivations for the Itô process. The first comes from the identity 
@@ -48,7 +48,7 @@ $$\begin{equation}
 \end{equation}
 $$
 
-This, in all it's glory, is what's referred to as a stochastic differential equation (SDE). It's important to note that Equation $$\eqref{eq:sde}$$ isn't actually a precise mathematical statement. It's simply shorthand for Equation $$\eqref{eq:ito_process_int}$$. But it's definitely easier to write, and also has a nicer intuitive interpretation. Namely, a small change $$\Delta$$ in $$X_t$$ is normally distributed with expectation $$\mu(X_t,t)\Delta$$ and variance $$\sigma(X_t,t)^2\Delta$$ (hence the choice of notation). People often find it easier to work with the SDE form instead of the integral form, especially because you can basically operate differentials as you would expect (even though it's informal) and everything works out. 
+This, in all its glory, is what's referred to as a stochastic differential equation (SDE). It's important to note that Equation $$\eqref{eq:sde}$$ isn't actually a precise mathematical statement. It's simply shorthand for Equation $$\eqref{eq:ito_process_int}$$. But it's definitely easier to write, and also has a nicer intuitive interpretation. Namely, a small change $$\Delta$$ in $$X_t$$ is normally distributed with expectation $$\mu(X_t,t)\Delta$$ and variance $$\sigma(X_t,t)^2\Delta$$ (hence the choice of notation). People often find it easier to work with the SDE form instead of the integral form, especially because you can basically operate differentials as you would expect (even though it's informal) and everything works out. 
 
 While it may not seem so at first glance, almost all stochastic processes -- except those with jumps -- are Itô processes. 
 
@@ -86,7 +86,7 @@ Let $$X_t$$ be an Itô process: $$\dif X = \mu(X,t)\dif t + \sigma(X,t)\dif W$$.
 
 $$\int_0^t Y \dif X = \int_0^t Y \mu \dif s + \int_0^t Y \sigma \dif W,$$
 
-which is what you might expect. As usual, the integral on the left is a Lebesgue integral w.r.t to the time component, and the integral on the right is an Itô integral. 
+which is what you might expect. As usual, the integral on the left is a Lebesgue integral w.r.t. the time component, and the integral on the right is an Itô integral. 
 
 # 2. Aside: Manipulating Infinitesimals
 
@@ -191,7 +191,7 @@ $$\dd f = \bigg(\mu f_x + f_t + \frac{1}{2}\sigma^2 f_{xx}\bigg)\dif t + \sigma 
 
 which implies that $$f(X_t,t)$$ is itself an Itô process. This is good, as it was one of the primary motivators of defining the Itô process in the first place. 
 
-In the case of Brownian motion this simplies to 
+In the case of Brownian motion this simplifies to 
 
 $$\dd f(W,t) = f_x(W,t)\dif W + f_t(X,t) \dif t + \frac{1}{2} f_{xx}(W,t)\dif t.$$
 

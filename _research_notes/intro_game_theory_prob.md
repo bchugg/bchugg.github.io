@@ -61,7 +61,7 @@ Essentially, game-theoretic probability is the study of what can be achieved by 
 
 - Bob has some initial capital, $$C_0$$. 
 - For rounds $$n=1,2,\dots$$ 
-    - Bob annonces a value $$M_n$$ 
+    - Bob announces a value $$M_n$$ 
     - World announces $$y_n\in[-B,B]$$
     - Bob's new capital is $$S$$ is $$C_n = C_{n-1} + M_ny_n$$. 
 
@@ -75,7 +75,7 @@ $$
 $$
 
 
-Stare at these games for a second. Notice that we haven't introduced an underlying probability space, any distributional assumptions on any of the players, or any notions of independence (except arguably for the Alice in the last game). There's not even any notion of _randomness_. This is kind of remarkable. Normally, you can't even begin to get off the ground without rigorously defining these things. Also, because the games are sequential in nature, results achieved in this space are inherently sequential as well. 
+Stare at these games for a second. Notice that we haven't introduced an underlying probability space, any distributional assumptions on any of the players, or any notions of independence (except arguably for Alice in the last game). There's not even any notion of _randomness_. This is kind of remarkable. Normally, you can't even begin to get off the ground without rigorously defining these things. Also, because the games are sequential in nature, results achieved in this space are inherently sequential as well. 
 
 The rest of the post will focus on the second game and proving Equation $$\eqref{eq:lln}$$.
 
@@ -83,11 +83,11 @@ The rest of the post will focus on the second game and proving Equation $$\eqref
 
 To begin rigorously analyzing such games, we need to introduce various concepts. 
 
-Like most areas of math, there's a slew of new (ish?) terminology that goes along with it. Most of it is intuitive and often you can get by without paying too much attention to the precise definitons. But we still need to introduce several precise meanings to start proving things.  
+Like most areas of math, there's a slew of new (ish?) terminology that goes along with it. Most of it is intuitive and often you can get by without paying too much attention to the precise definitions. But we still need to introduce several precise meanings to start proving things.  
 
 An _event_ is a condition on the opponents. E.g., Equations $$\eqref{eq:lln_general}$$ and $$\eqref{eq:lln}$$ are events. Let $$\Omega_\inf$$ be the set of all infinite move sequences by the opponents, and $$\Omega$$ the set of all finite move sequences. E.g., $$\{y_1,v_1,y_2,v_2,\dots\}\in \Omega_\inf$$ and $$\{y_1,v_1,\dots,y_n,v_n\}\in\Omega$$. Since we're analyzing the game in which Alice always plays 0, we'll omit $$v_i$$ from these sequences. Formally, we call $$\Omega_\inf$$ the sample space, and $$\Omega$$ the set of all situations. An event is a subset $$E\subset \Omega_\inf$$, and a path is an element $$\omega\in\Omega_\inf$$. Typically, it will be clear from context (or not matter) whether we're talking about finite or infinite sequences so we'll abuse notation and just write $$\Omega$$ for both $$\Omega_\inf$$ and $$\Omega$$. 
 
-Most the results in the space involve constructing strategies for Bob. Formally, a strategy is a pair $$(C_0, \strat)$$ where $$C_0$$ is the initial capital and $$\strat$$ is an _predictable process_, which is a function 
+Most the results in the space involve constructing strategies for Bob. Formally, a strategy is a pair $$(C_0, \strat)$$ where $$C_0$$ is the initial capital and $$\strat$$ is a _predictable process_, which is a function 
 
 $$\strat:\Omega\to\R,$$
 
@@ -101,7 +101,7 @@ If any of this is overly confusing, you can probably just ignore it. A path is a
 
 ## 2.2 The Capital Process
 
-Bob's _capital process_ is a function $$\cps_n(\omega)$$ is a function of his strategy $$\omega$$, the moves made by World $$\omega$$, and tracks how his capital evolves over time. Its definition depends on the exact game being played. For the first game above it is defined recursively as 
+Bob's _capital process_ $$\cps_n(\omega)$$ is a function of his strategy $$\omega$$, the moves made by World $$\omega$$, and tracks how his capital evolves over time. Its definition depends on the exact game being played. For the first game above it is defined recursively as 
 
 $$
 \begin{equation}
@@ -122,7 +122,7 @@ since $$v_n=0$$. The dependence on $$\omega$$ is usually dropped. Results will i
 
 # 3. Forcing and Weak Forcing 
 
-A foundational concept is normal probability is an _almost sure_ event. Here, as alluded to above, this means an event $$E$$ such that $$\cps\geq 0$$ and either 
+A foundational concept in normal probability is an _almost sure_ event. Here, as alluded to above, this means an event $$E$$ such that $$\cps\geq 0$$ and either 
 
 $$\lim_n \cps =\infty\quad\text{or}\quad E \text{ happens}.$$ 
 
@@ -134,14 +134,14 @@ $$\sup_n \cp^\strat_n(\omega) =\omega$$
 
 for all $$\omega\not\in E$$. 
 
-Weak forcing is (shockingly) a weaker condition than forcing, meaning that meaning that if we can weakly force $$E$$ we can force $$E$$. 
+Weak forcing is (shockingly) a weaker condition than forcing, meaning that if we can weakly force $$E$$ we can force $$E$$. 
 
 To see that, suppose $$\strat$$ is a strategy that weakly forces $$E$$, and let $$\omega\notin E$$ so that $$\sup_n\cps(\omega)=\infty$$. We want to create a strategy $$\hstrat$$ such that $$\lim_n \cp^{\hstrat}(\omega)=\infty$$ or $$E$$ occurs. The idea is to let $$\hstrat$$ be a scaled down version of $$\strat$$ which sets aside some capital every time $$\cps$$ gets large. Since the latter is large infinitely often, we can set aside capital infinitely often, meaning that $$\cp_{\hstrat}\to\infty$$. 
 
 Let $$\{T_1<T_2<\dots\}\subset\mathbb{N}$$, $$i\in\mathbb{N}$$ be an infinite increasing sequence of natural numbers. Fix $$0<\beta<1$$. Define $$\hstrat$$ as playing the same moves as $$\strat$$ until $$\cps_n>T_1$$. 
 Define the next move $$\hstrat(\omega)$$ to bet the amount $$\beta \strat_{n+1}(\omega)$$, i.e., a scaled down version of $$\strat$$'s next bet. Thus, if $$\strat$$ loses money, $$\hstrat$$ loses a little less, and if it wins, $$\hstrat$$ wins a little less. Since $$\cps_n\geq 0$$, $$\strat$$ can lose at most $$\cps_n$$, thus $$\hstrat $$ can lose at most $$\beta \cp^{\hstrat}_n$$, and $$(1-\beta) \cp^{\hstrat}_n$$ is safe. 
 
-Let $$\hstrat$$ continuing emulating $$\strat$$ until $$\cps_{n}>T_2$$, and then repeat the process. Again, we are saving a positive amount of capital which is henceforth saved. This amount builds over time, and since $$\cps$$ eventually exceeds $$T_i$$ for all $$i$$ (otherwise it would be bounded by some finite number), the strategy $$\hstrat$$ saves an infinite amount, thus $$\cp^{\hstrat}_n\to\infty.$$
+Let $$\hstrat$$ continue emulating $$\strat$$ until $$\cps_{n}>T_2$$, and then repeat the process. Again, we are saving a positive amount of capital which is henceforth saved. This amount builds over time, and since $$\cps$$ eventually exceeds $$T_i$$ for all $$i$$ (otherwise it would be bounded by some finite number), the strategy $$\hstrat$$ saves an infinite amount, thus $$\cp^{\hstrat}_n\to\infty.$$
 
 ![strategy-change](/assets/writing_images/intro_game_theory_prob.jpg){: style="text-align: center; width: 80%"}
 <p class='caption'>
@@ -150,7 +150,7 @@ Let $$\hstrat$$ continuing emulating $$\strat$$ until $$\cps_{n}>T_2$$, and then
 
 # 4. Averaging Strategies: The Infinite Casino
 
-Thus far, we've conceived of Bob as playing a single game against his opponents. But, as we'll see, a common technique to force events is to average various strategies. To this end, it's helpful to consider the Bob as splitting his attention among many games. He walks into an infinite casino with two players, World and Alice, sitting at each table. He can decide to play at any subset of the tables. 
+Thus far, we've conceived of Bob as playing a single game against his opponents. But, as we'll see, a common technique to force events is to average various strategies. To this end, it's helpful to consider Bob as splitting his attention among many games. He walks into an infinite casino with two players, World and Alice, sitting at each table. He can decide to play at any subset of the tables. 
 
 Suppose he plays strategy $$\strat_1$$ at table 1, and $$\strat_2$$ at table 2. We can consider an overall strategy $$\alpha_1\strat_1 + \alpha_2\strat_2$$ for any convex combination $$\alpha_1+\alpha_2=1$$, and interpret it as Bob splitting his initial capital $$C_0$$ between two accounts, putting $$\alpha_1 C_0$$ on table 1, and $$\alpha_2 C_0$$ on table 2. And there's no reason he can't split his capital among infinitely many strategies. In that case, we have the overall strategy 
 
@@ -164,7 +164,7 @@ $$\cp_n^{\sum_i \alpha_i \strat_i} = \sum_i \alpha_i \cp_n^{\strat_i}.$$
 
 Averaging strategies is useful for the following reason: Suppose $$\strat_1$$ forces $$E_1$$ and $$\strat_2$$ forces $$E_2$$. Then $$\strat = \alpha_1\strat_1 + \alpha_2\strat_2$$ forces $$E_1\cap E_2$$. Seeing this is mostly a matter of unwinding definitions. If $$\omega$$ is such that $$\lim_n \cps_n(\omega)<\infty$$, then the capital processes of both $$\alpha_1\strat_1$$ and $$\alpha_2\strat_2$$ are finite as well. But that means, by definition of forcing, that $$E_1$$ and $$E_2$$ both happen on this path. 
 
-This argument can be extended to countably infinite stategies as well. Suppose $$\strat_i$$ forces $$E_i$$ for $$i=1,2,\dots$$. Since $$\cp^{\strat_i}_n=\cp_{n-1}^{\strat_i} + \strat_{i,n}y_n\geq 0$$ (by definition of forcing), we have
+This argument can be extended to countably infinite strategies as well. Suppose $$\strat_i$$ forces $$E_i$$ for $$i=1,2,\dots$$. Since $$\cp^{\strat_i}_n=\cp_{n-1}^{\strat_i} + \strat_{i,n}y_n\geq 0$$ (by definition of forcing), we have
 
 $$\vert \strat_{i,n} \vert \leq \frac{\cp_{n-1}^{\strat_i}}{B},$$
 
@@ -184,12 +184,12 @@ which is a valid convex combination because $$\sum_k 2^{-k}=1$$, and which conve
 
 $$\sum_k \vert 2^{-k}\strat_{i,n}\vert \leq \frac{2^nC_0}{B}\sum_k \frac{1}{2^k}=\frac{2^nC_0}{B}<\infty.$$
 
-From here, the arguments proceeds the same as above. For a path $$\omega$$ with $$\sup_n \cps_n(\omega)<\infty$$, it must be the case that $$\sup_n 2^{-k}\cp_n^{\strat_i}<\infty$$ as well. Therefore, on this path, $$E_k$$ occurs, meaning that $$\cap_{k=1}^\infty E_k$$ does too. 
+From here, the argument proceeds the same as above. For a path $$\omega$$ with $$\sup_n \cps_n(\omega)<\infty$$, it must be the case that $$\sup_n 2^{-k}\cp_n^{\strat_i}<\infty$$ as well. Therefore, on this path, $$E_k$$ occurs, meaning that $$\cap_{k=1}^\infty E_k$$ does too. 
 
 
 # 5. Proving the Game-theoretic LLN
 
-Recall that our goal is to show that the Bob can force event $$E$$ in the second game, where $$E$$ is the event 
+Recall that our goal is to show that Bob can force event $$E$$ in the second game, where $$E$$ is the event 
 
 $$\lim_{n\to\infty}\frac{1}{n}\sum_{i=1}^n y_i = 0.$$ 
 

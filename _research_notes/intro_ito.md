@@ -86,7 +86,7 @@ To see that this isn't completely hopeless, we'll note that this equation has a 
 
 It's worth highlighting the importance of choosing the left endpoint of $$X_i$$ in Equation $$\eqref{eq:I_simple}$$ over the interval $$W_{i+1}-W_i$$, instead of say the middle point $$(X_{i+1}-X_i)/2$$ (as is done in Stratonovich calculus), or the right endpoint. The choice of left endpoint is suitable for finance: we choose how much stock to buy when we see the price at the beginning of the day. Choosing anything after $$X_i$$ would imply seeing into the future. Also, unlike in traditional calculus, this choice matters (due to, as we'll see, the quadratic variation of $$W$$)! Different choices yield different results for even fairly basic integrands. 
 
-Now we'd like to extend the definition of the integral to general integrands. The proofs are finnicky and not very illuminating unless you're really keen on practicing your dominated and bounded convergence theorems. So suffice it to say that the usual tactic works out: Given a a general process $$X$$ we construct a sequence of simple processes $$X_n$$ which converge pointwise to $$X$$: $$X_n(t,\omega)\to X(t,\omega)$$. Then we show that $$(X_n(t,\omega)-X(t,\omega))^2\to 0$$ and finally that 
+Now we'd like to extend the definition of the integral to general integrands. The proofs are finnicky and not very illuminating unless you're really keen on practicing your dominated and bounded convergence theorems. So suffice it to say that the usual tactic works out: Given a general process $$X$$ we construct a sequence of simple processes $$X_n$$ which converge pointwise to $$X$$: $$X_n(t,\omega)\to X(t,\omega)$$. Then we show that $$(X_n(t,\omega)-X(t,\omega))^2\to 0$$ and finally that 
 
 $$\lim_{n\to\infty}\E\int_0^T (X_n(t,\omega)-X(t,\omega))^2\dif t\to0.$$
 
@@ -94,7 +94,7 @@ This is convergence in $$L^2$$, which implies convergence in probability. (If yo
 
 $$\int_0^T X \dif W \equiv \lim_{n\to\infty}\int_0^T X_n\dif W,$$
 
-(the converence is [convergence in probability](https://en.wikipedia.org/wiki/Convergence_of_random_variables)) where, if you were worried, we're ensured that the limit exists because $$I_T(X_n)$$ is a cauchy sequence. This gives us our Itô integral $$I_T(X)$$. 
+(the convergence is [convergence in probability](https://en.wikipedia.org/wiki/Convergence_of_random_variables)) where, if you were worried, we're ensured that the limit exists because $$I_T(X_n)$$ is a cauchy sequence. This gives us our Itô integral $$I_T(X)$$. 
 
 # 3. Properties
 
@@ -116,7 +116,7 @@ Typically, $$W$$ is taken to be a [Wiener Process](https://en.wikipedia.org/wiki
 - $$B_{t+\tau}-B_t\sim\mathcal{N}(0,\tau)$$, $$\tau\geq 0$$ (increments are normally distributed)
 - $$B_t$$ is continuous as a function of $$t$$. 
 
-To get a sense of what this looks like just scroll up and look at the example above again. It looks like that damn stock market trend that you want a try and predict but can't. Super spikey, super random. If you need more than that right now then, sorry, you're going to have to Google it, because we have things to do. [Here](https://studiousguy.com/brownian-motion-examples/) are eight examples of brownian motion in real life (albeit most are two dimensional) - don't have too much fun.
+To get a sense of what this looks like just scroll up and look at the example above again. It looks like that damn stock market trend that you want to try and predict but can't. Super spikey, super random. If you need more than that right now then, sorry, you're going to have to Google it, because we have things to do. [Here](https://studiousguy.com/brownian-motion-examples/) are eight examples of brownian motion in real life (albeit most are two dimensional) - don't have too much fun.
 
 The first thing to note is that $$\E[B_t]=\E[B_t-B_0]=0$$, using that $$B_0=0$$ and that increments are normally distributed. Also, $$\E[(B_{t+\tau}-B_t)^2] = \Var((B_{t+\tau}-B_t)^2) = \tau$$ since $$\E[B_{t+\tau}-B_t]^2=0$$. We call this final property _linear variation_ of Brownian motion. 
 
@@ -139,7 +139,7 @@ $$\E(\vert W_t\vert)^2 \leq \E(\vert W_t\vert^2) = \E[(W_t - W_0)^2] =t<\infty,$
 
 so $$\E(\vert W_t\vert)$$ is finite and we see that $$W$$ is a martingale. 
 
-It turns out that $$I_t$$ is also a martingale. This might not come as a suprise though. If we're trading against an asset $$W$$ which is a "fair game", i.e., it's as likely to go up as go down, then our wealth over time should not be expected to go up or down either (and there's no using future information to our advantage because $$X$$ is adapted to $$W$$'s filtration).  
+It turns out that $$I_t$$ is also a martingale. This might not come as a surprise though. If we're trading against an asset $$W$$ which is a "fair game", i.e., it's as likely to go up as go down, then our wealth over time should not be expected to go up or down either (and there's no using future information to our advantage because $$X$$ is adapted to $$W$$'s filtration).  
 
 To see this, suppose again that $$X$$ is a simple process with $$X=X_i$$ for times $$[t_{i},t_{i+1})$$. Fix $$t$$ and let $$s\leq t$$. Let $$0=t_0<t_1<\dots<t_n=t$$ be a partition of $$[0,t]$$. Write 
 
@@ -196,7 +196,7 @@ To prove this, we once again return to simple processes. Given simple $$X$$ and 
 
 $$\E\bigg(\int_0^TX_t\dif W_t\int_0^T Y_t\dif W_t\bigg) = \sum_{i,j=0}^{n-1} \E[X_iY_j\Delta W_i\Delta W_j].$$
 
-Fix $$i<j$$. Then $$\Delta W_j$$ is independent of all of $$X_i$$, $$Y_j$$, $$\Delta W_i$$. It's indepedent of the first two since $$X_i$$ and $$Y_j$$ are adapted processes hence determined by $$\F_j$$, and of $$\Delta W_i$$ because $$W$$ of the independent increments property of Brownian motion. Moreover, $$\E[\Delta W_j]=0$$ (again by the assumptions of Brownian motion). For $$i=j$$ on the other hand, we have $$\E[X_iY_i\Delta W_i^2] = \E[X_iY_i]\E[\Delta W_i^2]=\E[X_iY_i](t_{j+1}-t_j)$$ where the second equality uses that $$\Delta W_i$$ is independent of $$X_i,Y_i$$ because the latter are fully determined by $$\F_i$$, and the third uses the linear variaton of brownian motion. This gives
+Fix $$i<j$$. Then $$\Delta W_j$$ is independent of all of $$X_i$$, $$Y_j$$, $$\Delta W_i$$. It's indepedent of the first two since $$X_i$$ and $$Y_j$$ are adapted processes hence determined by $$\F_j$$, and of $$\Delta W_i$$ because $$W$$ of the independent increments property of Brownian motion. Moreover, $$\E[\Delta W_j]=0$$ (again by the assumptions of Brownian motion). For $$i=j$$ on the other hand, we have $$\E[X_iY_i\Delta W_i^2] = \E[X_iY_i]\E[\Delta W_i^2]=\E[X_iY_i](t_{j+1}-t_j)$$ where the second equality uses that $$\Delta W_i$$ is independent of $$X_i,Y_i$$ because the latter are fully determined by $$\F_i$$, and the third uses the linear variation of brownian motion. This gives
 
 $$\E\bigg(\int_0^TX_t\dif W_t\int_0^T Y_t\dif W_t\bigg) = \sum_i \E[X_iY_i](t_{i+1}-t_i) = \E\int_0^T X_tY_t \dif t,$$
 
@@ -213,9 +213,9 @@ The [quadratic variation](https://en.wikipedia.org/wiki/Quadratic_variation) of 
 
 $$[X,X](t) = \sup_{\|\Pi\|\to0}\sum_{i=1}^n (X(t_i) - X(t_{i-1}))^2,$$
 
-where $$\Pi$$ is a partition of $$[0,t]$$ and $$\|\Pi\|=\max_j\vert t_{j+1}-t_j\vert $$. Clearly, this is similar to the total variation but the term $$X(t_{i}) - X(t_{i-1})$$ is squared. Somewhat suprisingly, functions can have infinite total variation but finite quadratic variation -- and this is indeed the case with Brownian motion which, over the interval $$[a,b]$$, has quadratic variation $$b-a$$. 
+where $$\Pi$$ is a partition of $$[0,t]$$ and $$\|\Pi\|=\max_j\vert t_{j+1}-t_j\vert $$. Clearly, this is similar to the total variation but the term $$X(t_{i}) - X(t_{i-1})$$ is squared. Somewhat surprisingly, functions can have infinite total variation but finite quadratic variation -- and this is indeed the case with Brownian motion which, over the interval $$[a,b]$$, has quadratic variation $$b-a$$. 
 
-Let's compute the quadratic variation $$[I,I](T)$$. Once again we suppose that $$X$$ is simple and changes values at times $$t_0,t_1,\dots,t_n$$. Consider any partition $$\Pi=s_0<s_1<\dots<s_m$$ of $$[0,T]$$. Wlog we can assume that $$\Pi$$ is a refinement of $$t_0,t_1,\dots,t_n$$ since the mesh goes to zero in the limit anyways. Fix an interval on which $$X$$ is constant, $$[t_j,t_{j+1})$$. Suppose that $$\Pi$$ partitions this interval as $$t_j=s_\ell<\dots<s_{\ell+k}=t_{j+1}$$. We can of course write $$I_t(X)$$ as a function of $$\Pi$$. Consider the quadratic variaton on the interval $$[t_j,t_{j+1})$$:
+Let's compute the quadratic variation $$[I,I](T)$$. Once again we suppose that $$X$$ is simple and changes values at times $$t_0,t_1,\dots,t_n$$. Consider any partition $$\Pi=s_0<s_1<\dots<s_m$$ of $$[0,T]$$. Wlog we can assume that $$\Pi$$ is a refinement of $$t_0,t_1,\dots,t_n$$ since the mesh goes to zero in the limit anyways. Fix an interval on which $$X$$ is constant, $$[t_j,t_{j+1})$$. Suppose that $$\Pi$$ partitions this interval as $$t_j=s_\ell<\dots<s_{\ell+k}=t_{j+1}$$. We can of course write $$I_t(X)$$ as a function of $$\Pi$$. Consider the quadratic variation on the interval $$[t_j,t_{j+1})$$:
 
 $$
 \begin{align*}

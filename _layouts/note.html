@@ -14,7 +14,41 @@ layout: default
   <p id="date">{{ page.date | date: '%B %d, %Y'}}</p>
   <br/>
   {{ content }}
-  <small>
-    <a link="back", href="{% link research_notes.md %}">Back to all notes</a>
-  </small>
+
+  <div class="note-footer">
+  <p class="note-back">
+    <small>
+      <a id="back" href="{% link research_notes.md %}">Back to all notes</a>
+    </small>
+  </p>
+
+  {% comment %} Chronological neighbours among published notes {% endcomment %}
+  {% assign notes = site.research_notes | where_exp: "n", "n.status == 'published'" | sort: "date" %}
+  {% assign idx = -1 %}
+  {% for n in notes %}
+    {% if n.url == page.url %}
+      {% assign idx = forloop.index0 %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  {% if idx >= 0 %}
+    {% assign last_idx = notes.size | minus: 1 %}
+    {% assign prev_idx = idx | minus: 1 %}
+    {% assign next_idx = idx | plus: 1 %}
+    <nav class="note-nav">
+      <div class="note-nav-prev">
+        {% if idx > 0 %}
+          <span class="note-nav-label">&larr; Previous note</span>
+          <a href="{{ notes[prev_idx].url }}">{{ notes[prev_idx].title }}</a>
+        {% endif %}
+      </div>
+      <div class="note-nav-next">
+        {% if idx < last_idx %}
+          <span class="note-nav-label">Next note &rarr;</span>
+          <a href="{{ notes[next_idx].url }}">{{ notes[next_idx].title }}</a>
+        {% endif %}
+      </div>
+    </nav>
+  {% endif %}
+  </div>
 </article>

@@ -68,7 +68,7 @@ $$\log\frac{S_t}{\ratio_t}\in\delta\{-k-1,-k,\dots,k,k+1\},$$
 
 with the two ends corresponding to trading states. 
 
-Put $$M_t = \log(S_t/\ratio_t)$$. We can treat the movement of $$M_t$$ as Markov chain on the finite state space $$\{-k\delta,\dots,k\delta\}$$, which represent all the non-arbitrage states. 
+Put $$M_t = \log(S_t/\ratio_t)$$. We can treat the movement of $$M_t$$ as a Markov chain on the finite state space $$\{-k\delta,\dots,k\delta\}$$, which represent all the non-arbitrage states. 
 
 In state $$k\delta$$, $$M_t$$ transitions with probability $$\delta$$ back to itself, meaning the price went up and a trade was made (case 2 in the trading game). In that case the ratio returns to $$S_t/\ratio_t=\exp(k\delta)$$. With probability $$1-\delta$$ the price went down and $$M_t$$ moves to state $$(k-1)\delta$$. 
 
@@ -216,7 +216,7 @@ How should we set the fee in order to maximize return? In particular, how do we 
 
 This is what's referred to as Uniswap's "[financial alchemy](https://research.paradigm.xyz/uniswaps-alchemy)", because the result is so counterintuitive. Of course, in reality I'm not sure what it means to set the fee arbitrarily close to zero. Most likely, something would break. Better, I think, to realize that this model is imperfect and likely not capturing true market behavior. 
 
-Then again, the model is more robust than it might appear at first glance, at least from the perspective of maximizing LP wealth (besides it being discrete, but that can be fixed). Sure, it makes the assumption that a trade occurs each time step. But even if not, and the prices deviates significantly from the no-arbitrage region, then the next trade which optimizes its profits is mathematically equivalent to multiple intermediary trades (i.e., in some sense, the model is linear -- not preferring one big trade to many small ones). Moreover, while the model assumes that only arbitrage trades are made, other trades would simply add to the LP's wealth while not being worth it for the trader. In that sense, the model is conservative in its estimate of wealth accumulation. 
+Then again, the model is more robust than it might appear at first glance, at least from the perspective of maximizing LP wealth (besides it being discrete, but that can be fixed). Sure, it makes the assumption that a trade occurs each time step. But even if not, and the price deviates significantly from the no-arbitrage region, then the next trade which optimizes its profits is mathematically equivalent to multiple intermediary trades (i.e., in some sense, the model is linear -- not preferring one big trade to many small ones). Moreover, while the model assumes that only arbitrage trades are made, other trades would simply add to the LP's wealth while not being worth it for the trader. In that sense, the model is conservative in its estimate of wealth accumulation. 
 
 Still, it _does_ assume perfect information and, of course, that the price follows a well-defined geometric brownian motion. This implies that there are no huge, near-instantaneous price drops (or at least they occur with very, very low probability), which is not the case in practice. I'm sure Nassim Taleb has yelled about this somewhere. 
 

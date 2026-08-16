@@ -256,7 +256,7 @@ $$
 \end{align*}
 $$
 
-where the first inequality uses the basic fact from convex analysis that, for a closed a convex set $$D\subset \Re^n$$ and any $$\bs{x},\bs{y}\in \Re^n$$,
+where the first inequality uses the basic fact from convex analysis that, for a closed, convex set $$D\subset \Re^n$$ and any $$\bs{x},\bs{y}\in \Re^n$$,
 
 $$
 \begin{equation*}

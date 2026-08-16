@@ -47,7 +47,7 @@ The setting is given by a traditional contextual bandit setup, wherein each time
 
 More specifically, repeat for $$i=1,\dots,N$$: 
 - $$x_i\in\R^d$$ drawn iid from some (unknown) distribution $$\D$$. Call $$x_i$$ the _context_ or _covariates_. 
-- Some (unknown) policy $$\gamma$$ takes action $$a_i\in\A$$, possibly depending on history contexts, actions, and rewards to this point. Write $$\gamma_i(a\vert x_i)$$, for the probability that $$\gamma$$ selects action $$a$$, where the index $$i$$ allows for possibility that $$\gamma$$ is a function of the past. Let
+- Some (unknown) policy $$\gamma$$ takes action $$a_i\in\A$$, possibly depending on history contexts, actions, and rewards to this point. Write $$\gamma_i(a\vert x_i)$$, for the probability that $$\gamma$$ selects action $$a$$, where the index $$i$$ allows for the possibility that $$\gamma$$ is a function of the past.
 - Reward $$y_i\in\R$$ is drawn from $$\D(\cdot\vert x_i,a_i)$$ and revealed to the policy. 
 
 The goal of policy evaluation is to use the data generated in this way to evaluate the expected reward of a policy $$\pi$$, most likely distinct from $$\gamma$$. Formally, if 
@@ -63,9 +63,9 @@ V(\pi) = \E_{x\sim \D}\E_{a\sim \pi(\cdot\vert x)}[f(x,a)]. \tag{1}
 \end{equation}
 $$
 
-For simplicitly, we'll assume that $$\pi$$ is _stationary_, i.e., it doesn't change over time. The results are similar if we don't make this assumption, but somewhat harder to interpret as there is an extra sum in all the equations. 
+For simplicity, we'll assume that $$\pi$$ is _stationary_, i.e., it doesn't change over time. The results are similar if we don't make this assumption, but somewhat harder to interpret as there is an extra sum in all the equations. 
 
-Also, instead of writing out three expectations everytime, we'll often write $$\E_{\pi}$$ to indicate that the expected value in Equation \eqref{eq:Vpi} depends on the policy, i.e., $$V(\pi)=\E_{\pi}[y].$$
+Also, instead of writing out three expectations every time, we'll often write $$\E_{\pi}$$ to indicate that the expected value in Equation \eqref{eq:Vpi} depends on the policy, i.e., $$V(\pi)=\E_{\pi}[y].$$
 
 So, how would you estimate this? The empirical mean of the select rewards won't do since the actions that gave rise to them were selected by $$\gamma$$, not $$\pi$$. This leads us to modelling the rewards directly. 
 
@@ -75,7 +75,7 @@ One natural approach is to train a model to predict the reward given the context
 
 $$\hVm = \frac{1}{N}\sum_{k} \sum_{a\in\A}\pi(a\vert x_k)\model(a,x_k).$$
 
-Clearly, $$\hVm$$ is only as good as $$\model$$. To see this more quantitatively,define 
+Clearly, $$\hVm$$ is only as good as $$\model$$. To see this more quantitatively, define 
 
 $$\Delta(a,x)=\model(a,x) - f(a,x),$$
 
@@ -103,7 +103,7 @@ $$
 \end{align}
 $$
 
-The quantity $$N^{-1}\Var_x\E_{a\sim\pi}[f(a,x)]$$ is unavoidable variance obtained from sampling according to $$\pi$$. So we see that both the bias and variance of $$\hVm$$ depend on a very natural way on the error of model. 
+The quantity $$N^{-1}\Var_x\E_{a\sim\pi}[f(a,x)]$$ is unavoidable variance obtained from sampling according to $$\pi$$. So we see that both the bias and variance of $$\hVm$$ depend in a very natural way on the error of the model. 
 
 
 ## 1.2 Inverse Propensity Weighting, $$\hmuipw$$ 
@@ -273,7 +273,7 @@ $$
 
 This is the equivalent to estimating average reward in RL, but the two settings are clearly quite distinct. For one, we're not assuming a distribution over the covariates $$x_i$$; they're simply given. This will be important for variance calculations, since there's no independence assumptions and we can't ignore covariance. Second, we assume that the probabilities $$\pi_i$$ are known. You can change this assumption without too much fuss, in which case the results here resemble the RL setting more closely. Finally, in survey sampling, we typically don't assume that the hidden values are generated from a conditional distribution of the context. Instead, they're deterministic given the covariates. All of these assumptions simplify the calculations. 
 
-Still, ignoring the details, the two settings can be tackled with similar approches. You can imagine training a model $$\model:\R^d\to\R$$ to predict the reward given the covariates, and then estimating the mean by simply predicting over the population: 
+Still, ignoring the details, the two settings can be tackled with similar approaches. You can imagine training a model $$\model:\R^d\to\R$$ to predict the reward given the covariates, and then estimating the mean by simply predicting over the population: 
 
 $$\hmum = \frac{1}{N}\sum_{i\in[N]} \model(x_i).$$ 
 
@@ -364,7 +364,7 @@ and
 
 $$\Var(\hmudr) = \frac{1}{2N^2}\bigg\{\sum_{i,j\in [N]}\bigg(\frac{y_i-\hy_i}{\pi_i}-\frac{y_j-\hy_j}{\pi_j}\bigg)^2(\pi_i\pi_j-\pi_{i,j})\bigg\}.$$
 
-These look similar, but the squared terms differ quite drastically in their behaviour. First, notice that $$\Var(A(z))=0$$ if $$z_i/\pi_i$$ is constant for every $$i$$. For the NHT estimator, $$z_i=y_i$$, implying the variance is zero if we chose the inclusion probabilities to be proportional to the true values. Of course, we don't know the true values, so this is hard to do. For DR, $$z_i=y_i-\hy_i$$, so the variance will be zero if the signed residual between the true value and the model's prediction is proportional the inclusion probability. 
+These look similar, but the squared terms differ quite drastically in their behaviour. First, notice that $$\Var(A(z))=0$$ if $$z_i/\pi_i$$ is constant for every $$i$$. For the NHT estimator, $$z_i=y_i$$, implying the variance is zero if we chose the inclusion probabilities to be proportional to the true values. Of course, we don't know the true values, so this is hard to do. For DR, $$z_i=y_i-\hy_i$$, so the variance will be zero if the signed residual between the true value and the model's prediction is proportional to the inclusion probability. 
 
 In order to say anything about which one is better, we'd need to know more about the model estimates $$\hy_i$$. Beyond that, comparing the estimators term-by-term is difficult because of the pesky joint inclusion probabilities $$\pi_{i,j}$$. For an unspecified sampling design, we can't say whether the terms $$\pi_i\pi_j-\pi_{i,j}$$ are positive or negative, so proving general theorems about the estimators is difficult. 
 
@@ -372,5 +372,5 @@ On the other hand, the variance of the model based estimator depends on the mode
 
 $$\Var(\hmum) = \frac{1}{N^2}\sum_{i,j}\Cov(\Delta(x_i)+y_i,\Delta(x_j)+y_j),$$ 
 
-which can be smaller than the either of the variances above for a well-calibrated model. In general then, there is a bias-variance tradeoff  in the choices of estimators. 
+which can be smaller than either of the variances above for a well-calibrated model. In general then, there is a bias-variance tradeoff  in the choices of estimators. 
 
