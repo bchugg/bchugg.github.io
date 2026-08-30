@@ -208,14 +208,15 @@ img {
 
 /* Header image */
 #headerim {
-    width: 35%;
+    width: 29%;
     height: auto;
     float: left;
     margin-left: 15px;
     margin-right: 25px;
     margin-bottom: 10px;
-    @media (max-width: 400px) {
-      width: 80%;
+    @media (max-width: 600px) {
+      width: 200px;
+      max-width: 70%;
       display: block;
       float: none;
       margin-left: auto;
