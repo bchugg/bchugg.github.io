@@ -24,9 +24,7 @@
 */
 
 * {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
@@ -38,12 +36,6 @@ body {
 
 html {
   font-family: $main-font;
-  //font-family: "Inconsolata";
-  //font-family: "Palatino Linotype", "Book Antiqua", "Palatino", "Georgia", "serif";
-  //font-family: "Palatino";
-  //font-family: "Iowan Old Style", "Palatino", "Georgia", "Times New Roman", "Times", "serif";
-  // font-size: 1em; /* 16px; specify in ems to support text resizing in all browsers */
-  //font-size: 13pt;
   font-size: $regular-font-size;
   line-height: 1.5;
 }
@@ -57,9 +49,7 @@ html {
 body {
   color: $text-color;
   background-color: #fff;
-  //background-color: rgb(243, 242, 242);
   -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
 }
 
 
@@ -208,33 +198,21 @@ img {
 
 /* Header image */
 #headerim {
-    width: 28%;
+    width: 29%;
     height: auto;
     float: left;
     margin-left: 15px;
     margin-right: 25px;
     margin-bottom: 10px;
-    @media (max-width: 400px) {
-      width: 80%;
+    @media (max-width: 600px) {
+      width: 200px;
+      max-width: 70%;
       display: block;
       float: none;
       margin-left: auto;
       margin-right: auto;
     }
 }
-
-.research-and-other {
-  display: block;
-  clear: both;
-  padding-top: 10px;
-}
-
-#caption {
-  font-size: 10pt;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
 
 /* Tables */
 table {
@@ -315,33 +293,12 @@ tbody tr:nth-child(odd) th {
  ED special layouts
 */
 
-p.centered {
-  text-align: center;
-}
-
-p.larger {
-  font-size: 1.6rem;
-}
-
-p.large {
-  font-size: 1.4rem
-}
-
-p.small {
-  font-size: 0.8rem;
-}
-
 div.poem,
 .poem,
 div.narrative,
 .narrative {
   margin-bottom: 5rem;
 }
-
-div.toc {
-  margin-bottom: 4rem;
-}
-
 
 /* Footnotes styles */
 sub,
@@ -372,31 +329,6 @@ sup {
 a.footnote {
   padding-left: .1rem;
   font-size: .66rem;
-}
-
-/*Bibliography styles */
-ol.bibliography {
-  list-style-type:none;
-  padding-left: 1rem;
-  text-indent: -1rem;
-}
-
-/* Diplomatic editions */
-ins,
-.add {
-  color:#288828;
-  font-style: italic;
-}
-
-del,
-.delete {
-  text-decoration: line-through;
-  //color: #AA3232;
-}
-
-u,
-.underline {
-  text-decoration: underline;
 }
 
 

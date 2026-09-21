@@ -1,14 +1,14 @@
 ---
 layout: note
-date: "2026-08-17"
+date: "2026-09-21"
 title: "European Options and the Heat Equation"
 description: "Reducing the Black-Scholes PDE to the heat equation"
 status: published
 ---
 
-# 1. The Heat equation
+# 1. The heat equation
 
-Last time we derived the Black-Scholes PDE for the European option. Unfortunately, PDEs are tough to solve! Luckily, we can fool around with the Black-Scholes equation and turn it into the heat equation after a few clever change of variable arguments.
+Last time we derived the Black-Scholes PDE for a European call option. Unfortunately, PDEs are tough to solve! Luckily, we can fool around with the Black-Scholes equation and turn it into the heat equation after a few clever changes of variables.
 
 The heat equation for a function $$u(x,t)$$ is the famous PDE
 
@@ -28,9 +28,9 @@ u(x, \widetilde \tau) = \frac{1}{\sqrt{4\pi \widetilde\tau}}\int_{-\infty}^\inft
 \end{equation}
 $$
 
-where $$u_0(y) = u(y,0)$$ is the initial condition at time 0. The heat equation was originally developed by Fourier in the 1800s to describe how heat diffuses in a given region. The quantity $$u(x,t)$$ is the temperature at location $$x$$ at time $$t$$, and the equation says that how quickly the temperature is changing at point $$x$$ has to do with the convexity or concavity of the material at that point. (This is an interesting phenomenon in and of itself, and not at all obvious.) In fact, there's nothing special about heat. The same dynamics apply to any diffusion process.
+where $$u_0(y) = u(y,0)$$ is the initial condition at time 0. The heat equation was originally developed by Fourier in the 1800s to describe how heat diffuses in a given region. The quantity $$u(x,t)$$ is the temperature at location $$x$$ at time $$t$$, and the equation says that how quickly the temperature is changing at point $$x$$ is determined by the convexity or concavity of the temperature profile at that point. (This is an interesting phenomenon in and of itself, and not at all obvious.) In fact, there is nothing particularly special about heat: \eqref{eq:heat} models many diffusion processes after appropriate scaling.
 
-Is it a surprise that the Black-Scholes equation is related to the heat equation? Perhaps initially, but less and less as you think about it. The Black-Scholes PDE captures the price of a stock fluctuating as (geometric) Brownian motion, with a known value at some time $$T$$. Now, $$T$$ happens to be the end of the time period instead of the beginning, but this doesn't matter much analytically. It just means that time is reversed.
+Is it a surprise then that the Black-Scholes equation is related to the heat equation? Perhaps initially, but less and less as you think about it. The Black-Scholes PDE describes the price of a derivative whose underlying stock fluctuates as geometric Brownian motion---a specific type of diffusion process---and whose value is known at some time $$T$$. While $$T$$ happens to be the end of the time period instead of the beginning, this doesn't matter much analytically. It just means that time is reversed.
 
 
 # 2. Transforming Black-Scholes into the Heat Equation
@@ -44,7 +44,7 @@ $$
 \end{equation}
 $$
 
-with boundary condition $$V(S,T) = \max\{0, S-K\}$$ for some $$K\geq 0$$ (the strike price. Look at us, talking like financiers). As we noted above, this thing moves backwards in time. We know the value of $$V_t$$ at $$t=T$$ and we're trying to understand how it behaves for $$t<T$$. We can fix this by simply considering $$\tau = T-t$$, the time until the payout. Since $$\partial V/\partial t= -\partial V/\partial \tau$$, \eqref{eq:black-scholes} becomes
+with terminal condition $$V(S,T) = \max\{0, S-K\}$$ for some strike price $$K>0$$. As we noted, this thing moves backwards in time. We know the value of $$V(S,T)$$ and we're trying to understand $$V(S,t)$$ for $$t<T$$. We can fix this by considering $$\tau = T-t$$, the time until the payout. Reusing $$V$$ for the function $$V(S,T-\tau)$$, we have $$\partial V/\partial t= -\partial V/\partial \tau$$, so $$\eqref{eq:black-scholes}$$ becomes
 
 $$
 \begin{equation}
@@ -53,7 +53,7 @@ $$
 \end{equation}
 $$
 
-Next we would like to turn the coefficients into constants, because the heat equation doesn't have any stochastic multiplicative factors in front of the derivatives. The underlying reason that we have non-constant factors in \eqref{eq:black-scholes-2}, is that the European options model considers _geometric_ (i.e., multiplicative) Brownian motion, which provides a hint that we should instead work in log space.
+Next we would like to turn the coefficients into constants. The reason we have non-constant coefficients in $$\eqref{eq:black-scholes-2}$$ is that the European option model considers _geometric_ (i.e., multiplicative) Brownian motion, which suggests that we should instead work in log space.
 
 Set $$x = \log S$$. We want to write $$\eqref{eq:black-scholes-2}$$ in terms of $$x$$ instead of $$S$$. The chain rule gives
 
@@ -93,7 +93,7 @@ u(x,\tau) = e^{-\alpha x - \beta \tau} V(x,\tau). \tag{8}
 \end{equation}
 $$
 
-We can argue about whether this is an intuitive thing to do or not. The rough idea is that an exponential factor is precisely the sort of thing that spits out first-order and zeroth-order terms when you differentiate it, so we ought to be able to tune $$\alpha$$ and $$\beta$$ to cancel things we don't want. But admittedly this is hard to see by just staring at \eqref{eq:u-def}. Regardless, we have
+We can argue about whether this is an intuitive thing to do or not. The rough idea is that an exponential factor is precisely the sort of thing that spits out first-order and zeroth-order terms when you differentiate it, so we ought to be able to tune $$\alpha$$ and $$\beta$$ to cancel things we don't want. But admittedly this is hard to see by just staring at $$\eqref{eq:u-def}$$. Regardless, we have
 
 $$
 \begin{align}
@@ -139,11 +139,11 @@ $$
 \end{equation}
 $$
 
-and we can write it precisely as the heat equation by rescaling time as $$\widetilde\tau = \sigma^2\tau/2$$. Since $$\partial/\partial\tau = (\sigma^2/2)\partial/\partial\widetilde\tau$$, the factor of $$\sigma^2/2$$ cancels off both sides and we're left with \eqref{eq:heat} precisely.
+and we can write it precisely as the heat equation by rescaling time as $$\widetilde\tau = \sigma^2\tau/2$$. Since $$\partial/\partial\tau = (\sigma^2/2)\partial/\partial\widetilde\tau$$, the factor of $$\sigma^2/2$$ cancels off both sides and we're left with $$\eqref{eq:heat}$$ precisely.
 
 
 
-To write the boundary condition in terms of $$u_0$$, note that $$\widetilde\tau = 0$$ corresponds to $$\tau=0$$, i.e., to $$t=T$$, at which point $$V = \max\{0,S-K\} = \max\{0,e^x-K\}$$. So by $$\eqref{eq:u-def}$$,
+To write the initial condition in terms of $$u_0$$, note that $$\widetilde\tau = 0$$ corresponds to $$\tau=0$$, i.e., to $$t=T$$, at which point $$V = \max\{0,S-K\} = \max\{0,e^x-K\}$$. So by $$\eqref{eq:u-def}$$,
 
 $$
 \begin{equation}
@@ -163,7 +163,7 @@ V(S,t) &= \frac{e^{\alpha x + \beta \tau}}{\sqrt{4\pi\widetilde\tau}}\int_{\log 
 \end{align}
 $$
 
-There are two ways to proceed from here. You can play around with this integral, complete some squares (actually just one), and write it in terms of the standard normal CDF. The result is the famous Black-Scholes formula
+There are two ways to proceed from here. You can play around with this integral, complete the square in each term, and write it in terms of the standard normal CDF. The result is the famous Black-Scholes formula
 
 $$
 \begin{equation}
@@ -185,7 +185,7 @@ But there's a second option that I much prefer, both because the solution looks 
 
 # 3. The solution as an expectation
 
-Go back to $$\eqref{eq:V-integral}$$, but keep $$u_0$$ in the unexpanded form $$e^{-\alpha y}\max\{0,e^y-K\}$$ from $$\eqref{eq:u0}$$, and substitute $$z = y - x$$. Since $$e^x = S$$, the two factors of $$e^{\alpha x}$$ cancel against each other, leaving
+Go back to $$\eqref{eq:V-integral}$$, but keep $$u_0$$ in the unexpanded form $$e^{-\alpha y}\max\{0,e^y-K\}$$ from $$\eqref{eq:u0}$$, and substitute $$z = y - x$$. Since $$e^x = S$$, the two factors of $$e^{\alpha x}$$ cancel, leaving
 
 $$
 \begin{align}
@@ -194,32 +194,36 @@ V(S,t) &= \frac{e^{\beta\tau}}{\sqrt{4\pi\widetilde\tau}}\int_{-\infty}^\infty \
 \end{align}
 $$
 
-where the second line just completes the square in the exponent. The integrand is the pdf of a Gaussian (in $$z$$) with mean $$\mu = -2\widetilde\tau\alpha$$ and variance $$\upsilon^2 = 2\widetilde\tau$$. Recalling that $$\widetilde\tau = \sigma^2\tau/2$$ and $$\alpha = \frac{1}{2} - r/\sigma^2$$, we can rewrite those as
+where the second line just completes the square in the exponent. The factor
+
+$$
+\frac{1}{\sqrt{4\pi\widetilde\tau}}\exp\left\{-\frac{(z + 2\widetilde\tau\alpha)^2}{4\widetilde\tau}\right\},
+$$
+
+is the density of a Gaussian (in $$z$$) with mean $$m = -2\widetilde\tau\alpha$$ and variance $$\upsilon^2 = 2\widetilde\tau$$. Recalling that $$\widetilde\tau = \sigma^2\tau/2$$ and $$\alpha = \frac{1}{2} - r/\sigma^2$$, we can rewrite those as
 
 $$
 \begin{equation}
 \label{eq:moments}
-\upsilon^2 = 2\widetilde\tau = \sigma^2\tau, \qquad \mu = -\sigma^2\tau\alpha = \left(r - \frac{1}{2}\sigma^2\right)\tau. \tag{19}
+\upsilon^2 = 2\widetilde\tau = \sigma^2\tau, \qquad m = -\sigma^2\tau\alpha = \left(r - \frac{1}{2}\sigma^2\right)\tau. \tag{19}
 \end{equation}
 $$
 
-Now, keeping in mind the definition of $$\alpha$$ in \eqref{eq:alpha}, note that $$\beta\tau + \widetilde\tau \alpha^2 = -r\tau$$, so $$\exp(\beta\tau + \widetilde\tau\alpha^2) = \exp(-r\tau ) = \exp(-r(T-t))$$. Therefore, \eqref{eq:tilted} simplifies to
+Now, keeping in mind the definition of $$\alpha$$ in $$\eqref{eq:alpha}$$, note that $$\beta\tau + \widetilde\tau \alpha^2 = -r\tau$$, so $$\exp(\beta\tau + \widetilde\tau\alpha^2) = \exp(-r\tau ) = \exp(-r(T-t))$$. Therefore, $$\eqref{eq:tilted}$$ simplifies to
 
 $$
 \begin{align}
-V(S,t) &= e^{-r(T-t)}\,\mathbb{E}_{Z\sim N(\mu,\upsilon^2)}\left[\max\{0, Se^Z - K\}\mid S_t=S\right]\\
-&= e^{-r(T-t)}\,\mathbb{E}_{Z\sim N(0,1)}\left[\max\{0, Se^{\upsilon Z + \mu} - K\}\mid S_t=S\right], \tag{20}
+V(S,t) &= e^{-r(T-t)}\,\mathbb{E}_{Y\sim N(m,\upsilon^2)}\left[\max\{0, Se^Y - K\}\right]\\
+&= e^{-r(T-t)}\,\mathbb{E}_{Z\sim N(0,1)}\left[\max\{0, Se^{\upsilon Z + m} - K\}\right]. \tag{20}
 \end{align}
 $$
 
-
-
-Let $$\mathbb{Q}$$ denote the _risk-neutral measure_: the probability measure under which the stock's drift is the risk-free rate $$r$$. The whole expression therefore becomes
+This is commonly written as
 
 $$
 \begin{equation}
 \label{eq:expectation}
-V(S,t) = e^{-r(T-t)}\,\mathbb{E}_{\mathbb{Q}}\left[\max\{0, S_T - K\}\mid S_t=S\right], \tag{21}
+V(S,t) = e^{-r(T-t)}\,\mathbb{E}_{Z\sim N(0,1)}\left[\max\{0, S_T - K\}\mid S_t=S\right], \tag{21}
 \end{equation}
 $$
 
@@ -232,18 +236,19 @@ S_T = S\exp\left\{\left(r - \frac{1}{2}\sigma^2\right)(T-t) + \sigma\sqrt{T-t}\,
 \end{equation}
 $$
 
-todo
-
-
-Compare $$\eqref{eq:ST}$$ with the stock price process we actually started from. Solving the geometric Brownian motion $$dS_t = \mu S_t dt + \sigma S_t dB_t$$ gives $$S_T = S\exp\{(\mu - \frac{1}{2}\sigma^2)(T-t) + \sigma\sqrt{T-t}Z\}$$ — the same expression with $$\mu$$ in place of $$r$$. So $$\eqref{eq:expectation}$$ is _not_ the expected payoff of the stock we were handed. It's the expected payoff of a fictitious stock whose drift has been replaced by the risk-free rate. This fictitious measure is called the _risk-neutral measure_, usually written $$\mathbb{Q}$$.
-
-The expectation form is also the better jumping-off point for what comes next. An American option can be exercised at any time up to $$T$$, so instead of a fixed payoff date we get to choose a stopping time $$\vartheta$$, and the price becomes
+Why is this nicer? For one, it expresses the price as a discounted expected payoff, which is easier to think about intuitively. Second, it relates directly to the stopping-time formulation of the problem, which is what will come next. In particular, an _American_ (as opposed to European) option can be exercised at any time up to $$T$$. If $$\mathcal{T}_{t,T}$$ denotes the set of stopping times taking values in $$[t,T]$$, its price is
 
 $$
 \begin{equation}
 \label{eq:american}
-V(S,t) = \sup_{t \leq \vartheta \leq T} \mathbb{E}^{\mathbb{Q}}\left[e^{-r(\vartheta - t)}\max\{0, S_\vartheta - K\}\right], \tag{23}
+V(S,t) = \sup_{\theta\in\mathcal{T}_{t,T}} \mathbb{E}_{\mathbb{Q}}\left[e^{-r(\theta - t)}\max\{0, S_\theta - K\}\mid S_t=S\right]. \tag{23}
 \end{equation}
 $$
 
-the supremum ranging over stopping times.
+Finally, $$\eqref{eq:expectation}$$ has a nice relationship with the stock price process $$S_t$$ that we started with. As we saw when [solving geometric Brownian motion](/research_notes/sde_ito_lemma/#43-geometric-brownian-motion), solving $$dS_t = \mu S_t\,dt + \sigma S_t\,dB_t^{\mathbb{P}}$$ conditional on $$S_t=S$$ gives
+
+$$
+S_T = S\exp\left\{\left(\mu - \frac{1}{2}\sigma^2\right)(T-t) + \sigma\sqrt{T-t}\,Z\right\}.
+$$
+
+This is the same expression as \eqref{eq:ST} but with $$\mu$$ in place of $$r$$. So \eqref{eq:expectation} can be interpreted as the expected payoff of a fictitious stock whose drift has been replaced by the “risk-free rate” $$r$$, and then discounted by time (see the previous post for more on risk-free stocks).

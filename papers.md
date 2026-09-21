@@ -20,9 +20,11 @@ image: /assets/images/manuscript.jpeg
   | uniq %}
 
   
-<h1> Selected papers </h1>
+<!-- <h1> Selected papers </h1> -->
 
-For a full list see my <a href="{% link assets/files/cv.pdf %}">CV</a>.
+<h1></h1>
+
+Some selected papers. For a full list see my <a href="{% link assets/files/cv.pdf %}">CV</a>.
 
 <h2> Preprints </h2>
 
